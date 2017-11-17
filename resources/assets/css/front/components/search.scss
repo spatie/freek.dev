@@ -1,6 +1,13 @@
 .search-results {
   position: absolute;
-  @apply bg-white w-full md:w-3/5 border-2 rounded p-4 mr-4 mt-2 pin-r ml-4 flex-col content-center z-50 ;
+  @apply bg-white w-full border-2 rounded p-4 mr-4 ml-4 mt-2 pin-r  flex-col content-center z-50 ;
+
+}
+
+@screen md {
+  .search-results {
+      @apply w-3/5;
+  }
 }
 
 .search-results li {
