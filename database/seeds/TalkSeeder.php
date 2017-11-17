@@ -233,13 +233,13 @@ class TalkSeeder extends Seeder
             [
                 'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
                 'location' => 'PHP Eindhoven',
-                'presented_at' => '2017-18-01',
+                'presented_at' => '2017-01-18',
             ],
 
             [
                 'title' => 'The story behind our open source efforts',
                 'location' => 'PHP Eindhoven',
-                'presented_at' => '2017-18-01',
+                'presented_at' => '2017-01-18',
             ],
 
             [
@@ -251,7 +251,7 @@ class TalkSeeder extends Seeder
             [
                 'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
                 'location' => 'PHP Gent',
-                'presented_at' => '2017-17-01',
+                'presented_at' => '2017-01-17',
             ],
 
             [
