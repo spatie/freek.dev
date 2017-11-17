@@ -1,10 +1,14 @@
 import SimpleMDE from 'simplemde';
 
-new SimpleMDE({
-    element: document.getElementsByClassName('markdown-editor'),
-    spellChecker: false,
-    autosave: {
-        enabled: true,
-        uniqueId: window.location,
-    },
-});
+let editors = document.getElementsByClassName('markdown-editor');
+
+if (editors.length) {
+    new SimpleMDE({
+        element: editors[0],
+        spellChecker: false,
+        autosave: {
+            enabled: true,
+            uniqueId: window.location,
+        },
+    });
+}

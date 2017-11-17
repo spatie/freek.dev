@@ -24,6 +24,14 @@
     @endif
 </div>
 
+<div class="form-line">
+    <label class="form-label" for="tags">Publish date:</label>
+    <input class="form-text-input" name="tag_text" value="{{ old('tags_text', $post->tags_text) }}">
+    @if($errors->has('tags_text'))
+        <div class="validation-error">{{ $errors->first('tags_text') }}</div>
+    @endif
+</div>
+
 <div class="form-line form-checkbox">
     <input class="" name="published" value="1" type="checkbox" {{ $post->published ? 'checked' : '' }}> Published
 </div>

@@ -59,6 +59,12 @@ class Post extends BaseModel implements Feedable
 
         $this->save();
 
+        $tags = array_map(function(string $tag) {
+            return trim(strtolower($tag));
+        }, explode(',', $attributes['tags_text']));
+
+        $this->syncTags($tags);
+
         if ($this->published) {
             $this->publishOnSocialMedia();
         }
@@ -74,14 +80,19 @@ class Post extends BaseModel implements Feedable
 
             $this->tweet_sent = true;
             $this->save();
+
+            flash()->info('Tweet was sent');
         }
         */
+
 
         if (!$this->posted_on_medium) {
             dispatch(new PostOnMedium($this));
 
             $this->posted_on_medium = true;
             $this->save();
+
+            flash()->info('Posted on medium');
         }
     }
 

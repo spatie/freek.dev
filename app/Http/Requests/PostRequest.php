@@ -27,7 +27,8 @@ class PostRequest extends FormRequest
             'title' => 'required',
             'text' => 'required',
             'publish_date' => 'date',
-            'published' => 'boolean'
+            'published' => 'boolean',
+            'tags_text' => '',
         ];
     }
 }
