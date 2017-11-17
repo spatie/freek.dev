@@ -2,7 +2,7 @@
 require __DIR__.'/vendor/autoload.php';
 (new \Dotenv\Dotenv(__DIR__, '.env'))->load();
 
-$server = "radiorarefish.be";
+$server = "murze.be";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/murze.be";
 $baseDir = "/home/forge/murze.be";
