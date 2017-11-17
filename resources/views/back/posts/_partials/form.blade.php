@@ -25,8 +25,8 @@
 </div>
 
 <div class="form-line">
-    <label class="form-label" for="tags">Publish date:</label>
-    <input class="form-text-input" name="tag_text" value="{{ old('tags_text', $post->tags_text) }}">
+    <label class="form-label" for="tags">Tags:</label>
+    <input class="form-text-input" name="tags_text" value="{{ old('tags_text', $post->tags_text) }}">
     @if($errors->has('tags_text'))
         <div class="validation-error">{{ $errors->first('tags_text') }}</div>
     @endif

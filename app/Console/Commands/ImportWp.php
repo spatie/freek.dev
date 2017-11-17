@@ -70,6 +70,8 @@ class ImportWp extends Command
 
         $postContent = str_replace('-700x459', '', $postContent);
 
+        $postContent = str_replace('https://murze.be/wp-content/uploads', '/old-wordpress-media', $postContent);
+
         return $postContent;
     }
 
