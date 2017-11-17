@@ -179,6 +179,41 @@ class TalkSeeder extends Seeder
                 'slides_link' => 'https://speakerdeck.com/freekmurze/monitoring-uptime-with-laravel',
                 'joindin_link' => 'https://joind.in/event/php-antwerp---pre-phpbenelux-meetup-2017/monitoring-uptime-with-laravel',
             ],
+            [
+                'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
+                'location' => 'PHP Antwerp',
+                'presented_at' => '2017-10-25',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/dashboard-kdg',
+                'joindin_link' => 'https://joind.in/event/php-antwerp---october-meetup-2017/building-a-dashboard-with-laravel-vue-and-pusher',
+            ],
+
+            [
+                'title' => 'Manipulating images in PHP',
+                'location' => 'Laravel Brussels',
+                'presented_at' => '2017-02-27',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/manipulating-images-in-php',
+            ],
+
+            [
+                'title' => 'Monitoring uptime with Laravel',
+                'location' => 'Laravel Brussels',
+                'presented_at' => '2017-01-25',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/monitoring-uptime-with-laravel',
+                'joindin_link' => 'https://joind.in/event/php-antwerp---pre-phpbenelux-meetup-2017/monitoring-uptime-with-laravel',
+            ],
+            [
+                'title' => 'Monitoring uptime with Laravel',
+                'location' => 'PHP Brussels',
+                'presented_at' => '2017-05-16',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/monitoring-uptime-with-laravel',
+            ],
+
+            [
+                'title' => 'Handling media in a Laravel application',
+                'location' => 'PHP Brussels',
+                'presented_at' => '2017-11-14',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/medialibrary-laravel-brussels',
+            ],
 
 
 
