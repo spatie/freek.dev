@@ -5,7 +5,7 @@ require __DIR__.'/vendor/autoload.php';
 $server = "radiorarefish.be";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/murze.be";
-$baseDir = "/home/forge/{$server}";
+$baseDir = "/home/forge/murze.be";
 $releasesDir = "{$baseDir}/releases";
 $persistentDir = "{$baseDir}/persistent";
 $currentDir = "{$baseDir}/current";
