@@ -1,0 +1,25 @@
+.search-results {
+  position: absolute;
+  @apply bg-white w-full md:w-3/5 border-2 rounded p-4 mr-4 mt-2 pin-r ml-4 flex-col content-center z-50 ;
+}
+
+.search-results li {
+  @apply mb-2 border-b pb-2;
+}
+
+.search-results em {
+  background-color: rgba(49, 159, 191, 0.25);
+  font-style: normal;
+}
+
+.search-input {
+  border-radius: .25rem;
+  background-color: #ffffff;
+  border: 1px solid #dae4e9;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
