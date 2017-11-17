@@ -111,7 +111,7 @@ class Post extends BaseModel implements Feedable
 
     public function toSearchableArray(): array
     {
-        if ($this->published) {
+        if (! $this->published) {
             return [];
         }
 
