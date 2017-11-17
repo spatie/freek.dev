@@ -13,7 +13,7 @@
 
 </head>
 <body>
-@include('googletagmanager::script')
+@include('front.layouts._partials.analytics')
 <div id="app" class="container mx-auto">
     <header>
         @include('front.layouts._partials.navigation')
