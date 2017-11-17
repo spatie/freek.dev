@@ -17,7 +17,17 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::bind('postSlug', function ($slug) {
-            return Post::published()->where('slug', $slug)->first() ?? abort(404);
+            $post =  Post::where('slug', $slug)->first() ?? abort(404);
+
+            if (auth()->check()) {
+                return $post;
+            }
+
+            if (! $post->published) {
+                abort(404);
+            }
+
+            return $post;
         });
 
         Route::bind('tagSlug', function ($slug) {

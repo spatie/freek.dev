@@ -19,16 +19,16 @@
         @include('front.layouts._partials.navigation')
     </header>
 
-    <div class="flex flex-col md:flex-row">
+    <div class="flex flex-col lg:flex-row">
 
 
-        <main class="md:w-3/4 mr-4">
+        <main class="lg:w-3/4 mr-4">
             @yield('content')
         </main>
 
-        <div class="md:w-1/4">
+        <div class="lg:w-1/4">
             @include('front.layouts._partials.carbon')
-            {{-- @include('front.home._partials.freek-mini') --}}
+            @include('front.layouts._partials.newsletter')
         </div>
 
 

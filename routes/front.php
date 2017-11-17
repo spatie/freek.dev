@@ -12,7 +12,7 @@ Route::get('newsletter/subscribed', 'NewsletterController@subscribed');
 
 Route::get('talks', 'TalksController@index');
 
-Route::get('about', 'AboutController@index');
+Route::get('me', 'AboutController@index');
 
 Route::view('advertising', 'front.advertising.index');
 

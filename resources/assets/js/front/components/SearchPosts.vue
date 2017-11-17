@@ -16,14 +16,9 @@
                     <div class="bg-blue text-white text-sm font-bold p-2" role="alert">
                         <p>No blogposts found...</p>
                     </div>
-
-
                 </div>
-
-                <img class="pt-2" src="/images/algolia.svg"/>
             </div>
-
-
+            <img class="pt-2" src="/images/algolia.svg"/>
         </div>
     </div>
 </template>

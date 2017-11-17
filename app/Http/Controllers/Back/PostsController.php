@@ -26,11 +26,11 @@ class PostsController extends Controller
 
     public function store(PostRequest $request)
     {
-        (new Post())->updateAttributes($request->validated());
+        $post = (new Post())->updateAttributes($request->validated());
 
         flash()->success('Post saved');
 
-        return redirect()->action('Back\PostsController@index');
+        return redirect()->action('Back\PostsController@edit', $post->id);
     }
 
     public function edit(Post $post)

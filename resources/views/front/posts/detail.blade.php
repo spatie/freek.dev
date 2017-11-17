@@ -10,7 +10,7 @@
         Posted on {{ $post->publish_date }} | {{ $post->author }}
     </div>
 
-    <div class="pt-4">
+    <div class="pt-4 post-content">
         {!! $post->text !!}
     </div>
 
