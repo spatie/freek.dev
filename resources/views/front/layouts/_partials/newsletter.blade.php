@@ -3,7 +3,7 @@
 
     <form class="pt-4 pb-4" action="https://sendy.murze.be/subscribe" method="post" accept-charset="utf-8">
         <div class="flex">
-            <input type="email" id="email" name="email" class="p-2 mr-2 w-32"
+            <input type="email" id="email" name="email" class="p-2 mr-2"
                    placeholder="Your email..." required="required">
             <input type="submit" name="submit" id="submit" value="Subscribe"
                    class="rounded bg-blue text-white py-2 px-2 text-xs font-bold clickable border-none ">
