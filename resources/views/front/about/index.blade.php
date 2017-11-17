@@ -28,7 +28,7 @@
     </p>
 
     <p>
-        Whenever we stumble upon a problem that we can solve in a clean way, we extract our solution for other to use.
+        Whenever we stumble upon a problem that we can solve in a clean way, we extract our solution for others to use.
         Together with my colleagues I regularly release <a href="https://spatie.be/opensource">PHP, Laravel and
             JavaScript packages</a>. Those packages have been downloaded a couple of millions times. Spatie is also
         ranked as number 2 on <a href="http://git-awards.com/users?language=php">Git Awards' list of PHP developers
