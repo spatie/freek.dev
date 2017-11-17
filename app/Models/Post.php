@@ -60,7 +60,7 @@ class Post extends BaseModel implements Feedable
 
         $this->save();
 
-        $tags = array_map(function(string $tag) {
+        $tags = array_map(function (string $tag) {
             return trim(strtolower($tag));
         }, explode(',', $attributes['tags_text']));
 

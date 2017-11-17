@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PostRequest;
-use App\Models\Post;
 use App\Services\Newsletter\Generator;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
