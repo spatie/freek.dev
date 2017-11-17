@@ -132,6 +132,15 @@ class Post extends BaseModel implements Feedable
             ->get();
     }
 
+    public static function getPhpFeedItems()
+    {
+        return static::withAnyTags(['php'])
+            ->where('published', true)
+            ->orderBy('publish_date', 'desc')
+            ->limit(100)
+            ->get();
+    }
+
     public function toFeedItem()
     {
         return FeedItem::create()

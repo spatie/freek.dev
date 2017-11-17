@@ -1,6 +1,6 @@
 <?php
 
-//Route::feeds('feed');
+Route::feeds();
 
 Route::get('/', 'HomeController@index');
 
