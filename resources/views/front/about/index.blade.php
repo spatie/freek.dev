@@ -16,7 +16,7 @@
 
     <p>
         Together with my buddies <a href="https://twitter.com/driesvints">Dries</a> and <a
-                href="https://twitter.com/driesvints">Frederick</a> I organise our local PHP user group <a
+                href="https://twitter.com/maybefrederick">Frederick</a> I organise our local PHP user group <a
                 href="https://phpantwerp.be">PHP Antwerp</a>. If you are ever in the area of our beautiful city and what
         to speak at our user group, let us know!
     </p>
