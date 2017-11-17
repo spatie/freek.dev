@@ -12,13 +12,13 @@ class NavigationServiceProvider extends ServiceProvider
     {
         Menu::macro('main', function () {
             return Menu::new()
-                ->addClass('list-reset flex flex-col lg:flex-row justify-end')
-                ->addItemClass('block rounded py-2 px-4 text-center align-content-center mx-6')
+                ->addClass('list-reset lg:flex justify-end items-center')
+                ->addItemClass('block rounded py-2 px-4 text-center align-content-center lg:mx-6')
                 ->action('Front\HomeController@index', 'Home')
                 ->action('Front\NewsletterController@index', 'Newsletter')
                 ->action('Front\TalksController@index', 'Talks')
                 ->action('Front\AboutController@index', 'About')
-                ->add(View::create('front.layouts._partials.search')->addParentClass('flex justify-center items-center mt-2 lg:mt-0'))
+                ->add(View::create('front.layouts._partials.search')->addParentClass('items-center mt-4 lg:mt-0'))
                 ->setActiveFromRequest('/');
         });
 
