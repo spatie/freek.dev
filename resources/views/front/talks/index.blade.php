@@ -7,11 +7,9 @@
 
     @foreach($talks as $talk)
         <li class="pb-6 pt-4 border-t list-reset">
-            {{ $talk->presented_at->format('M d, Y') }} - {{ $talk->title }}
-            <div> Presented at {{ $talk->location }}</div>
-            <div>
-                {!! $talk->links !!}
-            </div>
+             {{ $talk->title }}
+            <div class="text-xs text-grey">
+                {{ $talk->presented_at->format('M d, Y') }} &nbsp; • &nbsp; {{ $talk->location }} &nbsp; • &nbsp;  {!! $talk->links !!}</div>
         </li>
     @endforeach
 

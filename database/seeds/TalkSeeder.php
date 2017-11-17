@@ -132,7 +132,7 @@ class TalkSeeder extends Seeder
             [
                 'title' => 'A practical intro to snapshot testing',
                 'location' => 'Dutch PHP Conference, Amsterdam',
-                'presented_at' => '2017-30-06',
+                'presented_at' => '2017-06-30',
                 'slides_link' => 'https://joind.in/event/dutch-php-conference-2017/uncon-a-practical-introduction-to-snapshot-testing',
             ],
             [
@@ -257,7 +257,7 @@ class TalkSeeder extends Seeder
             [
                 'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
                 'location' => 'PHP Limburg',
-                'presented_at' => '2017-21-06',
+                'presented_at' => '2017-06-21',
                 'joindin_link' => 'https://joind.in/event/june-meetup---php-limburg-2017/creating-a-dashboard-with-laravel-vue-and-pusher',
                 'slides_link' => 'https://speakerdeck.com/freekmurze/dashboard-php-limburg',
             ],
@@ -290,7 +290,7 @@ class TalkSeeder extends Seeder
             [
                 'title' => 'Creating a realtime dashboard using Laravel, Vue and Pusher',
                 'location' => 'PHP Benelux (uncon)',
-                'presented_at' => '2017-27-01',
+                'presented_at' => '2017-01-27',
                 'joindin_link' => 'https://joind.in/event/phpbenelux-conference-2017/creating-a-realtime-dashboard-with-php-and-websockets-uncon',
                 'slides_link' => 'https://speakerdeck.com/freekmurze/realtime-dashboard-phpbenelux',
             ],

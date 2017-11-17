@@ -13,10 +13,11 @@
     </p>
         <form class="pt-4 pb-4" action="https://sendy.murze.be/subscribe" method="post" accept-charset="utf-8">
             <div class="flex">
-                <input type="email" id="email" class="p-2 w-64"
+                <input type="email" id="email" name="email" class="p-2 w-64"
                        placeholder="Your Email..." required="required">
                 <input type="submit" name="submit" id="submit" value="Sign me up!"
                        class="bg-blue text-white py-2 px-4 text-xs font-bold clickable border-none rounded-none">
+                <input type="hidden" name="list" value="SGDpioFb8i8923zG5xWPFw5A">
             </div>
         </form>
     <p>
