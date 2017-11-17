@@ -11,8 +11,6 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Schema::defaultStringLength(191);
-
         Horizon::auth(function ($request) {
             if (! app()->environment('production')) {
                 return true;
