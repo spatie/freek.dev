@@ -10,6 +10,12 @@
         </div>
     @endauth
 
+    @if($post->title === 'Today DigitalOcean lost our entire server')
+        <div class="bg-white border-2 rounded mb-4 py-4 px-6 mt-4 text-xs">
+            Avoid this from happening to you by using SnapShooter to keep your DigitalOcean servers safe, secure and backed up. SnapShooter offers daily to hourly backups with backup rotation and retention policies. Get started at <a href="https://snapshooter.io/">SnapShooter</a> today! (sponsored link)
+        </div>
+    @endif
+
     <h1>{{ $post->title }}</h1>
 
     <div class="text-grey-darker text-sm pb-6 border-b text-grey">
