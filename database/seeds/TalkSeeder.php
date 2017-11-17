@@ -9,6 +9,7 @@ class TalkSeeder extends Seeder
     public function run()
     {
         $this->getTalks()->each(function (array $talkAttributes) {
+            dump($talkAttributes);
             Talk::create($talkAttributes);
         });
     }
@@ -32,7 +33,7 @@ class TalkSeeder extends Seeder
             [
                 'title' => 'Backing up with Laravel',
                 'location' => 'Barcamp, Antwerp',
-                'presented_at' => '2017-05-12',
+                'presented_at' => '2016-05-12',
             ],
             [
                 'title' => 'The story behind our open source efforts',
@@ -109,14 +110,79 @@ class TalkSeeder extends Seeder
                 'title' => 'Taking care of backups with Laravel',
                 'location' => 'php[world], Washington',
                 'presented_at' => '2016-11-16',
-                'https://speakerdeck.com/freekmurze/backing-up-with-laravel-phpworld',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/backing-up-with-laravel-phpworld',
             ],
             [
                 'title' => 'Creating a dashboard with Laravel and Vue',
                 'location' => 'php[world], Washington',
                 'presented_at' => '2016-11-17',
-                'https://speakerdeck.com/freekmurze/creating-a-dashboard-phpworld',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/creating-a-dashboard-phpworld',
             ],
+            [
+                'title' => 'Creating a dashboard with Laravel and Vue',
+                'location' => 'Algolia HQ, Paris',
+                'presented_at' => '2017-09-07',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/dashboard-algolia',
+            ],
+            [
+                'title' => 'Creating a dashboard using PHP and Websockets',
+                'location' => 'Dutch PHP Conference, Amsterdam',
+                'presented_at' => '2017-07-01',
+                'slides_link' => 'https://joind.in/event/dutch-php-conference-2017/creating-a-realtime-dashboard-with-php-and-websockets',
+            ],
+            [
+                'title' => 'A practical intro to snapshot testing',
+                'location' => 'Dutch PHP Conference, Amsterdam',
+                'presented_at' => '2017-30-06',
+                'slides_link' => 'https://joind.in/event/dutch-php-conference-2017/uncon-a-practical-introduction-to-snapshot-testing',
+            ],
+            [
+                'title' => 'Creating a dashboard using PHP and Websockets',
+                'location' => 'Fosdem, Brussels',
+                'presented_at' => '2017-02-04',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/dashboard-fosdem',
+            ],
+
+            [
+                'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
+                'location' => 'Laracon EU, Amsterdam',
+                'presented_at' => '2017-08-30',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/dashboard-laraconeu',
+                'video_link' => 'https://www.youtube.com/watch?v=jtB_rTh61Zo',
+            ],
+
+            [
+                'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
+                'location' => 'Laracon US, New York',
+                'presented_at' => '2017-07-25',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/dashboard-laraconus',
+                'video_link' => 'https://streamacon.com/video/laracon-us-2017/day-1-freek-van-der-herten',
+            ],
+            [
+                'title' => 'Taking care of backups with Laravel',
+                'location' => 'Laravel Live, New Delhi',
+                'presented_at' => '2017-03-29',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/backing-up-with-laravel-india',
+            ],
+            [
+                'title' => 'A practical intro to snapshot testing',
+                'location' => 'Nomad PHP',
+                'presented_at' => '2017-03-29',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/snapshot-testing-nomadphp',
+                'video_link' => 'https://www.facebook.com/834852033263386/videos/1430533787028538',
+            ],
+
+            [
+                'title' => 'Monitoring uptime with Laravel',
+                'location' => 'PHP Antwerp',
+                'presented_at' => '2017-01-25',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/monitoring-uptime-with-laravel',
+                'joindin_link' => 'https://joind.in/event/php-antwerp---pre-phpbenelux-meetup-2017/monitoring-uptime-with-laravel',
+            ],
+
+
+
+
         ]);
     }
 }
