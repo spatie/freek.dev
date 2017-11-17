@@ -2,7 +2,7 @@
 
 <meta property="og:site_name" content="murze.be">
 <meta property="og:locale" content="en_US">
-<meta property="og:description" content="Freek Van der Herten is a developer and partner at Spatie.">
+<meta property="og:description" content="Freek Van der Herten is a Laravel enthousiast and PHP developer at Spatie.">
 <meta property="og:url" content="{{ request()->fullUrl() }}">
 <meta property="og:image" content="https://murze.be/images/avatar-boxed.jpg">
 
