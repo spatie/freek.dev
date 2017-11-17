@@ -9,7 +9,6 @@ class TalkSeeder extends Seeder
     public function run()
     {
         $this->getTalks()->each(function (array $talkAttributes) {
-            dump($talkAttributes);
             Talk::create($talkAttributes);
         });
     }
