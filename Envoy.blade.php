@@ -135,6 +135,7 @@ php artisan horizon:terminate
 php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
+php artisan responsecache:flush
 
 sudo service php7.1-fpm restart
 sudo supervisorctl restart all
@@ -159,6 +160,7 @@ git pull origin master
 php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
+php artisan responsecache:flush
 sudo supervisorctl restart all
 sudo service php7.1-fpm restart
 @endtask
