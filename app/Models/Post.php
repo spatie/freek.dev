@@ -77,7 +77,7 @@ class Post extends BaseModel implements Feedable
 
     protected function publishOnSocialMedia()
     {
-        /*
+
         if (!$this->tweet_sent) {
             dispatch(new SendTweet($this));
 
@@ -86,8 +86,6 @@ class Post extends BaseModel implements Feedable
 
             flash()->info('Tweet was sent');
         }
-        */
-
 
         if (!$this->posted_on_medium) {
             dispatch(new PostOnMedium($this));
