@@ -271,7 +271,38 @@ class TalkSeeder extends Seeder
                 'slides_link' => 'https://speakerdeck.com/freekmurze/snapshot-testing-phplimburg',
             ],
 
+            [
+                'title' => 'Backing up with Laravel',
+                'location' => 'PHP UK Conference, London',
+                'presented_at' => '2017-02-17',
+                'joindin_link' => 'https://joind.in/event/php-uk-2017/taking-care-of-backups-with-laravel',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/backing-up-with-laravel-phpuk',
+                'video_link' => 'https://www.youtube.com/watch?v=klPNJypmIWQ'
+            ],
 
+            [
+                'title' => 'Backing up with Laravel',
+                'location' => 'PHP Unicorn Conference',
+                'presented_at' => '2017-05-04',
+                'joindin_link' => 'https://joind.in/event/php-unicorn-conference-online/taking-care-of-backups-with-laravel',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/backing-up-with-laravel-unicorn',
+            ],
+
+            [
+                'title' => 'Creating a realtime dashboard using Laravel, Vue and Pusher',
+                'location' => 'PHP Benelux (uncon)',
+                'presented_at' => '2017-27-01',
+                'joindin_link' => 'https://joind.in/event/phpbenelux-conference-2017/creating-a-realtime-dashboard-with-php-and-websockets-uncon',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/realtime-dashboard-phpbenelux',
+            ],
+
+            [
+                'title' => 'A hands on introduction to Laravel',
+                'location' => 'PHPKonf, Instanbul',
+                'presented_at' => '2017-11-14',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/introduction-to-laravel-phpkonf',
+                'joindin_link' => 'https://joind.in/event/php-central-europe-conference/a-hands-on-introduction-to-laravel',
+            ],
 
 
         ]);
