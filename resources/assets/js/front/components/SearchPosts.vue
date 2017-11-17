@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="position: relative">
         <div>
             <input class="search-input" placeholder="Search blogposts..." v-model="query" type="text"
                    @input="performSearch">
