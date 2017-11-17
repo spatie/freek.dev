@@ -18,7 +18,7 @@ class NavigationServiceProvider extends ServiceProvider
                 ->action('Front\NewsletterController@index', 'Newsletter')
                 ->action('Front\TalksController@index', 'Talks')
                 ->action('Front\AboutController@index', 'About')
-                ->add(View::create('front.layouts._partials.search')->addParentClass('flex justify-center items-center'))
+                ->add(View::create('front.layouts._partials.search')->addParentClass('flex justify-center items-center mt-2 lg:mt-0'))
                 ->setActiveFromRequest('/');
         });
 
