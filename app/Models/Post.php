@@ -10,6 +10,7 @@ use Laravel\Scout\Searchable;
 use Parsedown;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
+use Spatie\ResponseCache\Facades\ResponseCache;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Tags\HasTags;
@@ -68,6 +69,8 @@ class Post extends BaseModel implements Feedable
         if ($this->published) {
             $this->publishOnSocialMedia();
         }
+
+        ResponseCache::flush();
 
         return $this;
     }

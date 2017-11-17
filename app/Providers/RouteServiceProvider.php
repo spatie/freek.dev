@@ -59,7 +59,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapFrontRoutes()
     {
-        Route::middleware('web')
+        Route::middleware(['web', 'cacheResponse'])
             ->namespace($this->namespace . '\\Front')
             ->group(base_path('routes/front.php'));
     }
