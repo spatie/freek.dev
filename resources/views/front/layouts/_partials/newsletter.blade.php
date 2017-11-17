@@ -6,7 +6,7 @@
             <input type="email" id="email" name="email" class="p-2 mr-2 flex-1"
                    placeholder="Your email..." required="required">
             <input type="submit" name="submit" id="submit" value="Subscribe"
-                   class="rounded bg-blue text-white py-2 px-2 text-xs font-bold clickable border-none flex-1">
+                   class="rounded bg-blue text-white py-2 px-2 text-xs font-bold clickable cursor-pointer border-none flex-1">
             <input type="hidden" name="list" value="SGDpioFb8i8923zG5xWPFw5A">
         </div>
     </form>
