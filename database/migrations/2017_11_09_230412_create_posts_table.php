@@ -13,6 +13,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('text');
+            $table->string('wp_id')->nullable();
             $table->string('wp_post_name')->nullable();
             $table->datetime('publish_date');
             $table->boolean('published')->default(false);

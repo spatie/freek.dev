@@ -33,6 +33,7 @@ class ImportWp extends Command
                     'title' => $oldPost->post_title,
                     'text' => $this->sanitizePostContent($oldPost->post_content),
                     'wp_post_name' => $oldPost->post_name,
+                    'wp_id' => $oldPost->ID,
                     'publish_date' => Carbon::createFromFormat('Y-m-d H:i:s', $oldPost->post_date),
                     'published' => true,
                     'tweet_sent' => true,
@@ -70,7 +71,7 @@ class ImportWp extends Command
 
         $postContent = str_replace('-700x459', '', $postContent);
 
-        $postContent = str_replace('https://murze.be/wp-content/uploads', '/old-wordpress-media', $postContent);
+        $postContent = str_replace('https://murze.be/wp-content/uploads', '/uploads', $postContent);
 
         return $postContent;
     }

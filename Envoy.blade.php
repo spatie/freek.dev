@@ -50,7 +50,7 @@ git pull origin master
 {{ logMessage("🌀  Cloning repository...") }}
 [ -d {{ $releasesDir }} ] || mkdir {{ $releasesDir }};
 [ -d {{ $persistentDir }} ] || mkdir {{ $persistentDir }};
-[ -d {{ $persistentDir }}/media ] || mkdir {{ $persistentDir }}/media;
+[ -d {{ $persistentDir }}/uploads ] || mkdir {{ $persistentDir }}/uploads;
 [ -d {{ $persistentDir }}/storage ] || mkdir {{ $persistentDir }}/storage;
 cd {{ $releasesDir }};
 
@@ -99,10 +99,10 @@ rm -rf {{ $newReleaseDir }}/storage;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/storage storage;
 
-# Remove the public/media directory and replace with persistent data
-rm -rf {{ $newReleaseDir }}/public/media;
+# Remove the public/uploads directory and replace with persistent data
+rm -rf {{ $newReleaseDir }}/public/uploads;
 cd {{ $newReleaseDir }};
-ln -nfs {{ $baseDir }}/persistent/media public/media;
+ln -nfs {{ $baseDir }}/persistent/uploads public/uploads;
 
 # Import the environment config
 cd {{ $newReleaseDir }};
@@ -169,7 +169,3 @@ php artisan config:cache
 sudo supervisorctl restart all
 sudo service php7.1-fpm restart
 @endtask
-
-@finished
-    @slack(env('SLACK_DEPLOYMENT_WEBHOOK_URL'), '#deployments', "{$server}: {$baseDir} release {$newReleaseName} by {$user}")
-@endfinished
