@@ -158,6 +158,14 @@ class TalkSeeder extends Seeder
                 'slides_link' => 'https://speakerdeck.com/freekmurze/dashboard-laraconus',
                 'video_link' => 'https://streamacon.com/video/laracon-us-2017/day-1-freek-van-der-herten',
             ],
+
+            [
+                'title' => 'A practical intro to snapshot testing',
+                'location' => 'Laracon US, New York',
+                'presented_at' => '2017-07-25',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/snapshot-testing-laraconus',
+            ],
+
             [
                 'title' => 'Taking care of backups with Laravel',
                 'location' => 'Laravel Live, New Delhi',
@@ -213,6 +221,54 @@ class TalkSeeder extends Seeder
                 'location' => 'PHP Brussels',
                 'presented_at' => '2017-11-14',
                 'slides_link' => 'https://speakerdeck.com/freekmurze/medialibrary-laravel-brussels',
+            ],
+
+            [
+                'title' => 'A hands on introduction to Laravel',
+                'location' => 'PHP Central Europe Conference, Poland',
+                'presented_at' => '2017-11-14',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/laravel-intro-phpce',
+                'joindin_link' => 'https://joind.in/event/php-central-europe-conference/a-hands-on-introduction-to-laravel',
+            ],
+
+            [
+                'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
+                'location' => 'PHP Eindhoven',
+                'presented_at' => '2017-18-01',
+            ],
+
+            [
+                'title' => 'The story behind our open source efforts',
+                'location' => 'PHP Eindhoven',
+                'presented_at' => '2017-18-01',
+            ],
+
+            [
+                'title' => 'Monitoring uptime with Laravel',
+                'location' => 'PHP Eindhoven',
+                'presented_at' => '2017-03-05',
+            ],
+
+            [
+                'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
+                'location' => 'PHP Gent',
+                'presented_at' => '2017-17-01',
+            ],
+
+            [
+                'title' => 'Creating a dashboard using Laravel, Vue and Pusher',
+                'location' => 'PHP Limburg',
+                'presented_at' => '2017-21-06',
+                'joindin_link' => 'https://joind.in/event/june-meetup---php-limburg-2017/creating-a-dashboard-with-laravel-vue-and-pusher',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/dashboard-php-limburg',
+            ],
+
+            [
+                'title' => 'A practical intro to snapshot testing',
+                'location' => 'PHP Limburg',
+                'presented_at' => '2017-09-06',
+                'joindin_link' => 'https://joind.in/event/september-meetup---php-limburg/a-practical-introduction-to-snapshot-testing',
+                'slides_link' => 'https://speakerdeck.com/freekmurze/snapshot-testing-phplimburg',
             ],
 
 
