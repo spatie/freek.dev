@@ -7,7 +7,7 @@ Route::get('/', 'HomeController@index');
 Route::get('tag/{tagSlug}', 'TaggedPostsController@index');
 
 Route::get('newsletter', 'NewsletterController@index');
-Route::get('newsletter/confirm', 'NewsletterController@confirm');
+Route::get('newsletter/confirm-your-email', 'NewsletterController@confirm');
 Route::get('newsletter/subscribed', 'NewsletterController@subscribed');
 
 Route::get('talks', 'TalksController@index');
