@@ -1,0 +1,25 @@
+#carbonads {
+    @apply .flex .flex-col  .content-center .self-start .bg-white .border-2 .rounded .mb-4 .py-4 .px-6 .mt-4 .max-w-sm .text-xs .leading-normal .text-grey-dark;
+}
+
+.carbon-wrap {
+    @apply .flex .flex-col .items-center;
+
+}
+
+#carbonads a {
+    color: inherit;
+}
+
+.carbon-wrap a:hover {
+    color: config('colors.blue');
+}
+
+.carbon-text {
+    @apply .mt-2 mb-2;
+}
+
+.carbon-poweredby {
+    font-size: 9px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,52 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  @apply .text-lg .leading-normal .text-grey-darker;
+  background-color: #fffbf9;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+header {
+  @apply .pb-4;
+}
+
+h1 {
+  color:black;
+  @apply .pb-4 .text-2xl;
+}
+
+h2 {
+  color: black;
+  @apply .pt-8 .text-xl;
+}
+
+h3 {
+  @apply .pt-8 ;
+}
+
+p {
+  @apply .pb-2 .pt-2;
+}
+
+a {
+  color: config('colors.blue');
+}
+
+a:hover {
+  color: config('colors.blue-dark');
+}
+
+.active {
+  @apply rounded-lg;
+  background-color: config('colors.blue');
+}
+
+.active a {
+  color: white;
+}
+
+img {
+  width: auto;
+  height: auto;
+}

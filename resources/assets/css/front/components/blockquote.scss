@@ -1,0 +1,16 @@
+blockquote {
+  @apply .bg-grey-lightest .border-l-8 .border-grey .text-grey-dark .p-6 .mt-3 mb-3;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.10em;
+  vertical-align: -0.4em;
+}
+
+blockquote:after {
+  @apply .pt-4;
+}

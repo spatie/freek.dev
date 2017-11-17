@@ -1,0 +1,24 @@
+@tailwind preflight;
+
+@import "../bootstrap";
+
+@import "components/page";
+@import "components/form";
+@import "components/button";
+@import "components/simpleMde";
+@import "components/alert";
+
+@tailwind utilities;
+
+
+table {
+  border-collapse: collapse;
+  border: 1px solid grey
+}
+
+td,
+th
+{
+  border: 1px solid grey;
+  padding: 0.5rem 1rem
+}
