@@ -1,7 +1,10 @@
+.search-input {
+  @apply rounded bg-white border py-2 pr-4 block w-full px-3;
+}
+
 .search-results {
   position: absolute;
-  @apply bg-white w-full border-2 rounded p-4 mr-4 ml-4 mt-2 pin-r  flex-col content-center z-50 ;
-
+  @apply bg-white w-full border-2 rounded p-4 mr-4 ml-4 mt-2 pin-r  flex-col content-center z-50;
 }
 
 @screen md {
@@ -19,14 +22,4 @@
   font-style: normal;
 }
 
-.search-input {
-  border-radius: .25rem;
-  background-color: #ffffff;
-  border: 1px solid #dae4e9;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-right: 1rem;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
+
