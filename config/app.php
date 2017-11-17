@@ -179,8 +179,6 @@ return [
         App\Providers\NavigationServiceProvider::class,
         App\Services\Twitter\TwitterServiceProvider::class,
         App\Services\Medium\MediumServiceProvider::class,
-        Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
-
     ],
 
     /*

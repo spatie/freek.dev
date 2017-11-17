@@ -20,6 +20,7 @@
         "laravel/tinker": "~1.0",
         "spatie/laravel-backup": "^5.1",
         "spatie/laravel-feed": "^2.0",
+        "spatie/laravel-googletagmanager": "^2.4",
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-missing-page-redirector": "^2.1",
         "spatie/laravel-responsecache": "^4.1",
