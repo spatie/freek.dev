@@ -30,7 +30,6 @@ updateSymlinks
 optimizeInstallation
 backupDatabase
 migrateDatabase
-insertNewFragments
 blessNewRelease
 cleanOldReleases
 finishDeploy
@@ -139,12 +138,6 @@ php artisan config:cache
 
 sudo service php7.1-fpm restart
 sudo supervisorctl restart all
-@endtask
-
-@task('insertNewFragments', ['on' => 'remote'])
-{{ logMessage("㊙  Inserting new fragments...") }}
-cd {{ $newReleaseDir }};
-php artisan fragments:import;
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])
