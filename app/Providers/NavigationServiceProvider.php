@@ -17,8 +17,7 @@ class NavigationServiceProvider extends ServiceProvider
                 ->action('Front\HomeController@index', 'Home')
                 ->action('Front\OriginalsController@index', 'Originals')
                 ->action('Front\NewsletterController@index', 'Newsletter')
-                ->action('Front\TalksController@index', 'Talks')
-                ->action('Front\AboutController@index', 'Me')
+                ->action('Front\MeController@index', 'Me')
                 ->add(View::create('front.layouts._partials.search')->addParentClass('items-center mt-4 lg:mt-0'))
                 ->setActiveFromRequest('/');
         });

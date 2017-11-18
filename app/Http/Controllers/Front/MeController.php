@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
 use App\Models\Talk;
+use Illuminate\Routing\Controller;
 
-class TalksController extends Controller
+class MeController extends Controller
 {
     public function index()
     {
         $talks = Talk::orderBy('presented_at', 'desc')->get();
 
-        return view('front.talks.index', compact('talks'));
+        return view('front.me.index', compact('talks'));
     }
 }
