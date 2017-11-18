@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="alternate" type="application/atom+xml" title="murze.be RSS Feed" href="/feed">
+    @include('feed::links')
     <title>@yield('title') - Freek Van der Herten's blog on PHP and Laravel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">

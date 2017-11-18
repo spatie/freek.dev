@@ -6,13 +6,19 @@ return [
         'main' => [
             'items' => \App\Models\Post::class . '@getFeedItems',
             'url' => '/feed',
-            'title' => 'murze.be',
+            'title' => 'All blogposts',
         ],
 
         'php' => [
             'items' => \App\Models\Post::class . '@getPhpFeedItems',
             'url' => '/feed/php',
-            'title' => 'PHP feed murze.be',
+            'title' => 'All blogposts on PHP',
+        ],
+
+        'originals' => [
+            'items' => \App\Models\Post::class . '@getOriginalContentFeedItems',
+            'url' => '/feed/originals',
+            'title' => 'All originally written blogposts',
         ],
     ],
 

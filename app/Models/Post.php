@@ -129,7 +129,7 @@ class Post extends BaseModel implements Feedable
 
     public static function getFeedItems()
     {
-        return static::where('published', true)
+        return static::published()
             ->orderBy('publish_date', 'desc')
             ->limit(100)
             ->get();
@@ -138,7 +138,16 @@ class Post extends BaseModel implements Feedable
     public static function getPhpFeedItems()
     {
         return static::withAnyTags(['php'])
-            ->where('published', true)
+            ->published()
+            ->orderBy('publish_date', 'desc')
+            ->limit(100)
+            ->get();
+    }
+
+    public static function getOriginalContentFeedItems()
+    {
+        return static::published()
+            ->where('original_content', true)
             ->orderBy('publish_date', 'desc')
             ->limit(100)
             ->get();
