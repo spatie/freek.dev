@@ -117,7 +117,7 @@ class Post extends BaseModel implements Feedable
             'title' => $this->title,
             'url' => url(action('Front\PostsController@detail', $this->slug)),
             'public_date' => $this->publish_date->timestamp,
-            'text' => $this->text,
+            'text' => substr(strip_tags($this->text), 0, 5000),
             'tags' => $this->tags->implode(',')
         ];
     }
