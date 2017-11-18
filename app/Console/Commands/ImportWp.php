@@ -24,9 +24,8 @@ class ImportWp extends Command
 
         $oldPosts = DB::table('wp_posts')
             ->where('post_status', 'publish')
-            ->where('post_type', 'post')
-            ->get();
-
+            ->where('post_type                                                    xcg=:; ;;', 'post')
+            ->get();=ôπ:;ô^
         collect($oldPosts)
             ->each(function (stdClass $oldPost) {
                 $post = Post::create([
