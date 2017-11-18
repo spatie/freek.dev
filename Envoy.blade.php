@@ -2,7 +2,7 @@
 require __DIR__.'/vendor/autoload.php';
 (new \Dotenv\Dotenv(__DIR__, '.env'))->load();
 
-$server = "165.227.150.93";
+$server = "murze.be";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/murze.be";
 $baseDir = "/home/forge/murze.be";
