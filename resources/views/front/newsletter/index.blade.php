@@ -12,8 +12,8 @@
    </p>
 
     <p>
-        Want to know what you're getting yourself into? Here's [a previous
-        edition](https://sendy.murze.be/w/db6bg1gpZgjCkCxhjltj4g).
+        Want to know what you're getting yourself into? Here's <a href="https://sendy.murze.be/w/db6bg1gpZgjCkCxhjltj4g">a previous
+            edition</a>.
     </p>
 
     <form class="pt-4 pb-4 flex justify-center" action="https://sendy.murze.be/subscribe" method="post"
