@@ -70,6 +70,7 @@ class Generator
                 $startDate,
                 $endDate
             ])
+            ->orderBy('original_content', 'desc')
             ->get()
             ->$method->concernsTweet();
     }
