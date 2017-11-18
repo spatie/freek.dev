@@ -2,16 +2,16 @@
     <ul class="pagination flex justify-between pt-4">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="button opacity-50"><span>@lang('pagination.previous')</span></li>
+            <li><span class="button opacity-50">@lang('pagination.previous')</span></li>
         @else
-            <li class="button"><a href="{{ $paginator->previousPageUrl() }}" rel="prev">@lang('pagination.previous')</a></li>
+            <li><a href="{{ $paginator->previousPageUrl() }}" rel="prev" class="button hover:text-white">@lang('pagination.previous')</a></li>
         @endif
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <li class="button"><a href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('pagination.next')</a></li>
+            <li><a href="{{ $paginator->nextPageUrl() }}" rel="next" class="button hover:text-white">@lang('pagination.next')</a></li>
         @else
-            <li class="button opacity-50"><span>@lang('pagination.next')</span></li>
+            <li><span class="button opacity-50">@lang('pagination.next')</span></li>
         @endif
     </ul>
 @endif
