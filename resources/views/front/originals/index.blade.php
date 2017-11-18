@@ -1,11 +1,11 @@
 @extends('front.layouts.master')
 
-@section('title', 'Home')
+@section('title', 'Original')
 
 @section('content')
 
     @if($onFirstPage)
-        <h1>Recent blog entries</h1>
+        <h1>Originals</h1>
     @else
         <div class="pb-4">
             {{ $posts->links() }}

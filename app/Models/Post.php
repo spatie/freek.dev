@@ -27,6 +27,11 @@ class Post extends BaseModel implements Feedable
 
     public $dates = ['publish_date'];
 
+    public $casts = [
+        'published' => 'boolean',
+        'original_content' => 'boolean'
+    ];
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
@@ -57,6 +62,7 @@ class Post extends BaseModel implements Feedable
         $this->text = $attributes['text'];
         $this->publish_date = $attributes['publish_date'];
         $this->published = $attributes['published'] ?? false;
+        $this->original_content = $attributes['original_content'] ?? false;
 
         $this->save();
 
@@ -142,7 +148,7 @@ class Post extends BaseModel implements Feedable
     {
         return FeedItem::create()
             ->id($this->id)
-            ->title($this->title)
+            ->title($this->formatted_title)
             ->summary($this->text)
             ->updated($this->updated_at)
             ->link(url(action('Front\PostsController@detail', $this->slug)))
