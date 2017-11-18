@@ -36,6 +36,10 @@
     <input class="" name="published" value="1" type="checkbox" {{ $post->published ? 'checked' : '' }}> Published
 </div>
 
+<div class="form-line form-checkbox">
+    <input class="" name="original_content" value="1" type="checkbox" {{ $post->original_content ? 'checked' : '' }}> Original content
+</div>
+
 <div class="form-line">
     <button type="submit" class="btn btn-blue">{{ $submitText }}</button>
 </div>

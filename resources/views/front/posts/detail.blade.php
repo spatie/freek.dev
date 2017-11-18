@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', $post->title)
+@section('title', $post->formatted_title )
 
 @section('content')
 
@@ -16,7 +16,7 @@
         </div>
     @endif
 
-    <h1>{{ $post->title }}</h1>
+    <h1>{{ $post->formatted_title }}</h1>
 
     <div class="text-grey-darker text-sm pb-6 border-b text-grey">
         Posted on {{ $post->publish_date }} | {{ $post->author }}

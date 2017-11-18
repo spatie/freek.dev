@@ -42,4 +42,13 @@ trait PostPresenter
             ->pluck('name')
             ->implode(', ');
     }
+
+    public function getFormattedTitleAttribute(): string
+    {
+        $prefix = $this->original_content
+            ? '★ '
+            : '';
+
+        return $prefix . $this->title;
+    }
 }
