@@ -38,7 +38,7 @@
     <footer class="px-4 mx-auto border-t py-6 mt-6 text-center text-sm sm:text-base">
         <a href="https://twitter.com/freekmurze">@freekmurze</a>
         &nbsp; • &nbsp;
-        <a href="/feed">RSS</a>
+        <a href="/feed" data-turbolinks="false">RSS</a>
         &nbsp; • &nbsp;
         <a href="/advertising">Advertising</a>
     </footer>
