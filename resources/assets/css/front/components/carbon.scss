@@ -3,6 +3,11 @@
     animation: carbon .1s linear;
 }
 
+[data-turbolinks-preview] #carbonads,
+[id^="carbonads_"] {
+    display: none;
+}
+
 .carbon-wrap {
     @apply .flex .flex-col .items-center;
 }
