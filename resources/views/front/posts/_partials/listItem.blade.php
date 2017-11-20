@@ -2,13 +2,13 @@
     <a href="{{ action('Front\PostsController@detail', [$post->slug]) }}">
         {{ $post->formatted_title }}
     </a>
-    <div class="flex content-center text-xs pt-2 mb-2">
-        <div class="flex flex-col justify-center text-grey">
+    <div class="flex items-center text-xs pt-2 mb-2">
+        <span class="text-grey">
             {{ $post->publish_date->format('F d, Y') }}
-        </div>
+        </span>
 
         @if ($post->tags->count())
-            <div class="flex flex-col justify-center">&nbsp; | &nbsp;</div>
+            <span class="text-grey-light">&nbsp; | &nbsp;</span>
         @endif
 
         @include('front.posts._partials.tags')
