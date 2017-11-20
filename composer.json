@@ -8,10 +8,7 @@
         "php": ">=7.0.0",
         "abraham/twitteroauth": "^0.7.4",
         "algolia/algoliasearch-client-php": "^1.23",
-        "barryvdh/laravel-debugbar": "^3.1",
-        "barryvdh/laravel-ide-helper": "^2.4",
         "fideloper/proxy": "~3.3",
-        "friendsofphp/php-cs-fixer": "^2.8",
         "guzzlehttp/guzzle": "^6.3",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
@@ -28,8 +25,11 @@
         "spatie/laravel-tail": "^2.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.1",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
+        "friendsofphp/php-cs-fixer": "^2.8",
         "mockery/mockery": "~1.0",
         "nunomaduro/collision": "^1.1",
         "phpunit/phpunit": "~6.0"
