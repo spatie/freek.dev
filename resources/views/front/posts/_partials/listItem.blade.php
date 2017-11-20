@@ -3,12 +3,12 @@
         {{ $post->formatted_title }}
     </a>
     <div class="flex items-center text-xs pt-2 mb-2">
-        <span class="text-grey">
+        <time datetime="{{ $post->publish_date->format(DateTime::ATOM) }}" class="text-grey">
             {{ $post->publish_date->format('F d, Y') }}
-        </span>
+        </time>
 
         @if ($post->tags->count())
-            <span class="text-grey-light">&nbsp; | &nbsp;</span>
+            <span class="text-grey">&nbsp; | &nbsp;</span>
         @endif
 
         @include('front.posts._partials.tags')
