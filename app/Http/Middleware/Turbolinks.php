@@ -17,7 +17,7 @@ class Turbolinks
     {
         $response = $next($request);
 
-        $response->header('Turbolinks-Location', $request->url(), false);
+        $response->headers->set('Turbolinks-Location', $request->url(), false);
 
         return $response;
     }
