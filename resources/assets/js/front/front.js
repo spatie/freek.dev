@@ -1,16 +1,26 @@
-window.Vue = require('vue');
+import Vue from 'vue';
+import Turbolinks from 'turbolinks';
+import TurbolinksAdapter from 'vue-turbolinks';
+import SearchPosts from './components/SearchPosts';
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.use(TurbolinksAdapter);
 
-Vue.component('search-posts', require('./components/SearchPosts.vue'));
+document.addEventListener('turbolinks:load', () => {
+    const searchPostsEl = document.querySelector('#search-posts');
 
-const app = new Vue({
-    el: '#navigation'
+    new Vue({
+        el: searchPostsEl,
+
+        render: h => h(SearchPosts, {
+            props: { ...searchPostsEl.dataset },
+        }),
+    });
+
+    if (document.querySelector('pre code')) {
+        import('./modules/highlight' /* webpackChunkName: "highlight" */).then(highlight => {
+            highlight.start();
+        });
+    }
 });
 
-import Highlight from './modules/highlight';
-Highlight.start();
+Turbolinks.start();

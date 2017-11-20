@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{{ mix('css/front.css') }}">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <script defer src="{{ mix('js/front.js') }}"></script>
+    <link rel="prefetch" href="/js/highlight.js" as="script">
 </head>
 <body>
 @include('front.layouts._partials.analytics')
@@ -42,7 +43,5 @@
         <a href="/advertising">Advertising</a>
     </footer>
 </div>
-
-<script src="{{ mix('js/front.js') }}"></script>
 </body>
 </html>

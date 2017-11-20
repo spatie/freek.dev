@@ -2,14 +2,15 @@
 
 @import "../bootstrap";
 
-@import "components/code";
+@import "components/blockquote";
+@import "components/button";
 @import "components/carbon";
+@import "components/code";
+@import "components/newsletter";
 @import "components/page";
 @import "components/search";
 @import "components/tag";
-@import "components/button";
-@import "components/blockquote";
-@import "components/newsletter";
+@import "components/turbolinks";
 
 @tailwind utilities;
 
