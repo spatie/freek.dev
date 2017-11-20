@@ -1,6 +1,5 @@
 const glob = require('glob-all');
 const mix = require('laravel-mix');
-const webpack = require('webpack');
 const tailwindcss = require('tailwindcss');
 const purgeCss = require('purgecss-webpack-plugin');
 
