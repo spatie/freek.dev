@@ -1,4 +1,7 @@
 let mix = require('laravel-mix');
+const webpack = require('webpack');
+let purgeCss = require('purgecss-webpack-plugin')
+let glob = require('glob-all')
 
 /*
  |--------------------------------------------------------------------------
@@ -31,3 +34,29 @@ mix.js('resources/assets/js/front/front.js', 'public/js')
         postCss: [ tailwindcss('tailwind.js') ],
     })
     .version();
+
+
+mix.webpackConfig({
+    plugins: [
+        new purgeCss({
+            paths: glob.sync([
+                path.join(__dirname, 'app/**/*.php'),
+                path.join(__dirname, 'resources/views/**/*.blade.php'),
+                path.join(__dirname, 'resources/assets/js/**/*.vue'),
+                path.join(__dirname, 'node_modules/simplemde/**/*.js'),
+                path.join(__dirname, 'vendor/spatie/menu/**/*.php'),
+            ]),
+            whitelistPatterns: [/carbon/],
+            extractors: [
+                {
+                    extractor: class {
+                        static extract(content) {
+                            return content.match(/[A-z0-9-:\/]+/g)
+                        }
+                    },
+                    extensions: ['html', 'js', 'php', 'vue'],
+                }
+            ]
+        })
+    ],
+})
