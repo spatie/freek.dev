@@ -4,5 +4,5 @@
     data-api-key="{{ config('scout.algolia.public_key') }}"
     data-index-name="{{ config('scout.algolia.index') }}"
 >
-    <input placeholder="Search blogposts..." type="text" class="search-input">
+    <input placeholder="Search blogposts…" type="text" class="search-input">
 </div>

@@ -1,7 +1,7 @@
 <template>
     <div style="position: relative">
         <div>
-            <input class="search-input" placeholder="Search blogposts..." v-model="query" type="text"
+            <input class="search-input" placeholder="Search blogposts…" v-model="query" type="text"
                    @input="performSearch">
         </div>
 
@@ -14,7 +14,7 @@
             <div v-else>
                 <div>
                     <div class="bg-blue text-white text-sm font-bold p-2" role="alert">
-                        <p>No blogposts found...</p>
+                        <p>No blogposts found…</p>
                     </div>
                 </div>
             </div>
