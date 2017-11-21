@@ -22,7 +22,7 @@
     </p>
 
     <p>
-        At Spatie we use a lot of open source software: PHP, Ubuntu, Laravel, Composer, Beanstalkd, ... are a few of the
+        At Spatie we use a lot of open source software: PHP, Ubuntu, Laravel, Composer, Beanstalkd,… are a few of the
         things we use everyday. My company couldn't exists without open source software. That's why we try to give back
         as much as possible.
     </p>

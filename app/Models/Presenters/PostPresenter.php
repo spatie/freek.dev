@@ -30,7 +30,7 @@ trait PostPresenter
 
         $ww = wordwrap($excerpt, 150, "\n");
 
-        $excerpt = substr($ww, 0, strpos($ww, "\n")) . '...';
+        $excerpt = substr($ww, 0, strpos($ww, "\n")) . '…';
 
         return $excerpt;
     }

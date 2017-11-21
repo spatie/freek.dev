@@ -21,7 +21,7 @@
         <div class="flex flex-1 max-w-sm">
             <input type="email" id="email" name="email"
                    class="w-2/3 rounded xl:rounded-l 2xl:rounded border p-3 mr-2 lg:mr-0 lg:mb-1 xl:mb-0"
-                   placeholder="Your email..." required="required">
+                   placeholder="Your email…" required="required">
             <input type="submit" name="submit" id="submit" value="Subscribe"
                    class="w-1/3 rounded xl:rounded-r 2xl:rounded bg-blue text-white py-2 px-2 text-base font-bold clickable border-none">
             <input type="hidden" name="list" value="SGDpioFb8i8923zG5xWPFw5A">
