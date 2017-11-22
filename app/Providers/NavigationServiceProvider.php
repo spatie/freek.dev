@@ -22,11 +22,10 @@ class NavigationServiceProvider extends ServiceProvider
                 ->setActiveFromRequest('/');
         });
 
-
         Menu::macro('back', function () {
             return Menu::new()
                 ->addClass('list-reset flex flex-col lg:flex-row justify-end items-center mb-8')
-                ->addItemClass('block rounded py-2 px-2 text-center align-content-center mx-6')
+                ->addItemClass('block rounded py-2 text-center align-content-center mx-6')
                 ->action('Back\PostsController@index', 'Posts')
                 ->action('Back\NewsletterGeneratorController@index', 'Newsletter')
                 ->view('back.layouts._partials.logout')

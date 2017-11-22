@@ -7094,8 +7094,13 @@ vue-style-loader@^3.0.0:
 
 vue-template-compiler@^2.0.0:
 <<<<<<< HEAD
+<<<<<<< HEAD
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.6.tgz#93f062a230a4437ef16064f1eef9cf3797d34bb4"
+=======
+  version "2.5.8"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.8.tgz#826ae77e1d5faa7fa5fca554f33872dde38de674"
+>>>>>>> dev-windows
 =======
   version "2.5.8"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.8.tgz#826ae77e1d5faa7fa5fca554f33872dde38de674"
@@ -7122,6 +7127,9 @@ vue@^2.1.10, vue@^2.2.4:
 vue@^2.1.10:
   version "2.5.8"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.8.tgz#f855c1c27255184a82225f4bef225473e8faf15b"
+<<<<<<< HEAD
+>>>>>>> dev-windows
+=======
 >>>>>>> dev-windows
 
 ware@^1.2.0:
