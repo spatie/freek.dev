@@ -7,7 +7,7 @@ use App\Jobs\SendTweet;
 use App\Models\Presenters\PostPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Laravel\Scout\Searchable;
-use Parsedown;
+use App\Services\Parsedown;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\ResponseCache\Facades\ResponseCache;
