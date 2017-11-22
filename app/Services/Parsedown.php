@@ -14,8 +14,23 @@ class ParseDown extends BaseParseDown
 
         $block['element']['attributes']['id'] = $slug;
 
-        $block['element']['text'] .= " <a class='text-grey' href='#{$slug}'>#</a>";
+        $elementName = $block['element']['name'];
+
+        $block['element']['text'] .= " <a class='{$this->getFragmentLinkClass($elementName)}' href='#{$slug}'>#</a>";
 
         return $block;
+    }
+
+    protected function getFragmentLinkClass($elementName)
+    {
+        if ($elementName === 'h1') {
+            return 'text-grey';
+        }
+
+        if ($elementName === 'h2') {
+            return 'text-grey';
+        }
+
+        return 'text-grey-light';
     }
 }
