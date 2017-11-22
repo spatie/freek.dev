@@ -41,7 +41,7 @@ mix
                     path.join(__dirname, 'node_modules/turbolinks/**/*.js'),
                     path.join(__dirname, 'vendor/spatie/menu/**/*.php'),
                 ]),
-                whitelistPatterns: [/carbon/, /language/, /hljs/],
+                whitelistPatterns: [/carbon/, /language/, /hljs/, /cm-/],
                 extractors: [
                     {
                         extractor: class {
