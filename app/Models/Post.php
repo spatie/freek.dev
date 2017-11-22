@@ -27,6 +27,11 @@ class Post extends BaseModel implements Feedable
 
     public $dates = ['publish_date'];
 
+    public $casts = [
+        'published' => 'boolean',
+        'original_content' => 'boolean'
+    ];
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
@@ -39,11 +44,9 @@ class Post extends BaseModel implements Feedable
         $query->where('published', true);
     }
 
-    public function getTextAttribute()
+    public function getTextAttribute($original)
     {
-        $parseDown = new Parsedown();
-
-        return $parseDown->text($this->getOriginal('text'));
+        return (new Parsedown())->text($original);
     }
 
     public function getMarkdownAttribute()
@@ -57,6 +60,7 @@ class Post extends BaseModel implements Feedable
         $this->text = $attributes['text'];
         $this->publish_date = $attributes['publish_date'];
         $this->published = $attributes['published'] ?? false;
+        $this->original_content = $attributes['original_content'] ?? false;
 
         $this->save();
 
@@ -77,7 +81,6 @@ class Post extends BaseModel implements Feedable
 
     protected function publishOnSocialMedia()
     {
-
         if (!$this->tweet_sent) {
             dispatch(new SendTweet($this));
 
@@ -124,7 +127,7 @@ class Post extends BaseModel implements Feedable
 
     public static function getFeedItems()
     {
-        return static::where('published', true)
+        return static::published()
             ->orderBy('publish_date', 'desc')
             ->limit(100)
             ->get();
@@ -133,7 +136,16 @@ class Post extends BaseModel implements Feedable
     public static function getPhpFeedItems()
     {
         return static::withAnyTags(['php'])
-            ->where('published', true)
+            ->published()
+            ->orderBy('publish_date', 'desc')
+            ->limit(100)
+            ->get();
+    }
+
+    public static function getOriginalContentFeedItems()
+    {
+        return static::published()
+            ->where('original_content', true)
             ->orderBy('publish_date', 'desc')
             ->limit(100)
             ->get();
@@ -143,8 +155,8 @@ class Post extends BaseModel implements Feedable
     {
         return FeedItem::create()
             ->id($this->id)
-            ->title($this->title)
-            ->summary($this->excerpt)
+            ->title($this->formatted_title)
+            ->summary($this->text)
             ->updated($this->updated_at)
             ->link(url(action('Front\PostsController@detail', $this->slug)))
             ->author('Freek Van der Herten');

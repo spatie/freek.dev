@@ -2,7 +2,7 @@
 require __DIR__.'/vendor/autoload.php';
 (new \Dotenv\Dotenv(__DIR__, '.env'))->load();
 
-$server = "165.227.150.93";
+$server = "murze.be";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/murze.be";
 $baseDir = "/home/forge/murze.be";
@@ -40,13 +40,13 @@ deployOnlyCode
 @endmacro
 
 @task('startDeployment', ['on' => 'local'])
-{{ logMessage("🏃  Starting deployment...") }}
+{{ logMessage("🏃  Starting deployment…") }}
 git checkout master
 git pull origin master
 @endtask
 
 @task('cloneRepository', ['on' => 'remote'])
-{{ logMessage("🌀  Cloning repository...") }}
+{{ logMessage("🌀  Cloning repository…") }}
 [ -d {{ $releasesDir }} ] || mkdir {{ $releasesDir }};
 [ -d {{ $persistentDir }} ] || mkdir {{ $persistentDir }};
 [ -d {{ $persistentDir }}/uploads ] || mkdir {{ $persistentDir }}/uploads;
@@ -73,26 +73,26 @@ echo "{{ $newReleaseName }}" > public/release-name.txt
 @endtask
 
 @task('runComposer', ['on' => 'remote'])
-{{ logMessage("🚚  Running Composer...") }}
+{{ logMessage("🚚  Running Composer…") }}
 cd {{ $newReleaseDir }};
 composer install --prefer-dist --no-scripts --no-dev -q -o;
 @endtask
 
 @task('runYarn', ['on' => 'remote'])
-{{ logMessage("📦  Running Yarn...") }}
+{{ logMessage("📦  Running Yarn…") }}
 cd {{ $newReleaseDir }};
 yarn config set ignore-engines true
 yarn
 @endtask
 
 @task('generateAssets', ['on' => 'remote'])
-{{ logMessage("🌅  Generating assets...") }}
+{{ logMessage("🌅  Generating assets…") }}
 cd {{ $newReleaseDir }};
 yarn run production -- --progress false
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
-{{ logMessage("🔗  Updating symlinks to persistent data...") }}
+{{ logMessage("🔗  Updating symlinks to persistent data…") }}
 # Remove the storage directory and replace with persistent data
 rm -rf {{ $newReleaseDir }}/storage;
 cd {{ $newReleaseDir }};
@@ -109,25 +109,25 @@ ln -nfs {{ $baseDir }}/.env .env;
 @endtask
 
 @task('optimizeInstallation', ['on' => 'remote'])
-{{ logMessage("✨  Optimizing installation...") }}
+{{ logMessage("✨  Optimizing installation…") }}
 cd {{ $newReleaseDir }};
 php artisan clear-compiled;
 @endtask
 
 @task('backupDatabase', ['on' => 'remote'])
-{{ logMessage("📀  Backing up database...") }}
+{{ logMessage("📀  Backing up database…") }}
 cd {{ $newReleaseDir }}
 php artisan backup:run
 @endtask
 
 @task('migrateDatabase', ['on' => 'remote'])
-{{ logMessage("🙈  Migrating database...") }}
+{{ logMessage("🙈  Migrating database…") }}
 cd {{ $newReleaseDir }};
 php artisan migrate --force;
 @endtask
 
 @task('blessNewRelease', ['on' => 'remote'])
-{{ logMessage("🙏  Blessing new release...") }}
+{{ logMessage("🙏  Blessing new release…") }}
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
 
@@ -142,7 +142,7 @@ sudo supervisorctl restart all
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])
-{{ logMessage("🚾  Cleaning up old releases...") }}
+{{ logMessage("🚾  Cleaning up old releases…") }}
 # Delete all but the 5 most recent.
 cd {{ $releasesDir }}
 ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" sudo chown -R forge .;
@@ -154,7 +154,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 @endtask
 
 @task('deployOnlyCode',['on' => 'remote'])
-{{ logMessage("💻  Deploying code changes...") }}
+{{ logMessage("💻  Deploying code changes…") }}
 cd {{ $currentDir }}
 git pull origin master
 php artisan config:clear

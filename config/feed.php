@@ -4,15 +4,21 @@ return [
 
     'feeds' => [
         'main' => [
-            'items' => \App\Models\Post::class . '@getFeedItems',
             'url' => '/feed',
-            'title' => 'murze.be',
+            'title' => 'murze.be - all blogposts',
+            'items' => \App\Models\Post::class . '@getFeedItems',
         ],
 
         'php' => [
-            'items' => \App\Models\Post::class . '@getPhpFeedItems',
             'url' => '/feed/php',
-            'title' => 'PHP feed murze.be',
+            'title' => 'murze.be - all php blogposts',
+            'items' => \App\Models\Post::class . '@getPhpFeedItems',
+        ],
+
+        'originals' => [
+            'url' => '/feed/originals',
+            'title' => 'murze.be - all originally written blogposts',
+            'items' => \App\Models\Post::class . '@getOriginalContentFeedItems',
         ],
     ],
 

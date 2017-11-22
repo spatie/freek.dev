@@ -42,10 +42,6 @@ a:hover {
   color: config('colors.blue-dark');
 }
 
-.active {
-
-}
-
 .active a {
   @apply rounded-lg;
   background-color: config('colors.blue');

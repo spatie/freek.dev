@@ -30,7 +30,7 @@ trait PostPresenter
 
         $ww = wordwrap($excerpt, 150, "\n");
 
-        $excerpt = substr($ww, 0, strpos($ww, "\n")) . '...';
+        $excerpt = substr($ww, 0, strpos($ww, "\n")) . '…';
 
         return $excerpt;
     }
@@ -41,5 +41,14 @@ trait PostPresenter
             ->tags
             ->pluck('name')
             ->implode(', ');
+    }
+
+    public function getFormattedTitleAttribute(): string
+    {
+        $prefix = $this->original_content
+            ? '★ '
+            : '';
+
+        return $prefix . $this->title;
     }
 }
