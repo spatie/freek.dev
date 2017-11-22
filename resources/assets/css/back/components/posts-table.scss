@@ -1,0 +1,11 @@
+.posts-table {
+    @apply .bg-white .border-grey .border-2;
+
+    th {
+        @apply .border-grey .border-2;
+    }
+
+    td {
+        @apply .border-grey .border-2;        
+    }
+}

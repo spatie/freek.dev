@@ -25,7 +25,7 @@ class NavigationServiceProvider extends ServiceProvider
 
         Menu::macro('back', function () {
             return Menu::new()
-                ->addClass('list-reset flex flex-col lg:flex-row align-center')
+                ->addClass('list-reset flex flex-col lg:flex-row justify-end items-center')
                 ->addItemClass('block rounded py-2 px-4 text-center align-content-center mx-6')
                 ->action('Back\PostsController@index', 'Posts')
                 ->action('Back\NewsletterGeneratorController@index', 'Newsletter')

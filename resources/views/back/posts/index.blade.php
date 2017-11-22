@@ -2,13 +2,15 @@
 
 @section('content')
 
-    <h1>Posts</h1>
+    <h1 class="lg:-mt-12 lg:mb-4">Posts</h1>
 
-    <a href="{{ action('Back\PostsController@create') }}" class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded">
+    <div class="flex justify-end">
+    <a href="{{ action('Back\PostsController@create') }}" class="bg-green hover:bg-green-dark text-white hover:text-white font-bold py-2 px-4 rounded mb-4">
         New post
     </a>
+    </div>
 
-    <table>
+    <table class="posts-table">
         <thead>
         <tr>
             <th>Title</th>

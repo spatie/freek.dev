@@ -14,7 +14,7 @@
     <link href="{{ asset('css/back.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
+<div id="app" class="my-4">
         @include('back.layouts._partials.flashMessage')
 
         @auth
