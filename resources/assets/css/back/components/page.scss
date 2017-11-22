@@ -1,10 +1,15 @@
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
-  @apply .text-lg .leading-normal .text-grey-darker;
+  @apply .text-lg;
   background-color: #fffbf9;
-  padding-left: 10%;
-  padding-right: 10%;
+}
+
+.container {
+  @apply .leading-loose .text-grey-darker;
+  padding-left: 5%;
+  padding-right: 5%;
+  max-width: 58rem;
 }
 
 header {
