@@ -3,9 +3,9 @@ import Turbolinks from 'turbolinks';
 import TurbolinksAdapter from 'vue-turbolinks';
 import SearchPosts from './components/SearchPosts';
 
-Vue.use(TurbolinksAdapter);
+//Vue.use(TurbolinksAdapter);
 
-document.addEventListener('turbolinks:load', () => {
+//document.addEventListener('turbolinks:load', () => {
     const searchPostsEl = document.querySelector('#search-posts');
 
     new Vue({
@@ -21,6 +21,6 @@ document.addEventListener('turbolinks:load', () => {
             highlight.start();
         });
     }
-});
+//});
 
-Turbolinks.start();
+//Turbolinks.start();
