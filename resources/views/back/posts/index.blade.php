@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <div class="bg-white rounded border-2 max-w-lg mx-auto flex-1 my-8 pb-4">
-        <div class="flex justify-between items-center bg-grey-lighter mb-2 px-8 py-4 text-grey-darker font-bold">
+    <div class="bg-white rounded border-2 max-w-xl mx-auto flex-1 my-8 pb-4">
+        <div class="flex justify-between items-center bg-grey-lighter mb-2 px-8 py-2 text-grey-darker font-bold">
             <h1 class="p-0 text-grey-darker">Posts</h1>
-            <a href="{{ action('Back\PostsController@create') }}" class="bg-blue text-sm text-white hover:text-grey-light py-2 px-3 font-bold rounded">
-                New post
+            <a href="{{ action('Back\PostsController@create') }}" class="bg-blue text-sm text-white hover:text-grey-light py-2 px-3 font-medium rounded-lg">
+                New Post
             </a>
         </div>
 

@@ -16,18 +16,7 @@
 <body>
 <div id="app" class="container mx-auto">
     <header>
-        <div id="navigation" class="flex text-sm pt-4 py-2 font-medium">
-            <div class="hidden lg:inline lg:w-1/4">
-                <a class="text-black" href="/">murze.be <br /> <div class="text-grey">A blog on Laravel & PHP</div></a>
-            </div>
-            <div class="flex-1 lg:w-3/4 items-end">
-                <nav>
-                    @auth
-                        {{ Menu::back() }}
-                    @endauth
-                </nav>
-            </div>
-        </div>
+        @include('back.layouts._partials.navigation')
     </header>
 
     @include('back.layouts._partials.flashMessage')
