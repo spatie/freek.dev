@@ -10,11 +10,9 @@
         </div>
     @endauth
 
-    @if($post->title === 'Today DigitalOcean lost our entire server')
-        <div class="bg-white border-2 rounded mb-4 py-4 px-6 mt-4 text-xs">
-            Avoid this from happening to you by using SnapShooter to keep your DigitalOcean servers safe, secure and backed up. SnapShooter offers daily to hourly backups with backup rotation and retention policies. Get started at <a href="https://snapshooter.io/">SnapShooter</a> today! (sponsored link)
-        </div>
-    @endif
+    <div class="bg-white border-2 rounded mb-4 py-4 px-6 mt-4 text-xs">
+        Want to add comments to your Statamic powered site? Try out <a href="https://stillat.com/meerkat">Meerkat</a>: a beautiful, full-featured comment system for Statamic, a flat-file CMS. (sponsored link)
+    </div>
 
     <h1>{{ $post->formatted_title }}</h1>
 
