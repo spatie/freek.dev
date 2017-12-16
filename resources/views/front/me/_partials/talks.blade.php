@@ -1,4 +1,4 @@
-<h2>
+<h2 id="talks">
     Talks
     <a class="text-grey" href="#talks">#</a>
 </h2>
