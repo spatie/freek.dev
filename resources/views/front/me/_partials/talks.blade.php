@@ -1,4 +1,7 @@
-<h2>Talks</h2>
+<h2 id="talks">
+    Talks
+    <a class="text-grey" href="#talks">#</a>
+</h2>
 
 @foreach($talks as $talk)
     <li class="pb-6 pt-4 border-t list-reset">

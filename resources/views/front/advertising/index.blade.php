@@ -7,7 +7,7 @@
 
     <p class="pt-6">
         The murze.be newsletter is sent out every two weeks to an audience of PHP developers with a heavy interest in
-        Laravel, JavaScript and devops. Here you can view a past edition.
+        Laravel, JavaScript and devops.
     </p>
 
     <p>
