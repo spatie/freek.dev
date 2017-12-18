@@ -46,6 +46,8 @@ class Post extends BaseModel implements Feedable
 
     public function getTextAttribute($original)
     {
+        $text = $original;
+
         $text = str_replace('<code>', '`', $text);
 
         $text = str_replace('</code>', '`', $text);
