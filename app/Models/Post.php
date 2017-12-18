@@ -46,8 +46,6 @@ class Post extends BaseModel implements Feedable
 
     public function getTextAttribute($original)
     {
-        $text =  (new Parsedown())->text($original);
-
         $text = str_replace('<code>', '`', $text);
 
         $text = str_replace('</code>', '`', $text);
@@ -56,7 +54,7 @@ class Post extends BaseModel implements Feedable
 
         $text = str_replace('[/code]', '```' . PHP_EOL, $text);
 
-        return $text;
+        return (new Parsedown())->text($original);
     }
 
     public function getMarkdownAttribute()
