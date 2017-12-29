@@ -17,7 +17,7 @@
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "purgecss-webpack-plugin": "^0.11.0",
-        "tailwindcss": "^0.2.1",
+        "tailwindcss": "^0.4",
         "vue": "^2.1.10"
     },
     "dependencies": {
