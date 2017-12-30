@@ -42,13 +42,8 @@ a:hover {
   color: config('colors.blue-dark');
 }
 
-.active {
-  @apply rounded-lg;
-  background-color: config('colors.blue');
-}
-
 .active a {
-  color: white;
+  @apply border-b-2 rounded-none border-blue;
 }
 
 img {
