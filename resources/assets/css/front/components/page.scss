@@ -43,10 +43,7 @@ a:hover {
 }
 
 .active a {
-  @apply rounded-lg;
-  background-color: config('colors.blue');
-
-  color: white;
+  @apply border-b-2 rounded-none border-blue;
 }
 
 img {
