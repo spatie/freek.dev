@@ -40,15 +40,19 @@ class AdTest extends TestCase
         $this->assertNull(Ad::getForCurrentUrl());
     }
 
-    protected function createAdForYearMonth(int $year, int $month): Ad
+    protected function createAdForYearMonth(int $year, int $month, array $attributes = []): Ad
     {
         $startsAt = Carbon::createFromDate($year, $month);
         $endsAt = $startsAt->copy()->endOfMonth();
 
-        return factory(Ad::class)->create([
+        $defaultAttributes = [
             'display_on_url' => '',
             'starts_at' => $startsAt->format('Y-m-d'),
             'ends_at' => $endsAt->format('Y-m-d'),
-        ]);
+        ];
+
+        $attributes = array_merge($defaultAttributes, $attributes);
+
+        return factory(Ad::class)->create($attributes);
     }
 }
