@@ -42,6 +42,10 @@ a:hover {
   color: config('colors.blue-dark');
 }
 
+#navigation nav a:hover {
+  @apply border-b-2 rounded-none;
+}
+
 .active a {
   @apply border-b-2 rounded-none border-blue;
 }
