@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\Parsedown;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
