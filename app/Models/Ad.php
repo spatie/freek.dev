@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
+    public function getForCurrentPage(): ?self
+    {
+        return Ad::getForPage(request()->path());
+    }
+
     public static function getForPage(string $url = ''): ?self
     {
         return static::getPageSpecificAd($url) ?? static::getSiteWideAd();

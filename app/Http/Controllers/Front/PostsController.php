@@ -10,7 +10,7 @@ class PostsController extends Controller
 {
     public function detail(Post $post)
     {
-        $ad = Ad::getForPage(request()->path());
+        $ad = Ad::getForCurrentPage();
 
         return view('front.posts.detail', compact('post', 'ad'));
     }
