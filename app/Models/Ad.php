@@ -9,11 +9,7 @@ class Ad extends Model
 {
     public static function getForPage(string $url = ''): ?self
     {
-        if ($ad = static::getPageSpecificAd($url)) {
-            return $ad;
-        }
-
-        return static::getSiteWideAd();
+        return static::getPageSpecificAd($url) ?? static::getSiteWideAd();
     }
 
     public static function getPageSpecificAd(string $url): ?self
