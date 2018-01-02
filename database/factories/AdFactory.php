@@ -8,7 +8,6 @@ $factory->define(Ad::class, function (Faker $faker) {
     $endsAt = $startsAt->copy()->addDays(30);
 
     return [
-
         'display_on_url' => $faker->boolean(50) ? $faker->url : '',
         'text' => $faker->sentence(),
         'starts_at' => $startsAt->toDateString(),
