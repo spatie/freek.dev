@@ -39,6 +39,8 @@ class Ad extends Model
 
     public function getTextAttribute($original)
     {
-        return (new Parsedown())->text($original);
+        $adText = $original . ' (sponsored link)';
+
+        return (new Parsedown())->text($adText);
     }
 }
