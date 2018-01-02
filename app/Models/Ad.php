@@ -35,4 +35,9 @@ class Ad extends Model
             ->whereDate('starts_at', '<=', $now)
             ->whereDate('ends_at', '>=', $now);
     }
+
+    public function getTextAttribute($original)
+    {
+        return (new Parsedown())->text($original);
+    }
 }
