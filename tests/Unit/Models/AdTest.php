@@ -16,29 +16,29 @@ class AdTest extends TestCase
         $februaryAd = $this->createAdForYearMonth(2018, 2);
 
         $this->setNow(2017, 12, 31);
-        $this->assertNull(Ad::getForCurrentUrl());
+        $this->assertNull(Ad::getForPage());
 
         $this->setNow(2018, 1, 1);
 
-        $this->assertEquals($januaryAd->id, Ad::getForCurrentUrl()->id);
+        $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
 
         $this->setNow(2018, 1, 15);
-        $this->assertEquals($januaryAd->id, Ad::getForCurrentUrl()->id);
+        $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
 
         $this->setNow(2018, 1, 31);
-        $this->assertEquals($januaryAd->id, Ad::getForCurrentUrl()->id);
+        $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
 
         $this->setNow(2018, 2, 1);
-        $this->assertEquals($februaryAd->id, Ad::getForCurrentUrl()->id);
+        $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
 
         $this->setNow(2018, 2, 15);
-        $this->assertEquals($februaryAd->id, Ad::getForCurrentUrl()->id);
+        $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
 
         $this->setNow(2018, 2, 28);
-        $this->assertEquals($februaryAd->id, Ad::getForCurrentUrl()->id);
+        $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
 
         $this->setNow(2018, 3, 1);
-        $this->assertNull(Ad::getForCurrentUrl());
+        $this->assertNull(Ad::getForPage());
     }
 
     /** @test */
@@ -46,21 +46,21 @@ class AdTest extends TestCase
     {
         $ad = $this->createAdForYearMonth(2018, 1, ['display_on_url' => 'test-url']);
 
-        $this->assertNull(Ad::getForCurrentUrl());
+        $this->assertNull(Ad::getForPage());
 
-        $this->assertEquals($ad->id, Ad::getForCurrentUrl('test-url')->id);
+        $this->assertEquals($ad->id, Ad::getForPage('test-url')->id);
     }
 
     /** @test */
-    public function a_url_specific_ad_takes_precedence_over_the_general_one()
+    public function a_url_specific_ad_takes_precedence_over_the_site_wide_one()
     {
         $urlSpecificAd = $this->createAdForYearMonth(2018, 1, ['display_on_url' => 'test-url']);
 
-        $generalAd = $this->createAdForYearMonth(2018, 1);
+        $siteWideAd = $this->createAdForYearMonth(2018, 1);
 
-        $this->assertEquals($urlSpecificAd->id, Ad::getForCurrentUrl('test-url')->id);
+        $this->assertEquals($urlSpecificAd->id, Ad::getForPage('test-url')->id);
 
-        $this->assertEquals($generalAd->id, Ad::getForCurrentUrl('another-url')->id);
+        $this->assertEquals($siteWideAd->id, Ad::getForPage('another-url')->id);
     }
 
     protected function createAdForYearMonth(int $year, int $month, array $attributes = []): Ad

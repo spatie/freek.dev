@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
-    public static function getForCurrentUrl(string $url = ''): ?self
+    public static function getForPage(string $url = ''): ?self
     {
         if ($ad = static::getPageSpecificAd($url)) {
             return $ad;
