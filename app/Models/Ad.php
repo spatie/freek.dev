@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
-    public function getForCurrentPage(): ?self
+    public static function getForCurrentPage(): ?self
     {
         return Ad::getForPage(request()->path());
     }
