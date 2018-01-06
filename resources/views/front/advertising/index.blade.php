@@ -6,7 +6,9 @@
 
     <h1 class="pb-4 border-b">Advertising</h1>
 
+    <p>
     The murze.be blog and newsletter has adience of PHP developers with a heay interest in Laravel, JavaScript, devops and personal/professional growth. You can get your brand or product in front of that audience by running an ad on the blog and/or newsletter.
+    </p>
 
     <p>
         If you are interested in placing an advertisement on the blog or in the newsletter, or have any more questions, you can email
@@ -25,7 +27,7 @@
     <p>An ad can be placed on all pages of the blog or one or more specific posts. It will be place in a white box with a smaller font right above the post tile. The ad will be displayed for at least a month.</p>
 
     <h2>The newsletter</h2>
-    <p class="pt-6">
+    <p>
         The murze.be newsletter is sent out every two weeks to an audience of PHP developers with a heavy interest in
         Laravel, JavaScript and devops.
     </p>
