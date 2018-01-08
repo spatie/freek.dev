@@ -20,7 +20,7 @@
 
     <p>
         An advertisement consists of a text with two or three
-        sentences that may contain links.. I’ll tag on ” (sponsored)” to the title so it’s clear to the readers that it’s an advertisement.
+        sentences that may contain links.. I’ll tag on ” (sponsored)” so it’s clear to the readers that it’s an advertisement.
         Because the blog should come over as very calm, images or logos are not allowed.
     </p>
 
