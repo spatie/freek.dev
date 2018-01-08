@@ -7,7 +7,7 @@
     <h1 class="pb-4 border-b">Advertising</h1>
 
     <p>
-    The murze.be blog and newsletter has adience of PHP developers with a heay interest in Laravel, JavaScript, devops and personal/professional growth. You can get your brand or product in front of that audience by running an ad on the blog and/or newsletter.
+    The murze.be blog and newsletter are read by an audience of PHP developers with a heavy interest in Laravel, JavaScript, devops and personal/professional growth. You can get your brand or product in front of that audience by running an ad on the blog and/or newsletter.
     </p>
 
     <p>
