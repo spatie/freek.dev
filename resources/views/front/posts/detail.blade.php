@@ -10,11 +10,11 @@
         </div>
     @endauth
 
-    {{--
-    <div class="bg-white border-2 rounded mb-4 py-4 px-6 mt-4 text-xs">
-        Want to add comments to your Statamic powered site? Try out <a href="https://stillat.com/meerkat">Meerkat</a>: a beautiful, full-featured comment system for Statamic. (sponsored link)
-    </div>
-    --}}
+    @if($ad)
+        <div class="bg-white border-2 rounded mb-4 py-4 px-6 mt-4 text-xs">
+            {!! $ad->text !!}
+        </div>
+    @endif
 
     <h1>{{ $post->formatted_title }}</h1>
 

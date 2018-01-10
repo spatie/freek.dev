@@ -6,9 +6,11 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        $this->call(UserSeeder::class);
-        $this->call(TagSeeder::class);
-        $this->call(PostSeeder::class);
-        $this->call(TalkSeeder::class);
+        $this
+           ->call(UserSeeder::class)
+           ->call(TagSeeder::class)
+           ->call(PostSeeder::class)
+           ->call(TalkSeeder::class)
+           ->call(AdSeeder::class);
     }
 }
