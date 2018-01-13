@@ -39,7 +39,7 @@ class Generator
     protected function getRecentPosts(): Collection
     {
         return $this->getPosts(
-            Carbon::createFromDate(2017,12,18),
+            $this->endDate->copy()->subWeek(2)->startOfDay(),
             $this->endDate->endOfDay()
         );
     }
