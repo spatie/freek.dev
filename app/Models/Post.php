@@ -56,11 +56,15 @@ class Post extends BaseModel implements Feedable
 
         $text = str_replace('<pre><code class="php">', '```' . PHP_EOL, $text);
 
+        $text = str_replace('<pre><code class="txt">', '```' . PHP_EOL, $text);
+
         $text = str_replace('<pre><code lang="js">', '```' . PHP_EOL, $text);
 
         $text = str_replace('<pre><code lang="bash">', '```' . PHP_EOL, $text);
 
         $text = str_replace('<pre><code lang="php">', '```' . PHP_EOL, $text);
+
+        $text = str_replace('<pre><code lang="txt">', '```' . PHP_EOL, $text);
 
         $text = str_replace('</code></pre>', PHP_EOL . '```' . PHP_EOL, $text);
 
