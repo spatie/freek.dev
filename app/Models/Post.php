@@ -82,6 +82,10 @@ class Post extends BaseModel implements Feedable
 
         $text = str_replace('[/code]', '```' . PHP_EOL, $text);
 
+        $text = str_replace('&gt;', '>' . PHP_EOL, $text);
+
+        $text = str_replace('&lt;', '<' . PHP_EOL, $text);
+
         return (new Parsedown())->text($text);
     }
 
