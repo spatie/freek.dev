@@ -60,6 +60,8 @@ class Post extends BaseModel implements Feedable
 
         $text = str_replace('<pre><code class="html">', '```' . PHP_EOL, $text);
 
+        $text = str_replace('<pre><code class="yaml">', '```' . PHP_EOL, $text);
+
         $text = str_replace('<pre><code lang="js">', '```' . PHP_EOL, $text);
 
         $text = str_replace('<pre><code lang="bash">', '```' . PHP_EOL, $text);
