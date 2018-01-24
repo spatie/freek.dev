@@ -34,7 +34,6 @@ mix
     })
 
     .purgeCss({
-        enabled:true,
         globs: [
             path.join(__dirname, 'node_modules/simplemde/**/*.js'),
             path.join(__dirname, 'node_modules/turbolinks/**/*.js'),
