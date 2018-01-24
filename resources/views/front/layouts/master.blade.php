@@ -29,6 +29,7 @@
 
         <div class="lg:w-1/4">
             @include('front.layouts._partials.newsletter')
+            @include('front.layouts._partials.larajobs')
             @include('front.layouts._partials.carbon')
         </div>
 
