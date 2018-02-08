@@ -29,10 +29,10 @@ class Generator
         $editionNumber = $this->editionNumber;
 
         return view('back.newsletterGenerator.template', compact(
-           'recentPosts',
-           'recentTweets',
-           'oldPosts',
-           'editionNumber'
+            'recentPosts',
+            'recentTweets',
+            'oldPosts',
+            'editionNumber'
         ))->render();
     }
 
