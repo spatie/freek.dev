@@ -42,8 +42,10 @@ class AdTest extends TestCase
     }
 
     /** @test */
-    public function a_url_specific_ad_will_be_displayed_on_that_url()
+    public function an_url_specific_ad_will_be_displayed_on_that_url()
     {
+        $this->setNow(2018, 1, 1);
+
         $ad = $this->createAdForYearMonth(2018, 1, ['display_on_url' => 'test-url']);
 
         $this->assertNull(Ad::getForPage());
@@ -54,6 +56,8 @@ class AdTest extends TestCase
     /** @test */
     public function a_url_specific_ad_takes_precedence_over_the_site_wide_one()
     {
+        $this->setNow(2018, 1, 1);
+
         $urlSpecificAd = $this->createAdForYearMonth(2018, 1, ['display_on_url' => 'test-url']);
 
         $siteWideAd = $this->createAdForYearMonth(2018, 1);
