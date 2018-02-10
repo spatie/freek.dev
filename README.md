@@ -16,7 +16,7 @@ If you discover any security related issues, please email freek@spatie.be instea
 
 ## Postcardware
 
-You're free to use this code (it's [MIT-licensed](LICENSE.md)). If you use it to set up your own blog we wouuld highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
+You're free to use this code (it's [MIT-licensed](LICENSE.md)). If you use it to set up your own blog we would highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
 
 Our address is: Spatie, Samberstraat 69D, 2060 Antwerp, Belgium.
 
