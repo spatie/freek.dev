@@ -90,6 +90,12 @@ class Post extends BaseModel implements Feedable
 
         $text = str_replace('&lt;', '<', $text);
 
+        $text = str_replace(
+            ['<iframe', '</iframe>'],
+            ['<div class="embed"><iframe', '</iframe></div>'],
+            $text
+        );
+
         return (new Parsedown())->text($text);
     }
 
