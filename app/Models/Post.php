@@ -46,51 +46,7 @@ class Post extends BaseModel implements Feedable
 
     public function getTextAttribute($original)
     {
-        $text = $original;
-
-        $text = str_replace('<pre><code>', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code class="js">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code class="bash">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code class="php">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code class="txt">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code class="html">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code class="yaml">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code lang="js">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code lang="bash">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code lang="php">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code lang="txt">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code lang="html">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('<pre><code lang="yaml">', '```' . PHP_EOL, $text);
-
-        $text = str_replace('</code></pre>', PHP_EOL . '```' . PHP_EOL, $text);
-
-        $text = str_replace('</code>', '`', $text);
-
-        $text = str_replace('<code>', '`', $text);
-
-        $text = str_replace('</code>', '`', $text);
-
-        $text = str_replace('[code lang="php"]', '```php'.PHP_EOL, $text);
-
-        $text = str_replace('[/code]', '```' . PHP_EOL, $text);
-
-        $text = str_replace('&gt;', '>', $text);
-
-        $text = str_replace('&lt;', '<', $text);
-
-        return (new Parsedown())->text($text);
+        return (new Parsedown())->text($original);
     }
 
     public function getMarkdownAttribute()
