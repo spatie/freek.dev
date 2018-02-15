@@ -11,7 +11,6 @@ class Kernel extends ConsoleKernel
 {
     protected $commands = [
         ImportWp::class,
-        FixPostTexts::class,
     ];
 
     protected function schedule(Schedule $schedule)
