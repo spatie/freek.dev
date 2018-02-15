@@ -28,7 +28,7 @@ class FixPostTexts extends Command
      */
     public function handle()
     {
-        Post::get()->each(function(Post $post) {
+        Post::get()->each(function (Post $post) {
             $post->text = $this->clean($post->text);
 
             $post->save();
