@@ -133,6 +133,7 @@ cd {{ $newReleaseDir }}
 
 php artisan horizon:terminate
 php artisan config:clear
+php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
 php artisan responsecache:flush
@@ -158,6 +159,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 cd {{ $currentDir }}
 git pull origin master
 php artisan config:clear
+php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
 php artisan responsecache:flush
