@@ -11,7 +11,7 @@
     <title>Admin | murze.be</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/back.css') }}" rel="stylesheet">
+    <link nonce="{{ cspNonce() }}" href="{{ asset('css/back.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app" class="container mx-auto">
