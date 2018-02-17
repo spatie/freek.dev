@@ -54,6 +54,6 @@ class Profile extends BaseProfile
                 "'unsafe-inline'",
                 'data:',
             ])
-            ->addDirective(Directive::OBJECT, 'none');
+            ->addDirective(Directive::OBJECT, "'none'");
     }
 }
