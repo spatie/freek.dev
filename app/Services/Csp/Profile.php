@@ -2,7 +2,6 @@
 
 namespace App\Services\Csp;
 
-use PhpParser\Node\Scalar\MagicConst\Dir;
 use Spatie\Csp\Directive;
 use Spatie\Csp\Profiles\Profile as BaseProfile;
 
