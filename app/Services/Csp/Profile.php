@@ -25,6 +25,7 @@ class Profile extends BaseProfile
                 'platform.twitter.com',
                 '*.twimg.com',
                 '*.bootstrapcdn.com',
+                '*.googletagmanager.com',
             ])
             ->addDirective(Directive::STYLE, [
                 'murze.be',
