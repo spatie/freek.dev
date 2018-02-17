@@ -27,6 +27,7 @@ class Profile extends BaseProfile
                 '*.bootstrapcdn.com',
                 '*.googletagmanager.com',
             ])
+            ->addNonceForDirective(Directive::SCRIPT)
             ->addDirective(Directive::STYLE, [
                 'murze.be',
                 'murze.be.test',
