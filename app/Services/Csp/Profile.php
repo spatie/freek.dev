@@ -2,6 +2,7 @@
 
 namespace App\Services\Csp;
 
+use PhpParser\Node\Scalar\MagicConst\Dir;
 use Spatie\Csp\Directive;
 use Spatie\Csp\Profiles\Profile as BaseProfile;
 
@@ -52,6 +53,7 @@ class Profile extends BaseProfile
                 '*',
                 "'unsafe-inline'",
                 'data:',
-            ]);
+            ])
+            ->addDirective(Directive::OBJECT, 'none');
     }
 }
