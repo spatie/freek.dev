@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "557d18ccb64e196a06889430be006117",
+    "content-hash": "658b266c975809593fb8363a63dd1813",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -2065,16 +2065,16 @@
         },
         {
             "name": "spatie/laravel-csp",
-            "version": "0.0.5",
+            "version": "0.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-csp.git",
-                "reference": "f8ab8a4a3b6a641b690587bb58b9004218d7d2f2"
+                "reference": "253ba9b197e3ed018296c682bbed04bbb07fa2d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-csp/zipball/f8ab8a4a3b6a641b690587bb58b9004218d7d2f2",
-                "reference": "f8ab8a4a3b6a641b690587bb58b9004218d7d2f2",
+                "url": "https://api.github.com/repos/spatie/laravel-csp/zipball/253ba9b197e3ed018296c682bbed04bbb07fa2d8",
+                "reference": "253ba9b197e3ed018296c682bbed04bbb07fa2d8",
                 "shasum": ""
             },
             "require": {
@@ -2131,7 +2131,7 @@
                 "security",
                 "spatie"
             ],
-            "time": "2018-02-17T22:50:58+00:00"
+            "time": "2018-02-18T14:03:03+00:00"
         },
         {
             "name": "spatie/laravel-feed",

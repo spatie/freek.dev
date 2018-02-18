@@ -22,7 +22,7 @@ class Profile extends BaseProfile
     protected function addGeneralDirectives(): self
     {
         return $this
-            ->addDirective(Directive::BASE, "'self'")
+            ->addDirective(Directive::BASE, 'self')
             ->addNonceForDirective(Directive::SCRIPT)
             ->addDirective(Directive::SCRIPT, [
                 'murze.be',
@@ -31,7 +31,7 @@ class Profile extends BaseProfile
             ->addDirective(Directive::STYLE, [
                 'murze.be',
                 'murze.be.test',
-                "'unsafe-inline'",
+                'unsafe-inline',
             ])
             ->addDirective(Directive::FORM_ACTION, [
                 'murze.be',
@@ -40,10 +40,10 @@ class Profile extends BaseProfile
             ])
             ->addDirective(Directive::IMG, [
                 '*',
-                "'unsafe-inline'",
+                'unsafe-inline',
                 'data:',
             ])
-            ->addDirective(Directive::OBJECT, "'none'");
+            ->addDirective(Directive::OBJECT, 'none');
     }
 
     protected function addDirectivesForBootstrap(): self
