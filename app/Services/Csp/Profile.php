@@ -67,14 +67,14 @@ class Profile extends BaseProfile
     protected function addDirectivesForGoogleFonts(): self
     {
         return $this
-            ->addDirective(Directive::FONT, ['fonts.gstatic.com'])
-            ->addDirective(Directive::SCRIPT, ['fonts.googleapis.com'])
-            ->addDirective(Directive::STYLE, ['fonts.googleapis.com']);
+            ->addDirective(Directive::FONT, 'fonts.gstatic.com')
+            ->addDirective(Directive::SCRIPT, 'fonts.googleapis.com')
+            ->addDirective(Directive::STYLE, 'fonts.googleapis.com');
     }
 
     protected function addDirectivesForGoogleTagManager(): self
     {
-        return $this->addDirective(Directive::SCRIPT, ['*.googletagmanager.com']);
+        return $this->addDirective(Directive::SCRIPT, '*.googletagmanager.com');
     }
 
     protected function addDirectivesForTwitter(): self
@@ -99,6 +99,6 @@ class Profile extends BaseProfile
 
     protected function addDirectivesForYouTube(): self
     {
-        return $this->addDirective(Directive::FRAME, ['*.youtube.com']);
+        return $this->addDirective(Directive::FRAME, '*.youtube.com');
     }
 }
