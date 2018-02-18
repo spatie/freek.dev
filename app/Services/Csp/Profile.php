@@ -10,42 +10,31 @@ class Profile extends BaseProfile
     public function configure()
     {
         $this
-            ->addDirective(Directive::BASE, "'self'")
-            ->addDirective(Directive::FONT, [
-                'fonts.gstatic.com',
-                '*.bootstrapcdn.com',
-            ])
+            ->addGeneralDirectives()
+            ->addDirectivesForBootstrap()
+            ->addDirectivesForCarbon()
+            ->addDirectivesForGoogleFonts()
+            ->addDirectivesForGoogleTagManager()
+            ->addDirectivesForTwitter()
+            ->addDirectivesForYouTube();
+    }
+
+    public function addGeneralDirectives(): self
+    {
+        return $this->addDirective(Directive::BASE, "'self'")
+            ->addNonceForDirective(Directive::SCRIPT)
             ->addDirective(Directive::SCRIPT, [
                 'murze.be',
                 'murze.be.test',
-                'srv.carbonads.net',
-                'fonts.googleapis.com',
-                'script.carbonads.com',
-                'cdn.carbonads.com',
-                'platform.twitter.com',
-                '*.twimg.com',
-                '*.bootstrapcdn.com',
-                '*.googletagmanager.com',
             ])
-            ->addNonceForDirective(Directive::SCRIPT)
             ->addDirective(Directive::STYLE, [
                 'murze.be',
                 'murze.be.test',
-                'fonts.googleapis.com',
-                'platform.twitter.com',
                 "'unsafe-inline'",
-                '*.bootstrapcdn.com',
-            ])
-            ->addDirective(Directive::FRAME, [
-                'platform.twitter.com',
-                'syndication.twitter.com',
-                '*.youtube.com',
             ])
             ->addDirective(Directive::FORM_ACTION, [
                 'murze.be',
                 'murze.be.test',
-                'platform.twitter.com',
-                'syndication.twitter.com',
                 'sendy.murze.be',
             ])
             ->addDirective(Directive::IMG, [
@@ -54,5 +43,61 @@ class Profile extends BaseProfile
                 'data:',
             ])
             ->addDirective(Directive::OBJECT, "'none'");
+    }
+
+    protected function addDirectivesForBootstrap(): self
+    {
+        return $this
+            ->addDirective(Directive::FONT, ['*.bootstrapcdn.com'])
+            ->addDirective(Directive::SCRIPT, ['*.bootstrapcdn.com'])
+            ->addDirective(Directive::STYLE, ['*.bootstrapcdn.com']);
+    }
+
+    public function addDirectivesForCarbon(): self
+    {
+        return $this
+            ->addDirective(Directive::SCRIPT, [
+                'srv.carbonads.net',
+                'script.carbonads.com',
+                'cdn.carbonads.com',
+            ]);
+    }
+
+    protected function addDirectivesForGoogleFonts(): self
+    {
+        return $this
+            ->addDirective(Directive::FONT, ['fonts.gstatic.com'])
+            ->addDirective(Directive::SCRIPT, ['fonts.googleapis.com'])
+            ->addDirective(Directive::STYLE, ['fonts.googleapis.com']);
+    }
+
+    public function addDirectivesForGoogleTagManager(): self
+    {
+        return $this->addDirective(Directive::SCRIPT, ['*.googletagmanager.com']);
+    }
+
+    public function addDirectivesForTwitter(): self
+    {
+        return $this
+            ->addDirective(Directive::SCRIPT, [
+                'platform.twitter.com',
+                '*.twimg.com',
+            ])
+            ->addDirective(Directive::STYLE, [
+                'platform.twitter.com',
+            ])
+            ->addDirective(Directive::FRAME, [
+                'platform.twitter.com',
+                'syndication.twitter.com',
+            ])
+            ->addDirective(Directive::FORM_ACTION, [
+                'platform.twitter.com',
+                'syndication.twitter.com',
+            ]);
+    }
+
+    public function addDirectivesForYouTube(): self
+    {
+        return $this->addDirective(Directive::FRAME, ['*.youtube.com']);
     }
 }
