@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AddSecurityHeaders;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Spatie\Csp\AddCspHeaders;
 
@@ -40,6 +41,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\Turbolinks::class,
             AddCspHeaders::class,
+            AddSecurityHeaders::class,
         ],
 
         'api' => [
