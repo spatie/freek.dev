@@ -19,9 +19,10 @@ class Profile extends BaseProfile
             ->addDirectivesForYouTube();
     }
 
-    public function addGeneralDirectives(): self
+    protected function addGeneralDirectives(): self
     {
-        return $this->addDirective(Directive::BASE, "'self'")
+        return $this
+            ->addDirective(Directive::BASE, "'self'")
             ->addNonceForDirective(Directive::SCRIPT)
             ->addDirective(Directive::SCRIPT, [
                 'murze.be',
@@ -53,7 +54,7 @@ class Profile extends BaseProfile
             ->addDirective(Directive::STYLE, ['*.bootstrapcdn.com']);
     }
 
-    public function addDirectivesForCarbon(): self
+    protected function addDirectivesForCarbon(): self
     {
         return $this
             ->addDirective(Directive::SCRIPT, [
@@ -71,12 +72,12 @@ class Profile extends BaseProfile
             ->addDirective(Directive::STYLE, ['fonts.googleapis.com']);
     }
 
-    public function addDirectivesForGoogleTagManager(): self
+    protected function addDirectivesForGoogleTagManager(): self
     {
         return $this->addDirective(Directive::SCRIPT, ['*.googletagmanager.com']);
     }
 
-    public function addDirectivesForTwitter(): self
+    protected function addDirectivesForTwitter(): self
     {
         return $this
             ->addDirective(Directive::SCRIPT, [
@@ -96,7 +97,7 @@ class Profile extends BaseProfile
             ]);
     }
 
-    public function addDirectivesForYouTube(): self
+    protected function addDirectivesForYouTube(): self
     {
         return $this->addDirective(Directive::FRAME, ['*.youtube.com']);
     }
