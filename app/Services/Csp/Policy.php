@@ -3,9 +3,9 @@
 namespace App\Services\Csp;
 
 use Spatie\Csp\Directive;
-use Spatie\Csp\Profiles\Profile as BaseProfile;
+use Spatie\Csp\Policies\Policy as BasePolicy;
 
-class Profile extends BaseProfile
+class Policy extends BasePolicy
 {
     public function configure()
     {

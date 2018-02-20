@@ -3,32 +3,32 @@
 return [
 
     /*
-     * A csp profile will determine which csp headers will be set. A valid csp profile is
-     * any class that extends `Spatie\Csp\Profiles\Profile`
+     * A policy will determine which CSP headers will be set. A valid CSP policy is
+     * any class that extends `Spatie\Csp\Policies\Policy`
      */
-    'profile' => \App\Services\Csp\Profile::class,
+    'policy' => App\Services\Csp\Policy::class,
 
     /*
-     * This profile which will be put in report only mode. This is great for testing out
-     * a new profile or changes to existing csp policy without breaking anyting.
+     * This policy which will be put in report only mode. This is great for testing out
+     * a new policy or changes to existing csp policy without breaking anyting.
      */
-    'report_only_profile' => '',
+    'report_only_policy' => '',
 
     /*
-     * All violations against the csp policy will be reported to this url.
+     * All violations against the policy will be reported to this url.
      * A great service you could use for this is https://report-uri.com/
      *
-     * You can override this setting by calling `reportTo` on your profile.
+     * You can override this setting by calling `reportTo` on your policy.
      */
     'report_uri' => 'https://murze.report-uri.com/r/d/csp/enforce',
 
     /*
-     * Headers will only be added if this setting is enabled
+     * Headers will only be added if this setting is set to true.
      */
     'enabled' => env('CSP_ENABLED', true),
 
     /*
-     * The class is responsible for generating the nonces used in inline tags and headers.
+     * The class responsible for generating the nonces used in inline tags and headers.
      */
     'nonce_generator' => Spatie\Csp\Nonce\RandomString::class,
 ];
