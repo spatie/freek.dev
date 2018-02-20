@@ -57,12 +57,11 @@ class Profile extends BaseProfile
 
     protected function addDirectivesForCarbon(): self
     {
-        return $this
-            ->addDirective(Directive::SCRIPT, [
-                'srv.carbonads.net',
-                'script.carbonads.com',
-                'cdn.carbonads.com',
-            ]);
+        return $this->addDirective(Directive::SCRIPT, [
+            'srv.carbonads.net',
+            'script.carbonads.com',
+            'cdn.carbonads.com',
+        ]);
     }
 
     protected function addDirectivesForGoogleFonts(): self
