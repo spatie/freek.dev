@@ -10,7 +10,6 @@ class Profile extends BaseProfile
     public function configure()
     {
         $this
-            ->reportOnly()
             ->addGeneralDirectives()
             ->addDirectivesForBootstrap()
             ->addDirectivesForCarbon()
