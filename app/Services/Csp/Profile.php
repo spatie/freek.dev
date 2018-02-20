@@ -15,6 +15,7 @@ class Profile extends BaseProfile
             ->addDirectivesForBootstrap()
             ->addDirectivesForCarbon()
             ->addDirectivesForGoogleFonts()
+            ->addDirectivesForGoogleAnalytics()
             ->addDirectivesForGoogleTagManager()
             ->addDirectivesForTwitter()
             ->addDirectivesForYouTube();
@@ -71,6 +72,11 @@ class Profile extends BaseProfile
             ->addDirective(Directive::FONT, 'fonts.gstatic.com')
             ->addDirective(Directive::SCRIPT, 'fonts.googleapis.com')
             ->addDirective(Directive::STYLE, 'fonts.googleapis.com');
+    }
+
+    protected function addDirectivesForGoogleAnalytics(): self
+    {
+        return $this->addDirective(Directive::SCRIPT, '*.google-analytics.com');
     }
 
     protected function addDirectivesForGoogleTagManager(): self
