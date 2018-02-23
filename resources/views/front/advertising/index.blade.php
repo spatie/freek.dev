@@ -44,7 +44,7 @@
     </p>
 
     <p>
-        Currently the subscriber list contains 3500 members. The reported open rate is 55%, the click rate is 25%
+        Currently the subscriber list contains over 4000 members. The reported open rate is 55%, the click rate is 25%
     <p>
         I suspect that a large portion of the readers uses software that blocks trackers, so the actual open and click
         rates will probably be a bit higher. Rest assured that, because your ad will be text based, ad blockers will not
