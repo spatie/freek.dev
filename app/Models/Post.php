@@ -82,12 +82,14 @@ class Post extends BaseModel implements Feedable
     protected function publishOnSocialMedia()
     {
         if (!$this->tweet_sent) {
-            dispatch(new SendTweet($this));
+            if (! $this->concernsTweet()) {
+                dispatch(new SendTweet($this));
 
-            $this->tweet_sent = true;
-            $this->save();
+                $this->tweet_sent = true;
+                $this->save();
 
-            flash()->info('Tweet was sent');
+                flash()->info('Tweet was sent');
+            }
         }
 
         if (!$this->posted_on_medium) {
