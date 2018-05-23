@@ -45,7 +45,10 @@
     @if($post->publish_date)
         <meta property="article:published_time" content="{{ $post->publish_date->toIso8601String() }}"/>
     @endif
+
+    @if($post->updated_at)
     <meta property="og:updated_time" content="{{ $post->updated_at->toIso8601String() }}"/>
+    @endif
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:description" content="{{ $post->excerpt }}"/>
