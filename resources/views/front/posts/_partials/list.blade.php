@@ -1,5 +1,7 @@
 <ul>
     @foreach($posts as $post)
-        @include('front.posts._partials.listItem')
+        @if($post->id !== 1058)
+            @include('front.posts._partials.listItem')
+        @endif
     @endforeach
 </ul>
