@@ -23,6 +23,13 @@ class RouteServiceProvider extends ServiceProvider
                 return $post;
             }
 
+            /**
+             * List the event sourcing post
+             */
+            if ($post->id === 1058) {
+                return true;
+            }
+
             if (! $post->published) {
                 abort(404);
             }
