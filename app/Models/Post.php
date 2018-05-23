@@ -41,7 +41,9 @@ class Post extends BaseModel implements Feedable
 
     public function scopePublished(Builder $query)
     {
-        $query->where('published', true);
+        $query
+            ->where('published', true)
+            ->where('visible', true);
     }
 
     public function getTextAttribute($original)
@@ -131,7 +133,6 @@ class Post extends BaseModel implements Feedable
     {
         return static::published()
             ->orderBy('publish_date', 'desc')
-            ->where('id', '!=', 1058)
             ->limit(100)
             ->get();
     }

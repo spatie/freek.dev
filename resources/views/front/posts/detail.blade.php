@@ -18,11 +18,9 @@
 
     <h1>{{ $post->formatted_title }}</h1>
 
-    @if($post->publish_date)
     <div class="text-grey-darker text-sm pb-6 border-b text-grey">
         Posted on <time datetime="{{ $post->publish_date->format(DateTime::ATOM) }}">{{ $post->publish_date }}</time> | {{ $post->author }}
     </div>
-    @endif
 
     <div class="pt-4 post-content">
         {!! $post->text !!}
@@ -42,12 +40,8 @@
     @foreach($post->tags as $tag)
         <meta property="article:tag" content="{{ $tag->name }}"/>
     @endforeach
-    @if($post->publish_date)
     <meta property="article:published_time" content="{{ $post->publish_date->toIso8601String() }}"/>
-    @endif
-    @if($post->updated_at)
     <meta property="og:updated_time" content="{{ $post->updated_at->toIso8601String() }}"/>
-    @endif
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:description" content="{{ $post->excerpt }}"/>
