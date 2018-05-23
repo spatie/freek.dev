@@ -42,7 +42,9 @@
     @foreach($post->tags as $tag)
         <meta property="article:tag" content="{{ $tag->name }}"/>
     @endforeach
-    <meta property="article:published_time" content="{{ $post->publish_date->toIso8601String() }}"/>
+    @if($post->publish_date)
+        <meta property="article:published_time" content="{{ $post->publish_date->toIso8601String() }}"/>
+    @endif
     <meta property="og:updated_time" content="{{ $post->updated_at->toIso8601String() }}"/>
 
     <meta name="twitter:card" content="summary_large_image"/>
