@@ -131,7 +131,7 @@ class Post extends BaseModel implements Feedable
     {
         return static::published()
             ->orderBy('publish_date', 'desc')
-            ->whereNot('id', 1058)
+            ->where('id', '!=', 1058)
             ->limit(100)
             ->get();
     }
