@@ -24,7 +24,7 @@ class RouteServiceProvider extends ServiceProvider
             }
 
             /**
-             * List the event sourcing post
+             * Allow to display the event sourcing post
              */
             if ($post->id === 1058) {
                 return true;
