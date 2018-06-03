@@ -53,6 +53,6 @@ class PostsController extends Controller
 
         flash()->success('The post was deleted');
 
-        return back();
+        return redirect()->action('Back\PostsController@index');
     }
 }
