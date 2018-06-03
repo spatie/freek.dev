@@ -44,7 +44,7 @@ class PostsController extends Controller
 
         flash()->success('Post updated');
 
-        return back();
+        return redirect()->action('Back\PostsController@edit', $post->id);
     }
 
     public function destroy(Post $post)
