@@ -9,13 +9,18 @@ use Illuminate\Support\Collection;
 class Generator
 {
     /** @var \Carbon\Carbon */
+    protected $startDate;
+
+    /** @var \Carbon\Carbon */
     protected $endDate;
 
     /** @var int */
     protected $editionNumber;
 
-    public function __construct(Carbon $endDate, int $editionNumber)
+    public function __construct(Carbon $startDate, Carbon $endDate, int $editionNumber)
     {
+        $this->startDate = $startDate;
+
         $this->endDate = $endDate;
 
         $this->editionNumber = $editionNumber;
@@ -39,7 +44,7 @@ class Generator
     protected function getRecentPosts(): Collection
     {
         return $this->getPosts(
-            $this->endDate->copy()->subWeek(2)->startOfDay(),
+            $this->startDate->startOfDay(),
             $this->endDate->endOfDay()
         );
     }
@@ -47,7 +52,7 @@ class Generator
     protected function getRecentTweets(): Collection
     {
         return $this->getPosts(
-            $this->endDate->copy()->subWeek(2)->startOfDay(),
+            $this->startDate->startOfDay(),
             $this->endDate->endOfDay(),
             true
         );

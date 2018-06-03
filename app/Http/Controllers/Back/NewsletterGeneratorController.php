@@ -18,17 +18,23 @@ class NewsletterGeneratorController extends Controller
 
     public function generate(Request $request)
     {
-        $attributes = $request->validate([
+        $validated = $request->validate([
             'edition_number' => 'required|numeric',
+            'start_date' => 'required|date_format:Y-m-d',
             'end_date' => 'required|date_format:Y-m-d',
         ]);
 
-        $endDate = Carbon::createFromFormat('Y-m-d', $attributes['end_date']);
+        $startDate = Carbon::createFromFormat('Y-m-d', $validated['start_date']);
+        $endDate = Carbon::createFromFormat('Y-m-d', $validated['end_date']);
 
-        $newsletterHtml = (new Generator($endDate, $attributes['edition_number']))->getHtml();
+        $newsletterHtml = (new Generator(
+            $startDate,
+            $endDate,
+            $validated['edition_number'])
+        )->getHtml();
 
         session()->flash('newsletterHtml', $newsletterHtml);
 
-        return back();
+        return redirect()->action('Back\NewsletterGeneratorController@index');
     }
 }

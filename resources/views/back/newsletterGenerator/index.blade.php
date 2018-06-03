@@ -23,6 +23,14 @@
             </div>
 
             <div class="form-line">
+                <label class="form-label" for="start_date">Start date (Y-m-d):</label>
+                <input class="form-text-input" name="start_date" value="{{ old('start_date') }}">
+                @if($errors->has('start_date'))
+                    <div class="validation-error">{{ $errors->first('start_date') }}</div>
+                @endif
+            </div>
+
+            <div class="form-line">
                 <label class="form-label" for="end_date">End date (Y-m-d):</label>
                 <input class="form-text-input" name="end_date" value="{{ old('end_date') }}">
                 @if($errors->has('end_date'))
