@@ -60,7 +60,7 @@
     },
     "scripts": {
         "format": [
-            "vendor/bin/php-cs-fixer fix ."
+            "vendor/bin/php-cs-fixer fix"
         ],
         "check-security": [
             "vendor/bin/security-checker security:check"

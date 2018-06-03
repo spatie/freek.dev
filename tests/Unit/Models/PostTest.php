@@ -20,6 +20,5 @@ class PostTest extends TestCase
             'external_url' => 'https://external-blog.com/page'
         ]);
         $this->assertEquals('https://external-blog.com/page', $post->promotional_url);
-
     }
 }

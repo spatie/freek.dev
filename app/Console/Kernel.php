@@ -2,7 +2,6 @@
 
 namespace App\Console;
 
-use App\Console\Commands\FixPostTexts;
 use App\Console\Commands\ImportWp;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
