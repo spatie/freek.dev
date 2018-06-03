@@ -398,7 +398,7 @@
                                                             <td class="textContent" open="" sans="" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: " valign="top">
 
                                                                 @foreach($recentPosts as $post)
-                                                                <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="{{ $post->url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $post->title }}</a><br />
+                                                                <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="{{ $post->promotional_url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $post->title }}</a><br />
                                                                     {{ $post->excerpt }}</p>
                                                                 @endforeach
                                                             </td>
@@ -448,7 +448,7 @@
                                                                 <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">On Twitter I see a bunch of people regularly tweeting very nice code snippets.</p>
 
                                                                 @foreach($recentTweets as $tweet)
-                                                                <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="{{ $tweet->url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $tweet->title }}</a></p>
+                                                                <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="{{ $tweet->promotional_url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $tweet->title }}</a></p>
                                                                     @endforeach
                                                             </td>
                                                         </tr>
@@ -487,7 +487,7 @@
 
                                                                             <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                                 @foreach($oldPosts as $post)
-                                                                                <a href="{{ $post->url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $post->title }}</a><br />
+                                                                                <a href="{{ $post->promotional_url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $post->title }}</a><br />
                                                                                 {{ $post->excerpt }}<br /> <br />
                                                                                @endforeach
                                                                             </p>

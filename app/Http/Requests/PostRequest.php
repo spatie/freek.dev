@@ -20,6 +20,7 @@ class PostRequest extends FormRequest
             'published' => 'boolean',
             'original_content' => 'boolean',
             'tags_text' => 'present',
+            'external_url' => 'url',
         ];
     }
 }

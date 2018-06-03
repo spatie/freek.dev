@@ -32,6 +32,14 @@
     @endif
 </div>
 
+<div class="form-line">
+    <label class="form-label" for="external_url">External url:</label>
+    <input class="form-text-input" id="external_url" name="external_url" value="{{ old('external_url', $post->external_url) }}">
+    @if($errors->has('external_url'))
+        <div class="validation-error">{{ $errors->first('external_url') }}</div>
+    @endif
+</div>
+
 <div class="form-line form-checkbox">
     <input class="mr-2" name="published" value="1" type="checkbox" {{ $post->published ? 'checked' : '' }}> Published
 </div>

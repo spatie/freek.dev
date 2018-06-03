@@ -16,30 +16,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        Route::bind('postSlug', function ($slug) {
-            $post =  Post::where('slug', $slug)->first() ?? abort(404);
-
-            if (auth()->check()) {
-                return $post;
-            }
-
-            /**
-             * Allow to display the event sourcing post
-             */
-            if ($post->id === 1058) {
-                return true;
-            }
-
-            if (! $post->published) {
-                abort(404);
-            }
-
-            return $post;
-        });
-
-        Route::bind('tagSlug', function ($slug) {
-            return Tag::where('slug->en', $slug)->first() ?? abort(404);
-        });
+        $this->registerRouteModelBindings();
     }
 
     public function map()
@@ -69,5 +46,33 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['web'])
             ->namespace($this->namespace . '\\Front')
             ->group(base_path('routes/front.php'));
+    }
+
+    public function registerRouteModelBindings()
+    {
+        Route::bind('postSlug', function ($slug) {
+            $post = Post::where('slug', $slug)->first() ?? abort(404);
+
+            if (auth()->check()) {
+                return $post;
+            }
+
+            /**
+             * Allow to display the event sourcing post
+             */
+            if ($post->id === 1058) {
+                return true;
+            }
+
+            if (!$post->published) {
+                abort(404);
+            }
+
+            return $post;
+        });
+
+        Route::bind('tagSlug', function ($slug) {
+            return Tag::where('slug->en', $slug)->first() ?? abort(404);
+        });
     }
 }

@@ -62,6 +62,7 @@ class Post extends BaseModel implements Feedable
         $this->publish_date = $attributes['publish_date'];
         $this->published = $attributes['published'] ?? false;
         $this->original_content = $attributes['original_content'] ?? false;
+        $this->external_url = $attributes['external_url'];
 
         $this->save();
 
@@ -175,5 +176,14 @@ class Post extends BaseModel implements Feedable
     public function getUrlAttribute(): string
     {
         return action('Front\PostsController@detail', $this->slug);
+    }
+
+    public function getPromotionalUrlAttribute(): string
+    {
+        if (! empty($this->external_url)) {
+            return $this->external_url;
+        }
+
+        return $this->url;
     }
 }
