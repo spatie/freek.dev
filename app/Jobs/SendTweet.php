@@ -38,7 +38,13 @@ class SendTweet implements ShouldQueue
             })
             ->implode(' ');
 
-        return '"' . $post->title . '"'
+        $title = $post->title;
+
+        if (! empty($post->external_url)) {
+            $title = '"' . $title . '"';
+        }
+
+        return $title
             . PHP_EOL . $post->promotional_url
             . PHP_EOL . $tags;
     }
