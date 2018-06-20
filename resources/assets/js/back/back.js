@@ -7,7 +7,7 @@ if (editors.length) {
         element: editors[0],
         spellChecker: true,
         autosave: {
-            enabled: true,
+            enabled: false,
             uniqueId: window.location,
         },
     });
