@@ -27,10 +27,10 @@ class PaymentsController extends Controller
     {
         Stripe::setApiKey(config('services.stripe.secret'));
 
-        $customer = Customer::create(array(
+        $customer = Customer::create([
             'email' => $request->stripeEmail,
             'source'  => $request->stripeToken
-        ));
+        ]);
 
         Charge::create(array(
             'customer' => $customer->id,
