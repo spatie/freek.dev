@@ -30,7 +30,8 @@ class NewsletterGeneratorController extends Controller
         $newsletterHtml = (new Generator(
             $startDate,
             $endDate,
-            $validated['edition_number'])
+            $validated['edition_number']
+        )
         )->getHtml();
 
         session()->flash('newsletterHtml', $newsletterHtml);

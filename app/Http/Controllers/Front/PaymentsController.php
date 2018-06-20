@@ -29,14 +29,14 @@ class PaymentsController extends Controller
 
         $customer = Customer::create([
             'email' => $request->stripeEmail,
-            'source'  => $request->stripeToken
+            'source' => $request->stripeToken
         ]);
 
-        Charge::create(array(
+        Charge::create([
             'customer' => $customer->id,
-            'amount'   => $request->amount,
+            'amount' => $request->amount,
             'currency' => 'EUR'
-        ));
+        ]);
 
         flash()->info('Your payment was successfull! Thank you!');
 
