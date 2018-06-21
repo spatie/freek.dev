@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Mail\PaymentFailed;
+use App\Mail\PaymentSuccessfulMail;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Stripe\Charge;
 use Stripe\Customer;
 use Stripe\Stripe;
@@ -12,18 +16,48 @@ class PaymentsController extends Controller
 {
     public function index()
     {
-        dump(session()->has('amount'));
         return view('front.payments.index');
     }
 
     public function setAmount(Request $request)
     {
+        $request->validate([
+            'amount' => 'numeric|between:1,9999',
+        ]);
+
         session()->flash('amount', $request->amount * 100);
 
         return redirect()->action('Front\PaymentsController@index');
     }
 
     public function handlePayment(Request $request)
+    {
+        try {
+            $this->performPayment($request);
+        }
+        catch (Exception $exception) {
+            flash()->error('There was a problem processing your payment.');
+
+            Mail::to('freek@spatie.be')->send(new PaymentFailed(
+                $request->stripeEmail,
+                $request->amount,
+                $exception->getMessage()
+            ));
+
+            return redirect()->action('Front\PaymentsController@index');
+        }
+
+        Mail::to('freek@spatie.be')->send(new PaymentSuccessfulMail(
+            $request->stripeEmail,
+            $request->amount
+        ));
+
+        flash()->success('Your payment was successful! Thank you!');
+
+        return redirect()->action('Front\PaymentsController@index');
+    }
+
+    protected function performPayment(Request $request)
     {
         Stripe::setApiKey(config('services.stripe.secret'));
 
@@ -37,9 +71,5 @@ class PaymentsController extends Controller
             'amount' => $request->amount,
             'currency' => 'EUR',
         ]);
-
-        flash()->info('Your payment was successfull! Thank you!');
-
-        return redirect()->action('Front\PaymentsController@index');
     }
 }

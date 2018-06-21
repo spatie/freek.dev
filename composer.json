@@ -27,7 +27,8 @@
         "spatie/laravel-sluggable": "^2.1",
         "spatie/laravel-tags": "^2.0",
         "spatie/laravel-tail": "^3.0",
-        "stripe/stripe-php": "^6.8"
+        "stripe/stripe-php": "^6.8",
+        "themsaid/laravel-mail-preview": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",

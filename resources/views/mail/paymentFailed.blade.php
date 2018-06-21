@@ -1,0 +1,1 @@
+{{ $email }} had a problem making a payment of {{ $amount / 100 }} EUR. Error message: {{ $exceptionMessage }}

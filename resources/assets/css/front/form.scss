@@ -1,0 +1,23 @@
+.form {
+  @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+}
+
+.form-line {
+  @apply pt-4;
+}
+
+.form-label {
+  @apply block text-grey-darker text-sm font-bold mb-2;
+}
+
+.form-checkbox  {
+    @apply text-grey-darker text-sm font-bold mb-2;
+}
+
+.form-text-input {
+  @apply appearance-none border rounded w-full py-3 px-3 text-grey-darker;
+}
+
+.validation-error {
+  @apply text-sm text-red italic py-2;
+}
