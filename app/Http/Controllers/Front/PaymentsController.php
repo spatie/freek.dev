@@ -34,8 +34,7 @@ class PaymentsController extends Controller
     {
         try {
             $this->performPayment($request);
-        }
-        catch (Exception $exception) {
+        } catch (Exception $exception) {
             flash()->error('There was a problem processing your payment.');
 
             Mail::to('freek@spatie.be')->send(new PaymentFailed(
