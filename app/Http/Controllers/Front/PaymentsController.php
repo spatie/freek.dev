@@ -16,7 +16,6 @@ class PaymentsController extends Controller
 {
     public function index()
     {
-        die('here');
         return view('front.payments.index');
     }
 
@@ -38,7 +37,7 @@ class PaymentsController extends Controller
         } catch (Exception $exception) {
             flash()->error('There was a problem processing your payment.');
 
-            Mail::to('freek@spatie.be')->send(new PaymentFailed(
+            Mail::to('freek@spatie.be')->queue(new PaymentFailed(
                 $request->stripeEmail,
                 $request->amount,
                 $exception->getMessage()
@@ -47,7 +46,7 @@ class PaymentsController extends Controller
             return redirect()->action('Front\PaymentsController@index');
         }
 
-        Mail::to('freek@spatie.be')->send(new PaymentSuccessfulMail(
+        Mail::to('freek@spatie.be')->queue(new PaymentSuccessfulMail(
             $request->stripeEmail,
             $request->amount
         ));
