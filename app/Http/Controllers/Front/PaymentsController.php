@@ -16,6 +16,7 @@ class PaymentsController extends Controller
 {
     public function index()
     {
+        die('here');
         return view('front.payments.index');
     }
 
