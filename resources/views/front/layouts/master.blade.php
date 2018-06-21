@@ -22,8 +22,8 @@
 
     <div class="flex flex-col lg:flex-row">
 
-
         <main class="lg:w-3/4 lg:mr-4">
+            @include('back.layouts._partials.flashMessage')
             @yield('content')
         </main>
 

@@ -1,0 +1,15 @@
+.alert {
+  @apply text-sm px-6 py-4;
+}
+
+.alert-success {
+  @apply .alert bg-green-lightest border-l-4 border-green text-green-dark;
+}
+
+.alert-danger {
+  @apply .alert bg-red-lightest border-l-4 border-red text-red-dark;
+}
+
+.alert-info {
+  @apply .alert bg-blue-lightest border-l-4 border-blue text-blue-dark;
+}
