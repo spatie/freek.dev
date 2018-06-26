@@ -1,5 +1,5 @@
 <div>
-    Payments can be made with creditcards and are handled with securely via Stripe. Which amount in EUR would you
+    Payments can be made with credit cards and are handled securely with Stripe. Which amount in EUR would you
     like to pay?
 </div>
 
