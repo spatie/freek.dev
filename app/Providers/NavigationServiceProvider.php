@@ -13,13 +13,13 @@ class NavigationServiceProvider extends ServiceProvider
         Menu::macro('main', function () {
             return Menu::new()
                 ->addClass('list-reset lg:flex justify-end items-center')
-                ->addItemClass('block border-b-2 border-transparent py-2 px-4 text-center align-content-center lg:mx-6')
+                ->addItemClass('block border-b-2 border-transparent py-2 px-4 text-center align-content-center lg:mx-2')
                 ->action('Front\HomeController@index', 'Home')
                 ->action('Front\OriginalsController@index', 'Originals')
                 ->action('Front\NewsletterController@index', 'Newsletter')
                 ->url('/advertising', 'Advertising')
                 ->action('Front\MeController@index', 'Me')
-                ->add(View::create('front.layouts._partials.search')->addParentClass('items-center mt-4 lg:mt-0'))
+                ->add(View::create('front.layouts._partials.search')->addParentClass('w-full items-center mt-4 lg:mt-0'))
                 ->setActiveFromRequest('/');
         });
 
