@@ -24,33 +24,32 @@
 </template>
 
 <script>
-    import algoliasearch from 'algoliasearch';
+import algoliasearch from 'algoliasearch';
 
-    export default {
-        props: ['appId', 'apiKey', 'indexName'],
+export default {
+    props: ['appId', 'apiKey', 'indexName'],
 
+    data() {
+        return {
+            query: '',
+            index: null,
+            hits: [],
+        };
+    },
 
-        data() {
-            return {
-                query: '',
-                index: null,
-                hits: [],
-            };
+    created: function() {
+        const client = algoliasearch(this.appId, this.apiKey);
+
+        this.index = client.initIndex(this.indexName);
+    },
+
+    methods: {
+        performSearch(event) {
+            this.index.search({ query: this.query }, (error, results) => {
+                console.log();
+                this.hits = results.hits;
+            });
         },
-
-        created: function () {
-            const client = algoliasearch(this.appId, this.apiKey);
-
-            this.index = client.initIndex(this.indexName);
-        },
-
-        methods: {
-            performSearch(event) {
-                this.index.search({query: this.query}, (error, results) => {
-                    console.log()
-                    this.hits = results.hits;
-                });
-            }
-        }
-    }
+    },
+};
 </script>
