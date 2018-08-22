@@ -7,6 +7,12 @@
     ],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./nova"
+        }
+    ],
     "require": {
         "php": ">=7.1.3",
         "abraham/twitteroauth": "^0.7.4",
