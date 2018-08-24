@@ -5,6 +5,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\Boolean;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use App\Models\Post as PostModel;
@@ -27,13 +28,13 @@ class Post extends Resource
     {
         return [
             new Panel('Post', [
-                Text::make('Title')->sortable(),
+                Text::make('Title')->sortable()->rules('required'),
 
-                Markdown::make('Text'),
+                Markdown::make('Text')->rules('required'),
 
                 Tags::make('Tags'),
 
-                Date::make('Publish date')->sortable(),
+                Date::make('Publish date')->sortable()->rules('required'),
             ]),
 
 

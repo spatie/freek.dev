@@ -7,6 +7,7 @@ use App\Jobs\SendTweet;
 use App\Models\Presenters\PostPresenter;
 use App\Services\Parsedown;
 use Illuminate\Database\Eloquent\Builder;
+use Laravel\Nova\Nova;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
@@ -31,6 +32,19 @@ class Post extends BaseModel implements Feedable
         'published' => 'boolean',
         'original_content' => 'boolean'
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saved(function (Post $post) {
+            if ($post->published) {
+                static::unsetEventDispatcher();
+
+                $post->publishOnSocialMedia();
+            }
+        });
+    }
 
     public function getSlugOptions(): SlugOptions
     {
