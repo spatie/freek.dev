@@ -40,7 +40,8 @@
         "spatie/laravel-tail": "^3.0",
         "spatie/nova-tags-field": "dev-master",
         "stripe/stripe-php": "^6.8",
-        "themsaid/laravel-mail-preview": "^2.0"
+        "themsaid/laravel-mail-preview": "^2.0",
+        "tightenco/nova-google-analytics": "^0.1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
