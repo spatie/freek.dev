@@ -8,7 +8,9 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "format": "prettier --write 'resources/assets/**/*.{css,js,vue}'"
+        "format": "prettier --write 'resources/assets/**/*.{css,js,vue}'",
+        "build-nova-tags-field": "cd nova-components/NovaTagsField && npm run dev",
+        "build-nova-tags-field-prod": "cd nova-components/NovaTagsField && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.17",

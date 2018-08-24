@@ -11,6 +11,10 @@
         {
             "type": "path",
             "url": "./nova"
+        },
+        {
+            "type": "path",
+            "url": "../nova-tags-field"
         }
     ],
     "require": {
@@ -22,6 +26,7 @@
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.6.*",
         "laravel/horizon": "^1.0",
+        "laravel/nova": "*",
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
         "spatie/laravel-backup": "^5.1",
@@ -33,6 +38,7 @@
         "spatie/laravel-sluggable": "^2.1",
         "spatie/laravel-tags": "^2.0",
         "spatie/laravel-tail": "^3.0",
+        "spatie/nova-tags-field": "dev-master",
         "stripe/stripe-php": "^6.8",
         "themsaid/laravel-mail-preview": "^2.0"
     },
@@ -88,5 +94,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
