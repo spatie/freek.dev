@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
+    protected $dates = ['starts_at', 'ends_at'];
+
     public static function getForCurrentPage(): ?self
     {
         return Ad::getForPage(request()->path());
@@ -42,5 +44,10 @@ class Ad extends Model
         $adText = $original . ' (sponsored link)';
 
         return (new Parsedown())->text($adText);
+    }
+
+    public function getExcerptAttribute()
+    {
+        return str_limit($this->getAttributes()['text']);
     }
 }
