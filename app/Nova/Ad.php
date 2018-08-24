@@ -13,7 +13,7 @@ class Ad extends Resource
 {
     public static $model = AdModel::class;
 
-    public static $title = 'id';
+    public static $title = 'excerpt';
 
     public static $search = [
         'text',

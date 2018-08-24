@@ -19,11 +19,11 @@ class Talk extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Title'),
+            Text::make('Title')->sortable(),
 
-            Text::make('Location'),
+            Text::make('Location')->sortable(),
 
-            Date::make('Presented at'),
+            Date::make('Presented at')->sortable(),
 
             Text::make('Video link')->hideFromIndex(),
 

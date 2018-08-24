@@ -39,7 +39,7 @@ class Ad extends Model
             ->whereDate('ends_at', '>=', $now);
     }
 
-    public function getTextAttribute($original)
+    public function getFormattedTextAttribute($original)
     {
         $adText = $original . ' (sponsored link)';
 
@@ -48,6 +48,6 @@ class Ad extends Model
 
     public function getExcerptAttribute()
     {
-        return str_limit($this->getAttributes()['text']);
+        return str_limit($this->text);
     }
 }
