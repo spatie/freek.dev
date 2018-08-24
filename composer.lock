@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f501adf7c7cdf29b54f6d0fa6b4fbb4d",
+    "content-hash": "05d74cf3784af1f545f47a66a3900777",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -573,6 +573,40 @@
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
             "time": "2017-06-27T22:17:23+00:00"
+        },
+        {
+            "name": "freekmurze/generate-newsletter",
+            "version": "dev-nova",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/GenerateNewsletter",
+                "reference": "0ac9d4fc46d9e8c8057e9d07620c923e61184c72",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Freekmurze\\GenerateNewsletter\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Freekmurze\\GenerateNewsletter\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
         },
         {
             "name": "google/apiclient",
@@ -2486,22 +2520,21 @@
         },
         {
             "name": "spatie/laravel-analytics",
-            "version": "3.6.1",
+            "version": "3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-analytics.git",
-                "reference": "a939043be66c1cc1976a8ec9b90b7157f8bdb682"
+                "reference": "8dff6dc7fb43cb6013f3d9fc57917462edded9e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-analytics/zipball/a939043be66c1cc1976a8ec9b90b7157f8bdb682",
-                "reference": "a939043be66c1cc1976a8ec9b90b7157f8bdb682",
+                "url": "https://api.github.com/repos/spatie/laravel-analytics/zipball/8dff6dc7fb43cb6013f3d9fc57917462edded9e1",
+                "reference": "8dff6dc7fb43cb6013f3d9fc57917462edded9e1",
                 "shasum": ""
             },
             "require": {
                 "google/apiclient": "^2.0",
-                "illuminate/contracts": "~5.4.0|~5.5.0|~5.6.0",
-                "illuminate/support": "~5.4.0|~5.5.0|~5.6.0",
+                "laravel/framework": "~5.4.0|~5.5.0|~5.6.0|~5.7.0",
                 "madewithlove/illuminate-psr-cache-bridge": "^1.0",
                 "nesbot/carbon": "^1.21",
                 "php": "^7.0"
@@ -2509,7 +2542,7 @@
             "require-dev": {
                 "league/flysystem": ">=1.0.8",
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "~3.4.6|~3.5.0|~3.6.0",
+                "orchestra/testbench": "~3.4.6|~3.5.0|~3.6.0|~5.7.0",
                 "phpunit/phpunit": "^6.1|^7.0"
             },
             "type": "library",
@@ -2550,7 +2583,7 @@
                 "retrieve",
                 "spatie"
             ],
-            "time": "2018-05-04T07:47:45+00:00"
+            "time": "2018-08-24T21:31:14+00:00"
         },
         {
             "name": "spatie/laravel-backup",
@@ -3279,7 +3312,7 @@
             "dist": {
                 "type": "path",
                 "url": "../nova-tags-field",
-                "reference": "ab434af582648ae2e19bab0e51dc4bbea4827283",
+                "reference": "1c59d3d80d772c49b8290b515e38673d2667de77",
                 "shasum": null
             },
             "require": {

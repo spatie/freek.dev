@@ -1,0 +1,6 @@
+<router-link tag="h3" :to="{name: 'generate-newsletter'}" class="cursor-pointer flex items-center font-normal dim text-white mb-6 text-base no-underline">
+    <svg class="sidebar-icon" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><g><path d="M67,33.6H33c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5h34c0.8,0,1.5-0.7,1.5-1.5C68.5,34.2,67.9,33.6,67,33.6z"></path><path d="M67,44.1H33c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5h34c0.8,0,1.5-0.7,1.5-1.5C68.5,44.7,67.9,44.1,67,44.1z"></path><path d="M92.1,42.1c-0.1-0.5-0.4-0.9-0.8-1.2L79,35.8V9.5C79,8.7,78.3,8,77.5,8h-55C21.7,8,21,8.7,21,9.5v26.3l-12.1,5   c-0.6,0.1-1,0.7-1,1.4v50.4c0,0.8,0.7,1.5,1.5,1.5h81.2c0.8,0,1.5-0.7,1.5-1.5V42.2L92.1,42.1z M12.6,42.4l8.4-3.5v8.7L12.6,42.4z    M79,47.5v-8.7l8.4,3.5L79,47.5z M24,49.3V10.9h52v38.3L50,65L24,49.3z M89.1,44.8v46.3H10.9V44.8l38.4,23.2   c0.3,0.2,0.5,0.2,0.7,0.2s0.4,0,0.8-0.2L89.1,44.8z"></path><path d="M58.3,27.1H67c0.8,0,1.5-0.7,1.5-1.5v-8.7c0-0.8-0.7-1.5-1.5-1.5h-8.7c-0.8,0-1.5,0.7-1.5,1.5v8.7   C56.8,26.4,57.5,27.1,58.3,27.1z M59.7,24.2v-5.8h5.8v5.8H59.7z"></path></g></svg>
+    <span class="sidebar-label">
+        Newsletter
+    </span>
+</router-link>

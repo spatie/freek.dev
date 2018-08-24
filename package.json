@@ -10,7 +10,9 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "format": "prettier --write 'resources/assets/**/*.{css,js,vue}'",
         "build-nova-tags-field": "cd nova-components/NovaTagsField && npm run dev",
-        "build-nova-tags-field-prod": "cd nova-components/NovaTagsField && npm run prod"
+        "build-nova-tags-field-prod": "cd nova-components/NovaTagsField && npm run prod",
+        "build-generate-newsletter": "cd nova-components/GenerateNewsletter && npm run dev",
+        "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.17",
