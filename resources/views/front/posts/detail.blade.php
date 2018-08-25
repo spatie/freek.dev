@@ -6,7 +6,7 @@
 
     @auth
         <div class="pb-4">
-            <a class="button" target="_blank" href="{{ action('Back\PostsController@edit', $post->id) }}">Edit</a>
+            <a class="button" target="_blank" href="/nova/resources/posts/{{ $post->id }}/edit">Edit</a>
         </div>
     @endauth
 
@@ -23,7 +23,7 @@
     </div>
 
     <div class="pt-4 post-content">
-        {!! $post->text !!}
+        {!! $post->formatted_text !!}
     </div>
 
     <div class="pt-4">

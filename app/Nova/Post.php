@@ -28,7 +28,7 @@ class Post extends Resource
         return [
             new Panel('Post', [
                 Text::make('Title')->sortable()->rules('required'),
-                Markdown::make('Body', 'Markdown')->rules('required'),
+                Markdown::make('Text')->rules('required'),
                 Tags::make('Tags'),
                 Date::make('Publish date')->sortable()->rules('required'),
             ]),

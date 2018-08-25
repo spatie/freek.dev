@@ -10,7 +10,7 @@ trait PostPresenter
             return '';
         }
 
-        $excerpt = trim($this->text);
+        $excerpt = trim($this->formatted_text);
 
         $excerpt = str_before($excerpt, '<blockquote>');
 
