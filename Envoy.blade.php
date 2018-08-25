@@ -89,7 +89,7 @@ yarn
 {{ logMessage("🌅  Generating assets…") }}
 cd {{ $newReleaseDir }};
 yarn run production -- --progress false
-yarn build-generate-newsletter-prod
+yarn build-generate-newsletter-prod -- --progress false
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
