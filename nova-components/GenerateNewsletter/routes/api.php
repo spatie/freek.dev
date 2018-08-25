@@ -1,5 +1,6 @@
 <?php
 
+use Freekmurze\GenerateNewsletter\Http\Controllers\GenerateNewsletterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/endpoint', function (Request $request) {
-//     //
-// });
+Route::post('/', GenerateNewsletterController::class);

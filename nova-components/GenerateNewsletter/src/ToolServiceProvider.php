@@ -10,11 +10,6 @@ use Freekmurze\GenerateNewsletter\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'generate-newsletter');
@@ -28,11 +23,6 @@ class ToolServiceProvider extends ServiceProvider
         });
     }
 
-    /**
-     * Register the tool's routes.
-     *
-     * @return void
-     */
     protected function routes()
     {
         if ($this->app->routesAreCached()) {
@@ -40,17 +30,7 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/generate-newsletter')
+                ->prefix('nova-vendor/freekmurze/generate-newsletter')
                 ->group(__DIR__.'/../routes/api.php');
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
     }
 }
