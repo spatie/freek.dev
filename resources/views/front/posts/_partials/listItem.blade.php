@@ -1,5 +1,5 @@
 <li class="pb-2 pt-2 border-t">
-    <a href="{{ action('Front\PostsController@detail', [$post->slug]) }}">
+    <a href="{{ action('PostsController@detail', [$post->slug]) }}">
         {{ $post->formatted_title }}
     </a>
     <div class="flex items-center text-xs pt-2 mb-2">
