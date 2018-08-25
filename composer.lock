@@ -3318,16 +3318,16 @@
         },
         {
             "name": "spatie/nova-backup-tool",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/nova-backup-tool.git",
-                "reference": "1eb1b41349d48d8ac2a56b2774071ecdea27beff"
+                "reference": "aca75a501f86deb4cf4a680539ecb4e98c23a837"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-backup-tool/zipball/1eb1b41349d48d8ac2a56b2774071ecdea27beff",
-                "reference": "1eb1b41349d48d8ac2a56b2774071ecdea27beff",
+                "url": "https://api.github.com/repos/spatie/nova-backup-tool/zipball/aca75a501f86deb4cf4a680539ecb4e98c23a837",
+                "reference": "aca75a501f86deb4cf4a680539ecb4e98c23a837",
                 "shasum": ""
             },
             "require": {
@@ -3372,7 +3372,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-08-24T18:52:36+00:00"
+            "time": "2018-08-25T22:25:05+00:00"
         },
         {
             "name": "spatie/nova-tags-field",
@@ -3430,16 +3430,16 @@
         },
         {
             "name": "spatie/nova-tail-tool",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/nova-tail-tool.git",
-                "reference": "881e36ca830a41df1f5e0e3e3e96f1b0727eb0d5"
+                "reference": "f597cda4781e88272db4aefde579e69509523749"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-tail-tool/zipball/881e36ca830a41df1f5e0e3e3e96f1b0727eb0d5",
-                "reference": "881e36ca830a41df1f5e0e3e3e96f1b0727eb0d5",
+                "url": "https://api.github.com/repos/spatie/nova-tail-tool/zipball/f597cda4781e88272db4aefde579e69509523749",
+                "reference": "f597cda4781e88272db4aefde579e69509523749",
                 "shasum": ""
             },
             "require": {
@@ -3489,7 +3489,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-08-24T18:46:49+00:00"
+            "time": "2018-08-25T21:53:12+00:00"
         },
         {
             "name": "spatie/once",
