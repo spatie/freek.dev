@@ -26,7 +26,7 @@ class Ad extends Resource
 
             Text::make('Excerpt')->onlyOnIndex(),
 
-            Textarea::make('Text')->hideFromIndex(),
+            Textarea::make('Text')->hideFromIndex()->rules('required'),
 
             Date::make('starts_at'),
 

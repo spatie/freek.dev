@@ -30,7 +30,7 @@ class Post extends Resource
             new Panel('Post', [
                 Text::make('Title')->sortable()->rules('required'),
 
-                Markdown::make('Text')->rules('required'),
+                Markdown::make('Markdown')->rules('required'),
 
                 Tags::make('Tags'),
 
