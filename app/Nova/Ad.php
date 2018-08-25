@@ -24,6 +24,7 @@ class Ad extends Resource
         return [
             Text::make('Excerpt')->onlyOnIndex(),
             Textarea::make('Text')->hideFromIndex()->rules('required'),
+            Text::make('Display on URL')->hideFromIndex(),
             Date::make('starts_at'),
             Date::make('ends_at'),
         ];
