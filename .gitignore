@@ -16,4 +16,3 @@ npm-debug.log
 yarn-error.log
 .env
 .php_cs.cache
-/nova
