@@ -25,7 +25,7 @@ class Ad extends Resource
                 ->onlyOnIndex()
                 ->displayUsing(function (string $text) {
                     return str_limit($text, 50);
-                }),,
+                }),
 
             Textarea::make('Text')
                 ->hideFromIndex()
