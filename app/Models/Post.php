@@ -136,7 +136,7 @@ class Post extends BaseModel implements Feedable
 
         return [
             'title' => $this->title,
-            'url' => url(action('Front\PostsController@detail', $this->slug)),
+            'url' => url(action('PostsController@detail', $this->slug)),
             'public_date' => $this->publish_date->timestamp,
             'text' => substr(strip_tags($this->text), 0, 5000),
             'tags' => $this->tags->implode(',')
@@ -176,7 +176,7 @@ class Post extends BaseModel implements Feedable
             ->title($this->formatted_title)
             ->summary($this->text)
             ->updated($this->updated_at)
-            ->link(url(action('Front\PostsController@detail', $this->slug)))
+            ->link(url(action('PostsController@detail', $this->slug)))
             ->author('Freek Van der Herten');
     }
 
@@ -189,7 +189,7 @@ class Post extends BaseModel implements Feedable
 
     public function getUrlAttribute(): string
     {
-        return action('Front\PostsController@detail', $this->slug);
+        return action('PostsController@detail', $this->slug);
     }
 
     public function getPromotionalUrlAttribute(): string

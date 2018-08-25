@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Front;
-
-use Illuminate\Routing\Controller;
+namespace App\Http\Controllers;
 
 class NewsletterController extends Controller
 {

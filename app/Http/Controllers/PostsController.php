@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers;
 
 use App\Models\Ad;
 use App\Models\Post;
-use Illuminate\Routing\Controller;
 
 class PostsController extends Controller
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Routing\Controller;
+
 use Spatie\Tags\Tag;
 
 class TaggedPostsController extends Controller

@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Mail\PaymentFailed;
 use App\Mail\PaymentSuccessfulMail;
 use Exception;
@@ -27,7 +26,7 @@ class PaymentsController extends Controller
 
         session()->flash('amount', $request->amount * 100);
 
-        return redirect()->action('Front\PaymentsController@index');
+        return redirect()->action('PaymentsController@index');
     }
 
     public function handlePayment(Request $request)
@@ -43,7 +42,7 @@ class PaymentsController extends Controller
                 $exception->getMessage()
             ));
 
-            return redirect()->action('Front\PaymentsController@index');
+            return redirect()->action('PaymentsController@index');
         }
 
         Mail::to('freek@spatie.be')->queue(new PaymentSuccessfulMail(
@@ -53,7 +52,7 @@ class PaymentsController extends Controller
 
         flash()->success('Your payment was successful! Thank you!');
 
-        return redirect()->action('Front\PaymentsController@index');
+        return redirect()->action('PaymentsController@index');
     }
 
     protected function performPayment(Request $request)

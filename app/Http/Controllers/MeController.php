@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers;
 
 use App\Models\Talk;
-use Illuminate\Routing\Controller;
 
 class MeController extends Controller
 {

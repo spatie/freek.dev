@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Post;
 
 class OriginalsController extends Controller
