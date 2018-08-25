@@ -5,5 +5,5 @@ Nova.booting((Vue, router) => {
             path: '/generate-newsletter',
             component: require('./components/Tool'),
         },
-    ])
-})
+    ]);
+});

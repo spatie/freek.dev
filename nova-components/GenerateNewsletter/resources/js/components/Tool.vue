@@ -106,19 +106,18 @@ export default {
             },
 
             newsletterHtml: '',
-        }
+        };
     },
 
     methods: {
         async generateNewsletter() {
-             let response = await window.axios.post(
+            let response = await window.axios.post(
                 '/nova-vendor/freekmurze/generate-newsletter',
                 this.form
             );
 
             this.newsletterHtml = response.data;
-        }
-    }
-}
+        },
+    },
+};
 </script>
-
