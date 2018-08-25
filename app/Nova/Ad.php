@@ -23,13 +23,9 @@ class Ad extends Resource
     {
         return [
             ID::make()->sortable(),
-
             Text::make('Excerpt')->onlyOnIndex(),
-
             Textarea::make('Text')->hideFromIndex()->rules('required'),
-
             Date::make('starts_at'),
-
             Date::make('ends_at'),
         ];
     }

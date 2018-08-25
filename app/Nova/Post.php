@@ -29,21 +29,15 @@ class Post extends Resource
         return [
             new Panel('Post', [
                 Text::make('Title')->sortable()->rules('required'),
-
                 Markdown::make('Body', 'Markdown')->rules('required'),
-
                 Tags::make('Tags'),
-
                 Date::make('Publish date')->sortable()->rules('required'),
             ]),
 
 
             new Panel('Meta', [
-
                 Text::make('External url')->hideFromIndex(),
-
                 Boolean::make('Published'),
-
                 Boolean::make('Original content'),
             ]),
         ];
