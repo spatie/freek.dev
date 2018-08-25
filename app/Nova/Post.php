@@ -27,16 +27,30 @@ class Post extends Resource
     {
         return [
             new Panel('Post', [
-                Text::make('Title')->sortable()->rules('required'),
-                Markdown::make('Text')->rules('required'),
+                Text::make('Title')
+                    ->sortable()
+                    ->rules('required')
+                    ->displayUsing(function (string $title) {
+                        return str_limit($title, 50);
+                    }),
+
+                Markdown::make('Text')
+                    ->rules('required'),
+
                 Tags::make('Tags'),
-                Date::make('Publish date')->sortable()->rules('required'),
+
+                Date::make('Publish date')
+                    ->sortable()
+                    ->rules('required'),
             ]),
 
 
             new Panel('Meta', [
-                Text::make('External url')->hideFromIndex(),
+                Text::make('External url')
+                    ->hideFromIndex(),
+
                 Boolean::make('Published'),
+
                 Boolean::make('Original content'),
             ]),
         ];

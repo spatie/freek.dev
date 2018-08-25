@@ -18,12 +18,26 @@ class Talk extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Title')->sortable()->rules('required'),
-            Text::make('Location')->sortable()->rules('required'),
-            Date::make('Presented at')->sortable()->rules('required'),
-            Text::make('Video link')->hideFromIndex(),
-            Text::make('Slides link')->hideFromIndex(),
-            Text::make('Joindin link')->hideFromIndex(),
+            Text::make('Title')
+                ->sortable()
+                ->rules('required'),
+
+            Text::make('Location')
+                ->sortable()
+                ->rules('required'),
+
+            Date::make('Presented at')
+                ->sortable()
+                ->rules('required'),
+
+            Text::make('Video link')
+                ->hideFromIndex(),
+
+            Text::make('Slides link')
+                ->hideFromIndex(),
+
+            Text::make('Joindin link')
+                ->hideFromIndex(),
         ];
     }
 }

@@ -21,10 +21,18 @@ class Ad extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Excerpt')->onlyOnIndex(),
-            Textarea::make('Text')->hideFromIndex()->rules('required'),
-            Text::make('Display on URL')->hideFromIndex(),
+            Text::make('Excerpt')
+                ->onlyOnIndex(),
+
+            Textarea::make('Text')
+                ->hideFromIndex()
+                ->rules('required'),
+
+            Text::make('Display on URL')
+                ->hideFromIndex(),
+
             Date::make('starts_at'),
+
             Date::make('ends_at'),
         ];
     }
