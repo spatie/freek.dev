@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05d74cf3784af1f545f47a66a3900777",
+    "content-hash": "35c3c9712eb207f965b54b7c6ab3f67e",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1283,11 +1283,16 @@
         {
             "name": "laravel/nova",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:laravel/nova.git",
+                "reference": "286e159d039fadceb2205f649485695d833a6478"
+            },
             "dist": {
-                "type": "path",
-                "url": "./nova",
-                "reference": "6b34fd3882e3cff2dc99d288393e92025bc93094",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/nova/zipball/286e159d039fadceb2205f649485695d833a6478",
+                "reference": "286e159d039fadceb2205f649485695d833a6478",
+                "shasum": ""
             },
             "require": {
                 "cakephp/chronos": "~1.0",
@@ -1341,7 +1346,12 @@
             "keywords": [
                 "admin",
                 "laravel"
-            ]
+            ],
+            "support": {
+                "source": "https://github.com/laravel/nova/tree/master",
+                "issues": "https://github.com/laravel/nova/issues"
+            },
+            "time": "2018-08-24T15:44:50+00:00"
         },
         {
             "name": "laravel/scout",
@@ -3308,12 +3318,17 @@
         },
         {
             "name": "spatie/nova-tags-field",
-            "version": "dev-master",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/nova-tags-field.git",
+                "reference": "1c59d3d80d772c49b8290b515e38673d2667de77"
+            },
             "dist": {
-                "type": "path",
-                "url": "../nova-tags-field",
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/1c59d3d80d772c49b8290b515e38673d2667de77",
                 "reference": "1c59d3d80d772c49b8290b515e38673d2667de77",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "laravel/nova": "*",
@@ -3336,11 +3351,7 @@
                     "Spatie\\TagsField\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\TagsField\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3356,7 +3367,8 @@
             "keywords": [
                 "laravel",
                 "nova"
-            ]
+            ],
+            "time": "2018-08-24T22:37:53+00:00"
         },
         {
             "name": "spatie/once",
@@ -7341,7 +7353,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spatie/nova-tags-field": 20
+        "laravel/nova": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
