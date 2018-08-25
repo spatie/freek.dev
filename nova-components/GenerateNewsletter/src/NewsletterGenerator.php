@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Services\Newsletter;
+namespace Freekmurze\GenerateNewsletter;
 
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
-class Generator
+class NewsletterGenerator
 {
     /** @var \Carbon\Carbon */
     protected $startDate;
@@ -33,7 +33,7 @@ class Generator
         $oldPosts = $this->getOldPosts();
         $editionNumber = $this->editionNumber;
 
-        return view('back.newsletterGenerator.template', compact(
+        return view('generate-newsletter::template', compact(
             'recentPosts',
             'recentTweets',
             'oldPosts',

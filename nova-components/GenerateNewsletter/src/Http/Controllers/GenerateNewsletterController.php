@@ -2,8 +2,8 @@
 
 namespace Freekmurze\GenerateNewsletter\Http\Controllers;
 
-use App\Services\Newsletter\Generator;
 use Carbon\Carbon;
+use Freekmurze\GenerateNewsletter\NewsletterGenerator;
 use Illuminate\Http\Request;
 
 class GenerateNewsletterController
@@ -19,7 +19,7 @@ class GenerateNewsletterController
         $startDate = Carbon::createFromFormat('Y-m-d', $validated['startDate']);
         $endDate = Carbon::createFromFormat('Y-m-d', $validated['endDate']);
 
-        $newsletterHtml = (new Generator(
+        $newsletterHtml = (new NewsletterGenerator(
             $startDate,
             $endDate,
             $validated['editionNumber']

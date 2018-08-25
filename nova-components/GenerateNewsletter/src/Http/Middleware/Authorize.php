@@ -2,7 +2,7 @@
 
 namespace Freekmurze\GenerateNewsletter\Http\Middleware;
 
-use Freekmurze\GenerateNewsletter\GenerateNewsletter;
+use Freekmurze\GenerateNewsletter\GenerateNewsletterTool;
 
 class Authorize
 {
@@ -15,6 +15,6 @@ class Authorize
      */
     public function handle($request, $next)
     {
-        return resolve(GenerateNewsletter::class)->authorize($request) ? $next($request) : abort(403);
+        return resolve(GenerateNewsletterTool::class)->authorize($request) ? $next($request) : abort(403);
     }
 }
