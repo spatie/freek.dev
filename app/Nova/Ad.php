@@ -22,7 +22,6 @@ class Ad extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
             Text::make('Excerpt')->onlyOnIndex(),
             Textarea::make('Text')->hideFromIndex()->rules('required'),
             Date::make('starts_at'),
