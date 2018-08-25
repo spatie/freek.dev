@@ -41,7 +41,7 @@ class Ad extends Model
 
     public function getFormattedTextAttribute($original)
     {
-        $adText = $original . ' (sponsored link)';
+        $adText = $this->text . ' (sponsored link)';
 
         return (new Parsedown())->text($adText);
     }
