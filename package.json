@@ -8,7 +8,9 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "format": "prettier --write 'resources/assets/**/*.{css,js,vue}'"
+        "format": "prettier --write 'resources/assets/**/*.{css,js,vue}' 'nova-components/**/*.{css,js,vue}'",
+        "build-generate-newsletter": "cd nova-components/GenerateNewsletter && npm run dev",
+        "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.17",
@@ -27,7 +29,6 @@
         "glob-all": "^3.1.0",
         "highlight.js": "^9.12.0",
         "prettier": "^1.10.2",
-        "simplemde": "^1.11.2",
         "turbolinks": "^5.0.3",
         "vue-turbolinks": "^2.0.0"
     }

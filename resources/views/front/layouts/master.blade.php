@@ -7,10 +7,10 @@
     <meta name="mobile-web-app-capable" content="yes">
     @include('front.layouts._partials.seo')
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ mix('css/front.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script defer src="{{ mix('js/front.js') }}"></script>
+    <script defer src="{{ mix('js/app.js') }}"></script>
     <link rel="prefetch" href="/js/highlight.js" as="script">
 </head>
 <body>
@@ -23,7 +23,7 @@
     <div class="flex flex-col lg:flex-row">
 
         <main class="lg:w-3/4 lg:mr-4">
-            @include('back.layouts._partials.flashMessage')
+            @include('front.layouts._partials.flashMessage')
             @yield('content')
         </main>
 
