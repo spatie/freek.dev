@@ -6,6 +6,8 @@ use Freekmurze\GenerateNewsletter\GenerateNewsletter;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Spatie\BackupTool\BackupTool;
+use Spatie\TailTool\TailTool;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -67,6 +69,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new GenerateNewsletter(),
+            new BackupTool(),
+            new TailTool(),
         ];
     }
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35c3c9712eb207f965b54b7c6ab3f67e",
+    "content-hash": "d0cf9c861d0ab7014fe1f0c3cad36c4d",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3317,6 +3317,64 @@
             "time": "2018-03-02T10:22:01+00:00"
         },
         {
+            "name": "spatie/nova-backup-tool",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/nova-backup-tool.git",
+                "reference": "1eb1b41349d48d8ac2a56b2774071ecdea27beff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/nova-backup-tool/zipball/1eb1b41349d48d8ac2a56b2774071ecdea27beff",
+                "reference": "1eb1b41349d48d8ac2a56b2774071ecdea27beff",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.1.0",
+                "spatie/laravel-backup": "^5.10.0",
+                "symfony/process": "^4.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "7.1",
+                "spatie/phpunit-snapshot-assertions": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\BackupTool\\BackupToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\BackupTool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova tool to backup your application.",
+            "homepage": "https://github.com/spatie/nova-backup-tool",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-08-24T18:52:36+00:00"
+        },
+        {
             "name": "spatie/nova-tags-field",
             "version": "0.1.1",
             "source": {
@@ -3369,6 +3427,69 @@
                 "nova"
             ],
             "time": "2018-08-24T22:37:53+00:00"
+        },
+        {
+            "name": "spatie/nova-tail-tool",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/nova-tail-tool.git",
+                "reference": "881e36ca830a41df1f5e0e3e3e96f1b0727eb0d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/nova-tail-tool/zipball/881e36ca830a41df1f5e0e3e3e96f1b0727eb0d5",
+                "reference": "881e36ca830a41df1f5e0e3e3e96f1b0727eb0d5",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.1.0",
+                "symfony/process": "^4.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "7.3",
+                "spatie/phpunit-snapshot-assertions": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\TailTool\\TailToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\TailTool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova tool to display the application log.",
+            "homepage": "https://github.com/spatie/nova-tail-tool",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-08-24T18:46:49+00:00"
         },
         {
             "name": "spatie/once",
