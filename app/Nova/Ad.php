@@ -21,8 +21,11 @@ class Ad extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Excerpt')
-                ->onlyOnIndex(),
+            Text::make('Text')
+                ->onlyOnIndex()
+                ->displayUsing(function (string $text) {
+                    return str_limit($text, 50);
+                }),,
 
             Textarea::make('Text')
                 ->hideFromIndex()
