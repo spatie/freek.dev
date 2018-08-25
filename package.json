@@ -9,8 +9,8 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "format": "prettier --write 'resources/assets/**/*.{css,js,vue}' 'nova-components/**/*.{css,js,vue}'",
-        "build-generate-newsletter": "cd nova-components/GenerateNewsletter && npm run dev",
-        "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && npm run prod"
+        "build-generate-newsletter": "cd nova-components/GenerateNewsletter && yarn dev",
+        "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && yarn && yarn prod"
     },
     "devDependencies": {
         "axios": "^0.17",
