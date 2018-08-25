@@ -3,9 +3,8 @@
 namespace App\Providers;
 
 use Freekmurze\GenerateNewsletter\GenerateNewsletter;
-use Laravel\Nova\Nova;
-use Laravel\Nova\Cards\Help;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider

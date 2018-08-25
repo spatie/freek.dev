@@ -2,11 +2,11 @@
 
 namespace Freekmurze\GenerateNewsletter;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
+use Freekmurze\GenerateNewsletter\Http\Middleware\Authorize;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Freekmurze\GenerateNewsletter\Http\Middleware\Authorize;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 
 class ToolServiceProvider extends ServiceProvider
 {

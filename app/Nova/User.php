@@ -2,12 +2,11 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\ID;
+use App\Models\User as UserModel;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
-use App\Models\User as UserModel;
+use Laravel\Nova\Fields\Text;
 
 class User extends Resource
 {

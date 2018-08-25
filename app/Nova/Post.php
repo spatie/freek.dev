@@ -2,13 +2,12 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\Boolean;
+use App\Models\Post as PostModel;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
-use App\Models\Post as PostModel;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 use Spatie\TagsField\Tags;

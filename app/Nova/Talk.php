@@ -2,10 +2,9 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\ID;
-use Illuminate\Http\Request;
 use App\Models\Talk as TalkModel;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
 
 class Talk extends Resource
