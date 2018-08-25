@@ -60,7 +60,7 @@ class Post extends BaseModel implements Feedable
 
     public function getFormattedTextAttribute($original)
     {
-        return (new Parsedown())->text($original);
+        return (new Parsedown())->text($this->text);
     }
 
     public function updateAttributes(array $attributes)
