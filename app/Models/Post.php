@@ -38,9 +38,13 @@ class Post extends BaseModel implements Feedable
 
         static::saved(function (Post $post) {
             if ($post->published) {
+                $dispatcher = static::getEventDispatcher();
+
                 static::unsetEventDispatcher();
 
                 $post->publishOnSocialMedia();
+
+                static::setEventDispatcher($dispatcher);
             }
         });
     }
