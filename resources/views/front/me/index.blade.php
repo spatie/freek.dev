@@ -23,9 +23,7 @@
     <p>
         Whenever we stumble upon a problem that we can solve in a clean way, we extract our solution so other developers can use it.
         Together with my colleagues I regularly release <a href="https://spatie.be/opensource">PHP, Laravel and
-            JavaScript packages</a>. Those packages have been downloaded a couple of million times. Spatie is
-        ranked as number 4 on <a href="http://git-awards.com/users?language=php">Git Awards' list of PHP developers
-            worldwide</a>.
+            JavaScript packages</a>. Those packages have been downloaded more than 15 million times.
     </p>
 
     <h2 id="side-projects">
