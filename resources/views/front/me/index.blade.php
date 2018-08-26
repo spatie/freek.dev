@@ -9,7 +9,7 @@
     @include('front.me._partials.freek')
 
     <p>
-        I live in Antwerp, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used
+        I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used
         the framework for many projects.  Follow me <a href="http://twitter.com/freekmurze">on twitter</a> to know what
         keeps me busy.
     </p>
