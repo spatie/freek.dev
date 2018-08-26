@@ -22,15 +22,5 @@ class NavigationServiceProvider extends ServiceProvider
                 ->add(View::create('front.layouts._partials.search')->addParentClass('w-full items-center mt-4 lg:mt-0'))
                 ->setActiveFromRequest('/');
         });
-
-        Menu::macro('back', function () {
-            return Menu::new()
-                ->addClass('list-reset flex flex-col lg:flex-row justify-end items-center mb-8')
-                ->addItemClass('block rounded py-2 text-center align-content-center mx-6')
-                ->action('Back\PostsController@index', 'Posts')
-                ->action('Back\NewsletterGeneratorController@index', 'Newsletter')
-                ->view('back.layouts._partials.logout')
-                ->setActiveFromRequest('/');
-        });
     }
 }
