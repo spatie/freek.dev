@@ -28,12 +28,12 @@
             worldwide</a>.
     </p>
 
-    <p>
     <h2 id="side-projects">
         Side projects
         <a class="text-grey" href="#side-projects">#</a>
     </h2>
 
+    <p>
         Outside of Spatie, my fried <a href="https://twitter.com/mattiasgeniar">Mattias</a> and I are running a Saas named <a href="https://ohdear.app">Oh Dear!</a> Our service can notify you via Mail, Slack,... when your site is down, when it contains broken links, when it finds mixed content, ... It aims to be very easy to use, we have great developer docs and APIs. <a href="https://ohdear.app/register">Try it out!</a>
     </p>
 
