@@ -32,12 +32,12 @@
     </h2>
 
     <p>
-        Outside of Spatie, my fried <a href="https://twitter.com/mattiasgeniar">Mattias</a> and I are running a Saas named <a href="https://ohdear.app">Oh Dear!</a> Our service can notify you via Mail, Slack,... when your site is down, when it contains broken links, when it finds mixed content, ... It aims to be very easy to use, we have great developer docs and APIs. <a href="https://ohdear.app/register">Try it out!</a>
+        Outside of Spatie, my friend <a href="https://twitter.com/mattiasgeniar">Mattias</a> and I are running a Saas named <a href="https://ohdear.app">Oh Dear!</a> Our service can notify you via Mail, Slack,... when your site is down, when it contains broken links, when it finds mixed content, ... It aims to be very easy to use, we have great developer docs and APIs. <a href="https://ohdear.app/register">Try it out!</a>
     </p>
 
     <p>
         Together with my buddies <a href="https://twitter.com/driesvints">Dries</a> and <a
-                href="https://twitter.com/maybefrederick">riasvdv</a> I organise the <a
+                href="https://twitter.com/riasvdv">Rias</a> I organise the <a
                 href="http://fullstackantwerp.be">Full Stack Antwerp</a> usergroup. If you're ever in the area of our beautiful city and want to speak at our user group, let us know!
     </p>
 
