@@ -41,7 +41,7 @@
                 href="http://fullstackantwerp.be">Full Stack Antwerp</a> usergroup. If you're ever in the area of our beautiful city and want to speak at our user group, let us know!
     </p>
 
-    <p>Together with the aforementioned Dries, I'm also organising the Full Stack Europe conference in the city of Antwerp. Full Stack Europe will be a conference for every kind of developer. We will offer talks for developers who want to learn across a wide variety of skills. We plan on holding it somewhere in 2019. For more info read <a href="https://blog.usejournal.com/announcing-full-stack-europe-f49422f14308">Dries' announcment blogpost</a> All you need to do to stay in the loop is to subscribe yourself <a href="https://fullstackeurope.com/">on our mailinglist</a>.</p>
+    <p>Together with the aforementioned Dries, I'm also organising the Full Stack Europe conference in the city of Antwerp. Full Stack Europe will be a conference for every kind of developer. We will offer talks for developers who want to learn across a wide variety of skills. We plan on holding it somewhere in 2019. For more info read <a href="https://blog.usejournal.com/announcing-full-stack-europe-f49422f14308">Dries' announcement blogpost</a> All you need to do to stay in the loop is to subscribe yourself <a href="https://fullstackeurope.com/">on our mailinglist</a>.</p>
 
     <p>
         I also love public speaking and try to do it a lot. Here's a list of past user group meetups and conferences where I had the pleasure of speaking.
