@@ -58,7 +58,7 @@ class Post extends BaseModel implements Feedable
             ->where('published', true);
     }
 
-    public function getFormattedTextAttribute($original)
+    public function getFormattedTextAttribute()
     {
         return (new Parsedown())->text($this->text);
     }
