@@ -669,16 +669,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.66",
+            "version": "v0.67",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "357a13e6f59e5590071b1d455c0ead482fac65db"
+                "reference": "32f65995935033e40cc94d4f484905b38eb039f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/357a13e6f59e5590071b1d455c0ead482fac65db",
-                "reference": "357a13e6f59e5590071b1d455c0ead482fac65db",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/32f65995935033e40cc94d4f484905b38eb039f8",
+                "reference": "32f65995935033e40cc94d4f484905b38eb039f8",
                 "shasum": ""
             },
             "require": {
@@ -702,7 +702,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-08-21T20:23:38+00:00"
+            "time": "2018-08-25T00:23:06+00:00"
         },
         {
             "name": "google/auth",
@@ -1075,16 +1075,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.34",
+            "version": "v5.6.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "66c9cf8119b422b71273271db1f12e20d74ad49b"
+                "reference": "02abbe2091404ebe032a6d5a83075031b7072ebe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/66c9cf8119b422b71273271db1f12e20d74ad49b",
-                "reference": "66c9cf8119b422b71273271db1f12e20d74ad49b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/02abbe2091404ebe032a6d5a83075031b7072ebe",
+                "reference": "02abbe2091404ebe032a6d5a83075031b7072ebe",
                 "shasum": ""
             },
             "require": {
@@ -1210,7 +1210,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-08-21T13:44:37+00:00"
+            "time": "2018-08-27T13:18:24+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -1351,7 +1351,7 @@
                 "source": "https://github.com/laravel/nova/tree/master",
                 "issues": "https://github.com/laravel/nova/issues"
             },
-            "time": "2018-08-24T15:44:50+00:00"
+            "time": "2018-08-26T13:38:46+00:00"
         },
         {
             "name": "laravel/scout",
@@ -2735,25 +2735,25 @@
         },
         {
             "name": "spatie/laravel-feed",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-feed.git",
-                "reference": "894fa0ed59ee6ac6bf5f7e25df69f2d80b831203"
+                "reference": "ee9aab3b33553e0f621ccd9c0cbc2016a5be73e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/894fa0ed59ee6ac6bf5f7e25df69f2d80b831203",
-                "reference": "894fa0ed59ee6ac6bf5f7e25df69f2d80b831203",
+                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/ee9aab3b33553e0f621ccd9c0cbc2016a5be73e5",
+                "reference": "ee9aab3b33553e0f621ccd9c0cbc2016a5be73e5",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~5.5.0|~5.6.0",
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0",
                 "nesbot/carbon": "^1.0",
                 "php": "^7.0"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.5.0|~3.6.0",
+                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
                 "phpunit/phpunit": "^6.0|^7.0",
                 "spatie/phpunit-snapshot-assertions": "^1.0"
             },
@@ -2802,7 +2802,7 @@
                 "rss",
                 "spatie"
             ],
-            "time": "2018-06-24T20:59:09+00:00"
+            "time": "2018-08-27T15:07:12+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -2868,27 +2868,25 @@
         },
         {
             "name": "spatie/laravel-missing-page-redirector",
-            "version": "2.3.1",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-missing-page-redirector.git",
-                "reference": "86377b7ac5257c87b07b55c0a43f3d25b59b2b9a"
+                "reference": "58faaacbc6586747a86fa79a59de6e776ecdfc8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-missing-page-redirector/zipball/86377b7ac5257c87b07b55c0a43f3d25b59b2b9a",
-                "reference": "86377b7ac5257c87b07b55c0a43f3d25b59b2b9a",
+                "url": "https://api.github.com/repos/spatie/laravel-missing-page-redirector/zipball/58faaacbc6586747a86fa79a59de6e776ecdfc8b",
+                "reference": "58faaacbc6586747a86fa79a59de6e776ecdfc8b",
                 "shasum": ""
             },
             "require": {
-                "illuminate/pipeline": "~5.5.0|~5.6.0",
-                "illuminate/routing": "~5.5.0|~5.6.0",
-                "illuminate/support": "~5.5.0|~5.6.0",
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0",
                 "php": "^7.0",
                 "spatie/url": "^1.0"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.5.0|~3.6.0",
+                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
                 "phpunit/phpunit": "^6.3|^7.0"
             },
             "type": "library",
@@ -2922,7 +2920,7 @@
                 "laravel-missing-page-redirector",
                 "spatie"
             ],
-            "time": "2018-08-14T07:04:19+00:00"
+            "time": "2018-08-27T11:53:28+00:00"
         },
         {
             "name": "spatie/laravel-responsecache",
@@ -3039,16 +3037,16 @@
         },
         {
             "name": "spatie/laravel-tags",
-            "version": "2.0.2",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-tags.git",
-                "reference": "52fd1a9827c0abccfce67c97d0465d0344050a9f"
+                "reference": "60d075d1a871b7d4fbb9253ffda5459e239735cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-tags/zipball/52fd1a9827c0abccfce67c97d0465d0344050a9f",
-                "reference": "52fd1a9827c0abccfce67c97d0465d0344050a9f",
+                "url": "https://api.github.com/repos/spatie/laravel-tags/zipball/60d075d1a871b7d4fbb9253ffda5459e239735cb",
+                "reference": "60d075d1a871b7d4fbb9253ffda5459e239735cb",
                 "shasum": ""
             },
             "require": {
@@ -3092,7 +3090,7 @@
                 "laravel-tags",
                 "spatie"
             ],
-            "time": "2018-08-24T09:43:58+00:00"
+            "time": "2018-08-27T08:12:14+00:00"
         },
         {
             "name": "spatie/laravel-tail",
@@ -3376,21 +3374,22 @@
         },
         {
             "name": "spatie/nova-tags-field",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/nova-tags-field.git",
-                "reference": "1c59d3d80d772c49b8290b515e38673d2667de77"
+                "reference": "e14c9bcb0f2e63eccfae4c43fc23f912a9ecd9ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/1c59d3d80d772c49b8290b515e38673d2667de77",
-                "reference": "1c59d3d80d772c49b8290b515e38673d2667de77",
+                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/e14c9bcb0f2e63eccfae4c43fc23f912a9ecd9ba",
+                "reference": "e14c9bcb0f2e63eccfae4c43fc23f912a9ecd9ba",
                 "shasum": ""
             },
             "require": {
                 "laravel/nova": "*",
-                "php": ">=7.1.0"
+                "php": ">=7.1.0",
+                "spatie/laravel-tags": "^2.1"
             },
             "require-dev": {
                 "orchestra/testbench": "^3.6",
@@ -3426,7 +3425,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-08-24T22:37:53+00:00"
+            "time": "2018-08-27T11:43:26+00:00"
         },
         {
             "name": "spatie/nova-tail-tool",
@@ -4685,16 +4684,16 @@
         },
         {
             "name": "tightenco/nova-google-analytics",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/nova-google-analytics.git",
-                "reference": "536244b2a15793bad2c4b883d1eee56f911e308f"
+                "reference": "5cb123d9d32d11a5ee8c62d8735e79ae055b57d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/nova-google-analytics/zipball/536244b2a15793bad2c4b883d1eee56f911e308f",
-                "reference": "536244b2a15793bad2c4b883d1eee56f911e308f",
+                "url": "https://api.github.com/repos/tightenco/nova-google-analytics/zipball/5cb123d9d32d11a5ee8c62d8735e79ae055b57d4",
+                "reference": "5cb123d9d32d11a5ee8c62d8735e79ae055b57d4",
                 "shasum": ""
             },
             "require": {
@@ -4735,7 +4734,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-08-24T14:01:13+00:00"
+            "time": "2018-08-27T16:24:13+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

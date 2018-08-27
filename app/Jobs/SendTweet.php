@@ -34,11 +34,10 @@ class SendTweet implements ShouldQueue
     {
         $tags = $post->tags
             ->map(function (Tag $tag) {
-                return str_replace(' ', '', $tag->name);
+                return $tag->name;
             })
-            ->filter()
-            ->each(function (string $tag) {
-                return "#{$tag}";
+            ->each(function (string $tagName) {
+                return "#{$tagName}";
             })
             ->implode(' ');
 
