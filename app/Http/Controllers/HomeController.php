@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::quer()
+        $posts = Post::query()
             ->published()
             ->orderBy('publish_date', 'desc')
             ->orderBy('id', 'desc')
