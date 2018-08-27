@@ -8,7 +8,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::published()->orderBy('publish_date', 'desc')->simplePaginate(50);
+        $posts = Post::quer()
+            ->published()
+            ->orderBy('publish_date', 'desc')
+            ->orderBy('id', 'desc')
+            ->simplePaginate(50);
 
         $onFirstPage = $posts->onFirstPage();
 
