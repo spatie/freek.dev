@@ -21,6 +21,7 @@
         "php": ">=7.1.3",
         "abraham/twitteroauth": "^0.7.4",
         "algolia/algoliasearch-client-php": "^1.23",
+        "doctrine/dbal": "^2.8",
         "fideloper/proxy": "~4.0",
         "freekmurze/generate-newsletter": "*",
         "guzzlehttp/guzzle": "^6.3",
