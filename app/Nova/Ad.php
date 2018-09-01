@@ -6,6 +6,7 @@ use App\Models\Ad as AdModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Textarea;
 
 class Ad extends Resource
@@ -27,7 +28,7 @@ class Ad extends Resource
                     return str_limit($text, 50);
                 }),
 
-            Textarea::make('Text')
+            Markdown::make('Text')
                 ->hideFromIndex()
                 ->rules('required'),
 
