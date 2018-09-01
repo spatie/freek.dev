@@ -22,11 +22,14 @@ class Ad extends Model
 
     public static function getPageSpecificAd(string $url): ?self
     {
-        return static::current()->where('display_on_url', $url)->first();
+        return static::current()
+            ->where('display_on_url', $url)
+            ->first();
     }
 
     public static function getSiteWideAd(): ?self
     {
+
         return static::current()
             ->where('display_on_url', '')
             ->orWhereNull('display_on_url')

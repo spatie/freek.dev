@@ -69,11 +69,10 @@ class AdTest extends TestCase
 
     protected function createAdForYearMonth(int $year, int $month, array $attributes = []): Ad
     {
-        $startsAt = Carbon::createFromDate($year, $month, 1);
+        $startsAt = Carbon::createFromDate($year, $month, 1)->startOfMonth();
         $endsAt = $startsAt->copy()->endOfMonth();
 
         $defaultAttributes = [
-            'display_on_url' => '',
             'starts_at' => $startsAt->format('Y-m-d'),
             'ends_at' => $endsAt->format('Y-m-d'),
         ];
