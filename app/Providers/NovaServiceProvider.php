@@ -6,6 +6,7 @@ use Freekmurze\GenerateNewsletter\GenerateNewsletterTool;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use OhDear\OhDearTool\OhDearTool;
 use Spatie\BackupTool\BackupTool;
 use Spatie\TailTool\TailTool;
 use Tightenco\NovaGoogleAnalytics\PageViewsMetric;
@@ -40,6 +41,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             new GenerateNewsletterTool(),
             new BackupTool(),
             new TailTool(),
+            new OhDearTool(),
         ];
     }
 }

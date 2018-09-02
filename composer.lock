@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4dbc4fae1aafe1afaf9f3752d2b56370",
+    "content-hash": "d514ed99d6adf0fc5b552a589f5df175",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -804,7 +804,7 @@
         },
         {
             "name": "freekmurze/generate-newsletter",
-            "version": "dev-master",
+            "version": "dev-oh-dear",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GenerateNewsletter",
@@ -1303,16 +1303,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.35",
+            "version": "v5.6.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "02abbe2091404ebe032a6d5a83075031b7072ebe"
+                "reference": "975e182d42403b0efdf847c05f6bfb99144f95f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/02abbe2091404ebe032a6d5a83075031b7072ebe",
-                "reference": "02abbe2091404ebe032a6d5a83075031b7072ebe",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/975e182d42403b0efdf847c05f6bfb99144f95f5",
+                "reference": "975e182d42403b0efdf847c05f6bfb99144f95f5",
                 "shasum": ""
             },
             "require": {
@@ -1438,7 +1438,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-08-27T13:18:24+00:00"
+            "time": "2018-09-02T13:51:42+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -1579,7 +1579,7 @@
                 "source": "https://github.com/laravel/nova/tree/master",
                 "issues": "https://github.com/laravel/nova/issues"
             },
-            "time": "2018-08-26T13:38:46+00:00"
+            "time": "2018-09-01T10:01:43+00:00"
         },
         {
             "name": "laravel/scout",
@@ -2071,6 +2071,109 @@
                 "php"
             ],
             "time": "2018-07-15T17:25:16+00:00"
+        },
+        {
+            "name": "ohdearapp/nova-ohdear-tool",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../nova-ohdear-tool",
+                "reference": "20761b94f1ed5b8c23656ba10305e9a386f27d71",
+                "shasum": null
+            },
+            "require": {
+                "laravel/nova": "^1.0",
+                "ohdearapp/ohdear-php-sdk": "^1.2",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OhDear\\OhDearTool\\OhDearToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OhDear\\OhDearTool\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "OhDear\\OhDearTool\\Tests\\": "tests"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://ohdear.app",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova tool to display the application log.",
+            "homepage": "https://github.com/ohdearapp/nova-ohdear-tool",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
+            "name": "ohdearapp/ohdear-php-sdk",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ohdearapp/ohdear-php-sdk.git",
+                "reference": "5e02c21bcafe39be5b78f9d17fbe3d1cb0731e9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/5e02c21bcafe39be5b78f9d17fbe3d1cb0731e9b",
+                "reference": "5e02c21bcafe39be5b78f9d17fbe3d1cb0731e9b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OhDear\\PhpSdk\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "support@ohdear.app",
+                    "homepage": "https://ohdear.app",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An SDK to easily work with the Oh Dear API",
+            "homepage": "https://github.com/ohdearapp/ohdear-php-sdk",
+            "keywords": [
+                "api",
+                "monitoring",
+                "oh dear",
+                "sdk"
+            ],
+            "time": "2018-09-01T11:47:41+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -6649,16 +6752,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.3.2",
+            "version": "7.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "34705f81bddc3f505b9599a2ef96e2b4315ba9b8"
+                "reference": "1bd5629cccfb2c0a9ef5474b4ff772349e1ec898"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/34705f81bddc3f505b9599a2ef96e2b4315ba9b8",
-                "reference": "34705f81bddc3f505b9599a2ef96e2b4315ba9b8",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1bd5629cccfb2c0a9ef5474b4ff772349e1ec898",
+                "reference": "1bd5629cccfb2c0a9ef5474b4ff772349e1ec898",
                 "shasum": ""
             },
             "require": {
@@ -6729,7 +6832,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-08-22T06:39:21+00:00"
+            "time": "2018-09-01T15:49:55+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -7701,7 +7804,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "laravel/nova": 20
+        "laravel/nova": 20,
+        "ohdearapp/nova-ohdear-tool": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
