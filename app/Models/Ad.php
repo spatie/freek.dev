@@ -30,7 +30,7 @@ class Ad extends Model
     public static function getSiteWideAd(): ?self
     {
         return static::current()
-            ->where(function(Builder $query) {
+            ->where(function (Builder $query) {
                 $query
                     ->where('display_on_url', '')
                     ->orWhereNull('display_on_url');
