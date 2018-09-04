@@ -5,9 +5,9 @@ const tailwindcss = require('tailwindcss');
 require('laravel-mix-purgecss');
 
 mix
-    .js('resources/assets/js/app.js', 'public/js')
+    .js('resources/js/app.js', 'public/js')
     
-    .sass('resources/assets/css/app.scss', 'public/css')
+    .sass('resources/css/app.scss', 'public/css')
     .options({
         processCssUrls: false,
 

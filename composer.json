@@ -26,7 +26,7 @@
         "freekmurze/generate-newsletter": "*",
         "guzzlehttp/guzzle": "^6.3",
         "laracasts/flash": "^3.0",
-        "laravel/framework": "5.6.*",
+        "laravel/framework": "5.7.x-dev",
         "laravel/horizon": "^1.0",
         "laravel/nova": "dev-master#286e159d039fadceb2205f649485695d833a6478",
         "laravel/scout": "^3.0",
@@ -56,7 +56,8 @@
         "mockery/mockery": "~1.0",
         "nunomaduro/collision": "~2.0",
         "phpunit/phpunit": "~7.0",
-        "sensiolabs/security-checker": "^4.1"
+        "sensiolabs/security-checker": "^4.1",
+        "beyondcode/laravel-dump-server": "~1.0"
     },
     "autoload": {
         "classmap": [
