@@ -5,9 +5,8 @@ namespace App\Nova;
 use App\Models\Ad as AdModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Text;
 
 class Ad extends Resource
 {
