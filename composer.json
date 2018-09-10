@@ -28,7 +28,7 @@
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.7.*",
         "laravel/horizon": "^1.0",
-        "laravel/nova": "dev-master#286e159d039fadceb2205f649485695d833a6478",
+        "laravel/nova": "dev-master#f461121fa2c64109ea1bea7fb7b8f7195c73e58c",
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
         "spatie/laravel-backup": "^5.1",
