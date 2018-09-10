@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9473f94a0629017445cf6acc054c8f6",
+    "content-hash": "b14790e831ab2e37c164a1f922429a21",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1516,12 +1516,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "286e159d039fadceb2205f649485695d833a6478"
+                "reference": "f461121fa2c64109ea1bea7fb7b8f7195c73e58c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/nova/zipball/286e159d039fadceb2205f649485695d833a6478",
-                "reference": "286e159d039fadceb2205f649485695d833a6478",
+                "url": "https://api.github.com/repos/laravel/nova/zipball/f461121fa2c64109ea1bea7fb7b8f7195c73e58c",
+                "reference": "f461121fa2c64109ea1bea7fb7b8f7195c73e58c",
                 "shasum": ""
             },
             "require": {
@@ -1581,7 +1581,7 @@
                 "source": "https://github.com/laravel/nova/tree/master",
                 "issues": "https://github.com/laravel/nova/issues"
             },
-            "time": "2018-09-04T15:37:19+00:00"
+            "time": "2018-09-10T15:15:00+00:00"
         },
         {
             "name": "laravel/scout",
