@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b14790e831ab2e37c164a1f922429a21",
+    "content-hash": "b9473f94a0629017445cf6acc054c8f6",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1516,12 +1516,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "f461121fa2c64109ea1bea7fb7b8f7195c73e58c"
+                "reference": "286e159d039fadceb2205f649485695d833a6478"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/nova/zipball/f461121fa2c64109ea1bea7fb7b8f7195c73e58c",
-                "reference": "f461121fa2c64109ea1bea7fb7b8f7195c73e58c",
+                "url": "https://api.github.com/repos/laravel/nova/zipball/286e159d039fadceb2205f649485695d833a6478",
+                "reference": "286e159d039fadceb2205f649485695d833a6478",
                 "shasum": ""
             },
             "require": {
@@ -2132,16 +2132,16 @@
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ohdearapp/ohdear-php-sdk.git",
-                "reference": "4d8e955e0feb8bc65677838db7c40af4d8e78f41"
+                "reference": "c0ab05f462bfb0590a25f856ad1963248bdc840b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/4d8e955e0feb8bc65677838db7c40af4d8e78f41",
-                "reference": "4d8e955e0feb8bc65677838db7c40af4d8e78f41",
+                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/c0ab05f462bfb0590a25f856ad1963248bdc840b",
+                "reference": "c0ab05f462bfb0590a25f856ad1963248bdc840b",
                 "shasum": ""
             },
             "require": {
@@ -2177,7 +2177,7 @@
                 "oh dear",
                 "sdk"
             ],
-            "time": "2018-09-10T22:11:10+00:00"
+            "time": "2018-09-10T22:36:22+00:00"
         },
         {
             "name": "paragonie/random_compat",
