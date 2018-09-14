@@ -3605,16 +3605,16 @@
         },
         {
             "name": "spatie/nova-tags-field",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/nova-tags-field.git",
-                "reference": "aff41fc520010e9113bfdb8b64a9ed37090d155b"
+                "reference": "9527b47b0eb2b95329f79cf5d2e389ad571d4b05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/aff41fc520010e9113bfdb8b64a9ed37090d155b",
-                "reference": "aff41fc520010e9113bfdb8b64a9ed37090d155b",
+                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/9527b47b0eb2b95329f79cf5d2e389ad571d4b05",
+                "reference": "9527b47b0eb2b95329f79cf5d2e389ad571d4b05",
                 "shasum": ""
             },
             "require": {
@@ -3656,7 +3656,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-09-14T13:52:02+00:00"
+            "time": "2018-09-14T14:12:38+00:00"
         },
         {
             "name": "spatie/nova-tail-tool",
