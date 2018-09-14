@@ -46,7 +46,7 @@
         "spatie/laravel-tags": "^2.0",
         "spatie/laravel-tail": "^3.0",
         "spatie/nova-backup-tool": "^1.0",
-        "spatie/nova-tags-field": "^0.1.0",
+        "spatie/nova-tags-field": "^1.0.0",
         "spatie/nova-tail-tool": "^1.0",
         "stripe/stripe-php": "^6.8",
         "themsaid/laravel-mail-preview": "^2.0",
