@@ -172,7 +172,7 @@ class Post extends BaseModel implements Feedable
         return FeedItem::create()
             ->id($this->id)
             ->title($this->formatted_title)
-            ->summary($this->text)
+            ->summary($this->formatted_text)
             ->updated($this->updated_at)
             ->link(url(action('PostsController@detail', $this->slug)))
             ->author('Freek Van der Herten');
