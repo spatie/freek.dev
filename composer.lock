@@ -1303,16 +1303,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.4",
+            "version": "v5.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f6e8f6562120e0063313e81716666cfcd362569b"
+                "reference": "ddb87a87471b452456fbbe1365e1b9ae55483515"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f6e8f6562120e0063313e81716666cfcd362569b",
-                "reference": "f6e8f6562120e0063313e81716666cfcd362569b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ddb87a87471b452456fbbe1365e1b9ae55483515",
+                "reference": "ddb87a87471b452456fbbe1365e1b9ae55483515",
                 "shasum": ""
             },
             "require": {
@@ -1440,7 +1440,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-09-18T13:34:05+00:00"
+            "time": "2018-09-20T14:03:45+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2082,12 +2082,12 @@
             "dist": {
                 "type": "path",
                 "url": "../nova-ohdear-tool",
-                "reference": "3118aa6572fcc4d54d6fbe9d76b73b36cd466004",
+                "reference": "f1b2d573c479d316111d9266c8cc5d4e66b2bc97",
                 "shasum": null
             },
             "require": {
                 "laravel/nova": "^1.0",
-                "ohdearapp/ohdear-php-sdk": "^1.5.0",
+                "ohdearapp/ohdear-php-sdk": "^1.5.1",
                 "php": ">=7.1.0"
             },
             "require-dev": {
@@ -2132,16 +2132,16 @@
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ohdearapp/ohdear-php-sdk.git",
-                "reference": "d07d9f003b4fa847f71e96f9595e0c166f769fda"
+                "reference": "7851e55d28ea62ae29f516ab2b5bb4be576a6427"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/d07d9f003b4fa847f71e96f9595e0c166f769fda",
-                "reference": "d07d9f003b4fa847f71e96f9595e0c166f769fda",
+                "url": "https://api.github.com/repos/ohdearapp/ohdear-php-sdk/zipball/7851e55d28ea62ae29f516ab2b5bb4be576a6427",
+                "reference": "7851e55d28ea62ae29f516ab2b5bb4be576a6427",
                 "shasum": ""
             },
             "require": {
@@ -2177,7 +2177,7 @@
                 "oh dear",
                 "sdk"
             ],
-            "time": "2018-09-18T22:28:17+00:00"
+            "time": "2018-09-20T17:07:09+00:00"
         },
         {
             "name": "paragonie/random_compat",
