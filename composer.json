@@ -9,8 +9,8 @@
     "type": "project",
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/laravel/nova"
+            "type": "composer",
+            "url": "https://nova.laravel.com"
         },
         {
             "type": "path",
@@ -28,7 +28,7 @@
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.7.*",
         "laravel/horizon": "^1.0",
-        "laravel/nova": "dev-master#836497ff35765d323fd9bd08c25188b762bc56a4",
+        "laravel/nova": "^1.1",
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
         "spatie/laravel-backup": "^5.1",

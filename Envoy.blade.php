@@ -73,9 +73,9 @@ echo "{{ $newReleaseName }}" > public/release-name.txt
 @endtask
 
 @task('runComposer', ['on' => 'remote'])
+cd {{ $newReleaseDir }};
 {{ logMessage("🚚  Running Composer…") }}
 ln -nfs {{ $baseDir }}/auth.json auth.json;
-cd {{ $newReleaseDir }};
 composer install --prefer-dist --no-scripts --no-dev -q -o;
 @endtask
 
@@ -165,6 +165,7 @@ php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
 php artisan responsecache:flush
+php artisan nova:publish
 sudo supervisorctl restart all
 sudo service php7.2-fpm restart
 @endtask
