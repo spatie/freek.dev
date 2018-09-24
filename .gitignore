@@ -6,6 +6,7 @@
 /public/css
 /public/js
 /public/sitemap.xml
+/public/vendor/nova
 /storage/*.key
 /vendor
 /.idea
