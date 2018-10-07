@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Post;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class PublishScheduledPosts extends Command

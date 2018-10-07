@@ -209,6 +209,8 @@ class Post extends BaseModel implements Feedable
 
         $this->save();
 
+        Log::info("Post `{$this->title}` published.");
+
         if (app()->environment('production')) {
             $this->publishOnSocialMedia();
         }
