@@ -14,10 +14,10 @@ class PublishScheduledPosts extends Command
 
     public function handle()
     {
-        Post::scheduled()->get()->each(function(Post $post) {
-           if (optional($post->publish_date)->isFuture()) {
-              return;
-           }
+        Post::scheduled()->get()->each(function (Post $post) {
+            if (optional($post->publish_date)->isFuture()) {
+                return;
+            }
 
             $post->publish();
 
