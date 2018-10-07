@@ -21,4 +21,34 @@ class PostTest extends TestCase
         ]);
         $this->assertEquals('https://external-blog.com/page', $post->promotional_url);
     }
+
+    /** @test */
+    public function it_can_get_scheduled_posts()
+    {
+        $this->assertCount(0, Post::scheduled()->get());
+
+        factory(Post::class)->create([
+            'publish_date' => now()->subMinute(),
+            'published' => false,
+        ]);
+        $this->assertCount(1, Post::scheduled()->get());
+
+        factory(Post::class)->create([
+            'publish_date' => now()->subMinute(),
+            'published' => true,
+        ]);
+        $this->assertCount(1, Post::scheduled()->get());
+
+        factory(Post::class)->create([
+            'publish_date' => now()->addMinute(),
+            'published' => false,
+        ]);
+        $this->assertCount(2, Post::scheduled()->get());
+
+        factory(Post::class)->create([
+            'publish_date' => null,
+            'published' => false,
+        ]);
+        $this->assertCount(2, Post::scheduled()->get());
+    }
 }

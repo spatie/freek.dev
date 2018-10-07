@@ -209,7 +209,9 @@ class Post extends BaseModel implements Feedable
 
         $this->save();
 
-        $this->publishOnSocialMedia();
+        if (app()->environment('production')) {
+            $this->publishOnSocialMedia();
+        }
     }
 
     public function scopeScheduled(Builder $query)

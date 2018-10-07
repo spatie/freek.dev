@@ -8,7 +8,7 @@ class MakePublishDateNullable extends Migration
 {
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             $table->datetime('publish_date')->nullable()->change();
         });
     }
