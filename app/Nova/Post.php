@@ -40,6 +40,7 @@ class Post extends Resource
                 Tags::make('Tags'),
 
                 DateTime::make('Publish date')
+                    ->onlyOnDetail()
                     ->sortable()
             ]),
 
