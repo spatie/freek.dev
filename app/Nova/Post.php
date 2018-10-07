@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Models\Post as PostModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
@@ -42,7 +43,10 @@ class Post extends Resource
 
                 DateTime::make('Publish date')
                     ->sortable()
-                    ->rules('required'),
+                    ->rules('required')
+                    ->displayUsing(function (Carbon $carbon = null) {
+                        return optional($carbon)->format('Y.m.d');
+                    }),
             ]),
 
 

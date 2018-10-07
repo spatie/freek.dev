@@ -42,7 +42,7 @@ class Post extends BaseModel implements Feedable
 
                 static::unsetEventDispatcher();
 
-                $post->publishOnSocialMedia();
+                $post->publish();
 
                 static::setEventDispatcher($dispatcher);
             }
@@ -197,5 +197,25 @@ class Post extends BaseModel implements Feedable
         }
 
         return $this->url;
+    }
+
+    public function publish()
+    {
+        $this->published = true;
+
+        if (! $this->publish_date) {
+            $this->publish_date = now();
+        }
+
+        $this->save();
+
+        $this->publishOnSocialMedia();
+    }
+
+    public function scopeScheduled(Builder $query)
+    {
+        $query
+            ->where('published', false)
+            ->whereNotNull('publish_date');
     }
 }
