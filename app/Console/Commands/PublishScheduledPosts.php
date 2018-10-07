@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use App\Models\Post;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class PublishScheduledPosts extends Command
@@ -16,11 +15,15 @@ class PublishScheduledPosts extends Command
     public function handle()
     {
         Post::scheduled()->get()->each(function(Post $post) {
-           if (optional($post->published_at)->isPast()) {
-               $post->publish();
-
-               ResponseCache::flush();
+           if (optional($post->publish_date)->isFuture()) {
+              return;
            }
+
+            $post->publish();
+
+            $this->info("Post `{$post->title}` published!");
+
+            ResponseCache::flush();
         });
     }
 }

@@ -43,12 +43,7 @@ class Post extends Resource
 
                 DateTime::make('Publish date')
                     ->sortable()
-                    ->rules('required')
-                    ->displayUsing(function (Carbon $carbon = null) {
-                        return optional($carbon)->format('Y.m.d');
-                    }),
             ]),
-
 
             new Panel('Meta', [
                 Text::make('External url')
