@@ -19,7 +19,7 @@
     <h1>{{ $post->formatted_title }}</h1>
 
     <div class="text-grey-darker text-sm pb-6 border-b text-grey">
-        Posted on <time datetime="{{ $post->publish_date->format(DateTime::ATOM) }}">{{ $post->publish_date }}</time> | {{ $post->author }}
+        Posted on <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">{{ $post->publish_date }}</time> | {{ $post->author }}
     </div>
 
     <div class="pt-4 post-content">
@@ -44,7 +44,7 @@
     @foreach($post->tags as $tag)
         <meta property="article:tag" content="{{ $tag->name }}"/>
     @endforeach
-    <meta property="article:published_time" content="{{ $post->publish_date->toIso8601String() }}"/>
+    <meta property="article:published_time" content="{{ optional($post->publish_date)->toIso8601String() }}"/>
     <meta property="og:updated_time" content="{{ $post->updated_at->toIso8601String() }}"/>
 
     <meta name="twitter:card" content="summary_large_image"/>
