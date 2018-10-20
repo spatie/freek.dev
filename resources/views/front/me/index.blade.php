@@ -11,7 +11,7 @@
     <p>
         I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used
         the framework for many projects.  Follow me <a href="http://twitter.com/freekmurze">on twitter</a> to know what
-        keeps me busy.
+        keeps me busy. Want to know which IDE, apps and hardware I use? [Here you go](/my-current-setup-2018-edition)!
     </p>
 
     <p>
