@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a368ee307c3458a8f32272891343472",
+    "content-hash": "a6f4b1229dc95306f279541b8b4d866c",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -5127,74 +5127,6 @@
     ],
     "packages-dev": [
         {
-            "name": "barryvdh/laravel-debugbar",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "5b68f3972083a7eeec0d6f161962fcda71a127c0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/5b68f3972083a7eeec0d6f161962fcda71a127c0",
-                "reference": "5b68f3972083a7eeec0d6f161962fcda71a127c0",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/routing": "5.5.x|5.6.x|5.7.x",
-                "illuminate/session": "5.5.x|5.6.x|5.7.x",
-                "illuminate/support": "5.5.x|5.6.x|5.7.x",
-                "maximebf/debugbar": "~1.15.0",
-                "php": ">=7.0",
-                "symfony/debug": "^3|^4",
-                "symfony/finder": "^3|^4"
-            },
-            "require-dev": {
-                "laravel/framework": "5.5.x"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Barryvdh\\Debugbar\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "Debugbar": "Barryvdh\\Debugbar\\Facade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Barryvdh\\Debugbar\\": "src/"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "PHP Debugbar integration for Laravel",
-            "keywords": [
-                "debug",
-                "debugbar",
-                "laravel",
-                "profiler",
-                "webprofiler"
-            ],
-            "time": "2018-08-22T11:06:19+00:00"
-        },
-        {
             "name": "barryvdh/laravel-ide-helper",
             "version": "v2.5.1",
             "source": {
@@ -6120,41 +6052,38 @@
             "time": "2018-02-14T22:26:30+00:00"
         },
         {
-            "name": "maximebf/debugbar",
-            "version": "v1.15.0",
+            "name": "laravel/telescope",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "30e7d60937ee5f1320975ca9bc7bcdd44d500f07"
+                "url": "https://github.com/laravel/telescope.git",
+                "reference": "aedd2e23a1d451d46124e3c681f68a75defae203"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/30e7d60937ee5f1320975ca9bc7bcdd44d500f07",
-                "reference": "30e7d60937ee5f1320975ca9bc7bcdd44d500f07",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/aedd2e23a1d451d46124e3c681f68a75defae203",
+                "reference": "aedd2e23a1d451d46124e3c681f68a75defae203",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "psr/log": "^1.0",
-                "symfony/var-dumper": "^2.6|^3.0|^4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0|^5.0"
-            },
-            "suggest": {
-                "kriswallsmith/assetic": "The best way to manage assets",
-                "monolog/monolog": "Log using Monolog",
-                "predis/predis": "Redis storage"
+                "moontoast/math": "^1.1",
+                "php": ">=7.2",
+                "symfony/var-dumper": "^4.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14-dev"
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Telescope\\TelescopeServiceProvider"
+                    ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "DebugBar\\": "src/DebugBar/"
+                    "Laravel\\Telescope\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6163,22 +6092,21 @@
             ],
             "authors": [
                 {
-                    "name": "Maxime Bouroumeau-Fuseau",
-                    "email": "maxime.bouroumeau@gmail.com",
-                    "homepage": "http://maximebf.com"
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
                 },
                 {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
                 }
             ],
-            "description": "Debug bar in the browser for php application",
-            "homepage": "https://github.com/maximebf/php-debugbar",
+            "description": "An elegant debug assistant for the Laravel framework.",
             "keywords": [
-                "debug",
-                "debugbar"
+                "debugging",
+                "laravel",
+                "monitoring"
             ],
-            "time": "2017-12-15T11:13:46+00:00"
+            "time": "2018-10-23T14:30:24+00:00"
         },
         {
             "name": "mockery/mockery",

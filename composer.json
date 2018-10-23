@@ -48,16 +48,16 @@
         "tightenco/nova-google-analytics": "^0.1.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.1",
         "barryvdh/laravel-ide-helper": "^2.4",
+        "beyondcode/laravel-dump-server": "~1.0",
         "filp/whoops": "~2.0",
-        "fzaninotto/faker": "~1.4",
         "friendsofphp/php-cs-fixer": "^2.8",
+        "fzaninotto/faker": "~1.4",
+        "laravel/telescope": "^0.1.0",
         "mockery/mockery": "~1.0",
         "nunomaduro/collision": "~2.0",
         "phpunit/phpunit": "~7.0",
-        "sensiolabs/security-checker": "^4.1",
-        "beyondcode/laravel-dump-server": "~1.0"
+        "sensiolabs/security-checker": "^4.1"
     },
     "autoload": {
         "classmap": [
