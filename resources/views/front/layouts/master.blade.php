@@ -12,7 +12,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script defer src="{{ mix('js/app.js') }}"></script>
     <link rel="prefetch" href="/js/highlight.js" as="script">
-    @include('front.layouts._partials.adsense')
 </head>
 <body>
 @include('front.layouts._partials.analytics')

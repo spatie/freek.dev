@@ -53,4 +53,6 @@
     <meta name="twitter:site" content="@freekmurze"/>
     <meta name="twitter:image" content="https://murze.be/images/avatar-boxed.jpg"/>
     <meta name="twitter:creator" content="@freekmurze"/>
+
+    @include('front.layouts._partials.adsense')
 @endsection
