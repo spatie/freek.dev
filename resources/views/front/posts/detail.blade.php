@@ -31,13 +31,12 @@
     </div>
 
     <div class="pt-4">
-        @include('front.posts._partials.adsense')
-    </div>
-
-    <div class="pt-4">
         @include('front.posts._partials.disqus')
     </div>
 
+    <div class="pt-4">
+        @include('front.posts._partials.adsense')
+    </div>
 
 @endsection
 
