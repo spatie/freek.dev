@@ -1,9 +1,11 @@
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Ad -->
+<!-- Detail pages -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:261px;height:219px"
+     style="display:block"
      data-ad-client="ca-pub-2689560793157981"
-     data-ad-slot="5078947073"></ins>
+     data-ad-slot="2810918527"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
