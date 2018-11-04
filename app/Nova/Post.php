@@ -5,7 +5,7 @@ namespace App\Nova;
 use App\Models\Post as PostModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -39,11 +39,10 @@ class Post extends Resource
 
                 Tags::make('Tags'),
 
-                Date::make('Publish date')
+                DateTime::make('Publish date')
+                    ->hideFromIndex()
                     ->sortable()
-                    ->rules('required'),
             ]),
-
 
             new Panel('Meta', [
                 Text::make('External url')

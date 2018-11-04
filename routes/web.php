@@ -1,5 +1,7 @@
 <?php
 
+Route::redirect('nova', '/nova/login');
+
 Route::get('newsletter', 'NewsletterController@index');
 Route::get('confirm-your-email', 'NewsletterController@confirm');
 Route::get('subscribed', 'NewsletterController@subscribed');
@@ -16,3 +18,4 @@ Route::post('payments/set-amount', 'PaymentsController@setAmount');
 Route::post('payments', 'PaymentsController@handlePayment');
 
 Route::get('{postSlug}', 'PostsController@detail');
+

@@ -26,7 +26,7 @@ class PostOnMedium implements ShouldQueue
     {
         $medium->createPost(
             $this->post->title,
-            $this->post->text,
+            $this->post->formatted_text,
             $this->post->tags->pluck('name')->toArray(),
             $this->post->url
         );

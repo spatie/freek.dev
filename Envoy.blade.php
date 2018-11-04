@@ -73,9 +73,11 @@ echo "{{ $newReleaseName }}" > public/release-name.txt
 @endtask
 
 @task('runComposer', ['on' => 'remote'])
-{{ logMessage("🚚  Running Composer…") }}
 cd {{ $newReleaseDir }};
+{{ logMessage("🚚  Running Composer…") }}
+ln -nfs {{ $baseDir }}/auth.json auth.json;
 composer install --prefer-dist --no-scripts --no-dev -q -o;
+php artisan nova:publish
 @endtask
 
 @task('runYarn', ['on' => 'remote'])
@@ -131,7 +133,6 @@ php artisan migrate --force;
 {{ logMessage("🙏  Blessing new release…") }}
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
-
 php artisan horizon:terminate
 php artisan config:clear
 php artisan view:clear

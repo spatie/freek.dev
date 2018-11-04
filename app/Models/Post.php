@@ -7,6 +7,7 @@ use App\Jobs\SendTweet;
 use App\Models\Presenters\PostPresenter;
 use App\Services\Parsedown;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Log;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
@@ -42,7 +43,7 @@ class Post extends BaseModel implements Feedable
 
                 static::unsetEventDispatcher();
 
-                $post->publishOnSocialMedia();
+                $post->publish();
 
                 static::setEventDispatcher($dispatcher);
             }
@@ -197,5 +198,29 @@ class Post extends BaseModel implements Feedable
         }
 
         return $this->url;
+    }
+
+    public function publish()
+    {
+        $this->published = true;
+
+        if (! $this->publish_date) {
+            $this->publish_date = now();
+        }
+
+        $this->save();
+
+        Log::info("Post `{$this->title}` published.");
+
+        if (app()->environment('production')) {
+            $this->publishOnSocialMedia();
+        }
+    }
+
+    public function scopeScheduled(Builder $query)
+    {
+        $query
+            ->where('published', false)
+            ->whereNotNull('publish_date');
     }
 }

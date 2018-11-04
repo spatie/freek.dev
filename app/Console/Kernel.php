@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('responsecache:flush')->daily()->at('00:00');
         $schedule->command('backup:clean')->daily()->at('01:00');
         $schedule->command('backup:run')->daily()->at('02:00');
+        $schedule->command('blog:publish-scheduled-posts')->hourly();
     }
 
     protected function commands()

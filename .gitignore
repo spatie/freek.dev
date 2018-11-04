@@ -6,6 +6,7 @@
 /public/css
 /public/js
 /public/sitemap.xml
+/public/vendor/nova
 /storage/*.key
 /vendor
 /.idea
@@ -16,3 +17,4 @@ npm-debug.log
 yarn-error.log
 .env
 .php_cs.cache
+auth.json
