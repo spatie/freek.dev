@@ -1,5 +1,5 @@
 <li class="pb-2 pt-2 border-t">
-    <a href="{{ action('PostsController@detail', [$post->slug]) }}">
+    <a href="{{ route('posts.show', [$post->slug]) }}">
         {{ $post->formatted_title }}
     </a>
     <div class="flex items-center text-xs pt-2 mb-2">
@@ -11,7 +11,7 @@
             <span class="text-grey">&nbsp; | &nbsp;</span>
         @endif
 
-        @include('front.posts._partials.tags')
+        @include('front.posts.partials.tags')
     </div>
 
     {{--

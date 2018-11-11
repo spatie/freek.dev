@@ -10,8 +10,6 @@ use Spatie\Tags\Tag;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = 'App\Http\Controllers';
-
     public function boot()
     {
         parent::boot();
@@ -27,7 +25,6 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapFrontRoutes()
     {
         Route::middleware(['web', 'cacheResponse'])
-            ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
     }
 

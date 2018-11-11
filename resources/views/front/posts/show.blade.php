@@ -27,15 +27,15 @@
     </div>
 
     <div class="pt-4">
-        @include('front.posts._partials.tags')
+        @include('front.posts.partials.tags')
     </div>
 
     <div class="pt-4">
-        @include('front.posts._partials.newsletter')
+        @include('front.posts.partials.newsletter')
     </div>
 
     <div class="pt-4">
-        @include('front.posts._partials.disqus')
+        @include('front.posts.partials.disqus')
     </div>
 @endsection
 

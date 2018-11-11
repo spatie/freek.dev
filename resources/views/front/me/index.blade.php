@@ -6,7 +6,7 @@
 
     <h1 class="pb-4 border-b">About me</h1>
 
-    @include('front.me._partials.freek')
+    @include('front.me.partials.freek')
 
     <p>
         I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used
@@ -47,5 +47,5 @@
         I also love public speaking and try to do it a lot. Here's a list of past user group meetups and conferences where I had the pleasure of speaking.
     </p>
 
-    @include('front.me._partials.talks')
+    @include('front.me.partials.talks')
 @endsection

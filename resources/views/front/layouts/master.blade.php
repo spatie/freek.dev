@@ -5,7 +5,7 @@
     <title>@yield('title') - Freek Van der Herten's blog on PHP and Laravel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
-    @include('front.layouts._partials.seo')
+    @include('front.layouts.partials.seo')
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -14,23 +14,22 @@
     <link rel="prefetch" href="/js/highlight.js" as="script">
 </head>
 <body>
-@include('front.layouts._partials.analytics')
+@include('front.layouts.partials.analytics')
 <div id="app" class="container mx-auto">
     <header>
-        @include('front.layouts._partials.navigation')
+        @include('front.layouts.partials.navigation')
     </header>
 
     <div class="flex flex-col lg:flex-row">
 
         <main class="lg:w-3/4 lg:mr-4">
-            @include('front.layouts._partials.flashMessage')
+            @include('front.layouts.partials.flashMessage')
             @yield('content')
         </main>
 
         <div class="lg:w-1/4">
-            {{-- @include('front.layouts._partials.newsletter') --}}
-            @include('front.layouts._partials.carbon')
-            @include('front.layouts._partials.adsense')
+            @include('front.layouts.partials.carbon')
+            @include('front.layouts.partials.adsense')
         </div>
 
 

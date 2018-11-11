@@ -17,7 +17,7 @@
             edition</a>.
     </p>
 
-    @include('front.newsletter._partials.form')
+    @include('front.newsletter.partials.form')
 
     <p>
         Rest assured that I will only use your email address to send you the newsletter and will
