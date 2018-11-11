@@ -1,5 +1,5 @@
 <ul>
     @foreach($posts as $post)
-        @include('front.posts._partials.listItem')
+        @include('front.posts.partials.listItem')
     @endforeach
 </ul>

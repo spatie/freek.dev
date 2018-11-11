@@ -11,7 +11,7 @@
             <span class="text-grey">&nbsp; | &nbsp;</span>
         @endif
 
-        @include('front.posts._partials.tags')
+        @include('front.posts.partials.tags')
     </div>
 
     {{--

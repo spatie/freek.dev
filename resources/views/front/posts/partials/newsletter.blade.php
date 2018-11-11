@@ -3,5 +3,5 @@
 
     Every two weeks I send out a newsletter containing the newest content of my blog.
 
-    @include('front.newsletter._partials.form')
+    @include('front.newsletter.partials.form')
 </div>

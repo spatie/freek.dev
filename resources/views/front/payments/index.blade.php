@@ -6,8 +6,8 @@
     <h1>Make a payment to murze.be</h1>
 
     @if (! session()->has('amount'))
-        @include('front.payments._partials.chooseAmount')
+        @include('front.payments.partials.chooseAmount')
     @else
-        @include('front.payments._partials.stripePayment')
+        @include('front.payments.partials.stripePayment')
     @endif
 @endsection
