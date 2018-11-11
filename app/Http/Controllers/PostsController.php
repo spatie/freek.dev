@@ -7,10 +7,10 @@ use App\Models\Post;
 
 class PostsController extends Controller
 {
-    public function detail(Post $post)
+    public function show(Post $post)
     {
         $ad = Ad::getForCurrentPage();
 
-        return view('front.posts.detail', compact('post', 'ad'));
+        return view('front.posts.show', compact('post', 'ad'));
     }
 }
