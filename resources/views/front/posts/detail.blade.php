@@ -31,6 +31,10 @@
     </div>
 
     <div class="pt-4">
+        @include('front.posts._partials.newsletter')
+    </div>
+
+    <div class="pt-4">
         @include('front.posts._partials.disqus')
     </div>
 @endsection
