@@ -26,7 +26,7 @@ class PaymentsController extends Controller
 
         session()->flash('amount', $request->amount * 100);
 
-        return redirect()->action('PaymentsController@index');
+        return redirect()->action([PaymentsController::class, 'index']);
     }
 
     public function handlePayment(Request $request)
@@ -42,7 +42,7 @@ class PaymentsController extends Controller
                 $exception->getMessage()
             ));
 
-            return redirect()->action('PaymentsController@index');
+            return redirect()->action([PaymentsController::class, 'index']);
         }
 
         Mail::to('freek@spatie.be')->queue(new PaymentSuccessfulMail(
@@ -52,7 +52,7 @@ class PaymentsController extends Controller
 
         flash()->success('Your payment was successful! Thank you!');
 
-        return redirect()->action('PaymentsController@index');
+        return redirect()->action([PaymentsController::class, 'index']);
     }
 
     protected function performPayment(Request $request)

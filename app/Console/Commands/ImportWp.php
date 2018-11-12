@@ -61,7 +61,7 @@ class ImportWp extends Command
     {
         Redirect::create([
             'old_url' => $post->wordpress_full_url,
-            'new_url' => action('PostsController@detail', $post->slug)
+            'new_url' => route('posts.show', $post->slug)
         ]);
     }
 
