@@ -15,10 +15,6 @@
         {
             "type": "path",
             "url": "./nova-components/GenerateNewsletter"
-        },
-        {
-            "type": "path",
-            "url": "../nova-ohdear-tool"
         }
     ],
     "require": {

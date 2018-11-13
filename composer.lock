@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b539ac9e2f6dc68c04851991c300e63",
+    "content-hash": "d82c80ab1d99553a72ea44c67cf44c2b",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1975,16 +1975,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.34.1",
+            "version": "1.34.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9"
+                "reference": "b9a444d829c9a16735aceca1b173e765745bcc0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9",
-                "reference": "19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b9a444d829c9a16735aceca1b173e765745bcc0c",
+                "reference": "b9a444d829c9a16735aceca1b173e765745bcc0c",
                 "shasum": ""
             },
             "require": {
@@ -1992,8 +1992,11 @@
                 "symfony/translation": "~2.6 || ~3.0 || ~4.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2",
                 "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "suggest": {
+                "friendsofphp/php-cs-fixer": "Needed for the `composer phpcs` command. Allow to automatically fix code style.",
+                "phpstan/phpstan": "Needed for the `composer phpstan` command. Allow to detect potential errors."
             },
             "type": "library",
             "extra": {
@@ -2026,7 +2029,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-11-08T13:33:47+00:00"
+            "time": "2018-11-13T08:26:10+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2082,11 +2085,16 @@
         {
             "name": "ohdearapp/nova-ohdear-tool",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ohdearapp/nova-ohdear-tool.git",
+                "reference": "87787b8992fb960d20d8340807ad77290e6771b5"
+            },
             "dist": {
-                "type": "path",
-                "url": "../nova-ohdear-tool",
-                "reference": "abfada5cff6ce0252b342f4be7d53b39f5a5da1e",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/ohdearapp/nova-ohdear-tool/zipball/87787b8992fb960d20d8340807ad77290e6771b5",
+                "reference": "87787b8992fb960d20d8340807ad77290e6771b5",
+                "shasum": ""
             },
             "require": {
                 "laravel/nova": "^1.0",
@@ -2110,11 +2118,7 @@
                     "OhDear\\OhDearTool\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "OhDear\\OhDearTool\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2131,7 +2135,8 @@
             "keywords": [
                 "laravel",
                 "nova"
-            ]
+            ],
+            "time": "2018-11-13T12:37:18+00:00"
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
@@ -4038,16 +4043,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.21.0",
+            "version": "v6.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "77eb5bb91e29981eea29b552fc648dbcb55a97f5"
+                "reference": "c9f1c61bcf91f47cc85b4cb94dcf8113eeb5a891"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/77eb5bb91e29981eea29b552fc648dbcb55a97f5",
-                "reference": "77eb5bb91e29981eea29b552fc648dbcb55a97f5",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c9f1c61bcf91f47cc85b4cb94dcf8113eeb5a891",
+                "reference": "c9f1c61bcf91f47cc85b4cb94dcf8113eeb5a891",
                 "shasum": ""
             },
             "require": {
@@ -4089,7 +4094,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2018-11-09T01:33:39+00:00"
+            "time": "2018-11-12T22:23:04+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6162,16 +6167,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v0.1.7",
+            "version": "v0.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "7183e588501de3b1de307a6f82d311e2212b0f83"
+                "reference": "96e23e08c5de5748b7ea38573da13b3a1f3fc141"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/7183e588501de3b1de307a6f82d311e2212b0f83",
-                "reference": "7183e588501de3b1de307a6f82d311e2212b0f83",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/96e23e08c5de5748b7ea38573da13b3a1f3fc141",
+                "reference": "96e23e08c5de5748b7ea38573da13b3a1f3fc141",
                 "shasum": ""
             },
             "require": {
@@ -6221,7 +6226,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2018-11-08T11:21:56+00:00"
+            "time": "2018-11-09T14:19:41+00:00"
         },
         {
             "name": "mockery/mockery",
