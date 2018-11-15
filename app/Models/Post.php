@@ -47,6 +47,8 @@ class Post extends BaseModel implements Feedable
 
                 static::setEventDispatcher($dispatcher);
             }
+
+            ResponseCache::clear();
         });
     }
 
