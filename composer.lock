@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d82c80ab1d99553a72ea44c67cf44c2b",
+    "content-hash": "0308a581d9c9beb847ba7d40beda1b9d",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1975,16 +1975,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.34.4",
+            "version": "1.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "b9a444d829c9a16735aceca1b173e765745bcc0c"
+                "reference": "5c05a2be472b22f63291d192410df9f0e0de3b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b9a444d829c9a16735aceca1b173e765745bcc0c",
-                "reference": "b9a444d829c9a16735aceca1b173e765745bcc0c",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5c05a2be472b22f63291d192410df9f0e0de3b19",
+                "reference": "5c05a2be472b22f63291d192410df9f0e0de3b19",
                 "shasum": ""
             },
             "require": {
@@ -2029,7 +2029,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-11-13T08:26:10+00:00"
+            "time": "2018-11-14T21:55:58+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2088,12 +2088,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ohdearapp/nova-ohdear-tool.git",
-                "reference": "87787b8992fb960d20d8340807ad77290e6771b5"
+                "reference": "f3c903a25de5e532c62cf464dfae1386b94c6e43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ohdearapp/nova-ohdear-tool/zipball/87787b8992fb960d20d8340807ad77290e6771b5",
-                "reference": "87787b8992fb960d20d8340807ad77290e6771b5",
+                "url": "https://api.github.com/repos/ohdearapp/nova-ohdear-tool/zipball/f3c903a25de5e532c62cf464dfae1386b94c6e43",
+                "reference": "f3c903a25de5e532c62cf464dfae1386b94c6e43",
                 "shasum": ""
             },
             "require": {
@@ -2136,7 +2136,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-11-13T12:37:18+00:00"
+            "time": "2018-11-16T10:44:06+00:00"
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
@@ -4043,16 +4043,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.21.1",
+            "version": "v6.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "c9f1c61bcf91f47cc85b4cb94dcf8113eeb5a891"
+                "reference": "2a87430d6cefe71c6b618e163aa05e7de97d2619"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c9f1c61bcf91f47cc85b4cb94dcf8113eeb5a891",
-                "reference": "c9f1c61bcf91f47cc85b4cb94dcf8113eeb5a891",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/2a87430d6cefe71c6b618e163aa05e7de97d2619",
+                "reference": "2a87430d6cefe71c6b618e163aa05e7de97d2619",
                 "shasum": ""
             },
             "require": {
@@ -4094,7 +4094,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2018-11-12T22:23:04+00:00"
+            "time": "2018-11-15T22:35:15+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6167,16 +6167,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v0.1.8",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "96e23e08c5de5748b7ea38573da13b3a1f3fc141"
+                "reference": "feaf48bf4162ea0b7613ec4a2944342cd1a84dca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/96e23e08c5de5748b7ea38573da13b3a1f3fc141",
-                "reference": "96e23e08c5de5748b7ea38573da13b3a1f3fc141",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/feaf48bf4162ea0b7613ec4a2944342cd1a84dca",
+                "reference": "feaf48bf4162ea0b7613ec4a2944342cd1a84dca",
                 "shasum": ""
             },
             "require": {
@@ -6226,7 +6226,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2018-11-09T14:19:41+00:00"
+            "time": "2018-11-15T15:28:27+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -7026,16 +7026,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.4.3",
+            "version": "7.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c151651fb6ed264038d486ea262e243af72e5e64"
+                "reference": "b1be2c8530c4c29c3519a052c9fb6cee55053bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c151651fb6ed264038d486ea262e243af72e5e64",
-                "reference": "c151651fb6ed264038d486ea262e243af72e5e64",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b1be2c8530c4c29c3519a052c9fb6cee55053bbd",
+                "reference": "b1be2c8530c4c29c3519a052c9fb6cee55053bbd",
                 "shasum": ""
             },
             "require": {
@@ -7106,7 +7106,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-10-23T05:57:41+00:00"
+            "time": "2018-11-14T16:52:02+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
