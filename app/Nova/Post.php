@@ -34,6 +34,10 @@ class Post extends Resource
                         return str_limit($title, 50);
                     }),
 
+                Text::make('', function () {
+                    return '<a target="murze_preview" href="' . url($this->url) . '">Show</a>';
+                })->asHtml(),
+
                 Markdown::make('Text')
                     ->rules('required'),
 
