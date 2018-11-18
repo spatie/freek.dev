@@ -35,6 +35,10 @@ class Post extends Resource
                     }),
 
                 Text::make('', function () {
+                    if (! $this->exists) {
+                        return '';
+                    }
+
                     return '<a target="murze_preview" href="' . url($this->url) . '">Show</a>';
                 })->asHtml(),
 
