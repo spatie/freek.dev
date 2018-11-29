@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Jobs\PostOnMedium;
 use App\Jobs\SendTweet;
 use App\Models\Presenters\PostPresenter;
+use App\Services\CommonMark\CommonMark;
 use App\Services\Parsedown;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Log;
@@ -67,7 +68,7 @@ class Post extends BaseModel implements Feedable
 
     public function getFormattedTextAttribute()
     {
-        return (new Parsedown())->text($this->text);
+        return CommonMark::convertToHtml($this->text);
     }
 
     public function updateAttributes(array $attributes)
