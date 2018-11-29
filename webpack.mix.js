@@ -35,6 +35,7 @@ mix
             path.join(__dirname, 'node_modules/simplemde/**/*.js'),
             path.join(__dirname, 'node_modules/turbolinks/**/*.js'),
             path.join(__dirname, 'vendor/spatie/menu/**/*.php'),
+            path.join(__dirname, 'vendor/scrivo/highlight.php/**/*.php'),
         ],
         whitelistPatterns: [/carbon/, /language/, /hljs/, /cm-/, /alert-/],
     });
