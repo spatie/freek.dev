@@ -32,6 +32,7 @@
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
         "ohdearapp/nova-ohdear-tool": "dev-master",
+        "spatie/commonmark-highlighter": "^0.1.0",
         "spatie/laravel-backup": "^5.1",
         "spatie/laravel-csp": "^1.0",
         "spatie/laravel-feed": "^2.0",

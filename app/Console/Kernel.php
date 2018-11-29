@@ -8,10 +8,6 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
-    protected $commands = [
-        ImportWp::class,
-    ];
-
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('responsecache:flush')->daily()->at('00:00');
@@ -23,7 +19,5 @@ class Kernel extends ConsoleKernel
     protected function commands()
     {
         $this->load(__DIR__.'/Commands');
-
-        //require base_path('routes/console.php');
     }
 }
