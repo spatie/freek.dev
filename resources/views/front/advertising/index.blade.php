@@ -16,7 +16,7 @@
     </p>
 
     <h2>The blog</h2>
-    In 2017 the blog had 591 113 pageviews. If you want to view some more stastics and learn which we the most popular pages read <a href="https://murze.be/murzebe-turns-three">this blog post</a>.
+    In 2018 the blog had 728 243 pageviews. If you want to view some more stastics and learn which we the most popular pages read <a href="https://murze.be/four-years-of-murzebe">this blog post</a>.
 
     <p>
         An advertisement consists of a text with two or three
