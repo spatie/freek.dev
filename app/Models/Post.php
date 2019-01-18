@@ -177,7 +177,7 @@ class Post extends BaseModel implements Feedable
             ->id($this->id)
             ->title($this->formatted_title)
             ->summary($this->formatted_text)
-            ->updated($this->updated_at)
+            ->updated($this->publish_date)
             ->link(url(route('posts.show', $this->slug)))
             ->author('Freek Van der Herten');
     }
