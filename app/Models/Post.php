@@ -6,7 +6,6 @@ use App\Jobs\PostOnMedium;
 use App\Jobs\SendTweet;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
-use App\Services\Parsedown;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Log;
 use Laravel\Scout\Searchable;

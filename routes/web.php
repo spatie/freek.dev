@@ -26,4 +26,3 @@ Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
 Route::post('payments', [PaymentsController::class, 'handlePayment']);
 
 Route::get('{postSlug}', [PostsController::class, 'show'])->name('posts.show');
-
