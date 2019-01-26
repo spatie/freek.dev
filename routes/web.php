@@ -21,8 +21,11 @@ Route::get('tag/{tagSlug}', [TaggedPostsController::class, 'index'])->name('tagg
 Route::get('me', [MeController::class, 'index']);
 Route::view('advertising', 'front.advertising.index');
 
-Route::get('payments', [PaymentsController::class, 'index']);
-Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
-Route::post('payments', [PaymentsController::class, 'handlePayment']);
+Route::middleware('doNotCacheResponse')->group(function () {
+    Route::get('payments', [PaymentsController::class, 'index']);
+    Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
+    Route::post('payments', [PaymentsController::class, 'handlePayment']);
+});
+
 
 Route::get('{postSlug}', [PostsController::class, 'show'])->name('posts.show');
