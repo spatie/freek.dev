@@ -59,7 +59,7 @@ class PostTest extends TestCase
 
         $this->assertFalse($post->concernsTweet());
 
-        $post->syncTags(['tweet', 'php']);
+        $post->syncTags(['php', 'tweet']);
 
         $this->assertTrue($post->refresh()->concernsTweet());
     }
