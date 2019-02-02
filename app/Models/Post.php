@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Jobs\PostOnMedium;
-use App\Jobs\SendTweet;
+use App\Jobs\PostOnMediumJob;
+use App\Jobs\SendTweetJob;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
@@ -100,7 +100,7 @@ class Post extends BaseModel implements Feedable
     {
         if (!$this->tweet_sent) {
             if (! $this->concernsTweet()) {
-                dispatch(new SendTweet($this));
+                dispatch(new SendTweetJob($this));
 
                 $this->tweet_sent = true;
                 $this->save();
@@ -110,7 +110,7 @@ class Post extends BaseModel implements Feedable
         }
 
         if (!$this->posted_on_medium) {
-            dispatch(new PostOnMedium($this));
+            dispatch(new PostOnMediumJob($this));
 
             $this->posted_on_medium = true;
             $this->save();
