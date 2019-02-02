@@ -183,7 +183,7 @@ class Post extends BaseModel implements Feedable
 
     public function concernsTweet(): bool
     {
-        return $this->tags->contains(function (Tag $tag) {
+        return $this->refresh()->tags->contains(function (Tag $tag) {
             return $tag->name === 'tweet';
         });
     }

@@ -51,4 +51,16 @@ class PostTest extends TestCase
         ]);
         $this->assertCount(2, Post::scheduled()->get());
     }
+
+    /** @test */
+    public function it_can_determine_if_the_post_concerns_a_tweet()
+    {
+        $post = factory(Post::class)->create();
+
+        $this->assertFalse($post->concernsTweet());
+
+        $post->syncTags(['tweet', 'php']);
+
+        $this->assertTrue($post->refresh()->concernsTweet());
+    }
 }
