@@ -104,8 +104,6 @@ class Post extends BaseModel implements Feedable
 
                 $this->tweet_sent = true;
                 $this->save();
-
-                flash()->info('Tweet was sent');
             }
         }
 
@@ -114,8 +112,6 @@ class Post extends BaseModel implements Feedable
 
             $this->posted_on_medium = true;
             $this->save();
-
-            flash()->info('Posted on medium');
         }
     }
 
