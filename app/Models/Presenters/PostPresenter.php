@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models\Presenters;
+
 use Illuminate\Support\Str;
 
 trait PostPresenter
