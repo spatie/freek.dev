@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use App\Services\Parsedown;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -56,6 +57,6 @@ class Ad extends Model
 
     public function getExcerptAttribute()
     {
-        return str_limit($this->text);
+        return Str::limit($this->text);
     }
 }

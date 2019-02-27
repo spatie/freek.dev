@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Illuminate\Support\Str;
 use App\Models\Post as PostModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
@@ -31,7 +32,7 @@ class Post extends Resource
                     ->sortable()
                     ->rules('required')
                     ->displayUsing(function (string $title) {
-                        return str_limit($title, 50);
+                        return Str::limit($title, 50);
                     }),
 
                 Text::make('', function () {
