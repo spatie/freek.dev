@@ -9,7 +9,6 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 use OhDear\OhDearTool\OhDearTool;
 use Spatie\BackupTool\BackupTool;
 use Spatie\TailTool\TailTool;
-use Tightenco\NovaGoogleAnalytics\PageViewsMetric;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -31,7 +30,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-           new PageViewsMetric(),
+
         ];
     }
 

@@ -17,11 +17,14 @@
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1.1",
         "jquery": "^3.2",
-        "laravel-mix": "^2.0",
+        "laravel-mix": "^4.0",
         "laravel-mix-purgecss": "^1.0",
         "lodash": "^4.17.4",
+        "sass": "^1.17.2",
+        "sass-loader": "7.*",
         "tailwindcss": "^0.4",
-        "vue": "^2.5.13"
+        "vue": "^2.5.13",
+        "vue-template-compiler": "^2.6.7"
     },
     "dependencies": {
         "algoliasearch": "^3.24.5",
