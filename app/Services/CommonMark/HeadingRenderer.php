@@ -2,6 +2,7 @@
 
 namespace App\Services\CommonMark;
 
+use Illuminate\Support\Str;
 use League\CommonMark\Block\Element\AbstractBlock;
 use League\CommonMark\Block\Renderer\HeadingRenderer as BaseHeadingRenderer;
 use League\CommonMark\ElementRendererInterface;
@@ -13,7 +14,7 @@ class HeadingRenderer extends BaseHeadingRenderer
     {
         $element = parent::render($block, $htmlRenderer, $inTightList);
 
-        $id = str_slug($element->getContents());
+        $id = Str::slug($element->getContents());
 
         $element->setAttribute('id', $id);
         $element->setContents(

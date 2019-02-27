@@ -2,6 +2,8 @@
 
 namespace App\Models\Presenters;
 
+use Illuminate\Support\Str;
+
 trait PostPresenter
 {
     public function getExcerptAttribute(): string
@@ -12,7 +14,7 @@ trait PostPresenter
 
         $excerpt = trim($this->formatted_text);
 
-        $excerpt = str_before($excerpt, '<blockquote>');
+        $excerpt = Str::before($excerpt, '<blockquote>');
 
         //remove html
         $excerpt = strip_tags($excerpt);

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Illuminate\Support\Str;
 use App\Models\Ad as AdModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
@@ -24,7 +25,7 @@ class Ad extends Resource
             Text::make('Text')
                 ->onlyOnIndex()
                 ->displayUsing(function (string $text) {
-                    return str_limit($text, 50);
+                    return Str::limit($text, 50);
                 }),
 
             Markdown::make('Text')
