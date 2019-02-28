@@ -1,6 +1,6 @@
 @setup
 require __DIR__.'/vendor/autoload.php';
-(new \Dotenv\Dotenv(__DIR__, '.env'))->load();
+\Dotenv\Dotenv::create(__DIR__, '.env')->load();
 
 $server = "murze.be";
 $userAndServer = 'forge@'. $server;
