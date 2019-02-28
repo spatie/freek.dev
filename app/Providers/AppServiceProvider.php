@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Horizon\Horizon;
 
@@ -10,11 +11,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Horizon::auth(function ($request) {
-            if (! app()->environment('production')) {
-                return true;
-            }
-
+        Gate::define('viewHorizon', function ($user) {
             return auth()->check();
         });
 
