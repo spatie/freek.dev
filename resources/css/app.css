@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+@import './bootstrap.css';
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1px;
+    grid-auto-flow: dense;
+}
+
+.post--large {
+    grid-column: 1 / -1;
+}
+
+@tailwind utilities;

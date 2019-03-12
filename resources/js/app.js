@@ -1,14 +1,14 @@
-import Vue from 'vue';
+// import Vue from 'vue';
 
-import SearchPosts from './components/SearchPosts';
+// import SearchPosts from './components/SearchPosts';
 
-const searchPostsEl = document.querySelector('#search-posts');
+// const searchPostsEl = document.querySelector('#search-posts');
 
-new Vue({
-    el: searchPostsEl,
+// new Vue({
+//     el: searchPostsEl,
 
-    render: h =>
-        h(SearchPosts, {
-            props: { ...searchPostsEl.dataset },
-        }),
-});
+//     render: h =>
+//         h(SearchPosts, {
+//             props: { ...searchPostsEl.dataset },
+//         }),
+// });

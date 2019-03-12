@@ -1,0 +1,62 @@
+@tailwind preflight;
+
+:root {
+    --black: #22292f;
+    --grey-darkest: #3d4852;
+    --grey-darker: #606f7b;
+    --grey-dark: #8795a1;
+    --grey: #b8c2cc;
+    --grey-light: #dae1e7;
+    --grey-lighter: #f1f5f8;
+    --grey-lightest: #f8fafc;
+    --white: #ffffff;
+    --paper: #fffbf9;
+    --paper-dark: #f9f5f1;
+    --paper-darker: #e2d9d0;
+    --blue: #319fbf;
+    --blue-dark: #207d99;
+}
+
+* {
+    position: relative;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+}
+
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 22px;
+    }
+}
+
+h1 {
+    font-size: inherit; /* Reset normalize 2em */
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img,
+svg {
+    display: block;
+    vertical-align: middle;
+}

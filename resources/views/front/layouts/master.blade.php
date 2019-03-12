@@ -6,42 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     @include('front.layouts.partials.seo')
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/cmc0uxi.css">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script defer src="{{ mix('js/app.js') }}"></script>
-    <link rel="prefetch" href="/js/highlight.js" as="script">
 </head>
-<body>
+<body class="font-sans bg-paper text-black">
 @include('front.layouts.partials.analytics')
-<div id="app" class="container mx-auto">
-    <header>
-        @include('front.layouts.partials.navigation')
-    </header>
+<div id="app" class="max-w-2xl mx-auto">
+    @include('front.layouts.partials.header')
 
-    <div class="flex flex-col lg:flex-row">
+    @include('front.layouts.partials.flashMessage')
 
-        <main class="lg:w-3/4 lg:mr-4">
-            @include('front.layouts.partials.flashMessage')
-            @yield('content')
-        </main>
+    @yield('content')
 
-        <div class="lg:w-1/4">
-            @include('front.layouts.partials.carbon')
-            @include('front.layouts.partials.adsense')
-        </div>
+    {{-- <div>
+        @include('front.layouts.partials.carbon')
+        @include('front.layouts.partials.adsense')
+    </div> --}}
 
-
-    </div>
-
-    <footer class="px-4 mx-auto border-t py-6 mt-6 text-center text-sm sm:text-base">
+    {{-- <footer>
         <a href="https://twitter.com/freekmurze">@freekmurze</a>
         &nbsp; • &nbsp;
         <a href="/feed" data-turbolinks="false">RSS</a>
         &nbsp; • &nbsp;
         <a href="/advertising">Advertising</a>
-    </footer>
+    </footer> --}}
 </div>
 </body>
 </html>

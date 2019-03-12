@@ -1,19 +1,16 @@
-const glob = require('glob-all');
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss');
 
 require('laravel-mix-purgecss');
 
-mix
-    .js('resources/js/app.js', 'public/js')
-    
-    .sass('resources/css/app.scss', 'public/css')
+mix.js('resources/js/app.js', 'public/js')
+
+    .postCss('resources/css/app.css', 'public/css', [
+        require('postcss-easy-import')(),
+        require('tailwindcss')('tailwind.js'),
+    ])
+
     .options({
         processCssUrls: false,
-
-        postCss: [
-            tailwindcss('tailwind.js'),
-        ],
     })
 
     .version()
@@ -25,7 +22,7 @@ mix
 
         resolve: {
             alias: {
-                'vue$': 'vue',
+                vue$: 'vue',
             },
         },
     })

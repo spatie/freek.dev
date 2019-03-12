@@ -1,5 +1,5 @@
 <template>
-    <div style="position: relative">
+    <div v-if="appId" style="position: relative">
         <div>
             <input class="search-input" placeholder="Search blogposts…" v-model="query" type="text"
                    @input="performSearch">
@@ -7,7 +7,7 @@
 
         <div v-if="query.length" class="search-results">
             <div v-if="hits.length">
-                <ul v-for="hit in hits">
+                <ul v-for="(hit, i) in hits" :key="i">
                     <li><a :href="hit.url" v-html="hit._highlightResult.title.value"></a></li>
                 </ul>
             </div>

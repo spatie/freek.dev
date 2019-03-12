@@ -1,35 +1,27 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "format": "prettier --write 'resources/assets/**/*.{css,js,vue}' 'nova-components/**/*.{css,js,vue}'",
-        "build-generate-newsletter": "cd nova-components/GenerateNewsletter && yarn dev",
-        "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && yarn && yarn prod"
-    },
-    "devDependencies": {
-        "axios": "^0.17",
-        "bootstrap-sass": "^3.3.7",
-        "cross-env": "^5.1.1",
-        "jquery": "^3.2",
-        "laravel-mix": "^4.0",
-        "laravel-mix-purgecss": "^1.0",
-        "lodash": "^4.17.4",
-        "sass": "^1.17.2",
-        "sass-loader": "7.*",
-        "tailwindcss": "^0.4",
-        "vue": "^2.5.13",
-        "vue-template-compiler": "^2.6.7"
-    },
-    "dependencies": {
-        "algoliasearch": "^3.24.5",
-        "babel-plugin-syntax-dynamic-import": "^6.18.0",
-        "glob-all": "^3.1.0",
-        "prettier": "^1.10.2"
-    }
+  "private": true,
+  "scripts": {
+    "dev": "$npm_execpath run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "$npm_execpath run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "$npm_execpath run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "format": "prettier \"**/*.{js,json,css,vue}\" --write --ignore-path .gitignore",
+    "build-generate-newsletter": "cd nova-components/GenerateNewsletter && yarn dev",
+    "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && yarn && yarn prod"
+  },
+  "devDependencies": {
+    "algoliasearch": "^3.24.5",
+    "axios": "^0.18.0",
+    "cross-env": "^5.1.1",
+    "laravel-mix": "^4.0",
+    "laravel-mix-purgecss": "^4.0",
+    "postcss-easy-import": "^3.0.0",
+    "prettier": "^1.10.2",
+    "tailwindcss": "^0.7.4",
+    "vue": "^2.5.13",
+    "vue-template-compiler": "^2.6.7"
+  }
 }
