@@ -2,9 +2,9 @@
 
 namespace App\Nova;
 
-use Illuminate\Support\Str;
 use App\Models\Ad as AdModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;

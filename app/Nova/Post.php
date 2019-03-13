@@ -2,9 +2,9 @@
 
 namespace App\Nova;
 
-use Illuminate\Support\Str;
 use App\Models\Post as PostModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;

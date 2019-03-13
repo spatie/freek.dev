@@ -3,10 +3,9 @@
 namespace App\Models;
 
 use App\Services\CommonMark\CommonMark;
-use Illuminate\Support\Str;
-use App\Services\Parsedown;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Ad extends Model
 {
