@@ -62,7 +62,21 @@ class Post extends BaseModel implements Feedable
     public function scopePublished(Builder $query)
     {
         $query
-            ->where('published', true);
+            ->where('published', true)
+            ->orderBy('publish_date', 'desc')
+            ->orderBy('id', 'desc');
+    }
+
+    public function scopeOriginalContent(Builder $query)
+    {
+        $query->where('original_content', true);
+    }
+
+    public function scopeScheduled(Builder $query)
+    {
+        $query
+            ->where('published', false)
+            ->whereNotNull('publish_date');
     }
 
     public function getFormattedTextAttribute()
@@ -213,12 +227,5 @@ class Post extends BaseModel implements Feedable
         if (app()->environment('production')) {
             $this->publishOnSocialMedia();
         }
-    }
-
-    public function scopeScheduled(Builder $query)
-    {
-        $query
-            ->where('published', false)
-            ->whereNotNull('publish_date');
     }
 }

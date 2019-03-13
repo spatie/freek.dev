@@ -8,9 +8,9 @@ class OriginalsController extends Controller
 {
     public function index()
     {
-        $posts = Post::published()
-            ->where('original_content', true)
-            ->orderBy('publish_date', 'desc')
+        $posts = Post::query()
+            ->published()
+            ->orginalContent()
             ->simplePaginate(50);
 
         $onFirstPage = $posts->onFirstPage();
