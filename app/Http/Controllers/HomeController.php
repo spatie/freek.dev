@@ -14,16 +14,16 @@ class HomeController extends Controller
             ->orderBy('id', 'desc')
             ->simplePaginate(20);
 
-        $firstOriginal = Post::query()
+        $lastestOriginal = Post::query()
             ->published()
             ->where('original_content', true)
             ->orderBy('publish_date', 'desc')
             ->orderBy('id', 'desc')
             ->first();
 
-        $posts = $posts->reject(function (Post $post) use ($firstOriginal) {
-            return $post->is($firstOriginal);
-        })->prepend($firstOriginal);
+        $posts = $posts->reject(function (Post $post) use ($lastestOriginal) {
+            return $post->is($lastestOriginal);
+        })->prepend($lastestOriginal);
 
         $onFirstPage = false;//$posts->onFirstPage();
 
