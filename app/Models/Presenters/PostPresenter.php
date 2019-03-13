@@ -8,8 +8,8 @@ trait PostPresenter
 {
     public function getExcerptAttribute(): string
     {
-        if ($this->concernsTweet()) {
-            return '';
+        if (! $this->original_content) {
+            return $this->formatted_text;
         }
 
         $excerpt = trim($this->formatted_text);
