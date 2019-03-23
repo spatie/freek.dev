@@ -61,8 +61,7 @@ class Post extends BaseModel implements Feedable
 
     public function scopePublished(Builder $query)
     {
-        $query
-            ->where('published', true);
+        return $query->where('published', true);
     }
 
     public function getFormattedTextAttribute()
