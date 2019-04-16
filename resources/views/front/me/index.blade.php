@@ -28,7 +28,7 @@
 
     <h2 id="side-projects">
         Side projects
-        <a class="text-grey" href="#side-projects">#</a>
+        <a class="text-gray" href="#side-projects">#</a>
     </h2>
 
     <p>

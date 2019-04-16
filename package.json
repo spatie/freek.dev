@@ -20,7 +20,7 @@
     "laravel-mix-purgecss": "^4.0",
     "postcss-easy-import": "^3.0.0",
     "prettier": "^1.10.2",
-    "tailwindcss": "^0.7.4",
+    "tailwindcss": "1.0.0-beta.4",
     "vue": "^2.5.13",
     "vue-template-compiler": "^2.6.7"
   }

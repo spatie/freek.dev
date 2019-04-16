@@ -28,13 +28,13 @@ class HeadingRenderer extends BaseHeadingRenderer
     protected function getFragmentLinkClass($elementName)
     {
         if ($elementName === 'h1') {
-            return 'text-grey';
+            return 'text-gray';
         }
 
         if ($elementName === 'h2') {
-            return 'text-grey';
+            return 'text-gray';
         }
 
-        return 'text-grey-light';
+        return 'text-gray-light';
     }
 }

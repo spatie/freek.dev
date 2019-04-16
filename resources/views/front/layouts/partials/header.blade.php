@@ -1,18 +1,22 @@
-<header class="flex items-end justify-between px-24 py-12">
-    <div class="font-bold uppercase tracking-wider leading-tight">
-        <h1 class="mr-2">Murze.be</h1>
-        <p class="text-blue text-sm">
-            Laravel
-            <span class="text-grey-light">/</span>
-            PHP
-            <span class="text-grey-light">/</span>
-            JavaScript
-        </p>
+<header class="flex items-end justify-between px-12 pt-6 pb-8 leading-tight">
+    <div class="flex items-end">
+        <div class="w-12 mr-3">
+            <img src="/images/murzicoon.svg" class="w-full">
         </div>
-        <nav class="text-sm font-bold tracking-wide">
-            {{ Menu::main()
-                ->addClass('flex')
-                ->addItemParentClass('mr-8') }}
-        </nav>
+        <div class="font-title uppercase tracking-wider">
+            <h1 class="mr-2">Murze.be</h1>
+            <p class="text-blue text-sm">
+                Laravel
+                <span class="text-gray-light">/</span>
+                PHP
+                <span class="text-gray-light">/</span>
+                JavaScript
+            </p>
+        </div>
     </div>
+    <nav class="font-sans font-black tracking-wide">
+        {{ Menu::main()
+            ->addClass('flex')
+            ->addItemParentClass('ml-6') }}
+    </nav>
 </header>

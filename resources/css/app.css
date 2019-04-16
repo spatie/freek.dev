@@ -4,8 +4,8 @@
 
 .posts {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1px;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-gap: 2rem;
     grid-auto-flow: dense;
 }
 

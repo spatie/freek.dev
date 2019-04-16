@@ -20,7 +20,7 @@ class NavigationServiceProvider extends ServiceProvider
                 ->action([OriginalsController::class, 'index'], 'Originals')
                 ->action([NewsletterController::class, 'index'], 'Newsletter')
                 // ->url('/advertising', 'Advertising')
-                ->action([MeController::class, 'index'], 'Me')
+                ->action([MeController::class, 'index'], 'About')
                 // ->add(View::create('front.layouts.partials.search')
                 ->setActiveFromRequest('/');
         });

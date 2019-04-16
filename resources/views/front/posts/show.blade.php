@@ -3,40 +3,44 @@
 @section('title', $post->formatted_title )
 
 @section('content')
-
-    @auth
+    {{-- @auth
         <div class="pb-4">
             <a class="button" target="_blank" href="/nova/resources/posts/{{ $post->id }}/edit">Edit</a>
         </div>
-    @endauth
-
-    @if($ad)
+    @endauth --}}
+    {{-- @if($ad)
         <div class="bg-white border-2 rounded mb-4 py-4 px-6 mt-4 text-xs">
             {!! $ad->formatted_text !!}
         </div>
-    @endif
+    @endif --}}
 
-    <h1>{{ $post->formatted_title }}</h1>
+    <article class="max-w-3xl mx-auto px-12 py-12">
+        <header class="max-w-xl mx-auto">
+            <h1 class="font-title uppercase text-3xl leading-tight text-center">
+                {{ $post->title }}
+            </h1>
+        </header>
 
-    <div class="text-grey-darker text-sm pb-6 border-b text-grey">
-        Posted on <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">{{ $post->publish_date }}</time> | {{ $post->author }}
-    </div>
+        <div class="text-gray-darker text-sm pb-6 border-b text-gray">
+            Posted on <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">{{ $post->publish_date }}</time> | {{ $post->author }}
+        </div>
 
-    <div class="pt-4 post-content">
-        {!! $post->formatted_text !!}
-    </div>
+        <div class="pt-4 post-content">
+            {!! $post->formatted_text !!}
+        </div>
+    </article>
 
-    <div class="pt-4">
+    {{-- <div class="pt-4">
         @include('front.posts.partials.tags')
-    </div>
+    </div> --}}
 
-    <div class="pt-4">
+    {{-- <div class="pt-4">
         @include('front.posts.partials.newsletter')
-    </div>
+    </div> --}}
 
-    <div class="pt-4">
+    {{-- <div class="pt-4">
         @include('front.posts.partials.disqus')
-    </div>
+    </div> --}}
 @endsection
 
 @section('seo')

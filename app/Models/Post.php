@@ -7,6 +7,7 @@ use App\Jobs\SendTweetJob;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
@@ -227,5 +228,10 @@ class Post extends BaseModel implements Feedable
         if (app()->environment('production')) {
             $this->publishOnSocialMedia();
         }
+    }
+
+    public function getEmojiAttribute(): string
+    {
+        return Arr::random(['🐥', '🔗', '🔗', '']);
     }
 }

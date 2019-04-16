@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="285px" height="300px" viewBox="0 0 285 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>murzicoon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="murzicoon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FFFFFF" x="15" y="15" width="240" height="255"></rect>
+        <path d="M270,15 L285,15 L285,300 L15,300 L15,285 L0,285 L0,0 L270,0 L270,15 Z M15,15 L15,270 L255,270 L255,15 L15,15 Z" id="Combined-Shape" fill="#000000"></path>
+        <rect id="Rectangle" fill="#D8D8D8" x="60" y="60" width="150" height="90"></rect>
+        <polygon id="Path" fill="#000000" points="57.5 207 57.5 189.5 77.5 189.5 77.5 207 95 207 95 227 77.5 227 77.5 244.5 57.5 244.5 57.5 227 40 227 40 207"></polygon>
+        <rect id="Rectangle" fill="#000000" x="145" y="205" width="25" height="25"></rect>
+        <rect id="Rectangle" fill="#000000" x="190" y="205" width="25" height="25"></rect>
+        <path d="M45,45 L228,45 L228,165 L45,165 L45,45 Z M60,60 L60,150 L210,150 L210,60 L60,60 Z" id="Combined-Shape" fill="#000000"></path>
+    </g>
+</svg>

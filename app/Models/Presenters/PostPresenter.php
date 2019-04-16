@@ -26,11 +26,11 @@ trait PostPresenter
             return '';
         }
 
-        if (strlen($excerpt) <= 150) {
+        if (strlen($excerpt) <= 300) {
             return $excerpt;
         }
 
-        $ww = wordwrap($excerpt, 150, "\n");
+        $ww = wordwrap($excerpt, 300, "\n");
 
         $excerpt = substr($ww, 0, strpos($ww, "\n")) . '…';
 
