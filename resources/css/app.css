@@ -2,15 +2,8 @@
 
 @import './bootstrap.css';
 
-.posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    grid-gap: 2rem;
-    grid-auto-flow: dense;
-}
-
-.post--large {
-    grid-column: 1 / -1;
+.markup > *:not(:last-child) {
+    @apply mb-3;
 }
 
 @tailwind utilities;

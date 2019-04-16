@@ -1,6 +1,4 @@
 module.exports = {
-    important: true,
-
     theme: {
         colors: {
             transparent: 'transparent',
@@ -36,7 +34,7 @@ module.exports = {
                 'sans-serif',
             ],
             sans: [
-                'Muli',
+                'ff-meta-web-pro',
                 'system-ui',
                 'BlinkMacSystemFont',
                 '-apple-system',
@@ -50,7 +48,7 @@ module.exports = {
                 'Helvetica Neue',
                 'sans-serif',
             ],
-            serif: ['Lora'],
+            serif: ['pt-serif'],
             mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
         },
         extend: {

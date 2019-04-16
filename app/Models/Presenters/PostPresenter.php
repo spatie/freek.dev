@@ -2,6 +2,7 @@
 
 namespace App\Models\Presenters;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 trait PostPresenter
@@ -52,5 +53,10 @@ trait PostPresenter
             : '';
 
         return $prefix . $this->title;
+    }
+
+    public function getEmojiAttribute(): string
+    {
+        return Arr::random(['🐥', '🔗', '🔗', '🌟']);
     }
 }
