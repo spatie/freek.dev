@@ -9,5 +9,5 @@
 </header>
 <div class="mb-3 w-24 h-1 bg-paper-dark"></div>
 <div class="markup pl-8">
-    {!! $post->text !!}
+    {!! $post->formatted_text !!}
 </div>
