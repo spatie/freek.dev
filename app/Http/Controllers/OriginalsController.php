@@ -10,7 +10,7 @@ class OriginalsController extends Controller
     {
         $posts = Post::query()
             ->published()
-            ->orginalContent()
+            ->originalContent()
             ->simplePaginate(50);
 
         $onFirstPage = $posts->onFirstPage();
