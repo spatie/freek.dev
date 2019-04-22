@@ -22,6 +22,10 @@
         <div class="pt-4 post-content">
             {!! $post->formatted_text !!}
         </div>
+
+        @if (! empty($this->external_url))
+            <a href="{{ $this->external_url }}">{{ $this->external_url }}</a>
+        @endif
     </article>
 
     <div class="pt-4">
