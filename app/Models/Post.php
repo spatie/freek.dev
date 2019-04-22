@@ -9,6 +9,7 @@ use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Log;
 use Laravel\Scout\Searchable;
+use phpDocumentor\Reflection\Types\Self_;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\ResponseCache\Facades\ResponseCache;
@@ -19,6 +20,10 @@ use Spatie\Tags\Tag;
 
 class Post extends BaseModel implements Feedable
 {
+    const TYPE_LINK = 'link';
+    const TYPE_TWEET = 'tweet';
+    const TYPE_ORIGINAL = 'originalPost';
+
     use HasSlug,
         HasTags,
         PostPresenter,
@@ -113,7 +118,7 @@ class Post extends BaseModel implements Feedable
     protected function publishOnSocialMedia()
     {
         if (!$this->tweet_sent) {
-            if (! $this->concernsTweet()) {
+            if (! $this->type === static::TYPE_TWEET) {
                 dispatch(new SendTweetJob($this));
 
                 $this->tweet_sent = true;
@@ -191,13 +196,6 @@ class Post extends BaseModel implements Feedable
             ->author('Freek Van der Herten');
     }
 
-    public function concernsTweet(): bool
-    {
-        return $this->refresh()->tags->contains(function (Tag $tag) {
-            return $tag->name === 'tweet';
-        });
-    }
-
     public function getUrlAttribute(): string
     {
         return route('posts.show', $this->slug);
@@ -227,5 +225,25 @@ class Post extends BaseModel implements Feedable
         if (app()->environment('production')) {
             $this->publishOnSocialMedia();
         }
+    }
+
+    public function hasTag(string $tagName): bool
+    {
+        return $this->refresh()->tags->contains(function (Tag $tag) use ($tagName) {
+            return $tag->name === $tagName;
+        });
+    }
+
+    public function getTypeAttribute(): string
+    {
+        if (! empty($this->external_url)) {
+            return static::TYPE_LINK;
+        }
+
+        if ($this->hasTag('tweet')) {
+            return static::TYPE_TWEET;
+        }
+
+        return static::TYPE_ORIGINAL;
     }
 }

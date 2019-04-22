@@ -54,9 +54,4 @@ trait PostPresenter
 
         return $prefix . $this->title;
     }
-
-    public function getEmojiAttribute(): string
-    {
-        return Arr::random(['🐥', '🔗', '🔗', '🌟']);
-    }
 }
