@@ -4,13 +4,9 @@
 
 @section('content')
 
-    @if($onFirstPage)
-        <h1>Originals</h1>
-    @else
-        <div class="pb-4">
-            {{ $posts->links() }}
-        </div>
-    @endif
+    <div class="pb-4">
+        {{ $posts->links() }}
+    </div>
 
     @include('front.posts.partials.list')
 

@@ -8,7 +8,6 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Menu\Laravel\Menu;
-use Spatie\Menu\Laravel\View;
 
 class NavigationServiceProvider extends ServiceProvider
 {
@@ -18,6 +17,7 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->action([HomeController::class, 'index'], 'Home')
                 ->action([OriginalsController::class, 'index'], 'Originals')
+                // ->url('/advertising', 'Advertising')
                 ->action([NewsletterController::class, 'index'], 'Newsletter')
                 // ->url('/advertising', 'Advertising')
                 ->action([MeController::class, 'index'], 'About')

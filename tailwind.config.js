@@ -14,6 +14,7 @@ module.exports = {
             paper: 'var(--paper)',
             'paper-dark': 'var(--paper-dark)',
             'paper-darker': 'var(--paper-darker)',
+            'paper-darkest': 'var(--paper-darkest)',
             blue: 'var(--blue)',
             'blue-dark': 'var(--blue-dark)',
         },
