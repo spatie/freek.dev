@@ -106,13 +106,6 @@ class Post extends BaseModel implements Feedable
                 $this->save();
             }
         }
-
-        if (!$this->posted_on_medium) {
-            dispatch(new PostOnMediumJob($this));
-
-            $this->posted_on_medium = true;
-            $this->save();
-        }
     }
 
     public function getWordpressFullUrlAttribute(): string
