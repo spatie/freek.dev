@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd9b8db576b818fd38eca86cd03597c8",
+    "content-hash": "1d3754a74731da36d3cb63ebd192a0b1",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -6176,33 +6176,32 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v1.1",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "925386780c756d6aa7c18ae185bb7a756c122460"
+                "reference": "eb3f6f8337050cc31fe1a1164240fe205e33b167"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/925386780c756d6aa7c18ae185bb7a756c122460",
-                "reference": "925386780c756d6aa7c18ae185bb7a756c122460",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/eb3f6f8337050cc31fe1a1164240fe205e33b167",
+                "reference": "eb3f6f8337050cc31fe1a1164240fe205e33b167",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "laravel/framework": "~5.7.7|~5.8.0",
+                "laravel/framework": "~5.8.0|~5.9.0",
                 "moontoast/math": "^1.1",
                 "php": "^7.1.3",
                 "symfony/var-dumper": "^4.1"
             },
             "require-dev": {
-                "nunomaduro/larastan": "^0.3.7",
                 "orchestra/testbench": "~3.7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "3.0-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -6235,7 +6234,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2019-02-18T22:02:39+00:00"
+            "time": "2019-03-28T05:06:56+00:00"
         },
         {
             "name": "mockery/mockery",
