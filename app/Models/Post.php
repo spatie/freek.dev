@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Jobs\PostOnMediumJob;
 use App\Jobs\SendTweetJob;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
@@ -39,16 +38,14 @@ class Post extends BaseModel implements Feedable
 
         static::saved(function (Post $post) {
             if ($post->published) {
-                $dispatcher = static::getEventDispatcher();
+                static::withoutEvents(function () use ($post) {
+                    $post->publish();
 
-                static::unsetEventDispatcher();
-
-                $post->publish();
-
-                static::setEventDispatcher($dispatcher);
+                    ResponseCache::clear();
+                });
             }
 
-            ResponseCache::clear();
+
         });
     }
 
