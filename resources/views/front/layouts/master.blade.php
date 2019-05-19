@@ -29,7 +29,6 @@
 
         <div class="lg:w-1/4">
             @include('front.layouts.partials.carbon')
-            @include('front.layouts.partials.adsense')
         </div>
 
 
