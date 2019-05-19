@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Jobs\PostOnMediumJob;
 use App\Jobs\SendTweetJob;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
@@ -44,16 +43,14 @@ class Post extends BaseModel implements Feedable
 
         static::saved(function (Post $post) {
             if ($post->published) {
-                $dispatcher = static::getEventDispatcher();
+                static::withoutEvents(function () use ($post) {
+                    $post->publish();
 
-                static::unsetEventDispatcher();
-
-                $post->publish();
-
-                static::setEventDispatcher($dispatcher);
+                    ResponseCache::clear();
+                });
             }
 
-            ResponseCache::clear();
+
         });
     }
 
@@ -124,13 +121,6 @@ class Post extends BaseModel implements Feedable
                 $this->tweet_sent = true;
                 $this->save();
             }
-        }
-
-        if (!$this->posted_on_medium) {
-            dispatch(new PostOnMediumJob($this));
-
-            $this->posted_on_medium = true;
-            $this->save();
         }
     }
 

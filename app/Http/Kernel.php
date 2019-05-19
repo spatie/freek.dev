@@ -29,9 +29,6 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             CacheControl::class,
-            //\App\Http\Middleware\Turbolinks::class,
-            //AddCspHeaders::class,
-            //AddSecurityHeaders::class,
         ],
 
         'api' => [

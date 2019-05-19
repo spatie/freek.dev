@@ -10,16 +10,16 @@ use App\Http\Controllers\TaggedPostsController;
 
 Route::redirect('nova', '/nova/login');
 
-Route::get('newsletter', [NewsletterController::class, 'index']);
-Route::get('confirm-your-email', [NewsletterController::class, 'confirm']);
-Route::get('subscribed', [NewsletterController::class, 'subscribed']);
-
 Route::feeds();
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/originals', [OriginalsController::class, 'index']);
 Route::get('tag/{tagSlug}', [TaggedPostsController::class, 'index'])->name('taggedPosts.index');
 Route::get('me', [MeController::class, 'index']);
 Route::view('advertising', 'front.advertising.index');
+
+Route::get('newsletter', [NewsletterController::class, 'index']);
+Route::get('confirm-your-email', [NewsletterController::class, 'confirm']);
+Route::get('subscribed', [NewsletterController::class, 'subscribed']);
 
 Route::middleware('doNotCacheResponse')->group(function () {
     Route::get('payments', [PaymentsController::class, 'index']);
