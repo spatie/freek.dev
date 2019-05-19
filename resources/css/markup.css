@@ -1,0 +1,21 @@
+.markup > *:not(:last-child) {
+    @apply mb-4;
+}
+
+.markup a {
+    @apply text-blue-dark underline;
+}
+
+.markup blockquote {
+    @apply p-6 bg-paper-dark relative;
+    font-size: 0.925em;
+}
+
+.markup blockquote:after {
+    position: absolute;
+    left: -10px;
+    top: -50px;
+    content: '“';
+    font-size: 100px;
+    @apply text-paper-darker;
+}

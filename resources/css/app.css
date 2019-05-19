@@ -2,8 +2,6 @@
 
 @import './bootstrap.css';
 
-.markup > *:not(:last-child) {
-    @apply mb-3;
-}
+@import './markup.css';
 
 @tailwind utilities;
