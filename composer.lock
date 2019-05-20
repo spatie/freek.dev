@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d3754a74731da36d3cb63ebd192a0b1",
+    "content-hash": "3a7f7d35813d490a33bd9ecef549b373",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1543,16 +1543,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "0.19.1",
+            "version": "0.19.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "d42b2d4a5d0a8eb2a4514f828ecb6f5db13a7c6f"
+                "reference": "8401e1c1e409a08fcf558aadb6951c33749d701e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d42b2d4a5d0a8eb2a4514f828ecb6f5db13a7c6f",
-                "reference": "d42b2d4a5d0a8eb2a4514f828ecb6f5db13a7c6f",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/8401e1c1e409a08fcf558aadb6951c33749d701e",
+                "reference": "8401e1c1e409a08fcf558aadb6951c33749d701e",
                 "shasum": ""
             },
             "require": {
@@ -1609,7 +1609,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-04-11T04:37:01+00:00"
+            "time": "2019-05-19T13:39:36+00:00"
         },
         {
             "name": "league/flysystem",
@@ -3185,16 +3185,16 @@
         },
         {
             "name": "spatie/laravel-responsecache",
-            "version": "v6.x-dev",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-responsecache.git",
-                "reference": "b052d90c64c06113dee682882598989b492772af"
+                "reference": "2fa724b93d3d772ebb30522c6b565cc2886a5161"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/b052d90c64c06113dee682882598989b492772af",
-                "reference": "b052d90c64c06113dee682882598989b492772af",
+                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/2fa724b93d3d772ebb30522c6b565cc2886a5161",
+                "reference": "2fa724b93d3d772ebb30522c6b565cc2886a5161",
                 "shasum": ""
             },
             "require": {
@@ -3245,7 +3245,7 @@
                 "response",
                 "spatie"
             ],
-            "time": "2019-05-17T17:13:50+00:00"
+            "time": "2019-05-20T08:19:17+00:00"
         },
         {
             "name": "spatie/laravel-sluggable",
@@ -8188,9 +8188,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-responsecache": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
