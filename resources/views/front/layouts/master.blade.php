@@ -32,8 +32,13 @@
 
         {{-- <div>
             @include('front.layouts.partials.carbon')
+<<<<<<< HEAD
             @include('front.layouts.partials.adsense')
         </div> --}}
+=======
+        </div>
+
+>>>>>>> master
 
         <footer class="text-xs text-gray-darker mb-3 text-center">
             <a href="https://twitter.com/freekmurze">RSS</a>
