@@ -8,7 +8,6 @@ use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Log;
 use Laravel\Scout\Searchable;
-use phpDocumentor\Reflection\Types\Self_;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\ResponseCache\Facades\ResponseCache;

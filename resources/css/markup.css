@@ -1,21 +1,41 @@
 .markup > *:not(:last-child) {
-    @apply mb-4;
+    @apply mb-6;
 }
 
-.markup a {
-    @apply text-blue-dark underline;
+.markup :not(.no-markup) a {
+    @apply text-blue-500 underline;
+}
+
+.markup h1 {
+    @apply text-3xl font-black leading-tighter;
+}
+
+.markup h2 {
+    @apply text-xl font-bold leading-tighter mt-12;
+}
+
+.markup img {
+    display: block;
 }
 
 .markup blockquote {
-    @apply p-6 bg-paper-dark relative;
+    @apply p-6 bg-indigo-100 relative border-l-2 border-indigo-200;
     font-size: 0.925em;
 }
 
 .markup blockquote:after {
     position: absolute;
-    left: -10px;
+    left: -12px;
     top: -50px;
     content: '“';
     font-size: 100px;
-    @apply text-paper-darker;
+}
+
+.markup code {
+    @apply bg-indigo-100 font-mono;
+    font-size: 0.85em;
+}
+
+.markup pre {
+    @apply bg-indigo-100 border-l-2 border-indigo-200 p-4;
 }

@@ -2,7 +2,7 @@
 
 namespace App\Models\Presenters;
 
-use Illuminate\Support\Arr;
+use App\Models\Post;
 use Illuminate\Support\Str;
 
 trait PostPresenter
@@ -53,5 +53,56 @@ trait PostPresenter
             : '';
 
         return $prefix . $this->title;
+    }
+
+    public function getEmojiAttribute(): string
+    {
+        if ($this->type === Post::TYPE_LINK) {
+            return '🔗';
+        }
+
+        if ($this->type === Post::TYPE_TWEET) {
+            return '🐦';
+        }
+
+        if ($this->type === Post::TYPE_ORIGINAL) {
+            return '🌟';
+        }
+
+        return '';
+    }
+
+    public function getThemeAttribute(): string
+    {
+        $tagNames = $this->tags->pluck('name');
+
+        if ($tagNames->contains('laravel')) {
+            return '#f16563';
+        }
+
+        if ($tagNames->contains('php')) {
+            return '#7578ab';
+        }
+
+        if ($tagNames->contains('javascript')) {
+            return '#f7df1e';
+        }
+
+        return '#cbd5e0';
+    }
+
+    public function getReadingTimeAttribute(): int
+    {
+        return (int) ceil(str_word_count(strip_tags($this->text)) / 200);
+    }
+
+    public function getIsOriginalAttribute(): bool
+    {
+        return $this->type === Post::TYPE_ORIGINAL;
+    }
+
+    public function getExternalUrlHostAttribute(): string
+    {
+        return parse_url($this->external_url)['host'] ?? '';
     }
 }

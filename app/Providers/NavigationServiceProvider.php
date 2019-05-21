@@ -17,11 +17,10 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->action([HomeController::class, 'index'], 'Home')
                 ->action([OriginalsController::class, 'index'], 'Originals')
-                // ->url('/advertising', 'Advertising')
                 ->action([NewsletterController::class, 'index'], 'Newsletter')
-                // ->url('/advertising', 'Advertising')
+                ->url('/advertising', 'Advertising')
                 ->action([MeController::class, 'index'], 'About')
-                // ->add(View::create('front.layouts.partials.search')
+                ->url('#', 'Search')
                 ->setActiveFromRequest('/');
         });
     }

@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    @include('front.posts.partials.list', ['highlightFirstPost' => $onFirstPage])
+    @include('front.posts.partials.list')
 
-    {{-- {{ $posts->links() }} --}}
+    {{ $posts->links() }}
 @endsection
