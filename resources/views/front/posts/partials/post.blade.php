@@ -13,9 +13,15 @@
             <a href="{{ $post->url }}">
                 <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">
                     {{ $post->publish_date }}</time></a>
-            by {{ $post->author }}
             @if($post->type === 'originalPost')
+                𐄁 by {{ $post->author }}
                 𐄁 {{ $post->reading_time }} minute read
+            @elseif($post->external_url)
+                𐄁
+                <a href="{{ $post->external_url }}">
+                    {{ $post->external_url_host }}
+                </a>
+
             @endif
             @auth
                 𐄁

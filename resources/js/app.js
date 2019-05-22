@@ -1,14 +1,5 @@
-// import Vue from 'vue';
+const searchApp = document.querySelector('#search-app');
 
-// import SearchPosts from './components/SearchPosts';
-
-// const searchPostsEl = document.querySelector('#search-posts');
-
-// new Vue({
-//     el: searchPostsEl,
-
-//     render: h =>
-//         h(SearchPosts, {
-//             props: { ...searchPostsEl.dataset },
-//         }),
-// });
+if (searchApp) {
+    import('./search').then(search => search.mount(searchApp));
+}

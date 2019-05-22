@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
@@ -11,11 +10,14 @@ use App\Http\Controllers\TalksController;
 Route::redirect('nova', '/nova/login');
 
 Route::feeds();
+
 Route::get('/', HomeController::class);
 Route::get('originals', OriginalsController::class);
-Route::get('about', AboutController::class);
 Route::get('talks', TalksController::class);
+
+Route::view('about', 'front.about.index');
 Route::view('advertising', 'front.advertising.index');
+Route::view('search', 'front.search.index');
 
 Route::get('newsletter', [NewsletterController::class, 'index']);
 Route::get('confirm-your-email', [NewsletterController::class, 'confirm']);

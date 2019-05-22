@@ -1,4 +1,4 @@
-<div id="carbonads" class="text-xs text-gray-500 leading-tight">
+<div id="carbonads" class="text-xs text-gray-600 leading-tight">
     <span>
         <span>
             <a href="https://srv.carbonads.net/ads/click/x/GTND42QMC6AI427YCKSLYKQMCWYIL27NCWAI5Z3JCWBI6K3UCABIT2JKC6BIPKQYF6ADEK3EHJNCLSIZ?segment=placement:murzebe;" class="carbon-img" target="_blank" rel="noopener">

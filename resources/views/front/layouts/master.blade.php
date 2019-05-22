@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="https://use.typekit.net/cmc0uxi.css">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans text-black">
     @include('front.layouts.partials.analytics')
@@ -41,10 +43,14 @@
         </header>
         <div class="flex items-start">
             <nav class="w-1/4 text-right leading-loose">
-                {{ Menu::main()
-                    ->addClass('text-sm text-gray-700 border-r px-8')
-                    ->setActiveClass('font-bold text-black') }}
-                <div class="mt-32 pl-8">
+                <div class="border-r px-8 mb-24">
+                    {{ Menu::primary()
+                        ->addClass('text-gray-700 mb-6')
+                        ->setActiveClass('font-bold text-black') }}
+                    {{ Menu::secondary()
+                        ->addClass('text-xs text-gray-600') }}
+                </div>
+                <div class="pl-8">
                     @include('front.layouts.partials.carbonDummy')
                 </div>
             </nav>
