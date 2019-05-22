@@ -48,7 +48,7 @@
                     @include('front.layouts.partials.carbonDummy')
                 </div>
             </nav>
-            <section class="flex-1 pr-8 pl-24 pb-16">
+            <section class="flex-1 pr-8 pl-24 pb-8">
                 @yield('content')
             </section>
         </div>

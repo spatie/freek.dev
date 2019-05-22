@@ -5,16 +5,16 @@
 @section('content')
     @component('front.posts.partials.post', [
         'post' => $post,
+        'class' => 'mb-8',
     ])
         {!! $post->formatted_text !!}
     @endcomponent
-    {{--<div class="pt-4">
-        @include('front.posts.partials.newsletter')
-    </div>
 
-     <div class="pt-4">
-        @include('front.posts.partials.disqus')
-    </div> --}}
+    @include('front.newsletter.partials.form', [
+        'class' => 'mb-8',
+    ])
+
+    @include('front.posts.partials.disqus')
 @endsection
 
 @section('seo')

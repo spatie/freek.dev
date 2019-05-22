@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Ad;
 use App\Models\Post;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
-    public function show(Post $post)
+    public function __invoke(Post $post)
     {
         $ad = Ad::getForCurrentPage();
 

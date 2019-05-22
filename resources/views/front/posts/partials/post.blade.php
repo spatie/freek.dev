@@ -1,4 +1,4 @@
-<article class="mb-24">
+<article class="{{ $class ?? '' }}">
     <div class="post-theme mb-6" style="--theme: {{ $post->theme }}"></div>
     <header class="mb-6">
         <h1 class="max-w-lg text-3xl font-black leading-tighter mb-2">

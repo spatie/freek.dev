@@ -1,20 +1,20 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MeController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PaymentsController;
-use App\Http\Controllers\PostsController;
-use App\Http\Controllers\TaggedPostsController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TalksController;
 
 Route::redirect('nova', '/nova/login');
 
 Route::feeds();
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/originals', [OriginalsController::class, 'index']);
-Route::get('tag/{tagSlug}', [TaggedPostsController::class, 'index'])->name('taggedPosts.index');
-Route::get('me', [MeController::class, 'index']);
+Route::get('/', HomeController::class);
+Route::get('originals', OriginalsController::class);
+Route::get('about', AboutController::class);
+Route::get('talks', TalksController::class);
 Route::view('advertising', 'front.advertising.index');
 
 Route::get('newsletter', [NewsletterController::class, 'index']);
@@ -27,5 +27,6 @@ Route::middleware('doNotCacheResponse')->group(function () {
     Route::post('payments', [PaymentsController::class, 'handlePayment']);
 });
 
+Route::redirect('me', '/about');
 
-Route::get('{postSlug}', [PostsController::class, 'show'])->name('posts.show');
+Route::get('{postSlug}', PostController::class);

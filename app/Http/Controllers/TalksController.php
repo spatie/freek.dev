@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Talk;
 
-class MeController extends Controller
+class TalksController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
         $talks = Talk::orderBy('presented_at', 'desc')->get();
 
-        return view('front.me.index', compact('talks'));
+        return view('front.talks.index', compact('talks'));
     }
 }

@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="markup mb-8">
-        <h1>Advertising</h1>
+        <h1>Newsletter</h1>
         <p>
             Every two weeks I send out a newsletter containing lots of interesting stuff for the modern PHP developer. You
             can expect quick tips, links to interesting tutorials, opinions and packages. Because I work with Laravel every

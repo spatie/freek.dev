@@ -4,9 +4,11 @@
             @include('front.newsletter.partials.form')
         </div>
     @endif
+
     @component('front.posts.partials.post', [
         'post' => $post,
         'url' => $post->external_url ?: $post->url,
+        'class' => 'mb-24',
     ])
         {!! $post->excerpt !!}
 
