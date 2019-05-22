@@ -13,7 +13,7 @@ trait PostPresenter
             return $this->formatted_text;
         }
 
-        $excerpt = trim($this->formatted_text);
+        $excerpt = $this->formatted_text;
 
         $excerpt = Str::before($excerpt, '<blockquote>');
 

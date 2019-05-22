@@ -5,9 +5,11 @@ export default function useAutofocus() {
 
     useEffect(() => {
         if (inputRef.current) {
+            const { scrollX, scrollY } = window;
             inputRef.current.focus();
+            scrollTo(scrollX, scrollY);
         }
     }, []);
 
-    return inputRef;
+    return { ref: inputRef };
 }

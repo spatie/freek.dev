@@ -15,7 +15,7 @@
 
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<body class="font-sans text-black">
+<body class="font-sans text-black {{ $bodyClass ?? '' }}">
     @include('front.layouts.partials.analytics')
     @include('front.layouts.partials.flashMessage')
 
@@ -41,9 +41,9 @@
                 </div>
             </div>
         </header>
-        <div class="flex items-start">
-            <nav class="w-1/4 text-right leading-loose">
-                <div class="border-r px-8 mb-24">
+        <div class="max-w-xl lg:max-w-full mx-auto flex items-start pb-8">
+            <nav class="hidden lg:block w-1/4 text-right leading-loose">
+                <div class="border-r border-gray-200 px-8 mb-24">
                     {{ Menu::primary()
                         ->addClass('text-gray-700 mb-6')
                         ->setActiveClass('font-bold text-black') }}
@@ -54,7 +54,7 @@
                     @include('front.layouts.partials.carbonDummy')
                 </div>
             </nav>
-            <section class="flex-1 pr-8 pl-24 pb-8">
+            <section class="flex-1 px-8 lg:pl-24">
                 @yield('content')
             </section>
         </div>

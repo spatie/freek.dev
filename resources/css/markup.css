@@ -19,7 +19,7 @@
 }
 
 .markup blockquote {
-    @apply p-6 bg-indigo-100 relative border-l-2 border-indigo-200;
+    @apply p-6 bg-indigo-100 relative border-l-4 border-indigo-200 rounded;
     font-size: 0.925em;
 }
 
@@ -37,5 +37,5 @@
 }
 
 .markup pre {
-    @apply bg-indigo-100 border-l-2 border-indigo-200 p-4;
+    @apply bg-indigo-100 border-l-4 border-indigo-200 p-6 rounded;
 }

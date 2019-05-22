@@ -11,7 +11,7 @@ class OriginalsController extends Controller
         $posts = Post::query()
             ->published()
             ->originalContent()
-            ->simplePaginate(50);
+            ->simplePaginate(20);
 
         return view('front.originals.index', compact('posts'));
     }

@@ -6,7 +6,14 @@
 
 @tailwind utilities;
 
+.bg-freek {
+    background-image: url('/images/freek.jpg');
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
 .post-theme {
+    @apply rounded;
     background-image: linear-gradient(90deg, var(--theme), white);
     height: 4px;
 }
@@ -21,4 +28,17 @@
 
 .pagination .page-link {
     @apply font-semibold text-sm text-gray-600 pb-1 border-b-2;
+}
+
+.search em {
+    @apply not-italic;
+}
+
+.border-y-2 {
+    @apply border-b-2;
+    @apply border-t-2;
+}
+
+.border-t-transparent {
+    border-top: transparent;
 }
