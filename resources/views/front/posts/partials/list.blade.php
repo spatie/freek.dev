@@ -1,5 +1,5 @@
 @foreach($posts as $post)
-    @if($loop->index === 2)
+    @if($loop->index === 5)
         <div class="mb-24 -mt-4">
             @include('front.newsletter.partials.form')
         </div>
