@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac8c90dabb19c6fd4b2d0d01cc12d9aa",
+    "content-hash": "6800a9e34d2e3471161afb9acd60a3a4",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -614,16 +614,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.7",
+            "version": "2.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "709f21f92707308cdf8f9bcfa1af4cb26586521e"
+                "reference": "c26463ff9241f27907112fbcd0c86fa670cfef98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/709f21f92707308cdf8f9bcfa1af4cb26586521e",
-                "reference": "709f21f92707308cdf8f9bcfa1af4cb26586521e",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/c26463ff9241f27907112fbcd0c86fa670cfef98",
+                "reference": "c26463ff9241f27907112fbcd0c86fa670cfef98",
                 "shasum": ""
             },
             "require": {
@@ -667,7 +667,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2018-12-04T22:38:24+00:00"
+            "time": "2019-05-16T22:02:54+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -1130,16 +1130,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.17",
+            "version": "v5.8.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "33c04dd2a431adeeb49926a4f2b20590cc033ca2"
+                "reference": "9f571be04435883dab6f23ecfadb204273b7f527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/33c04dd2a431adeeb49926a4f2b20590cc033ca2",
-                "reference": "33c04dd2a431adeeb49926a4f2b20590cc033ca2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9f571be04435883dab6f23ecfadb204273b7f527",
+                "reference": "9f571be04435883dab6f23ecfadb204273b7f527",
                 "shasum": ""
             },
             "require": {
@@ -1273,20 +1273,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-05-14T16:02:41+00:00"
+            "time": "2019-05-21T16:40:34+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.1.2",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "32313d787a7a7575c1866e8ed12ec944c1513b7f"
+                "reference": "a9204280f72a1c6d3874e0f98b68e354b212311a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/32313d787a7a7575c1866e8ed12ec944c1513b7f",
-                "reference": "32313d787a7a7575c1866e8ed12ec944c1513b7f",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/a9204280f72a1c6d3874e0f98b68e354b212311a",
+                "reference": "a9204280f72a1c6d3874e0f98b68e354b212311a",
                 "shasum": ""
             },
             "require": {
@@ -1342,7 +1342,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-04-30T15:20:11+00:00"
+            "time": "2019-05-21T19:58:03+00:00"
         },
         {
             "name": "laravel/nova",
@@ -1613,16 +1613,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.51",
+            "version": "1.0.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "755ba7bf3fb9031e6581d091db84d78275874396"
+                "reference": "c5a5097156387970e6f0ccfcdf03f752856f3391"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/755ba7bf3fb9031e6581d091db84d78275874396",
-                "reference": "755ba7bf3fb9031e6581d091db84d78275874396",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c5a5097156387970e6f0ccfcdf03f752856f3391",
+                "reference": "c5a5097156387970e6f0ccfcdf03f752856f3391",
                 "shasum": ""
             },
             "require": {
@@ -1693,7 +1693,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-03-30T13:22:34+00:00"
+            "time": "2019-05-20T20:21:14+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2925,77 +2925,6 @@
             "time": "2019-04-25T11:01:00+00:00"
         },
         {
-            "name": "spatie/laravel-csp",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-csp.git",
-                "reference": "21054c7624030741a4c29d3d1c13613a838c8001"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-csp/zipball/21054c7624030741a4c29d3d1c13613a838c8001",
-                "reference": "21054c7624030741a4c29d3d1c13613a838c8001",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/http": "~5.8.0",
-                "illuminate/support": "~5.8.0",
-                "php": "^7.2"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "~3.8.0",
-                "phpunit/phpunit": "^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Csp\\CspServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Csp\\": "src"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Thomas Verhelst",
-                    "email": "tvke91@gmail.com",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Add CSP headers to the responses of a Laravel app",
-            "homepage": "https://github.com/spatie/laravel-csp",
-            "keywords": [
-                "content-security-policy",
-                "csp",
-                "headers",
-                "laravel",
-                "laravel-csp",
-                "security",
-                "spatie"
-            ],
-            "time": "2019-02-27T15:42:31+00:00"
-        },
-        {
             "name": "spatie/laravel-feed",
             "version": "2.2.1",
             "source": {
@@ -3893,16 +3822,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.35.0",
+            "version": "v6.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "a5f6d81ad82852d34a21dfa8d50a82db98ffe6e5"
+                "reference": "07250564800903608947a343fb0ef62dea7032c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/a5f6d81ad82852d34a21dfa8d50a82db98ffe6e5",
-                "reference": "a5f6d81ad82852d34a21dfa8d50a82db98ffe6e5",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/07250564800903608947a343fb0ef62dea7032c6",
+                "reference": "07250564800903608947a343fb0ef62dea7032c6",
                 "shasum": ""
             },
             "require": {
@@ -3945,7 +3874,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2019-05-14T19:58:30+00:00"
+            "time": "2019-05-22T17:23:02+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

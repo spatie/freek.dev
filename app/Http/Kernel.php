@@ -2,10 +2,8 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\AddSecurityHeaders;
 use App\Http\Middleware\CacheControl;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-use Spatie\Csp\AddCspHeaders;
 
 class Kernel extends HttpKernel
 {

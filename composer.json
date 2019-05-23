@@ -34,7 +34,6 @@
         "ohdearapp/nova-ohdear-tool": "^1.0",
         "spatie/commonmark-highlighter": "^1.0",
         "spatie/laravel-backup": "^6.0",
-        "spatie/laravel-csp": "^2.0",
         "spatie/laravel-feed": "^2.0",
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-missing-page-redirector": "^2.1",
