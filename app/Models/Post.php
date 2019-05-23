@@ -9,7 +9,6 @@ use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\Log;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
@@ -170,23 +169,6 @@ class Post extends BaseModel implements Feedable, Sluggable
         }
 
         return $this->url;
-    }
-
-    public function publish()
-    {
-        $this->published = true;
-
-        if (! $this->publish_date) {
-            $this->publish_date = now();
-        }
-
-        $this->save();
-
-        Log::info("Post `{$this->title}` published.");
-
-        if (app()->environment('production')) {
-            $this->publishOnSocialMedia();
-        }
     }
 
     public function hasTag(string $tagName): bool
