@@ -9,17 +9,18 @@ use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
-class Post extends BaseModel implements Feedable, Sluggable
+class Post extends Model implements Feedable, Sluggable
 {
-    const TYPE_LINK = 'link';
-    const TYPE_TWEET = 'tweet';
-    const TYPE_ORIGINAL = 'originalPost';
+    public const TYPE_LINK = 'link';
+    public const TYPE_TWEET = 'tweet';
+    public const TYPE_ORIGINAL = 'originalPost';
 
     use HasSlug,
         HasTags,
