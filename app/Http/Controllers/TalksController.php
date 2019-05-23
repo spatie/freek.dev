@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Talk;
 
-class TalksController extends Controller
+class TalksController
 {
     public function __invoke()
     {

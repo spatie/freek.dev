@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 
-class OriginalsController extends Controller
+class OriginalsController
 {
     public function __invoke()
     {

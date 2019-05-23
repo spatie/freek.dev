@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 
-class HomeController extends Controller
+class HomeController
 {
     public function __invoke()
     {

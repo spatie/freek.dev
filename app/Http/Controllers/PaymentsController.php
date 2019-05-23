@@ -11,7 +11,7 @@ use Stripe\Charge;
 use Stripe\Customer;
 use Stripe\Stripe;
 
-class PaymentsController extends Controller
+class PaymentsController
 {
     public function index()
     {

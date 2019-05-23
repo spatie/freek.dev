@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class NewsletterController extends Controller
+class NewsletterController
 {
     public function index()
     {
