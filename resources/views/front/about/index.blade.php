@@ -24,8 +24,5 @@
         <p>
             Together with my buddy <a href="https://twitter.com/driesvints">Dries</a>  I organise the <a href="http://fullstackeurope.com">Full Stack Europe</a> conference. It will be a conference for every kind of developer. We will offer talks for developers who want to learn across a wide variety of skills. We plan on holding it somewhere in 2019. For more info read <a href="https://blog.usejournal.com/announcing-full-stack-europe-f49422f14308">Dries' announcement blogpost</a> All you need to do to stay in the loop is to subscribe yourself <a href="https://fullstackeurope.com/">on our mailinglist</a>.
         </p>
-        <p>
-            I also love public speaking and try to do it a lot. Here's a list of past user group meetups and conferences where I had the pleasure of speaking.
-        </p>
     </div>
 @endsection
