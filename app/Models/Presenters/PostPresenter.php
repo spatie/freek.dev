@@ -17,7 +17,6 @@ trait PostPresenter
 
         $excerpt = Str::before($excerpt, '<blockquote>');
 
-        //remove html
         $excerpt = strip_tags($excerpt);
 
         //replace multiple spaces
@@ -57,15 +56,15 @@ trait PostPresenter
 
     public function getEmojiAttribute(): string
     {
-        if ($this->type === Post::TYPE_LINK) {
+        if ($this->isType(Post::TYPE_LINK)) {
             return '🔗';
         }
 
-        if ($this->type === Post::TYPE_TWEET) {
+        if ($this->isType(Post::TYPE_TWEET)) {
             return '🐦';
         }
 
-        if ($this->type === Post::TYPE_ORIGINAL) {
+        if ($this->isType(Post::TYPE_ORIGINAL)) {
             return '🌟';
         }
 

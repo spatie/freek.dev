@@ -18,26 +18,26 @@ class AdTest extends TestCase
         $this->setNow(2017, 12, 31);
         $this->assertNull(Ad::getForPage());
 
-        $this->setNow(2018, 1, 1);
+        $this->setNow(2018, 1, 1, 1, 0, 0);
 
         $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
 
-        $this->setNow(2018, 1, 15);
+        $this->setNow(2018, 1, 15, 0, 0, 0);
         $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
 
-        $this->setNow(2018, 1, 31);
+        $this->setNow(2018, 1, 31, 0, 0, 0);
         $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
 
-        $this->setNow(2018, 2, 1);
+        $this->setNow(2018, 2, 1, 0, 0, 0);
         $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
 
-        $this->setNow(2018, 2, 15);
+        $this->setNow(2018, 2, 15, 0, 0, 0);
         $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
 
-        $this->setNow(2018, 2, 28);
+        $this->setNow(2018, 2, 28, 0, 0, 0);
         $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
 
-        $this->setNow(2018, 3, 1);
+        $this->setNow(2018, 3, 1, 0, 0, 0);
         $this->assertNull(Ad::getForPage());
     }
 
@@ -56,7 +56,7 @@ class AdTest extends TestCase
     /** @test */
     public function a_url_specific_ad_takes_precedence_over_the_site_wide_one()
     {
-        $this->setNow(2018, 1, 1);
+        $this->setNow(2018, 1, 1, 0, 0, 0);
 
         $urlSpecificAd = $this->createAdForYearMonth(2018, 1, ['display_on_url' => 'test-url']);
 
@@ -73,6 +73,7 @@ class AdTest extends TestCase
         $endsAt = $startsAt->copy()->endOfMonth();
 
         $defaultAttributes = [
+            'display_on_url' => null,
             'starts_at' => $startsAt->format('Y-m-d'),
             'ends_at' => $endsAt->format('Y-m-d'),
         ];

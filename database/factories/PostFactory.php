@@ -8,7 +8,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'text' => $faker->paragraph,
         'publish_date' => $faker->boolean(50) ? $faker->dateTimeBetween('-5 years') : null,
-        'published' => $faker->boolean(80),
+        'published' => true,
         'original_content' => $faker->boolean(10),
     ];
 });

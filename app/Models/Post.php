@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Actions\PublishPostAction;
 use App\Http\Controllers\PostController;
-use App\Jobs\SendTweetJob;
+use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
@@ -11,13 +13,10 @@ use Illuminate\Support\Facades\Log;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
-use Spatie\ResponseCache\Facades\ResponseCache;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
-class Post extends BaseModel implements Feedable
+class Post extends BaseModel implements Feedable, Sluggable
 {
     const TYPE_LINK = 'link';
     const TYPE_TWEET = 'tweet';
@@ -44,9 +43,7 @@ class Post extends BaseModel implements Feedable
         static::saved(function (Post $post) {
             if ($post->published) {
                 static::withoutEvents(function () use ($post) {
-                    $post->publish();
-
-                    ResponseCache::clear();
+                    (new PublishPostAction())->execute($post);
                 });
             }
         });
@@ -101,30 +98,7 @@ class Post extends BaseModel implements Feedable
 
         $this->syncTags($tags);
 
-        if ($this->published) {
-            $this->publishOnSocialMedia();
-        }
-
-        ResponseCache::flush();
-
         return $this;
-    }
-
-    protected function publishOnSocialMedia()
-    {
-        if (!$this->tweet_sent) {
-            if (! $this->type === static::TYPE_TWEET) {
-                dispatch(new SendTweetJob($this));
-
-                $this->tweet_sent = true;
-                $this->save();
-            }
-        }
-    }
-
-    public function getWordpressFullUrlAttribute(): string
-    {
-        return "/{$this->publish_date->format('Y/m')}/{$this->wp_post_name}";
     }
 
     public function searchableAs(): string
@@ -186,7 +160,7 @@ class Post extends BaseModel implements Feedable
 
     public function getUrlAttribute(): string
     {
-        return action(PostController::class, [$this->slug]);
+        return action(PostController::class, [$this->idSlug()]);
     }
 
     public function getPromotionalUrlAttribute(): string
@@ -222,7 +196,12 @@ class Post extends BaseModel implements Feedable
         });
     }
 
-    public function getTypeAttribute(): string
+    public function isType(string $type): bool
+    {
+        return $this->getType() === $type;
+    }
+
+    public function getType(): string
     {
         if (! empty($this->external_url)) {
             return static::TYPE_LINK;
@@ -233,5 +212,10 @@ class Post extends BaseModel implements Feedable
         }
 
         return static::TYPE_ORIGINAL;
+    }
+
+    public function getSluggableValue(): string
+    {
+        return $this->title;
     }
 }

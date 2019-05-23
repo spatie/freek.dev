@@ -38,7 +38,6 @@
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-missing-page-redirector": "^2.1",
         "spatie/laravel-responsecache": "^6.0",
-        "spatie/laravel-sluggable": "^2.1",
         "spatie/laravel-tags": "^2.0",
         "spatie/laravel-tail": "^3.0",
         "spatie/nova-backup-tool": "^2.0",

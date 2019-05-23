@@ -181,7 +181,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\NavigationServiceProvider::class,
         App\Services\Twitter\TwitterServiceProvider::class,
-        App\Services\Medium\MediumServiceProvider::class,
     ],
 
     /*

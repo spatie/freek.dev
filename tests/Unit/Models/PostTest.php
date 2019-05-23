@@ -11,15 +11,21 @@ class PostTest extends TestCase
     public function it_can_determine_the_promotional_url()
     {
         $post = factory(Post::class)->create([
-            'slug' => 'test'
+            'title' => 'test',
         ]);
-        $this->assertEquals('http://murze.be.test/test', $post->promotional_url);
+        $this->assertEquals(
+            "http://murze.be.test/{$post->id}-test",
+            $post->promotional_url,
+            );
 
         $post = factory(Post::class)->create([
-            'slug' => 'test',
+            'title' => 'test',
             'external_url' => 'https://external-blog.com/page'
         ]);
-        $this->assertEquals('https://external-blog.com/page', $post->promotional_url);
+        $this->assertEquals(
+            'https://external-blog.com/page',
+            $post->promotional_url,
+            );
     }
 
     /** @test */
@@ -57,10 +63,27 @@ class PostTest extends TestCase
     {
         $post = factory(Post::class)->create();
 
-        $this->assertFalse($post->concernsTweet());
+        $this->assertFalse($post->isType(Post::TYPE_TWEET));
 
         $post->syncTags(['php', 'tweet']);
 
-        $this->assertTrue($post->refresh()->concernsTweet());
+        $this->assertTrue($post->refresh()->isType(Post::TYPE_TWEET));
+    }
+
+    /** @test */
+    public function it_can_determine_that_a_post_is_a_tweet()
+    {
+        $post = factory(Post::class)->create();
+        $this->assertFalse($post->isType(Post::TYPE_TWEET));
+
+        $post = factory(Post::class)->create()->attachTag('tweet');
+        $this->assertTrue($post->isType(Post::TYPE_TWEET));
+
+        $post = factory(Post::class)->create()->attachTags([
+            'tag',
+            'tweet',
+            'another-tag'
+        ]);
+        $this->assertTrue($post->isType(Post::TYPE_TWEET));
     }
 }
