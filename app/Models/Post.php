@@ -48,13 +48,6 @@ class Post extends BaseModel implements Feedable, Sluggable
         });
     }
 
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug');
-    }
-
     public function scopePublished(Builder $query)
     {
         $query
