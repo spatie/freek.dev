@@ -25,7 +25,6 @@
         "fideloper/proxy": "^4.0",
         "freekmurze/generate-newsletter": "*",
         "guzzlehttp/guzzle": "^6.3",
-        "laracasts/flash": "^3.0",
         "laravel/framework": "5.8.*",
         "laravel/horizon": "^3.0",
         "laravel/nova": "^2.0",

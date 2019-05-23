@@ -17,7 +17,6 @@
 </head>
 <body class="font-sans text-black {{ $bodyClass ?? '' }}">
     @include('front.layouts.partials.analytics')
-    @include('front.layouts.partials.flashMessage')
 
     <div class="max-w-4xl mx-auto">
         <header class="mt-12 mb-16 px-8 leading-tight flex">
