@@ -68,6 +68,8 @@ trait PostPresenter
             return '🌟';
         }
 
+
+
         return '';
     }
 
