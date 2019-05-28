@@ -1,8 +1,8 @@
 @setup
-$server = "murze.be";
+$server = "freek.dev";
 $userAndServer = 'forge@'. $server;
-$repository = "spatie/murze.be";
-$baseDir = "/home/forge/murze.be";
+$repository = "spatie/freek.dev";
+$baseDir = "/home/forge/freek.dev";
 $releasesDir = "{$baseDir}/releases";
 $persistentDir = "{$baseDir}/persistent";
 $currentDir = "{$baseDir}/current";

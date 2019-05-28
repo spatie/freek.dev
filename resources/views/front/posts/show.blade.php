@@ -40,7 +40,7 @@
 @endsection
 
 @section('seo')
-    <meta property="og:title" content="{{ $post->title }} | murze.be"/>
+    <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
     <meta property="og:description" content="{{ $post->excerpt }}"/>
 
     @foreach($post->tags as $tag)
@@ -53,6 +53,6 @@
     <meta name="twitter:description" content="{{ $post->excerpt }}"/>
     <meta name="twitter:title" content="{{ $post->title }} | murze.be"/>
     <meta name="twitter:site" content="@freekmurze"/>
-    <meta name="twitter:image" content="https://murze.be/images/avatar-boxed.jpg"/>
+    <meta name="twitter:image" content="https://freek.dev/images/avatar-boxed.jpg"/>
     <meta name="twitter:creator" content="@freekmurze"/>
 @endsection
