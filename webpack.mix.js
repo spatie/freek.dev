@@ -10,28 +10,15 @@ mix.js('resources/js/app.js', 'public/js')
         processCssUrls: false,
     })
 
-    .autoload({
-        preact: 'preact',
-    })
-
     .version()
 
     .babelConfig({
-        plugins: [
-            '@babel/plugin-syntax-dynamic-import',
-            ['@babel/plugin-transform-react-jsx', { pragma: 'preact.h' }],
-        ],
+        plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-transform-react-jsx'],
     })
 
     .webpackConfig({
         output: {
             chunkFilename: 'js/[name].js',
-        },
-
-        resolve: {
-            alias: {
-                vue$: 'vue',
-            },
         },
     })
 

@@ -1,5 +1,5 @@
 import algoliasearch from 'algoliasearch';
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 
 export default function useSearchIndex({ appId, apiKey, indexName }) {
     const [query, setQuery] = useState('');
@@ -24,8 +24,6 @@ export default function useSearchIndex({ appId, apiKey, indexName }) {
             setHits(results.hits);
         });
     }, [query, searchIndex]);
-
-    console.log(hits);
 
     return [query, setQuery, hits];
 }

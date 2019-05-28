@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'preact/hooks';
+import { useRef, useEffect } from 'react';
 
 export default function useAutofocus() {
     const inputRef = useRef();

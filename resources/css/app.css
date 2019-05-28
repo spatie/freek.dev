@@ -32,10 +32,6 @@
     @apply font-semibold text-sm text-gray-600 pb-1 border-b-2;
 }
 
-.search em {
-    @apply not-italic;
-}
-
 .border-y-2 {
     @apply border-b-2;
     @apply border-t-2;

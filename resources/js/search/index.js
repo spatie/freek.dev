@@ -1,56 +1,66 @@
-import { render } from 'preact';
+import React from 'react';
+import { render } from 'react-dom';
+import Downshift from 'downshift';
 import useAutofocus from './useAutofocus';
 import useSearchIndex from './useSearchIndex';
 
-function Search({ appId, apiKey, indexName }) {
-    const [query, setQuery, hits] = useSearchIndex({ appId, apiKey, indexName });
+function Search({ appId, apiKey, indexName, inputClassName }) {
+    const [query, setQuery, items] = useSearchIndex({ appId, apiKey, indexName });
 
     const autoFocusProps = useAutofocus();
 
-    const searchInput = (
-        <input
-            type="search"
-            className="bg-gray-200 rounded px-3 py-2 w-full focus:outline-none border-gray-300 focus:border-gray-400 border-y-2 border-t-transparent"
-            placeholder="Search"
-            value={query}
-            onInput={e => setQuery(e.target.value)}
-            {...autoFocusProps}
-        />
-    );
+    function navigate(item) {
+        if (!item) {
+            return;
+        }
 
-    if (!query) {
-        return <div>{searchInput}</div>;
+        window.location = item.url;
     }
 
     return (
-        <div className="search">
-            {searchInput}
-            {hits.length ? (
-                <ul>
-                    {hits.map((hit, i) => (
-                        <li key={i} className="mt-6 leading-tight">
-                            <a
-                                href={hit.url}
-                                dangerouslySetInnerHTML={{
-                                    __html: hit._highlightResult.title.value,
-                                }}
-                            />
-                            <br />
-                            <a href={hit.url} className="text-xs text-gray-500">
-                                {hit.url}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p className="mt-6 text-gray-500">Nothing here…</p>
+        <Downshift isOpen={true} onChange={navigate}>
+            {({ getInputProps, getItemProps, getMenuProps, highlightedIndex }) => (
+                <div>
+                    <input
+                        type="search"
+                        className={`${inputClassName} mb-4`}
+                        placeholder="Laravel, PHP, JavaScript,…"
+                        {...autoFocusProps}
+                        {...getInputProps()}
+                        value={query}
+                        onChange={e => setQuery(e.target.value)}
+                    />
+                    <ul {...getMenuProps()}>
+                        {items.map((item, index) => (
+                            <li
+                                {...getItemProps({
+                                    key: item.url,
+                                    index,
+                                    item,
+                                    className: `p-2 cursor-pointer ${
+                                        highlightedIndex === index ? 'bg-indigo-100' : ''
+                                    }`,
+                                })}
+                            >
+                                <strong>
+                                    <a href={item.url}>{item.title}</a>
+                                </strong>
+                                <br />
+                                <a href={item.url} className="text-xs text-gray-500">
+                                    {item.url}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    {items.length === 0 && query && <p className="mt-2 text-gray-500">Nothing here…</p>}
+                </div>
             )}
-        </div>
+        </Downshift>
     );
 }
 
 export function mount(container) {
-    container.innerHTML = '';
+    const inputClassName = container.querySelector('input').className;
 
-    render(<Search {...container.dataset} />, container);
+    render(<Search inputClassName={inputClassName} {...container.dataset} />, container);
 }
