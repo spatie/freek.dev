@@ -10,26 +10,26 @@
     @include('feed::links')
     @include('front.layouts.partials.seo')
 
-    <link rel="stylesheet" href="https://use.typekit.net/cmc0uxi.css">
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6194432/6581412/css/fonts.css" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<body class="font-sans text-black {{ $bodyClass ?? '' }}">
+<body class="font-sans text-black">
     @include('front.layouts.partials.analytics')
     @include('front.layouts.partials.flash')
 
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-xl lg:max-w-4xl mx-auto">
         <header class="mt-12 mb-16 px-8 leading-tight flex">
             <div class="flex items-end">
                 <figure class="w-12 inline-block mr-3">
                     <a href="/"><img src="/images/murzicoon.svg" class="w-full"></a>
                 </figure>
-                <div class="uppercase">
-                    <h1 class="text-lg tracking-wider font-black">
+                <div>
+                    <h1 class="text-lg uppercase tracking-wider font-black">
                         <a href="/">Freek.dev</a>
                     </h1>
-                    <p class="text-sm tracking-wide font-bold text-gray-500">
+                    <p class="text-sm font-bold text-gray-500">
                         <a href="/">
                             Laravel
                             <span class="text-gray-300">/</span>
@@ -41,8 +41,8 @@
                 </div>
             </div>
         </header>
-        <div class="max-w-xl lg:max-w-full mx-auto flex items-start pb-8">
-            <nav class="hidden lg:block w-1/4 text-right leading-loose">
+        <div class="flex items-start pb-8">
+            <nav class="hidden lg:block w-1/5 text-right leading-loose">
                 <div class="border-r border-gray-200 px-8 mb-24">
                     {{ Menu::primary()
                         ->addClass('text-gray-700 mb-6')
@@ -54,9 +54,9 @@
                     @include('front.layouts.partials.carbonDummy')
                 </div>
             </nav>
-            <section class="flex-1 px-8 lg:pl-24">
+            <main class="w-4/5 px-8 lg:pl-24">
                 @yield('content')
-            </section>
+            </main>
         </div>
     </div>
 </body>

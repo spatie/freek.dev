@@ -2,24 +2,41 @@
     @apply mb-6;
 }
 
-.markup :not(.no-markup) a {
+.markup :not(.no-markup) a:not(.permalink) {
     @apply text-blue-500 underline;
 }
 
+.markup .permalink {
+    @apply inline-block ml-1 text-gray-400;
+}
+
 .markup h1 {
-    @apply text-3xl font-black leading-tighter;
+    @apply text-3xl font-black leading-tight;
 }
 
 .markup h2 {
-    @apply text-xl font-bold leading-tighter mt-12;
+    @apply text-xl font-bold leading-tight mt-12;
+}
+
+.markup ul,
+.markup ol {
+    list-style-position: inside;
+}
+
+.markup ul {
+    list-style-type: disc;
+}
+
+.markup ol {
+    list-style-type: decimal;
 }
 
 .markup img {
-    display: block;
+    @apply block;
 }
 
 .markup blockquote {
-    @apply p-6 bg-indigo-100 relative border-l-4 border-indigo-200 rounded;
+    @apply p-8 bg-indigo-100 relative border-l-4 border-indigo-200;
     font-size: 0.925em;
 }
 
@@ -32,10 +49,16 @@
 }
 
 .markup code {
-    @apply bg-indigo-100 font-mono;
-    font-size: 0.85em;
+    @apply font-mono;
+}
+
+.markup :not(pre) > code {
+    @apply p-1 bg-gray-100 border-b-2 border-gray-200;
+    font-size: 0.8em;
 }
 
 .markup pre {
-    @apply bg-indigo-100 border-l-4 border-indigo-200 p-6 rounded;
+    @apply bg-gray-100 p-8 overflow-x-auto border-l-4 border-gray-200;
+    font-size: 0.75em;
+    line-height: 2.25;
 }

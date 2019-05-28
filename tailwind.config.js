@@ -1,8 +1,10 @@
 module.exports = {
     theme: {
         fontFamily: {
+            sans: ['Whitney SSm A', 'Whitney SSm B'],
             mono: [
-                'Source Code Pro',
+                'Operator Mono SSm A',
+                'Operator Mono SSm B',
                 'Monaco',
                 'Consolas',
                 'Liberation Mono',
@@ -12,7 +14,7 @@ module.exports = {
         },
         extend: {
             lineHeight: {
-                tighter: 1.1,
+                relaxed: 1.75,
             },
         },
     },

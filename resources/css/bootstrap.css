@@ -1,6 +1,5 @@
 @tailwind base;
 
 html {
-    @apply leading-relaxed;
-    font-size: 18px;
+    font-size: 19px;
 }

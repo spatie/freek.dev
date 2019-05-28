@@ -1,4 +1,4 @@
-@extends('front.layouts.master', ['bodyClass' => 'bg-freek'])
+@extends('front.layouts.master')
 
 @section('title', 'About')
 
