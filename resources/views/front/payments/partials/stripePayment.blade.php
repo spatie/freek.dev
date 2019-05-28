@@ -9,9 +9,9 @@
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="{{ config('services.stripe.key') }}"
             data-amount="{{ session()->get('amount') }}"
-            data-name="murze.be ads"
+            data-name="freek.dev ads"
             data-locale="auto"
-            data-label="Pay {{ session()->get('amount') / 100 }} EUR to murze.be"
+            data-label="Pay {{ session()->get('amount') / 100 }} EUR to freek.dev"
             data-zip-code="true"
             data-currency="eur">
     </script>

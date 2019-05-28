@@ -13,7 +13,7 @@ class PostTest extends TestCase
         $post = factory(Post::class)->create([
             'slug' => 'test'
         ]);
-        $this->assertEquals('http://murze.be.test/test', $post->promotional_url);
+        $this->assertEquals('http://freek.dev.test/test', $post->promotional_url);
 
         $post = factory(Post::class)->create([
             'slug' => 'test',

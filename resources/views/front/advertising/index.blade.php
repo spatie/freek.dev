@@ -7,7 +7,7 @@
     <h1 class="pb-4 border-b">Advertising</h1>
 
     <p>
-    The murze.be blog and newsletter are read by an audience of PHP developers with a heavy interest in Laravel, JavaScript, devops and personal/professional growth. You can get your brand or product in front of that audience by running an ad on the blog and/or newsletter.
+    The freek.dev blog and newsletter are read by an audience of PHP developers with a heavy interest in Laravel, JavaScript, devops and personal/professional growth. You can get your brand or product in front of that audience by running an ad on the blog and/or newsletter.
     </p>
 
     <p>
@@ -16,7 +16,7 @@
     </p>
 
     <h2>The blog</h2>
-    In 2018 the blog had 728 243 pageviews. If you want to view some more stastics and learn which we the most popular pages read <a href="https://murze.be/four-years-of-murzebe">this blog post</a>.
+    In 2018 the blog had 728 243 pageviews. If you want to view some more stastics and learn which we the most popular pages read <a href="https://freek.dev/four-years-of-murzebe">this blog post</a>.
 
     <p>
         An advertisement consists of a text with two or three
@@ -28,7 +28,7 @@
 
     <h2>The newsletter</h2>
     <p>
-        The murze.be newsletter is sent out every two weeks to an audience of PHP developers with a heavy interest in
+        The freek.dev newsletter is sent out every two weeks to an audience of PHP developers with a heavy interest in
         Laravel, JavaScript and devops.
     </p>
 

@@ -26,17 +26,17 @@ class Policy extends BasePolicy
             ->addDirective(Directive::BASE, 'self')
             ->addNonceForDirective(Directive::SCRIPT)
             ->addDirective(Directive::SCRIPT, [
-                'murze.be',
-                'murze.be.test',
+                'freek.dev',
+                'freek.dev.test',
             ])
             ->addDirective(Directive::STYLE, [
-                'murze.be',
-                'murze.be.test',
+                'freek.dev',
+                'freek.dev.test',
                 'unsafe-inline',
             ])
             ->addDirective(Directive::FORM_ACTION, [
-                'murze.be',
-                'murze.be.test',
+                'freek.dev',
+                'freek.dev.test',
                 'sendy.murze.be',
             ])
             ->addDirective(Directive::IMG, [
