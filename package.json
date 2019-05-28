@@ -20,7 +20,7 @@
     "laravel-mix": "^4.0",
     "laravel-mix-purgecss": "^1.0",
     "lodash": "^4.17.4",
-    "sass": "^1.17.2",
+    "sass": "^1.20.1",
     "sass-loader": "7.*",
     "tailwindcss": "^0.4",
     "vue": "^2.5.13",
