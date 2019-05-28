@@ -26,7 +26,7 @@
                     <a href="/"><img src="/images/murzicoon.svg" class="w-full"></a>
                 </figure>
                 <div>
-                    <h1 class="text-lg uppercase tracking-wider font-black">
+                    <h1 class="text-lg uppercase tracking-wider font-extrabold">
                         <a href="/">Freek.dev</a>
                     </h1>
                     <p class="text-sm font-bold text-gray-500">
