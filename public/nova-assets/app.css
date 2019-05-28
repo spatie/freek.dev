@@ -2825,7 +2825,7 @@ input[type='search']::-webkit-search-cancel-button {
   font-weight: 800;
 }
 
-.font-black {
+.font-extrabold {
   font-weight: 800;
 }
 
@@ -2861,7 +2861,7 @@ input[type='search']::-webkit-search-cancel-button {
   font-weight: 800;
 }
 
-.hover\:font-black:hover {
+.hover\:font-extrabold:hover {
   font-weight: 800;
 }
 

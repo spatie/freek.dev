@@ -11,7 +11,7 @@
 }
 
 .markup h1 {
-    @apply text-3xl font-black leading-tight;
+    @apply text-3xl font-extrabold leading-tight;
 }
 
 .markup h2 {

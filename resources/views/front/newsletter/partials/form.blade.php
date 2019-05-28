@@ -4,7 +4,7 @@
     accept-charset="utf-8"
     class="p-8 bg-purple-100 text-sm text-gray-700 {{ $class ?? '' }}"
 >
-    <p class="font-black text-2xl leading-tight mb-4 text-black">
+    <p class="font-extrabold text-2xl leading-tight mb-4 text-black">
         Stay up to date with all things Laravel, PHP, and JavaScript.
     </p>
     <p class="mb-2">
