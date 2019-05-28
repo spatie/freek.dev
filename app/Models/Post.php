@@ -108,7 +108,8 @@ class Post extends Model implements Feedable, Sluggable
         return [
             'title' => $this->title,
             'url' => $this->url,
-            'public_date' => $this->publish_date->timestamp,
+            'publish_date' => $this->publish_date->timestamp,
+            'type' => $this->getType(),
             'text' => substr(strip_tags($this->text), 0, 5000),
             'tags' => $this->tags->implode(',')
         ];
