@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta name="twitter:image:src" content="https://https://sendy.murze.be/murzebe/assets/header.png"><meta name="twitter:description" content="Do you love working with Laravel and PHP? Me too! Here are some links that I found interesting."><meta name="twitter:title" content="murze.be newsletter"><meta name="twitter:card" content="summary_large_image"><meta property="og:type" content="article"><meta property="og:description" content="Do you love working with Laravel and PHP? Me too! Here are some links that I found interesting."><meta property="og:image" content="https://sendy.murze.be/murzebe/assets/header.png"><meta property="og:title" content="murze.be newsletter"><meta property="og:url" content="[webversion]"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width">
-    <title>murze.be newsletter</title>
+    <title>freek.dev newsletter</title>
     <link href="https://fonts.googleapis.com/css?family=Rufina:700|Open+Sans:400,400italic,700" rel="stylesheet" type="text/css" /><!--
         Outlook Conditional CSS
 
@@ -320,7 +320,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" id="emailBody" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border: 0px solid #DDDDDD;overflow: hidden;" width="600">
                     <thead><!-- LOGO HEADER // -->
                     <tr>
-                        <th align="center" valign="top"><a href="https://murze.be" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img alt="" border="0" class="flexibleImage" src="https://gallery.mailchimp.com/2595ac8e52e6e4ede7e463a46/images/4cff9170-0818-4dcf-9d3d-b35899b19ea4.png" style="margin: 0;padding: 0;max-width: 600px;border: 0;outline: none;text-decoration: none;vertical-align: middle;-ms-interpolation-mode: bicubic;height: auto;border-radius: 5px;" /></a></th>
+                        <th align="center" valign="top"><a href="https://freek.dev" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img alt="" border="0" class="flexibleImage" src="https://gallery.mailchimp.com/2595ac8e52e6e4ede7e463a46/images/4cff9170-0818-4dcf-9d3d-b35899b19ea4.png" style="margin: 0;padding: 0;max-width: 600px;border: 0;outline: none;text-decoration: none;vertical-align: middle;-ms-interpolation-mode: bicubic;height: auto;border-radius: 5px;" /></a></th>
                     </tr>
                     <!-- // LOGO HEADER -->
                     </thead>
@@ -354,7 +354,7 @@
                                                             <td class="textContentLarge" open="" sans="" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: " valign="top">
                                                                 <h1 style="margin: 0;padding: 0;font-size: 48px;line-height: 125%;text-align: left;font-family: Rufina, serif;font-weight: 700;color: #000000;margin-top: 15px;margin-bottom: 30px;padding-top: 5px;display: inline-block;border-top: 6px #000000 solid;">newsletter #{{ $editionNumber }}</h1>
                                                                 <br />
-                                                                Hi, welcome to the {{ $editionNumber }}th murze.be newsletter!&nbsp;</td>
+                                                                Hi, welcome to the {{ $editionNumber }}th freek.dev newsletter!&nbsp;</td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
@@ -522,9 +522,9 @@
                         <td align="right" class="logoCell" colspan="2" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 30px;border-bottom: 2px solid #000000;" valign="bottom">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td align="left" class="footerContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 10px;" valign="top" width="66%"><a href="https://murze.be/advertising/">Advertisement opportunities at murze.be</a><br />
+                        <td align="left" class="footerContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 10px;" valign="top" width="66%"><a href="https://freek.dev/advertising/">Advertisement opportunities at freek.dev</a><br />
                             <br />
-                            You are receiving this mail because you&#39;ve subscribed at <a href="https://murze.be">https://murze.be</a><br />
+                            You are receiving this mail because you&#39;ve subscribed at <a href="https://freek.dev">https://freek.dev</a><br />
                             <br />
                             <a href="[unsubscribe]" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 11px;color: #000000;">Unsubscribe</a></td>
                         <td align="right" class="footerContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 10px;" valign="top" width="33%">&nbsp;</td>

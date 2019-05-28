@@ -1,8 +1,8 @@
-# The source code of https://murze.be
+# The source code of https://freek.dev
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-This repo contains the source code of my Laravel powered blog at [https://murze.be](https://murze.be). I've written a blogpost on some of its internal details [here](https://murze.be/on-migrating-my-blog-from-wordpress-to-a-laravel-application).
+This repo contains the source code of my Laravel powered blog at [https://freek.dev](https://freek.dev). I've written a blogpost on some of its internal details [here](https://murze.be/on-migrating-my-blog-from-wordpress-to-a-laravel-application).
 
 You are free to fork this code and use it for your own blog. Just keep in mind that this code is tailormade for me and it does not aim to be a generic blog solution.
 

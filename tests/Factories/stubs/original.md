@@ -160,7 +160,7 @@ There are some great alternatives to cache responses.
 
 Another alternative that is worth checking out is[Barry Vd. Heuvel](https://twitter.com/barryvdh)'s [laravel-httpcache](https://github.com/barryvdh/laravel-httpcache). It allows your app to leverage [HttpCache](https://symfony.com/doc/current/http_cache.html).
 
-Varnish is a reverse proxy that can be used to cache content. There's quite some setup required to make it work, but once you get through that, you'll have a very performant solution. I've used it before myself and have written my experience with it [in this blog post](https://murze.be/using-varnish-on-a-laravel-forge-provisioned-server). Spoiler: I was able to make a simple server handle 6 000 requests/ second.
+Varnish is a reverse proxy that can be used to cache content. There's quite some setup required to make it work, but once you get through that, you'll have a very performant solution. I've used it before myself and have written my experience with it [in this blog post](https://freek.dev/using-varnish-on-a-laravel-forge-provisioned-server). Spoiler: I was able to make a simple server handle 6 000 requests/ second.
 
 ## In closing
 

@@ -6,14 +6,14 @@
     <div class="markup">
         <h1>Advertising</h1>
         <p>
-            The murze.be blog and newsletter are read by an audience of PHP developers with a heavy interest in Laravel, JavaScript, devops and personal/professional growth. You can get your brand or product in front of that audience by running an ad on the blog and/or newsletter.
+            The freek.dev blog and newsletter are read by an audience of PHP developers with a heavy interest in Laravel, JavaScript, devops and personal/professional growth. You can get your brand or product in front of that audience by running an ad on the blog and/or newsletter.
         </p>
         <p>
             If you are interested in placing an advertisement on the blog or in the newsletter, or have any more questions, you can email me at <a href="mailto:freek@spatie.be">freek@spatie.be</a>.
         </p>
         <h2>The blog</h2>
         <p>
-            In 2018 the blog had 728 243 pageviews. If you want to view some more stastics and learn which we the most popular pages read <a href="https://murze.be/four-years-of-murzebe">this blog post</a>.
+            In 2018 the blog had 728 243 pageviews. If you want to view some more stastics and learn which we the most popular pages read <a href="https://freek.dev/four-years-of-murzebe">this blog post</a>.
         </p>
         <p>
             An advertisement consists of a text with two or three sentences that may contain links.. I’ll tag on ” (sponsored)” so it’s clear to the readers that it’s an advertisement. Because the blog should come over as very calm, images or logos are not allowed.
@@ -23,7 +23,7 @@
         </p>
         <h2>The newsletter</h2>
         <p>
-            The murze.be newsletter is sent out every two weeks to an audience of PHP developers with a heavy interest in Laravel, JavaScript and devops.
+            The freek.dev newsletter is sent out every two weeks to an audience of PHP developers with a heavy interest in Laravel, JavaScript and devops.
         </p>
         <p>
             An advertisement will run for an entire month (but keep in mind that the newsletter is sent out only once every two weeks).

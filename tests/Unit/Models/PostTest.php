@@ -14,7 +14,7 @@ class PostTest extends TestCase
             'title' => 'test',
         ]);
         $this->assertEquals(
-            "http://murze.be.test/{$post->id}-test",
+            "http://freek.dev.test/{$post->id}-test",
             $post->promotional_url,
             );
 

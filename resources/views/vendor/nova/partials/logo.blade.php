@@ -1,1 +1,1 @@
-murze.be admin
+freek.dev admin

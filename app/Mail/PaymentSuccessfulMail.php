@@ -26,7 +26,7 @@ class PaymentSuccessfulMail extends Mailable
     public function build()
     {
         return $this
-            ->subject('Payment made on murze.be')
+            ->subject('Payment made on freek.dev')
             ->view('mail.paymentSuccessFul');
     }
 }
