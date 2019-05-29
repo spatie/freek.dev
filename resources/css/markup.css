@@ -2,6 +2,7 @@
     @apply mb-6;
 }
 
+.link,
 .markup :not(.no-markup) a:not(.permalink) {
     @apply text-blue-600 underline;
 }

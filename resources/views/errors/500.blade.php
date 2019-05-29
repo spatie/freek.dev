@@ -1,5 +1,4 @@
-@extends('front.layouts.master')
-
-@section('title', 'Error')
-
-@section('content', 'Whoops, looks like something went wrong.')
+@extends('front.layouts.error', [
+    'title' => 'Server error',
+    'errorCode' => '500',
+])

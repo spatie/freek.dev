@@ -1,6 +1,6 @@
-@extends('front.layouts.master')
-
-@section('title', 'About')
+@extends('front.layouts.app', [
+    'title' => 'About',
+])
 
 @section('content')
     <div class="markup">

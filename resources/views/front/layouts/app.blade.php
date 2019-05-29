@@ -1,3 +1,4 @@
+<<<<<<< HEAD:resources/views/front/layouts/master.blade.php
 <!DOCTYPE html>
 
 <meta charset="utf-8">
@@ -14,6 +15,9 @@
 <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+=======
+@include('front.layouts.partials.head')
+>>>>>>> Error pages:resources/views/front/layouts/app.blade.php
 
 <div class="font-sans text-black">
     @include('front.layouts.partials.analytics')

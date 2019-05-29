@@ -1,6 +1,4 @@
-@extends('front.layouts.master')
-
-@section('title', 'Home')
+@extends('front.layouts.app')
 
 @section('content')
     @include('front.posts.partials.list')

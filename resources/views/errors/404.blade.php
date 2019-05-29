@@ -1,14 +1,5 @@
-@extends('front.layouts.master')
-
-@section('title', 'Page Not Found')
-
-@section('content')
-    <h1>404</h1>
-
-    Computer says no.
-
-    <div>
-        <a href="/">Let's go back home</a>
-    </div>
-
-@endsection
+@extends('front.layouts.error', [
+    'title' => 'Page not found',
+    'errorCode' => '404',
+    'homeLink' => true,
+])

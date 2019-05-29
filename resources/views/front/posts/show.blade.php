@@ -1,6 +1,6 @@
-@extends('front.layouts.master')
-
-@section('title', $post->title)
+@extends('front.layouts.app', [
+    'title' => $post->title,
+])
 
 @section('content')
     @component('front.posts.partials.post', [
