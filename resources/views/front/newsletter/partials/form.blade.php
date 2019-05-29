@@ -1,5 +1,5 @@
 <form
-    action="https://sendy.murze.be/subscribe"
+    action="https://sendy.freek.dev/subscribe"
     method="post"
     accept-charset="utf-8"
     class="p-8 bg-purple-100 text-sm text-gray-700 {{ $class ?? '' }}"
