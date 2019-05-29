@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', $post->formatted_title)
+@section('title', $post->title)
 
 @section('content')
     @component('front.posts.partials.post', [
@@ -10,7 +10,7 @@
         {!! $post->formatted_text !!}
     @endcomponent
 
-    @include('front.newsletter.partials.form', [
+    @include('front.newsletter.partials.block', [
         'class' => 'mb-8',
     ])
 

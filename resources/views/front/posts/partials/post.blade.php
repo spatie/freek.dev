@@ -9,10 +9,12 @@
             @endisset
         </h1>
         <p class="text-sm text-gray-600">
-            {{ $post->emoji }}
+            {{ $post->emoji }} {{ $post->publish_verb }}
             <a href="{{ $post->url }}">
                 <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">
-                    {{ $post->publish_date }}</time></a>
+                    {{ $post->publish_date->format('M jS Y') }}
+                </time>
+            </a>
             @if($post->external_url)
                 𐄁
                 <a href="{{ $post->external_url }}">

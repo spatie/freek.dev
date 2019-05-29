@@ -6,15 +6,17 @@
     <div class="markup mb-8">
         <h1>Newsletter</h1>
         <p>
-            Every two weeks I send out a newsletter containing lots of interesting stuff for the modern PHP developer. You
-            can expect quick tips, links to interesting tutorials, opinions and packages. Because I work with Laravel every
+            Every two weeks I send out a newsletter containing lots of interesting stuff for the modern PHP developer.
+        </p>
+        <p>
+            Expect quick tips, links to interesting tutorials, opinions and packages. Because I work with Laravel every
             day there is an emphasis on that framework.
         </p>
         <p>
             Want to know what you're getting yourself into? Here's <a href="https://sendy.murze.be/w/db6bg1gpZgjCkCxhjltj4g">a previous edition</a>.
         </p>
     </div>
-    <div class="mb-8">
+    <div class="mb-8 p-4 bg-orange-100 border border-orange-200 text-sm text-gray-700">
         @include('front.newsletter.partials.form')
     </div>
     <div class="markup">
