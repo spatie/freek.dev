@@ -4,10 +4,10 @@
     @include('front.layouts.partials.analytics')
     @include('front.layouts.partials.flash')
 
-    <div class="max-w-xl lg:max-w-4xl mx-auto">
-        <header class="mt-12 mb-16 px-8 leading-tight flex">
-            <div class="flex items-end">
-                <figure class="w-12 inline-block mr-3">
+    <div class="max-w-xl md:max-w-4xl mx-auto">
+        <header class="mt-8 md:mt-12 mb-8 md:mb-16 px-4 md:px-8 leading-tight">
+            <div class="md:flex items-end">
+                <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
                     <a href="/"><img src="/images/murzicoon.svg" class="w-full"></a>
                 </figure>
                 <div>
@@ -25,9 +25,26 @@
                     </p>
                 </div>
             </div>
+            <nav class="md:hidden relative">
+                <input class="hidden" type="checkbox" id="mobile-menu-toggle" />
+                <label
+                    for="mobile-menu-toggle"
+                    class="absolute bg-gray-400 text-white uppercase tracking-wider font-bold rounded p-2"
+                    style="top: -6rem; right: 0"
+                >
+                    Menu
+                </label>
+                <div class="mobile-menu | pt-4 text-right leading-loose">
+                    {{ Menu::primary()
+                        ->addClass('text-gray-700 mb-2 md:mb-6')
+                        ->setActiveClass('font-bold text-black') }}
+                    {{ Menu::secondary()
+                        ->addClass('text-xs text-gray-600') }}
+                </div>
+            </nav>
         </header>
-        <div class="flex items-start pb-12">
-            <nav class="hidden lg:block w-1/5 text-right leading-loose">
+        <div class="md:flex pb-12">
+            <nav class="hidden md:block w-1/4 lg:w-1/5 text-right leading-loose">
                 <div class="border-r border-gray-200 px-8 mb-24">
                     {{ Menu::primary()
                         ->addClass('text-gray-700 mb-6')
@@ -39,7 +56,7 @@
                     @include('front.layouts.partials.carbonDummy')
                 </div>
             </nav>
-            <main class="w-4/5 px-8 lg:pl-24">
+            <main class="flex-1 min-w-0 px-4 md:pr-8 md:pl-12 lg:pl-24">
                 @yield('content')
             </main>
         </div>

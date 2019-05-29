@@ -37,8 +37,14 @@
 }
 
 .markup blockquote {
-    @apply p-8 bg-indigo-100 relative border-l-4 border-indigo-200;
+    @apply -mx-4 p-8 bg-indigo-100 relative;
     font-size: 0.925em;
+}
+
+@screen md {
+    .markup blockquote {
+        @apply mx-0 border-l-4 border-indigo-200;
+    }
 }
 
 .markup blockquote:after {
@@ -59,7 +65,13 @@
 }
 
 .markup pre {
-    @apply bg-gray-100 p-8 overflow-x-auto border-l-4 border-gray-200;
+    @apply -mx-4 p-8 bg-gray-100 overflow-x-auto;
     font-size: 0.75em;
     line-height: 2.25;
+}
+
+@screen md {
+    .markup pre {
+        @apply mx-0 border-l-4 border-gray-200;
+    }
 }

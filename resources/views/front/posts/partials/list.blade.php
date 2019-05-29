@@ -1,6 +1,6 @@
 @foreach($posts as $post)
-    @if($loop->index === 5)
-        <div class="mb-24 -mt-4">
+    @if($loop->index === 1)
+        <div class="mb-12 md:mb-24 md:-mt-4">
             @include('front.newsletter.partials.block')
         </div>
     @endif
@@ -8,7 +8,7 @@
     @component('front.posts.partials.post', [
         'post' => $post,
         'url' => $post->external_url ?: $post->url,
-        'class' => 'mb-24',
+        'class' => 'mb-12 md:mb-24',
     ])
         {!! $post->excerpt !!}
 

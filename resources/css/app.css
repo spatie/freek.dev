@@ -45,3 +45,11 @@
 .border-t-transparent {
     border-top: transparent;
 }
+
+.mobile-menu {
+    @apply hidden;
+}
+
+#mobile-menu-toggle:checked ~ .mobile-menu {
+    @apply block;
+}

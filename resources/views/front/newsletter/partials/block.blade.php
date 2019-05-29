@@ -1,4 +1,4 @@
-<div class="p-8 bg-orange-100 border border-orange-200 text-sm text-gray-700 {{ $class ?? '' }}">
+<div class="-mx-4 md:mx-0 p-6 md:p-8 bg-orange-100 border-t border-b md:border-l md:border-r border-orange-200 text-sm text-gray-700 {{ $class ?? '' }}">
     <p class="font-extrabold text-2xl leading-tight mb-4 text-black">
         Stay up to date with all things Laravel, PHP, and JavaScript.
     </p>
