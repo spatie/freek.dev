@@ -13,7 +13,7 @@
             day there is an emphasis on that framework.
         </p>
         <p>
-            Want to know what you're getting yourself into? Here's <a href="https://sendy.murze.be/w/db6bg1gpZgjCkCxhjltj4g">a previous edition</a>.
+            Want to know what you're getting yourself into? Here's a <a href="https://sendy.murze.be/w/db6bg1gpZgjCkCxhjltj4g">previous edition</a>.
         </p>
     </div>
     <div class="mb-8 p-4 bg-orange-100 border border-orange-200 text-sm text-gray-700">
