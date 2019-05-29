@@ -86,4 +86,14 @@ class PostTest extends TestCase
         ]);
         $this->assertTrue($post->isTweet());
     }
+
+    /** @test */
+    public function it_can_determine_the_excerpt()
+    {
+        $post = factory(Post::class)->create([
+           'text' => 'excerpt<!--more-->full post',
+        ]);
+
+        $this->assertEquals('excerpt', $post->excerpt);
+    }
 }

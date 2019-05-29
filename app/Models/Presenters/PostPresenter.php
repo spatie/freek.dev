@@ -9,6 +9,10 @@ trait PostPresenter
 {
     public function getExcerptAttribute(): string
     {
+        if (Str::contains($this->text, '<!--more-->')) {
+            return trim(Str::before($this->text, '<!--more-->'));
+        }
+
         if (! $this->original_content) {
             return $this->formatted_text;
         }
