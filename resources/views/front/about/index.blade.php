@@ -3,7 +3,7 @@
 @section('title', 'About')
 
 @section('content')
-    <div class="markup mb-8">
+    <div class="markup">
         <h1>About</h1>
         <p>
             I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used the framework for many projects.  Follow me <a href="http://twitter.com/freekmurze">on Twitter</a> to know what keeps me busy. Want to know which IDE, apps and hardware I use? <a href="/my-current-setup-2018-edition">Here you go</a>!

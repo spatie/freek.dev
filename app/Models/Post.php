@@ -109,6 +109,9 @@ class Post extends Model implements Feedable, Sluggable
             'title' => $this->title,
             'url' => $this->url,
             'publish_date' => $this->publish_date->timestamp,
+            'formatted_publish_date' => $this->publish_date->format('M jS Y'),
+            'emoji' => $this->emoji,
+            'publish_verb' => $this->publish_verb,
             'type' => $this->getType(),
             'text' => substr(strip_tags($this->text), 0, 5000),
             'tags' => $this->tags->implode(',')
@@ -173,9 +176,19 @@ class Post extends Model implements Feedable, Sluggable
         });
     }
 
-    public function isType(string $type): bool
+    public function isLink(): bool
     {
-        return $this->getType() === $type;
+        return $this->getType() === static::TYPE_LINK;
+    }
+
+    public function isTweet(): bool
+    {
+        return $this->getType() === static::TYPE_TWEET;
+    }
+
+    public function isOriginal(): bool
+    {
+        return $this->getType() === static::TYPE_ORIGINAL;
     }
 
     public function getType(): string

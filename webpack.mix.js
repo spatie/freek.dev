@@ -29,5 +29,5 @@ mix.js('resources/js/app.js', 'public/js')
             path.join(__dirname, 'vendor/spatie/menu/**/*.php'),
             path.join(__dirname, 'vendor/scrivo/highlight.php/**/*.php'),
         ],
-        whitelistPatterns: [/carbon/, /language/, /hljs/, /cm-/, /alert-/],
+        whitelistPatterns: [/carbon/, /language/, /hljs/, /cm-/, /alert-/, /page/],
     });

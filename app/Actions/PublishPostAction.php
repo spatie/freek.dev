@@ -27,7 +27,7 @@ class PublishPostAction
             return;
         }
 
-        if ($post->isType(Post::TYPE_TWEET)) {
+        if ($post->isTweet()) {
             return;
         }
 

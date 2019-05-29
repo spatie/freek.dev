@@ -3,7 +3,7 @@
 }
 
 .markup :not(.no-markup) a:not(.permalink) {
-    @apply text-blue-500 underline;
+    @apply text-blue-600 underline;
 }
 
 .markup .permalink {
@@ -15,7 +15,7 @@
 }
 
 .markup h2 {
-    @apply text-xl font-bold leading-tight mt-12;
+    @apply text-2xl font-bold leading-tight mt-12;
 }
 
 .markup ul,

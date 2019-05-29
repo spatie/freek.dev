@@ -23,7 +23,7 @@ function Search({ appId, apiKey, indexName, inputClassName }) {
                 <div>
                     <input
                         type="search"
-                        className={`${inputClassName} mb-4`}
+                        className={`${inputClassName} mb-2`}
                         placeholder="Laravel, PHP, JavaScript,…"
                         {...autoFocusProps}
                         {...getInputProps()}
@@ -37,17 +37,17 @@ function Search({ appId, apiKey, indexName, inputClassName }) {
                                     key: item.url,
                                     index,
                                     item,
-                                    className: `p-2 cursor-pointer ${
-                                        highlightedIndex === index ? 'bg-indigo-100' : ''
+                                    className: `p-2 cursor-pointer border-4 ${
+                                        highlightedIndex === index ? 'border-yellow-400' : 'border-transparent'
                                     }`,
                                 })}
                             >
-                                <strong>
+                                <strong className="text-lg">
                                     <a href={item.url}>{item.title}</a>
                                 </strong>
                                 <br />
-                                <a href={item.url} className="text-xs text-gray-500">
-                                    {item.url}
+                                <a href={item.url} className="text-sm text-gray-500">
+                                    🔗 Shared May 29th 2019 𐄁 www.jast.com
                                 </a>
                             </li>
                         ))}

@@ -54,21 +54,28 @@ trait PostPresenter
         return $prefix . $this->title;
     }
 
+    public function getPublishActionAttribute(): string
+    {
+        if ($this->isLink() || $this->isTweet()) {
+            return 'Shared';
+        }
+
+        return 'Published';
+    }
+
     public function getEmojiAttribute(): string
     {
-        if ($this->isType(Post::TYPE_LINK)) {
+        if ($this->isLink()) {
             return '🔗';
         }
 
-        if ($this->isType(Post::TYPE_TWEET)) {
+        if ($this->isTweet()) {
             return '🐦';
         }
 
-        if ($this->isType(Post::TYPE_ORIGINAL)) {
+        if ($this->isOriginal()) {
             return '🌟';
         }
-
-
 
         return '';
     }

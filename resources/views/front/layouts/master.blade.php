@@ -41,7 +41,7 @@
                 </div>
             </div>
         </header>
-        <div class="flex items-start pb-8">
+        <div class="flex items-start pb-12">
             <nav class="hidden lg:block w-1/5 text-right leading-loose">
                 <div class="border-r border-gray-200 px-8 mb-24">
                     {{ Menu::primary()

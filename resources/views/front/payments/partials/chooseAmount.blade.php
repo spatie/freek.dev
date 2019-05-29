@@ -1,19 +1,12 @@
-<div class="lg:w-3/4 mb-6">
-    Payments can be made with credit cards and are handled securely with Stripe. Which amount in EUR would you
-    like to pay?
-</div>
-
-<form action="/payments/set-amount" method="POST" class="pt-2 mb-8">
+<p>
+    Payments can be made with credit cards and are handled securely with Stripe. Which amount in EUR would you like to pay?
+</p>
+<form action="/payments/set-amount" method="POST">
     @csrf
-    <div class="flex flex-1 lg:w-3/4">
-        <input class="rounded-l border p-3 flex-1" name="amount" type="number" placeholder="Amount in EUR">
-        <input class="rounded-r bg-blue text-white py-2 px-6 text-base font-bold clickable border-none"
-               value="Proceed to Stripe" type="submit">
-    </div>
-
-    @if($errors->has('amount'))
-        <div class="validation-error">
-            A valid amount is between 1 and 9999.
+    <div class="p-4 bg-green-100 border border-green-200 text-sm text-gray-700">
+        <div class="flex items-stretch">
+            <input class="flex-1 px-3 py-2 bg-white focus:outline-none focus:border-gray-400 border-y-2 border-t-transparent" required name="amount" type="number" placeholder="Amount in EUR">
+            <input type="submit" name="submit" id="submit" value="Proceed" class="px-3 text-sm text-white bg-green-500 font-semibold border-y-2 border-green-700 border-t-transparent">
         </div>
-    @endif
+    </div>
 </form>

@@ -63,27 +63,27 @@ class PostTest extends TestCase
     {
         $post = factory(Post::class)->create();
 
-        $this->assertFalse($post->isType(Post::TYPE_TWEET));
+        $this->assertFalse($post->isTweet());
 
         $post->syncTags(['php', 'tweet']);
 
-        $this->assertTrue($post->refresh()->isType(Post::TYPE_TWEET));
+        $this->assertTrue($post->refresh()->isTweet());
     }
 
     /** @test */
     public function it_can_determine_that_a_post_is_a_tweet()
     {
         $post = factory(Post::class)->create();
-        $this->assertFalse($post->isType(Post::TYPE_TWEET));
+        $this->assertFalse($post->isTweet());
 
         $post = factory(Post::class)->create()->attachTag('tweet');
-        $this->assertTrue($post->isType(Post::TYPE_TWEET));
+        $this->assertTrue($post->isTweet());
 
         $post = factory(Post::class)->create()->attachTags([
             'tag',
             'tweet',
             'another-tag'
         ]);
-        $this->assertTrue($post->isType(Post::TYPE_TWEET));
+        $this->assertTrue($post->isTweet());
     }
 }
