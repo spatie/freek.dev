@@ -173,9 +173,19 @@ class Post extends Model implements Feedable, Sluggable
         });
     }
 
-    public function isType(string $type): bool
+    public function isLink(): bool
     {
-        return $this->getType() === $type;
+        return $this->getType() === static::TYPE_LINK;
+    }
+
+    public function isTweet(): bool
+    {
+        return $this->getType() === static::TYPE_TWEET;
+    }
+
+    public function isOriginal(): bool
+    {
+        return $this->getType() === static::TYPE_ORIGINAL;
     }
 
     public function getType(): string

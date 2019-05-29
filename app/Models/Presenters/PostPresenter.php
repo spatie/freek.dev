@@ -56,15 +56,15 @@ trait PostPresenter
 
     public function getEmojiAttribute(): string
     {
-        if ($this->isType(Post::TYPE_LINK)) {
+        if ($this->isLink()) {
             return '🔗';
         }
 
-        if ($this->isType(Post::TYPE_TWEET)) {
+        if ($this->isTweet()) {
             return '🐦';
         }
 
-        if ($this->isType(Post::TYPE_ORIGINAL)) {
+        if ($this->isOriginal()) {
             return '🌟';
         }
 

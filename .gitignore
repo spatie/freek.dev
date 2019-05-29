@@ -18,3 +18,4 @@ yarn-error.log
 .env
 .php_cs.cache
 auth.json
+.phpunit.result.cache
