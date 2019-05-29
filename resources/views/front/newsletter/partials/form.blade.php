@@ -1,4 +1,4 @@
-<form class="pt-4 pb-4 flex justify-center" action="https://sendy.murze.be/subscribe" method="post"
+<form class="pt-4 pb-4 flex justify-center" action="https://sendy.freek.dev/subscribe" method="post"
       accept-charset="utf-8">
     <div class="flex flex-1 max-w-sm">
         <input type="email" id="email" name="email"

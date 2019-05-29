@@ -37,7 +37,7 @@ class Policy extends BasePolicy
             ->addDirective(Directive::FORM_ACTION, [
                 'freek.dev',
                 'freek.dev.test',
-                'sendy.murze.be',
+                'sendy.freek.dev',
             ])
             ->addDirective(Directive::IMG, [
                 '*',

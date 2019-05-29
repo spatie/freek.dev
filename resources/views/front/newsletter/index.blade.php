@@ -13,7 +13,7 @@
 
     <p>
         Want to know what you're getting yourself into? Here's <a
-                href="https://sendy.murze.be/w/db6bg1gpZgjCkCxhjltj4g">a previous
+                href="https://sendy.freek.dev/w/db6bg1gpZgjCkCxhjltj4g">a previous
             edition</a>.
     </p>
 
