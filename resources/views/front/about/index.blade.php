@@ -6,14 +6,14 @@
     <div class="markup mb-8">
         <h1>About</h1>
         <p>
-            I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used the framework for many projects.  Follow me <a href="http://twitter.com/freekmurze">on twitter</a> to know what keeps me busy. Want to know which IDE, apps and hardware I use? <a href="/my-current-setup-2018-edition">Here you go</a>!
+            I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used the framework for many projects.  Follow me <a href="http://twitter.com/freekmurze">on Twitter</a> to know what keeps me busy. Want to know which IDE, apps and hardware I use? <a href="/my-current-setup-2018-edition">Here you go</a>!
         </p>
         <p>
             I'm a developer at <a href="https://spatie.be">Spatie</a> of which I'm the co-owner. At my company we use a lot of open source software: PHP, Ubuntu, Laravel, Composer, Beanstalkd,… are a few of the things we use everyday. My company couldn't exist without open source software. That's why we're trying to give back
             as much as possible.
         </p>
         <p>
-            Whenever we stumble upon a problem that we can solve in a clean way, we extract our solution so other developers can use it. Together with my colleagues I regularly release <a href="https://spatie.be/opensource">PHP, Laravel and JavaScript packages</a>. Those packages have been downloaded more than 15 million times.
+            Whenever we stumble upon a problem that we can solve in a clean way, we extract our solution so other developers can use it. Together with my colleagues I regularly release <a href="https://spatie.be/opensource">PHP, Laravel and JavaScript packages</a>. Those packages have been downloaded more than 35 million times.
         </p>
         <h2 id="side-projects">
             Side projects
