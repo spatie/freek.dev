@@ -5,7 +5,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-<title>@yield('title') - Freek Van der Herten's blog on PHP and Laravel</title>
+<title>@yield('title') | Freek Van der Herten's blog on PHP and Laravel</title>
 
 @include('feed::links')
 @include('front.layouts.partials.seo')
