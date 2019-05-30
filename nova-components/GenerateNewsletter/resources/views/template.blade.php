@@ -320,7 +320,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" id="emailBody" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border: 0px solid #DDDDDD;overflow: hidden;" width="600">
                     <thead><!-- LOGO HEADER // -->
                     <tr>
-                        <th align="center" valign="top"><a href="https://freek.dev" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img alt="" border="0" class="flexibleImage" src="https://gallery.mailchimp.com/2595ac8e52e6e4ede7e463a46/images/4cff9170-0818-4dcf-9d3d-b35899b19ea4.png" style="margin: 0;padding: 0;max-width: 600px;border: 0;outline: none;text-decoration: none;vertical-align: middle;-ms-interpolation-mode: bicubic;height: auto;border-radius: 5px;" /></a></th>
+                        <th align="center" valign="top"></th>
                     </tr>
                     <!-- // LOGO HEADER -->
                     </thead>
