@@ -106,6 +106,10 @@ ln -nfs {{ $baseDir }}/persistent/uploads public/uploads;
 # Import the environment config
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/.env .env;
+
+# Symlink the persistent fonts to the public directory
+ln -nfs {{ $baseDir }}/persistent/fonts {{ $newReleaseDir }}/public/fonts;
+
 @endtask
 
 @task('optimizeInstallation', ['on' => 'remote'])
