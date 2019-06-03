@@ -53,7 +53,7 @@
                         ->addClass('text-xs text-gray-600') }}
                 </div>
                 <div class="pl-8">
-                    @include('front.layouts.partials.carbonDummy')
+                    @include('front.layouts.partials.carbon')
                 </div>
             </nav>
             <main class="flex-1 min-w-0 px-4 md:pr-8 md:pl-12 lg:pl-24">
