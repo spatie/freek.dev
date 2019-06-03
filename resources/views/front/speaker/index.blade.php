@@ -3,8 +3,6 @@
 ])
 
 @section('content')
-
-
     <div class="markup">
         <h1>Speaker</h1>
     </div>
@@ -18,7 +16,7 @@
         <a href="#speaking-at-your-event" class="permalink">#</a>
     </h2>
     If you're considering me to speak at your event you can reach me <a href="mailto:freek@spatie.be">via
-        mail</a>.  I require you to take care of the costs of the flights (or ground transportation) and hotel.
+        mail</a>. I require you to take care of the costs of the flights (or ground transportation) and hotel.
 
     <h2 id="videos">
         Videos
