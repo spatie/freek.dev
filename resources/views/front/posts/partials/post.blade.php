@@ -1,13 +1,13 @@
 <article class="{{ $class ?? '' }}">
     <div class="post-theme mb-4" style="--theme: {{ $post->theme }}"></div>
     <header class="mb-6">
-        <h1 class="max-w-lg text-2xl md:text-3xl font-extrabold leading-tight mb-2">
+        <{{ $heading ?? 'h1' }} class="max-w-lg text-2xl md:text-3xl font-extrabold leading-tight mb-2">
             @isset($url)
                 <a href="{{ $url }}">{{ $post->title }}</a>
             @else
                 {{ $post->title }}
             @endisset
-        </h1>
+        </{{ $heading ?? 'h1' }}>
         <p class="text-sm text-gray-600">
             {{ $post->emoji }} {{ $post->publish_verb }}
             <a href="{{ $post->url }}">

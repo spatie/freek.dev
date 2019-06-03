@@ -9,6 +9,7 @@
         'post' => $post,
         'url' => $post->external_url ?: $post->url,
         'class' => 'mb-12 md:mb-24',
+        'heading' => 'h2',
     ])
         {!! $post->excerpt !!}
 
