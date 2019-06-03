@@ -108,6 +108,8 @@ cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/.env .env;
 
 # Symlink the persistent fonts to the public directory
+cd {{ $baseDir }}/persistent/fonts
+git pull origin master
 ln -nfs {{ $baseDir }}/persistent/fonts {{ $newReleaseDir }}/public/fonts;
 
 @endtask
