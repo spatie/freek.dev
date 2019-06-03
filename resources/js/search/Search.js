@@ -41,7 +41,7 @@ export default class Search extends Component {
                                             </strong>
                                             <br />
                                             <a href={item.url} className="text-sm text-gray-500">
-                                                {item.emoji} {item.publish_action || 'Published'} on{' '}
+                                                {item.emoji} {item.publish_action || 'Published'}{' '}
                                                 {item.formatted_publish_date}
                                             </a>
                                         </li>

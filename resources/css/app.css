@@ -6,6 +6,7 @@
 @import './components/markup.css';
 @import './components/mobile-menu.css';
 @import './components/pagination.css';
+@import './components/post.css';
 
 @import './vendor/hljs.css';
 

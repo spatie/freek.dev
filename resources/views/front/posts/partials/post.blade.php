@@ -9,7 +9,7 @@
             @endisset
         </{{ $heading ?? 'h1' }}>
         <p class="text-sm text-gray-600">
-            {{ $post->emoji }} {{ $post->publish_verb }}
+            {{ $post->emoji }} {{ $post->publish_action }}
             <a href="{{ $post->url }}">
                 <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">
                     {{ $post->publish_date->format('M jS Y') }}
@@ -17,9 +17,8 @@
             </a>
             @if($post->external_url)
                 –
-                <a href="{{ $post->external_url }}">
-                    {{ $post->external_url_host }}
-                </a>
+                <a href="{{ $post->external_url }}" class="underline">
+                    on {{ $post->external_url_host }}</a>
             @elseif($post->isOriginal())
                 – by {{ $post->author }}
                 – {{ $post->reading_time }} minute read
@@ -27,8 +26,7 @@
             @auth
                 –
                 <a target="_blank" href="/nova/resources/posts/{{ $post->id }}/edit" class="underline">
-                    Edit
-                </a>
+                    Edit</a>
             @endauth
         </p>
     </header>
