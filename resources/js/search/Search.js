@@ -41,7 +41,8 @@ export default class Search extends Component {
                                             </strong>
                                             <br />
                                             <a href={item.url} className="text-sm text-gray-500">
-                                                🔗 Shared May 29th 2019 – www.jast.com
+                                                {item.emoji} {item.publish_action || 'Published'} on{' '}
+                                                {item.formatted_publish_date}
                                             </a>
                                         </li>
                                     ))}

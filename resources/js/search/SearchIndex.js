@@ -13,7 +13,11 @@ export default class SearchIndex extends Component {
         this.searchIndex = algoliasearch(props.appId, props.apiKey).initIndex(props.indexName);
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(_prevProps, prevState) {
+        if (this.state.query === prevState.query) {
+            return;
+        }
+
         if (!this.state.query) {
             if (this.state.hits.length) {
                 this.setState(state => ({ ...state, hits: [] }));
@@ -28,6 +32,8 @@ export default class SearchIndex extends Component {
     }
 
     render() {
+        console.log(this.state.hits);
+
         return this.props.children[0]({
             hits: this.state.hits,
             query: this.state.query,
