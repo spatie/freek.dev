@@ -11,13 +11,7 @@
         'class' => 'mb-12 md:mb-24',
         'heading' => 'h2',
     ])
-        @if($post->isTweet())
-            @component('front.components.lazy')
-                {!! $post->excerpt !!}
-            @endcomponent
-        @else
-            {!! $post->excerpt !!}
-        @endif
+        {!! str_replace('<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>', '<div data-lazy="twitter"></div>', $post->excerpt) !!}
 
         <p class="mt-6 no-markup">
             @if($post->external_url)

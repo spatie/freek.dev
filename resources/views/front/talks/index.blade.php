@@ -19,17 +19,17 @@
                         </time>
                         at {{ $talk->location }}
                         @if($talk->video_link)
-                            𐄁
+                            –
                             <a class="underline" href="{{ $talk->video_link }}">
                                 Video</a>
                         @endif
                         @if($talk->slides_link)
-                            𐄁
+                            –
                             <a class="underline" href="{{ $talk->slides_link }}">
                                 Slides</a>
                         @endif
                         @if($talk->joindin_link)
-                            𐄁
+                            –
                             <a class="underline" href="{{ $talk->joindin_link }}">
                                 Joind.in</a>
                         @endif
