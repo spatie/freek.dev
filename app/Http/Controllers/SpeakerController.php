@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Talk;
+use App\Models\Video;
 
-class TalksController
+class SpeakerController
 {
     public function __invoke()
     {
@@ -12,6 +13,8 @@ class TalksController
             ->get()
             ->groupBy('title');
 
-        return view('front.talks.index', compact('talks'));
+        $videos = Video::latest()->get();
+
+        return view('front.speaker.index', compact('talks', 'videos'));
     }
 }

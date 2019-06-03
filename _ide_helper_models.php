@@ -78,6 +78,7 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $title
+ * @property bool $original_content
  * @property string $slug
  * @property string $text
  * @property string|null $wp_id
@@ -88,7 +89,6 @@ namespace App\Models{
  * @property string $author
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property bool $original_content
  * @property string|null $external_url
  * @property-read mixed $emoji
  * @property-read mixed $excerpt
@@ -157,6 +157,19 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
  */
     class User extends \Eloquent
+    {
+    }
+}
+
+namespace App\Models{
+/**
+ * App\Models\Video
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Video newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Video newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Video query()
+ */
+    class Video extends \Eloquent
     {
     }
 }

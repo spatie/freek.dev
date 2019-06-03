@@ -5,7 +5,7 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\TalksController;
+use App\Http\Controllers\SpeakerController;
 
 Route::redirect('nova', '/nova/login');
 
@@ -13,7 +13,7 @@ Route::feeds();
 
 Route::get('/', HomeController::class);
 Route::get('originals', OriginalsController::class);
-Route::get('talks', TalksController::class);
+Route::get('speaker', SpeakerController::class);
 
 Route::view('about', 'front.about.index');
 Route::view('advertising', 'front.advertising.index');
