@@ -15,6 +15,6 @@
 @include('front.layouts.partials.seo')
 
 <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
-<link rel="stylesheet" href="{{ mix('css/app.css') }}">
+<style>{!! file_get_contents(public_path('css/app.css')) !!}</style>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
