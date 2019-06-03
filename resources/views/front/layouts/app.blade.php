@@ -45,7 +45,7 @@
         </header>
         <div class="md:flex pb-12">
             <nav class="hidden md:block w-1/4 lg:w-1/5 text-right leading-loose">
-                <div class="border-r border-gray-200 px-8 mb-24">
+                <div class="border-r border-gray-200 px-8 mb-16">
                     {{ Menu::primary()
                         ->addClass('text-gray-700 mb-6')
                         ->setActiveClass('font-bold text-black') }}

@@ -1,7 +1,22 @@
 module.exports = {
     theme: {
         fontFamily: {
-            sans: ['Whitney SSm A', 'Whitney SSm B'],
+            sans: [
+                'Whitney SSm A',
+                'Whitney SSm B',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                'Segoe UI',
+                'Roboto',
+                'Helvetica Neue',
+                'Arial',
+                'Noto Sans',
+                'sans-serif',
+                'Apple Color Emoji',
+                'Segoe UI Emoji',
+                'Segoe UI Symbol',
+                'Noto Color Emoji',
+            ],
             mono: [
                 'Operator Mono SSm A',
                 'Operator Mono SSm B',
@@ -13,6 +28,9 @@ module.exports = {
             ],
         },
         extend: {
+            fontSize: {
+                xxs: '0.65rem',
+            },
             lineHeight: {
                 relaxed: 1.75,
             },

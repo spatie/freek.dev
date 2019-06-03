@@ -1,0 +1,11 @@
+.pagination {
+    @apply flex justify-between;
+}
+
+.pagination .page-item.disabled {
+    @invisible;
+}
+
+.pagination .page-link {
+    @apply font-semibold text-sm text-gray-600 pb-1 border-b-2;
+}

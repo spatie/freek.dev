@@ -1,0 +1,5 @@
+.post-theme {
+    @apply rounded;
+    background-image: linear-gradient(90deg, var(--theme), white);
+    height: 6px;
+}

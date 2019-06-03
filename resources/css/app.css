@@ -2,54 +2,13 @@
 
 @import './bootstrap.css';
 
-@import './markup.css';
+@import './components/carbon.css';
+@import './components/markup.css';
+@import './components/mobile-menu.css';
+@import './components/pagination.css';
 
 @import './vendor/hljs.css';
 
+@import './utilties.css';
+
 @tailwind utilities;
-
-.bg-freek {
-    background-image: url('/images/freek.jpg');
-    background-position: top right;
-    background-repeat: no-repeat;
-}
-
-.post-theme {
-    @apply rounded;
-    background-image: linear-gradient(90deg, var(--theme), white);
-    height: 6px;
-}
-
-.pagination {
-    @apply flex justify-between;
-}
-
-.pagination .page-item.disabled {
-    @invisible;
-}
-
-.pagination .page-link {
-    @apply font-semibold text-sm text-gray-600 pb-1 border-b-2;
-}
-
-.border-y-2 {
-    @apply border-b-2;
-    @apply border-t-2;
-}
-
-.border-y-4 {
-    @apply border-b-4;
-    @apply border-t-4;
-}
-
-.border-t-transparent {
-    border-top: transparent;
-}
-
-.mobile-menu {
-    @apply hidden;
-}
-
-#mobile-menu-toggle:checked ~ .mobile-menu {
-    @apply block;
-}
