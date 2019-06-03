@@ -11,7 +11,13 @@
         'class' => 'mb-12 md:mb-24',
         'heading' => 'h2',
     ])
-        {!! $post->excerpt !!}
+        @if($post->isTweet())
+            @component('front.components.lazy')
+                {!! $post->excerpt !!}
+            @endcomponent
+        @else
+            {!! $post->excerpt !!}
+        @endif
 
         <p class="mt-6 no-markup">
             @if($post->external_url)

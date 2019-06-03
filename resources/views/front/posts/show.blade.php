@@ -14,7 +14,9 @@
         'class' => 'mb-8',
     ])
 
-    @include('front.posts.partials.disqus')
+    @component('front.components.lazy')
+        @include('front.posts.partials.disqus')
+    @endcomponent
 @endsection
 
 @section('seo')
