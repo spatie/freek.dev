@@ -1,4 +1,4 @@
 {{ $video->title }}
 {!! $video->embed !!}
-{!! $video->text !!}
+{!! $video->formatted_text !!}
 
