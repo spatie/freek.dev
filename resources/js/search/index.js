@@ -47,7 +47,7 @@ function Search({ appId, apiKey, indexName, inputClassName }) {
                                 </strong>
                                 <br />
                                 <a href={item.url} className="text-sm text-gray-500">
-                                    🔗 Shared May 29th 2019 𐄁 www.jast.com
+                                    🔗 Shared May 29th 2019 – www.jast.com
                                 </a>
                             </li>
                         ))}
