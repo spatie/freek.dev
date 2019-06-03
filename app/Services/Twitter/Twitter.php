@@ -16,6 +16,10 @@ class Twitter
 
     public function tweet(string $status)
     {
+        if (! app()->environment('production')) {
+            return;
+        }
+
         return $this->twitter->post('statuses/update', compact('status'));
     }
 }

@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
            ->call(TagSeeder::class)
            ->call(PostSeeder::class)
            ->call(TalkSeeder::class)
-           ->call(AdSeeder::class);
+           ->call(AdSeeder::class)
+            ->call(VideoSeeder::class);
     }
 }
