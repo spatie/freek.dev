@@ -3,8 +3,15 @@
 ])
 
 @section('content')
-    <div class="markup">
+    <div class="markup mb-6">
         <h1>About</h1>
+    </div>
+    <img
+        src="{{ url('images/avatar-boxed.jpg') }}"
+        alt="Freek Van der Herten speaking at Laracon EU 2019"
+        class="sm:w-48 sm:ml-3 mb-6 sm:mb-0 sm:rounded-full sm:float-right"
+    >
+    <div class="markup">
         <p>
             I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used the framework for many projects.  Follow me <a href="http://twitter.com/freekmurze">on Twitter</a> to know what keeps me busy. Want to know which IDE, apps and hardware I use? <a href="/my-current-setup-2018-edition">Here you go</a>!
         </p>

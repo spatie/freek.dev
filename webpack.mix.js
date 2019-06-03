@@ -20,6 +20,13 @@ mix.js('resources/js/app.js', 'public/js')
         output: {
             chunkFilename: 'js/[name].js',
         },
+
+        resolve: {
+            alias: {
+                react: 'preact-compat',
+                'react-dom': 'preact-compat',
+            },
+        },
     })
 
     .purgeCss({

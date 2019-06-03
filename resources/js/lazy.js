@@ -1,5 +1,5 @@
 export default function() {
-    Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
+    [...document.querySelectorAll('[data-lazy]')].forEach(lazy);
 }
 
 function lazy(element) {
@@ -9,7 +9,6 @@ function lazy(element) {
                 if (entry.isIntersecting) {
                     const template = element.querySelector('template');
                     const contents = document.importNode(template.content, true);
-                    console.log(contents);
 
                     element.appendChild(contents);
 

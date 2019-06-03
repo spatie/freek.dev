@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "algoliasearch": "^3.24.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "downshift": "^3.2.10"
+    "downshift": "^3.2.10",
+    "preact": "^8.4.2",
+    "preact-compat": "^3.18.5"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
