@@ -27,7 +27,8 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->url('search', 'Search')
                 ->url('advertising', 'Advertising')
-                ->url('feed', 'RSS');
+                ->url('feed', 'RSS')
+                ->setActiveFromRequest('/');
         });
     }
 }
