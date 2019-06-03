@@ -21,6 +21,8 @@ class PostTest extends TestCase
     /** @test */
     public function it_can_find_a_post_by_its_id_slug()
     {
+        $this->withoutExceptionHandling();
+
         $this
             ->get(action(PostController::class, $this->post->idSlug()))
             ->assertSuccessful()

@@ -9,11 +9,29 @@ trait PostPresenter
 {
     public function getExcerptAttribute(): string
     {
-        if (Str::contains($this->text, '<!--more-->')) {
-            return trim(Str::before($this->text, '<!--more-->'));
+        $excerpt = $this->getManualExcerpt() ?? $this->getAutomaticExerpt();
+
+        $excerpt = str_replace(
+            '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>',
+            '<div data-lazy="twitter"></div>',
+            $excerpt,
+            );
+
+        return $excerpt;
+    }
+
+    protected function getManualExcerpt(): ?string
+    {
+        if (!Str::contains($this->text, '<!--more-->')) {
+            return null;
         }
 
-        if (! $this->original_content) {
+        return trim(Str::before($this->text, '<!--more-->'));
+    }
+
+    protected function getAutomaticExerpt(): string
+    {
+        if (!$this->original_content) {
             return $this->formatted_text;
         }
 
@@ -105,7 +123,7 @@ trait PostPresenter
 
     public function getReadingTimeAttribute(): int
     {
-        return (int) ceil(str_word_count(strip_tags($this->text)) / 200);
+        return (int)ceil(str_word_count(strip_tags($this->text)) / 200);
     }
 
     public function getIsOriginalAttribute(): bool
