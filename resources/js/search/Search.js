@@ -3,6 +3,10 @@ import Downshift from 'downshift';
 import SearchIndex from './SearchIndex';
 
 export default class Search extends Component {
+    componentDidMount() {
+        document.querySelector('input[type=search]').focus();
+    }
+
     render() {
         return (
             <SearchIndex appId={this.props.appId} apiKey={this.props.apiKey} indexName={this.props.indexName}>
