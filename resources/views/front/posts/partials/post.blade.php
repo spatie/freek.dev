@@ -9,8 +9,9 @@
             @endisset
         </{{ $heading ?? 'h1' }}>
         <p class="text-sm text-gray-600">
-            {{ $post->emoji }} {{ $post->publish_action }}
+            {{ $post->emoji }}
             <a href="{{ $post->url }}">
+                {{ $post->publish_action }}
                 <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">
                     {{ $post->publish_date->format('M jS Y') }}
                 </time>
