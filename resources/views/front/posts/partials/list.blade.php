@@ -15,11 +15,11 @@
 
         <p class="mt-6 no-markup">
             @if($post->external_url)
-                <a href="{{ $post->external_url }}" class="font-semibold text-gray-600 pb-1 border-b-2">
+                <a href="{{ $post->external_url }}" class="font-semibold text-gray-600 border-b-3">
                     Read more on {{ $post->external_url_host }}
                 </a>
             @else
-                <a href="{{ $post->url }}" class="font-semibold text-gray-600 pb-1 border-b-2">
+                <a href="{{ $post->url }}" class="font-semibold text-gray-600 border-b-3">
                     Read more
                 </a>
             @endif

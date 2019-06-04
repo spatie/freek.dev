@@ -110,9 +110,8 @@ class Post extends Model implements Feedable, Sluggable
             'url' => $this->url,
             'publish_date' => optional($this->publish_date)->timestamp,
             'formatted_publish_date' => optional($this->publish_date)->format('M jS Y'),
-            'emoji' => $this->emoji,
-            'publish_action' => $this->publish_action,
             'type' => $this->getType(),
+            'formatted_type' => $this->formatted_type,
             'text' => substr(strip_tags($this->text), 0, 5000),
             'tags' => $this->tags->implode(',')
         ];

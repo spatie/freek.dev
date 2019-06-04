@@ -28,6 +28,9 @@ module.exports = {
             ],
         },
         extend: {
+            borderWidth: {
+                3: '3px',
+            },
             fontSize: {
                 xxs: '0.65rem',
             },
