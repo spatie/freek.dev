@@ -775,7 +775,8 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GenerateNewsletter",
-                "reference": "b55198c2e78084d45b612827e9ea86009b2a0c82"
+                "reference": "b55198c2e78084d45b612827e9ea86009b2a0c82",
+                "shasum": null
             },
             "require": {
                 "php": ">=7.1.0"
