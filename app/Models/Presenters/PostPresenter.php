@@ -3,6 +3,7 @@
 namespace App\Models\Presenters;
 
 use App\Models\Post;
+use App\Services\CommonMark\CommonMark;
 use Illuminate\Support\Str;
 
 trait PostPresenter
@@ -16,6 +17,8 @@ trait PostPresenter
             '<div data-lazy="twitter"></div>',
             $excerpt,
             );
+
+        $excerpt = CommonMark::convertToHtml($excerpt);
 
         return $excerpt;
     }
