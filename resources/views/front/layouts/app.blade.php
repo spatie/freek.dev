@@ -29,7 +29,7 @@
                 <input class="hidden" type="checkbox" id="mobile-menu-toggle" />
                 <label
                     for="mobile-menu-toggle"
-                    class="absolute bg-gray-700 border-b-4 border-gray-900 text-white uppercase tracking-wider font-semibold p-2 pb-1"
+                    class="absolute bg-gray-700 border-b-3 border-gray-900 text-white uppercase tracking-wider font-semibold p-2 pb-1"
                     style="top: -6rem; right: 0"
                 >
                     Menu

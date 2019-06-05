@@ -16,7 +16,7 @@
             Want to know what you're getting yourself into? Here's <a href="https://sendy.freek.dev/w/db6bg1gpZgjCkCxhjltj4g">a previous edition</a>.
         </p>
     </div>
-    <div class="mb-8 p-4 bg-orange-100 border border-orange-200 text-sm text-gray-700">
+    <div class="mb-8 -mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-orange-100 border-b-5 border-orange-200 text-sm text-gray-700">
         @include('front.newsletter.partials.form')
     </div>
     <div class="markup">
