@@ -15,3 +15,7 @@ html {
         font-size: 19px;
     }
 }
+
+iframe {
+    max-width: 100%;
+}
