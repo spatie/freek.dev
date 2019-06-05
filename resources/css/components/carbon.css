@@ -1,0 +1,11 @@
+#carbonads {
+    @apply text-xxs text-gray-700 leading-tight;
+}
+
+.carbon-wrap {
+    @apply flex flex-col items-end mb-1;
+}
+
+.carbon-wrap img {
+    @apply mb-2 inline;
+}

@@ -31,7 +31,7 @@ class PaymentFailed extends Mailable
     public function build()
     {
         return $this
-            ->subject('Payment failed on murze.be')
+            ->subject('Payment failed on freek.dev')
             ->view('mail.paymentFailed');
     }
 }

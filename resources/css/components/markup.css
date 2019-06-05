@@ -1,0 +1,86 @@
+.markup > *:not(:last-child) {
+    @apply mb-6;
+}
+
+.link,
+.markup :not(.no-markup) a:not(.permalink) {
+    @apply text-blue-700 underline;
+}
+
+.markup .permalink {
+    @apply inline-block ml-1 text-gray-400;
+}
+
+.markup h1 {
+    @apply text-3xl font-extrabold leading-tight;
+}
+
+.markup h2 {
+    @apply text-2xl font-bold leading-tight mt-12;
+}
+
+.h3,
+.markup h3 {
+    @apply font-semibold leading-tight mt-12;
+}
+
+.markup ul,
+.markup ol {
+    list-style-position: inside;
+}
+
+.markup ul {
+    list-style-type: disc;
+}
+
+.markup ol {
+    list-style-type: decimal;
+}
+
+.markup img {
+    @apply block;
+}
+
+.markup blockquote {
+    @apply -mx-4 p-8 bg-indigo-100 relative;
+    font-size: 0.925em;
+}
+
+@screen sm {
+    .markup blockquote {
+        @apply mx-0 border-l-4 border-indigo-200;
+    }
+}
+
+.markup blockquote:after {
+    position: absolute;
+    left: -12px;
+    top: -50px;
+    content: '“';
+    font-size: 100px;
+}
+
+.markup code {
+    @apply font-mono;
+}
+
+.markup :not(pre) > code {
+    @apply p-1 bg-gray-100 border-b-2 border-gray-200;
+    font-size: 0.8em;
+}
+
+.markup pre {
+    @apply -mx-4 p-8 bg-gray-100 overflow-x-auto;
+    font-size: 0.75em;
+    line-height: 2.25;
+}
+
+@screen sm {
+    .markup pre {
+        @apply mx-0 border-l-4 border-gray-200;
+    }
+}
+
+.markup iframe {
+    @apply w-full;
+}

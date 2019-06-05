@@ -4,18 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 
-class HomeController extends Controller
+class HomeController
 {
-    public function index()
+    public function __invoke()
     {
         $posts = Post::query()
             ->published()
-            ->orderBy('publish_date', 'desc')
-            ->orderBy('id', 'desc')
-            ->simplePaginate(50);
+            ->simplePaginate(20);
 
-        $onFirstPage = $posts->onFirstPage();
-
-        return view('front.home.index', compact('posts', 'onFirstPage'));
+        return view('front.home.index', compact('posts'));
     }
 }

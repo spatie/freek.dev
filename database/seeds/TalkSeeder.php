@@ -302,8 +302,6 @@ class TalkSeeder extends Seeder
                 'slides_link' => 'https://speakerdeck.com/freekmurze/introduction-to-laravel-phpkonf',
                 'joindin_link' => 'https://joind.in/event/php-central-europe-conference/a-hands-on-introduction-to-laravel',
             ],
-
-
         ]);
     }
 }

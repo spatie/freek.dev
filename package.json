@@ -12,27 +12,23 @@
     "build-generate-newsletter": "cd nova-components/GenerateNewsletter && yarn dev",
     "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && yarn && yarn prod"
   },
-  "devDependencies": {
-    "axios": "^0.17",
-    "bootstrap-sass": "^3.3.7",
-    "cross-env": "^5.1.1",
-    "jquery": "^3.2",
-    "laravel-mix": "^4.0",
-    "laravel-mix-purgecss": "^1.0",
-    "lodash": "^4.17.4",
-    "sass": "^1.20.1",
-    "sass-loader": "7.*",
-    "tailwindcss": "^0.4",
-    "vue": "^2.5.13",
-    "vue-template-compiler": "^2.6.7"
-  },
   "dependencies": {
     "algoliasearch": "^3.24.5",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "glob-all": "^3.1.0",
+    "downshift": "^3.2.10",
+    "preact": "^8.4.2",
+    "preact-compat": "^3.18.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "cross-env": "^5.1.1",
     "husky": "^2.3.0",
+    "laravel-mix": "^4.0",
+    "laravel-mix-purgecss": "^4.0",
     "lint-staged": "^8.1.7",
-    "prettier": "^1.10.2"
+    "prettier": "^1.10.2",
+    "tailwindcss": "1.0.0-beta.4",
+    "vue-template-compiler": "^2.6.10"
   },
   "husky": {
     "hooks": {

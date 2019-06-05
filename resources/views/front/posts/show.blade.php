@@ -1,42 +1,28 @@
-@extends('front.layouts.master')
-
-@section('title', $post->formatted_title )
+@extends('front.layouts.app', [
+    'title' => $post->title,
+])
 
 @section('content')
-
-    @auth
-        <div class="pb-4">
-            <a class="button" target="_blank" href="/nova/resources/posts/{{ $post->id }}/edit">Edit</a>
-        </div>
-    @endauth
-
     @if($ad)
-        <div class="bg-white border-2 rounded mb-4 py-4 px-6 mt-4 text-xs">
+        <div class="markup | text-xs text-gray-700 mb-6 bg-yellow-100 p-2">
             {!! $ad->formatted_text !!}
         </div>
     @endif
 
-    <h1>{{ $post->formatted_title }}</h1>
-
-    <div class="text-grey-darker text-sm pb-6 border-b text-grey">
-        Posted on <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">{{ $post->publish_date }}</time> | {{ $post->author }}
-    </div>
-
-    <div class="pt-4 post-content">
+    @component('front.posts.partials.post', [
+        'post' => $post,
+        'class' => 'mb-8',
+    ])
         {!! $post->formatted_text !!}
-    </div>
+    @endcomponent
 
-    <div class="pt-4">
-        @include('front.posts.partials.tags')
-    </div>
+    @include('front.newsletter.partials.block', [
+        'class' => 'mb-8',
+    ])
 
-    <div class="pt-4">
-        @include('front.posts.partials.newsletter')
-    </div>
-
-    <div class="pt-4">
+    @component('front.components.lazy')
         @include('front.posts.partials.disqus')
-    </div>
+    @endcomponent
 @endsection
 
 @section('seo')

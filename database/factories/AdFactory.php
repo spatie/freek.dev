@@ -2,7 +2,9 @@
 
 use App\Models\Ad;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 
+/* @var Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Ad::class, function (Faker $faker) {
     $startsAt = now()->addDays(rand(-30, 30));
     $endsAt = $startsAt->copy()->addDays(30);

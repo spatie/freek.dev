@@ -6,7 +6,6 @@ use App\Models\Post;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Spatie\Tags\Tag;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -31,7 +30,15 @@ class RouteServiceProvider extends ServiceProvider
     public function registerRouteModelBindings()
     {
         Route::bind('postSlug', function ($slug) {
-            $post = Post::where('slug', $slug)->first() ?? abort(404);
+            $post = Post::findByIdSlug($slug);
+
+            if (! $post) {
+                $post = Post::where('slug', $slug)->first();
+            }
+
+            if (! $post) {
+                abort(404);
+            }
 
             if (auth()->check()) {
                 return $post;
@@ -42,10 +49,6 @@ class RouteServiceProvider extends ServiceProvider
             }
 
             return $post;
-        });
-
-        Route::bind('tagSlug', function ($slug) {
-            return Tag::where('slug->en', $slug)->first() ?? abort(404);
         });
     }
 }

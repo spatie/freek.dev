@@ -1,0 +1,11 @@
+.pagination {
+    @apply flex justify-between;
+}
+
+.pagination .page-item.disabled {
+    @apply invisible;
+}
+
+.pagination .page-link {
+    @apply underline text-sm text-gray-700;
+}

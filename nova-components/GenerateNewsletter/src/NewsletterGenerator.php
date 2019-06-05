@@ -77,6 +77,6 @@ class NewsletterGenerator
             ])
             ->orderBy('original_content', 'desc')
             ->get()
-            ->$method->concernsTweet();
+            ->$method->hasTag('tweet');
     }
 }

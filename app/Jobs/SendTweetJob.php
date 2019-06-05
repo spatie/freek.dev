@@ -43,11 +43,7 @@ class SendTweetJob implements ShouldQueue
 
         $title = $post->title;
 
-        if (! empty($post->external_url)) {
-            $title = '"' . $title . '"';
-        }
-
-        return $title
+        return $post->emoji . ' ' . $title
             . PHP_EOL . $post->promotional_url
             . PHP_EOL . $tags;
     }

@@ -1,14 +1,45 @@
-import Vue from 'vue';
+Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
 
-import SearchPosts from './components/SearchPosts';
+function lazy(element) {
+    function observerCallback(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            }
 
-const searchPostsEl = document.querySelector('#search-posts');
+            if (element.dataset.lazy === 'twitter') {
+                loadTwitter();
+                observer.disconnect();
+                return;
+            }
 
-new Vue({
-    el: searchPostsEl,
+            const template = element.querySelector('template');
+            const contents = document.importNode(template.content, true);
+            element.appendChild(contents);
+            observer.disconnect();
+        });
+    }
 
-    render: h =>
-        h(SearchPosts, {
-            props: { ...searchPostsEl.dataset },
-        }),
-});
+    const observer = new IntersectionObserver(observerCallback, { rootMargin: '500px' });
+
+    observer.observe(element);
+}
+
+let twitterLoaded = false;
+
+function loadTwitter() {
+    if (twitterLoaded) {
+        return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://platform.twitter.com/widgets.js';
+
+    document.body.appendChild(script);
+}
+
+const searchApp = document.querySelector('#search-app');
+
+if (searchApp) {
+    import('./search').then(search => search.mount(searchApp));
+}

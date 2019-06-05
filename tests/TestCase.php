@@ -20,4 +20,11 @@ abstract class TestCase extends BaseTestCase
 
         return $now->copy();
     }
+
+    protected function progressTimeInMinutes(int $minutes)
+    {
+        $newNow = now()->addMinutes($minutes);
+
+        Carbon::setTestNow($newNow);
+    }
 }

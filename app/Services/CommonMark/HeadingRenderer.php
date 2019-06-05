@@ -18,23 +18,10 @@ class HeadingRenderer extends BaseHeadingRenderer
 
         $element->setAttribute('id', $id);
         $element->setContents(
-            $element->getContents() .
-            new HtmlElement('a', ['href' => "#{$id}", 'class' => $this->getFragmentLinkClass($element->getTagName())], ' #')
+            $element->getContents() . ' ' .
+            new HtmlElement('a', ['href' => "#{$id}", 'class' => 'permalink'], '#')
         );
 
         return $element;
-    }
-
-    protected function getFragmentLinkClass($elementName)
-    {
-        if ($elementName === 'h1') {
-            return 'text-grey';
-        }
-
-        if ($elementName === 'h2') {
-            return 'text-grey';
-        }
-
-        return 'text-grey-light';
     }
 }

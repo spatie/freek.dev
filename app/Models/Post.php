@@ -2,22 +2,26 @@
 
 namespace App\Models;
 
-use App\Jobs\SendTweetJob;
+use App\Actions\PublishPostAction;
+use App\Http\Controllers\PostController;
+use App\Models\Concerns\HasSlug;
+use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
-use Spatie\ResponseCache\Facades\ResponseCache;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
-class Post extends BaseModel implements Feedable
+class Post extends Model implements Feedable, Sluggable
 {
+    public const TYPE_LINK = 'link';
+    public const TYPE_TWEET = 'tweet';
+    public const TYPE_ORIGINAL = 'originalPost';
+
     use HasSlug,
         HasTags,
         PostPresenter,
@@ -39,27 +43,30 @@ class Post extends BaseModel implements Feedable
         static::saved(function (Post $post) {
             if ($post->published) {
                 static::withoutEvents(function () use ($post) {
-                    $post->publish();
-
-                    ResponseCache::clear();
+                    (new PublishPostAction())->execute($post);
                 });
             }
-
-
         });
-    }
-
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug');
     }
 
     public function scopePublished(Builder $query)
     {
         $query
-            ->where('published', true);
+            ->where('published', true)
+            ->orderBy('publish_date', 'desc')
+            ->orderBy('id', 'desc');
+    }
+
+    public function scopeOriginalContent(Builder $query)
+    {
+        $query->where('original_content', true);
+    }
+
+    public function scopeScheduled(Builder $query)
+    {
+        $query
+            ->where('published', false)
+            ->whereNotNull('publish_date');
     }
 
     public function getFormattedTextAttribute()
@@ -84,30 +91,7 @@ class Post extends BaseModel implements Feedable
 
         $this->syncTags($tags);
 
-        if ($this->published) {
-            $this->publishOnSocialMedia();
-        }
-
-        ResponseCache::flush();
-
         return $this;
-    }
-
-    protected function publishOnSocialMedia()
-    {
-        if (!$this->tweet_sent) {
-            if (! $this->concernsTweet()) {
-                dispatch(new SendTweetJob($this));
-
-                $this->tweet_sent = true;
-                $this->save();
-            }
-        }
-    }
-
-    public function getWordpressFullUrlAttribute(): string
-    {
-        return "/{$this->publish_date->format('Y/m')}/{$this->wp_post_name}";
     }
 
     public function searchableAs(): string
@@ -123,8 +107,11 @@ class Post extends BaseModel implements Feedable
 
         return [
             'title' => $this->title,
-            'url' => url(route('posts.show', $this->slug)),
-            'public_date' => $this->publish_date->timestamp,
+            'url' => $this->url,
+            'publish_date' => optional($this->publish_date)->timestamp,
+            'formatted_publish_date' => optional($this->publish_date)->format('M jS Y'),
+            'type' => $this->getType(),
+            'formatted_type' => $this->formatted_type,
             'text' => substr(strip_tags($this->text), 0, 5000),
             'tags' => $this->tags->implode(',')
         ];
@@ -163,20 +150,13 @@ class Post extends BaseModel implements Feedable
             ->title($this->formatted_title)
             ->summary($this->formatted_text)
             ->updated($this->publish_date)
-            ->link(url(route('posts.show', $this->slug)))
+            ->link($this->url)
             ->author('Freek Van der Herten');
-    }
-
-    public function concernsTweet(): bool
-    {
-        return $this->refresh()->tags->contains(function (Tag $tag) {
-            return $tag->name === 'tweet';
-        });
     }
 
     public function getUrlAttribute(): string
     {
-        return route('posts.show', $this->slug);
+        return action(PostController::class, [$this->idSlug()]);
     }
 
     public function getPromotionalUrlAttribute(): string
@@ -188,27 +168,43 @@ class Post extends BaseModel implements Feedable
         return $this->url;
     }
 
-    public function publish()
+    public function hasTag(string $tagName): bool
     {
-        $this->published = true;
-
-        if (! $this->publish_date) {
-            $this->publish_date = now();
-        }
-
-        $this->save();
-
-        Log::info("Post `{$this->title}` published.");
-
-        if (app()->environment('production')) {
-            $this->publishOnSocialMedia();
-        }
+        return $this->refresh()->tags->contains(function (Tag $tag) use ($tagName) {
+            return $tag->name === $tagName;
+        });
     }
 
-    public function scopeScheduled(Builder $query)
+    public function isLink(): bool
     {
-        $query
-            ->where('published', false)
-            ->whereNotNull('publish_date');
+        return $this->getType() === static::TYPE_LINK;
+    }
+
+    public function isTweet(): bool
+    {
+        return $this->getType() === static::TYPE_TWEET;
+    }
+
+    public function isOriginal(): bool
+    {
+        return $this->getType() === static::TYPE_ORIGINAL;
+    }
+
+    public function getType(): string
+    {
+        if ($this->hasTag('tweet')) {
+            return static::TYPE_TWEET;
+        }
+
+        if (! empty($this->external_url)) {
+            return static::TYPE_LINK;
+        }
+
+        return static::TYPE_ORIGINAL;
+    }
+
+    public function getSluggableValue(): string
+    {
+        return $this->title;
     }
 }

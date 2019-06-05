@@ -4,17 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 
-class OriginalsController extends Controller
+class OriginalsController
 {
-    public function index()
+    public function __invoke()
     {
-        $posts = Post::published()
-            ->where('original_content', true)
-            ->orderBy('publish_date', 'desc')
-            ->simplePaginate(50);
+        $posts = Post::query()
+            ->published()
+            ->originalContent()
+            ->simplePaginate(20);
 
-        $onFirstPage = $posts->onFirstPage();
-
-        return view('front.originals.index', compact('posts', 'onFirstPage'));
+        return view('front.originals.index', compact('posts'));
     }
 }
