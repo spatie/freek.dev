@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Talk;
 use App\Models\Video;
 
-class SpeakerController
+class SpeakingController
 {
     public function __invoke()
     {
@@ -15,6 +15,6 @@ class SpeakerController
 
         $videos = Video::latest()->get();
 
-        return view('front.speaker.index', compact('talks', 'videos'));
+        return view('front.speaking.index', compact('talks', 'videos'));
     }
 }

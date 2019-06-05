@@ -5,7 +5,7 @@
     @include('front.layouts.partials.flash')
 
     <div class="max-w-xl md:max-w-4xl mx-auto">
-        <header class="mt-8 md:mt-12 mb-8 md:mb-16 px-4 md:px-8 leading-tight">
+        <header class="mt-8 md:mt-12 mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 leading-tight">
             <div class="md:flex items-end">
                 <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
                     <a href="/"><img src="/images/murzicoon.svg" class="w-full"></a>
@@ -29,7 +29,7 @@
                 <input class="hidden" type="checkbox" id="mobile-menu-toggle" />
                 <label
                     for="mobile-menu-toggle"
-                    class="absolute bg-gray-400 text-white uppercase tracking-wider font-bold rounded p-2"
+                    class="absolute bg-gray-700 border-b-4 border-gray-900 text-white uppercase tracking-wider font-semibold p-2 pb-1"
                     style="top: -6rem; right: 0"
                 >
                     Menu

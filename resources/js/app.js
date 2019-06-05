@@ -16,10 +16,11 @@ function lazy(element) {
             const template = element.querySelector('template');
             const contents = document.importNode(template.content, true);
             element.appendChild(contents);
+            observer.disconnect();
         });
     }
 
-    const observer = new IntersectionObserver(observerCallback, { rootMargin: '500px' });
+    const observer = new IntersectionObserver(observerCallback, { rootMargin: '1000px' });
 
     observer.observe(element);
 }

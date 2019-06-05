@@ -5,7 +5,7 @@ namespace App\Providers;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
-use App\Http\Controllers\SpeakerController;
+use App\Http\Controllers\SpeakingController;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Menu\Laravel\Menu;
 
@@ -18,7 +18,7 @@ class NavigationServiceProvider extends ServiceProvider
                 ->action(HomeController::class, 'Home')
                 ->action(OriginalsController::class, 'Originals')
                 ->action([NewsletterController::class, 'index'], 'Newsletter')
-                ->action(SpeakerController::class, 'Speaker')
+                ->action(SpeakingController::class, 'Speaking')
                 ->url('about', 'About')
                 ->setActiveFromRequest('/');
         });

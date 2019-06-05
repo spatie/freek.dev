@@ -1,14 +1,14 @@
 <article class="mt-6">
-    <h2 class="max-w-lg text-lg font-bold leading-tight mb-1">
+    <h2 class="font-semibold leading-tight mb-1">
         {{ $title }}
     </h2>
     <ul class="leading-relaxed">
         @foreach ($talks as $talk)
             <li class="text-sm text-gray-600">
+                {{ $talk->location }} on
                 <time datetime="{{ optional($talk->presented_at)->format(DateTime::ATOM) }}">
                     {{ $talk->presented_at->format('M jS Y') }}
                 </time>
-                at {{ $talk->location }}
                 @if($talk->video_link)
                     –
                     <a class="underline" href="{{ $talk->video_link }}">

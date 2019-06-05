@@ -30,6 +30,7 @@ module.exports = {
         extend: {
             borderWidth: {
                 3: '3px',
+                5: '5px',
             },
             fontSize: {
                 xxs: '0.65rem',

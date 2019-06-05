@@ -19,6 +19,11 @@
     @apply text-2xl font-bold leading-tight mt-12;
 }
 
+.h3,
+.markup h3 {
+    @apply font-semibold leading-tight mt-12;
+}
+
 .markup ul,
 .markup ol {
     list-style-position: inside;
@@ -41,7 +46,7 @@
     font-size: 0.925em;
 }
 
-@screen md {
+@screen sm {
     .markup blockquote {
         @apply mx-0 border-l-4 border-indigo-200;
     }
@@ -70,8 +75,12 @@
     line-height: 2.25;
 }
 
-@screen md {
+@screen sm {
     .markup pre {
         @apply mx-0 border-l-4 border-gray-200;
     }
+}
+
+.markup iframe {
+    @apply w-full;
 }
