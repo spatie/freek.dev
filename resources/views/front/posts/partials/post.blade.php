@@ -18,7 +18,7 @@
         {{ $post->formatted_type }} –
         <a href="{{ $post->url }}">
             <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">
-                {{ $post->publish_date->format('M jS Y') }}
+                {{ optional($post->publish_date)->format('M jS Y') }}
             </time>
         </a>
         @if($post->external_url)
