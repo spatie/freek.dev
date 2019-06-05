@@ -1,4 +1,7 @@
 <article class="{{ $class ?? '' }}">
+    @auth
+        <a href="/nova/resources/posts/{{ $post->id }}/edit">Edit</a>
+    @endauth
     <div class="mb-5" style="
         height: 6px;
         background-color: {{ $post->theme }};
