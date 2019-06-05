@@ -1,3 +1,7 @@
+.markup {
+    @apply break-words;
+}
+
 .markup > *:not(:last-child) {
     @apply mb-6;
 }
