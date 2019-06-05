@@ -196,11 +196,11 @@ class Post extends Model implements Feedable, Sluggable
             return static::TYPE_TWEET;
         }
 
-        if (! empty($this->external_url)) {
-            return static::TYPE_LINK;
+        if ($this->original_content) {
+            return static::TYPE_ORIGINAL;
         }
 
-        return static::TYPE_ORIGINAL;
+        return static::TYPE_LINK;
     }
 
     public function getSluggableValue(): string
