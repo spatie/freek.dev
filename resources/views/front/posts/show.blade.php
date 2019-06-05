@@ -4,7 +4,7 @@
 
 @section('content')
     @if($ad)
-        <div class="bg-white border-2 rounded mb-4 py-4 px-6 mt-4 text-xs">
+        <div class="markup | text-xs text-gray-700 mb-6 bg-yellow-100 p-2">
             {!! $ad->formatted_text !!}
         </div>
     @endif
