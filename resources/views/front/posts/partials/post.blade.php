@@ -14,10 +14,6 @@
         @endisset
     </{{ $heading ?? 'h1' }}>
 
-    @auth
-        <a href="/nova/resources/posts/{{ $post->id }}/edit">Edit</a>
-    @endauth
-
     <p class="text-sm text-gray-700">
         {{ $post->formatted_type }} –
         <a href="{{ $post->url }}">
