@@ -20,7 +20,7 @@ trait PostPresenter
 
         $excerpt = CommonMark::convertToHtml($excerpt);
 
-        return $excerpt;
+        return trim($excerpt);
     }
 
     protected function getManualExcerpt(): ?string

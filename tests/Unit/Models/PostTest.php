@@ -94,6 +94,6 @@ class PostTest extends TestCase
            'text' => 'excerpt<!--more-->full post',
         ]);
 
-        $this->assertEquals('excerpt', $post->excerpt);
+        $this->assertEquals('<p>excerpt</p>', $post->excerpt);
     }
 }
