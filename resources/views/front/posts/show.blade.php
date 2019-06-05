@@ -15,11 +15,15 @@
     ])
         {!! $post->formatted_text !!}
 
-        @if($post->external_url)
-            <a href="{{ $post->external_url }}">
-                Read more</a>
-            <span class="text-xs text-gray-700">[{{ $post->external_url_host }}]</span>
-        @endif
+        @unless($post->isTweet())
+            @if($post->external_url)
+                <p class="mt-6">
+                    <a href="{{ $post->external_url }}">
+                        Read more</a>
+                    <span class="text-xs text-gray-700">[{{ $post->external_url_host }}]</span>
+                </p>
+            @endif
+        @endunless
     @endcomponent
 
     @include('front.newsletter.partials.block', [
