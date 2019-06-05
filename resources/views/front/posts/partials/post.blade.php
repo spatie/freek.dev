@@ -12,7 +12,7 @@
                 {{ $post->title }}
             @endisset
         </{{ $heading ?? 'h1' }}>
-        <p class="text-sm text-gray-600">
+        <p class="text-sm text-gray-700">
             {{ $post->formatted_type }} –
             <a href="{{ $post->url }}">
                 <time datetime="{{ optional($post->publish_date)->format(DateTime::ATOM) }}">

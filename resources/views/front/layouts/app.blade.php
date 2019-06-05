@@ -41,7 +41,7 @@
                         ->addClass('text-gray-700 mb-2 md:mb-6')
                         ->setActiveClass('font-bold text-black') }}
                     {{ Menu::secondary()
-                        ->addClass('text-xs text-gray-600')
+                        ->addClass('text-xs text-gray-700')
                         ->setActiveClass('font-semibold text-black') }}
                 </div>
             </nav>
@@ -53,7 +53,7 @@
                         ->addClass('text-gray-700 mb-6')
                         ->setActiveClass('font-bold text-black') }}
                     {{ Menu::secondary()
-                        ->addClass('text-xs text-gray-600')
+                        ->addClass('text-xs text-gray-700')
                         ->setActiveClass('font-semibold text-black') }}
                 </div>
                 <div class="pl-8">

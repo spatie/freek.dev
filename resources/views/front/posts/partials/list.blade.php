@@ -18,7 +18,7 @@
                 @if($post->external_url)
                     <a href="{{ $post->external_url }}">
                         Read more</a>
-                    <span class="text-xs text-gray-600">[{{ $post->external_url_host }}]</span>
+                    <span class="text-xs text-gray-700">[{{ $post->external_url_host }}]</span>
                 @else
                     <a href="{{ $post->url }}">
                         Read more

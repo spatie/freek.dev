@@ -4,7 +4,7 @@
     </h2>
     <ul class="leading-relaxed">
         @foreach ($talks as $talk)
-            <li class="text-sm text-gray-600">
+            <li class="text-sm text-gray-700">
                 {{ $talk->location }} on
                 <time datetime="{{ optional($talk->presented_at)->format(DateTime::ATOM) }}">
                     {{ $talk->presented_at->format('M jS Y') }}

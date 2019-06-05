@@ -15,6 +15,6 @@
     </script>
 </form>
 
-<a href="/payments" class="font-semibold text-gray-600 pb-1 border-b-2">
+<a href="/payments" class="font-semibold text-gray-700 pb-1 border-b-2">
     Change amount
 </a>

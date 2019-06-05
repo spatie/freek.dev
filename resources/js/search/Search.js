@@ -40,13 +40,13 @@ export default class Search extends Component {
                                                 <a href={item.url}>{item.title}</a>
                                             </strong>
                                             <br />
-                                            <a href={item.url} className="text-sm text-gray-600">
+                                            <a href={item.url} className="text-sm text-gray-700">
                                                 {item.formatted_type} – {item.formatted_publish_date}
                                             </a>
                                         </li>
                                     ))}
                                 </ul>
-                                {hits.length === 0 && query && <p className="mt-2 text-gray-600">Nothing here…</p>}
+                                {hits.length === 0 && query && <p className="mt-2 text-gray-700">Nothing here…</p>}
                             </div>
                         )}
                     </Downshift>
