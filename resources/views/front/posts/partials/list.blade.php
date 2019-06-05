@@ -13,16 +13,18 @@
     ])
         {!! $post->excerpt !!}
 
-        <p class="mt-6 no-markup">
-            @if($post->external_url)
-                <a href="{{ $post->external_url }}" class="font-semibold text-gray-600 border-b-3">
-                    Read more on {{ $post->external_url_host }}
-                </a>
-            @else
-                <a href="{{ $post->url }}" class="font-semibold text-gray-600 border-b-3">
-                    Read more
-                </a>
-            @endif
-        </p>
+        @unless($post->isTweet())
+            <p class="mt-6">
+                @if($post->external_url)
+                    <a href="{{ $post->external_url }}">
+                        Read more</a>
+                    <span class="text-xs text-gray-600">[{{ $post->external_url_host }}]</span>
+                @else
+                    <a href="{{ $post->url }}">
+                        Read more
+                    </a>
+                @endif
+            </p>
+        @endunless
     @endcomponent
 @endforeach

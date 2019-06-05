@@ -3,9 +3,9 @@
 }
 
 .pagination .page-item.disabled {
-    @invisible;
+    @apply invisible;
 }
 
 .pagination .page-link {
-    @apply font-semibold text-sm text-gray-600 pb-1 border-b-2;
+    @apply underline text-sm text-gray-600;
 }

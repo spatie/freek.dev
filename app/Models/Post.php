@@ -192,12 +192,12 @@ class Post extends Model implements Feedable, Sluggable
 
     public function getType(): string
     {
-        if (! empty($this->external_url)) {
-            return static::TYPE_LINK;
-        }
-
         if ($this->hasTag('tweet')) {
             return static::TYPE_TWEET;
+        }
+
+        if (! empty($this->external_url)) {
+            return static::TYPE_LINK;
         }
 
         return static::TYPE_ORIGINAL;
