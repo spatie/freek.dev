@@ -1,5 +1,5 @@
 <article class="{{ $class ?? '' }}">
-    <div class="mb-4" style="
+    <div class="mb-5" style="
         height: 6px;
         background-color: {{ $post->theme }};
         box-shadow: 0 3px 0 {{ $post->theme }}dd, 0 3px 0 #000;
