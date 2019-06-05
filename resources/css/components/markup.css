@@ -48,7 +48,7 @@
 
 @screen sm {
     .markup blockquote {
-        @apply mx-0 border-l-5 border-indigo-200;
+        @apply mx-0 border-b-5 border-indigo-200;
     }
 }
 
@@ -77,7 +77,7 @@
 
 @screen sm {
     .markup pre {
-        @apply mx-0 border-l-5 border-gray-200;
+        @apply mx-0 border-b-5 border-gray-200;
     }
 }
 
