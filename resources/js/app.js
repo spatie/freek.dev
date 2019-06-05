@@ -20,7 +20,7 @@ function lazy(element) {
         });
     }
 
-    const observer = new IntersectionObserver(observerCallback, { rootMargin: '1000px' });
+    const observer = new IntersectionObserver(observerCallback, { rootMargin: '500px' });
 
     observer.observe(element);
 }
@@ -39,6 +39,7 @@ function loadTwitter() {
 }
 
 const searchApp = document.querySelector('#search-app');
+
 if (searchApp) {
     import('./search').then(search => search.mount(searchApp));
 }

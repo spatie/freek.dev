@@ -9,7 +9,7 @@
             <div class="md:flex items-end">
                 <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
                     <a href="/" title="Freek.dev">
-                        <img src="/images/murzicoon.svg" class="w-full">
+                        <img src="/images/murzicoon.svg" class="w-full" alt="Freek.dev logotype">
                     </a>
                 </figure>
                 <div>
