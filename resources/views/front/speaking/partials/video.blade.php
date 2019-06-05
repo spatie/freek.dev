@@ -3,7 +3,7 @@
     <div class="md:flex text-sm">
         <div class="markup | mb-5 md:mb-0 md:w-1/3 md:pr-4">
             @component('front.components.lazy')
-                {!! $video->embed !!}
+                {!! str_replace('width="560" height="315"', '', $video->embed) !!}
             @endcomponent
         </div>
         <div class="flex-1">
