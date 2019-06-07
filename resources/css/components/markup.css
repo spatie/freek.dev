@@ -1,4 +1,4 @@
-.markup {
+.markup > *:not(pre) {
     @apply break-words;
 }
 
