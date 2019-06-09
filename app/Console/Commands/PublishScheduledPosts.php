@@ -16,21 +16,14 @@ class PublishScheduledPosts extends Command
     /** @var \App\Actions\PublishPostAction */
     private $publishPostAction;
 
-    public function __construct(PublishPostAction $publishPostAction)
+    public function handle(PublishPostAction $publishPostAction)
     {
-        $this->publishPostAction = $publishPostAction;
-
-        parent::__construct();
-    }
-
-    public function handle()
-    {
-        Post::scheduled()->each(function (Post $post) {
+        Post::scheduled()->each(function (Post $post) use ($publishPostAction) {
             if (optional($post->publish_date)->isFuture()) {
                 return;
             }
 
-            $post->publish();
+            $publishPostAction->execute($post);
 
             $this->info("Post `{$post->title}` published!");
 
