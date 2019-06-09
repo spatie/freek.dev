@@ -6,7 +6,7 @@ return [
      * The only requirement for the redirector is that it needs to implement the
      * `Spatie\MissingPageRedirector\Redirector\Redirector`-interface
      */
-    'redirector' => \App\Services\MissingPageRedirector\DatabaseRedirector::class,
+    'redirector' => \App\Services\MissingPageRedirector\LegacyUrlsRedirector::class,
     
     /*
      * By default the package will only redirect 404s. If you want to redirect on other

@@ -33,10 +33,6 @@ class RouteServiceProvider extends ServiceProvider
             $post = Post::findByIdSlug($slug);
 
             if (! $post) {
-                $post = Post::where('slug', $slug)->first();
-            }
-
-            if (! $post) {
                 abort(404);
             }
 
