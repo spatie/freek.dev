@@ -30,12 +30,11 @@ class PostTest extends TestCase
     }
 
     /** @test */
-    public function it_can_find_a_post_by_its_slug()
+    public function it_can_redirects_a_slug_to_an_id_slug()
     {
         $this
             ->get(action(PostController::class, $this->post->slug))
-            ->assertSuccessful()
-            ->assertSee($this->post->title);
+            ->assertRedirect(action(PostController::class, $this->post->idSlug()));
     }
 
     /** @test */
