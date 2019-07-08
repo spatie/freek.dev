@@ -10,6 +10,7 @@ use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
@@ -47,6 +48,11 @@ class Post extends Model implements Feedable, Sluggable
                 });
             }
         });
+    }
+
+    public function webmentions(): HasMany
+    {
+        return $this->hasMany(Webmention::class);
     }
 
     public function scopePublished(Builder $query)
