@@ -31,4 +31,6 @@ Route::middleware('doNotCacheResponse')->group(function () {
 
 Route::redirect('me', '/about');
 
+Route::webhooks('webhook-webmentions', 'webmentions');
+
 Route::get('{postSlug}', PostController::class);

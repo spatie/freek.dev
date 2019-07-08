@@ -9,8 +9,8 @@ return [
         'access_token_secret' => env('TWITTER_ACCESS_TOKEN_SECRET'),
     ],
 
-    'medium' => [
-        'integration_token' => env('MEDIUM_INTEGRATION_TOKEN'),
+    'webmentions' => [
+        'webhook_secret' => env('WEBMENTIONS_WEBHOOK_SECRET')
     ],
 
     'mailgun' => [

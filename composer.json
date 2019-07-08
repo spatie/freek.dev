@@ -40,6 +40,7 @@
         "spatie/laravel-responsecache": "^6.0",
         "spatie/laravel-tags": "^2.0",
         "spatie/laravel-tail": "^3.0",
+        "spatie/laravel-webhook-client": "^2.0",
         "spatie/nova-backup-tool": "^2.0",
         "spatie/nova-tags-field": "^2.0",
         "spatie/nova-tail-tool": "^2.0",
