@@ -1,7 +1,7 @@
 <div class="mb-6 text-sm">
     <div class="flex items-center">
         <div class="mr-2">
-            <img class="h-4 w-4 rounded-full mx-auto" src="{{ $webmention->author_photo_url }}"/>
+            <img class="h-8 w-8 rounded-full mx-auto" src="{{ $webmention->author_photo_url }}"/>
         </div>
         <div>
             <a class="font-semibold" href="{{ $webmention->author_url }}">{{ $webmention->author_name }}</a>
