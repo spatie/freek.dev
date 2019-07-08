@@ -35,8 +35,8 @@ class ProcessWebhookJobTest extends TestCase
         ]);
     }
 
-    private function getStub(string $name): string
+    private function getStub(string $name): array
     {
-        return file_get_contents(__DIR__ . "/stubs/{$name}");
+        return json_decode(file_get_contents(__DIR__ . "/stubs/{$name}"), true);
     }
 }

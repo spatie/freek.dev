@@ -13,7 +13,7 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
 {
     public function handle()
     {
-        $payload = json_decode($this->webhookCall->payload, true);
+        $payload = $this->webhookCall->payload;
 
         if (!$type = $this->getType($payload)) {
             return;
