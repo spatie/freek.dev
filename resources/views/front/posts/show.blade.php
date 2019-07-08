@@ -30,11 +30,13 @@
         'class' => 'mb-8',
     ])
 
-    @include('front.posts.partials.webmentions')
+    <div class="mb-8">
+        @component('front.components.lazy')
+            @include('front.posts.partials.disqus')
+        @endcomponent
+    </div>
 
-    @component('front.components.lazy')
-        @include('front.posts.partials.disqus')
-    @endcomponent
+    @include('front.posts.partials.webmentions')
 @endsection
 
 @section('seo')
