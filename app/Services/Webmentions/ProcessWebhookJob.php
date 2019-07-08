@@ -39,7 +39,7 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
             'author_url' => Arr::get($payload, 'post.author.url'),
             'interaction_url' => Arr::get($payload, 'post.url'),
             'text' => Arr::get($payload, 'post.content.text'),
-            'created_at' => Carbon::create(Arr::get($payload, 'post.published')),
+            'created_at' => Carbon::create(Arr::get($payload, 'post.wm-received')),
         ]);
     }
 
