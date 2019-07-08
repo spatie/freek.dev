@@ -30,6 +30,8 @@
         'class' => 'mb-8',
     ])
 
+    @include('front.posts.partials.webmentions')
+
     @component('front.components.lazy')
         @include('front.posts.partials.disqus')
     @endcomponent

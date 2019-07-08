@@ -46,7 +46,7 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
         $types = [
             'in-reply-to' => Webmention::TYPE_REPLY,
             'like-of' => Webmention::TYPE_LIKE,
-            'repost-of' => Webmention::RETWEET,
+            'repost-of' => Webmention::TYPE_RETWEET,
         ];
 
         $wmProperty = Arr::get($payload, 'post.wm-property');
