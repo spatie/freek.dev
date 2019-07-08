@@ -32,6 +32,7 @@ class ProcessWebhookJobTest extends TestCase
             'author_photo_url' => 'https://webmention.io/avatar/pbs.twimg.com/ce13341be3d1444d22543bf8601b9c264d1318f6eb46767a77ac5db017bbdebd.png',
             'interaction_url' => 'https://twitter.com/DuyNguyenHa/status/1147126667162165248',
             'text' => 'totally agree with you',
+            'created_at' => '2019-07-05 12:54:44',
         ]);
     }
 

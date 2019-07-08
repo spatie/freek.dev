@@ -5,6 +5,7 @@ namespace App\Services\Webmentions;
 
 use App\Models\Post;
 use App\Models\Webmention;
+use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Spatie\Url\Url;
 use Spatie\WebhookClient\ProcessWebhookJob as SpatieProcessWebhookJob;
@@ -38,6 +39,7 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
             'author_url' => Arr::get($payload, 'post.author.url'),
             'interaction_url' => Arr::get($payload, 'post.url'),
             'text' => Arr::get($payload, 'post.content.text'),
+            'created_at' => Carbon::create(Arr::get($payload, 'post.published')),
         ]);
     }
 
