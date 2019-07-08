@@ -20,3 +20,4 @@
 <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+<link href="https://twitter.com/freekmurze" rel="me">
