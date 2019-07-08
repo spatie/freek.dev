@@ -52,7 +52,7 @@ class Post extends Model implements Feedable, Sluggable
 
     public function webmentions(): HasMany
     {
-        return $this->hasMany(Webmention::class);
+        return $this->hasMany(Webmention::class)->latest();
     }
 
     public function twitterReplies()
