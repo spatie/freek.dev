@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    @if ($webmention->text)
+    @if ($webmention->type === \App\Models\Webmention::TYPE_REPLY && $webmention->text)
         <div class="mt-2">
             {{ $webmention->text }}
         </div>

@@ -24,6 +24,10 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
             return;
         }
 
+        if (Arr::get($payload, 'post.author.url') === 'https://twitter.com/freekmurze') {
+            return;
+        }
+
         $webmentionId = Arr::get($payload, 'post.wm-id');
 
         if (Webmention::where('webmention_id', $webmentionId)->count() !== 0) {
