@@ -3362,16 +3362,16 @@
         },
         {
             "name": "spatie/laravel-webhook-client",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-webhook-client.git",
-                "reference": "f2e2e513685a0d2cda258668ce16be74dfe2f9a1"
+                "reference": "2fb369710abc984e72d2cd5cc998746ec5a66a26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-webhook-client/zipball/f2e2e513685a0d2cda258668ce16be74dfe2f9a1",
-                "reference": "f2e2e513685a0d2cda258668ce16be74dfe2f9a1",
+                "url": "https://api.github.com/repos/spatie/laravel-webhook-client/zipball/2fb369710abc984e72d2cd5cc998746ec5a66a26",
+                "reference": "2fb369710abc984e72d2cd5cc998746ec5a66a26",
                 "shasum": ""
             },
             "require": {
@@ -3415,7 +3415,7 @@
                 "laravel-webhook-client",
                 "spatie"
             ],
-            "time": "2019-07-08T18:51:34+00:00"
+            "time": "2019-07-08T19:21:28+00:00"
         },
         {
             "name": "spatie/macroable",
