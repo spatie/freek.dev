@@ -19,3 +19,5 @@ yarn-error.log
 .php_cs.cache
 auth.json
 .phpunit.result.cache
+_ide_helper_models.php
+

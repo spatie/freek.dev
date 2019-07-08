@@ -1,11 +1,11 @@
 @foreach($post->twitterReplies as $webmention)
-    reply
+    @include('front.posts.partials.webmention')
 @endforeach
 
 @foreach($post->twitterRetweets as $webmention)
-    retweet
+    @include('front.posts.partials.webmention')
 @endforeach
 
 @foreach($post->twitterLikes as $webmention)
-    like
+    @include('front.posts.partials.webmention')
 @endforeach

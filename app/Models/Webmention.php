@@ -30,4 +30,15 @@ class Webmention extends Model
     {
         $builder->where('type', $type);
     }
+
+    public function getVerbAttribute(): string
+    {
+        $verbs = [
+          static::TYPE_REPLY => 'replied',
+          static::TYPE_RETWEET => 'retweeted',
+          static::TYPE_LIKE => 'liked',
+        ];
+
+        return $verbs[$this->type];
+    }
 }
