@@ -55,21 +55,6 @@ class Post extends Model implements Feedable, Sluggable
         return $this->hasMany(Webmention::class)->latest();
     }
 
-    public function twitterReplies()
-    {
-        return $this->webmentions()->type(Webmention::TYPE_REPLY);
-    }
-
-    public function twitterRetweets()
-    {
-        return $this->webmentions()->type(Webmention::TYPE_RETWEET);
-    }
-
-    public function twitterLikes()
-    {
-        return $this->webmentions()->type(Webmention::TYPE_LIKE);
-    }
-
     public function scopePublished(Builder $query)
     {
         $query
