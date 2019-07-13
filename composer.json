@@ -46,7 +46,7 @@
         "spatie/nova-tail-tool": "^2.0",
         "stripe/stripe-php": "^6.8",
         "symfony/http-client": "^4.3",
-        "themsaid/laravel-mail-preview": "^2.0"
+        "themsaid/laravel-mail-preview": "^2.0",
         "ext-json": "*"
     },
     "require-dev": {
