@@ -31,11 +31,15 @@ class SendTweetJob implements ShouldQueue
         $tweetResponse = $twitter->tweet($tweetText);
 
         if ($this->post->isOriginal()) {
+            info('is original');
             $tweetUrl = "https://twitter.com/TwitterAPI/status/{$tweetResponse['id_str']}";
 
             $this->post->tweet_url = $tweetUrl;
+            info($tweetUrl);
             $this->post->embed_tweet_html = $this->getTweetEmbedHtml($tweetUrl);
+            info($this->post->embed_tweet_html);
             $this->post->save();
+            info('saved');
         }
     }
 
