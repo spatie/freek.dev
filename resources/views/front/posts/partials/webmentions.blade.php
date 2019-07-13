@@ -21,7 +21,7 @@
             <div>
                 <a class="font-semibold" href="{{ $webmention->author_url }}">{{ $webmention->author_name }}</a>
                 <span class="text-gray-700">
-                <a href="{{ $webmention->interaction_url }}">{{ $webmention->verb }}</a> on {{ $webmention->created_at->format('jS F Y') }}
+                <a class="underline" href="{{ $webmention->interaction_url }}">{{ $webmention->verb }}</a> on {{ $webmention->created_at->format('jS F Y') }}
             </span>
             </div>
         </div>
