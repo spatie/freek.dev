@@ -15,10 +15,6 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
     {
         $payload = $this->webhookCall->payload;
 
-        if ($this->isWebmentionByMe($payload)) {
-            return;
-        }
-
         if (!$type = $this->getType($payload)) {
             return;
         }
@@ -75,10 +71,5 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
         [$id] = explode('-', $postIdSlug);
 
         return Post::find($id);
-    }
-
-    private function isWebmentionByMe(array $payload): bool
-    {
-        return Arr::get($payload, 'post.author.url') === 'https://twitter.com/freekmurze';
     }
 }
