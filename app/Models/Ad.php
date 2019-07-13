@@ -48,10 +48,8 @@ class Ad extends Model
             ->whereDate('ends_at', '>=', $now);
     }
 
-    public function getFormattedTextAttribute($original)
+    public function getFormattedTextAttribute()
     {
-        $adText = $this->text . ' (sponsored link)';
-
         return CommonMark::convertToHtml($this->text);
     }
 

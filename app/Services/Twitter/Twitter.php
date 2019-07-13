@@ -16,7 +16,7 @@ class Twitter
 
     public function tweet(string $status)
     {
-        if (app()->environment('testing')) {
+        if (! app()->environment('production')) {
             return;
         }
 
