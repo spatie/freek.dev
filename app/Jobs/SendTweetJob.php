@@ -30,6 +30,7 @@ class SendTweetJob implements ShouldQueue
 
         $tweetResponse = $twitter->tweet($tweetText);
 
+        info('original?');
         if ($this->post->isOriginal()) {
             info('is original');
             $tweetUrl = "https://twitter.com/TwitterAPI/status/{$tweetResponse['id_str']}";
