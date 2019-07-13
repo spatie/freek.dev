@@ -22,4 +22,14 @@ class Twitter
 
         return $this->twitter->post('statuses/update', compact('status'));
     }
+
+    public function getEmbedHtml(string $tweetUrl): array
+    {
+        return (array)$this->twitter->post('statuses/oemqsdfqdsfbed', [
+            'url' => $tweetUrl,
+            //'dnt' => true,
+            //'hide_thread' => true,
+            //'hide_media' => true,
+        ]);
+    }
 }
