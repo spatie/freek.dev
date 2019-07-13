@@ -17,7 +17,7 @@ class CreateWebmentionsTable extends Migration
             $table->string('author_url')->nullable();
             $table->string('author_photo_url')->nullable();
             $table->string('interaction_url');
-            $table->string('text')->nullable();
+            $table->text('text')->nullable();
             $table->timestamps();
         });
     }
