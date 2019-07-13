@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8d228cba93b385d19dfed914b86a596",
+    "content-hash": "a982eddb6878596b6646746769c4d6b3",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1085,16 +1085,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.27",
+            "version": "v5.8.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f1dccffb96f614895393e27e4667105a05407af5"
+                "reference": "341fb54bea9693cada2a5b8d398621a57f82862d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f1dccffb96f614895393e27e4667105a05407af5",
-                "reference": "f1dccffb96f614895393e27e4667105a05407af5",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/341fb54bea9693cada2a5b8d398621a57f82862d",
+                "reference": "341fb54bea9693cada2a5b8d398621a57f82862d",
                 "shasum": ""
             },
             "require": {
@@ -1228,20 +1228,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-07-02T13:43:47+00:00"
+            "time": "2019-07-09T14:00:02+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "03cfd34e84a83e537df1d640d196193e69c229b4"
+                "reference": "f65d71bb2f2d14442b76c7d34ffe3854776ae6ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/03cfd34e84a83e537df1d640d196193e69c229b4",
-                "reference": "03cfd34e84a83e537df1d640d196193e69c229b4",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/f65d71bb2f2d14442b76c7d34ffe3854776ae6ef",
+                "reference": "f65d71bb2f2d14442b76c7d34ffe3854776ae6ef",
                 "shasum": ""
             },
             "require": {
@@ -1297,7 +1297,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-07-02T15:31:06+00:00"
+            "time": "2019-07-11T21:11:11+00:00"
         },
         {
             "name": "laravel/nova",
@@ -1996,16 +1996,16 @@
         },
         {
             "name": "opis/closure",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opis/closure.git",
-                "reference": "f846725591203098246276b2e7b9e8b7814c4965"
+                "reference": "92927e26d7fc3f271efe1f55bdbb073fbb2f0722"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/closure/zipball/f846725591203098246276b2e7b9e8b7814c4965",
-                "reference": "f846725591203098246276b2e7b9e8b7814c4965",
+                "url": "https://api.github.com/repos/opis/closure/zipball/92927e26d7fc3f271efe1f55bdbb073fbb2f0722",
+                "reference": "92927e26d7fc3f271efe1f55bdbb073fbb2f0722",
                 "shasum": ""
             },
             "require": {
@@ -2053,7 +2053,7 @@
                 "serialization",
                 "serialize"
             ],
-            "time": "2019-05-31T20:04:32+00:00"
+            "time": "2019-07-09T21:58:11+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3120,16 +3120,16 @@
         },
         {
             "name": "spatie/laravel-responsecache",
-            "version": "6.0.0",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-responsecache.git",
-                "reference": "2fa724b93d3d772ebb30522c6b565cc2886a5161"
+                "reference": "cbd5e6070967bfd1449a02881e887a601a2f3f97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/2fa724b93d3d772ebb30522c6b565cc2886a5161",
-                "reference": "2fa724b93d3d772ebb30522c6b565cc2886a5161",
+                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/cbd5e6070967bfd1449a02881e887a601a2f3f97",
+                "reference": "cbd5e6070967bfd1449a02881e887a601a2f3f97",
                 "shasum": ""
             },
             "require": {
@@ -3180,7 +3180,7 @@
                 "response",
                 "spatie"
             ],
-            "time": "2019-05-20T08:19:17+00:00"
+            "time": "2019-07-09T16:35:00+00:00"
         },
         {
             "name": "spatie/laravel-tags",
@@ -3362,16 +3362,16 @@
         },
         {
             "name": "spatie/laravel-webhook-client",
-            "version": "2.0.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-webhook-client.git",
-                "reference": "2fb369710abc984e72d2cd5cc998746ec5a66a26"
+                "reference": "5cb7b0e5eed4e770355ecb59687baeca572be5a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-webhook-client/zipball/2fb369710abc984e72d2cd5cc998746ec5a66a26",
-                "reference": "2fb369710abc984e72d2cd5cc998746ec5a66a26",
+                "url": "https://api.github.com/repos/spatie/laravel-webhook-client/zipball/5cb7b0e5eed4e770355ecb59687baeca572be5a2",
+                "reference": "5cb7b0e5eed4e770355ecb59687baeca572be5a2",
                 "shasum": ""
             },
             "require": {
@@ -3415,7 +3415,7 @@
                 "laravel-webhook-client",
                 "spatie"
             ],
-            "time": "2019-07-08T19:21:28+00:00"
+            "time": "2019-07-09T16:09:58+00:00"
         },
         {
             "name": "spatie/macroable",
@@ -6466,16 +6466,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "a3f15809dd1de4759d44c159e99b9474d8b83e94"
+                "reference": "61b415ea2401fe659ee35fa809908628aa08bf07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/a3f15809dd1de4759d44c159e99b9474d8b83e94",
-                "reference": "a3f15809dd1de4759d44c159e99b9474d8b83e94",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/61b415ea2401fe659ee35fa809908628aa08bf07",
+                "reference": "61b415ea2401fe659ee35fa809908628aa08bf07",
                 "shasum": ""
             },
             "require": {
@@ -6524,7 +6524,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2019-06-03T11:40:15+00:00"
+            "time": "2019-07-12T06:52:24+00:00"
         },
         {
             "name": "mockery/mockery",
