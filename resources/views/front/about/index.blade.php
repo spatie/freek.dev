@@ -13,7 +13,7 @@
     >
     <div class="markup">
         <p>
-            I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used the framework for many projects.  Follow me <a href="http://twitter.com/freekmurze">on Twitter</a> to know what keeps me busy. Want to know which IDE, apps and hardware I use? <a href="/my-current-setup-2018-edition">Here you go</a>!
+            I live in Ghent, Belgium and am passionate about PHP. I'm a Laravel enthusiast and have used the framework for many projects.  Follow me <a href="http://twitter.com/freekmurze">on Twitter</a> to know what keeps me busy. Want to know which IDE, apps and hardware I use? <a href="/uses">Here you go</a>!
         </p>
         <p>
             I'm a developer at <a href="https://spatie.be">Spatie</a> of which I'm the co-owner. At my company we use a lot of open source software: PHP, Ubuntu, Laravel, Composer, Yarn,… are a few of the things we use everyday. My company couldn't exist without open source software. That's why we're trying to give back as much as possible.
