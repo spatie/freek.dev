@@ -29,7 +29,7 @@ class SendTweetJob implements ShouldQueue
         $tweetText = $this->toTweet($this->post);
 
         $tweetResponse = $twitter->tweet($tweetText);
-
+        info($this->post->getType());
         info('original?');
         if ($this->post->isOriginal()) {
             info('is original');
