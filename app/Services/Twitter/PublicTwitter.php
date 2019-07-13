@@ -27,6 +27,6 @@ class PublicTwitter
             ]]
         );
 
-        return $response->getContent();
+        return $response->toArray()['html'];
     }
 }
