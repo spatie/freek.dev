@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Post;
+use App\Services\Twitter\PublicTwitter;
 use App\Services\Twitter\Twitter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -27,7 +28,17 @@ class SendTweetJob implements ShouldQueue
     {
         $tweetText = $this->toTweet($this->post);
 
-        $twitter->tweet($tweetText);
+        $tweetResponse = $twitter->tweet($tweetText);
+
+        if ($this->post->isOriginal()) {
+            $tweetUrl = "https://twitter.com/TwitterAPI/status/{$tweetResponse['id_str']}";
+
+            $embedTweetHtml = $this->getTweetEmbedHtml($tweetUrl);
+
+            $this->post->tweet_url = $tweetUrl;
+            $this->post->embed_tweet_html = $embedTweetHtml;
+            $this->post->save();
+        }
     }
 
     protected function toTweet(Post $post): string
@@ -46,5 +57,12 @@ class SendTweetJob implements ShouldQueue
         return $post->emoji . ' ' . $title
             . PHP_EOL . $post->promotional_url
             . PHP_EOL . $tags;
+    }
+
+    private function getTweetEmbedHtml(string $tweetUrl)
+    {
+        $response = app(PublicTwitter::class)->getEmbedHtml($tweetUrl);
+
+        return $response['html'];
     }
 }
