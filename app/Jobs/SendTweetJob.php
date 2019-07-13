@@ -30,7 +30,7 @@ class SendTweetJob implements ShouldQueue
 
         $tweetResponse = $twitter->tweet($tweetText);
 
-        $tweetUrl = "https://twitter.com/TwitterAPI/status/{$tweetResponse['id_str']}";
+        $tweetUrl = "https://twitter.com/freekmurze/status/{$tweetResponse['id_str']}";
 
         $this->post->tweet_url = $tweetUrl;
 
