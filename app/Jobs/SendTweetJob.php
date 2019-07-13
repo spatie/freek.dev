@@ -33,10 +33,8 @@ class SendTweetJob implements ShouldQueue
         if ($this->post->isOriginal()) {
             $tweetUrl = "https://twitter.com/TwitterAPI/status/{$tweetResponse['id_str']}";
 
-            $embedTweetHtml = $this->getTweetEmbedHtml($tweetUrl);
-
             $this->post->tweet_url = $tweetUrl;
-            $this->post->embed_tweet_html = $embedTweetHtml;
+            $this->post->embed_tweet_html = $this->getTweetEmbedHtml($tweetUrl);
             $this->post->save();
         }
     }
@@ -59,10 +57,8 @@ class SendTweetJob implements ShouldQueue
             . PHP_EOL . $tags;
     }
 
-    private function getTweetEmbedHtml(string $tweetUrl)
+    private function getTweetEmbedHtml(string $tweetUrl): string
     {
-        $response = app(PublicTwitter::class)->getEmbedHtml($tweetUrl);
-
-        return $response['html'];
+        return app(PublicTwitter::class)->getEmbedHtml($tweetUrl);
     }
 }
