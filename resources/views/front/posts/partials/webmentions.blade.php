@@ -1,16 +1,19 @@
-<div class="markup">
-    <h2>Comments</h2>
+@if ($post->tweet_url)
+    <div class="markup">
 
-    <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-blue-100 border-b-5 border-blue-200 text-sm text-gray-700 mb-8">
-        You can comment on this post by replying to <a target="_blank" href="{{ $post->tweet_url }}">this tweet</a>.
+        <h2>Comments</h2>
 
-        @if(count($post->webmentions) === 0)
-            <br/>
-            <br/>
-            All replies, retweets and likes will be listed below.
-        @endif
+        <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-blue-100 border-b-5 border-blue-200 text-sm text-gray-700 mb-8">
+            You can comment on this post by replying to <a target="_blank" href="{{ $post->tweet_url }}">this tweet</a>.
+
+            @if(count($post->webmentions) === 0)
+                <br/>
+                <br/>
+                All replies, retweets and likes will be listed below.
+            @endif
+        </div>
     </div>
-</div>
+@endif
 
 @foreach($post->webmentions as $webmention)
     <div class="mb-6 text-sm">
