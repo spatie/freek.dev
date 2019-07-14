@@ -1,7 +1,10 @@
 @if ($post->tweet_url)
     <div class="markup">
 
-        <h2>Comments</h2>
+        <h2 id="comments">
+            Comments
+            <a href="#comments" class="permalink">#</a>
+        </h2>
 
         <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-blue-100 border-b-5 border-blue-200 text-sm text-gray-700 mb-8">
             You can comment on this post by replying to <a target="_blank" href="{{ $post->tweet_url }}">this tweet</a>.
