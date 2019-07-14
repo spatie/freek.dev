@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Services\Webmentions;
 
 use App\Models\Post;
@@ -39,6 +38,13 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
         ]);
     }
 
+    private function payloadHasBeenReceivedBefore(array $payload): bool
+    {
+        $webmentionId = Arr::get($payload, 'post.wm-id');
+
+        return Webmention::where('webmention_id', $webmentionId)->exists();
+    }
+
     private function getType(array $payload): ?string
     {
         $types = [
@@ -66,15 +72,8 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
 
         $postIdSlug = Url::fromString($url)->getSegment(1);
 
-        [$id] = explode('-', $postIdSlug);
+        [$postId] = explode('-', $postIdSlug);
 
-        return Post::find($id);
-    }
-
-    private function payloadHasBeenReceivedBefore(array $payload): bool
-    {
-        $webmentionId = Arr::get($payload, 'post.wm-id');
-
-        return Webmention::where('webmention_id', $webmentionId)->exists();
+        return Post::find($postId);
     }
 }
