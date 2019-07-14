@@ -15,6 +15,10 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
     {
         $payload = $this->webhookCall->payload;
 
+        if ($this->payloadHasBeenReceivedBefore($payload)) {
+            return;
+        }
+
         if (!$type = $this->getType($payload)) {
             return;
         }
@@ -23,16 +27,10 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
             return;
         }
 
-        $webmentionId = Arr::get($payload, 'post.wm-id');
-
-        if (Webmention::where('webmention_id', $webmentionId)->count() !== 0) {
-            return;
-        }
-
         Webmention::create([
             'post_id' => $post->id,
             'type' => $type,
-            'webmention_id' => $webmentionId,
+            'webmention_id' => Arr::get($payload, 'post.wm-id'),
             'author_name' => Arr::get($payload, 'post.author.name'),
             'author_photo_url' => Arr::get($payload, 'post.author.photo'),
             'author_url' => Arr::get($payload, 'post.author.url'),
@@ -71,5 +69,12 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
         [$id] = explode('-', $postIdSlug);
 
         return Post::find($id);
+    }
+
+    private function payloadHasBeenReceivedBefore(array $payload): bool
+    {
+        $webmentionId = Arr::get($payload, 'post.wm-id');
+
+        return Webmention::where('webmention_id', $webmentionId)->exists();
     }
 }
