@@ -35,7 +35,7 @@
         @foreach($newsletters as $newsletter)
             <div>
                 <a href="{{ $newsletter->url }}">{{ $newsletter->title }}</a>
-                <span class="text-gray-700 text-xs">sent on {{ $newsletter->sent_at->format('jS F Y') }}</span>
+                <div class="text-gray-700 text-xs">sent on {{ $newsletter->sent_at->format('jS F Y') }}</div>
             </div>
         @endforeach
     </div>

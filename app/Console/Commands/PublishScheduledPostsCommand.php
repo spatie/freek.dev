@@ -27,7 +27,7 @@ class PublishScheduledPostsCommand extends Command
 
             $this->info("Post `{$post->title}` published!");
 
-            ResponseCache::flush();
+            ResponseCache::clear();
         });
     }
 }

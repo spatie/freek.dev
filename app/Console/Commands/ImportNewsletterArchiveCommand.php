@@ -6,6 +6,7 @@ use App\Models\Newsletter;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
+use Spatie\ResponseCache\Facades\ResponseCache;
 
 class ImportNewsletterArchiveCommand extends Command
 {
@@ -28,6 +29,10 @@ class ImportNewsletterArchiveCommand extends Command
                     'sent_at' => Carbon::create($newsletterProperties['pubDate']),
                 ]);
             });
+
+        if ($importedNewsletters->count()) {
+            ResponseCache::clear();
+        }
 
         $this->comment("Imported {$importedNewsletters->count()} newsletter(s)");
 
