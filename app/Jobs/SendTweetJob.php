@@ -2,61 +2,34 @@
 
 namespace App\Jobs;
 
-use App\Models\Post;
-use App\Services\Twitter\PublicTwitter;
+use App\Models\Concerns\Tweetable;
 use App\Services\Twitter\Twitter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Spatie\Tags\Tag;
 
 class SendTweetJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    /** @var \App\Models\Post */
-    public $post;
+    /** @var \App\Models\Concerns\Tweetable */
+    public $tweetable;
 
-    public function __construct(Post $post)
+    public function __construct(Tweetable $tweetable)
     {
-        $this->post = $post;
+        $this->tweetable = $tweetable;
     }
 
     public function handle(Twitter $twitter)
     {
-        $tweetText = $this->toTweet($this->post);
+        $tweetText = $this->tweetable->toTweet();
 
         $tweetResponse = $twitter->tweet($tweetText);
 
         $tweetUrl = "https://twitter.com/freekmurze/status/{$tweetResponse['id_str']}";
 
-        $this->post->tweet_url = $tweetUrl;
-
-        $this->post->save();
-    }
-
-    protected function toTweet(Post $post): string
-    {
-        $tags = $post->tags
-            ->map(function (Tag $tag) {
-                return $tag->name;
-            })
-            ->map(function (string $tagName) {
-                return '#' . str_replace(' ', '', $tagName);
-            })
-            ->implode(' ');
-
-        $title = $post->title;
-
-        return $post->emoji . ' ' . $title
-            . PHP_EOL . $post->promotional_url
-            . PHP_EOL . $tags;
-    }
-
-    private function getTweetEmbedHtml(string $tweetUrl): string
-    {
-        return app(PublicTwitter::class)->getEmbedHtml($tweetUrl);
+        $this->tweetable->onAfterTweet($tweetUrl);
     }
 }

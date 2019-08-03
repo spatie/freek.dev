@@ -2,13 +2,14 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\SendTweetJob;
 use App\Models\Newsletter;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
-class ImportNewsletterArchiveCommand extends Command
+class ImportNewslettersCommand extends Command
 {
     protected $signature = 'blog:import-newsletter-archive';
 
@@ -21,8 +22,8 @@ class ImportNewsletterArchiveCommand extends Command
             ->reject(function (array $newsletterProperties) {
                 return Newsletter::where('title', $newsletterProperties['title'])->first();
             })
-            ->each(function (array $newsletterProperties) {
-                Newsletter::create([
+            ->map(function (array $newsletterProperties) {
+                return Newsletter::create([
                     'title' => $newsletterProperties['title'],
                     'url' => $newsletterProperties['link'],
                     'description' => $newsletterProperties['description'],
@@ -32,6 +33,8 @@ class ImportNewsletterArchiveCommand extends Command
 
         if ($importedNewsletters->count()) {
             ResponseCache::clear();
+
+            dispatch(new SendTweetJob($importedNewsletters->first()));
         }
 
         $this->comment("Imported {$importedNewsletters->count()} newsletter(s)");

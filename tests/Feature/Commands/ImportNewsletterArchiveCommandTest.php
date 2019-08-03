@@ -2,7 +2,9 @@
 
 namespace Tests\Feature\Commands;
 
+use App\Jobs\SendTweetJob;
 use App\Models\Newsletter;
+use Illuminate\Support\Facades\Queue;
 use Tests\TestCase;
 
 class ImportNewsletterArchiveCommandTest extends TestCase
@@ -12,6 +14,8 @@ class ImportNewsletterArchiveCommandTest extends TestCase
         parent::setUp();
 
         config()->set('services.sendy.archive_feed_url', __DIR__ . '/stubs/newsletterArchiveFeed.xml');
+
+        Queue::fake();
     }
 
     /** @test */
@@ -34,6 +38,13 @@ class ImportNewsletterArchiveCommandTest extends TestCase
         );
 
         $this->assertEquals('2019-07-29 03:00:01', $firstNewsletter->sent_at->format('Y-m-d H:i:s'));
+
+        Queue::assertPushed(SendTweetJob::class, 1);
+        Queue::assertPushed(SendTweetJob::class, function (SendTweetJob $job) use ($firstNewsletter) {
+            $this->assertEquals($firstNewsletter->id, $job->tweetable->id);
+            $this->assertInstanceOf(Newsletter::class, $job->tweetable);
+            return true;
+        });
     }
 
     /** @test */
@@ -41,8 +52,10 @@ class ImportNewsletterArchiveCommandTest extends TestCase
     {
         $this->artisan('blog:import-newsletter-archive')->assertExitCode(0);
         $this->assertCount(2, Newsletter::all());
+        Queue::assertPushed(SendTweetJob::class, 1);
 
         $this->artisan('blog:import-newsletter-archive')->assertExitCode(0);
         $this->assertCount(2, Newsletter::all());
+        Queue::assertPushed(SendTweetJob::class, 1);
     }
 }

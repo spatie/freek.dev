@@ -6,6 +6,7 @@ use App\Actions\PublishPostAction;
 use App\Http\Controllers\PostController;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
+use App\Models\Concerns\Tweetable;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
@@ -17,7 +18,7 @@ use Spatie\Feed\FeedItem;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
-class Post extends Model implements Feedable, Sluggable
+class Post extends Model implements Feedable, Sluggable, Tweetable
 {
     public const TYPE_LINK = 'link';
     public const TYPE_TWEET = 'tweet';
@@ -212,5 +213,30 @@ class Post extends Model implements Feedable, Sluggable
     public function getSluggableValue(): string
     {
         return $this->title;
+    }
+
+    public function toTweet(): string
+    {
+        $tags = $this->tags
+            ->map(function (Tag $tag) {
+                return $tag->name;
+            })
+            ->map(function (string $tagName) {
+                return '#' . str_replace(' ', '', $tagName);
+            })
+            ->implode(' ');
+
+        $title = $this->title;
+
+        return $this->emoji . ' ' . $title
+            . PHP_EOL . $this->promotional_url
+            . PHP_EOL . $tags;
+    }
+
+    public function onAfterTweet(string $tweetUrl): void
+    {
+        $this->tweet_url = $tweetUrl;
+
+        $this->save();
     }
 }

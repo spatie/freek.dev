@@ -96,4 +96,26 @@ class PostTest extends TestCase
 
         $this->assertEquals('<p>excerpt</p>', $post->excerpt);
     }
+
+    /** @test */
+    public function a_post_is_tweetable()
+    {
+        /** @var \App\Models\Post $post */
+        $post = factory(Post::class)->create();
+
+        $this->assertTrue(is_string($post->toTweet()));
+    }
+
+    /** @test */
+    public function it_can_save_the_tweeted_url()
+    {
+        /** @var \App\Models\Post $post */
+        $post = factory(Post::class)->create();
+
+        $url = 'https://twitter.com/freekmurze/status/123';
+
+        $post->onAfterTweet($url);
+
+        $this->assertEquals($url, $post->refresh()->tweet_url);
+    }
 }
