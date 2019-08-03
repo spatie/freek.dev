@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             ->call(TalkSeeder::class)
             ->call(AdSeeder::class)
             ->call(VideoSeeder::class)
-            ->call(WebmentionSeeder::class);
+            ->call(WebmentionSeeder::class)
+            ->call(NewsletterSeeder::class);
     }
 }

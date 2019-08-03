@@ -19,9 +19,9 @@ Route::view('about', 'front.about.index');
 Route::view('advertising', 'front.advertising.index');
 Route::view('search', 'front.search.index');
 
-Route::get('newsletter', [NewsletterController::class, 'index']);
-Route::get('confirm-your-email', [NewsletterController::class, 'confirm']);
-Route::get('subscribed', [NewsletterController::class, 'subscribed']);
+Route::get('newsletter', NewsletterController::class);
+Route::view('confirm-your-email', 'front.newsletter.confirm');
+Route::view('subscribed', 'front.newsletter.subscribed');
 
 Route::middleware('doNotCacheResponse')->group(function () {
     Route::get('payments', [PaymentsController::class, 'index']);

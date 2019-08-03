@@ -2,20 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Newsletter;
+
 class NewsletterController
 {
-    public function index()
+    public function __invoke()
     {
-        return view('front.newsletter.index');
-    }
+        $newsletters = Newsletter::orderByDesc('sent_at')->take(100)->get();
 
-    public function confirm()
-    {
-        return view('front.newsletter.confirm');
-    }
-
-    public function subscribed()
-    {
-        return view('front.newsletter.subscribed');
+        return view('front.newsletter.index', compact('newsletters'));
     }
 }

@@ -17,7 +17,7 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->action(HomeController::class, 'Home')
                 ->action(OriginalsController::class, 'Originals')
-                ->action([NewsletterController::class, 'index'], 'Newsletter')
+                ->action(NewsletterController::class, 'Newsletter')
                 ->action(SpeakingController::class, 'Speaking')
                 ->url('about', 'About')
                 ->setActiveFromRequest('/');

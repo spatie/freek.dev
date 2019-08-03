@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Console\Commands\ImportNewsletterArchiveCommand;
+use App\Console\Commands\PublishScheduledPostsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -12,7 +14,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('responsecache:flush')->daily()->at('00:00');
         $schedule->command('backup:clean')->daily()->at('01:00');
         $schedule->command('backup:run')->daily()->at('02:00');
-        $schedule->command('blog:publish-scheduled-posts')->hourly();
+        $schedule->command(PublishScheduledPostsCommand::class)->hourly();
+        $schedule->command(ImportNewsletterArchiveCommand::class)->daily();
     }
 
     protected function commands()

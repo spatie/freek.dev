@@ -7,7 +7,7 @@ use App\Models\Post;
 use Illuminate\Console\Command;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
-class PublishScheduledPosts extends Command
+class PublishScheduledPostsCommand extends Command
 {
     protected $signature = 'blog:publish-scheduled-posts';
 

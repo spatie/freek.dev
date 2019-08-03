@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>freek.dev - Campaigns RSS</title>
+        <description>RSS feed archive of the last 100 campaigns sent by freek.dev.</description>
+        <language>en</language>
+        <copyright></copyright>
+        <webMaster></webMaster>
+        <atom:link href="https://sendy.freek.dev" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>👩‍🎓 freek.dev newsletter #88: webmentions, testing aggregates, Laravel Vapor on much more!</title>
+            <link>https://sendy.freek.dev/w/CIlnrhEPa0CEBRUhZTotBQ</link>
+            <description><![CDATA[  View e-mail in browser   newsletter #88 Hi, welcome to the 88th freek.dev newsletter!  How to add webmentions to a Laravel powered blog The comment section of this blog used to be powered by Disqus. At its core, Disqus works pretty well. But I don't like the fact that it pulls in a lot of JavaScript to make it work. It's also not the prettiest UI. I've recently replaced Disqus comments with webmentions. Implementing event sourcing: testing aggregates My team at Spatie released another new v... <a href="https://sendy.freek.dev/w/CIlnrhEPa0CEBRUhZTotBQ">Read more</a>]]></description>
+            <pubDate>Mon, Jul 29, 2019 03:00:01</pubDate>
+        </item>
+        <item>
+            <title>🧠 freek.dev newsletter #87: front-end authorization, serverless, and much more!</title>
+            <link>https://sendy.freek.dev/w/0KCcVqoaJ894sLqT7PpWGA</link>
+            <description><![CDATA[  View e-mail in browser   newsletter #87 Hi, welcome to the 87th freek.dev newsletter!  How to handle front-end authorization using Laravel, Inertia and TypeScript Currently I'm working on a big project that uses Inertia, React and TypeScript. In this blog post, I won't cover those things in detail, but I'd like to show you have we, using those technologies, pass authorization (and routes) to the front-end. Verify that your site is still online after a deploy At the Oh Dear blog, my colleagu... <a href="https://sendy.freek.dev/w/0KCcVqoaJ894sLqT7PpWGA">Read more</a>]]></description>
+            <pubDate>Mon, Jul 15, 2019 03:00:01</pubDate>
+        </item>
+    </channel></rss>

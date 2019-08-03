@@ -13,7 +13,7 @@
             day there is an emphasis on that framework.
         </p>
         <p>
-            Want to know what you're getting yourself into? Here's <a href="https://sendy.freek.dev/w/db6bg1gpZgjCkCxhjltj4g">a previous edition</a>.
+            Want to know what you're getting yourself into? Take a look at <a href="#archive">the newsletter archive</a>.
         </p>
     </div>
     <div class="mb-8 -mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-orange-100 border-b-5 border-orange-200 text-sm text-gray-700">
@@ -22,7 +22,21 @@
     <div class="markup">
         <p>
             Every edition of the newsletter contains one or two sponsored links. Here’s <a href="/advertising">some more
-            info</a> on that.
+                info</a> on that.
         </p>
+    </div>
+
+
+    <div class="markup">
+        <h2 id="archive">Archive <a href="#archive" class="permalink">#</a></h2>
+        <p>
+            Here are the links to the newsletters I've previously sent.
+        </p>
+        @foreach($newsletters as $newsletter)
+            <div>
+                <a href="{{ $newsletter->url }}">{{ $newsletter->title }}</a>
+                <span class="text-gray-700 text-xs">sent on {{ $newsletter->sent_at->format('jS F Y') }}</span>
+            </div>
+        @endforeach
     </div>
 @endsection

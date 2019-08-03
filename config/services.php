@@ -13,6 +13,10 @@ return [
         'webhook_secret' => env('WEBMENTIONS_WEBHOOK_SECRET')
     ],
 
+    'sendy' => [
+        'archive_feed_url' => 'https://sendy.freek.dev/campaigns-rss?a=2o93mWNeT0VHwKoeswonct82YjK3XL&i=1',
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
