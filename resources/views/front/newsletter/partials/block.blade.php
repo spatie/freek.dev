@@ -3,7 +3,7 @@
         Stay up to date with all things Laravel, PHP, and JavaScript.
     </p>
     <p class="mb-2">
-        I'm active <a href="https://twitter.com/freekmurze">on Twitter</a> where I regularly tweet out programming tips, and what I myself have learned in ongoing projects.
+        <a href="https://twitter.com/freekmurze">Follow me on Twitter</a>. I regularly tweet out programming tips, and what I myself have learned in ongoing projects.
     </p>
     <p class="mb-2">
         Every two weeks I send out a newsletter containing lots of interesting stuff for the modern PHP developer.
