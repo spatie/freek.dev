@@ -8,7 +8,6 @@
     <div class="markup">
         <h1>Privacy policy</h1>
         <h3>Your privacy is critically important to us.</h3>
-        Freek.dev is located at:<br/>
 
         <p>It is Freek.dev's policy to respect your privacy regarding any information we may collect while operating our
             website. This Privacy Policy applies to <a href="https://freek.dev">https://freek.dev</a> (hereinafter,
