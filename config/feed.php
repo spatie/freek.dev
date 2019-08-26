@@ -3,6 +3,7 @@
 return [
 
     'feeds' => [
+        /*
         'main' => [
             'url' => '/feed',
             'title' => 'freek.dev - all blogposts',
@@ -20,6 +21,7 @@ return [
             'title' => 'freek.dev - all originally written blogposts',
             'items' => \App\Models\Post::class . '@getOriginalContentFeedItems',
         ],
+        */
     ],
 
 ];
