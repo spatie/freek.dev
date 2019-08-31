@@ -143,8 +143,6 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
 
     public static function getOriginalContentFeedItems()
     {
-        return [];
-
         return static::published()
             ->where('original_content', true)
             ->orderBy('publish_date', 'desc')
