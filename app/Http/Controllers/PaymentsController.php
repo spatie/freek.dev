@@ -57,7 +57,7 @@ class PaymentsController
 
     protected function performPayment(Request $request)
     {
-        Stripe::setApiKey(config('services.stripe.secret'));
+        Stripe::setApiKey(config('settings.stripe.secret'));
 
         $customer = Customer::create([
             'email' => $request->stripeEmail,
