@@ -5,7 +5,7 @@
     @csrf
     <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="{{ config('services.stripe.key') }}"
+        data-key="{{ config('settings.stripe.key') }}"
         data-amount="{{ session()->get('amount') }}"
         data-name="freek.dev ads"
         data-locale="auto"
