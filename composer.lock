@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ae17ecc3765eb1c0fcacde33c8e1011",
+    "content-hash": "5dfc507655d994325002817225872aea",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1302,17 +1302,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.1.1",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "1a3788eeba04c3627b772ab0a35bcb26b1f928d9"
+                "reference": "188b331861e22abc9ec9c17d28ebdb837ed6de67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-1a3788eeba04c3627b772ab0a35bcb26b1f928d9-zip-74981f.zip",
-                "reference": "1a3788eeba04c3627b772ab0a35bcb26b1f928d9",
-                "shasum": "646fcce580ccbff631cc0e470617b8b52c2d26ad"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-188b331861e22abc9ec9c17d28ebdb837ed6de67-zip-113270.zip",
+                "reference": "188b331861e22abc9ec9c17d28ebdb837ed6de67",
+                "shasum": "5f5bddd072dc7c0ee095c040a04ae31318ecb126"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
@@ -1368,7 +1368,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2019-08-22T20:07:38+00:00"
+            "time": "2019-09-03T20:23:50+00:00"
         },
         {
             "name": "laravel/scout",
@@ -1902,16 +1902,16 @@
         },
         {
             "name": "ohdearapp/nova-ohdear-tool",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ohdearapp/nova-ohdear-tool.git",
-                "reference": "6650174a893d2e5a534e606141fd3db122dd1bf8"
+                "reference": "cb03c754ace77d158e3beed3130a3b4bd69a707f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ohdearapp/nova-ohdear-tool/zipball/6650174a893d2e5a534e606141fd3db122dd1bf8",
-                "reference": "6650174a893d2e5a534e606141fd3db122dd1bf8",
+                "url": "https://api.github.com/repos/ohdearapp/nova-ohdear-tool/zipball/cb03c754ace77d158e3beed3130a3b4bd69a707f",
+                "reference": "cb03c754ace77d158e3beed3130a3b4bd69a707f",
                 "shasum": ""
             },
             "require": {
@@ -1920,7 +1920,7 @@
                 "php": ">=7.1"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.8",
+                "orchestra/testbench": "^3.8|^4.0",
                 "phpunit/phpunit": "8.0"
             },
             "type": "library",
@@ -1954,7 +1954,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2019-02-27T16:59:04+00:00"
+            "time": "2019-09-04T13:08:40+00:00"
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
