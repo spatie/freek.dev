@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5dfc507655d994325002817225872aea",
+    "content-hash": "3ae17ecc3765eb1c0fcacde33c8e1011",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1302,17 +1302,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.2.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "188b331861e22abc9ec9c17d28ebdb837ed6de67"
+                "reference": "1a3788eeba04c3627b772ab0a35bcb26b1f928d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-188b331861e22abc9ec9c17d28ebdb837ed6de67-zip-113270.zip",
-                "reference": "188b331861e22abc9ec9c17d28ebdb837ed6de67",
-                "shasum": "5f5bddd072dc7c0ee095c040a04ae31318ecb126"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-1a3788eeba04c3627b772ab0a35bcb26b1f928d9-zip-74981f.zip",
+                "reference": "1a3788eeba04c3627b772ab0a35bcb26b1f928d9",
+                "shasum": "646fcce580ccbff631cc0e470617b8b52c2d26ad"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
@@ -1368,7 +1368,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2019-09-03T20:23:50+00:00"
+            "time": "2019-08-22T20:07:38+00:00"
         },
         {
             "name": "laravel/scout",
@@ -3591,16 +3591,16 @@
         },
         {
             "name": "spatie/nova-tags-field",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/nova-tags-field.git",
-                "reference": "84d651ecd30099f23856834957ba54c5c7c7204b"
+                "reference": "c3f40f8fb95a2198bc7eb8d9b46e30bf0b1cacf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/84d651ecd30099f23856834957ba54c5c7c7204b",
-                "reference": "84d651ecd30099f23856834957ba54c5c7c7204b",
+                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/c3f40f8fb95a2198bc7eb8d9b46e30bf0b1cacf1",
+                "reference": "c3f40f8fb95a2198bc7eb8d9b46e30bf0b1cacf1",
                 "shasum": ""
             },
             "require": {
@@ -3610,7 +3610,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.1",
-                "orchestra/testbench": "^3.8",
+                "orchestra/testbench": "^3.8|^4.0",
                 "phpunit/phpunit": "8.0"
             },
             "type": "library",
@@ -3643,7 +3643,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2019-08-06T07:57:49+00:00"
+            "time": "2019-09-04T12:42:48+00:00"
         },
         {
             "name": "spatie/nova-tail-tool",
