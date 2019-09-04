@@ -29,7 +29,7 @@
         "laravel/framework": "^6.0",
         "laravel/horizon": "^3.2.7",
         "laravel/nova": "^2.1.1",
-        "laravel/scout": "^3.0",
+        "laravel/scout": "^7.1",
         "laravel/tinker": "^1.0",
         "ohdearapp/nova-ohdear-tool": "^1.0",
         "spatie/commonmark-highlighter": "^1.0",
@@ -46,7 +46,6 @@
         "spatie/nova-tags-field": "^2.0",
         "spatie/nova-tail-tool": "^2.0",
         "stripe/stripe-php": "^6.8",
-        "themsaid/laravel-mail-preview": "^2.0",
         "ext-simplexml": "*"
     },
     "require-dev": {
