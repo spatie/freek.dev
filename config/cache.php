@@ -72,7 +72,7 @@ return [
         ],
 
         'redis' => [
-            'driver' => 'redis',
+            'driver' => 'predis',
             'connection' => 'cache',
         ],
 
