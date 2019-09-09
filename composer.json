@@ -21,7 +21,7 @@
         "php": "^7.3",
         "ext-json": "*",
         "abraham/twitteroauth": "^0.7.4",
-        "algolia/algoliasearch-client-php": "^1.23",
+        "algolia/algoliasearch-client-php": "^2.2",
         "doctrine/dbal": "^2.8",
         "facade/ignition": "^1.4",
         "fideloper/proxy": "^4.0",

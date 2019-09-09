@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eeeccc0e574d9492d9ec7417c3d12ad3",
+    "content-hash": "8ad103fe206e09ae0671307185a39848",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -62,27 +62,39 @@
         },
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "1.28.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "c167ba3247b38b028fc05b1c58e8b5fb5e08d114"
+                "reference": "823dc934f1ad82cb43988e474a4597c7e660104b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/c167ba3247b38b028fc05b1c58e8b5fb5e08d114",
-                "reference": "c167ba3247b38b028fc05b1c58e8b5fb5e08d114",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/823dc934f1ad82cb43988e474a4597c7e660104b",
+                "reference": "823dc934f1ad82cb43988e474a4597c7e660104b",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
+                "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": "^5.3 || ^7.0"
+                "php": "^5.3 || ^7.0",
+                "psr/http-message": "^1.0",
+                "psr/log": "^1.0",
+                "psr/simple-cache": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
-                "satooshi/php-coveralls": "^1.0"
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "fzaninotto/faker": "^1.8",
+                "phpunit/phpunit": "^4.8",
+                "symfony/yaml": "^2.0 || ^4.0"
             },
+            "suggest": {
+                "guzzlehttp/guzzle": "If you prefer to use Guzzle HTTP client instead of the Http Client implementation provided by the package"
+            },
+            "bin": [
+                "bin/algolia-doctor"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -90,9 +102,13 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "AlgoliaSearch": "src/"
-                }
+                "psr-4": {
+                    "Algolia\\AlgoliaSearch\\": "src/"
+                },
+                "files": [
+                    "src/Http/Psr7/functions.php",
+                    "src/functions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -102,19 +118,17 @@
                 {
                     "name": "Algolia Team",
                     "email": "contact@algolia.com"
-                },
-                {
-                    "name": "Ryan T. Catlin",
-                    "email": "ryan.catlin@gmail.com"
-                },
-                {
-                    "name": "Jonathan H. Wage",
-                    "email": "jonwage@gmail.com"
                 }
             ],
             "description": "Algolia Search API Client for PHP",
-            "homepage": "https://github.com/algolia/algoliasearch-client-php",
-            "time": "2018-11-06T10:48:00+00:00"
+            "keywords": [
+                "algolia",
+                "api",
+                "client",
+                "php",
+                "search"
+            ],
+            "time": "2019-07-18T18:05:23+00:00"
         },
         {
             "name": "cakephp/chronos",
