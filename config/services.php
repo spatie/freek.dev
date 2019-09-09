@@ -14,6 +14,25 @@ return [
     |
     */
 
+    'twitter' => [
+        'consumer_key' => env('TWITTER_CONSUMER_KEY'),
+        'consumer_secret' => env('TWITTER_CONSUMER_SECRET'),
+        'access_token' => env('TWITTER_ACCESS_TOKEN'),
+        'access_token_secret' => env('TWITTER_ACCESS_TOKEN_SECRET'),
+    ],
+    'webmentions' => [
+        'webhook_secret' => env('WEBMENTIONS_WEBHOOK_SECRET')
+    ],
+    'sendy' => [
+        'archive_feed_url' => 'https://sendy.freek.dev/campaigns-rss?a=2o93mWNeT0VHwKoeswonct82YjK3XL&i=1',
+    ],
+
+    'stripe' => [
+        'model' => App\Models\User::class,
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
