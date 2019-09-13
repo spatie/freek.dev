@@ -17,11 +17,13 @@ class LazyViewComposer
             return false;
         }
 
-        if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT'])) {
+        $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+        if (preg_match('~MSIE|Internet Explorer~i', $userAgent)) {
             return true;
         }
 
-        if (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) {
+        if (strpos($userAgent, 'Trident/7.0; rv:11.0') !== false) {
             return true;
         }
 
