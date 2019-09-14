@@ -14,6 +14,7 @@ class Newsletter extends Model implements Tweetable
     {
         $tweet = [
             "I've just sent {$this->title}",
+            $this->url,
             '',
             'Want to receive the next edition in your mailbox?',
             'Subscribe here: ' . url(action(NewsletterController::class)),
