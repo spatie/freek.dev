@@ -25,13 +25,16 @@ trait PostPresenter
 
     public function getNewsletterExcerptAttribute(): string
     {
-        $excerpt =  $this->getAutomaticExcerpt();
+        $excerpt = $this->getAutomaticExcerpt();
         $excerpt = Str::replaceLast('</p>', '', $excerpt);
         $excerpt = Str::replaceFirst('<p>', '', $excerpt);
         $excerpt = Str::before($excerpt, '<blockquote>');
 
         $excerpt = strip_tags($excerpt);
 
+        if (!Str::contains($this->text, '<!--more-->')) {
+            $excerpt = Str::before($this->text, '<!--more-->');
+        }
 
         return trim($excerpt);
     }
