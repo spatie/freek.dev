@@ -30,7 +30,7 @@ trait PostPresenter
         $excerpt = Str::replaceFirst('<p>', '', $excerpt);
         $excerpt = Str::before($excerpt, '<blockquote>');
 
-        return $excerpt;
+        return trim($excerpt);
     }
 
     protected function getManualExcerpt(): ?string
