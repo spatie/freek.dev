@@ -10,17 +10,26 @@ trait PostPresenter
 {
     public function getExcerptAttribute(): string
     {
-        $excerpt = $this->getManualExcerpt() ?? $this->getAutomaticExerpt();
+        $excerpt = $this->getManualExcerpt() ?? $this->getAutomaticExcerpt();
 
         $excerpt = str_replace(
             '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>',
             '<div data-lazy="twitter"></div>',
             $excerpt,
-            );
+        );
 
         $excerpt = CommonMark::convertToHtml($excerpt);
 
         return trim($excerpt);
+    }
+
+    public function getNewsletterExcerptAttribute(): string
+    {
+        $excerpt =  $this->getAutomaticExcerpt();
+        $excerpt = Str::replaceLast('</p>', '', $excerpt);
+        $excerpt = Str::replaceFirst('<p>', '', $excerpt);
+
+        return $excerpt;
     }
 
     protected function getManualExcerpt(): ?string
@@ -32,7 +41,7 @@ trait PostPresenter
         return trim(Str::before($this->text, '<!--more-->'));
     }
 
-    protected function getAutomaticExerpt(): string
+    protected function getAutomaticExcerpt(): string
     {
         if (!$this->original_content) {
             return $this->formatted_text;

@@ -1,540 +1,366 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head><meta name="twitter:image:src" content="https://https://sendy.freek.dev/murzebe/assets/header.png"><meta name="twitter:description" content="Do you love working with Laravel and PHP? Me too! Here are some links that I found interesting."><meta name="twitter:title" content="freek.dev newsletter"><meta name="twitter:card" content="summary_large_image"><meta property="og:type" content="article"><meta property="og:description" content="Do you love working with Laravel and PHP? Me too! Here are some links that I found interesting."><meta property="og:image" content="https://sendy.freek.dev/murzebe/assets/header.png"><meta property="og:title" content="murze.be newsletter"><meta property="og:url" content="[webversion]"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width">
-    <title>freek.dev newsletter</title>
-    <link href="https://fonts.googleapis.com/css?family=Rufina:700|Open+Sans:400,400italic,700" rel="stylesheet" type="text/css" /><!--
-        Outlook Conditional CSS
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
 
-        These two style blocks target Outlook 2007 & 2010 specifically, forcing
-        columns into a single vertical stack as on mobile clients. This is
-        primarily done to avoid the 'page break bug' and is optional.
-
-        Third block targets Outlook 2013, having troubles with webfonts
-
-        More information here:
-        http://templates.mailchimp.com/development/css/outlook-conditional-css
-    --><!--[if mso 12]>
-    <style type="text/css">
-        .flexibleContainer {
-            display: block !important;
-            width: 100% !important;
+    <!--[if mso]>
+    <xml>
+        <o:officedocumentsettings>
+            <o:pixelsperinch>96</o:pixelsperinch>
+        </o:officedocumentsettings>
+    </xml>
+    <style>
+        table {
+            border-collapse: collapse;
         }
-    </style>
-    <![endif]--><!--[if mso 14]>
-    <style type="text/css">
-        .flexibleContainer {
-            display: block !important;
-            width: 100% !important;
-        }
-    </style>
-    <![endif]--><!--[if mso 15]>
-    <style type="text/css">
-        h1, h2, h3, h4, h5, h6,
-        .headerCell, .footerCell,
-        .textContent, .textContentLast,
-        .buttonContent,
-        .emailCalendarDay, .emailCalendarMonth {
-            font-family: Arial, sans-serif !important;
+
+        td, th, div, p, a, h1, h2, h3, h4, h5, h6 {
+            font-family: "Segoe UI", sans-serif;
             mso-line-height-rule: exactly;
         }
     </style>
     <![endif]-->
-    <style type="text/css">body,#bodyTable,#bodyCell{
-            height:100% !important;
-            margin:0;
-            padding:0;
-            width:100% !important;
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            word-break: break-word;
+            -webkit-font-smoothing: antialiased;
         }
-        table{
-            border-collapse:collapse;
+
+        img {
+            border: 0;
+            line-height: 100%;
+            vertical-align: middle;
         }
-        img,a img{
-            border:0;
-            outline:none;
-            text-decoration:none;
-            vertical-align:middle;
+
+        a {
+            color: #3182ce;
         }
-        h1,h2,h3,h4,h5,h6{
-            margin:0;
-            padding:0;
+
+        .bg-gray-200 {
+            background-color: #edf2f7 !important;
         }
-        p{
-            margin:1em 0;
+
+        .bg-blue-100 {
+            background-color: #ebf8ff !important;
         }
-        h1,h2,h3,h4,h5,h6,.headerCell,.footerCell,.textContent,.textContentLarge,.textContentLast,.buttonContent,.emailCalendarDay,.emailCalendarMonth{
-            font-family:"Open Sans", -apple-system, "Segoe UI", sans-serif;
+
+        .border-collapse {
+            border-collapse: collapse !important;
         }
-        h1,.emailCalendarDay{
-            font-family:Rufina, serif;
+
+        .border-gray-200 {
+            border-color: #edf2f7 !important;
         }
-        .ReadMsgBody{
-            width:100%;
+
+        .border-gray-400 {
+            border-color: #cbd5e0 !important;
         }
-        .ExternalClass{
-            width:100%;
+
+        .border-blue-200 {
+            border-color: #bee3f8 !important;
         }
-        .ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{
-            line-height:100%;
+
+        .border-solid {
+            border-style: solid !important;
         }
-        table,td{
-            mso-table-lspace:0pt;
-            mso-table-rspace:0pt;
+
+        .border-0 {
+            border-width: 0 !important;
         }
-        #outlook a{
-            padding:0;
+
+        .border-b-4 {
+            border-bottom-width: 4px !important;
         }
-        img{
-            -ms-interpolation-mode:bicubic;
+
+        .border-t {
+            border-top-width: 1px !important;
         }
-        body,table,td,p,a,li,blockquote{
-            -ms-text-size-adjust:100%;
-            -webkit-text-size-adjust:100%;
+
+        .border-b {
+            border-bottom-width: 1px !important;
         }
-        .flexibleContainerCell{
-            padding-top:20px;
-            padding-right:20px;
-            padding-left:20px;
+
+        .font-bold {
+            font-weight: 700 !important;
         }
-        .flexibleImage{
-            height:auto;
-            border-radius:5px;
+
+        .leading-16 {
+            line-height: 16px !important;
         }
-        .bottomShim{
-            padding-bottom:20px;
+
+        .leading-24 {
+            line-height: 24px !important;
         }
-        .imageContent,.imageContentLast{
-            padding-bottom:20px;
+
+        .list-inside {
+            list-style-position: inside !important;
         }
-        .nestedContainerCell{
-            padding-top:20px;
-            padding-right:20px;
-            padding-left:20px;
+
+        .m-0 {
+            margin: 0 !important;
         }
-        body,#bodyTable{
-            background-color:#FFFFFF;
+
+        .mx-auto {
+            margin-left: auto !important;
+            margin-right: auto !important;
         }
-        #bodyCell{
-            padding:30px 0 90px 0;
+
+        .mb-2 {
+            margin-bottom: 2px !important;
         }
-        #emailBody{
-            background-color:#FFFFFF;
-            border:0px solid #DDDDDD;
-            border-collapse:separate;
-            overflow:hidden;
+
+        .mb-4 {
+            margin-bottom: 4px !important;
         }
-        h1,h2,h3,h4,h5,h6{
-            font-size:16px;
-            line-height:125%;
-            text-align:left;
+
+        .mb-8 {
+            margin-bottom: 8px !important;
         }
-        .textContent,.textContentLarge,.textContentLast{
-            color:#1a1e25;
-            font-size:16px;
-            font-weight:400;
-            line-height:145%;
-            text-align:left;
-            padding-bottom:20px;
+
+        .mb-12 {
+            margin-bottom: 12px !important;
         }
-        .textContentLarge{
-            font-size:21px;
+
+        .mb-16 {
+            margin-bottom: 16px !important;
         }
-        .textContent a,.textContentLarge a,.textContentLast a{
-            color:#007593;
-            text-decoration:underline;
+
+        .p-0 {
+            padding: 0 !important;
         }
-        .headerCell,.footerCell{
-            font-size:11px;
-            color:#000000;
+
+        .p-16 {
+            padding: 16px !important;
         }
-        .headerCell{
-            padding-top:30px;
+
+        .p-24 {
+            padding: 24px !important;
         }
-        .footerCell{
-            background-color:#ededf5;
-            padding:30px 0;
+
+        .px-4 {
+            padding-left: 4px !important;
+            padding-right: 4px !important;
         }
-        .footerContent{
-            padding-top:10px;
+
+        .py-24 {
+            padding-top: 24px !important;
+            padding-bottom: 24px !important;
         }
-        .headerCell a,.footerCell a{
-            font-size:11px;
-            color:#000000;
+
+        .py-32 {
+            padding-top: 32px !important;
+            padding-bottom: 32px !important;
         }
-        .nestedContainer{
-            background-color:#bce0ec;
-            color:#034368;
-            border-radius:3px;
+
+        .py-48 {
+            padding-top: 48px !important;
+            padding-bottom: 48px !important;
         }
-        .nestedContainer h1,.nestedContainer h2,.nestedContainer h3{
-            color:#034368;
+
+        .pl-0 {
+            padding-left: 0 !important;
         }
-        .nestedContainer h1{
-            border-color:#034368;
+
+        .pt-24 {
+            padding-top: 24px !important;
         }
-        .nestedContainer .textContent,.nestedContainer .textContentLast{
-            color:#034368;
+
+        .pb-32 {
+            padding-bottom: 32px !important;
         }
-        .nestedContainer .emailButton{
-            background-color:#034368;
+
+        .pb-48 {
+            padding-bottom: 48px !important;
         }
-        .nestedContainer .buttonContent,.nestedContainer .buttonContent a{
-            color:#bce0ec;
+
+        .text-center {
+            text-align: center !important;
         }
-        .emailButton{
-            background-color:#007593;
-            border-collapse:separate;
-            border-radius:5px;
+
+        .text-gray-600 {
+            color: #718096 !important;
         }
-        .buttonContent{
-            color:#FFFFFF;
-            font-size:18px;
-            font-weight:700;
-            line-height:100%;
-            padding:15px;
-            text-align:center;
+
+        .text-gray-700 {
+            color: #4a5568 !important;
         }
-        .buttonContent a{
-            color:#FFFFFF;
-            display:block;
-            text-decoration:none;
+
+        .text-gray-800 {
+            color: #2d3748 !important;
         }
-        .emailCalendar{
-            background-color:#ffffff;
+
+        .text-gray-900 {
+            color: #1a202c !important;
         }
-        .emailCalendarMonth{
-            background-color:#007593;
-            color:#FFFFFF;
-            font-size:12px;
-            font-weight:bold;
-            padding-top:10px;
-            padding-bottom:10px;
-            text-align:center;
-            text-transform:uppercase;
+
+        .text-sm {
+            font-size: 14px !important;
         }
-        .emailCalendarDay{
-            color:#034368;
-            font-size:64px;
-            font-weight:700;
-            line-height:100%;
-            padding-top:20px;
-            padding-bottom:20px;
-            text-align:center;
+
+        .text-lg {
+            font-size: 18px !important;
         }
-        .logoCell{
-            padding-bottom:30px;
-            border-bottom:2px solid #000000;
+
+        .text-xl {
+            font-size: 20px !important;
         }
-        h1{
-            font-family:Rufina, serif;
-            font-weight:700;
-            font-size:48px;
-            color:#000000;
-            margin-top:15px;
-            margin-bottom:30px;
-            padding-top:5px;
-            display:inline-block;
-            border-top:6px #000000 solid;
+
+        .underline {
+            text-decoration: underline !important;
         }
-        h2{
-            font-weight:700;
-            font-size:21px;
-            color:#000000;
+
+        .no-underline {
+            text-decoration: none !important;
         }
-        h3{
-            font-weight:700;
-            font-size:16px;
-            color:#000000;
-            text-transform:uppercase;
+
+        .w-48 {
+            width: 48px !important;
         }
-        .dojoDndItemOver{
-            outline:solid 1px orange;
+
+        .w-600 {
+            width: 600px !important;
         }
-        @media only screen and (max-width: 480px){
-            body{
-                width:100% !important;
-                min-width:100% !important;
+
+        .w-full {
+            width: 100% !important;
+        }
+
+        @media screen {
+            img {
+                max-width: 100%;
             }
 
-        }	@media only screen and (max-width: 480px){
-            table[id=emailBody],table[class=flexibleContainer],table[class=footerTable]{
-                width:100% !important;
+            .all-font-sans {
+                font-family: Whitney SSm A, Whitney SSm B, -apple-system, "Segoe UI", sans-serif !important;
             }
+        }
 
-        }	@media only screen and (max-width: 480px){
-            img[class=flexibleImage]{
-                height:auto !important;
-                width:100% !important;
+        @media (max-width: 600px) {
+            .sm-w-full {
+                width: 100% !important;
             }
-
-        }	@media only screen and (max-width: 480px){
-            table[class=emailButton]{
-                width:100% !important;
-            }
-
-        }	@media only screen and (max-width: 480px){
-            td[class=buttonContent]{
-                padding:0 !important;
-            }
-
-        }	@media only screen and (max-width: 480px){
-            td[class=buttonContent] a{
-                padding:15px !important;
-            }
-
-        }	@media only screen and (max-width: 480px){
-            td[class=textContentLast],td[class=imageContentLast]{
-                padding-top:20px !important;
-            }
-
-        }	@media only screen and (max-width: 480px){
-            td[id=bodyCell],td[class=footerCell]{
-                padding-right:10px !important;
-                padding-left:10px !important;
-            }
-
         }
     </style>
-    <!--[if !mso]><!-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet" /><!--<![endif]-->
+    <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css">
 </head>
-<body style="margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;height: 100% !important;width: 100% !important;">
-<div itemscope="" itemtype="http://schema.org/EmailMessage">
-    <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization"><meta itemprop="name" content="*|LIST:COMPANY|*"></div>
-</div>
-</body>
-<link content="*|LIST:URL|*" itemprop="url" />
-<div itemprop="about" itemscope="" itemtype="http://schema.org/Offer">&nbsp;</div>
-<link href="https://gallery.mailchimp.com/2595ac8e52e6e4ede7e463a46/images/4cff9170-0818-4dcf-9d3d-b35899b19ea4.png" itemprop="image" />
-<center>
-    <table border="0" cellpadding="0" cellspacing="0" height="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 0;background-color: #FFFFFF;height: 100% !important;width: 100% !important;" width="100%">
-        <tbody>
-        <tr>
-            <td align="center" class="headerCell" open="" sans="" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: "><a href="[webversion]" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 11px;color: #000000;" target="_blank">View e-mail in browser</a></td>
-        </tr>
-        <tr>
-            <td align="center" id="bodyCell" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin: 0;padding: 30px 0 90px 0;height: 100% !important;width: 100% !important;" valign="top"><!-- EMAIL CONTAINER // --><!--
-                    The table "emailBody" is the email's container.
-                    Its width can be set to 100% for a color band
-                    that spans the width of the page.
-                -->
-                <table border="0" cellpadding="0" cellspacing="0" id="emailBody" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border: 0px solid #DDDDDD;overflow: hidden;" width="600">
-                    <thead><!-- LOGO HEADER // -->
+<body>
+<table class="all-font-sans text-gray-900 leading-24 border-collapse w-600 mx-auto sm-w-full" cellpadding="0"
+       cellspacing="0" role="presentation">
+    <tr>
+        <td class="text-sm text-center py-48">
+            <a href="#" class="text-gray-700 underline">View email in browser</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-32">
+            <table class="mx-auto leading-16" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                    <td class="p-16 w-48">
+                        <a href="https://freek.dev" class="no-underline">
+                            <img src="{{ url('images/murzicoon.png') }}" width="48" alt="freek.dev">
+                        </a>
+                    </td>
+                    <td class="p-16 pl-0">
+                        <p class="m-0 text-xl font-bold" style="line-height: 30px">
+                            FREEK.DEV
+                        </p>
+                        <p class="m-0 text-gray-700">
+                            Hi, welcome to the {{ $editionNumber }} freek.dev newsletter!
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        @foreach($recentPosts as $post)
+            <td class="border-solid border-0 border-t border-b border-gray-200">
+                <table class="w-full py-24" cellpadding="0" cellspacing="0" role="presentation">
                     <tr>
-                        <th align="center" valign="top"></th>
+                        <td>
+                            <p class="m-0 mb-2 text-lg font-bold">
+                                <a href="{{ $post->promotional_url }}" class="text-gray-900 no-underline">{{ $post->title }}</a>
+                            </p>
+                            <p class="m-0 text-gray-800">
+                                {!! $post->newsletter_excerpt !!}
+                            </p>
+                        </td>
                     </tr>
-                    <!-- // LOGO HEADER -->
-                    </thead>
-                    <tbody><!-- MODULE INTRO // -->
-                    <tr mc:repeatable="repeat_1" mc:repeatindex="0" mc:variant="intro">
-                        <td align="center" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"><!-- CENTERING TABLE // --><!--
-                                The centering table keeps the content
-                                tables centered in the emailBody table,
-                                in case its width is set to 100%.
-                            -->
-                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%">
-                                <tbody>
-                                <tr>
-                                    <td align="center" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"><!-- FLEXIBLE CONTAINER // --><!--
-                                            The flexible container has a set width
-                                            that gets overridden by the media query.
-                                            Most content tables within can then be
-                                            given 100% widths.
-                                        -->
-                                        <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="600">
-                                            <tbody>
-                                            <tr>
-                                                <td align="center" class="flexibleContainerCell" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top" width="600"><!-- CONTENT TABLE // --><!--
-                                                        The content table is the first element
-                                                        that's entirely separate from the structural
-                                                        framework of the email.
-                                                    -->
-                                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="textContentLarge" open="" sans="" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: " valign="top">
-                                                                <h1 style="margin: 0;padding: 0;font-size: 48px;line-height: 125%;text-align: left;font-family: Rufina, serif;font-weight: 700;color: #000000;margin-top: 15px;margin-bottom: 30px;padding-top: 5px;display: inline-block;border-top: 6px #000000 solid;">newsletter #{{ $editionNumber }}</h1>
-                                                                <br />
-                                                                Hi, welcome to the {{ $editionNumber }}th freek.dev newsletter!&nbsp;</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <!-- // CONTENT TABLE --></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- // FLEXIBLE CONTAINER --></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <!-- // CENTERING TABLE --></td>
-                    </tr>
-                    <tr mc:repeatable="repeat_1" mc:repeatindex="1" mc:variant="text">
-                        <td align="center" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"><!-- CENTERING TABLE // --><!--
-                                The centering table keeps the content
-                                tables centered in the emailBody table,
-                                in case its width is set to 100%.
-                            -->
-                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%">
-                                <tbody>
-                                <tr>
-                                    <td align="center" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"><!-- FLEXIBLE CONTAINER // --><!--
-                                            The flexible container has a set width
-                                            that gets overridden by the media query.
-                                            Most content tables within can then be
-                                            given 100% widths.
-                                        -->
-                                        <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="600">
-                                            <tbody>
-                                            <tr>
-                                                <td align="center" class="flexibleContainerCell" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top" width="600"><!-- CONTENT TABLE // --><!--
-                                                        The content table is the first element
-                                                        that's entirely separate from the structural
-                                                        framework of the email.
-                                                    -->
-                                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%">
-                                                        <tbody>
-
-                                                        <tr>
-                                                            <td class="textContent" open="" sans="" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: " valign="top">
-
-                                                                @foreach($recentPosts as $post)
-                                                                    <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="{{ $post->promotional_url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $post->title }}</a><br />
-                                                                        {{ $post->excerpt }}</p>
-                                                                @endforeach
-                                                            </td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                    <!-- // CONTENT TABLE --></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- // FLEXIBLE CONTAINER --></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <!-- // CENTERING TABLE --></td>
-                    </tr>
-                    <tr mc:repeatable="repeat_1" mc:repeatindex="2" mc:variant="text">
-                        <td align="center" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"><!-- CENTERING TABLE // --><!--
-                                The centering table keeps the content
-                                tables centered in the emailBody table,
-                                in case its width is set to 100%.
-                            -->
-                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%">
-                                <tbody>
-                                <tr>
-                                    <td align="center" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"><!-- FLEXIBLE CONTAINER // --><!--
-                                            The flexible container has a set width
-                                            that gets overridden by the media query.
-                                            Most content tables within can then be
-                                            given 100% widths.
-                                        -->
-                                        <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="600">
-                                            <tbody>
-                                            <tr>
-                                                <td align="center" class="flexibleContainerCell" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top" width="600"><!-- CONTENT TABLE // --><!--
-                                                        The content table is the first element
-                                                        that's entirely separate from the structural
-                                                        framework of the email.
-                                                    -->
-                                                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="textContent" open="" sans="" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: " valign="top">
-                                                                <h2 class="mc-toc-title" open="" sans="" style="margin: 0;padding: 0;font-size: 21px;line-height: 125%;text-align: left;font-family: ">Meanwhile on Twitter</h2>
-
-                                                                <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">On Twitter I see a bunch of people regularly tweeting very nice code snippets.</p>
-
-                                                                @foreach($recentTweets as $tweet)
-                                                                    <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="{{ $tweet->promotional_url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $tweet->title }}</a></p>
-                                                                @endforeach
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <!-- // CONTENT TABLE --></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- // FLEXIBLE CONTAINER --></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <!-- // CENTERING TABLE --></td>
-                    </tr>
-                    <tr mc:repeatable="repeat_1" mc:repeatindex="2" mc:variant="inset: text">
-                        <td align="center" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"><!-- CENTERING TABLE // -->
-                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%">
-                                <tbody>
-                                <tr>
-                                    <td align="center" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"><!-- FLEXIBLE CONTAINER // -->
-                                        <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="600">
-                                            <tbody>
-                                            <tr>
-                                                <td align="center" class="flexibleContainerCell bottomShim" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 20px;padding-right: 20px;padding-left: 20px;padding-bottom: 20px;" valign="top" width="600">
-                                                    <table border="0" cellpadding="0" cellspacing="0" class="nestedContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #bce0ec;color: #034368;border-radius: 3px;" width="100%">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td align="center" class="nestedContainerCell" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top"><!-- CONTENT TABLE // -->
-                                                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%">
-                                                                    <tbody>
-                                                                    <tr>
-                                                                        <td class="textContent" open="" sans="" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: " valign="top">
-                                                                            <h2 class="mc-toc-title" open="" sans="" style="margin: 0;padding: 0;font-size: 21px;line-height: 125%;text-align: left;font-family: ">Useful links from the archives</h2>
-
-
-                                                                            <p style="margin: 1em 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                @foreach($oldPosts as $post)
-                                                                                    <a href="{{ $post->promotional_url }}" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007593;text-decoration: underline;">{{ $post->title }}</a><br />
-                                                                                    {{ $post->excerpt }}<br /> <br />
-                                                                                @endforeach
-                                                                            </p>
-                                                                        </td>
-                                                                    </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                                <!-- // CONTENT TABLE --></td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- // FLEXIBLE CONTAINER --></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <!-- // CENTERING TABLE --></td>
-                    </tr>
-                    </tbody>
                 </table>
-                <!-- // EMAIL CONTAINER --></td>
-        </tr>
-        <!-- FOOTER // -->
+            </td>
+    </tr>
+    @endforeach
+    <tr>
+        <td class="border-solid border-0 border-t border-b border-gray-200">
+            <table class="w-full py-24" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                    <td>
+                        <p class="m-0 mb-2 text-lg font-bold">
+                            <a href="#" class="text-gray-900 no-underline">Full Stack Europe: a conference for you
+                                entire team</a>
+                        </p>
+                        <p class="m-0 text-gray-800">
+                            <span class="px-4 bg-gray-200 text-gray-700">sponsor</span>
+                            I'm currently organising Full Stack Europe: a conference in Antwerp, Belgium for developers
+                            who want to learn across the stack. You can use this link get your ticket with a nice
+                            discount.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    @if($recentTweets->count())
         <tr>
-            <td align="center" class="footerCell" open="" sans="" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: ">
-                <table border="0" cellpadding="0" cellspacing="0" class="footerTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="560"><!-- LOGOS // -->
-                    <tbody>
+            <td class="py-32">
+                <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
                     <tr>
-                        <td align="right" class="logoCell" colspan="2" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-bottom: 30px;border-bottom: 2px solid #000000;" valign="bottom">&nbsp;</td>
+                        <td class="bg-blue-100 border-solid border-0 border-b-4 border-blue-200 p-24">
+                            <p class="m-0 text-xl mb-12 font-bold">Meanwhile on Twitter</p>
+                            <ul class="m-0 p-0 list-inside">
+                                @foreach($recentTweets as $tweet)
+                                    <li class="m-0"><a href="{{ $tweet->promotional_url }}" class="text-gray-800">{{ $tweet->title }}</a></li>
+                                @endforeach
+                            </ul>
+                        </td>
                     </tr>
-                    <tr>
-                        <td align="left" class="footerContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 10px;" valign="top" width="66%"><a href="https://freek.dev/advertising/">Advertisement opportunities at freek.dev</a><br />
-                            <br />
-                            You are receiving this mail because you&#39;ve subscribed at <a href="https://freek.dev">https://freek.dev</a><br />
-                            <br />
-                            <a href="[unsubscribe]" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 11px;color: #000000;">Unsubscribe</a></td>
-                        <td align="right" class="footerContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 10px;" valign="top" width="33%">&nbsp;</td>
-                    </tr>
-                    </tbody>
                 </table>
             </td>
         </tr>
-        <!-- // FOOTER -->
-        </tbody>
-    </table>
-</center>
+    @endif
+    <tr>
+        <td class="pb-32">
+            <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                    <td class="bg-gray-200 border-solid border-0 border-b-4 border-gray-400 p-24">
+                        <p class="m-0 text-xl mb-12 font-bold">From the archives</p>
+                        <ul class="m-0 p-0 list-inside">
+                            @foreach($oldPosts as $post)
+                                <li class="m-0 mb-4"><a href="{{ $post->promotional_url }}" class="text-gray-800">{{ $post->title }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="text-sm text-gray-600 leading-16 pb-48 pt-24 border-solid border-0 border-t border-gray-200">
+            <p class="m-0 mb-16">Advertisement opportunities at <a href=" {{ url('/advertising') }}"
+                                                                   class="text-gray-600">freek.dev/advertising</a>.</p>
+            <p class="m-0 mb-8">You are receiving this mail because you've subscribed at <a href="{{ config('app.url') }}"
+                                                                                            class="text-gray-600">freek.dev</a>.
+            </p>
+            <p class="m-0">Opt out any time. <a href="#" class="text-gray-600">Unsubscribe</a>.</p>
+        </td>
+    </tr>
+</table>
+</body>
 </html>

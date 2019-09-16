@@ -2,12 +2,17 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\NewsletterTestController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
 
 Route::redirect('nova', '/nova/login');
+
+if (app()->environment('local')) {
+    Route::get('/newsletter-test', NewsletterTestController::class);
+}
 
 Route::feeds();
 

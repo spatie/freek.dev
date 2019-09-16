@@ -5,6 +5,7 @@ namespace Freekmurze\GenerateNewsletter;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
+use NumberFormatter;
 
 class NewsletterGenerator
 {
@@ -14,7 +15,7 @@ class NewsletterGenerator
     /** @var \Carbon\Carbon */
     protected $endDate;
 
-    /** @var int */
+    /** @var string */
     protected $editionNumber;
 
     public function __construct(Carbon $startDate, Carbon $endDate, int $editionNumber)
@@ -23,7 +24,7 @@ class NewsletterGenerator
 
         $this->endDate = $endDate;
 
-        $this->editionNumber = $editionNumber;
+        $this->editionNumber = $this->ordinal($editionNumber);
     }
 
     public function getHtml()
@@ -37,7 +38,7 @@ class NewsletterGenerator
             'recentPosts',
             'recentTweets',
             'oldPosts',
-            'editionNumber'
+            'editionNumber',
         ))->render();
     }
 
@@ -78,5 +79,10 @@ class NewsletterGenerator
             ->orderBy('original_content', 'desc')
             ->get()
             ->$method->hasTag('tweet');
+    }
+
+    private function ordinal(int $number): string
+    {
+        return (new NumberFormatter('en_US', NumberFormatter::ORDINAL))->format($number);
     }
 }
