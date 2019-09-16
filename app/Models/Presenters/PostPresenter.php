@@ -32,10 +32,6 @@ trait PostPresenter
 
         $excerpt = strip_tags($excerpt);
 
-        if (!Str::contains($this->text, '<!--more-->')) {
-            $excerpt = Str::before($this->text, '<!--more-->');
-        }
-
         return trim($excerpt);
     }
 
