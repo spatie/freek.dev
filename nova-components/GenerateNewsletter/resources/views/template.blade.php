@@ -296,26 +296,7 @@
             </td>
     </tr>
     @endforeach
-    <tr>
-        <td class="border-solid border-0 border-t border-b border-gray-200">
-            <table class="w-full py-24" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                    <td>
-                        <p class="m-0 mb-2 text-lg font-bold">
-                            <a href="#" class="text-gray-900 no-underline">Full Stack Europe: a conference for you
-                                entire team</a>
-                        </p>
-                        <p class="m-0 text-gray-800">
-                            <span class="px-4 bg-gray-200 text-gray-700">sponsor</span>
-                            I'm currently organising Full Stack Europe: a conference in Antwerp, Belgium for developers
-                            who want to learn across the stack. You can use this link get your ticket with a nice
-                            discount.
-                        </p>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
+    {{-- <span class="px-4 bg-gray-200 text-gray-700">sponsor</span> --}}
     @if($recentTweets->count())
         <tr>
             <td class="py-32">
