@@ -28,6 +28,7 @@ trait PostPresenter
         $excerpt =  $this->getAutomaticExcerpt();
         $excerpt = Str::replaceLast('</p>', '', $excerpt);
         $excerpt = Str::replaceFirst('<p>', '', $excerpt);
+        $excerpt = Str::before($excerpt, '<blockquote>');
 
         return $excerpt;
     }
