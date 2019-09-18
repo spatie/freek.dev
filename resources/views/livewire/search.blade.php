@@ -10,11 +10,11 @@
             <ul>
                 @foreach($results as $post)
                     <li class="mb-6">
-                        <strong className="text-lg">
+                        <strong class="text-lg">
                             <a href={{ $post->url }}>{{ $post->title }}</a>
                         </strong>
                         <br/>
-                        <a href="{{ $post->url }}" className="text-sm text-gray-700">
+                        <a href="{{ $post->url }}" class="text-sm text-gray-700">
                             {{ $post->formatted_type }} - {{ $post->publish_date->format('M jS Y') }}
                         </a>
                     </li>
