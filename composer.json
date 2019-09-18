@@ -23,6 +23,7 @@
         "ext-simplexml": "*",
         "abraham/twitteroauth": "^0.7.4",
         "algolia/algoliasearch-client-php": "^2.2",
+        "beyondcode/laravel-dump-server": "^1.3",
         "calebporzio/livewire": "^0.3.5",
         "doctrine/dbal": "^2.8",
         "facade/ignition": "^1.4",
