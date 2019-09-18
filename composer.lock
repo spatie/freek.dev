@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ad103fe206e09ae0671307185a39848",
+    "content-hash": "3ec421327d6eab03c02d4844c9d22ae8",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -131,6 +131,67 @@
             "time": "2019-07-18T18:05:23+00:00"
         },
         {
+            "name": "beyondcode/laravel-dump-server",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beyondcode/laravel-dump-server.git",
+                "reference": "fcc88fa66895f8c1ff83f6145a5eff5fa2a0739a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beyondcode/laravel-dump-server/zipball/fcc88fa66895f8c1ff83f6145a5eff5fa2a0739a",
+                "reference": "fcc88fa66895f8c1ff83f6145a5eff5fa2a0739a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.6.*|5.7.*|5.8.*|^6.0",
+                "illuminate/http": "5.6.*|5.7.*|5.8.*|^6.0",
+                "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0",
+                "php": "^7.1",
+                "symfony/var-dumper": "^4.1.1"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BeyondCode\\DumpServer\\DumpServerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BeyondCode\\DumpServer\\": "src"
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "marcel@beyondco.de",
+                    "homepage": "https://beyondco.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Symfony Var-Dump Server for Laravel",
+            "homepage": "https://github.com/beyondcode/laravel-dump-server",
+            "keywords": [
+                "beyondcode",
+                "laravel-dump-server"
+            ],
+            "time": "2019-08-11T13:17:40+00:00"
+        },
+        {
             "name": "cakephp/chronos",
             "version": "1.2.8",
             "source": {
@@ -186,6 +247,59 @@
                 "time"
             ],
             "time": "2019-06-17T15:19:18+00:00"
+        },
+        {
+            "name": "calebporzio/livewire",
+            "version": "v0.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/calebporzio/livewire.git",
+                "reference": "ee87e4d7af339f62ffac43622910813e563386f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/calebporzio/livewire/zipball/ee87e4d7af339f62ffac43622910813e563386f9",
+                "reference": "ee87e4d7af339f62ffac43622910813e563386f9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.7|^6.0",
+                "illuminate/validation": "^5.7|^6.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^5.7|^6.0",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^7.5",
+                "psy/psysh": "@stable"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Livewire\\LivewireServiceProvider"
+                    ],
+                    "aliases": {
+                        "Livewire": "Livewire\\Livewire"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Livewire\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "Build and test rich client-side functionality: with only backend code.",
+            "time": "2019-09-11T15:47:11+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

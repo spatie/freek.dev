@@ -24,3 +24,6 @@
 <link href="https://twitter.com/freekmurze" rel="me">
 <link rel="webmention" href="https://webmention.io/freek.dev/webmention" />
 <link rel="pingback" href="https://webmention.io/freek.dev/xmlrpc" />
+@if($livewire ?? false)
+    @livewireAssets
+@endif

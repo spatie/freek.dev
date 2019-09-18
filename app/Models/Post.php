@@ -112,16 +112,7 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
             return [];
         }
 
-        return [
-            'title' => $this->title,
-            'url' => $this->url,
-            'publish_date' => optional($this->publish_date)->timestamp,
-            'formatted_publish_date' => optional($this->publish_date)->format('M jS Y'),
-            'type' => $this->getType(),
-            'formatted_type' => $this->formatted_type,
-            'text' => substr(strip_tags($this->text), 0, 5000),
-            'tags' => $this->tags->implode(',')
-        ];
+        return $this->toArray();
     }
 
     public static function getFeedItems()
