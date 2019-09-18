@@ -112,7 +112,11 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
             return [];
         }
 
-        return $this->toArray();
+        $postAttributes = $this->toArray();
+
+        unset($postAttributes['text']);
+
+        return $postAttributes;
     }
 
     public static function getFeedItems()
