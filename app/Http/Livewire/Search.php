@@ -14,7 +14,7 @@ class Search extends Component
     public function render()
     {
         return view('livewire.search', [
-            'results' => $this->getResults()
+            'results' => $this->getResults(),
         ]);
     }
 
