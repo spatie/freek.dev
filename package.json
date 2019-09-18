@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "algoliasearch": "^3.24.5",
-    "downshift": "^3.2.10",
     "preact": "^8.4.2",
     "preact-compat": "^3.18.5"
   },
