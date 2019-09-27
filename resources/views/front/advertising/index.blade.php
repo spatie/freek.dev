@@ -32,7 +32,7 @@
             An advertisement consists of a title, a link that goes behind it, and a short description of one or two sentences. I’ll tag on ”(sponsored)” to the title so it’s clear to the readers that it’s an advertisement. As the newsletter should come over as very calm, images or logos are not allowed.
         </p>
         <p>
-            Currently the subscriber list contains over 4500 members. The reported open rate is 55%, the click rate is 25%
+            Currently the subscriber list contains over 5 300 members. The reported open rate is 55%, the click rate is 25%
         <p>
         <p>
             I suspect that a large portion of the readers use software that blocks trackers, so the actual open and click rates will probably be a bit higher. Rest assured that, because your ad will be text based, ad blockers will not detect or block it.
