@@ -1,0 +1,28 @@
+on: push
+name: Run phpunit testsuite
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    container:
+      image: mattiasgeniar/php73
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+
+    - name: Install composer dependencies
+      run: |
+        composer install --prefer-dist --no-scripts -q -o;
+    - name: Prepare Laravel Application
+      run: |
+        cp .env.example .env
+        php artisan key:generate
+    - name: Compile assets
+      run: |
+        yarn install --pure-lockfile
+        yarn run production --progress false
+    - name: Set custom php.ini settings
+      run: echo 'short_open_tag=off' >> /usr/local/etc/php/php.ini
+    - name: Run Testsuite
+      run: vendor/bin/phpunit tests/
