@@ -19,6 +19,8 @@ class PublishPostAction
         $post->save();
 
         $this->sendTweet($post);
+
+        ResponseCache::clear();
     }
 
     protected function sendTweet(Post $post)
@@ -36,7 +38,5 @@ class PublishPostAction
         $post->tweet_sent = true;
 
         $post->save();
-
-        ResponseCache::clear();
     }
 }

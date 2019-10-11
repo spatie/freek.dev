@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
+use Spatie\ResponseCache\Facades\ResponseCache;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
@@ -47,6 +48,8 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
                 static::withoutEvents(function () use ($post) {
                     (new PublishPostAction())->execute($post);
                 });
+
+                ResponseCache::clear();
             }
         });
     }
