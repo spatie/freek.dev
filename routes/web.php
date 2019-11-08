@@ -10,7 +10,7 @@ use App\Http\Controllers\SpeakingController;
 
 Route::redirect('nova', '/nova/login');
 
-Route::mailCoach('mailcoach');
+Route::mailcoach('mailcoach');
 
 if (app()->environment('local')) {
     Route::get('/newsletter-test', NewsletterTestController::class);
