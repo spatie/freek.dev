@@ -15,6 +15,10 @@
         {
             "type": "path",
             "url": "./nova-components/GenerateNewsletter"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-mailcoach"
         }
     ],
     "require": {
@@ -40,6 +44,7 @@
         "spatie/laravel-backup": "^6.0",
         "spatie/laravel-feed": "^2.0",
         "spatie/laravel-flash": "^1.2",
+        "spatie/laravel-mailcoach": "dev-master",
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-missing-page-redirector": "^2.1",
         "spatie/laravel-responsecache": "^6.0",
