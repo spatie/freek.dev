@@ -7,12 +7,12 @@ return [
      * Use an empty string to use the default queue.
      */
     'perform_on_queue' => [
-        'calculate_statistics_job' => '',
-        'register_click_job' => '',
-        'register_open_job' => '',
-        'send_campaign_job' => '',
-        'send_mail_job' => '',
-        'send_test_mail_job' => '',
+        'calculate_statistics_job' => 'calculate-statistics',
+        'register_click_job' => 'register-clicks',
+        'register_open_job' => 'register-opens',
+        'send_campaign_job' => 'send-campaign',
+        'send_mail_job' => 'send-mail',
+        'send_test_mail_job' => 'send-test-mail',
     ],
 
     /*
