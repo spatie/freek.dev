@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3eee2b3ed773b89fd6a6d10f1fdaa358",
+    "content-hash": "4d7fa609d61e035959a76bae1913556a",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1322,8 +1322,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "role": "Developer",
-                    "homepage": "https://github.com/filp"
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -1340,7 +1340,7 @@
         },
         {
             "name": "freekmurze/generate-newsletter",
-            "version": "dev-master",
+            "version": "dev-add-mailcoach",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GenerateNewsletter",
@@ -4628,18 +4628,18 @@
             "authors": [
                 {
                     "name": "Geert Bergman",
-                    "role": "Project Author",
-                    "homepage": "http://www.scrivo.org/"
+                    "homepage": "http://www.scrivo.org/",
+                    "role": "Project Author"
                 },
                 {
                     "name": "Vladimir Jimenez",
-                    "role": "Contributor",
-                    "homepage": "https://allejo.io"
+                    "homepage": "https://allejo.io",
+                    "role": "Contributor"
                 },
                 {
                     "name": "Martin Folkers",
-                    "role": "Contributor",
-                    "homepage": "https://twobrain.io"
+                    "homepage": "https://twobrain.io",
+                    "role": "Contributor"
                 }
             ],
             "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",
@@ -5351,9 +5351,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
-                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be"
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
                 }
             ],
             "description": "Dump databases",
@@ -5861,16 +5861,10 @@
         {
             "name": "spatie/laravel-mailcoach",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "2baca81797377ff372ee945610d4d8454fcf0d08"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-mailcoach/zipball/2baca81797377ff372ee945610d4d8454fcf0d08",
-                "reference": "2baca81797377ff372ee945610d4d8454fcf0d08",
-                "shasum": ""
+                "type": "path",
+                "url": "../laravel-mailcoach",
+                "reference": "2baca81797377ff372ee945610d4d8454fcf0d08"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5953,22 +5947,15 @@
                 "mail",
                 "mass mailing",
                 "spatie"
-            ],
-            "time": "2019-11-12T15:53:20+00:00"
+            ]
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
-                "reference": "e12cb8bd9154f8561d347f6e8f80f4d40f6b7b5b"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-mailcoach-mailgun-feedback/zipball/e12cb8bd9154f8561d347f6e8f80f4d40f6b7b5b",
-                "reference": "e12cb8bd9154f8561d347f6e8f80f4d40f6b7b5b",
-                "shasum": ""
+                "type": "path",
+                "url": "../laravel-mailcoach-mailgun-feedback",
+                "reference": "e12cb8bd9154f8561d347f6e8f80f4d40f6b7b5b"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -6022,8 +6009,7 @@
             "keywords": [
                 "laravel-mailcoach-mailgun-feedback",
                 "spatie"
-            ],
-            "time": "2019-11-12T16:04:54+00:00"
+            ]
         },
         {
             "name": "spatie/laravel-medialibrary",

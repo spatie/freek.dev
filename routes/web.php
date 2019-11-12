@@ -11,8 +11,6 @@ use App\Http\Controllers\SpeakingController;
 
 Route::redirect('nova', '/nova/login');
 
-Route::mailcoach('mailcoach');
-
 Route::feeds();
 
 Route::get('/', HomeController::class);

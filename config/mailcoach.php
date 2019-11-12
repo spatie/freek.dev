@@ -33,10 +33,10 @@ return [
        * Your custom action should always extend the one of the default ones.
        */
     'actions' => [
-        'personalize_html_action' => \Spatie\MailCoach\Actions\PersonalizeHtmlAction::class,
-        'prepare_email_html_action' => \Spatie\MailCoach\Actions\PrepareEmailHtmlAction::class,
-        'prepare_webview_html_action' => \Spatie\MailCoach\Actions\PrepareWebviewHtmlAction::class,
-        'subscribe_action' => \Spatie\MailCoach\Actions\SubscribeAction::class,
-        'confirm_subscription_action' => \Spatie\MailCoach\Actions\ConfirmSubscriptionAction::class,
+        'personalize_html_action' => \Spatie\Mailcoach\Actions\PersonalizeHtmlAction::class,
+        'prepare_email_html_action' => \Spatie\Mailcoach\Actions\PrepareEmailHtmlAction::class,
+        'prepare_webview_html_action' => \Spatie\Mailcoach\Actions\PrepareWebviewHtmlAction::class,
+        'subscribe_action' => \Spatie\Mailcoach\Actions\SubscribeAction::class,
+        'confirm_subscription_action' => \Spatie\Mailcoach\Actions\ConfirmSubscriptionAction::class,
     ],
 ];

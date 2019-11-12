@@ -14,6 +14,8 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         $this->registerRouteModelBindings();
+
+        Route::mailcoach('mailcoach');
     }
 
     public function map()

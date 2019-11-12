@@ -13,8 +13,12 @@
             "url": "https://nova.laravel.com"
         },
         {
-            "type": "composer",
-            "url": "https://satis.mailcoach.app"
+            "type": "path",
+            "url": "../laravel-mailcoach"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-mailcoach-mailgun-feedback"
         },
         {
             "type": "path",
