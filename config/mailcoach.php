@@ -39,4 +39,8 @@ return [
         'subscribe_action' => \Spatie\Mailcoach\Actions\SubscribeAction::class,
         'confirm_subscription_action' => \Spatie\Mailcoach\Actions\ConfirmSubscriptionAction::class,
     ],
+
+    'mailgun_feedback' => [
+        'signing_secret' => env('MAILGUN_SIGNING_SECRET'),
+    ],
 ];
