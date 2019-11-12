@@ -11,11 +11,11 @@ class RouteServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        Route::mailcoach('mailcoach');
+
         parent::boot();
 
         $this->registerRouteModelBindings();
-
-        Route::mailcoach('mailcoach');
     }
 
     public function map()
