@@ -12,6 +12,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         Route::mailcoach('mailcoach');
+        Route::mailgunFeedback('mailgun-feedback');
 
         parent::boot();
 

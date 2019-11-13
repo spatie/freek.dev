@@ -23,6 +23,10 @@
         {
             "type": "path",
             "url": "../laravel-mailcoach"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-mailcoach-mailgun-feedback"
         }
     ],
     "require": {
