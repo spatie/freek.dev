@@ -9,14 +9,6 @@
     "type": "project",
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://nova.laravel.com"
-        },
-        {
-            "type": "composer",
-            "url": "https://satis.mailcoach.app"
-        },
-        {
             "type": "path",
             "url": "./nova-components/GenerateNewsletter"
         },
@@ -27,6 +19,14 @@
         {
             "type": "path",
             "url": "../laravel-mailcoach-mailgun-feedback"
+        },
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/GenerateNewsletter"
         }
     ],
     "require": {
