@@ -19,7 +19,7 @@ class EmailListSeeder extends Seeder
 
         Template::create([
             'name' => 'test',
-            'html' => '<html><body><a href="https://spatie.be">Spatie</a></body></html>'
+            'html' => '<html><body><a href="https://spatie.be">Spatie</a>::unsubscribeUrl::</body></html>'
         ]);
     }
 }

@@ -41,7 +41,7 @@
         "facade/ignition": "^1.4",
         "fideloper/proxy": "^4.0",
         "freekmurze/generate-newsletter": "*",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^6.4",
         "laravel/framework": "^6.0",
         "laravel/horizon": "^3.2.7",
         "laravel/nova": "^2.1.1",
