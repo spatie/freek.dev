@@ -84,6 +84,17 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
         return CommonMark::convertToHtml($this->text);
     }
 
+    public function getFormattedTextWithExternalUrlAttribute()
+    {
+        $text = $this->text;
+        
+        if (!$this->isTweet() && $this->external_url) {
+            $text .= PHP_EOL . PHP_EOL . "[Read More]({$this->external_url})";
+        }
+
+        return CommonMark::convertToHtml($text);
+    }
+
     public function updateAttributes(array $attributes)
     {
         $this->title = $attributes['title'];
@@ -153,7 +164,7 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
         return FeedItem::create()
             ->id($this->id)
             ->title($this->formatted_title)
-            ->summary($this->formatted_text)
+            ->summary($this->formatted_text_with_external_url)
             ->updated($this->publish_date)
             ->link($this->url)
             ->author('Freek Van der Herten');
