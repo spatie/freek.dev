@@ -462,16 +462,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "1.9.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "c15dcd24b756f9e52ea7c3ae8227354f3628f11a"
+                "reference": "89a5c76c39c292f7798f964ab3c836c3f8192a55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/c15dcd24b756f9e52ea7c3ae8227354f3628f11a",
-                "reference": "c15dcd24b756f9e52ea7c3ae8227354f3628f11a",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/89a5c76c39c292f7798f964ab3c836c3f8192a55",
+                "reference": "89a5c76c39c292f7798f964ab3c836c3f8192a55",
                 "shasum": ""
             },
             "require": {
@@ -541,7 +541,7 @@
                 "riak",
                 "xcache"
             ],
-            "time": "2019-11-11T10:31:52+00:00"
+            "time": "2019-11-15T14:31:57+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -1110,16 +1110,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "1.11.2",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "862cbc2dfffa1fa28b47822a116e5b2e03b421db"
+                "reference": "67736a01597b9e08f00a1fc8966b92b918dba5ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/862cbc2dfffa1fa28b47822a116e5b2e03b421db",
-                "reference": "862cbc2dfffa1fa28b47822a116e5b2e03b421db",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/67736a01597b9e08f00a1fc8966b92b918dba5ea",
+                "reference": "67736a01597b9e08f00a1fc8966b92b918dba5ea",
                 "shasum": ""
             },
             "require": {
@@ -1177,7 +1177,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2019-10-13T10:42:06+00:00"
+            "time": "2019-11-14T10:51:35+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -1373,16 +1373,16 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "v1.8.0",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de"
+                "reference": "27a216cbe72327b2d6369fab721a5843be71e57d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f72816b43e74063c8b10357394b6bba8cb1c10de",
-                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/27a216cbe72327b2d6369fab721a5843be71e57d",
+                "reference": "27a216cbe72327b2d6369fab721a5843be71e57d",
                 "shasum": ""
             },
             "require": {
@@ -1391,13 +1391,11 @@
             "require-dev": {
                 "ext-intl": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "squizlabs/php_codesniffer": "^1.5"
+                "squizlabs/php_codesniffer": "^2.9.2"
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.8-dev"
-                }
+                "branch-alias": []
             },
             "autoload": {
                 "psr-4": {
@@ -1419,7 +1417,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2018-07-12T10:23:15+00:00"
+            "time": "2019-11-14T13:13:06+00:00"
         },
         {
             "name": "geoip2/geoip2",
@@ -2084,17 +2082,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.7.0",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "8476c492e8420d315d91cab15cac819e04422b42"
+                "reference": "07f0f2f0bbe4166ef9ffb2f14ed9dc2b2401489b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-8476c492e8420d315d91cab15cac819e04422b42-zip-e6a5ec.zip",
-                "reference": "8476c492e8420d315d91cab15cac819e04422b42",
-                "shasum": "df6977c1206f1e943f7437f7676ccc748df460f0"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-07f0f2f0bbe4166ef9ffb2f14ed9dc2b2401489b-zip-f41491.zip",
+                "reference": "07f0f2f0bbe4166ef9ffb2f14ed9dc2b2401489b",
+                "shasum": "897bb5802a4fbb0b8983dc1fe5da146fa371cb83"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
@@ -2150,7 +2148,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2019-11-12T20:23:10+00:00"
+            "time": "2019-11-13T17:21:13+00:00"
         },
         {
             "name": "laravel/scout",
@@ -2780,16 +2778,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "68545165e19249013afd1d6f7485aecff07a2d22"
+                "reference": "f9d56fd2f5533322caccdfcddbb56aedd622ef1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/68545165e19249013afd1d6f7485aecff07a2d22",
-                "reference": "68545165e19249013afd1d6f7485aecff07a2d22",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f9d56fd2f5533322caccdfcddbb56aedd622ef1c",
+                "reference": "f9d56fd2f5533322caccdfcddbb56aedd622ef1c",
                 "shasum": ""
             },
             "require": {
@@ -2857,7 +2855,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2019-08-30T09:56:44+00:00"
+            "time": "2019-11-13T10:27:43+00:00"
         },
         {
             "name": "moontoast/math",
@@ -5864,7 +5862,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach",
-                "reference": "4a8c92e468eacc780d0d941726aa723c0242c80c"
+                "reference": "1b0e85a100d82af2a462b88fc9f7a1095c8c871f"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5892,6 +5890,7 @@
                 "spatie/laravel-validation-rules": "^2.4",
                 "spatie/laravel-view-models": "^1.2",
                 "spatie/laravel-webhook-client": "^2.3",
+                "spatie/query-string": "^1.0",
                 "spatie/simple-excel": "^1.1",
                 "spatie/temporary-directory": "^1.2",
                 "symfony/css-selector": "^4.3",
@@ -5955,7 +5954,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-mailcoach-mailgun-feedback",
-                "reference": "47029a82a5c8afa34f4c7282054d4edbc2d874d6"
+                "reference": "525dcfbd81dd7607187c7b4096a3b550169e7ba9"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -7012,16 +7011,16 @@
         },
         {
             "name": "spatie/nova-tags-field",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/nova-tags-field.git",
-                "reference": "c3f40f8fb95a2198bc7eb8d9b46e30bf0b1cacf1"
+                "reference": "cc0ed86f6ad6194a1cf294b11ada87bbf364673c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/c3f40f8fb95a2198bc7eb8d9b46e30bf0b1cacf1",
-                "reference": "c3f40f8fb95a2198bc7eb8d9b46e30bf0b1cacf1",
+                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/cc0ed86f6ad6194a1cf294b11ada87bbf364673c",
+                "reference": "cc0ed86f6ad6194a1cf294b11ada87bbf364673c",
                 "shasum": ""
             },
             "require": {
@@ -7064,7 +7063,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2019-09-04T12:42:48+00:00"
+            "time": "2019-11-13T19:25:08+00:00"
         },
         {
             "name": "spatie/nova-tail-tool",
@@ -7233,6 +7232,53 @@
             "time": "2019-07-31T06:46:19+00:00"
         },
         {
+            "name": "spatie/query-string",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/query-string.git",
+                "reference": "e2f6fd4a40c7c6a01ad577d5e744e4684d5f3875"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/query-string/zipball/e2f6fd4a40c7c6a01ad577d5e744e4684d5f3875",
+                "reference": "e2f6fd4a40c7c6a01ad577d5e744e4684d5f3875",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\QueryString\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manipulate query strings",
+            "homepage": "https://github.com/spatie/query-string",
+            "keywords": [
+                "query-string",
+                "spatie"
+            ],
+            "time": "2019-11-15T10:28:01+00:00"
+        },
+        {
             "name": "spatie/simple-excel",
             "version": "1.1.0",
             "source": {
@@ -7331,20 +7377,20 @@
         },
         {
             "name": "spatie/url",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/url.git",
-                "reference": "d57c19baf1586d335f30c126681a9487da01809b"
+                "reference": "fe89b6c5fc820cef7ae0548c9990bbbabaefd4a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/url/zipball/d57c19baf1586d335f30c126681a9487da01809b",
-                "reference": "d57c19baf1586d335f30c126681a9487da01809b",
+                "url": "https://api.github.com/repos/spatie/url/zipball/fe89b6c5fc820cef7ae0548c9990bbbabaefd4a0",
+                "reference": "fe89b6c5fc820cef7ae0548c9990bbbabaefd4a0",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0",
+                "php": "^7.2",
                 "psr/http-message": "^1.0",
                 "spatie/macroable": "^1.0"
             },
@@ -7375,7 +7421,7 @@
                 "spatie",
                 "url"
             ],
-            "time": "2018-01-02T20:50:05+00:00"
+            "time": "2019-11-13T19:34:27+00:00"
         },
         {
             "name": "stripe/stripe-php",
