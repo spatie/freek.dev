@@ -13,6 +13,8 @@ class EmailListSeeder extends Seeder
         $emailList = EmailList::create([
             'name' => 'freek.dev newsletter',
             'requires_double_opt_in' => true,
+            'default_from_email' => 'freek@spatie.be',
+            'default_from_name' => 'Freek Van der Herten',
         ]);
 
         $emailList->subscribeNow('freek@spatie.be');

@@ -13,12 +13,9 @@ class CreateMailCoachTables extends Migration
             $table->uuid('uuid');
             $table->string('name');
             $table->boolean('requires_double_opt_in')->default(false);
-
-            $table->string('redirect_after_already_subscribed')->nullable();
-            $table->string('redirect_after_pending')->nullable();
-            $table->string('redirect_after_subscribed')->nullable();
-
             $table->string('campaigns_feed_enabled')->default(true);
+            $table->string('default_from_email')->nullable();
+            $table->string('default_from_name')->nullable();
 
             $table->timestamps();
         });
@@ -130,6 +127,8 @@ class CreateMailCoachTables extends Migration
                 ->foreign('email_list_subscription_id')
                 ->references('id')->on('email_list_subscriptions')
                 ->onDelete('cascade');
+
+            $table->unique('transport_message_id');
         });
 
         Schema::create('campaign_clicks', function (Blueprint $table) {
