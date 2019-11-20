@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMailCoachTables extends Migration
+class CreateMailcoachTables extends Migration
 {
     public function up()
     {
@@ -14,8 +14,11 @@ class CreateMailCoachTables extends Migration
             $table->string('name');
             $table->boolean('requires_double_opt_in')->default(false);
             $table->string('campaigns_feed_enabled')->default(true);
+
             $table->string('default_from_email')->nullable();
             $table->string('default_from_name')->nullable();
+
+            $table->boolean('allow_form_subscriptions')->default(false);
 
             $table->timestamps();
         });
@@ -85,6 +88,8 @@ class CreateMailCoachTables extends Migration
             $table->timestamp('sent_at')->nullable();
             $table->timestamp('statistics_calculated_at')->nullable();
             $table->timestamp('scheduled_at')->nullable();
+
+            $table->timestamp('last_modified_at')->nullable();
 
             $table->timestamps();
 
