@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Spatie\MailCoach\Models\EmailList;
-use Spatie\MailCoach\Rules\EmailListSubscriptionRule;
+use Spatie\Mailcoach\Models\EmailList;
+use Spatie\Mailcoach\Rules\EmailListSubscriptionRule;
 
 class SubscribeToNewsletterRequest extends FormRequest
 {

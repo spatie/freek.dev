@@ -2,8 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\NewsletterSubscription\ConfirmNewsletterSubscriptionController;
-use App\Http\Controllers\NewsletterSubscription\SubscribeToNewsletterController;
+use App\Http\Controllers\NewsletterSubscriptionController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostController;
@@ -23,10 +22,10 @@ Route::view('search', 'front.search.index');
 
 Route::get('newsletter', NewsletterController::class);
 
-
 Route::middleware('doNotCacheResponse')->group(function () {
-    Route::post('subscribe', SubscribeToNewsletterController::class);
-    Route::get('confirm-newsletter-subscription', ConfirmNewsletterSubscriptionController::class);
+    Route::post('subscribe', [NewsletterSubscriptionController::class, 'subscribe']);
+    Route::get('confirm', [NewsletterSubscriptionController::class, 'confirm']);
+    Route::get('confirmed', [NewsletterSubscriptionController::class, 'confirmed']);
 
     Route::get('payments', [PaymentsController::class, 'index']);
     Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
