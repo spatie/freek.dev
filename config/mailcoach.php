@@ -3,16 +3,19 @@
 return [
 
     /*
+     * The date format used on all screens of the UI
+     */
+    'date_format' => 'Y-m-d H:i',
+
+    /*
      * Here you can specify which jobs should run on which queues.
      * Use an empty string to use the default queue.
      */
     'perform_on_queue' => [
-        'calculate_statistics_job' => 'calculate-statistics',
-        'register_click_job' => 'register-clicks',
-        'register_open_job' => 'register-opens',
-        'send_campaign_job' => 'send-campaign',
-        'send_mail_job' => 'send-mail',
-        'send_test_mail_job' => 'send-test-mail',
+        'calculate_statistics_job' => '',
+        'send_campaign_job' => '',
+        'send_mail_job' => '',
+        'send_test_mail_job' => '',
     ],
 
     /*
@@ -20,9 +23,9 @@ return [
      * e-mail sending service. To use this feature you must have Redis installed.
      */
     'throttling' => [
-        'enabled' => false,
+        'enabled' => true,
         'redis_connection_name' => 'default',
-        'redis_key' => 'laravel-email-campaigns',
+        'redis_key' => 'laravel-mailcoach',
         'allowed_number_of_jobs_in_timespan' => 5,
         'timespan_in_seconds' => 1,
         'release_in_seconds' => 5,
@@ -36,11 +39,8 @@ return [
         'personalize_html_action' => \Spatie\Mailcoach\Actions\PersonalizeHtmlAction::class,
         'prepare_email_html_action' => \Spatie\Mailcoach\Actions\PrepareEmailHtmlAction::class,
         'prepare_webview_html_action' => \Spatie\Mailcoach\Actions\PrepareWebviewHtmlAction::class,
-        'subscribe_action' => \Spatie\Mailcoach\Actions\SubscribeAction::class,
+        'create_subscriber_action' => \Spatie\Mailcoach\Actions\CreateSubscriberAction::class,
         'confirm_subscription_action' => \Spatie\Mailcoach\Actions\ConfirmSubscriptionAction::class,
-    ],
-
-    'mailgun_feedback' => [
-        'signing_secret' => env('MAILGUN_SIGNING_SECRET'),
+        'convert_html_to_text' => \Spatie\Mailcoach\Actions\ConvertHtmlToTextAction::class,
     ],
 ];

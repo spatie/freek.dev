@@ -3,6 +3,7 @@
 
 use Illuminate\Database\Seeder;
 use Spatie\Mailcoach\Models\EmailList;
+use Spatie\Mailcoach\Models\Subscriber;
 use Spatie\Mailcoach\Models\Template;
 
 class EmailListSeeder extends Seeder
@@ -17,10 +18,14 @@ class EmailListSeeder extends Seeder
             'default_from_name' => 'Freek Van der Herten',
         ]);
 
-        $emailList->subscribeNow('freek@spatie.be');
+        foreach (range(1, 10) as $i) {
+            Subscriber::createWithEmail("freek+test{$i}@spatie.be")
+                ->skipDoubleOptIn()
+                ->subscribeTo($emailList);
+        }
 
         Template::create([
-            'name' => 'test',
+            'name' => 'Spatie',
             'html' => '<html><body><a href="https://spatie.be">Spatie</a><br /><a href="::unsubscribeUrl::">Unsubscribe</a></body></html>'
         ]);
     }

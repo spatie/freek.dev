@@ -9,7 +9,7 @@ use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
 
-Route::redirect('nova', '/nova/login');
+Route::redirect('nova', '/nova/login')->name('login');
 
 Route::feeds();
 
