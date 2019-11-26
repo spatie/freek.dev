@@ -18,7 +18,7 @@ class EmailListSeeder extends Seeder
             'default_from_name' => 'Freek Van der Herten',
         ]);
 
-        foreach (range(1, 10) as $i) {
+        foreach (range(1, 5) as $i) {
             Subscriber::createWithEmail("freek+test{$i}@spatie.be")
                 ->skipDoubleOptIn()
                 ->subscribeTo($emailList);
@@ -26,7 +26,17 @@ class EmailListSeeder extends Seeder
 
         Template::create([
             'name' => 'Spatie',
-            'html' => '<html><body><a href="https://spatie.be">Spatie</a><br /><a href="::unsubscribeUrl::">Unsubscribe</a></body></html>'
+            'html' => <<<HTML
+                        <html>
+                            <body>
+                                <ul>
+                                    <li> <a href="https://spatie.be">Spatie</a></li>
+                                    <li> <a href="https://mailcoach.app">Mailcoach</a></li>
+                                    <li><a href="::unsubscribeUrl::">Unsubscribe</a>
+                                </ul>
+                            </body>
+                        </html>
+                        HTML
         ]);
     }
 }
