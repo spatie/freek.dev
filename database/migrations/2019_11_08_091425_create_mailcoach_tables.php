@@ -93,7 +93,7 @@ class CreateMailcoachTables extends Migration
         Schema::create('campaign_links', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('email_campaign_id');
-            $table->string('link');
+            $table->string('url');
             $table->integer('click_count')->default(0);
             $table->integer('unique_click_count')->default(0);
             $table->nullableTimestamps();
