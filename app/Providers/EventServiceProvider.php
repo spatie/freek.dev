@@ -15,7 +15,7 @@ class EventServiceProvider extends ServiceProvider
         Event::listen(CampaignLinkClickedEvent::class, function (CampaignLinkClickedEvent $event) {
             $subscriber = $event->campaignClick->subscriber;
 
-            info("{$subscriber->email} clicked {$subscriber->uniqueClicks->count()} unique link(s).");
+            info("{$subscriber->email} clicked {$subscriber->clicks->count()} link(s).");
         });
     }
 }
