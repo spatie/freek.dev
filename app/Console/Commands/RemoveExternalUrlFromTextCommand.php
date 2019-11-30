@@ -13,11 +13,9 @@ class RemoveExternalUrlFromTextCommand extends Command
 
     public function handle()
     {
-        Post::query()->whereNotNull('external_url')->each(function (Post $post) {
-            $post->text = $this->getSanitizedText($post);
-
-            $post->save();
-        });
+        Post::query()->whereNotNull('external_url')->each(
+            fn (Post $post) => $post->update(['text' =>$this->getSanitizedText($post)])
+        );
     }
 
     private function getSanitizedText(Post $post): string
