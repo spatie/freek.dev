@@ -19,17 +19,13 @@ class ImportNewslettersCommand extends Command
     {
         $importedNewsletters = $this
             ->getFeedItems(config('services.sendy.archive_feed_url'))
-            ->reject(function (array $newsletterProperties) {
-                return Newsletter::where('title', $newsletterProperties['title'])->first();
-            })
-            ->map(function (array $newsletterProperties) {
-                return Newsletter::create([
-                    'title' => $newsletterProperties['title'],
-                    'url' => $newsletterProperties['link'],
-                    'description' => $newsletterProperties['description'],
-                    'sent_at' => Carbon::create($newsletterProperties['pubDate']),
-                ]);
-            });
+            ->reject(fn (array $newsletterProperties) => Newsletter::where('title', $newsletterProperties['title'])->first())
+            ->map(fn (array $newsletterProperties) => Newsletter::create([
+                'title' => $newsletterProperties['title'],
+                'url' => $newsletterProperties['link'],
+                'description' => $newsletterProperties['description'],
+                'sent_at' => Carbon::create($newsletterProperties['pubDate']),
+            ]));
 
         if ($importedNewsletters->count()) {
             ResponseCache::clear();

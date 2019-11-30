@@ -10,11 +10,9 @@ class PaymentSuccessfulMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /** @var string */
-    public $email;
+    public string $email;
 
-    /** @var int */
-    public $amount;
+    public int $amount;
 
     public function __construct(string $email, int $amount)
     {
