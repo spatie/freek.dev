@@ -8,8 +8,7 @@ use Livewire\Component;
 
 class Search extends Component
 {
-    /** @var string */
-    public $query = '';
+    public string $query = '';
 
     public function render()
     {

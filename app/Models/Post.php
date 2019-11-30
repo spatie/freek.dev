@@ -87,7 +87,7 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
     public function getFormattedTextWithExternalUrlAttribute()
     {
         $text = $this->text;
-        
+
         if (!$this->isTweet() && $this->external_url) {
             $text .= PHP_EOL . PHP_EOL . "[Read More]({$this->external_url})";
         }
@@ -106,9 +106,9 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
 
         $this->save();
 
-        $tags = array_map(function (string $tag) {
-            return trim(strtolower($tag));
-        }, explode(',', $attributes['tags_text']));
+        $tags = explode(',', $attributes['tags_text']);
+
+        $tags = array_map(fn (string $tag) => trim(strtolower($tag)), $tags);
 
         $this->syncTags($tags);
 
@@ -186,9 +186,9 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
 
     public function hasTag(string $tagName): bool
     {
-        return $this->refresh()->tags->contains(function (Tag $tag) use ($tagName) {
-            return $tag->name === $tagName;
-        });
+        return $this->refresh()
+            ->tags
+            ->contains(fn (Tag $tag) => $tag->name === $tagName);
     }
 
     public function isLink(): bool
@@ -227,12 +227,8 @@ class Post extends Model implements Feedable, Sluggable, Tweetable
     public function toTweet(): string
     {
         $tags = $this->tags
-            ->map(function (Tag $tag) {
-                return $tag->name;
-            })
-            ->map(function (string $tagName) {
-                return '#' . str_replace(' ', '', $tagName);
-            })
+            ->map(fn (Tag $tag) => $tag->name)
+            ->map(fn (string $tagName) => '#' . str_replace(' ', '', $tagName))
             ->implode(' ');
 
         $title = $this->title;
