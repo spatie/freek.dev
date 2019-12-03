@@ -14,7 +14,7 @@ class SendTweetJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public Tweetable $tweetable;
+    public object $tweetable;
 
     public function __construct(Tweetable $tweetable)
     {
