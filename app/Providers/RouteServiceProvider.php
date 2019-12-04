@@ -11,10 +11,10 @@ class RouteServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        parent::boot();
+
         Route::mailcoach('mailcoach');
         Route::mailgunFeedback('mailgun-feedback');
-
-        parent::boot();
 
         $this->registerRouteModelBindings();
     }
