@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93b7b1b887fbd9a9a08b526b3641de2e",
+    "content-hash": "ef1a3df2deb0f5512a92a0dd04ec87d0",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -315,60 +315,6 @@
                 "time"
             ],
             "time": "2019-11-30T02:33:19+00:00"
-        },
-        {
-            "name": "calebporzio/livewire",
-            "version": "v0.3.21",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/livewire/livewire.git",
-                "reference": "25a7f946359450f6355210c8925412d8cbee26e4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/25a7f946359450f6355210c8925412d8cbee26e4",
-                "reference": "25a7f946359450f6355210c8925412d8cbee26e4",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^5.6|^6.0",
-                "illuminate/validation": "^5.6|^6.0"
-            },
-            "require-dev": {
-                "laravel/framework": "^5.6|^6.0",
-                "orchestra/testbench": "~3.0",
-                "phpunit/phpunit": "^7.5",
-                "psy/psysh": "@stable"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Livewire\\LivewireServiceProvider"
-                    ],
-                    "aliases": {
-                        "Livewire": "Livewire\\Livewire"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Livewire\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Caleb Porzio",
-                    "email": "calebporzio@gmail.com"
-                }
-            ],
-            "description": "Build and test rich client-side functionality: with only backend code.",
-            "abandoned": "livewire/livewire",
-            "time": "2019-11-11T23:44:45+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2170,16 +2116,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "0.19.3",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "c6ecea928b432ae417fa9942840bbfd8c332448c"
+                "reference": "d74654d85954e3b9451d67faaebacd210fc70252"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/c6ecea928b432ae417fa9942840bbfd8c332448c",
-                "reference": "c6ecea928b432ae417fa9942840bbfd8c332448c",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d74654d85954e3b9451d67faaebacd210fc70252",
+                "reference": "d74654d85954e3b9451d67faaebacd210fc70252",
                 "shasum": ""
             },
             "require": {
@@ -2193,6 +2139,7 @@
                 "cebe/markdown": "~1.0",
                 "commonmark/commonmark.js": "0.29.0",
                 "erusev/parsedown": "~1.0",
+                "ext-json": "*",
                 "michelf/php-markdown": "~1.4",
                 "mikehaertl/php-shellcommand": "^1.4",
                 "phpstan/phpstan-shim": "^0.11.5",
@@ -2209,7 +2156,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.20-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -2236,7 +2183,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-06-18T18:29:15+00:00"
+            "time": "2019-11-11T22:23:29+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2500,6 +2447,59 @@
                 "library"
             ],
             "time": "2019-10-23T06:57:59+00:00"
+        },
+        {
+            "name": "livewire/livewire",
+            "version": "v0.3.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/livewire/livewire.git",
+                "reference": "25a7f946359450f6355210c8925412d8cbee26e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/25a7f946359450f6355210c8925412d8cbee26e4",
+                "reference": "25a7f946359450f6355210c8925412d8cbee26e4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.6|^6.0",
+                "illuminate/validation": "^5.6|^6.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^5.6|^6.0",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^7.5",
+                "psy/psysh": "@stable"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Livewire\\LivewireServiceProvider"
+                    ],
+                    "aliases": {
+                        "Livewire": "Livewire\\Livewire"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Livewire\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "Build and test rich client-side functionality: with only backend code.",
+            "time": "2019-11-11T23:44:45+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -5131,22 +5131,22 @@
         },
         {
             "name": "spatie/commonmark-highlighter",
-            "version": "1.1.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/commonmark-highlighter.git",
-                "reference": "e398103a8b27c7d3a033a795e7f6df3db83471d0"
+                "reference": "c36ea12432e6ce65df299e3f5ed31a0e880d0060"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/commonmark-highlighter/zipball/e398103a8b27c7d3a033a795e7f6df3db83471d0",
-                "reference": "e398103a8b27c7d3a033a795e7f6df3db83471d0",
+                "url": "https://api.github.com/repos/spatie/commonmark-highlighter/zipball/c36ea12432e6ce65df299e3f5ed31a0e880d0060",
+                "reference": "c36ea12432e6ce65df299e3f5ed31a0e880d0060",
                 "shasum": ""
             },
             "require": {
-                "league/commonmark": "^0.19.0",
+                "league/commonmark": "^1.0",
                 "php": "^7.2",
-                "scrivo/highlight.php": "^9.14"
+                "scrivo/highlight.php": "^9.15.6.1"
             },
             "require-dev": {
                 "larapack/dd": "^1.0",
@@ -5177,7 +5177,7 @@
                 "commonmark-highlighter",
                 "spatie"
             ],
-            "time": "2019-06-16T17:37:37+00:00"
+            "time": "2019-11-21T15:49:51+00:00"
         },
         {
             "name": "spatie/db-dumper",

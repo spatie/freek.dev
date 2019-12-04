@@ -14,9 +14,11 @@ class CommonMark
 {
     public static function convertToHtml(string $markdown): string
     {
+        $languages = ['html', 'php', 'js', 'yaml', 'bash'];
+
         $environment = Environment::createCommonMarkEnvironment()
-            ->addBlockRenderer(FencedCode::class, new FencedCodeRenderer())
-            ->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer())
+            ->addBlockRenderer(FencedCode::class, new FencedCodeRenderer($languages))
+            ->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer($languages))
             ->addBlockRenderer(Heading::class, new HeadingRenderer());
 
         $commonMarkConverter = new CommonMarkConverter([], $environment);
