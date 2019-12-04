@@ -42,6 +42,7 @@ return [
         'create_subscriber_action' => \Spatie\Mailcoach\Actions\CreateSubscriberAction::class,
         'confirm_subscription_action' => \Spatie\Mailcoach\Actions\ConfirmSubscriptionAction::class,
         'convert_html_to_text' => \Spatie\Mailcoach\Actions\ConvertHtmlToTextAction::class,
+        'send_welcome_mail_action' => \Spatie\Mailcoach\Actions\SendWelcomeMailAction::class,
     ],
 
     'mailgun_feedback' => [
