@@ -13,7 +13,7 @@ class EmailListSeeder extends Seeder
         /** @var \Spatie\Mailcoach\Models\EmailList $emailList */
         $emailList = EmailList::create([
             'name' => 'freek.dev newsletter',
-            'requires_double_opt_in' => true,
+            'requires_confirmation' => true,
             'default_from_email' => 'freek@spatie.be',
             'default_from_name' => 'Freek Van der Herten',
         ]);
