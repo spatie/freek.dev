@@ -10,7 +10,7 @@ If you already want to read some stuff here are links to the latest newsletters:
 
 Here are some blogposts I recently published on [freek.dev](https://freek.dev):
 @foreach($posts as $post)
-- [$post->title]($post->url)
+- [{{ $post->title }}]({{ $post->url }})
 @endforeach
 
 Thanks for subscribing!

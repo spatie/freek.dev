@@ -18,9 +18,9 @@ class WelcomeMail extends MailcoachWelcomeMail
     {
         parent::__construct($subscriber);
 
-        $this->posts = Post::published()->originalContent()->orderByDesc('publish_date')->limit(10)->get();
+        $this->newsletters = Newsletter::orderByDesc('sent_at')->take(3)->get();
 
-        $this->newsletters = Newsletter::orderByDesc('sent_at')->take(100)->get();
+        $this->posts = Post::published()->originalContent()->orderByDesc('publish_date')->limit(10)->get();
     }
 
     public function build()
