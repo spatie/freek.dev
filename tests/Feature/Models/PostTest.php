@@ -8,8 +8,7 @@ use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-    /** @var \App\Models\Post */
-    private $post;
+    private Post $post;
 
     public function setUp(): void
     {

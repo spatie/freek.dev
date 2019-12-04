@@ -9,22 +9,24 @@ use Spatie\Mailcoach\Models\Subscriber;
 
 class WelcomeMail extends MailcoachWelcomeMail
 {
-    /**
-     * @var \App\Models\Post|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder
-     */
     private Collection $posts;
+
+    private Collection $newsletters;
 
     public function __construct(Subscriber $subscriber)
     {
         parent::__construct($subscriber);
 
         $this->posts = Post::published()->originalContent()->orderByDesc('published_at')->limit(10)->get();
+
+        $this->newsletters = Newsletter::orderByDesc('sent_at')->take(100)->get();
     }
 
     public function build()
     {
         return
             $this
+                ->markdown('mail.welcome')
                 ->subject('Welcome to the freek.dev newsletter');
     }
 }

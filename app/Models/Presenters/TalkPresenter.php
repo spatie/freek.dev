@@ -12,10 +12,7 @@ trait TalkPresenter
             'Video' => $this->video_link,
         ])
             ->filter()
-            ->map(function ($url, $name) {
-                return '<a href="' . $url . '">' . $name . '</a>';
-            })
-
+            ->map(fn ($url, $name) => '<a href="' . $url . '">' . $name . '</a>')
             ->implode(' | ');
     }
 }

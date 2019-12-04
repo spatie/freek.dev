@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Mail\WelcomeMail;
 use Illuminate\Database\Seeder;
 use Spatie\Mailcoach\Models\EmailList;
 use Spatie\Mailcoach\Models\Subscriber;
@@ -16,6 +17,7 @@ class EmailListSeeder extends Seeder
             'requires_confirmation' => true,
             'default_from_email' => 'freek@spatie.be',
             'default_from_name' => 'Freek Van der Herten',
+            'welcome_mailable_class' => WelcomeMail::class,
         ]);
 
         foreach (range(1, 5) as $i) {

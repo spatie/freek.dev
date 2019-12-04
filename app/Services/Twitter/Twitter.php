@@ -6,8 +6,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 class Twitter
 {
-    /** @var \Abraham\TwitterOAuth\TwitterOAuth  */
-    protected $twitter;
+    protected TwitterOAuth $twitter;
 
     public function __construct(TwitterOAuth $twitter)
     {

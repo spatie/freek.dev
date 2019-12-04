@@ -9,11 +9,9 @@ use Illuminate\Support\Arr;
 
 class PostFactory
 {
-    /** @var int */
-    private $times;
+    private int $times;
 
-    /** @var string|null */
-    private $type;
+    private ?string $type;
 
     public function __construct(int $times = 1)
     {

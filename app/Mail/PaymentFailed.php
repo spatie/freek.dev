@@ -10,14 +10,11 @@ class PaymentFailed extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /** @var string */
-    public $email;
+    public string $email;
 
-    /** @var int */
-    public $amount;
+    public int $amount;
 
-    /** @var string  */
-    public $exceptionMessage;
+    public string $exceptionMessage;
 
     public function __construct(string $email, int $amount, string $exceptionMessage)
     {

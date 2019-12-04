@@ -21,4 +21,5 @@ auth.json
 .phpunit.result.cache
 _ide_helper_models.php
 /storage/temp
+_ide_helper.php
 
