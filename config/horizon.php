@@ -81,7 +81,7 @@ return [
             ],
             'mailcoach' => [
                 'connection' => 'redis',
-                'queue' => ['calculate-statistics', 'register-clicks', 'register-opens', 'send-campaign', 'send-mail', 'send-test-mail'],
+                'queue' => ['calculate-statistics', 'send-campaign', 'send-mail', 'send-test-mail'],
                 'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 3,
@@ -98,7 +98,7 @@ return [
             ],
             'mailcoach' => [
                 'connection' => 'redis',
-                'queue' => ['calculate-statistics', 'register-clicks', 'register-opens', 'send-campaign', 'send-mail', 'send-test-mail'],
+                'queue' => ['calculate-statistics', 'register-clicks', 'send-mail', 'send-test-mail'],
                 'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 3,

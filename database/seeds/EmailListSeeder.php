@@ -18,6 +18,7 @@ class EmailListSeeder extends Seeder
             'default_from_email' => 'freek@spatie.be',
             'default_from_name' => 'Freek Van der Herten',
             'welcome_mailable_class' => WelcomeMail::class,
+            'send_welcome_mail' => true,
         ]);
 
         foreach (range(1, 5) as $i) {
