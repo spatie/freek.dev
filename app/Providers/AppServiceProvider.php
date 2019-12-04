@@ -15,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
             return auth()->check();
         });
 
+        Gate::define('viewMailCoach', function (User $user) {
+            return $user->email === 'freek@spatie.be';
+        });
+
         Carbon::setToStringFormat('jS F Y');
 
         Model::unguard();
