@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef1a3df2deb0f5512a92a0dd04ec87d0",
+    "content-hash": "ed4259a2a38898cd763dd7884d17d107",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -5723,10 +5723,16 @@
         {
             "name": "spatie/laravel-mailcoach",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach.git",
+                "reference": "e60c7fcada2ef61fe21ac4e93af716aa3fff0c36"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach",
-                "reference": "3154e1ca21365be0352d83ec8dd5b86dd1685731"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-mailcoach/zipball/e60c7fcada2ef61fe21ac4e93af716aa3fff0c36",
+                "reference": "e60c7fcada2ef61fe21ac4e93af716aa3fff0c36",
+                "shasum": ""
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5812,15 +5818,22 @@
                 "mail",
                 "mass mailing",
                 "spatie"
-            ]
+            ],
+            "time": "2019-12-04T17:54:23+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-mailcoach-mailgun-feedback",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
                 "reference": "9fc7ffd3a381d8200f0262190de1099b3345ccda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-mailcoach-mailgun-feedback/zipball/9fc7ffd3a381d8200f0262190de1099b3345ccda",
+                "reference": "9fc7ffd3a381d8200f0262190de1099b3345ccda",
+                "shasum": ""
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5874,7 +5887,8 @@
             "keywords": [
                 "laravel-mailcoach-mailgun-feedback",
                 "spatie"
-            ]
+            ],
+            "time": "2019-12-02T17:17:14+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
