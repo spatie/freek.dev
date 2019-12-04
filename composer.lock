@@ -5726,12 +5726,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "e60c7fcada2ef61fe21ac4e93af716aa3fff0c36"
+                "reference": "9316d53d9bf8b61922255c4bf962035cebf8b8b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-mailcoach/zipball/e60c7fcada2ef61fe21ac4e93af716aa3fff0c36",
-                "reference": "e60c7fcada2ef61fe21ac4e93af716aa3fff0c36",
+                "url": "https://api.github.com/repos/spatie/laravel-mailcoach/zipball/9316d53d9bf8b61922255c4bf962035cebf8b8b9",
+                "reference": "9316d53d9bf8b61922255c4bf962035cebf8b8b9",
                 "shasum": ""
             },
             "require": {
@@ -5819,7 +5819,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2019-12-04T17:54:23+00:00"
+            "time": "2019-12-04T21:42:24+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",

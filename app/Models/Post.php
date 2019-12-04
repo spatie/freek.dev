@@ -19,7 +19,7 @@ use Spatie\ResponseCache\Facades\ResponseCache;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
-class Post extends Model implements Feedable, Sluggable, Tweetable
+class Post extends Model implements Feedable, Sluggable
 {
     public const TYPE_LINK = 'link';
     public const TYPE_TWEET = 'tweet';

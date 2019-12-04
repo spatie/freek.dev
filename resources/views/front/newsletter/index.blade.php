@@ -32,10 +32,10 @@
         <p>
             Here are the links to the newsletters I've previously sent.
         </p>
-        @foreach($newsletters as $newsletter)
+        @foreach($pastCampaigns as $campaign)
             <div>
-                <a href="{{ $newsletter->url }}">{{ $newsletter->title }}</a>
-                <div class="text-gray-700 text-xs">sent on {{ $newsletter->sent_at->format('jS F Y') }}</div>
+                <a href="{{ $campaign->webViewUrl() }}">{{ $campaign->subject }}</a>
+                <div class="text-gray-700 text-xs">sent on {{ $campaign->sent_at->format('jS F Y') }}</div>
             </div>
         @endforeach
     </div>

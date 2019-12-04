@@ -2,7 +2,7 @@
 
 namespace App\Actions;
 
-use App\Jobs\SendTweetJob;
+use App\Jobs\SendPostTweetJob;
 use App\Models\Post;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
@@ -33,7 +33,7 @@ class PublishPostAction
             return;
         }
 
-        dispatch(new SendTweetJob($post));
+        dispatch(new SendPostTweetJob($post));
 
         $post->tweet_sent = true;
 
