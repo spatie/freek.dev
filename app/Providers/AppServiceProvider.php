@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
             return auth()->check();
         });
 
-        Gate::define('viewMailCoach', function (User $user) {
+        Gate::define('viewMailcoach', function (User $user) {
             return $user->email === 'freek@spatie.be';
         });
 
