@@ -20,9 +20,9 @@ Route::view('about', 'front.about.index');
 Route::view('advertising', 'front.advertising.index');
 Route::view('search', 'front.search.index');
 
-Route::get('newsletter', NewsletterController::class);
 
 Route::middleware('doNotCacheResponse')->group(function () {
+    Route::get('newsletter', NewsletterController::class);
     Route::post('subscribe', [NewsletterSubscriptionController::class, 'subscribe']);
     Route::get('confirm', [NewsletterSubscriptionController::class, 'confirm']);
     Route::get('confirmed', [NewsletterSubscriptionController::class, 'confirmed']);
