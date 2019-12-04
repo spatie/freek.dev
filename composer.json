@@ -9,6 +9,18 @@
     "type": "project",
     "repositories": [
         {
+            "type": "path",
+            "url": "./nova-components/GenerateNewsletter"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-mailcoach"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-mailcoach-mailgun-feedback"
+        },
+        {
             "type": "composer",
             "url": "https://nova.laravel.com"
         },
@@ -29,7 +41,7 @@
         "facade/ignition": "^1.4",
         "fideloper/proxy": "^4.0",
         "freekmurze/generate-newsletter": "*",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^6.4",
         "laravel/framework": "^6.0",
         "laravel/horizon": "^3.2.7",
         "laravel/nova": "^2.1.1",
@@ -40,6 +52,8 @@
         "spatie/laravel-backup": "^6.0",
         "spatie/laravel-feed": "^2.0",
         "spatie/laravel-flash": "^1.2",
+        "spatie/laravel-mailcoach": "dev-master",
+        "spatie/laravel-mailcoach-mailgun-feedback": "dev-master",
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-missing-page-redirector": "^2.1",
         "spatie/laravel-responsecache": "^6.0",

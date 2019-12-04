@@ -2,17 +2,13 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\NewsletterTestController;
+use App\Http\Controllers\NewsletterSubscriptionController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
 
-Route::redirect('nova', '/nova/login');
-
-if (app()->environment('local')) {
-    Route::get('/newsletter-test', NewsletterTestController::class);
-}
+Route::redirect('nova', '/nova/login')->name('login');
 
 Route::feeds();
 
@@ -25,10 +21,12 @@ Route::view('advertising', 'front.advertising.index');
 Route::view('search', 'front.search.index');
 
 Route::get('newsletter', NewsletterController::class);
-Route::view('confirm-your-email', 'front.newsletter.confirm');
-Route::view('subscribed', 'front.newsletter.subscribed');
 
 Route::middleware('doNotCacheResponse')->group(function () {
+    Route::post('subscribe', [NewsletterSubscriptionController::class, 'subscribe']);
+    Route::get('confirm', [NewsletterSubscriptionController::class, 'confirm']);
+    Route::get('confirmed', [NewsletterSubscriptionController::class, 'confirmed']);
+
     Route::get('payments', [PaymentsController::class, 'index']);
     Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
     Route::post('payments', [PaymentsController::class, 'handlePayment']);

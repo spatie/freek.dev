@@ -183,6 +183,7 @@ return [
         App\Providers\NavigationServiceProvider::class,
         App\Services\Twitter\TwitterServiceProvider::class,
         \App\Providers\ViewServiceProvider::class,
+        \Spatie\Mailcoach\MailcoachServiceProvider::class,
     ],
 
     /*
