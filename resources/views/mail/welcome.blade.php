@@ -1,4 +1,4 @@
-@component('mail::layout')
+@component('mail::message')
 Hi,
 
 welcome to the freek.dev newsletter.  Every two weeks you can expect some nice links to cool stuff on Laravel, PHP and JavaScript in your mailbox.
