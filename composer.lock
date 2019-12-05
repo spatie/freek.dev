@@ -5726,13 +5726,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "85c1cd6f0e46d19d76e07b01ded32e120f5a44f1"
+                "reference": "ccd745bd5bd67602f6515c9005fa6111365d1ecd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-85c1cd6f0e46d19d76e07b01ded32e120f5a44f1-zip-34e8fa.zip",
-                "reference": "85c1cd6f0e46d19d76e07b01ded32e120f5a44f1",
-                "shasum": "31210381c5d939dc01784f8d3aeb203c19774843"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-ccd745bd5bd67602f6515c9005fa6111365d1ecd-zip-df2bef.zip",
+                "reference": "ccd745bd5bd67602f6515c9005fa6111365d1ecd",
+                "shasum": "bfd91ae787749086b6a28c21eeabaf4397c48719"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5819,7 +5819,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2019-12-05T16:56:52+00:00"
+            "time": "2019-12-05T23:23:59+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -9692,16 +9692,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v2.1",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "d9c5c53d3a0c60dcd4ef3777884d0cf368eb3e6f"
+                "reference": "05af183b914b6f8dca890eadb3edccbbc3ce887b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/d9c5c53d3a0c60dcd4ef3777884d0cf368eb3e6f",
-                "reference": "d9c5c53d3a0c60dcd4ef3777884d0cf368eb3e6f",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/05af183b914b6f8dca890eadb3edccbbc3ce887b",
+                "reference": "05af183b914b6f8dca890eadb3edccbbc3ce887b",
                 "shasum": ""
             },
             "require": {
@@ -9750,7 +9750,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2019-08-30T11:58:27+00:00"
+            "time": "2019-11-23T16:51:14+00:00"
         },
         {
             "name": "nunomaduro/collision",

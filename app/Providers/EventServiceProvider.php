@@ -11,11 +11,5 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-
-        Event::listen(CampaignLinkClickedEvent::class, function (CampaignLinkClickedEvent $event) {
-            $subscriber = $event->campaignClick->subscriber;
-
-            info("{$subscriber->email} clicked {$subscriber->clicks->count()} link(s).");
-        });
     }
 }
