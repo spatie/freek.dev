@@ -15,7 +15,10 @@ class Kernel extends ConsoleKernel
         $schedule->command('backup:clean')->daily()->at('01:00');
         $schedule->command('backup:run')->daily()->at('02:00');
         $schedule->command(PublishScheduledPostsCommand::class)->hourly();
-        $schedule->command('email-campaigns:calculate-statistics')->everyMinute();
+        $schedule->command('mailcoach:calculate-statistics')->everyMinute();
+        $schedule->command('mailcoach:send-scheduled-campaigns')->everyMinute();
+        $schedule->command('mailcoach:send-campaign-summary-mails')->hourly();
+
     }
 
     protected function commands()
