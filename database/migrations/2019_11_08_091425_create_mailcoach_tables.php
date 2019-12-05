@@ -43,7 +43,7 @@ class CreateMailcoachTables extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('email_list_id');
 
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->json('extra_attributes')->nullable();
