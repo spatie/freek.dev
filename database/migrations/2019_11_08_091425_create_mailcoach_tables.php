@@ -34,6 +34,8 @@ class CreateMailcoachTables extends Migration
             $table->string('welcome_mail_content')->nullable();
             $table->string('welcome_mailable_class')->nullable();
 
+            $table->string('campaign_report_recipients')->nullable();
+
             $table->timestamps();
         });
 
@@ -99,6 +101,8 @@ class CreateMailcoachTables extends Migration
             $table->timestamp('scheduled_at')->nullable();
 
             $table->timestamp('last_modified_at')->nullable();
+
+            $table->timestamp('summary_mail_sent_at')->nullable();
 
             $table->timestamps();
 

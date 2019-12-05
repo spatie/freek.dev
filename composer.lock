@@ -1703,16 +1703,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.6.1",
+            "version": "v6.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0a8e3e6e96e5ec3af6b9f30026cb8e5551554875"
+                "reference": "27efba7e13aaf91a87ae9a63db158e943eb71410"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0a8e3e6e96e5ec3af6b9f30026cb8e5551554875",
-                "reference": "0a8e3e6e96e5ec3af6b9f30026cb8e5551554875",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/27efba7e13aaf91a87ae9a63db158e943eb71410",
+                "reference": "27efba7e13aaf91a87ae9a63db158e943eb71410",
                 "shasum": ""
             },
             "require": {
@@ -1808,7 +1808,7 @@
                 "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
                 "moontoast/math": "Required to use ordered UUIDs (^1.1).",
                 "pda/pheanstalk": "Required to use the beanstalk queue driver (^4.0).",
-                "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0)",
+                "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
                 "symfony/cache": "Required to PSR-6 cache bridge (^4.3.4).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^1.2).",
@@ -1845,7 +1845,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-12-03T15:23:55+00:00"
+            "time": "2019-12-05T13:49:53+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -5726,13 +5726,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "9316d53d9bf8b61922255c4bf962035cebf8b8b9"
+                "reference": "85c1cd6f0e46d19d76e07b01ded32e120f5a44f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-mailcoach/zipball/9316d53d9bf8b61922255c4bf962035cebf8b8b9",
-                "reference": "9316d53d9bf8b61922255c4bf962035cebf8b8b9",
-                "shasum": ""
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-85c1cd6f0e46d19d76e07b01ded32e120f5a44f1-zip-34e8fa.zip",
+                "reference": "85c1cd6f0e46d19d76e07b01ded32e120f5a44f1",
+                "shasum": "31210381c5d939dc01784f8d3aeb203c19774843"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5819,7 +5819,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2019-12-04T21:42:24+00:00"
+            "time": "2019-12-05T16:56:52+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
