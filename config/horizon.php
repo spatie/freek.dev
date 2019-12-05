@@ -80,11 +80,12 @@ return [
                 'tries' => 3,
             ],
             'mailcoach' => [
-                'connection' => 'redis',
+                'connection' => 'redis-heavy',
                 'queue' => ['calculate-statistics', 'send-campaign', 'send-mail', 'send-test-mail'],
                 'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 3,
+                'timeout' => 60 * 10,
             ],
         ],
 
@@ -97,11 +98,12 @@ return [
                 'tries' => 3,
             ],
             'mailcoach' => [
-                'connection' => 'redis',
+                'connection' => 'redis-heavy',
                 'queue' => ['calculate-statistics', 'register-clicks', 'send-mail', 'send-test-mail'],
                 'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 3,
+                'timeout' => 60 * 10,
             ],
         ],
     ],
