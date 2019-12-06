@@ -110,7 +110,8 @@
             "@php artisan package:discover"
         ],
         "post-update-cmd": [
-            "@php artisan nova:publish"
+            "@php artisan nova:publish",
+            "@php artisan vendor:publish --tag mailcoach-assets --force"
         ]
     },
     "config": {
