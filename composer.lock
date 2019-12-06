@@ -5777,13 +5777,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "2c8c064564370a2211597e05bcdd3886765255ac"
+                "reference": "ec980b0bc4e76926eecb5fb3700bf8ba1fced901"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-2c8c064564370a2211597e05bcdd3886765255ac-zip-e641ac.zip",
-                "reference": "2c8c064564370a2211597e05bcdd3886765255ac",
-                "shasum": "01b286b3e734f94b31d680509b8b47330cd943fe"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-ec980b0bc4e76926eecb5fb3700bf8ba1fced901-zip-504cfc.zip",
+                "reference": "ec980b0bc4e76926eecb5fb3700bf8ba1fced901",
+                "shasum": "7049c8c3b65a32045ea6230f470e82ab8c0373d6"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5872,7 +5872,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2019-12-06T09:40:36+00:00"
+            "time": "2019-12-06T12:30:04+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
