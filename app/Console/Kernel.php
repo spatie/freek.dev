@@ -19,8 +19,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('mailcoach:send-scheduled-campaigns')->everyMinute();
         $schedule->command('mailcoach:send-campaign-summary-mails')->hourly();
         $schedule->command('mailcoach:delete-old-unconfirmed-subscribers')->daily();
-
-
     }
 
     protected function commands()
