@@ -8,7 +8,7 @@ class CreateMailcoachTables extends Migration
 {
     public function up()
     {
-        Schema::create('email_lists', function (Blueprint $table) {
+        Schema::create('mailcoach_email_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->uuid('uuid');
             $table->string('name');
@@ -39,7 +39,7 @@ class CreateMailcoachTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create('email_list_subscribers', function (Blueprint $table) {
+        Schema::create('mailcoach_subscribers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('email_list_id');
 
@@ -55,11 +55,11 @@ class CreateMailcoachTables extends Migration
 
             $table
                 ->foreign('email_list_id')
-                ->references('id')->on('email_lists')
+                ->references('id')->on('mailcoach_email_lists')
                 ->onDelete('cascade');
         });
 
-        Schema::create('email_campaigns', function (Blueprint $table) {
+        Schema::create('mailcoach_campaigns', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->uuid('uuid');
@@ -108,132 +108,132 @@ class CreateMailcoachTables extends Migration
 
             $table
                 ->foreign('email_list_id')
-                ->references('id')->on('email_lists')
+                ->references('id')->on('mailcoach_email_lists')
                 ->onDelete('set null');
         });
 
-        Schema::create('campaign_links', function (Blueprint $table) {
+        Schema::create('mailcoach_campaign_links', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('email_campaign_id');
+            $table->unsignedBigInteger('campaign_id');
             $table->string('url');
             $table->integer('click_count')->default(0);
             $table->integer('unique_click_count')->default(0);
             $table->nullableTimestamps();
 
             $table
-                ->foreign('email_campaign_id')
-                ->references('id')->on('email_campaigns')
+                ->foreign('campaign_id')
+                ->references('id')->on('mailcoach_campaigns')
                 ->onDelete('cascade');
         });
 
-        Schema::create('campaign_sends', function (Blueprint $table) {
+        Schema::create('mailcoach_sends', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->uuid('uuid');
             $table->string('transport_message_id')->nullable();
-            $table->unsignedBigInteger('email_campaign_id');
-            $table->unsignedBigInteger('email_list_subscriber_id');
+            $table->unsignedBigInteger('campaign_id');
+            $table->unsignedBigInteger('subscriber_id');
             $table->timestamp('sent_at')->nullable();
             $table->timestamps();
 
             $table
-                ->foreign('email_campaign_id')
-                ->references('id')->on('email_campaigns')
+                ->foreign('campaign_id')
+                ->references('id')->on('mailcoach_campaigns')
                 ->onDelete('cascade');
 
             $table
-                ->foreign('email_list_subscriber_id')
-                ->references('id')->on('email_list_subscribers')
+                ->foreign('subscriber_id')
+                ->references('id')->on('mailcoach_subscribers')
                 ->onDelete('cascade');
 
             $table->unique('transport_message_id');
         });
 
-        Schema::create('campaign_clicks', function (Blueprint $table) {
+        Schema::create('mailcoach_campaign_clicks', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('campaign_send_id');
+            $table->unsignedBigInteger('send_id');
             $table->unsignedBigInteger('campaign_link_id');
-            $table->unsignedBigInteger('email_list_subscriber_id')->nullable();
+            $table->unsignedBigInteger('subscriber_id')->nullable();
             $table->nullableTimestamps();
 
             $table
-                ->foreign('campaign_send_id')
-                ->references('id')->on('campaign_sends')
+                ->foreign('send_id')
+                ->references('id')->on('mailcoach_sends')
                 ->onDelete('cascade');
 
             $table
                 ->foreign('campaign_link_id')
-                ->references('id')->on('campaign_links')
+                ->references('id')->on('mailcoach_campaign_links')
                 ->onDelete('cascade');
 
             $table
-                ->foreign('email_list_subscriber_id')
-                ->references('id')->on('email_list_subscribers')
+                ->foreign('subscriber_id')
+                ->references('id')->on('mailcoach_subscribers')
                 ->onDelete('set null');
         });
 
-        Schema::create('campaign_opens', function (Blueprint $table) {
+        Schema::create('mailcoach_campaign_opens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('campaign_send_id');
+            $table->unsignedBigInteger('send_id');
 
-            $table->unsignedBigInteger('email_campaign_id');
-            $table->unsignedBigInteger('email_list_subscriber_id')->nullable();
+            $table->unsignedBigInteger('campaign_id');
+            $table->unsignedBigInteger('subscriber_id')->nullable();
             $table->nullableTimestamps();
 
             $table
-                ->foreign('campaign_send_id')
-                ->references('id')->on('campaign_sends')
+                ->foreign('send_id')
+                ->references('id')->on('mailcoach_sends')
                 ->onDelete('cascade');
 
             $table
-                ->foreign('email_campaign_id')
-                ->references('id')->on('email_campaigns')
+                ->foreign('campaign_id')
+                ->references('id')->on('mailcoach_campaigns')
                 ->onDelete('cascade');
 
             $table
-                ->foreign('email_list_subscriber_id')
-                ->references('id')->on('email_list_subscribers')
+                ->foreign('subscriber_id')
+                ->references('id')->on('mailcoach_subscribers')
                 ->onDelete('set null');
         });
 
-        Schema::create('campaign_unsubscribes', function (Blueprint $table) {
+        Schema::create('mailcoach_campaign_unsubscribes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('email_campaign_id');
-            $table->unsignedBigInteger('email_list_subscriber_id');
+            $table->unsignedBigInteger('campaign_id');
+            $table->unsignedBigInteger('subscriber_id');
             $table->timestamps();
 
             $table
-                ->foreign('email_campaign_id')
-                ->references('id')->on('email_campaigns')
+                ->foreign('campaign_id')
+                ->references('id')->on('mailcoach_campaigns')
                 ->onDelete('cascade');
 
             $table
-                ->foreign('email_list_subscriber_id')
-                ->references('id')->on('email_list_subscribers')
+                ->foreign('subscriber_id')
+                ->references('id')->on('mailcoach_subscribers')
                 ->onDelete('cascade');
         });
 
-        Schema::create('campaign_send_feedback_items', function (Blueprint $table) {
+        Schema::create('mailcoach_send_feedback_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type');
-            $table->unsignedBigInteger('campaign_send_id');
+            $table->unsignedBigInteger('send_id');
             $table->json('extra_attributes')->nullable();
             $table->timestamps();
 
             $table
-                ->foreign('campaign_send_id')
-                ->references('id')->on('campaign_sends')
+                ->foreign('send_id')
+                ->references('id')->on('mailcoach_sends')
                 ->onDelete('cascade');
         });
 
-        Schema::create('templates', function (Blueprint $table) {
+        Schema::create('mailcoach_templates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->longText('html');
             $table->timestamps();
         });
 
-        Schema::create('subscriber_imports', function (Blueprint $table) {
+        Schema::create('mailcoach_subscriber_imports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('status');
             $table->unsignedBigInteger('email_list_id');
@@ -243,7 +243,7 @@ class CreateMailcoachTables extends Migration
 
             $table
                 ->foreign('email_list_id')
-                ->references('id')->on('email_lists')
+                ->references('id')->on('mailcoach_email_lists')
                 ->onDelete('cascade');
         });
 
@@ -255,54 +255,54 @@ class CreateMailcoachTables extends Migration
 
             $table
                 ->foreign('email_list_id')
-                ->references('id')->on('email_lists')
+                ->references('id')->on('mailcoach_email_lists')
                 ->onDelete('cascade');
         });
 
-        Schema::create('email_list_subscriber_tags', function (Blueprint $table) {
+        Schema::create('mailcoach_email_list_subscriber_tags', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('email_list_subscriber_id');
-            $table->unsignedBigInteger('mailcoach_tag_id');
+            $table->unsignedBigInteger('subscriber_id');
+            $table->unsignedBigInteger('tag_id');
 
             $table
-                ->foreign('email_list_subscriber_id')
-                ->references('id')->on('email_list_subscribers')
+                ->foreign('subscriber_id')
+                ->references('id')->on('mailcoach_subscribers')
                 ->onDelete('cascade');
 
             $table
-                ->foreign('mailcoach_tag_id')
+                ->foreign('tag_id')
                 ->references('id')->on('mailcoach_tags')
                 ->onDelete('cascade');
         });
 
-        Schema::create('email_list_allow_form_subscription_tags', function (Blueprint $table) {
+        Schema::create('mailcoach_email_list_allow_form_subscription_tags', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('email_list_id');
-            $table->unsignedBigInteger('mailcoach_tag_id');
+            $table->unsignedBigInteger('tag_id');
 
             $table
-                ->foreign('email_list_id')
-                ->references('id')->on('email_lists')
+                ->foreign('email_list_id', 'email_list_tags_email_list_id_index')
+                ->references('id')->on('mailcoach_email_lists')
                 ->onDelete('cascade');
 
             $table
-                ->foreign('mailcoach_tag_id')
+                ->foreign('tag_id', 'email_list_tags_tag_id_index')
                 ->references('id')->on('mailcoach_tags')
                 ->onDelete('cascade');
         });
 
-        Schema::create('email_campaign_segment_tags', function (Blueprint $table) {
+        Schema::create('mailcoach_campaign_segment_tags', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('email_campaign_id');
-            $table->unsignedBigInteger('mailcoach_tag_id');
+            $table->unsignedBigInteger('campaign_id');
+            $table->unsignedBigInteger('tag_id');
 
             $table
-                ->foreign('email_campaign_id')
-                ->references('id')->on('email_campaigns')
+                ->foreign('campaign_id')
+                ->references('id')->on('mailcoach_campaigns')
                 ->onDelete('cascade');
 
             $table
-                ->foreign('mailcoach_tag_id')
+                ->foreign('tag_id')
                 ->references('id')->on('mailcoach_tags')
                 ->onDelete('cascade');
         });

@@ -318,25 +318,25 @@
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
-            "version": "0.1",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dnoegel/php-xdg-base-dir.git",
-                "reference": "265b8593498b997dc2d31e75b89f053b5cc9621a"
+                "reference": "8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dnoegel/php-xdg-base-dir/zipball/265b8593498b997dc2d31e75b89f053b5cc9621a",
-                "reference": "265b8593498b997dc2d31e75b89f053b5cc9621a",
+                "url": "https://api.github.com/repos/dnoegel/php-xdg-base-dir/zipball/8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd",
+                "reference": "8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "@stable"
+                "phpunit/phpunit": "~7.0|~6.0|~5.0|~4.8.35"
             },
-            "type": "project",
+            "type": "library",
             "autoload": {
                 "psr-4": {
                     "XdgBaseDir\\": "src/"
@@ -347,7 +347,7 @@
                 "MIT"
             ],
             "description": "implementation of xdg base directory specification for php",
-            "time": "2014-10-24T07:27:01+00:00"
+            "time": "2019-12-04T15:06:13+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -4299,20 +4299,20 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.9.11",
+            "version": "v0.9.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "75d9ac1c16db676de27ab554a4152b594be4748e"
+                "reference": "90da7f37568aee36b116a030c5f99c915267edd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/75d9ac1c16db676de27ab554a4152b594be4748e",
-                "reference": "75d9ac1c16db676de27ab554a4152b594be4748e",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/90da7f37568aee36b116a030c5f99c915267edd4",
+                "reference": "90da7f37568aee36b116a030c5f99c915267edd4",
                 "shasum": ""
             },
             "require": {
-                "dnoegel/php-xdg-base-dir": "0.1",
+                "dnoegel/php-xdg-base-dir": "0.1.*",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
                 "jakub-onderka/php-console-highlighter": "0.3.*|0.4.*",
@@ -4369,7 +4369,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2019-11-27T22:44:29+00:00"
+            "time": "2019-12-06T14:19:43+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5777,13 +5777,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "ec980b0bc4e76926eecb5fb3700bf8ba1fced901"
+                "reference": "4e051284028fa911357103b0af227e83d0846b4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-ec980b0bc4e76926eecb5fb3700bf8ba1fced901-zip-504cfc.zip",
-                "reference": "ec980b0bc4e76926eecb5fb3700bf8ba1fced901",
-                "shasum": "7049c8c3b65a32045ea6230f470e82ab8c0373d6"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-4e051284028fa911357103b0af227e83d0846b4f-zip-c135e5.zip",
+                "reference": "4e051284028fa911357103b0af227e83d0846b4f",
+                "shasum": "4fd6fea65f397c7427dd00aa809737d05e6350a3"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5872,7 +5872,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2019-12-06T12:30:04+00:00"
+            "time": "2019-12-06T15:05:56+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -5880,13 +5880,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
-                "reference": "9fc7ffd3a381d8200f0262190de1099b3345ccda"
+                "reference": "dcb2f5d08a626f0991b40e613e6d244115da58ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-mailcoach-mailgun-feedback/zipball/9fc7ffd3a381d8200f0262190de1099b3345ccda",
-                "reference": "9fc7ffd3a381d8200f0262190de1099b3345ccda",
-                "shasum": ""
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-dcb2f5d08a626f0991b40e613e6d244115da58ab-zip-c28fd4.zip",
+                "reference": "dcb2f5d08a626f0991b40e613e6d244115da58ab",
+                "shasum": "badaf92d2826863a331abb9e97288b3ad731d988"
             },
             "require": {
                 "illuminate/http": "^6.4",
@@ -5941,7 +5941,7 @@
                 "laravel-mailcoach-mailgun-feedback",
                 "spatie"
             ],
-            "time": "2019-12-02T17:17:14+00:00"
+            "time": "2019-12-06T14:39:58+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
