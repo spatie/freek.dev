@@ -23,6 +23,7 @@ cloneRepository
 runComposer
 runYarn
 generateAssets
+generateMailcoachAssets
 updateSymlinks
 optimizeInstallation
 backupDatabase
@@ -89,6 +90,13 @@ yarn
 cd {{ $newReleaseDir }};
 yarn run production -- --progress false
 yarn build-generate-newsletter-prod -- --progress false
+@endtask
+
+@task('generateMailcoachAssets', ['on' => 'remote'])
+{{ logMessage("🌅  Generating mailcoach assets…") }}
+cd {{ $newReleaseDir }}/vendor/spatie/laravel-mailcoach;
+yarn
+yarn run dev
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
