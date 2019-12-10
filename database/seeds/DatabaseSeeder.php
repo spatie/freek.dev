@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
             ->call(AdSeeder::class)
             ->call(VideoSeeder::class)
             ->call(WebmentionSeeder::class)
-            ->call(EmailListSeeder::class)
-            ->call(NewsletterSeeder::class);
+            ->call(EmailListSeeder::class);
     }
 }
