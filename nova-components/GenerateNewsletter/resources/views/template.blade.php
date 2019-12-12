@@ -242,83 +242,68 @@
     <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css">
 </head>
 <body>
-    <table class="all-font-sans text-gray-900 leading-24 w-600 mx-auto sm-w-full" cellpadding="0" cellspacing="0" role="presentation">
-        <tr>
-            <td class="px-24 py-32">
-                <table class="border-collapse" cellpadding="0" cellspacing="0" role="presentation">
+<table class="all-font-sans text-gray-900 leading-24 w-600 mx-auto sm-w-full" cellpadding="0" cellspacing="0"
+       role="presentation">
+    <tr>
+        <td class="px-24 py-32">
+            <table class="border-collapse" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                    <td class="text-sm text-center py-48">
+                        <a href="[webversion]" class="text-gray-700 underline">View email in browser</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb-32">
+                        <table class="mx-auto leading-16" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td class="p-16 w-48">
+                                    <a href="https://freek.dev" class="no-underline">
+                                        <img src="{{ url('images/murzicoon.png') }}" width="48" alt="freek.dev">
+                                    </a>
+                                </td>
+                                <td class="p-16 pl-0">
+                                    <p class="m-0 text-xl font-bold" style="line-height: 30px">
+                                        FREEK.DEV
+                                    </p>
+                                    <p class="m-0 text-gray-700">
+                                        Hi, welcome to the {{ $editionNumber }} freek.dev newsletter!
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                @foreach($recentPosts as $post)
                     <tr>
-                        <td class="text-sm text-center py-48">
-                            <a href="[webversion]" class="text-gray-700 underline">View email in browser</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pb-32">
-                            <table class="mx-auto leading-16" cellpadding="0" cellspacing="0" role="presentation">
+                        <td class="border-solid border-0 border-t border-b border-gray-200">
+                            <table class="w-full py-24" cellpadding="0" cellspacing="0" role="presentation">
                                 <tr>
-                                    <td class="p-16 w-48">
-                                        <a href="https://freek.dev" class="no-underline">
-                                            <img src="{{ url('images/murzicoon.png') }}" width="48" alt="freek.dev">
-                                        </a>
-                                    </td>
-                                    <td class="p-16 pl-0">
-                                        <p class="m-0 text-xl font-bold" style="line-height: 30px">
-                                            FREEK.DEV
+                                    <td>
+                                        <p class="m-0 mb-2 text-lg font-bold">
+                                            <a href="{{ $post->promotional_url }}"
+                                               class="text-gray-900 no-underline">{{ $post->title }}</a>
                                         </p>
-                                        <p class="m-0 text-gray-700">
-                                            Hi, welcome to the {{ $editionNumber }} freek.dev newsletter!
+                                        <p class="m-0 text-gray-800">
+                                            {!! $post->newsletter_excerpt !!}
                                         </p>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
+                @endforeach
+                {{-- <span class="px-4 bg-gray-200 text-gray-700">sponsor</span> --}}
+                @if($recentTweets->count())
                     <tr>
-                        @foreach($recentPosts as $post)
-                            <td class="border-solid border-0 border-t border-b border-gray-200">
-                                <table class="w-full py-24" cellpadding="0" cellspacing="0" role="presentation">
-                                    <tr>
-                                        <td>
-                                            <p class="m-0 mb-2 text-lg font-bold">
-                                                <a href="{{ $post->promotional_url }}" class="text-gray-900 no-underline">{{ $post->title }}</a>
-                                            </p>
-                                            <p class="m-0 text-gray-800">
-                                                {!! $post->newsletter_excerpt !!}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                    </tr>
-                    @endforeach
-                    {{-- <span class="px-4 bg-gray-200 text-gray-700">sponsor</span> --}}
-                    @if($recentTweets->count())
-                        <tr>
-                            <td class="py-32">
-                                <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-                                    <tr>
-                                        <td class="bg-blue-100 border-solid border-0 border-b-4 border-blue-200 p-24">
-                                            <p class="m-0 text-xl mb-12 font-bold">Meanwhile on Twitter</p>
-                                            <ul class="m-0 p-0 list-inside">
-                                                @foreach($recentTweets as $tweet)
-                                                    <li class="m-0"><a href="{{ $tweet->promotional_url }}" class="text-gray-800">{{ $tweet->title }}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    @endif
-                    <tr>
-                        <td class="pb-32">
+                        <td class="py-32">
                             <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
                                 <tr>
-                                    <td class="bg-gray-200 border-solid border-0 border-b-4 border-gray-400 p-24">
-                                        <p class="m-0 text-xl mb-12 font-bold">From the archives</p>
+                                    <td class="bg-blue-100 border-solid border-0 border-b-4 border-blue-200 p-24">
+                                        <p class="m-0 text-xl mb-12 font-bold">Meanwhile on Twitter</p>
                                         <ul class="m-0 p-0 list-inside">
-                                            @foreach($oldPosts as $post)
-                                                <li class="m-0 mb-4"><a href="{{ $post->promotional_url }}" class="text-gray-800">{{ $post->title }}</a>
-                                                </li>
+                                            @foreach($recentTweets as $tweet)
+                                                <li class="m-0"><a href="{{ $tweet->promotional_url }}"
+                                                                   class="text-gray-800">{{ $tweet->title }}</a></li>
                                             @endforeach
                                         </ul>
                                     </td>
@@ -326,23 +311,42 @@
                             </table>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="text-sm text-gray-600 leading-20 pt-24 border-solid border-0 border-t border-gray-200">
-                            <p class="m-0 mb-16">
-                                Advertisement opportunities at
-                                <a href=" {{ url('/advertising') }}" class="text-gray-600">freek.dev/advertising</a>.
-                            </p>
-                            <p class="m-0">
-                                You are receiving this mail because you've subscribed at
-                                <a href="{{ config('app.url') }}" class="text-gray-600">freek.dev</a>.
-                                Opt out any time.
-                                <a href="[unsubscribe]" class="text-gray-600">Unsubscribe</a>.
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+                @endif
+                <tr>
+                    <td class="pb-32">
+                        <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td class="bg-gray-200 border-solid border-0 border-b-4 border-gray-400 p-24">
+                                    <p class="m-0 text-xl mb-12 font-bold">From the archives</p>
+                                    <ul class="m-0 p-0 list-inside">
+                                        @foreach($oldPosts as $post)
+                                            <li class="m-0 mb-4"><a href="{{ $post->promotional_url }}"
+                                                                    class="text-gray-800">{{ $post->title }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-sm text-gray-600 leading-20 pt-24 border-solid border-0 border-t border-gray-200">
+                        <p class="m-0 mb-16">
+                            Advertisement opportunities at
+                            <a href=" {{ url('/advertising') }}" class="text-gray-600">freek.dev/advertising</a>.
+                        </p>
+                        <p class="m-0">
+                            You are receiving this mail because you've subscribed at
+                            <a href="{{ config('app.url') }}" class="text-gray-600">freek.dev</a>.
+                            Opt out any time.
+                            <a href="[unsubscribe]" class="text-gray-600">Unsubscribe</a>.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
