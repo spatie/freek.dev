@@ -3605,28 +3605,29 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "a8593bf5176bf3d3f2966942c530be19b44ec87c"
+                "reference": "318ad673ba36e53e10ca510aec1c54b4f2a5f2ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/a8593bf5176bf3d3f2966942c530be19b44ec87c",
-                "reference": "a8593bf5176bf3d3f2966942c530be19b44ec87c",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/318ad673ba36e53e10ca510aec1c54b4f2a5f2ae",
+                "reference": "318ad673ba36e53e10ca510aec1c54b4f2a5f2ae",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9 || ^7.0"
             },
             "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.3",
                 "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -3655,7 +3656,7 @@
                 "php",
                 "type"
             ],
-            "time": "2019-12-11T13:45:14+00:00"
+            "time": "2019-12-13T00:10:22+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -4502,16 +4503,16 @@
         },
         {
             "name": "scrivo/highlight.php",
-            "version": "v9.15.10.0",
+            "version": "v9.16.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "9ad3adb4456dc91196327498dbbce6aa1ba1239e"
+                "reference": "e1f92b62790f489a0986be860aefacb3c9f0a3d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/9ad3adb4456dc91196327498dbbce6aa1ba1239e",
-                "reference": "9ad3adb4456dc91196327498dbbce6aa1ba1239e",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/e1f92b62790f489a0986be860aefacb3c9f0a3d3",
+                "reference": "e1f92b62790f489a0986be860aefacb3c9f0a3d3",
                 "shasum": ""
             },
             "require": {
@@ -4521,7 +4522,8 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8|^5.7",
-                "symfony/finder": "^2.8"
+                "symfony/finder": "^3.4",
+                "symfony/var-dumper": "^3.4"
             },
             "suggest": {
                 "ext-dom": "Needed to make use of the features in the utilities namespace"
@@ -4549,7 +4551,7 @@
                 {
                     "name": "Vladimir Jimenez",
                     "homepage": "https://allejo.io",
-                    "role": "Contributor"
+                    "role": "Maintainer"
                 },
                 {
                     "name": "Martin Folkers",
@@ -4565,7 +4567,7 @@
                 "highlight.php",
                 "syntax"
             ],
-            "time": "2019-08-27T04:27:48+00:00"
+            "time": "2019-12-13T02:58:38+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -5779,13 +5781,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "8f8b10396bc37c29ca3c71b5d4223dc56f519694"
+                "reference": "c331658cb7d834644d38223e14f18b86b72ab3b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-8f8b10396bc37c29ca3c71b5d4223dc56f519694-zip-aa7dbf.zip",
-                "reference": "8f8b10396bc37c29ca3c71b5d4223dc56f519694",
-                "shasum": "7e5e0d0758a4623e3ae49d58ce2d494382668ece"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-c331658cb7d834644d38223e14f18b86b72ab3b6-zip-9efcbe.zip",
+                "reference": "c331658cb7d834644d38223e14f18b86b72ab3b6",
+                "shasum": "427c2689987eefb6808f4b09bc2a2c9d4597ae9a"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5874,7 +5876,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2019-12-12T16:51:48+00:00"
+            "time": "2019-12-13T09:14:30+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
