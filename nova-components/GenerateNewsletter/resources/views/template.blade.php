@@ -249,7 +249,7 @@
             <table class="border-collapse" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
                     <td class="text-sm text-center py-48">
-                        <a href="[webversion]" class="text-gray-700 underline">View email in browser</a>
+                        <a href="::webViewUrl::" class="text-gray-700 underline">View email in browser</a>
                     </td>
                 </tr>
                 <tr>
@@ -340,7 +340,7 @@
                             You are receiving this mail because you've subscribed at
                             <a href="{{ config('app.url') }}" class="text-gray-600">freek.dev</a>.
                             Opt out any time.
-                            <a href="[unsubscribe]" class="text-gray-600">Unsubscribe</a>.
+                            <a href="::unsubscribeUrl::" class="text-gray-600">Unsubscribe</a>.
                         </p>
                     </td>
                 </tr>
