@@ -11,7 +11,7 @@ class SubscribeToNewsletterRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['required', 'email', new EmailListSubscriptionRule($this->emailList())],
+            'email' => ['required', 'email:rfc,dns', new EmailListSubscriptionRule($this->emailList())],
         ];
     }
 
