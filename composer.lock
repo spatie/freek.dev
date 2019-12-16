@@ -1710,12 +1710,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "8abab5c900586892180d51bcb08c932004a0b994"
+                "reference": "503e9c388da87300d3878374f4733c8d5386b83a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/8abab5c900586892180d51bcb08c932004a0b994",
-                "reference": "8abab5c900586892180d51bcb08c932004a0b994",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/503e9c388da87300d3878374f4733c8d5386b83a",
+                "reference": "503e9c388da87300d3878374f4733c8d5386b83a",
                 "shasum": ""
             },
             "require": {
@@ -1848,7 +1848,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-12-16T10:08:38+00:00"
+            "time": "2019-12-16T18:23:04+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -5781,13 +5781,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "9de8d174f502602a137676c207b007fbc37cc55e"
+                "reference": "a2ea668f3dc4e226936b6630aeaa70e70fab2bc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-9de8d174f502602a137676c207b007fbc37cc55e-zip-57e0de.zip",
-                "reference": "9de8d174f502602a137676c207b007fbc37cc55e",
-                "shasum": "e704da2e9d3999903dc1f940d497fedbc46061de"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-a2ea668f3dc4e226936b6630aeaa70e70fab2bc5-zip-8d2d27.zip",
+                "reference": "a2ea668f3dc4e226936b6630aeaa70e70fab2bc5",
+                "shasum": "fd4bab31645386f7a31d0d546913fe5e744cf5a7"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -5876,7 +5876,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2019-12-16T09:20:07+00:00"
+            "time": "2019-12-16T21:12:34+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
