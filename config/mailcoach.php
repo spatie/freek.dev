@@ -41,7 +41,7 @@ return [
         'prepare_email_html_action' => \Spatie\Mailcoach\Actions\PrepareEmailHtmlAction::class,
         'prepare_webview_html_action' => \Spatie\Mailcoach\Actions\PrepareWebviewHtmlAction::class,
         'create_subscriber_action' => \Spatie\Mailcoach\Actions\CreateSubscriberAction::class,
-        'confirm_subscription_action' => \Spatie\Mailcoach\Actions\ConfirmSubscriptionAction::class,
+        'confirm_subscriber_action' => \Spatie\Mailcoach\Actions\ConfirmSubscriptionAction::class,
         'convert_html_to_text' => \Spatie\Mailcoach\Actions\ConvertHtmlToTextAction::class,
         'send_welcome_mail_action' => \Spatie\Mailcoach\Actions\SendWelcomeMailAction::class,
     ],
