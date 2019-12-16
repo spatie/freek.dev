@@ -66,7 +66,7 @@ return [
             'block_for' => null,
         ],
 
-        'redis-heavy' => [
+        'mailcoach-redis' => [
             'driver' => 'redis',
             'connection' => 'default',
             'queue' => env('REDIS_QUEUE', 'default'),

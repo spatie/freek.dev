@@ -12,10 +12,11 @@ return [
      * Use an empty string to use the default queue.
      */
     'perform_on_queue' => [
-        'calculate_statistics_job' => '',
+        'calculate_statistics_job' => 'mailcoach',
         'send_campaign_job' => 'send-campaign',
-        'send_mail_job' => '',
-        'send_test_mail_job' => '',
+        'send_mail_job' => 'send-mail',
+        'send_test_mail_job' => 'mailcoach',
+        'process_feedback_job' => 'mailcoach-feedback'
     ],
 
     /*
@@ -26,9 +27,9 @@ return [
         'enabled' => true,
         'redis_connection_name' => 'default',
         'redis_key' => 'laravel-mailcoach',
-        'allowed_number_of_jobs_in_timespan' => 5,
+        'allowed_number_of_jobs_in_timespan' => 50,
         'timespan_in_seconds' => 1,
-        'release_in_seconds' => 5,
+        'release_in_seconds' => 4,
     ],
 
     /*

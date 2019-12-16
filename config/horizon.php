@@ -74,16 +74,16 @@ return [
         'production' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default', 'send-mail', 'mailcoach-feedback'],
+                'queue' => ['default'],
                 'balance' => 'simple',
                 'processes' => 10,
                 'tries' => 2,
             ],
             'mailcoach' => [
-                'connection' => 'redis-heavy',
-                'queue' => ['send-campaign'],
+                'connection' => 'mailcoach-redis',
+                'queue' => ['send-campaign', 'send-mail', 'mailcoach-feedback', 'mailcoach'],
                 'balance' => 'auto',
-                'processes' => 1,
+                'processes' => 3,
                 'tries' => 1,
                 'timeout' => 60 * 10,
             ],
@@ -98,7 +98,7 @@ return [
                 'tries' => 3,
             ],
             'mailcoach' => [
-                'connection' => 'redis-heavy',
+                'connection' => 'mailcoach-heavy-redis-connection',
                 'queue' => ['send-campaign'],
                 'balance' => 'auto',
                 'processes' => 10,
