@@ -13,14 +13,14 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        Route::mailcoach('mailcoach');
-        Route::mailgunFeedback('mailgun-feedback');
-
         $this->registerRouteModelBindings();
     }
 
     public function map()
     {
+        Route::mailcoach('mailcoach');
+        Route::mailgunFeedback('mailgun-feedback');
+
         $this->mapFrontRoutes();
     }
 

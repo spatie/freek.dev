@@ -21,9 +21,9 @@ class EmailListSeeder extends Seeder
             'send_welcome_mail' => true,
         ]);
 
-        foreach (range(1, 5) as $i) {
+        foreach (range(1, 500) as $i) {
             Subscriber::createWithEmail("freek+test{$i}@spatie.be")
-                ->skipDoubleOptIn()
+                ->skipConfirmation()
                 ->subscribeTo($emailList);
         }
 

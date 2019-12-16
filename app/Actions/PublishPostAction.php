@@ -33,7 +33,7 @@ class PublishPostAction
             return;
         }
 
-        dispatch(new SendPostTweetJob($post));
+        //dispatch(new SendPostTweetJob($post));
 
         $post->tweet_sent = true;
 
