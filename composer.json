@@ -38,7 +38,7 @@
         "fideloper/proxy": "^4.0",
         "freekmurze/generate-newsletter": "*",
         "guzzlehttp/guzzle": "^6.4",
-        "laravel/framework": "6.x-dev",
+        "laravel/framework": "^6.8",
         "laravel/horizon": "^3.2.7",
         "laravel/nova": "^2.1.1",
         "laravel/scout": "^7.1",
