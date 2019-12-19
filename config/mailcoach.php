@@ -27,26 +27,38 @@ return [
         'enabled' => true,
         'redis_connection_name' => 'default',
         'redis_key' => 'laravel-mailcoach',
-        'allowed_number_of_jobs_in_timespan' => 40,
+        'allowed_number_of_jobs_in_timespan' => 10,
         'timespan_in_seconds' => 1,
-        'release_in_seconds' => 4,
+        'release_in_seconds' => 5,
     ],
 
     /*
-       * You can customize some of the behavior of this package by using our own custom action.
-       * Your custom action should always extend the one of the default ones.
-       */
+     * You can customize some of the behavior of this package by using our own custom action.
+     * Your custom action should always extend the one of the default ones.
+     */
     'actions' => [
-        'personalize_html_action' => \Spatie\Mailcoach\Actions\PersonalizeHtmlAction::class,
-        'prepare_email_html_action' => \Spatie\Mailcoach\Actions\PrepareEmailHtmlAction::class,
-        'prepare_webview_html_action' => \Spatie\Mailcoach\Actions\PrepareWebviewHtmlAction::class,
-        'create_subscriber_action' => \Spatie\Mailcoach\Actions\CreateSubscriberAction::class,
-        'confirm_subscriber_action' => \Spatie\Mailcoach\Actions\ConfirmSubscriptionAction::class,
-        'convert_html_to_text' => \Spatie\Mailcoach\Actions\ConvertHtmlToTextAction::class,
-        'send_welcome_mail_action' => \Spatie\Mailcoach\Actions\SendWelcomeMailAction::class,
-    ],
 
-    'mailgun_feedback' => [
-        'signing_secret' => env('MAILGUN_SIGNING_SECRET'),
+        /*
+         * Actions concerning campaigns
+         */
+        'calculate_statistics' => \Spatie\Mailcoach\Actions\Campaigns\CalculateStatisticsAction::class,
+        'convert_html_to_text' => \Spatie\Mailcoach\Actions\Campaigns\ConvertHtmlToTextAction::class,
+        'personalize_html' => \Spatie\Mailcoach\Actions\Campaigns\PersonalizeHtmlAction::class,
+        'prepare_email_html' => \Spatie\Mailcoach\Actions\Campaigns\PrepareEmailHtmlAction::class,
+        'prepare_webview_html' => \Spatie\Mailcoach\Actions\Campaigns\PrepareWebviewHtmlAction::class,
+        'retry_sending_failed_sends' => \Spatie\Mailcoach\Actions\Campaigns\RetrySendingFailedSendsAction::class,
+        'send_campaign' => \Spatie\Mailcoach\Actions\Campaigns\SendCampaignAction::class,
+        'send_mail' => \Spatie\Mailcoach\Actions\Campaigns\SendMailAction::class,
+        'send_test_mail' => \Spatie\Mailcoach\Actions\Campaigns\SendTestMailAction::class,
+
+        /*
+         * Actions concerning subscribers
+         */
+        'confirm_subscriber' => \Spatie\Mailcoach\Actions\Subscribers\ConfirmSubscriberAction::class,
+        'create_subscriber' => \Spatie\Mailcoach\Actions\Subscribers\CreateSubscriberAction::class,
+        'import_subscribers' => \Spatie\Mailcoach\Actions\Subscribers\ImportSubscribersAction::class,
+        'send_confirm_subscriber_mail' => \Spatie\Mailcoach\Actions\Subscribers\SendConfirmSubscriberMailAction::class,
+        'send_welcome_mail' => \Spatie\Mailcoach\Actions\Subscribers\SendWelcomeMailAction::class,
+        'update_subscriber' => \Spatie\Mailcoach\Actions\Subscribers\UpdateSubscriberAction::class,
     ],
 ];
