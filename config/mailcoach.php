@@ -2,10 +2,6 @@
 
 return [
 
-    /*
-     * By default only 5 mails per second will be sent to avoid overwhelming your
-     * e-mail sending service. To use this feature you must have Redis installed.
-     */
     'throttling' => [
         'enabled' => true,
         'redis_connection_name' => 'default',
