@@ -7,6 +7,7 @@ use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 Route::redirect('nova', '/nova/login')->name('login');
 
@@ -22,7 +23,7 @@ Route::view('search', 'front.search.index');
 
 Route::middleware('doNotCacheResponse')->group(function () {
     Route::get('newsletter', NewsletterController::class);
-    Route::post('subscribe', [NewsletterSubscriptionController::class, 'subscribe']);
+    Route::post('subscribe', [NewsletterSubscriptionController::class, 'subscribe'])->middleware(ProtectAgainstSpam::class);
     Route::get('confirm', [NewsletterSubscriptionController::class, 'confirm']);
     Route::get('confirmed', [NewsletterSubscriptionController::class, 'confirmed']);
 
