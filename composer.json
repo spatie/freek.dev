@@ -29,7 +29,7 @@
         "php": "^7.4",
         "ext-json": "*",
         "ext-simplexml": "*",
-        "abraham/twitteroauth": "^0.7.4",
+        "abraham/twitteroauth": "^1.1.0",
         "algolia/algoliasearch-client-php": "^2.2",
         "beyondcode/laravel-dump-server": "^1.3",
         "doctrine/dbal": "^2.8",
