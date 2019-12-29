@@ -1,5 +1,5 @@
 @if(app()->environment('production'))
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57290920-1"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-57290920-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
