@@ -48,6 +48,7 @@
         "spatie/laravel-backup": "^6.0",
         "spatie/laravel-feed": "^2.0",
         "spatie/laravel-flash": "^1.2",
+        "spatie/laravel-honeypot": "^1.4",
         "spatie/laravel-mailcoach": "dev-master",
         "spatie/laravel-mailcoach-mailgun-feedback": "dev-master",
         "spatie/laravel-menu": "^3.0",
