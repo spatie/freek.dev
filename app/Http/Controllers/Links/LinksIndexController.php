@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Links;
 
+use App\Models\Link;
+
 class LinksIndexController
 {
     public function __invoke()

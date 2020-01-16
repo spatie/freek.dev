@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Links\LinksIndexController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\SpeakingController;
@@ -27,6 +28,7 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->url('search', 'Search')
                 ->url('advertising', 'Advertising')
+                ->action(LinksIndexController::class, 'Submit a link')
                 ->setActiveFromRequest('/');
         });
     }
