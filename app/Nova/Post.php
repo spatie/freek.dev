@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Models\Post as PostModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;
@@ -60,6 +61,10 @@ class Post extends Resource
                 Boolean::make('Published'),
 
                 Boolean::make('Original content'),
+
+                BelongsTo::make('Submitted by', 'submittedByUser', User::class)
+                    ->hideFromIndex()
+                    ->nullable(),
             ]),
         ];
     }

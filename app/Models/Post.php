@@ -6,11 +6,11 @@ use App\Actions\PublishPostAction;
 use App\Http\Controllers\PostController;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
-use App\Models\Concerns\Tweetable;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
@@ -52,6 +52,11 @@ class Post extends Model implements Feedable, Sluggable
                 ResponseCache::clear();
             }
         });
+    }
+
+    public function submittedByUser(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'submitted_by_user_id');
     }
 
     public function webmentions(): HasMany

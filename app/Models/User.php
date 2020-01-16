@@ -18,4 +18,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Link::class);
     }
+
+    public function submittedPosts(): HasMany
+    {
+        return $this->hasMany(Post::class, 'submitted_by_user_id');
+    }
 }
