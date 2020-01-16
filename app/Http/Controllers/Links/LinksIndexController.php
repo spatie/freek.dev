@@ -6,6 +6,11 @@ class LinksIndexController
 {
     public function __invoke()
     {
-        return 'todo: display links';
+        $links = Link::query()
+            ->latest()
+            ->approved()
+            ->paginate();
+
+        return view('front.links.index', compact('links'));
     }
 }

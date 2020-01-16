@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89640c1bf49df48c6123170af08fe6d0",
+    "content-hash": "8406710cc295818636c23b5378eb6696",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1659,16 +1659,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.10.1",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fe45ad5bc89e5e1b08ab2c8687f9be01c9c84d14"
+                "reference": "17af23842c259edcfd8c5b9e6a7c86596e040034"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fe45ad5bc89e5e1b08ab2c8687f9be01c9c84d14",
-                "reference": "fe45ad5bc89e5e1b08ab2c8687f9be01c9c84d14",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/17af23842c259edcfd8c5b9e6a7c86596e040034",
+                "reference": "17af23842c259edcfd8c5b9e6a7c86596e040034",
                 "shasum": ""
             },
             "require": {
@@ -1802,7 +1802,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-01-08T21:17:42+00:00"
+            "time": "2020-01-14T15:12:09+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -6004,17 +6004,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "dev-master",
+            "version": "0.9.6",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "65886cde7d9c56b270c7c1e561c901b4bf669e93"
+                "reference": "b05be2b602584aae77d17dda64f4a45cb55c0e3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-65886cde7d9c56b270c7c1e561c901b4bf669e93-zip-1876d0.zip",
-                "reference": "65886cde7d9c56b270c7c1e561c901b4bf669e93",
-                "shasum": "21b5e6ed394a1a8bba480c9525dc21eb0ffb9f32"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-b05be2b602584aae77d17dda64f4a45cb55c0e3a-zip-b7e488.zip",
+                "reference": "b05be2b602584aae77d17dda64f4a45cb55c0e3a",
+                "shasum": "9aa28ce05772de02b11c73e79c63f35d29a4b46d"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -6104,27 +6104,27 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2020-01-10T15:44:59+00:00"
+            "time": "2020-01-16T10:50:45+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
-            "version": "dev-master",
+            "version": "0.9.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
-                "reference": "f76538669165e584f682575f423c985010e992f6"
+                "reference": "c9ab7a4c6cb06748b7b17ad037c0787d1e564dd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-f76538669165e584f682575f423c985010e992f6-zip-500c18.zip",
-                "reference": "f76538669165e584f682575f423c985010e992f6",
-                "shasum": "f2bec8797e1a782abbaf2655a3f41f63332b30d1"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-c9ab7a4c6cb06748b7b17ad037c0787d1e564dd1-zip-2c7e6b.zip",
+                "reference": "c9ab7a4c6cb06748b7b17ad037c0787d1e564dd1",
+                "shasum": "c66a293cba2d9fb4c1e5e11c951a068ac7219e7d"
             },
             "require": {
                 "illuminate/http": "^6.4",
                 "orchestra/testbench": "^4.3",
                 "php": "^7.4",
-                "spatie/laravel-mailcoach": "dev-master",
+                "spatie/laravel-mailcoach": "^0.9",
                 "spatie/laravel-webhook-client": "^2.2"
             },
             "require-dev": {
@@ -6173,7 +6173,7 @@
                 "laravel-mailcoach-mailgun-feedback",
                 "spatie"
             ],
-            "time": "2019-12-16T08:11:21+00:00"
+            "time": "2020-01-16T10:45:06+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
@@ -9976,69 +9976,6 @@
             "time": "2019-09-25T14:49:45+00:00"
         },
         {
-            "name": "laravel/telescope",
-            "version": "v2.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/telescope.git",
-                "reference": "7fd3dc40684d1d035676cf48a5ecc98dc8ef7089"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/7fd3dc40684d1d035676cf48a5ecc98dc8ef7089",
-                "reference": "7fd3dc40684d1d035676cf48a5ecc98dc8ef7089",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "laravel/framework": "~5.8.0|^6.0|^7.0",
-                "moontoast/math": "^1.1",
-                "php": "^7.1.3",
-                "symfony/var-dumper": "^4.1|^5.0"
-            },
-            "require-dev": {
-                "ext-gd": "*",
-                "orchestra/testbench": "^3.8|^4.0|^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Telescope\\TelescopeServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Telescope\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                },
-                {
-                    "name": "Mohamed Said",
-                    "email": "mohamed@laravel.com"
-                }
-            ],
-            "description": "An elegant debug assistant for the Laravel framework.",
-            "keywords": [
-                "debugging",
-                "laravel",
-                "monitoring"
-            ],
-            "time": "2019-12-19T14:33:58+00:00"
-        },
-        {
             "name": "nunomaduro/collision",
             "version": "v3.0.1",
             "source": {
@@ -10569,10 +10506,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-mailcoach": 20,
-        "spatie/laravel-mailcoach-mailgun-feedback": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
