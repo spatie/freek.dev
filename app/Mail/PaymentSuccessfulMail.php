@@ -25,6 +25,6 @@ class PaymentSuccessfulMail extends Mailable
     {
         return $this
             ->subject('Payment made on freek.dev')
-            ->view('mails.paymentSuccessFul');
+            ->view('mails.payments.paymentSuccessFul');
     }
 }

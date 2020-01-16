@@ -29,6 +29,6 @@ class PaymentFailed extends Mailable
     {
         return $this
             ->subject('Payment failed on freek.dev')
-            ->view('mails.paymentFailed');
+            ->view('mails.payments.paymentFailed');
     }
 }
