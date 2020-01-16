@@ -4,6 +4,8 @@
 
 
 @section('content')
+    <a href="{{ route('login') }}" class="button">Log in</a>
+
     {{ $links->links() }}
 
     <ul>

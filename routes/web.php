@@ -10,9 +10,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
-Auth::routes();
-
-Route::redirect('nova', '/nova/login')->name('login');
+Route::namespace('\App\Http\Controllers')->group(function () {
+    Auth::routes();
+});
 
 Route::feeds();
 
