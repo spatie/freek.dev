@@ -4,7 +4,12 @@
 
 
 @section('content')
-    <a href="{{ route('login') }}" class="button">Log in</a>
+    @guest
+        <a href="{{ route('login') }}" class="button">Log in</a>
+    @endguest
+    @auth
+        <a href="{{ route('links.create') }}" class="button">Submit a link</a>
+    @endauth
 
     {{ $links->links() }}
 

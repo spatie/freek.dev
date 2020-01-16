@@ -3,14 +3,14 @@
 ])
 
 @section('content')
-    <div>{{ __('Register') }}</div>
+    <div>Register</div>
 
     <div>
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <div>
-                <label for="name">{{ __('Name') }}</label>
+                <label for="name">Name</label>
 
                 <div>
                     <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name"
@@ -25,7 +25,7 @@
             </div>
 
             <div>
-                <label for="email">{{ __('E-Mail Address') }}</label>
+                <label for="email">E-mail address</label>
 
                 <div>
                     <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
@@ -40,7 +40,7 @@
             </div>
 
             <div>
-                <label for="password">{{ __('Password') }}</label>
+                <label for="password">Password</label>
 
                 <div>
                     <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password"
@@ -55,7 +55,7 @@
             </div>
 
             <div>
-                <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                <label for="password-confirm">Confirm password</label>
 
                 <div>
                     <input id="password-confirm" type="password" name="password_confirmation" required
@@ -66,7 +66,7 @@
             <div>
                 <div>
                     <button type="submit">
-                        {{ __('Register') }}
+                        Register
                     </button>
                 </div>
             </div>

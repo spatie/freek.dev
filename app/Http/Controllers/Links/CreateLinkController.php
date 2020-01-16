@@ -7,7 +7,12 @@ use App\Models\Link;
 
 class CreateLinkController
 {
-    public function __invoke(CreateLinkRequest $request)
+    public function create()
+    {
+        return view('front.links.create');
+    }
+
+    public function store(CreateLinkRequest $request)
     {
         Link::create([
             'title' => $request->title,
@@ -16,6 +21,6 @@ class CreateLinkController
             'user_id' => auth()->user()->id,
         ]);
 
-        return redirect()->to('front.links.thanks');
+        return redirect()->route('links.thanks');
     }
 }

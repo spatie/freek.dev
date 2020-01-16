@@ -11,6 +11,7 @@ class UserSeeder extends Seeder
             'name' => 'Freek',
             'email' => 'freek@spatie.be',
             'password' => bcrypt('secret'),
+            'admin' => true,
         ]);
     }
 }

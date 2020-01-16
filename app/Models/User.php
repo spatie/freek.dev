@@ -14,6 +14,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $casts = [
+        'admin' => 'boolean',
+    ];
+
     public function links(): HasMany
     {
         return $this->hasMany(Link::class);

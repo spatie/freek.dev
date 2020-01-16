@@ -3,7 +3,7 @@
 ])
 
 @section('content')
-    <div>{{ __('Reset Password') }}</div>
+    <div>Reset password</div>
 
     <div>
         <form method="POST" action="{{ route('password.update') }}">
@@ -12,7 +12,7 @@
             <input type="hidden" name="token" value="{{ $token }}">
 
             <div>
-                <label for="email">{{ __('E-Mail Address') }}</label>
+                <label for="email">E-mail address</label>
 
                 <div>
                     <input id="email" type="email" class="@error('email') is-invalid @enderror"
@@ -27,7 +27,7 @@
             </div>
 
             <div >
-                <label for="password">{{ __('Password') }}</label>
+                <label for="password">Password</label>
 
                 <div>
                     <input id="password" type="password" class="@error('password') is-invalid @enderror"
@@ -42,7 +42,7 @@
             </div>
 
             <div>
-                <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                <label for="password-confirm">Confirm password</label>
 
                 <div>
                     <input id="password-confirm" type="password" name="password_confirmation"
@@ -53,7 +53,7 @@
             <div>
                 <div>
                     <button type="submit">
-                        {{ __('Reset Password') }}
+                        Reset password
                     </button>
                 </div>
             </div>

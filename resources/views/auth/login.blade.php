@@ -10,7 +10,7 @@
             @csrf
 
             <div>
-                <label for="email">{{ __('E-Mail Address') }}</label>
+                <label for="email">E-mail address</label>
 
                 <div>
                     <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
@@ -25,7 +25,7 @@
             </div>
 
             <div>
-                <label for="password"> {{ __('Password') }}</label>
+                <label for="password"> Password</label>
 
                 <div>
                     <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password"
@@ -44,7 +44,7 @@
                     <div>
                         <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                         <label for="remember">
-                            {{ __('Remember Me') }}
+                            Remember me
                         </label>
                     </div>
                 </div>
@@ -57,7 +57,11 @@
                     </button>
 
                     <a href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
+                        Forgot your password?
+                    </a>
+
+                    <a href="{{ route('register') }}">
+                        No account yet?
                     </a>
                 </div>
             </div>

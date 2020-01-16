@@ -3,7 +3,7 @@
 ])
 
 @section('content')
-    <div>{{ __('Reset Password') }}</div>
+    <div>Reset password</div>
 
     <div>
         @if (session('status'))
@@ -16,7 +16,7 @@
             @csrf
 
             <div>
-                <label for="email">{{ __('E-Mail Address') }}</label>
+                <label for="email">E-mail address</label>
 
                 <div>
                     <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
@@ -33,7 +33,7 @@
             <div>
                 <div>
                     <button type="submit">
-                        {{ __('Send Password Reset Link') }}
+                        Send password reset link
                     </button>
                 </div>
             </div>

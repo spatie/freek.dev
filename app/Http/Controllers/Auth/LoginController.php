@@ -8,14 +8,12 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class LoginController
 {
-    use ValidatesRequests;
-
-    use AuthenticatesUsers;
+    use ValidatesRequests, AuthenticatesUsers;
 
     public function redirectPath()
     {
         if (auth()->user()->admin) {
-            return '/nova/posts';
+            return '/nova';
         }
 
         return action(LinksIndexController::class);
