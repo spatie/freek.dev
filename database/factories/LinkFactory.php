@@ -16,6 +16,7 @@ $factory->define(Link::class, function (Faker $faker) {
     return [
         'user_id' => factory(User::class),
         'title' => $faker->sentence(),
+        'url' => $faker->url,
         'text' => $faker->paragraph,
         'status' => $status,
         'publish_date' => $status === Link::STATUS_APPROVED ? $faker->dateTimeBetween('-1 year', 'now') : null,

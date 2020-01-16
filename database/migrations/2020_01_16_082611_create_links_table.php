@@ -16,7 +16,8 @@ class CreateLinksTable extends Migration
 
             $table->string('title');
             $table->string('slug');
-            $table->text('text');
+            $table->longText('text');
+            $table->text('url');
 
             $table->string('status')->default(Link::STATUS_SUBMITTED);
             $table->timestamp('publish_date')->default(null);

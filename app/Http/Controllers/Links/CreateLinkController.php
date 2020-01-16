@@ -12,7 +12,7 @@ class CreateLinkController
         Link::create([
             'title' => $request->title,
             'url' => $request->url,
-            'description' => $request->description,
+            'text' => $request->text,
             'user_id' => auth()->user()->id,
         ]);
 
