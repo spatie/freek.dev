@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Links\LinksIndexController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\NewsletterSubscriptionController;
 use App\Http\Controllers\OriginalsController;
@@ -31,6 +32,8 @@ Route::middleware('doNotCacheResponse')->group(function () {
     Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
     Route::post('payments', [PaymentsController::class, 'handlePayment']);
 });
+
+Route::get('links', LinksIndexController::class)->name('links');
 
 Route::redirect('me', '/about');
 

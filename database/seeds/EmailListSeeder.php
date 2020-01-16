@@ -21,7 +21,7 @@ class EmailListSeeder extends Seeder
             'send_welcome_mail' => true,
         ]);
 
-        foreach (range(1, 10000) as $i) {
+        foreach (range(1, 10) as $i) {
             Subscriber::createWithEmail("freek+test{$i}@spatie.be")
                 ->skipConfirmation()
                 ->doNotSendWelcomeMail()
