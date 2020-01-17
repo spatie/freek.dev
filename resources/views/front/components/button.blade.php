@@ -1,4 +1,4 @@
 <button
-    class="button button-orange"
+    class="button button-gray"
     type="submit">{{ $label }}
 </button>

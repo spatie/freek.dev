@@ -37,14 +37,14 @@
                 @include('front.components.button', ['label' => 'Login'])
 
                 <span class="text-xs text-gray-700">
-                        <a href="{{ route('password.request') }}">
-                            Forgot your password?
-                        </a>
+                    <a href="{{ route('password.request') }}">
+                        Forgot your password?
+                    </a>
 &nbsp;
-                        <a href="{{ route('register') }}">
-                            No account yet?
-                        </a>
-                    </span>
+                    <a href="{{ route('register') }}">
+                        No account yet?
+                    </a>
+                </span>
             </div>
         </form>
     </div>

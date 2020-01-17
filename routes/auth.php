@@ -18,4 +18,4 @@ Route::middleware(['guest'])->group(function () {
     Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 });
 
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');

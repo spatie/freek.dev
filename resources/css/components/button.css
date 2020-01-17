@@ -3,6 +3,6 @@
     border-top: transparent;
 }
 
-.button-orange {
-    @apply bg-orange-500 font-semibold border-orange-700;
+.button-gray {
+    @apply bg-gray-500 font-semibold border-gray-700;
 }

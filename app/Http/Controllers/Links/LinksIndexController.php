@@ -10,7 +10,8 @@ class LinksIndexController
     {
         $links = Link::query()
             ->latest()
-            ->approved()
+            ->where('user_id', optional(auth()->user())->id)
+            //->approved()
             ->simplePaginate(4);
 
         return view('front.links.index', compact('links'));
