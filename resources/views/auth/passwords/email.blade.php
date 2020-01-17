@@ -3,40 +3,29 @@
 ])
 
 @section('content')
-    <div>Reset password</div>
+    <div class="markup mb-8">
+        <h1>Reset password</h1>
 
-    <div>
-        @if (session('status'))
-            <div role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <div>
-                <label for="email">E-mail address</label>
-
-                <div>
-                    <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
-                           value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                    @error('email')
-                    <span role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                    @enderror
+        <div>
+            @if (session('status'))
+                <div role="alert">
+                    {{ session('status') }}
                 </div>
-            </div>
+            @endif
 
-            <div>
-                <div>
-                    <button type="submit">
-                        Send password reset link
-                    </button>
+            <form method="POST" action="{{ route('password.email') }}">
+                @csrf
+
+                @include('front.components.inputField', [
+                    'label' => 'E-mail',
+                    'name' => 'email',
+                    'type' => 'Email'
+                ])
+
+                <div class="mt-4">
+                    @include('front.components.button', ['label' => 'Send password reset link'])
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 @endsection

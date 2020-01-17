@@ -11,9 +11,17 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            @include('front.components.inputField', ['label' => 'E-mail', 'name' => 'email'])
+            @include('front.components.inputField', [
+                'label' => 'E-mail',
+                'name' => 'email',
+                'type' => 'Email'
+            ])
 
-            @include('front.components.inputField', ['label' => 'Password', 'name' => 'password', 'type' => 'password'])
+            @include('front.components.inputField', [
+                'label' => 'Password',
+                'name' => 'password',
+                'type' => 'password'
+            ])
 
             <div class="mt-4">
                 <label class="flex items-center">
