@@ -43,4 +43,9 @@ class Link extends Model implements Sluggable
     {
         return $this->status === self::STATUS_REJECTED;
     }
+
+    public function getHostUrlAttribute(): string
+    {
+        return parse_url($this->url)['host'] ?? '';
+    }
 }

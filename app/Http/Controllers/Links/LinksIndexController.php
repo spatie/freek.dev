@@ -11,7 +11,7 @@ class LinksIndexController
         $links = Link::query()
             ->latest()
             ->approved()
-            ->paginate();
+            ->simplePaginate(4);
 
         return view('front.links.index', compact('links'));
     }
