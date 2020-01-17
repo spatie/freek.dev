@@ -7,7 +7,7 @@
         class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-grey-200 text-sm text-gray-700">
 
         <p class="mb-4">
-            Did you write or stumbled across a blog post, tutorial or video that might be interesting my audience?
+            Did you write or stumbled across a blog post, tutorial or video that might be interesting for my audience?
         </p>
         @auth
             <div class="flex items-center">
