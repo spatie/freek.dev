@@ -52,7 +52,7 @@ class Link extends Resource
                 ->alwaysShow()
                 ->hideFromIndex(),
 
-            DateTime::make('Created at'),
+            DateTime::make('Created at')->format('Y-m-d H:i'),
         ];
     }
 
