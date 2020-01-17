@@ -5,6 +5,7 @@
 @section('content')
     <div
         class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-grey-200 text-sm text-gray-700">
+
         <p class="mb-4">
             Did you write or stumbled across a blog post, tutorial or video that might be interesting my audience?
         </p>
@@ -27,8 +28,12 @@
         @endguest
     </div>
 
+    <div class="markup mb-8 mt-8">
+        <h1>Community links</h1>
+    </div>
+
     <div class="mt-8">
-        @forelse($links as $link)
+        @foreach($links as $link)
             <article class="mb-12 md:mb-24">
                 <div class="mb-5" style="
         height: 6px;
@@ -57,11 +62,7 @@
                     <p>{{ $link->text }}</p>
                 </div>
             </article>
-        @empty
-            @auth
-                You haven't submitted any links yet
-            @endauth
-        @endforelse
+        @endforeach
 
         {{ $links->links() }}
     </div>

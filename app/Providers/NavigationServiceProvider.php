@@ -28,7 +28,7 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->url('search', 'Search')
                 ->url('advertising', 'Advertising')
-                ->action(LinksIndexController::class, 'Submit a link')
+                ->action(LinksIndexController::class, 'Community links')
                 ->setActiveFromRequest('/');
         });
     }
