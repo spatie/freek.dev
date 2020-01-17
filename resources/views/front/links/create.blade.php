@@ -22,7 +22,7 @@
                 'placeholder' => 'https://'
             ])
 
-            @include('front.components.textArea', [
+            @include('front.components.textarea', [
                 'label' => 'Description',
                 'name' => 'text',
                 'placeholder' => 'Describe the content in one or two sentences. You can use markdown.',
