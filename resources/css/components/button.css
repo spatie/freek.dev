@@ -1,0 +1,8 @@
+.button {
+    @apply px-3 py-2 text-sm text-white font-semibold border-t-3 border-b-3;
+    border-top: transparent;
+}
+
+.button-orange {
+    @apply bg-orange-500 font-semibold border-orange-700;
+}
