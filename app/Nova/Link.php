@@ -34,10 +34,18 @@ class Link extends Resource
                     return Str::limit($title, 50);
                 }),
 
-            Text::make('Status')->readonly(),
+            Text::make('', function () {
+                if (! $this->exists) {
+                    return '';
+                }
+
+                return '<a target="link_preview" href="' . url($this->url) . '">Show</a>';
+            })->asHtml(),
 
             Text::make('Url')
                 ->hideFromIndex(),
+
+            Text::make('Status')->readonly(),
 
             Markdown::make('Text')
                 ->rules('required')
