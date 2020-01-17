@@ -7,7 +7,7 @@
         <p class="mb-2">
             Do you write or stumbled across a blogpost, tutorial or video that might be interesting my audience?
         </p>
-        <a href="{{ route('links.create') }}" class="px-3 py-2 text-sm text-white bg-orange-500 font-semibold border-y-3 border-orange-700 border-t-transparent">Submit a link</a>
+        <a href="{{ route('links.create') }}" class="button button-orange">Submit a link</a>
     </div>
 
     <div class="mt-8">
