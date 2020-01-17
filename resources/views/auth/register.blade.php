@@ -35,6 +35,16 @@
                 ])
 
                 <div class="mt-4">
+                    <label class="flex items-center">
+
+                        <input class="form-checkbox" type="checkbox" name="newsletter"
+                               id="newsletter" {{ old('newsletter') ? 'checked' : '' }}>
+
+                        <span class="text-sm ml-2">Subscribe me to <a href="/newsletter">the freek.dev newsletter</a>, a biweekly newsletter with useful links on PHP, Laravel and JavaScript</span>
+                    </label>
+                </div>
+
+                <div class="mt-4">
                     @include('front.components.button', ['label' => 'Register'])
                 </div>
             </form>

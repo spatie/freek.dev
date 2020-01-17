@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Mailcoach\Models\EmailList;
+use Spatie\Mailcoach\Models\Subscriber;
 
 class RegisterController
 {
@@ -24,6 +26,12 @@ class RegisterController
 
     protected function create(array $data)
     {
+        if (isset($data['newsletter'])) {
+            $emailList = EmailList::where('name', 'freek.dev newsletter')->first();
+
+            Subscriber::createWithEmail($data['email'])->subscribeTo($emailList);
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
