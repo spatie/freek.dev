@@ -35,8 +35,8 @@ Route::middleware('doNotCacheResponse')->group(function () {
 });
 
 Route::prefix('links')->group(function () {
+    Route::get('/', LinksIndexController::class)->middleware('doNotCacheResponse')->name('links');
     Route::middleware(['auth', 'doNotCacheResponse'])->group(function () {
-        Route::get('/', LinksIndexController::class)->name('links');
         Route::get('create', [CreateLinkController::class, 'create'])->name('links.create');
         Route::post('create', [CreateLinkController::class, 'store']);
         Route::view('thanks', 'front.links.thanks')->name('links.thanks');

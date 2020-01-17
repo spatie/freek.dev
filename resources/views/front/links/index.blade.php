@@ -58,7 +58,9 @@
                 </div>
             </article>
         @empty
-            You haven't submitted any links yet
+            @auth
+                You haven't submitted any links yet
+            @endauth
         @endforelse
 
         {{ $links->links() }}
