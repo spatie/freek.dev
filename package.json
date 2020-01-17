@@ -13,6 +13,7 @@
     "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && yarn && yarn prod"
   },
   "dependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
     "algoliasearch": "^3.24.5",
     "preact": "^8.4.2",
     "preact-compat": "^3.18.5"

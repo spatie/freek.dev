@@ -12,7 +12,7 @@
             @csrf
             <div>
                 <label for="title">Title</label>
-                <input name="title" type="text" required value="{{ old('title') }}">
+                <input  name="title" type="text" required value="{{ old('title') }}">
                 @error('title')
                 <span role="alert">
                     <strong>{{ $message }}</strong>
