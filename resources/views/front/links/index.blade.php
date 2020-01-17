@@ -5,7 +5,7 @@
 @section('content')
     <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-orange-100 border-b-5 border-orange-200 text-sm text-gray-700 {{ $class ?? '' }} markup">
         <p class="mb-2">
-            Do you write or stumbled across a blogpost, tutorial or video that might be interesting my audience?
+            Did you write or stumbled across a blog post, tutorial or video that might be interesting my audience?
         </p>
         <a href="{{ route('links.create') }}" class="button button-orange">Submit a link</a>
     </div>
