@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Links\CreateLinkController;
+use App\Http\Controllers\Links\LinksIndexController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\NewsletterSubscriptionController;
 use App\Http\Controllers\OriginalsController;
@@ -9,9 +11,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
-Route::redirect('nova', '/nova/login')->name('login');
-
 Route::feeds();
+
+Route::redirect('nova', '/nova/resources/post');
 
 Route::get('/', HomeController::class);
 Route::get('originals', OriginalsController::class);
@@ -30,6 +32,15 @@ Route::middleware('doNotCacheResponse')->group(function () {
     Route::get('payments', [PaymentsController::class, 'index']);
     Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
     Route::post('payments', [PaymentsController::class, 'handlePayment']);
+});
+
+Route::prefix('links')->group(function () {
+    Route::middleware(['auth', 'doNotCacheResponse'])->group(function () {
+        Route::get('/', LinksIndexController::class)->name('links');
+        Route::get('create', [CreateLinkController::class, 'create'])->name('links.create');
+        Route::post('create', [CreateLinkController::class, 'store']);
+        Route::view('thanks', 'front.links.thanks')->name('links.thanks');
+    });
 });
 
 Route::redirect('me', '/about');

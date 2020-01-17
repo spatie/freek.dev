@@ -21,13 +21,23 @@ class RouteServiceProvider extends ServiceProvider
         Route::mailcoach('mailcoach');
         Route::mailgunFeedback('mailgun-feedback');
 
-        $this->mapFrontRoutes();
+        $this
+            ->mapAuthRoutes()
+            ->mapFrontRoutes();
+    }
+
+    protected function mapAuthRoutes()
+    {
+        Route::middleware('web')->group(base_path('routes/auth.php'));
+
+        return $this;
     }
 
     protected function mapFrontRoutes()
     {
-        Route::middleware(['web', 'cacheResponse'])
-            ->group(base_path('routes/web.php'));
+        Route::middleware(['web', 'cacheResponse'])->group(base_path('routes/web.php'));
+
+        return $this;
     }
 
     public function registerRouteModelBindings()

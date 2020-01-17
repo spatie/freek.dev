@@ -27,7 +27,7 @@ class WelcomeMail extends MailcoachWelcomeMail
     {
         return
             $this
-                ->markdown('mail.welcome')
+                ->markdown('mails.welcome')
                 ->subject('Welcome to the freek.dev newsletter');
     }
 }

@@ -12,8 +12,8 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Gate::define('viewHorizon', function ($user) {
-            return auth()->check();
+        Gate::define('viewHorizon', function (User $user) {
+            return $user->admin;
         });
 
         Gate::define('viewMailcoach', function (User $user) {

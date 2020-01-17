@@ -2,6 +2,7 @@
 
 @import './bootstrap.css';
 
+@import './components/button.css';
 @import './components/carbon.css';
 @import './components/markup.css';
 @import './components/mobile-menu.css';
@@ -10,5 +11,7 @@
 @import './vendor/hljs.css';
 
 @import './utilties.css';
+
+@tailwind components;
 
 @tailwind utilities;
