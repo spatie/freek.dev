@@ -28,13 +28,9 @@
         @endguest
     </div>
 
-    <div class="markup mb-8 mt-8">
-        <h1>Community links</h1>
-    </div>
-
     <div class="mt-8">
         @foreach($links as $link)
-            <article class="mb-12 md:mb-24">
+            <article class="mb-12 md:mb-12">
                 <div class="mb-5" style="
         height: 6px;
         background-color: #cbd5e0;
@@ -60,6 +56,12 @@
                 </header>
                 <div class="markup leading-relaxed">
                     <p>{{ $link->text }}</p>
+                </div>
+                <div class="markup">
+                    <p class="mt-6">
+                        <a href="{{ $link->url }}">Read more</a>
+                        <span class="text-xs text-gray-700">[{{ $link->host_url }}]</span>
+                    </p>
                 </div>
             </article>
         @endforeach
