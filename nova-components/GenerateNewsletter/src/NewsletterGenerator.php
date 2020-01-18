@@ -71,7 +71,7 @@ class NewsletterGenerator
             ])
             ->where('url')
             ->get()
-            ->reject(fn (Link $link) => Post::where('external_url', $link->url)->exists);
+            ->reject(fn (Link $link) => Post::where('external_url', $link->url)->exists());
     }
 
     protected function getOldPosts(): Collection
