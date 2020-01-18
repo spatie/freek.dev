@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Links;
 
+use App\Actions\CreateLinkAction;
 use App\Http\Requests\CreateLinkRequest;
-use App\Models\Link;
 
 class CreateLinkController
 {
@@ -12,14 +12,9 @@ class CreateLinkController
         return view('front.links.create');
     }
 
-    public function store(CreateLinkRequest $request)
+    public function store(CreateLinkRequest $request, CreateLinkAction $createLinkAction)
     {
-        Link::create([
-            'title' => $request->title,
-            'url' => $request->url,
-            'text' => $request->text,
-            'user_id' => auth()->user()->id,
-        ]);
+        $createLinkAction->execute($request->validated(), auth()->user());
 
         return redirect()->route('links.thanks');
     }
