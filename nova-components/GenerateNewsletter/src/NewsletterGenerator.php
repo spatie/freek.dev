@@ -65,7 +65,7 @@ class NewsletterGenerator
     public function getRecentCommunityLinks(): Collection
     {
         return Link::approved()
-            ->whereBeteen('publish_date', [
+            ->whereBetween('publish_date', [
                 $this->startDate->startOfDay(),
                 $this->endDate->endOfDay(),
             ])
