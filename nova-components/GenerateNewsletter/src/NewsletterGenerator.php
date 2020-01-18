@@ -2,8 +2,8 @@
 
 namespace Freekmurze\GenerateNewsletter;
 
+use App\Models\Link;
 use App\Models\Post;
-use App\Nova\Link;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use NumberFormatter;
