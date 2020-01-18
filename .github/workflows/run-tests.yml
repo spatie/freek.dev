@@ -26,11 +26,11 @@ jobs:
                     cp auth-testing.json auth.json
 
             -   name: Find and Replace
-                    uses: jacobtomlinson/gha-find-replace@0.1.1
-                    with:
-                        find: "MAILCOACH_USERNAME"
-                        replace: ${{ secrets.MAILCOACH_USERNAME }}
-                        include: "auth.json"
+                uses: jacobtomlinson/gha-find-replace@0.1.1
+                with:
+                    find: "MAILCOACH_USERNAME"
+                    replace: ${{ secrets.MAILCOACH_USERNAME }}
+                    include: "auth.json"
 
             -   name: Find and Replace
                 uses: jacobtomlinson/gha-find-replace@0.1.1
