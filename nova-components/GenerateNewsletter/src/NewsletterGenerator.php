@@ -3,6 +3,7 @@
 namespace Freekmurze\GenerateNewsletter;
 
 use App\Models\Post;
+use App\Nova\Link;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use NumberFormatter;
@@ -31,6 +32,7 @@ class NewsletterGenerator
     {
         $recentPosts = $this->getRecentPosts();
         $recentTweets = $this->getRecentTweets();
+        $communityLinks = $this->getRecentCommunityLinks();
         $oldPosts = $this->getOldPosts();
         $editionNumber = $this->editionNumber;
 
@@ -57,6 +59,18 @@ class NewsletterGenerator
             $this->endDate->endOfDay(),
             true
         );
+    }
+
+    public function getRecentCommunityLinks(): Collection
+    {
+        return Link::approved()
+            ->whereBeteen('publish_date', [
+                $this->startDate->startOfDay(),
+                $this->endDate->endOfDay(),
+            ])
+            ->where('url')
+            ->get()
+            ->reject(fn (Link $link) => Post::where('external_url', $link->url)->exists);
     }
 
     protected function getOldPosts(): Collection
