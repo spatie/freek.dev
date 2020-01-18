@@ -69,7 +69,6 @@ class NewsletterGenerator
                 $this->startDate->startOfDay(),
                 $this->endDate->endOfDay(),
             ])
-            ->where('url')
             ->get()
             ->reject(fn (Link $link) => Post::where('external_url', $link->url)->exists());
     }
