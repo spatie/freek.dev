@@ -7,8 +7,8 @@ A link titled "[{{ $link->title }}]($link->url)" was submitted by {{ $link->user
 
 You can approve or reject this link [here](/nova/resources/links/{{ $link->id }}).
 
-
 Kr,
+
 
 
 Your blog
