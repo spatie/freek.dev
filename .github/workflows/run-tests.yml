@@ -39,6 +39,20 @@ jobs:
                     replace: ${{ secrets.MAILCOACH_PASSWORD }}
                     include: "auth.json"
 
+            -   name: Find and Replace
+                uses: jacobtomlinson/gha-find-replace@0.1.1
+                with:
+                    find: "NOVA_USERNAME"
+                    replace: ${{ secrets.NOVA_USERNAME }}
+                    include: "auth.json"
+
+            -   name: Find and Replace
+                uses: jacobtomlinson/gha-find-replace@0.1.1
+                with:
+                    find: "NOVA_PASSWORD"
+                    replace: ${{ secrets.NOVA_PASSWORD }}
+                    include: "auth.json"
+
             -   name: Run composer install
                 run: composer install -n --prefer-dist
                 env:

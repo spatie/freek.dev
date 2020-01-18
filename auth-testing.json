@@ -3,6 +3,10 @@
         "satis.mailcoach.app": {
             "username": "MAILCOACH_USERNAME",
             "password": "MAILCOACH_PASSWORD"
+        },
+        "nova.laravel.com": {
+            "username": "NOVA_USERNAME",
+            "password": "NOVA_PASSWORD"
         }
     }
 }
