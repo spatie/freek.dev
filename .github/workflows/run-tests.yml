@@ -25,6 +25,15 @@ jobs:
             -   name: Create database
                 run: mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS freekdev_test;'
 
+            -   name: Cache yarn dependencies
+                uses: actions/cache@v1
+                with:
+                    path: node_modules
+                    key: yarn-${{ hashFiles('yarn.lock') }}
+
+            -   name: Run yarn
+                run: yarn && yarn dev
+
             -   name: Cache composer dependencies
                 uses: actions/cache@v1
                 with:
