@@ -1,0 +1,38 @@
+name: Run tests
+
+on: [push]
+
+jobs:
+    tests:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v1
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v1
+                with:
+                    php-version: '7.4'
+                    extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
+                    coverage: none
+
+            -   name: Cache composer dependencies
+                uses: actions/cache@v1
+                with:
+                    path: vendor
+                    key: composer-${{ hashFiles('composer.lock') }}
+
+            -   name: Run composer install
+                run: composer install -n --prefer-dist
+                env:
+                    APP_ENV: testing
+
+            -   name: Prepare Laravel Application
+                run: |
+                    cp .env.example .env
+                    php artisan key:generate
+
+            -   name: Create sqlite database
+                run: touch db.sqlite
+
+            -   name: Run tests
+                run: ./vendor/bin/phpunit
