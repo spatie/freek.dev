@@ -1,7 +1,5 @@
 # The source code of https://freek.dev
 
-[![Actions Status](https://github.com/spatie/freek.dev/workflows/run-tests/badge.svg)](https://github.com/spatie/freek.dev/actions)
-
 This repo contains the source code of my Laravel powered blog at [https://freek.dev](https://freek.dev). I've written a blogpost on some of its internal details [here](https://murze.be/on-migrating-my-blog-from-wordpress-to-a-laravel-application).
 
 You are free to fork this code and use it for your own blog. Don't reuse my design though, please use your own css. Keep in mind that this code is tailormade for me and it does not aim to be a generic blog solution. 
