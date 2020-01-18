@@ -1,6 +1,6 @@
 # The source code of https://freek.dev
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/freek%2Edev/run-tests?label=tests)
+[![Actions Status](https://github.com/spatie/freek.dev/workflows/run-tests/badge.svg)](https://github.com/spatie/freek.dev/actions)
 
 This repo contains the source code of my Laravel powered blog at [https://freek.dev](https://freek.dev). I've written a blogpost on some of its internal details [here](https://murze.be/on-migrating-my-blog-from-wordpress-to-a-laravel-application).
 
