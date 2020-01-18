@@ -29,6 +29,9 @@
             by {{ $post->author }}
             – {{ $post->reading_time }} minute read
         @endif
+        @if ($post->submittedByUser)
+            - submitted by {{ $post->submittedByUser->name }}
+        @endif
         @auth
             –
             <a target="_blank" href="/nova/resources/posts/{{ $post->id }}/edit">
