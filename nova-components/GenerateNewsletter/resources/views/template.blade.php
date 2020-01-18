@@ -312,6 +312,26 @@
                         </td>
                     </tr>
                 @endif
+
+                <tr>
+                    <td class="pb-32">
+                        <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td class="bg-gray-200 border-solid border-0 border-b-4 border-gray-400 p-24">
+                                    <p class="m-0 text-xl mb-12 font-bold">Submitted by the community</p>
+                                    <ul class="m-0 p-0 list-inside">
+                                        @foreach($communityLinks as $link)
+                                            <li class="m-0 mb-4"><a href="{{ $link->url }}"
+                                                                    class="text-gray-800">{{ $link->title }}</a> (submitted by {{ $link->user->name }})
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
                 <tr>
                     <td class="pb-32">
                         <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">

@@ -39,6 +39,7 @@ class NewsletterGenerator
         return view('generate-newsletter::template', compact(
             'recentPosts',
             'recentTweets',
+            'communityLinks',
             'oldPosts',
             'editionNumber',
         ))->render();
