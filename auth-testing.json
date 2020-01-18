@@ -1,0 +1,8 @@
+{
+    "http-basic": {
+        "satis.mailcoach.app": {
+            "username": "MAILCOACH_USERNAME",
+            "password": "MAILCOACH_PASSWORD"
+        }
+    }
+}

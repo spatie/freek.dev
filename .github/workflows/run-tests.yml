@@ -29,7 +29,22 @@ jobs:
             -   name: Prepare Laravel Application
                 run: |
                     cp .env.example .env
+                    cp auth-testing.json auth.json
                     php artisan key:generate
+
+            - name: Find and Replace
+              uses: jacobtomlinson/gha-find-replace@0.1.1
+              with:
+                  find: "MAILCOACH_USERNAME"
+                  replace: ${{ secrets.MAILCOACH_USERNAME }}
+                  include: "auth.json"
+
+            - name: Find and Replace
+              uses: jacobtomlinson/gha-find-replace@0.1.1
+              with:
+                  find: "MAILCOACH_PASSWORD"
+                  replace: ${{ secrets.MAILCOACH_PASSWORD }}
+                  include: "auth.json"
 
             -   name: Create sqlite database
                 run: touch db.sqlite
