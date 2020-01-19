@@ -328,7 +328,7 @@
                                 <td class="bg-orange-100 border-solid border-0 border-b-4 border-orange-400 p-24">
                                     <p class="m-0 text-xl mb-12 font-bold">Community links</p>
                                     <p>
-                                        Did you write or stumbled across a blog post, tutorial or video that might be good to appear in this section? <a href="https://freek.dev/links">Submit it here</a>.
+                                        Did you write or stumbled across a blog post, tutorial or video that might be good to appear in this section? <a class="text-gray-800" href="https://freek.dev/links">Submit it here</a>.
                                     </p>
                                     <ul class="m-0 p-0 list-inside">
                                         @foreach($communityLinks as $link)
