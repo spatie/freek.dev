@@ -318,7 +318,10 @@
                         <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
                             <tr>
                                 <td class="bg-gray-200 border-solid border-0 border-b-4 border-gray-400 p-24">
-                                    <p class="m-0 text-xl mb-12 font-bold">Submitted by the community</p>
+                                    <p class="m-0 text-xl mb-12 font-bold">Community links</p>
+                                    <p>
+                                        Did you write or stumbled across a blog post, tutorial or video that might be interesting to appear in this section? Submit it <a href="https://freek.dev/links">here</a>.
+                                    </p>
                                     <ul class="m-0 p-0 list-inside">
                                         @foreach($communityLinks as $link)
                                             <li class="m-0 mb-4"><a href="{{ $link->url }}"

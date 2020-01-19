@@ -76,7 +76,7 @@ class NewsletterGenerator
     protected function getOldPosts(): Collection
     {
         return $this->getPosts(
-            $this->endDate->copy()->subYear()->subWeek(2)->startOfDay(),
+            $this->endDate->copy()->subYear()->subWeeks(2)->startOfDay(),
             $this->endDate->subYear()->endOfDay()
         );
     }
