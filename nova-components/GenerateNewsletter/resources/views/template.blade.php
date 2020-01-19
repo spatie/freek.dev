@@ -50,6 +50,10 @@
             background-color: #ebf8ff !important;
         }
 
+        .bg-orange-100 {
+            background-color: #fffaf0 !important;
+        }
+
         .border-collapse {
             border-collapse: collapse !important;
         }
@@ -59,7 +63,11 @@
         }
 
         .border-gray-400 {
-            border-color: #cbd5e0 !important;
+            border-color: #f6ad55 !important;
+        }
+
+        .border-orange-400 {
+            border-color: #f6ad55 !important;
         }
 
         .border-blue-200 {
@@ -317,10 +325,10 @@
                     <td class="pb-32">
                         <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
                             <tr>
-                                <td class="bg-gray-200 border-solid border-0 border-b-4 border-gray-400 p-24">
+                                <td class="bg-orange-100 border-solid border-0 border-b-4 border-orange-400 p-24">
                                     <p class="m-0 text-xl mb-12 font-bold">Community links</p>
                                     <p>
-                                        Did you write or stumbled across a blog post, tutorial or video that might be interesting to appear in this section? Submit it <a href="https://freek.dev/links">here</a>.
+                                        Did you write or stumbled across a blog post, tutorial or video that might be good to appear in this section? <a href="https://freek.dev/links">Submit it here</a>.
                                     </p>
                                     <ul class="m-0 p-0 list-inside">
                                         @foreach($communityLinks as $link)
