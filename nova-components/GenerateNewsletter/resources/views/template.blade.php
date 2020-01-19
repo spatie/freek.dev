@@ -321,6 +321,7 @@
                     </tr>
                 @endif
 
+                @if($communityLinks->count())
                 <tr>
                     <td class="pb-32">
                         <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
@@ -342,6 +343,7 @@
                         </table>
                     </td>
                 </tr>
+                @endif
 
                 <tr>
                     <td class="pb-32">
