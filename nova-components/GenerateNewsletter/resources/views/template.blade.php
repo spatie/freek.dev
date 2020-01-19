@@ -63,7 +63,7 @@
         }
 
         .border-gray-400 {
-            border-color: #f6ad55 !important;
+            border-color: #cbd5e0 !important;
         }
 
         .border-orange-400 {
