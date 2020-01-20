@@ -5,6 +5,7 @@ namespace App\Actions;
 use App\Mail\LinkApprovedMail;
 use App\Models\Link;
 use Illuminate\Support\Facades\Mail;
+use Spatie\ResponseCache\Facades\ResponseCache;
 
 class ApproveLinkAction
 {
@@ -20,6 +21,8 @@ class ApproveLinkAction
             'status' => Link::STATUS_APPROVED,
             'publish_date' => now(),
         ]);
+
+        ResponseCache::clear();
 
         return $link;
     }
