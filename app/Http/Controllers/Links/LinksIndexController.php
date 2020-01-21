@@ -8,8 +8,6 @@ class LinksIndexController
 {
     public function __invoke()
     {
-        throw new \Exception("Oh hi, new Flare environment");
-
         $links = Link::query()
             ->latest()
             ->approved()
