@@ -5404,16 +5404,16 @@
         },
         {
             "name": "spatie/db-dumper",
-            "version": "2.15.2",
+            "version": "2.15.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/db-dumper.git",
-                "reference": "0f9a65b52d707b915e2245e6cc2780a33630442a"
+                "reference": "e167b8bf925c5da553f885326bb7bfaed3f95d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/0f9a65b52d707b915e2245e6cc2780a33630442a",
-                "reference": "0f9a65b52d707b915e2245e6cc2780a33630442a",
+                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/e167b8bf925c5da553f885326bb7bfaed3f95d15",
+                "reference": "e167b8bf925c5da553f885326bb7bfaed3f95d15",
                 "shasum": ""
             },
             "require": {
@@ -5450,7 +5450,7 @@
                 "mysqldump",
                 "spatie"
             ],
-            "time": "2020-01-16T12:47:19+00:00"
+            "time": "2020-01-24T13:05:20+00:00"
         },
         {
             "name": "spatie/eloquent-sortable",
@@ -6005,17 +6005,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "0.9.7",
+            "version": "0.9.8",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "f5bb490faf59938c5ea9bd6639f1dd979d9bd9aa"
+                "reference": "548f049f3e9de81d2fa8089bfac1f5acbf0a2bf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-f5bb490faf59938c5ea9bd6639f1dd979d9bd9aa-zip-3c3d15.zip",
-                "reference": "f5bb490faf59938c5ea9bd6639f1dd979d9bd9aa",
-                "shasum": "1b44cb99949409ab7d946063fd4a5bafe27d81c9"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-548f049f3e9de81d2fa8089bfac1f5acbf0a2bf3-zip-5970fb.zip",
+                "reference": "548f049f3e9de81d2fa8089bfac1f5acbf0a2bf3",
+                "shasum": "ce080c7e405d4e19756de049ff07eefb29ce6ee3"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -6105,7 +6105,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2020-01-22T19:46:44+00:00"
+            "time": "2020-01-25T23:48:40+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -6178,32 +6178,33 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "7.18.1",
+            "version": "7.18.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "0b0a729ce7253a08bf8d7a8c97c172e54f7203ae"
+                "reference": "08a004244205cda5466adb16fea436d59fd63d29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/0b0a729ce7253a08bf8d7a8c97c172e54f7203ae",
-                "reference": "0b0a729ce7253a08bf8d7a8c97c172e54f7203ae",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/08a004244205cda5466adb16fea436d59fd63d29",
+                "reference": "08a004244205cda5466adb16fea436d59fd63d29",
                 "shasum": ""
             },
             "require": {
                 "ext-fileinfo": "*",
-                "illuminate/bus": "~5.8.35|^6.0",
-                "illuminate/console": "~5.8.35|^6.0",
-                "illuminate/database": "~5.8.35|^6.0",
-                "illuminate/pipeline": "~5.8.35|^6.0",
-                "illuminate/support": "~5.8.35|^6.0",
+                "ext-json": "*",
+                "illuminate/bus": "~5.8.35|^6.0|^7.0",
+                "illuminate/console": "~5.8.35|^6.0|^7.0",
+                "illuminate/database": "~5.8.35|^6.0|^7.0",
+                "illuminate/pipeline": "~5.8.35|^6.0|^7.0",
+                "illuminate/support": "~5.8.35|^6.0|^7.0",
                 "league/flysystem": "^1.0.8",
                 "maennchen/zipstream-php": "^1.0",
                 "php": "^7.2",
                 "spatie/image": "^1.4.0",
                 "spatie/pdf-to-image": "^2.0",
                 "spatie/temporary-directory": "^1.1",
-                "symfony/console": "^4.4"
+                "symfony/console": "^4.4|^5.0"
             },
             "conflict": {
                 "php-ffmpeg/php-ffmpeg": "<0.6.1"
@@ -6213,8 +6214,8 @@
                 "ext-pdo_sqlite": "*",
                 "guzzlehttp/guzzle": "^6.3",
                 "league/flysystem-aws-s3-v3": "^1.0.13",
-                "mockery/mockery": "^1.0.0",
-                "orchestra/testbench": "~3.8.0|^4.0",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.8|^4.0|^5.0",
                 "phpunit/phpunit": "^8.0",
                 "spatie/phpunit-snapshot-assertions": "^2.0"
             },
@@ -6259,7 +6260,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2020-01-15T14:03:33+00:00"
+            "time": "2020-01-25T11:32:31+00:00"
         },
         {
             "name": "spatie/laravel-menu",
