@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8406710cc295818636c23b5378eb6696",
+    "content-hash": "2c2c98f636b4e91a6f403daaa68761d4",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -62,16 +62,16 @@
         },
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "446c9faedcb6534f2295b93835b606267ff5f816"
+                "reference": "9310e190a3990474bd3667e2c0d500442938ffbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/446c9faedcb6534f2295b93835b606267ff5f816",
-                "reference": "446c9faedcb6534f2295b93835b606267ff5f816",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/9310e190a3990474bd3667e2c0d500442938ffbd",
+                "reference": "9310e190a3990474bd3667e2c0d500442938ffbd",
                 "shasum": ""
             },
             "require": {
@@ -128,7 +128,7 @@
                 "php",
                 "search"
             ],
-            "time": "2019-11-05T12:40:49+00:00"
+            "time": "2020-01-27T16:07:45+00:00"
         },
         {
             "name": "beyondcode/laravel-dump-server",
@@ -1660,16 +1660,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.12.0",
+            "version": "v6.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "8e189a8dee7ff76bf50acb7e80aa1a36afaf54d4"
+                "reference": "f0059760814b76fb5f98bb80628607c7560ebe58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/8e189a8dee7ff76bf50acb7e80aa1a36afaf54d4",
-                "reference": "8e189a8dee7ff76bf50acb7e80aa1a36afaf54d4",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f0059760814b76fb5f98bb80628607c7560ebe58",
+                "reference": "f0059760814b76fb5f98bb80628607c7560ebe58",
                 "shasum": ""
             },
             "require": {
@@ -1803,20 +1803,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-01-21T15:10:03+00:00"
+            "time": "2020-01-28T21:44:01+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.4.7",
+            "version": "v3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "45a76521b4c378eb97bbc86ef59fd6e323f9d8d1"
+                "reference": "6f1e718956b431c721f9eb11a57de65947f06e66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/45a76521b4c378eb97bbc86ef59fd6e323f9d8d1",
-                "reference": "45a76521b4c378eb97bbc86ef59fd6e323f9d8d1",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/6f1e718956b431c721f9eb11a57de65947f06e66",
+                "reference": "6f1e718956b431c721f9eb11a57de65947f06e66",
                 "shasum": ""
             },
             "require": {
@@ -1872,7 +1872,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2020-01-14T16:41:11+00:00"
+            "time": "2020-01-28T21:07:02+00:00"
         },
         {
             "name": "laravel/nova",
@@ -2418,16 +2418,16 @@
         },
         {
             "name": "league/iso3166",
-            "version": "2.1.4",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/iso3166.git",
-                "reference": "f2dca0b179e3ea4486f8089d0f910716b2896033"
+                "reference": "aed3b32fc293afdf2c6c6a322c2408eb5d20804a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/iso3166/zipball/f2dca0b179e3ea4486f8089d0f910716b2896033",
-                "reference": "f2dca0b179e3ea4486f8089d0f910716b2896033",
+                "url": "https://api.github.com/repos/thephpleague/iso3166/zipball/aed3b32fc293afdf2c6c6a322c2408eb5d20804a",
+                "reference": "aed3b32fc293afdf2c6c6a322c2408eb5d20804a",
                 "shasum": ""
             },
             "require": {
@@ -2468,7 +2468,7 @@
                 "iso",
                 "library"
             ],
-            "time": "2019-10-23T06:57:59+00:00"
+            "time": "2020-01-29T07:08:12+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -4671,16 +4671,16 @@
         },
         {
             "name": "scrivo/highlight.php",
-            "version": "v9.17.1.0",
+            "version": "v9.17.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "5451a9ad6d638559cf2a092880f935c39776134e"
+                "reference": "abe5a2f0b21de310c9fccf4daafeb93e597ec7bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/5451a9ad6d638559cf2a092880f935c39776134e",
-                "reference": "5451a9ad6d638559cf2a092880f935c39776134e",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/abe5a2f0b21de310c9fccf4daafeb93e597ec7bc",
+                "reference": "abe5a2f0b21de310c9fccf4daafeb93e597ec7bc",
                 "shasum": ""
             },
             "require": {
@@ -4690,8 +4690,8 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8|^5.7",
-                "symfony/finder": "^3.4",
-                "symfony/var-dumper": "^3.4"
+                "symfony/finder": "^2.8|^3.4",
+                "symfony/var-dumper": "^2.8|^3.4"
             },
             "suggest": {
                 "ext-dom": "Needed to make use of the features in the utilities namespace"
@@ -4735,7 +4735,7 @@
                 "highlight.php",
                 "syntax"
             ],
-            "time": "2019-12-13T21:54:06+00:00"
+            "time": "2020-01-27T08:38:19+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -5504,20 +5504,21 @@
         },
         {
             "name": "spatie/image",
-            "version": "1.7.5",
+            "version": "1.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image.git",
-                "reference": "9e36dcc1c5da4e8756a4fd00228342a9c9953f4b"
+                "reference": "74535b5fd67ace75840c00c408666660843e755e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image/zipball/9e36dcc1c5da4e8756a4fd00228342a9c9953f4b",
-                "reference": "9e36dcc1c5da4e8756a4fd00228342a9c9953f4b",
+                "url": "https://api.github.com/repos/spatie/image/zipball/74535b5fd67ace75840c00c408666660843e755e",
+                "reference": "74535b5fd67ace75840c00c408666660843e755e",
                 "shasum": ""
             },
             "require": {
                 "ext-exif": "*",
+                "ext-mbstring": "*",
                 "league/glide": "^1.4",
                 "php": "^7.0",
                 "spatie/image-optimizer": "^1.0",
@@ -5553,7 +5554,7 @@
                 "image",
                 "spatie"
             ],
-            "time": "2019-11-23T17:56:34+00:00"
+            "time": "2020-01-26T18:56:44+00:00"
         },
         {
             "name": "spatie/image-optimizer",
@@ -5607,16 +5608,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.7.6",
+            "version": "6.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "9526cd53072644de6e4850cffaf79376c9a4f2d0"
+                "reference": "c2aeb1685007ee1cc2b3f86c26315aeb32602a93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/9526cd53072644de6e4850cffaf79376c9a4f2d0",
-                "reference": "9526cd53072644de6e4850cffaf79376c9a4f2d0",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/c2aeb1685007ee1cc2b3f86c26315aeb32602a93",
+                "reference": "c2aeb1685007ee1cc2b3f86c26315aeb32602a93",
                 "shasum": ""
             },
             "require": {
@@ -5678,7 +5679,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2019-12-12T13:39:26+00:00"
+            "time": "2020-01-27T13:58:27+00:00"
         },
         {
             "name": "spatie/laravel-blade-x",
@@ -6005,17 +6006,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "0.9.8",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "548f049f3e9de81d2fa8089bfac1f5acbf0a2bf3"
+                "reference": "2ed71659aadc01c6f681b606cf7ef74b482a7320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-548f049f3e9de81d2fa8089bfac1f5acbf0a2bf3-zip-5970fb.zip",
-                "reference": "548f049f3e9de81d2fa8089bfac1f5acbf0a2bf3",
-                "shasum": "ce080c7e405d4e19756de049ff07eefb29ce6ee3"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-2ed71659aadc01c6f681b606cf7ef74b482a7320-zip-baa29d.zip",
+                "reference": "2ed71659aadc01c6f681b606cf7ef74b482a7320",
+                "shasum": "36eb0e776fcf10ed47d9be0b2041c64c27577827"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -6105,34 +6106,36 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2020-01-25T23:48:40+00:00"
+            "time": "2020-01-29T12:19:10+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
-            "version": "0.9.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
-                "reference": "c9ab7a4c6cb06748b7b17ad037c0787d1e564dd1"
+                "reference": "833c81f78b0557a0408999360819feb9e52ed064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-c9ab7a4c6cb06748b7b17ad037c0787d1e564dd1-zip-2c7e6b.zip",
-                "reference": "c9ab7a4c6cb06748b7b17ad037c0787d1e564dd1",
-                "shasum": "c66a293cba2d9fb4c1e5e11c951a068ac7219e7d"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-833c81f78b0557a0408999360819feb9e52ed064-zip-32bd06.zip",
+                "reference": "833c81f78b0557a0408999360819feb9e52ed064",
+                "shasum": "e2317f8851fe736d2468886f0560fd45066c2251"
             },
             "require": {
                 "illuminate/http": "^6.4",
                 "orchestra/testbench": "^4.3",
                 "php": "^7.4",
-                "spatie/laravel-mailcoach": "^0.9",
+                "spatie/laravel-mailcoach": "^1.1",
                 "spatie/laravel-webhook-client": "^2.2"
             },
             "require-dev": {
                 "ext-json": "*",
                 "friendsofphp/php-cs-fixer": "^2.16",
+                "fzaninotto/faker": "^1.9",
+                "orchestra/testbench": "^4.5",
                 "phpunit/phpunit": "^8.4",
-                "symfony/var-dumper": "^4.3"
+                "symfony/var-dumper": "^4.3|^5.0"
             },
             "type": "library",
             "extra": {
@@ -6174,7 +6177,7 @@
                 "laravel-mailcoach-mailgun-feedback",
                 "spatie"
             ],
-            "time": "2020-01-16T10:45:06+00:00"
+            "time": "2020-01-29T12:46:38+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
