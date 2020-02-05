@@ -66,4 +66,17 @@ class CreateLinkControllerTest extends TestCase
             ->post(action([CreateLinkController::class, 'store'], $attributes))
             ->assertSessionHasErrors('url');
     }
+
+    /** @test */
+    public function it_can_create_a_link_without_text()
+    {
+        $attributes = [
+            'title' => 'my title',
+            'url' => 'https://freek.dev',
+        ];
+
+        $this
+            ->post(action([CreateLinkController::class, 'store'], $attributes))
+            ->assertRedirect(route('links.thanks'));
+    }
 }

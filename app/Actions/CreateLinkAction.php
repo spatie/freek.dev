@@ -14,7 +14,7 @@ class CreateLinkAction
         $link = Link::create([
             'title' => $linkAttributes['title'],
             'url' => $linkAttributes['url'],
-            'text' => $linkAttributes['text'],
+            'text' => $linkAttributes['text'] ?? '',
             'user_id' => $user->id,
         ]);
 
