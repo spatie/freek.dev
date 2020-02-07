@@ -42,6 +42,10 @@
             color: #3182ce;
         }
 
+        .bg-white {
+            background-color: #ffffff !important;
+        }
+
         .bg-gray-200 {
             background-color: #edf2f7 !important;
         }
@@ -249,7 +253,7 @@
     </style>
     <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css">
 </head>
-<body>
+<body class="bg-white">
 <table class="all-font-sans text-gray-900 leading-24 w-600 mx-auto sm-w-full" cellpadding="0" cellspacing="0"
        role="presentation">
     <tr>
