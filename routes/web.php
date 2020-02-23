@@ -22,7 +22,7 @@ Route::get('speaking', SpeakingController::class);
 Route::view('about', 'front.about.index');
 Route::view('advertising', 'front.advertising.index');
 Route::view('search', 'front.search.index');
-Route::view('contest', 'front.contest.index');
+Route::view('mailcoach-contest', 'front.contest.mailcoach');
 
 Route::middleware('doNotCacheResponse')->group(function () {
     Route::get('newsletter', NewsletterController::class);
