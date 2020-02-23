@@ -15,7 +15,7 @@
             A mailcoach license also give you access to <a href="https://mailcoach.app/videos">the video course</a>. Get a look behind the scenes of Mailcoach, a real world Laravel application for newsletters. Learn about the problems that we tackled and the clean code patterns that we applied.
         </p>
         <p>
-            We've partnered with <a href="https://contestkit.com">ContestKit</a> to give away three Mailcoach licenses for free.
+            We've partnered with <a href="https://contestkit.com">ContestKit</a> to give away one Mailcoach license for free.
         </p>
 
         <a href="#" id="6863w5qN"></a>
