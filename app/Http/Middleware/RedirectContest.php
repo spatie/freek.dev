@@ -16,7 +16,7 @@ class RedirectContest
      */
     public function handle($request, Closure $next)
     {
-        info(print_r($request->segments(), true));
+        info($request->segment(0));
         if ($request->get('utm_campaign') === 'referral') {
             if ($request->segment(0) !== 'mailcoach-contest') {
                 info($request->segment(0));
