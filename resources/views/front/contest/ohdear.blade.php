@@ -1,11 +1,11 @@
 @extends('front.layouts.app', [
-    'title' => 'Monitor 2 sites for free for an entire year using Oh Dear',
+    'title' => 'Monitor two sites for free for an entire year using Oh Dear',
 ])
 
 
 @section('content')
     <div class="markup mb-4">
-        <h1>Monitor 2 sites for free for an entire year using Oh Dear</h1>
+        <h1>Monitor two sites for free for an entire year using Oh Dear</h1>
         <p>
             <a href="https://ohdear.app">Oh Dear</a> monitors uptime, checks your SSL certificates, crawls for broken links and sends out notifications when something's wrong. It checks your entire website, not just the homepage.  When something is wrong Oh Dear can notify you via Slack, SMS, Pushover, ...  we can notify you wherever your team is active. It has a developer friendly API and <a href="https://ohdear.app/docs">kick-ass docs</a>.
         </p>
