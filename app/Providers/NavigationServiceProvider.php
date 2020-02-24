@@ -27,7 +27,8 @@ class NavigationServiceProvider extends ServiceProvider
         Menu::macro('secondary', function () {
             return Menu::new()
                 ->url('search', 'Search')
-                ->url('mailcoach-contest', 'Contest')
+                ->url('mailcoach-contest', 'Mailcoach contest')
+                ->url('ohdear-contest', 'Oh Dear contest')
                 ->url('advertising', 'Advertising')
                 ->action(LinksIndexController::class, 'Community links')
                 ->setActiveFromRequest('/');
