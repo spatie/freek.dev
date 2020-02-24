@@ -1,5 +1,5 @@
 @extends('front.layouts.app', [
-    'title' => 'Contest',
+    'title' => 'Win a free Mailcoach license',
 ])
 
 

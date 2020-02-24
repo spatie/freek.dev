@@ -23,6 +23,8 @@ Route::view('about', 'front.about.index');
 Route::view('advertising', 'front.advertising.index');
 Route::view('search', 'front.search.index');
 Route::view('mailcoach-contest', 'front.contest.mailcoach');
+Route::view('ohdear-contest', 'front.contest.ohdear');
+
 
 Route::middleware('doNotCacheResponse')->group(function () {
     Route::get('newsletter', NewsletterController::class);
