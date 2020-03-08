@@ -16,7 +16,7 @@ trait PostPresenter
             '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>',
             '<div data-lazy="twitter"></div>',
             $excerpt,
-        );
+            );
 
         $excerpt = CommonMark::convertToHtml($excerpt);
 
