@@ -60,7 +60,8 @@
         "spatie/nova-backup-tool": "^2.0",
         "spatie/nova-tags-field": "^2.0",
         "spatie/nova-tail-tool": "^2.0",
-        "stripe/stripe-php": "^6.8"
+        "stripe/stripe-php": "^6.8",
+        "laravel/ui": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",
