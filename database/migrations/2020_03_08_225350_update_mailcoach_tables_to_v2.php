@@ -10,8 +10,8 @@ class UpdateMailcoachTablesToV2 extends Migration
     {
         Schema::table('mailcoach_email_lists', function (Blueprint $table) {
             $table->text('confirmation_mail_content')->nullable()->change();
-            $table->string('campaign_mailer');
-            $table->string('transactional_mailer');
+            $table->string('campaign_mailer')->nullable();
+            $table->string('transactional_mailer')->nullable();
             $table->text('welcome_mail_content')->nullable()->change();
         });
 
