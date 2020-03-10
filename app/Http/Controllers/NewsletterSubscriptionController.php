@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubscribeToNewsletterRequest;
 use Spatie\Mailcoach\Models\Subscriber;
 
 class NewsletterSubscriptionController
 {
-    public function subscribe($request)
+    public function subscribe(SubscribeToNewsletterRequest $request)
     {
-        info('in subscribe');
-        dd('test');
-
         $emailList = $request->emailList();
 
         Subscriber::createWithEmail($request->email)
