@@ -13,6 +13,7 @@ class UpdateMailcoachTablesToV2 extends Migration
             $table->string('campaign_mailer')->nullable();
             $table->string('transactional_mailer')->nullable();
             $table->text('welcome_mail_content')->nullable()->change();
+            $table->boolean('welcome_mail_delay_in_minutes')->default(0);
         });
 
         Schema::table('mailcoach_subscribers', function (Blueprint $table) {
