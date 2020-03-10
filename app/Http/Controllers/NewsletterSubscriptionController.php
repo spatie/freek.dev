@@ -9,6 +9,8 @@ class NewsletterSubscriptionController
 {
     public function subscribe(SubscribeToNewsletterRequest $request)
     {
+        info('in subscribe');
+
         $emailList = $request->emailList();
 
         Subscriber::createWithEmail($request->email)
