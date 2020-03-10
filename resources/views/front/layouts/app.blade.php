@@ -66,3 +66,7 @@
         </div>
     </div>
 </div>
+
+@if($livewire ?? false)
+    @livewireScripts
+@endif

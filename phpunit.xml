@@ -29,4 +29,7 @@
         <env name="SESSION_DRIVER" value="array"/>
         <server name="DB_DATABASE" value="freekdev_test"/>
     </php>
+    <listeners>
+        <listener class="NunoMaduro\Collision\Adapters\Phpunit\Printer" />
+    </listeners>
 </phpunit>

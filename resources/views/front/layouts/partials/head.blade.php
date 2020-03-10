@@ -24,5 +24,5 @@
 <link rel="webmention" href="https://webmention.io/freek.dev/webmention" />
 <link rel="pingback" href="https://webmention.io/freek.dev/xmlrpc" />
 @if($livewire ?? false)
-    @livewireAssets
+    @livewireStyles
 @endif

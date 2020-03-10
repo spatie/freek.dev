@@ -73,7 +73,6 @@ return [
             'retry_after' => 11 * 60,
             'block_for' => null,
         ],
-
     ],
 
     /*
