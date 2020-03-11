@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53df58ac7de810175add083c82f44a17",
+    "content-hash": "73b7851519a8a041d2ab60ba2b965486",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1325,7 +1325,7 @@
         },
         {
             "name": "freekmurze/generate-newsletter",
-            "version": "dev-laravel-7",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GenerateNewsletter",
@@ -3437,22 +3437,22 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v5.0.2",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "d2fb3f270f4413a8148336b3b902f45eb1ff4511"
+                "reference": "e36bdb5fc599495f46a8b2fd3a5e6ffed044e095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/d2fb3f270f4413a8148336b3b902f45eb1ff4511",
-                "reference": "d2fb3f270f4413a8148336b3b902f45eb1ff4511",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/e36bdb5fc599495f46a8b2fd3a5e6ffed044e095",
+                "reference": "e36bdb5fc599495f46a8b2fd3a5e6ffed044e095",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0.6",
+                "laravel/framework": "^7.1",
                 "mockery/mockery": "^1.3.1",
-                "orchestra/testbench-core": "^5.0.2",
+                "orchestra/testbench-core": "^5.1",
                 "php": ">=7.2.5",
                 "phpunit/phpunit": "^8.4 || ^9.0"
             },
@@ -3483,7 +3483,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2020-03-06T23:39:54+00:00"
+            "time": "2020-03-10T17:14:11+00:00"
         },
         {
             "name": "orchestra/testbench-core",
@@ -6256,17 +6256,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "v2.x-dev",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "03daed31d2bb1f785fbccf322d9d643aa4de64a1"
+                "reference": "0ac92155e7a5ae58de8491f7d309c4522e316ee0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-03daed31d2bb1f785fbccf322d9d643aa4de64a1-zip-8739c4.zip",
-                "reference": "03daed31d2bb1f785fbccf322d9d643aa4de64a1",
-                "shasum": "e90d891e833b3720dabec2af432d2969a8f82827"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-0ac92155e7a5ae58de8491f7d309c4522e316ee0-zip-81fcab.zip",
+                "reference": "0ac92155e7a5ae58de8491f7d309c4522e316ee0",
+                "shasum": "f9c843665898d0bd176bc40e309ca755edb06013"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -6306,9 +6306,8 @@
                 "friendsofphp/php-cs-fixer": "^2.16",
                 "fzaninotto/faker": "^1.9",
                 "orchestra/testbench": "^5.0",
-                "phpunit/phpunit": "^8.0",
+                "phpunit/phpunit": "^9.0",
                 "predis/predis": "^1.1",
-                "rector/rector": "^0.6.0",
                 "spatie/phpunit-snapshot-assertions": "^4.0",
                 "spatie/test-time": "^1.1",
                 "symfony/var-dumper": "^5.0"
@@ -6358,7 +6357,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2020-03-10T15:14:53+00:00"
+            "time": "2020-03-11T10:17:45+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -6432,16 +6431,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.0.0",
+            "version": "8.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "caa4e9b7bc3e2775dc0ee3c61a87e7030b2d73ae"
+                "reference": "4b2b3ac198ed29deb6f4ba20c7f818720cd00484"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/caa4e9b7bc3e2775dc0ee3c61a87e7030b2d73ae",
-                "reference": "caa4e9b7bc3e2775dc0ee3c61a87e7030b2d73ae",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/4b2b3ac198ed29deb6f4ba20c7f818720cd00484",
+                "reference": "4b2b3ac198ed29deb6f4ba20c7f818720cd00484",
                 "shasum": ""
             },
             "require": {
@@ -6519,7 +6518,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2020-03-09T17:17:35+00:00"
+            "time": "2020-03-11T08:45:54+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -7051,16 +7050,16 @@
         },
         {
             "name": "spatie/laravel-translatable",
-            "version": "4.3.0",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-translatable.git",
-                "reference": "0f69b268257b3f594450712a95cce6178bb0eb13"
+                "reference": "39da2d93138b36e5fe6b1e493cac0d1e6b06e534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/0f69b268257b3f594450712a95cce6178bb0eb13",
-                "reference": "0f69b268257b3f594450712a95cce6178bb0eb13",
+                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/39da2d93138b36e5fe6b1e493cac0d1e6b06e534",
+                "reference": "39da2d93138b36e5fe6b1e493cac0d1e6b06e534",
                 "shasum": ""
             },
             "require": {
@@ -7119,7 +7118,7 @@
                 "spatie",
                 "translate"
             ],
-            "time": "2020-03-02T19:35:51+00:00"
+            "time": "2020-03-11T09:56:26+00:00"
         },
         {
             "name": "spatie/laravel-validation-rules",
@@ -10808,9 +10807,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-mailcoach": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
