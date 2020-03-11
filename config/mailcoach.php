@@ -10,7 +10,18 @@ return [
         'release_in_seconds' => 5,
     ],
 
+    'editor' => \Spatie\MailcoachMonaco\MonacoEditor::class,
+
     'mailgun_feedback' => [
         'signing_secret' => env('MAILGUN_SIGNING_SECRET'),
+    ],
+
+    'monaco' => [
+        'theme' => 'vs-light',
+        'fontFamily' => '"Courier New", Courier, monospace',
+        'fontLigatures' => true,
+        'fontWeight' => 400,
+        'fontSize' => '16',
+        'lineHeight' => '30'
     ],
 ];
