@@ -6364,7 +6364,7 @@
             "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback.git",
+                "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
                 "reference": "d230833dcdba99aea640da47f40fff5d3562b2b7"
             },
             "dist": {
@@ -6431,17 +6431,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach-monaco",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/spatie/laravel-mailcoach-monaco.git",
-                "reference": "c7c713b6d52a5eaf999cfce12002b6c27b9b0185"
+                "url": "git@github.com:spatie/laravel-mailcoach-monaco.git",
+                "reference": "4510b4b8bb3d683ea852197b673add9905faa2c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-c7c713b6d52a5eaf999cfce12002b6c27b9b0185-zip-13b37c.zip",
-                "reference": "c7c713b6d52a5eaf999cfce12002b6c27b9b0185",
-                "shasum": "c0dfbe9261e5f4419f7a011845358bb6b8ef3def"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-4510b4b8bb3d683ea852197b673add9905faa2c8-zip-29f1f1.zip",
+                "reference": "4510b4b8bb3d683ea852197b673add9905faa2c8",
+                "shasum": "b4d7491c247c4c666299c9136caad47311e0a35a"
             },
             "require": {
                 "ext-json": "*",
@@ -6496,11 +6496,7 @@
                 "laravel-mailcoach-monaco",
                 "spatie"
             ],
-            "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/1.0.3",
-                "issues": "https://github.com/spatie/laravel-mailcoach-monaco/issues"
-            },
-            "time": "2020-03-11T15:11:02+00:00"
+            "time": "2020-03-11T18:06:27+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
