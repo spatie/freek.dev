@@ -18,8 +18,7 @@
             We've partnered with <a href="https://contestkit.com">ContestKit</a> to give away a Mailcoach license for free.
         </p>
 
-        <a href="#" id="6863w5qN"></a>
-        <script src="https://embed.contestkit.com/iframe/6863w5qN" data-ck-6863w5qN data-ck-element-id="6863w5qN"></script>
+        <a href="#" id="wBAxjDR"></a> <script src="https://embed.contestkit.com/iframe/wBAxjDR" data-ck-wBAxjDR data-ck-element-id="wBAxjDR"></script>
     </div>
 
 
