@@ -1871,16 +1871,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.1.2",
+            "version": "v7.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "951e10fbfed2a2d547c3fc33853125b4a619e01a"
+                "reference": "42b311862adfc36b8628ac62d226a3682f463439"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/951e10fbfed2a2d547c3fc33853125b4a619e01a",
-                "reference": "951e10fbfed2a2d547c3fc33853125b4a619e01a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/42b311862adfc36b8628ac62d226a3682f463439",
+                "reference": "42b311862adfc36b8628ac62d226a3682f463439",
                 "shasum": ""
             },
             "require": {
@@ -2018,7 +2018,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-03-13T13:52:44+00:00"
+            "time": "2020-03-14T14:33:32+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2690,16 +2690,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "6193160cc63d4b9d2adf6f43f6f72a56093ea432"
+                "reference": "8bbb099df73608ad6b31469629d33d8fc74a3773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/6193160cc63d4b9d2adf6f43f6f72a56093ea432",
-                "reference": "6193160cc63d4b9d2adf6f43f6f72a56093ea432",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/8bbb099df73608ad6b31469629d33d8fc74a3773",
+                "reference": "8bbb099df73608ad6b31469629d33d8fc74a3773",
                 "shasum": ""
             },
             "require": {
@@ -2743,7 +2743,7 @@
                 }
             ],
             "description": "A front-end framework for Laravel.",
-            "time": "2020-03-09T14:47:09+00:00"
+            "time": "2020-03-14T16:27:59+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -5944,16 +5944,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.8.0",
+            "version": "6.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "b2cf3f9f35613a20a39e1c35803b77858b455382"
+                "reference": "c3d96a596c9fa803aa51d28721d6b1e77934ba95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/b2cf3f9f35613a20a39e1c35803b77858b455382",
-                "reference": "b2cf3f9f35613a20a39e1c35803b77858b455382",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/c3d96a596c9fa803aa51d28721d6b1e77934ba95",
+                "reference": "c3d96a596c9fa803aa51d28721d6b1e77934ba95",
                 "shasum": ""
             },
             "require": {
@@ -6015,7 +6015,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2020-03-02T21:43:50+00:00"
+            "time": "2020-03-13T17:45:46+00:00"
         },
         {
             "name": "spatie/laravel-feed",
@@ -6256,17 +6256,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "16d347ff0ad7daa1efd29ce5de7ad4a74c476d94"
+                "reference": "c2dfa508842e6425264407589747caaafd079a41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-16d347ff0ad7daa1efd29ce5de7ad4a74c476d94-zip-5c24de.zip",
-                "reference": "16d347ff0ad7daa1efd29ce5de7ad4a74c476d94",
-                "shasum": "711694ef1159d60a9480683a553b04511f56b7d8"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-c2dfa508842e6425264407589747caaafd079a41-zip-916a32.zip",
+                "reference": "c2dfa508842e6425264407589747caaafd079a41",
+                "shasum": "ee1e2202ff81b9fe4b73651f9ce15a4850c39cf3"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -6357,14 +6357,14 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2020-03-12T13:53:14+00:00"
+            "time": "2020-03-14T12:39:21+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
             "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:spatie/laravel-mailcoach-mailgun-feedback.git",
+                "url": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback.git",
                 "reference": "d230833dcdba99aea640da47f40fff5d3562b2b7"
             },
             "dist": {
@@ -6434,7 +6434,7 @@
             "version": "1.0.4",
             "source": {
                 "type": "git",
-                "url": "git@github.com:spatie/laravel-mailcoach-monaco.git",
+                "url": "https://github.com/spatie/laravel-mailcoach-monaco.git",
                 "reference": "4510b4b8bb3d683ea852197b673add9905faa2c8"
             },
             "dist": {
@@ -6500,21 +6500,20 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.0.1",
+            "version": "8.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "4b2b3ac198ed29deb6f4ba20c7f818720cd00484"
+                "reference": "0467473fdbbaea5346056fbd861fef8b795f67e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/4b2b3ac198ed29deb6f4ba20c7f818720cd00484",
-                "reference": "4b2b3ac198ed29deb6f4ba20c7f818720cd00484",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/0467473fdbbaea5346056fbd861fef8b795f67e6",
+                "reference": "0467473fdbbaea5346056fbd861fef8b795f67e6",
                 "shasum": ""
             },
             "require": {
                 "ext-fileinfo": "*",
-                "ext-gd": "*",
                 "ext-json": "*",
                 "illuminate/bus": "^6.18|^7.0",
                 "illuminate/console": "^6.18|^7.0",
@@ -6587,7 +6586,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2020-03-11T08:45:54+00:00"
+            "time": "2020-03-14T10:52:41+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -9980,16 +9979,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.10.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "472c917b2a083ec7d2fa25c55fd099d1300e2515"
+                "reference": "b912a45da3e2b22f5cb5a23e441b697a295ba011"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/472c917b2a083ec7d2fa25c55fd099d1300e2515",
-                "reference": "472c917b2a083ec7d2fa25c55fd099d1300e2515",
+                "url": "https://api.github.com/repos/composer/composer/zipball/b912a45da3e2b22f5cb5a23e441b697a295ba011",
+                "reference": "b912a45da3e2b22f5cb5a23e441b697a295ba011",
                 "shasum": ""
             },
             "require": {
@@ -10056,7 +10055,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2020-03-10T13:08:05+00:00"
+            "time": "2020-03-13T19:34:27+00:00"
         },
         {
             "name": "composer/semver",
