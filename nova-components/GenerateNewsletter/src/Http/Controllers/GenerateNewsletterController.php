@@ -22,7 +22,7 @@ class GenerateNewsletterController
         $newsletterHtml = (new NewsletterGenerator(
             $startDate,
             $endDate,
-            $validated['editionNumber']
+            $validated['editionNumber'],
         )
         )->getHtml();
 

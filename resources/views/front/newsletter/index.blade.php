@@ -39,6 +39,4 @@
             </div>
         @endforeach
     </div>
-
-    {{ rand(0, 10000) }}
 @endsection

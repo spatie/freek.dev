@@ -28,7 +28,7 @@ Route::view('ohdear-contest', 'front.contest.ohdear');
 
 Route::middleware('doNotCacheResponse')->group(function () {
     Route::get('newsletter', NewsletterController::class);
-    Route::post('subscribe', [NewsletterSubscriptionController::class, 'subscribe'])->middleware(ProtectAgainstSpam::class);
+    Route::post('subscribe', [NewsletterSubscriptionController::class, 'subscribe'])->middleware(ProtectAgainstSpam::class)->name('newsletter.subscribe');
     Route::get('confirm', [NewsletterSubscriptionController::class, 'confirm']);
     Route::get('confirmed', [NewsletterSubscriptionController::class, 'confirmed']);
 
@@ -36,6 +36,9 @@ Route::middleware('doNotCacheResponse')->group(function () {
     Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
     Route::post('payments', [PaymentsController::class, 'handlePayment']);
 });
+
+Route::view('newsletter/liked-it', 'front.newsletter.like')->name('newsletter.like');
+Route::view('newsletter/could-be-improved', 'front.newsletter.dislike')->name('newsletter.dislike');
 
 Route::prefix('links')->group(function () {
     Route::get('/', LinksIndexController::class)->name('links');
@@ -47,6 +50,7 @@ Route::prefix('links')->group(function () {
 });
 
 Route::redirect('me', '/about');
+Route::redirect('php-version', '/1598-how-to-check-which-version-of-php-you-are-running');
 
 Route::webhooks('webhook-webmentions', 'webmentions');
 

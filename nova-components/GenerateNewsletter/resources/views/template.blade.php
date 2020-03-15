@@ -368,6 +368,157 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="text-sm text-gray-600 leading-20 pt-24 border-solid border-0 border-t border-gray-200"
+                        style="border-color: #edf2f7 !important; border-style: solid !important; border-width: 0 !important; border-top-width: 1px !important; line-height: 20px !important; padding-top: 24px !important; color: #718096 !important; font-size: 14px !important;">
+                        <p class="m-0 mb-16" style="margin: 0 !important; margin-bottom: 16px !important;">
+                            Thanks for reading! Did you like this edition of the newsletter?
+                        </p>
+                    </td>
+                </tr>
+                <tr class="text-gray-600" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust:
+100%;">
+                    <td align="center" bgcolor="#ffffff" height="100%"
+                        style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;
+padding-bottom: 40px;" valign="top" width="100%">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0"
+                               role="presentation" style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
+mso-table-rspace: 0pt !important; border-spacing: 0 !important;
+border-collapse: collapse !important; table-layout: fixed !important; margin:
+0 auto !important; max-width: 560px;" width="100%">
+                            <tbody style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                            <tr style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                <td align="center" valign="top" width="50%"
+                                    style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+                                    <table border="0" cellpadding="0" cellspacing="0"
+                                           role="presentation" style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
+mso-table-rspace: 0pt !important; border-spacing: 0 !important;
+border-collapse: collapse !important; table-layout: fixed !important; margin:
+0 auto !important; font-size: 14px; text-align: left;" width="100%">
+                                        <tbody style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                        <tr style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                            <td style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
+mso-table-rspace: 0pt !important; text-align: center; padding: 0 10px;">
+                                                <table align="center" border="0" cellpadding="0"
+                                                       cellspacing="0" role="presentation" style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
+mso-table-rspace: 0pt !important; border-spacing: 0 !important;
+border-collapse: collapse !important; table-layout: fixed !important; margin:
+auto;">
+                                                    <tbody style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                                    <tr style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                                        <td class="btn btn-green">
+                                                            <a target="_blank"
+                                                               href="{{ route('newsletter.like', ['edition' => $editionNumber]) }}"
+                                                               style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+background: #b1d6a6; border: 15px solid #b1d6a6; font-family: sans-serif;
+font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none;
+display: block; border-radius: 3px; font-weight: bold;">
+
+                                    <span style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; color: #ffffff; font-size: 24px; font-weight:
+100;">
+                                      Yes!
+                                    </span>
+
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                            <td class="stack-column-center"
+                                                style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;
+text-align: center; font-family: sans-serif; font-size: 15px;
+mso-height-rule: exactly; line-height: 20px; padding: 10px
+10px 0; font-weight: 100;">
+                                                Really liked it.
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td align="center" valign="top" width="50%"
+                                    style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+                                    <table border="0" cellpadding="0" cellspacing="0"
+                                           role="presentation" style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
+mso-table-rspace: 0pt !important; border-spacing: 0 !important;
+border-collapse: collapse !important; table-layout: fixed !important; margin:
+0 auto !important; font-size: 14px; text-align: left;" width="100%">
+                                        <tbody style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                        <tr style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                            <td style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
+mso-table-rspace: 0pt !important; text-align: center; padding: 0 10px;">
+                                                <table align="center" border="0" cellpadding="0"
+                                                       cellspacing="0" role="presentation" style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
+mso-table-rspace: 0pt !important; border-spacing: 0 !important;
+border-collapse: collapse !important; table-layout: fixed !important; margin:
+auto;">
+                                                    <tbody style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                                    <tr style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                                        <td class="btn btn-red">
+                                                            <a target="_blank"
+                                                               href="{{ route('newsletter.dislike', ['edition' => $editionNumber]) }}"
+                                                               style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+background: #ba8990; border: 15px solid #ba8990; font-family: sans-serif;
+font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none;
+display: block; border-radius: 3px; font-weight: bold;">
+
+                                    <span style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; color: #ffffff; font-size: 24px; font-weight:
+100;">
+                                      Nope...
+                                    </span>
+
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr style="-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;">
+                                            <td class="stack-column-center"
+                                                style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;
+text-align: center; font-family: sans-serif; font-size: 15px;
+mso-height-rule: exactly; line-height: 20px; padding: 10px
+10px 0; font-weight: 100;">
+                                                It could be improved.
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
                     <td class="text-sm text-gray-600 leading-20 pt-24 border-solid border-0 border-t border-gray-200">
                         <p class="m-0 mb-16">
                             Advertisement opportunities at
