@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMediaTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('media', function (Blueprint $table) {
@@ -26,13 +23,5 @@ class CreateMediaTable extends Migration
             $table->unsignedInteger('order_column')->nullable();
             $table->nullableTimestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down()
-    {
-        Schema::dropIfExists('media');
     }
 }
