@@ -36,7 +36,7 @@ class Post extends Model implements Feedable, Sluggable
 
     public $casts = [
         'published' => 'boolean',
-        'original_content' => 'boolean'
+        'original_content' => 'boolean',
     ];
 
     public static function boot()
@@ -93,7 +93,7 @@ class Post extends Model implements Feedable, Sluggable
     {
         $text = $this->text;
 
-        if (!$this->isTweet() && $this->external_url) {
+        if (! $this->isTweet() && $this->external_url) {
             $text .= PHP_EOL . PHP_EOL . "[Read More]({$this->external_url})";
         }
 

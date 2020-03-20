@@ -18,11 +18,11 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
             return;
         }
 
-        if (!$type = $this->getType($payload)) {
+        if (! $type = $this->getType($payload)) {
             return;
         }
 
-        if (!$post = $this->getPost($payload)) {
+        if (! $post = $this->getPost($payload)) {
             return;
         }
 
@@ -55,7 +55,7 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
 
         $wmProperty = Arr::get($payload, 'post.wm-property');
 
-        if (!array_key_exists($wmProperty, $types)) {
+        if (! array_key_exists($wmProperty, $types)) {
             return null;
         }
 
@@ -66,7 +66,7 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
     {
         $url = Arr::get($payload, 'post.wm-target');
 
-        if (!$url) {
+        if (! $url) {
             return null;
         }
 

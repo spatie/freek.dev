@@ -18,7 +18,6 @@ class Link extends Model implements Sluggable
     public const STATUS_APPROVED = 'approved';
     public const STATUS_REJECTED = 'rejected';
 
-
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

@@ -16,16 +16,16 @@ class PostTest extends TestCase
         $this->assertEquals(
             "http://freek.dev.test/{$post->id}-test",
             $post->promotional_url,
-            );
+        );
 
         $post = factory(Post::class)->create([
             'title' => 'test',
-            'external_url' => 'https://external-blog.com/page'
+            'external_url' => 'https://external-blog.com/page',
         ]);
         $this->assertEquals(
             'https://external-blog.com/page',
             $post->promotional_url,
-            );
+        );
     }
 
     /** @test */
@@ -82,7 +82,7 @@ class PostTest extends TestCase
         $post = factory(Post::class)->create()->attachTags([
             'tag',
             'tweet',
-            'another-tag'
+            'another-tag',
         ]);
         $this->assertTrue($post->isTweet());
     }

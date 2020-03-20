@@ -10,6 +10,6 @@ class VerifyCsrfToken extends Middleware
 
     protected $except = [
         'webhook-webmentions',
-        'mailgun-feedback'
+        'mailgun-feedback',
     ];
 }

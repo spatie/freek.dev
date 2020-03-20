@@ -27,7 +27,7 @@ class TalkSeeder extends Seeder
                 'title' => 'Why are we sponsering our local meetup group',
                 'location' => 'PHP Antwerp',
                 'presented_at' => '2016-01-27',
-                'video_link' => 'https://youtu.be/j4nS_dGxxs8?t=52s'
+                'video_link' => 'https://youtu.be/j4nS_dGxxs8?t=52s',
             ],
             [
                 'title' => 'Backing up with Laravel',
@@ -38,7 +38,7 @@ class TalkSeeder extends Seeder
                 'title' => 'The story behind our open source efforts',
                 'location' => 'Eurostar Connect Ghent',
                 'presented_at' => '2016-10-05',
-                'slides_link' => 'https://speakerdeck.com/freekmurze/open-source-efforts'
+                'slides_link' => 'https://speakerdeck.com/freekmurze/open-source-efforts',
             ],
             [
                 'title' => 'Taking care of backups with Laravel',
@@ -276,7 +276,7 @@ class TalkSeeder extends Seeder
                 'presented_at' => '2017-02-17',
                 'joindin_link' => 'https://joind.in/event/php-uk-2017/taking-care-of-backups-with-laravel',
                 'slides_link' => 'https://speakerdeck.com/freekmurze/backing-up-with-laravel-phpuk',
-                'video_link' => 'https://www.youtube.com/watch?v=klPNJypmIWQ'
+                'video_link' => 'https://www.youtube.com/watch?v=klPNJypmIWQ',
             ],
 
             [

@@ -34,7 +34,7 @@ class Video extends Resource
 
             DateTime::make('Created at')
                 ->hideFromIndex()
-                ->sortable()
+                ->sortable(),
         ];
     }
 }

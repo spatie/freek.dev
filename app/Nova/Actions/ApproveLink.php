@@ -32,7 +32,7 @@ class ApproveLink extends Action
     public function fields()
     {
         return [
-            Boolean::make('Also create post')
+            Boolean::make('Also create post'),
         ];
     }
 }

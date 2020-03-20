@@ -51,7 +51,7 @@ class Post extends Resource
 
                 DateTime::make('Publish date')
                     ->hideFromIndex()
-                    ->sortable()
+                    ->sortable(),
             ]),
 
             new Panel('Meta', [

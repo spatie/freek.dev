@@ -53,7 +53,7 @@ class RouteServiceProvider extends ServiceProvider
                 return $post;
             }
 
-            if (!$post->published) {
+            if (! $post->published) {
                 abort(404);
             }
 

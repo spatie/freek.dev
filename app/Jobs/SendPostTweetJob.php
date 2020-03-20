@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Models\Concerns\Tweetable;
 use App\Models\Post;
 use App\Services\Twitter\Twitter;
 use Illuminate\Bus\Queueable;

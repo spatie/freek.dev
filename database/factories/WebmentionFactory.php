@@ -10,7 +10,7 @@ $factory->define(Webmention::class, function (Faker $faker) {
     $type = $faker->randomElement([
         Webmention::TYPE_LIKE,
         Webmention::TYPE_REPLY,
-        Webmention::TYPE_RETWEET
+        Webmention::TYPE_RETWEET,
     ]);
 
     return [
@@ -21,6 +21,6 @@ $factory->define(Webmention::class, function (Faker $faker) {
         'author_url' => $faker->url,
         'author_photo_url' => $faker->imageUrl,
         'interaction_url' => $faker->url,
-        'text'  => $type === Webmention::TYPE_REPLY ? $faker->sentence : null,
+        'text' => $type === Webmention::TYPE_REPLY ? $faker->sentence : null,
     ];
 });

@@ -10,7 +10,7 @@ $factory->define(Link::class, function (Faker $faker) {
     $status = $faker->randomElement([
         Link::STATUS_SUBMITTED,
         Link::STATUS_APPROVED,
-        Link::STATUS_REJECTED
+        Link::STATUS_REJECTED,
     ]);
 
     return [

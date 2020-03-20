@@ -16,7 +16,7 @@ trait PostPresenter
             '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>',
             '<div data-lazy="twitter"></div>',
             $excerpt,
-            );
+        );
 
         $excerpt = CommonMark::convertToHtml($excerpt);
 
@@ -37,7 +37,7 @@ trait PostPresenter
 
     protected function getManualExcerpt(): ?string
     {
-        if (!Str::contains($this->text, '<!--more-->')) {
+        if (! Str::contains($this->text, '<!--more-->')) {
             return null;
         }
 
@@ -46,7 +46,7 @@ trait PostPresenter
 
     protected function getAutomaticExcerpt(): string
     {
-        if (!$this->original_content) {
+        if (! $this->original_content) {
             return $this->formatted_text;
         }
 
