@@ -8,7 +8,7 @@
         <h1>Thanks for reading and liking my newsletter</h1>
 
         <p>
-            I put a lot of love in creating each edition of my newsletter, and would like to reach as much
+            I put a lot of love in creating each edition of my newsletter, and would like to reach as many
             subscribers as possible.
         </p>
 
