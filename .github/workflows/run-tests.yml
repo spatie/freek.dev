@@ -22,8 +22,9 @@ jobs:
                     extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
                     coverage: none
 
-            -   name: Create database
-                run: mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS freekdev_test;'
+                run: |
+                    sudo /etc/init.d/mysql start
+                    mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS freekdev_test;'
 
             -   name: Cache yarn dependencies
                 uses: actions/cache@v1
