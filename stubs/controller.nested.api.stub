@@ -1,0 +1,36 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ namespacedModel }};
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use {{ namespacedParentModel }};
+
+class {{ class }}
+{
+    public function index({{ parentModel }} ${{ parentModelVariable }})
+    {
+
+    }
+
+    public function store(Request $request, {{ parentModel }} ${{ parentModelVariable }})
+    {
+
+    }
+
+    public function show({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+
+    }
+
+    public function update(Request $request, {{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+
+    }
+
+    public function destroy({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+
+    }
+}
