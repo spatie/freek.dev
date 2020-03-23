@@ -100,7 +100,7 @@ class Post extends Model implements Feedable, Sluggable
             $text .= PHP_EOL . PHP_EOL . "[Read More]({$this->external_url})";
         }
 
-        return CommonMark::convertToHtml($text);
+        return CommonMark::convertToHtml($text, false);
     }
 
     public function updateAttributes(array $attributes)

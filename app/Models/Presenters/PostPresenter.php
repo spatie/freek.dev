@@ -18,7 +18,7 @@ trait PostPresenter
             $excerpt,
         );
 
-        $excerpt = CommonMark::convertToHtml($excerpt);
+        $excerpt = CommonMark::convertToHtml($excerpt, false);
 
         return trim($excerpt);
     }
