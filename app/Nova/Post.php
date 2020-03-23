@@ -62,6 +62,8 @@ class Post extends Resource
 
                 Boolean::make('Original content'),
 
+                Boolean::make('Send automated tweet'),
+
                 BelongsTo::make('Submitted by', 'submittedByUser', User::class)
                     ->hideFromIndex()
                     ->nullable(),

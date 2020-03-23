@@ -37,6 +37,7 @@ class Post extends Model implements Feedable, Sluggable
     public $casts = [
         'published' => 'boolean',
         'original_content' => 'boolean',
+        'send_automated_tweet' => 'boolean',
     ];
 
     public static function boot()

@@ -25,6 +25,10 @@ class PublishPostAction
 
     protected function sendTweet(Post $post)
     {
+        if (! $post->send_automated_tweet) {
+            return;
+        }
+
         if ($post->tweet_sent) {
             return;
         }
