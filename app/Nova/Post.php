@@ -62,7 +62,7 @@ class Post extends Resource
 
                 Boolean::make('Original content'),
 
-                Boolean::make('Send automated tweet'),
+                Boolean::make('Send automated tweet')->withMeta(['value' => $this->send_automated_tweet ?? true]),
 
                 BelongsTo::make('Submitted by', 'submittedByUser', User::class)
                     ->hideFromIndex()
