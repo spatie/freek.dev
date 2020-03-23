@@ -12,14 +12,18 @@ use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 
 class CommonMark
 {
-    public static function convertToHtml(string $markdown): string
+    public static function convertToHtml(string $markdown, $highlightCode = true): string
     {
         $languages = ['html', 'php', 'js', 'yaml', 'bash'];
 
         $environment = Environment::createCommonMarkEnvironment()
-            ->addBlockRenderer(FencedCode::class, new FencedCodeRenderer($languages))
-            ->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer($languages))
             ->addBlockRenderer(Heading::class, new HeadingRenderer());
+
+        if ($highlightCode) {
+            $environment
+                ->addBlockRenderer(FencedCode::class, new FencedCodeRenderer($languages))
+                ->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer($languages));
+        }
 
         $commonMarkConverter = new CommonMarkConverter([], $environment);
 

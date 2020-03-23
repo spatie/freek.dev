@@ -87,7 +87,9 @@ class Post extends Model implements Feedable, Sluggable
 
     public function getFormattedTextAttribute()
     {
-        return CommonMark::convertToHtml($this->text);
+        $highlightCode = ($this->id === 1609) ? false : true;
+
+        return CommonMark::convertToHtml($this->text, $highlightCode);
     }
 
     public function getFormattedTextWithExternalUrlAttribute()
