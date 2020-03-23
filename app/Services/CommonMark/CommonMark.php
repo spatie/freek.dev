@@ -14,7 +14,7 @@ class CommonMark
 {
     public static function convertToHtml(string $markdown): string
     {
-        $languages = ['html', 'php', 'js', 'yaml', 'bash'];
+        $languages = ['html', 'php', 'js', 'yaml', 'bash', 'blade', 'vue'];
 
         $environment = Environment::createCommonMarkEnvironment()
             ->addBlockRenderer(FencedCode::class, new FencedCodeRenderer($languages))
