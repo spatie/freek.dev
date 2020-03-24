@@ -8,6 +8,5 @@ class {{ class }} extends Migration
 {
     public function up()
     {
-        //
     }
 }

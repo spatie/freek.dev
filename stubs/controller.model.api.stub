@@ -10,26 +10,21 @@ class {{ class }}
 {
     public function index()
     {
-        //
     }
 
     public function store(Request $request)
     {
-        //
     }
 
     public function show({{ model }} ${{ modelVariable }})
     {
-        //
     }
 
     public function update(Request $request, {{ model }} ${{ modelVariable }})
     {
-        //
     }
 
     public function destroy({{ model }} ${{ modelVariable }})
     {
-        //
     }
 }

@@ -9,6 +9,5 @@ class {{ class }}
 {
     public function __invoke(Request $request)
     {
-        //
     }
 }
