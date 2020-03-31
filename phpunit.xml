@@ -7,7 +7,8 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false">
+         stopOnFailure="false"
+         printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer">
     <testsuites>
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
@@ -29,7 +30,4 @@
         <env name="SESSION_DRIVER" value="array"/>
         <server name="DB_DATABASE" value="freekdev_test"/>
     </php>
-    <listeners>
-        <listener class="NunoMaduro\Collision\Adapters\Phpunit\Printer" />
-    </listeners>
 </phpunit>
