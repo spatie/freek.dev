@@ -6253,17 +6253,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "5dad1ecd6293524e851f5e78793a6099f3107daa"
+                "reference": "cefa8a404e56c0d63590290fb2d21cf6d51849a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-5dad1ecd6293524e851f5e78793a6099f3107daa-zip-7928fb.zip",
-                "reference": "5dad1ecd6293524e851f5e78793a6099f3107daa",
-                "shasum": "649f894794aa8268c7106f0fca334e7505cabbc9"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-cefa8a404e56c0d63590290fb2d21cf6d51849a8-zip-0840a2.zip",
+                "reference": "cefa8a404e56c0d63590290fb2d21cf6d51849a8",
+                "shasum": "849122834a6ebec0731a341f7c76d72c04bbc64d"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8",
@@ -6354,7 +6354,7 @@
                 "mass mailing",
                 "spatie"
             ],
-            "time": "2020-03-30T07:53:22+00:00"
+            "time": "2020-03-30T10:10:29+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -6505,16 +6505,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.0.6",
+            "version": "8.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "248d1634008d4c664f3cd66594a51a8e69230b1c"
+                "reference": "d14dce6b170ee8345b286665848c50c91d54be4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/248d1634008d4c664f3cd66594a51a8e69230b1c",
-                "reference": "248d1634008d4c664f3cd66594a51a8e69230b1c",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/d14dce6b170ee8345b286665848c50c91d54be4d",
+                "reference": "d14dce6b170ee8345b286665848c50c91d54be4d",
                 "shasum": ""
             },
             "require": {
@@ -6591,7 +6591,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2020-03-25T07:46:59+00:00"
+            "time": "2020-03-30T09:11:38+00:00"
         },
         {
             "name": "spatie/laravel-menu",
