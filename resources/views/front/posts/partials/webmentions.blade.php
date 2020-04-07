@@ -1,4 +1,4 @@
-@if ($post->tweet_url)
+@if (false && $post->tweet_url)
     <div class="markup">
 
         <h2 id="comments">
@@ -18,6 +18,12 @@
     </div>
 @endif
 
+<div class="markup mb-8">
+    <h2 id="webmentions">
+        Webmentions
+        <a href="#webmentions" class="permalink">#</a>
+    </h2>
+</div>
 @foreach($post->webmentions as $webmention)
     <div class="mb-6 text-sm">
         <div class="flex items-center">
