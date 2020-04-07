@@ -1,3 +1,4 @@
+{{--
 @if (! $post->tweet_url)
     <div class="mb-8">
         @component('front.components.lazy')
@@ -5,6 +6,7 @@
         @endcomponent
     </div>
 @endif
+--}}
 
 <div class="markup mb-8">
     <h2 id="comments">
