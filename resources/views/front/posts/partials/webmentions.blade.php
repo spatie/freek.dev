@@ -18,12 +18,14 @@
     </div>
 @endif
 
-<div class="markup mb-8">
-    <h2 id="webmentions">
-        Webmentions
-        <a href="#webmentions" class="permalink">#</a>
-    </h2>
-</div>
+@if(count($post->webmentions) > 0)
+    <div class="markup mb-8">
+        <h2 id="webmentions">
+            Webmentions
+            <a href="#webmentions" class="permalink">#</a>
+        </h2>
+    </div>
+@endif
 @foreach($post->webmentions as $webmention)
     <div class="mb-6 text-sm">
         <div class="flex items-center">
