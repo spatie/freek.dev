@@ -2,7 +2,6 @@
 
 use App\Models\Ad;
 use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Ad::class, function (Faker $faker) {

@@ -2,7 +2,6 @@
 
 use App\Models\Post;
 use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Post::class, function (Faker $faker) {
