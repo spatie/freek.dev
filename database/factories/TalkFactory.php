@@ -2,7 +2,6 @@
 
 use App\Models\Talk;
 use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Talk::class, function (Faker $faker) {
