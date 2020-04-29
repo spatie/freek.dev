@@ -39,7 +39,7 @@ class PaymentsController
             Mail::to('freek@spatie.be')->queue(new PaymentFailed(
                 $request->stripeEmail,
                 $request->amount,
-                $exception->getMessage()
+                $exception->getMessage() . $exception->getTraceAsString()
             ));
 
             return redirect()->action([PaymentsController::class, 'index']);
