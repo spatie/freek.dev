@@ -5999,17 +5999,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "2.10.2",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "581b3777838ee8104de6e62496ba7e29e1fccd5a"
+                "reference": "12ad2f8c66ef3c4c1d055985e05d05cf9299cc34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-581b3777838ee8104de6e62496ba7e29e1fccd5a-zip-ab5048.zip",
-                "reference": "581b3777838ee8104de6e62496ba7e29e1fccd5a",
-                "shasum": "3bc9b574a75114fdcd45f69b45fd55c2968d2c6d"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-12ad2f8c66ef3c4c1d055985e05d05cf9299cc34-zip-ecd0ac.zip",
+                "reference": "12ad2f8c66ef3c4c1d055985e05d05cf9299cc34",
+                "shasum": "ec5845942fb86eb827e73b6a1f369903daf7aa72"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8|^2.0",
@@ -6101,10 +6101,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/2.10.2",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/2.11.0",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2020-04-30T11:42:35+00:00"
+            "time": "2020-04-30T14:24:05+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -7112,16 +7112,16 @@
         },
         {
             "name": "spatie/laravel-webhook-client",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-webhook-client.git",
-                "reference": "ac101820ceee6e23e953af72463f3e28863e157e"
+                "reference": "6ebefb5a7756c2a7b532cf55c0265259a5ffe053"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-webhook-client/zipball/ac101820ceee6e23e953af72463f3e28863e157e",
-                "reference": "ac101820ceee6e23e953af72463f3e28863e157e",
+                "url": "https://api.github.com/repos/spatie/laravel-webhook-client/zipball/6ebefb5a7756c2a7b532cf55c0265259a5ffe053",
+                "reference": "6ebefb5a7756c2a7b532cf55c0265259a5ffe053",
                 "shasum": ""
             },
             "require": {
@@ -7165,7 +7165,7 @@
                 "laravel-webhook-client",
                 "spatie"
             ],
-            "time": "2020-04-30T09:55:02+00:00"
+            "time": "2020-04-30T14:32:09+00:00"
         },
         {
             "name": "spatie/macroable",
