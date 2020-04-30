@@ -5999,29 +5999,29 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "2.11.0",
+            "version": "2.11.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "12ad2f8c66ef3c4c1d055985e05d05cf9299cc34"
+                "reference": "6ef0d0f94e82d621c9a68ae119dbeee1034df14b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-12ad2f8c66ef3c4c1d055985e05d05cf9299cc34-zip-ecd0ac.zip",
-                "reference": "12ad2f8c66ef3c4c1d055985e05d05cf9299cc34",
-                "shasum": "ec5845942fb86eb827e73b6a1f369903daf7aa72"
+                "url": "https://satis.mailcoach.app/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-6ef0d0f94e82d621c9a68ae119dbeee1034df14b-zip-105e7f.zip",
+                "reference": "6ef0d0f94e82d621c9a68ae119dbeee1034df14b",
+                "shasum": "d9acd36b558ffa1f6fda277cedab244992d631e6"
             },
             "require": {
                 "cakephp/chronos": "^1.2.8|^2.0",
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "guzzlehttp/guzzle": "^6.4",
-                "illuminate/database": "^7.0",
-                "illuminate/events": "^7.0",
-                "illuminate/mail": "^7.0",
-                "illuminate/queue": "^7.0",
-                "illuminate/redis": "^7.0",
-                "illuminate/support": "^7.0",
+                "illuminate/database": "^7.9",
+                "illuminate/events": "^7.9",
+                "illuminate/mail": "^7.9",
+                "illuminate/queue": "^7.9",
+                "illuminate/redis": "^7.9",
+                "illuminate/support": "^7.9",
                 "laravel/horizon": "^4.0",
                 "league/html-to-markdown": "^4.9",
                 "nesbot/carbon": "^2.26",
@@ -6101,10 +6101,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/2.11.0",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/2.11.1",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2020-04-30T14:24:05+00:00"
+            "time": "2020-04-30T14:51:04+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -10915,20 +10915,20 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.7.2",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "e2e5d290e4d2a4f0eb449f510071392e00e10d19"
+                "reference": "ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/e2e5d290e4d2a4f0eb449f510071392e00e10d19",
-                "reference": "e2e5d290e4d2a4f0eb449f510071392e00e10d19",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1",
+                "reference": "ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3 || ^7.0"
+                "php": "^5.3 || ^7.0 || ^8.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
@@ -10960,7 +10960,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2019-10-24T14:27:39+00:00"
+            "time": "2020-04-30T19:05:18+00:00"
         },
         {
             "name": "seld/phar-utils",
