@@ -1,8 +1,4 @@
-@extends('front.layouts.app', [
-    'title' => 'Link submitted!',
-])
-
-@section('content')
+<app-layout title="Link submitted">
     <div class="markup">
         <h1>Link submitted!</h1>
         <p>
@@ -17,4 +13,4 @@
             <li><a href="https://reddit.com">Reddit</a></li>
         </ul>
     </div>
-@endsection
+</app-layout>
