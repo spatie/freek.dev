@@ -14,22 +14,18 @@
 
         <form method="POST">
             @csrf
-            @include('front.components.inputField', ['label' => 'Title', 'name' => 'title'])
+            <x-input-field label="Title" name="title" />
 
-            @include('front.components.inputField', [
-                'label' => 'URL',
-                'name' => 'url',
-                'placeholder' => 'https://'
-            ])
+            <x-input-field label="URL" name="url" placeholder="https://" />
 
-            @include('front.components.textarea', [
-                'label' => 'Description',
-                'name' => 'text',
-                'placeholder' => 'Describe the content in one or two sentences. You can use markdown.',
-             ])
+            <x-textarea
+                label="Description"
+                name="text"
+                placeholder="Describe the content in one or two sentences. You can use markdown."
+            />
 
             <div class="mt-4">
-                @include('front.components.button', ['label' => 'Submit link'])
+                <x-submit-button label="Submit link" />
 
 
             </div>

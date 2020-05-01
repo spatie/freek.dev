@@ -11,28 +11,13 @@
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
-                @include('front.components.inputField', [
-                    'label' => 'Name',
-                    'name' => 'name'
-                ])
+                <x-input-field label="Name" name="name" />
 
-                @include('front.components.inputField', [
-                    'label' => 'E-mail',
-                    'name' => 'email',
-                    'type' => 'email'
-                ])
+                <x-input-field label="E-mail" name="email" type="email" />
 
-                @include('front.components.inputField', [
-                    'label' => 'Password',
-                    'name' => 'password',
-                    'type' => 'password'
-                ])
+                <x-input-field label="Password" name="password" type="password" />
 
-                @include('front.components.inputField', [
-                    'label' => 'Confirm password',
-                    'name' => 'password_confirmation',
-                    'type' => 'password'
-                ])
+                <x-input-field label="Confirm password" name="password_confirmation" type="password" />
 
                 <div class="mt-4">
                     <label class="flex items-center">
@@ -45,7 +30,7 @@
                 </div>
 
                 <div class="mt-4">
-                    @include('front.components.button', ['label' => 'Register'])
+                    <x-submit-button label="register" />
                 </div>
             </form>
         </div>

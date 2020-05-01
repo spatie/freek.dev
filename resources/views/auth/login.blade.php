@@ -11,17 +11,10 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            @include('front.components.inputField', [
-                'label' => 'E-mail',
-                'name' => 'email',
-                'type' => 'Email'
-            ])
+            <x-input-field label="E-mail" name="email" type="email" />
 
-            @include('front.components.inputField', [
-                'label' => 'Password',
-                'name' => 'password',
-                'type' => 'password'
-            ])
+            <x-input-field label="Password" name="password" type="password" />
+
 
             <div class="mt-4">
                 <label class="flex items-center">
@@ -34,7 +27,7 @@
             </div>
 
             <div class="mt-4">
-                @include('front.components.button', ['label' => 'Login'])
+                <x-submit-button label="Login" />
 
                 <span class="text-xs text-gray-700">
                     <a href="{{ route('password.request') }}">
