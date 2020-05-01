@@ -184,6 +184,7 @@ return [
         \App\Providers\ViewServiceProvider::class,
         \Spatie\Mailcoach\MailcoachServiceProvider::class,
         \App\Providers\BladeComponentServiceProvider::class,
+        \App\Providers\LivewireServiceProvider::class,
     ],
 
     /*
