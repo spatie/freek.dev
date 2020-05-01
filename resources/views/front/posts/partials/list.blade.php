@@ -5,12 +5,13 @@
         </div>
     @endif
 
-    @component('front.posts.partials.post', [
-        'post' => $post,
-        'url' => $post->external_url ?: $post->url,
-        'class' => 'mb-12 md:mb-24',
-        'heading' => 'h2',
-    ])
+    <x-post-header
+        :post="$post"
+        class="mb-12 md:mb-24'"
+        :url="$post->external_url ?: $post->url"
+        heading="h2"
+    >
+
         {!! $post->excerpt !!}
 
         @unless($post->isTweet())
@@ -26,5 +27,5 @@
                 @endif
             </p>
         @endunless
-    @endcomponent
+    </x-post-header>
 @endforeach

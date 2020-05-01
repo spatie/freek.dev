@@ -18,7 +18,7 @@ class BladeComponentServiceProvider extends ServiceProvider
         Blade::component('front.components.textarea', 'textarea');
         Blade::component('front.components.shareButton', 'share-button');
         Blade::component('front.components.lazy', 'lazy');
-
+        Blade::component('front.components.postHeader', 'post-header');
 
         Blade::component('front.layouts.app', 'app-layout');
     }

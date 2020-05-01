@@ -1,10 +1,7 @@
 <x-app-layout :title="$post->title">
     <x-ad />
 
-    @component('front.posts.partials.post', [
-        'post' => $post,
-        'class' => 'mb-8',
-    ])
+    <x-post-header :post="$post" class="mb-8">
         {!! $post->formatted_text !!}
 
         @unless($post->isTweet())
@@ -16,7 +13,7 @@
                 </p>
             @endif
         @endunless
-    @endcomponent
+    </x-post-header>
 
     @include('front.newsletter.partials.block', [
         'class' => 'mb-8',

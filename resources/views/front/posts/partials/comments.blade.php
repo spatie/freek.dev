@@ -1,9 +1,9 @@
 {{--
 @if (! $post->tweet_url)
     <div class="mb-8">
-        @component('front.components.lazy')
+        <x-lazy>
             @include('front.posts.partials.disqus')
-        @endcomponent
+        </x-lazy>
     </div>
 @endif
 --}}
