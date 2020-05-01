@@ -4,6 +4,6 @@
         <h1>Search</h1>
     </div>
 
-    @livewire('search')
+    <livewire:search />
 
 </x-app-layout>

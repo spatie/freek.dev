@@ -67,5 +67,5 @@
     </div>
 </div>
 
-@livewireScripts
+<livewire:scripts />
 
