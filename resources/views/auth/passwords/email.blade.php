@@ -11,14 +11,10 @@
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
 
-            @include('front.components.inputField', [
-                'label' => 'E-mail',
-                'name' => 'email',
-                'type' => 'Email'
-            ])
+            <x-input-field label="E-mail" name="email" type="email" />
 
             <div class="mt-4">
-                @include('front.components.button', ['label' => 'Send password reset link'])
+                <x-submit-button label="Send password reset link" />
             </div>
         </form>
     </div>
