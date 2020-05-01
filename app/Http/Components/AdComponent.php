@@ -11,6 +11,6 @@ class AdComponent extends Component
     {
         $ad = Ad::getForCurrentPage();
 
-        return view('components.ad', compact('ad'));
+        return view('front.components.ad', compact('ad'));
     }
 }

@@ -1,10 +1,4 @@
-@extends('front.layouts.app', [
-    'title' => 'Newsletter',
-])
-
-
-@section('content')
-
+<x-app-layout title="Legal">
     <div class="markup">
         <h1>Privacy policy</h1>
         <h3>Your privacy is critically important to us.</h3>
@@ -115,7 +109,7 @@
             If you have any questions about this Privacy Policy, please contact us via <a href="mailto:freek@spatie.be">email</a>
             or <a href="tel:32495842791">phone</a>.</p>
 
-<br />
+        <br/>
         <br/>
         <h1>Terms and Conditions</h1>
 
@@ -332,5 +326,4 @@
             not
             be liable for any loss or damage of any nature.</p>
     </div>
-
-@endsection
+</x-app-layout>

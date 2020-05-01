@@ -15,6 +15,7 @@
         "name":"freek.dev",
         "alternateName":"A blog on modern PHP and Laravel"
     }
+
 </script>
 <script type='application/ld+json'>
     {
@@ -24,6 +25,9 @@
         "@id":"#person",
         "name":"Freek Van der Herten"
     }
+
 </script>
 
-@yield('seo')
+@isset($seo)
+    {{ $seo }}
+@endisset

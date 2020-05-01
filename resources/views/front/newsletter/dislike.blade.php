@@ -1,8 +1,4 @@
-@extends('front.layouts.app', [
-    'title' => 'Newsletter',
-])
-
-@section('content')
+<x-app-layout title="Newsletter">
     <div class="markup mb-8">
         <h1>Oh no! You didn't like the newsletter...</h1>
 
@@ -19,4 +15,4 @@
                 href="mailto:freek@spatie.be?subject=freek.dev newsletter feedback">Let me know!</a>
         </p>
     </div>
-@endsection
+</x-app-layout>

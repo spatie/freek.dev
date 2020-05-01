@@ -1,8 +1,4 @@
-@extends('front.layouts.app', [
-    'title' => 'Links',
-])
-
-@section('content')
+<x-app-layout title="Links">
     <div
         class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-grey-200 text-sm text-gray-700">
 
@@ -68,5 +64,4 @@
 
         {{ $links->links() }}
     </div>
-
-@endsection
+</x-app-layout>

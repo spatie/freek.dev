@@ -1,8 +1,6 @@
-@extends('front.layouts.app', [
-    'title' => 'Register',
-])
+<x-app-layout title="Register">
 
-@section('content')
+
     <div class="markup mb-8">
         <h1>Register</h1>
 
@@ -11,13 +9,13 @@
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
-                <x-input-field label="Name" name="name" />
+                <x-input-field label="Name" name="name"/>
 
-                <x-input-field label="E-mail" name="email" type="email" />
+                <x-input-field label="E-mail" name="email" type="email"/>
 
-                <x-input-field label="Password" name="password" type="password" />
+                <x-input-field label="Password" name="password" type="password"/>
 
-                <x-input-field label="Confirm password" name="password_confirmation" type="password" />
+                <x-input-field label="Confirm password" name="password_confirmation" type="password"/>
 
                 <div class="mt-4">
                     <label class="flex items-center">
@@ -30,9 +28,9 @@
                 </div>
 
                 <div class="mt-4">
-                    <x-submit-button label="register" />
+                    <x-submit-button label="register"/>
                 </div>
             </form>
         </div>
     </div>
-@endsection
+</x-app-layout>

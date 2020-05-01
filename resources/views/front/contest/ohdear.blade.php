@@ -1,9 +1,5 @@
-@extends('front.layouts.app', [
-    'title' => 'Monitor two sites for free for an entire year using Oh Dear',
-])
+<x-app-layout title="Monitor two sites for free for an entire year using Oh Dear">
 
-
-@section('content')
     <div class="markup mb-4">
         <h1>Monitor two sites for free for an entire year using Oh Dear</h1>
         <p>
@@ -28,9 +24,7 @@
         </p>
 
         <a href="#" id="DkQwvo4n"></a>
-        <script src="https://embed.contestkit.com/iframe/DkQwvo4n" data-ck-DkQwvo4n data-ck-element-id="DkQwvo4n"></script>
+        <script src="https://embed.contestkit.com/iframe/DkQwvo4n" data-ck-DkQwvo4n
+                data-ck-element-id="DkQwvo4n"></script>
     </div>
-
-
-
-@endsection
+</x-app-layout>

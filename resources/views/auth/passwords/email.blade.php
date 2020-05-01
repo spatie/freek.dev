@@ -1,8 +1,5 @@
-@extends('front.layouts.app', [
-    'title' => 'Send password reset link',
-])
+<x-app-layout title="Send password reset link">
 
-@section('content')
     <div class="markup mb-8">
         <h1>Reset password</h1>
 
@@ -25,4 +22,5 @@
             </div>
         </form>
     </div>
-@endsection
+
+</x-app-layout>

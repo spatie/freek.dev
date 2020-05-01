@@ -1,9 +1,5 @@
-@extends('front.layouts.app', [
-    'title' => 'Originals',
-])
-
-@section('content')
+<x-app-layout title="Originals">
     @include('front.posts.partials.list')
 
     {{ $posts->links() }}
-@endsection
+</x-app-layout>

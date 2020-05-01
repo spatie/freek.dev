@@ -1,8 +1,5 @@
-@extends('front.layouts.app', [
-    'title' => 'Submit a link',
-])
+<x-app-layout title="Submit a link">
 
-@section('content')
     <div class="markup mb-8">
         <h1>Submit a link</h1>
 
@@ -14,9 +11,9 @@
 
         <form method="POST">
             @csrf
-            <x-input-field label="Title" name="title" />
+            <x-input-field label="Title" name="title"/>
 
-            <x-input-field label="URL" name="url" placeholder="https://" />
+            <x-input-field label="URL" name="url" placeholder="https://"/>
 
             <x-textarea
                 label="Description"
@@ -25,10 +22,10 @@
             />
 
             <div class="mt-4">
-                <x-submit-button label="Submit link" />
+                <x-submit-button label="Submit link"/>
 
 
             </div>
         </form>
     </div>
-@endsection
+</x-app-layout>

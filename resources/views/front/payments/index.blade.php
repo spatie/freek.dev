@@ -1,8 +1,4 @@
-@extends('front.layouts.app', [
-    'title' => 'Payments',
-])
-
-@section('content')
+<x-app-layout title="Payments">
     <div class="markup">
         <h1>Make a payment to freek.dev</h1>
         @if (! session()->has('amount'))
@@ -11,4 +7,4 @@
             @include('front.payments.partials.stripePayment')
         @endif
     </div>
-@endsection
+</x-app-layout>

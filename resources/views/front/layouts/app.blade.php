@@ -61,12 +61,11 @@
                 </div>
             </nav>
             <main class="flex-1 min-w-0 px-4 md:px-12 lg:pl-24 lg:pr-16">
-                @yield('content')
+                {{ $slot }}
             </main>
         </div>
     </div>
 </div>
 
-@if($livewire ?? false)
-    @livewireScripts
-@endif
+@livewireScripts
+

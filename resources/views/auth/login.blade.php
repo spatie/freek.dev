@@ -1,8 +1,4 @@
-@extends('front.layouts.app', [
-    'title' => 'Log in',
-])
-
-@section('content')
+<x-app-layout title="Log in">
     <div class="markup mb-8">
         <h1>Login</h1>
     </div>
@@ -11,9 +7,9 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <x-input-field label="E-mail" name="email" type="email" />
+            <x-input-field label="E-mail" name="email" type="email"/>
 
-            <x-input-field label="Password" name="password" type="password" />
+            <x-input-field label="Password" name="password" type="password"/>
 
 
             <div class="mt-4">
@@ -27,7 +23,7 @@
             </div>
 
             <div class="mt-4">
-                <x-submit-button label="Login" />
+                <x-submit-button label="Login"/>
 
                 <span class="text-xs text-gray-700">
                     <a href="{{ route('password.request') }}">
@@ -41,4 +37,4 @@
             </div>
         </form>
     </div>
-@endsection
+</x-app-layout>

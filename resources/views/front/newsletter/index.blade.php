@@ -1,8 +1,5 @@
-@extends('front.layouts.app', [
-    'title' => 'Newsletter',
-])
+<x-app-layout title="Newsletter">
 
-@section('content')
     <div class="markup mb-8">
         <h1>Newsletter</h1>
         <p>
@@ -39,4 +36,4 @@
             </div>
         @endforeach
     </div>
-@endsection
+</x-app-layout>

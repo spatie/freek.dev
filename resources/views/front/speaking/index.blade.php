@@ -1,8 +1,4 @@
-@extends('front.layouts.app', [
-    'title' => 'Speaking',
-])
-
-@section('content')
+<x-app-layout title="Speaking">
     <div class="markup | mb-8">
         <h1>Speaking</h1>
         <p>
@@ -38,4 +34,4 @@
     @foreach($talks as $title => $talks)
         @include('front.speaking.partials.talk')
     @endforeach
-@endsection
+</x-app-layout>
