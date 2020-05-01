@@ -1,4 +1,4 @@
-<app-layout title="Link submitted">
+<x-app-layout title="Link submitted">
     <div class="markup">
         <h1>Link submitted!</h1>
         <p>
@@ -13,4 +13,4 @@
             <li><a href="https://reddit.com">Reddit</a></li>
         </ul>
     </div>
-</app-layout>
+</x-app-layout>
