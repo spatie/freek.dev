@@ -265,6 +265,16 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="text-sm text-center py-48">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-sm text-center py-48 text-gray-600">
+                        This mail was sent using <a href="https://mailcoach.app" class="text-gray-700 underline">Mailcoach</a>
+                    </td>
+                </tr>
+                <tr>
                     <td class="pb-32">
                         <table class="mx-auto leading-16" cellpadding="0" cellspacing="0" role="presentation">
                             <tr>
@@ -524,11 +534,14 @@ mso-height-rule: exactly; line-height: 20px; padding: 10px
                             Advertisement opportunities at
                             <a href=" {{ url('/advertising') }}" class="text-gray-600">freek.dev/advertising</a>.
                         </p>
-                        <p class="m-0">
+                        <p class="mb-16">
                             You are receiving this mail because you've subscribed at
                             <a href="{{ config('app.url') }}" class="text-gray-600">freek.dev</a>.
                             Opt out any time.
                             <a href="::unsubscribeUrl::" class="text-gray-600">Unsubscribe</a>.
+                        </p>
+                        <p class="m-0 mb-16 text-gray-600">
+                            This mail was sent using <a class="text-gray-600" href="https://mailcoach.app">Mailcoach</a>.
                         </p>
                     </td>
                 </tr>
