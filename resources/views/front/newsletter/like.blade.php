@@ -13,7 +13,7 @@
 
         <p>
             Could you use one of the share buttons to refer new readers to <a
-                href="{{ route('newsletter.subscribe') }}">the subscription form</a>?
+                href="/newsletter">the subscription form</a>?
         </p>
     </div>
 
