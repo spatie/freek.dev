@@ -196,7 +196,7 @@
                             <li style="margin: 0 0 4px; text-align: left;">
                                 <a href="{{ $post->promotional_url }}" style="color: #252f3f;">{{ $post->title }}</a>
                             </li>
-                            @endif
+                        @endforeach
                     </ul>
                 </td>
             </tr>
