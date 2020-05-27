@@ -1,553 +1,255 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-<head>
-    <meta charset="utf8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="x-apple-disable-message-reformatting">
 
+<head></head>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
     <!--[if mso]>
     <xml>
-        <o:officedocumentsettings>
-            <o:pixelsperinch>96</o:pixelsperinch>
-        </o:officedocumentsettings>
+        <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
     </xml>
     <style>
-        table {
-            border-collapse: collapse;
-        }
-
         td, th, div, p, a, h1, h2, h3, h4, h5, h6 {
             font-family: "Segoe UI", sans-serif;
             mso-line-height-rule: exactly;
         }
+
+        .o-ml-24 {
+            margin-left: 24px !important;
+        }
     </style>
     <![endif]-->
+    <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            word-break: break-word;
-            -webkit-font-smoothing: antialiased;
+        .hover-bg-red-400:hover {
+            background-color: #f98080 !important;
         }
 
-        img {
-            border: 0;
-            line-height: 100%;
-            vertical-align: middle;
-        }
-
-        a {
-            color: #3182ce;
-        }
-
-        .bg-white {
-            background-color: #ffffff !important;
-        }
-
-        .bg-gray-200 {
-            background-color: #edf2f7 !important;
-        }
-
-        .bg-blue-100 {
-            background-color: #ebf8ff !important;
-        }
-
-        .bg-orange-100 {
-            background-color: #fffaf0 !important;
-        }
-
-        .border-collapse {
-            border-collapse: collapse !important;
-        }
-
-        .border-gray-200 {
-            border-color: #edf2f7 !important;
-        }
-
-        .border-gray-400 {
-            border-color: #cbd5e0 !important;
-        }
-
-        .border-orange-400 {
-            border-color: #f6ad55 !important;
-        }
-
-        .border-blue-200 {
-            border-color: #bee3f8 !important;
-        }
-
-        .border-solid {
-            border-style: solid !important;
-        }
-
-        .border-0 {
-            border-width: 0 !important;
-        }
-
-        .border-b-4 {
-            border-bottom-width: 4px !important;
-        }
-
-        .border-t {
-            border-top-width: 1px !important;
-        }
-
-        .border-b {
-            border-bottom-width: 1px !important;
-        }
-
-        .font-bold {
-            font-weight: 700 !important;
-        }
-
-        .leading-20 {
-            line-height: 20px !important;
-        }
-
-        .leading-24 {
-            line-height: 24px !important;
-        }
-
-        .list-inside {
-            list-style-position: inside !important;
-        }
-
-        .m-0 {
-            margin: 0 !important;
-        }
-
-        .mx-auto {
-            margin-left: auto !important;
-            margin-right: auto !important;
-        }
-
-        .mb-2 {
-            margin-bottom: 2px !important;
-        }
-
-        .mb-4 {
-            margin-bottom: 4px !important;
-        }
-
-        .mb-12 {
-            margin-bottom: 12px !important;
-        }
-
-        .mb-16 {
-            margin-bottom: 16px !important;
-        }
-
-        .p-0 {
-            padding: 0 !important;
-        }
-
-        .p-16 {
-            padding: 16px !important;
-        }
-
-        .p-24 {
-            padding: 24px !important;
-        }
-
-        .px-4 {
-            padding-left: 4px !important;
-            padding-right: 4px !important;
-        }
-
-        .py-24 {
-            padding-top: 24px !important;
-            padding-bottom: 24px !important;
-        }
-
-        .px-24 {
-            padding-left: 24px !important;
-            padding-right: 24px !important;
-        }
-
-        .py-32 {
-            padding-top: 32px !important;
-            padding-bottom: 32px !important;
-        }
-
-        .pl-0 {
-            padding-left: 0 !important;
-        }
-
-        .pt-24 {
-            padding-top: 24px !important;
-        }
-
-        .pb-32 {
-            padding-bottom: 32px !important;
-        }
-
-        .text-center {
-            text-align: center !important;
-        }
-
-        .text-gray-600 {
-            color: #718096 !important;
-        }
-
-        .text-gray-700 {
-            color: #4a5568 !important;
-        }
-
-        .text-gray-800 {
-            color: #2d3748 !important;
-        }
-
-        .text-gray-900 {
-            color: #1a202c !important;
-        }
-
-        .text-sm {
-            font-size: 14px !important;
-        }
-
-        .text-lg {
-            font-size: 18px !important;
-        }
-
-        .text-xl {
-            font-size: 20px !important;
-        }
-
-        .underline {
-            text-decoration: underline !important;
-        }
-
-        .no-underline {
-            text-decoration: none !important;
-        }
-
-        .w-48 {
-            width: 48px !important;
-        }
-
-        .w-600 {
-            width: 600px !important;
-        }
-
-        .w-full {
-            width: 100% !important;
-        }
-
-        @media screen {
-            img {
-                max-width: 100%;
-            }
-
-            .all-font-sans {
-                font-family: Whitney SSm A, Whitney SSm B, -apple-system, "Segoe UI", sans-serif !important;
-            }
+        .hover-bg-green-400:hover {
+            background-color: #31c48d !important;
         }
 
         @media (max-width: 600px) {
-            .sm-w-full {
-                width: 100% !important;
+            .sm-block {
+                display: block !important;
+            }
+
+            .sm-text-lg {
+                font-size: 18px !important;
+            }
+
+            .sm-leading-32 {
+                line-height: 32px !important;
+            }
+
+            .sm-p-0 {
+                padding: 0 !important;
+            }
+
+            .sm-px-0 {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .sm-text-center {
+                text-align: center !important;
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css">
 </head>
-<body class="bg-white">
-<table class="all-font-sans text-gray-900 leading-24 w-600 mx-auto sm-w-full" cellpadding="0" cellspacing="0"
-       role="presentation">
-    <tr>
-        <td class="px-24 py-32">
-            <table class="border-collapse" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                    <td class="text-sm text-center py-48">
-                        <a href="::webViewUrl::" class="text-gray-700 underline">View email in browser</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-sm text-center py-48">
-                        &nbsp;
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-sm text-center py-48 text-gray-600">
-                        This mail was sent using <a href="https://mailcoach.app" class="text-gray-700 underline">Mailcoach</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pb-32">
-                        <table class="mx-auto leading-16" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                                <td class="p-16 w-48">
-                                    <a href="https://freek.dev" class="no-underline">
-                                        <img src="{{ url('images/murzicoon.png') }}" width="48" alt="freek.dev">
-                                    </a>
-                                </td>
-                                <td class="p-16 pl-0">
-                                    <p class="m-0 text-xl font-bold" style="line-height: 30px">
-                                        FREEK.DEV
-                                    </p>
-                                    <p class="m-0 text-gray-700">
-                                        Hi, welcome to the {{ $editionNumber }} freek.dev newsletter!
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                @foreach($recentPosts as $post)
-                    <tr>
-                        <td class="border-solid border-0 border-t border-b border-gray-200">
-                            <table class="w-full py-24" cellpadding="0" cellspacing="0" role="presentation">
-                                <tr>
-                                    <td>
-                                        <p class="m-0 mb-2 text-lg font-bold">
-                                            <a href="{{ $post->promotional_url }}"
-                                               class="text-gray-900 no-underline">{{ $post->title }}</a>
-                                        </p>
-                                        <p class="m-0 text-gray-800">
-                                            {!! $post->newsletter_excerpt !!}
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                @endforeach
-                {{-- <span class="px-4 bg-gray-200 text-gray-700">sponsor</span> --}}
-                @if($recentTweets->count())
-                    <tr>
-                        <td class="py-32">
-                            <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-                                <tr>
-                                    <td class="bg-blue-100 border-solid border-0 border-b-4 border-blue-200 p-24">
-                                        <p class="m-0 text-xl mb-12 font-bold">Meanwhile on Twitter</p>
-                                        <ul class="m-0 p-0 list-inside">
-                                            @foreach($recentTweets as $tweet)
-                                                <li class="m-0"><a href="{{ $tweet->promotional_url }}"
-                                                                   class="text-gray-800">{{ $tweet->title }}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                @endif
 
-                @if($communityLinks->count())
+<body style="margin: 0; padding: 0; width: 100%; word-break: break-word; -webkit-font-smoothing: antialiased;">
+<div role="article" aria-roledescription="email" aria-label lang="en"
+     style="font-family: Whitney SSm A, Whitney SSm B, -apple-system, 'Segoe UI', sans-serif; margin-left: auto; margin-right: auto; max-width: 600px;">
+    <div style="padding: 32px 24px;">
+        <!--[if mso]>
+        <table align="center" cellpadding="0" cellspacing="0" role="presentation"
+               style="width: 600px; padding: 24px 32px;">
+            <tr>
+                <td><![endif]-->
+        <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            <tr>
+                <td style="text-align: center;" align="center">
+                    <a href="::webViewUrl::" style="font-size: 14px; color: #374151; text-decoration: underline;">View
+                        email in browser</a>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 16px;" height="16"></td>
+            </tr>
+            <tr>
+                <td style="font-size: 14px; text-align: center; color: #4b5563;" align="center">
+                    This mail was sent using <a href="https://mailcoach.app"
+                                                style="color: #374151; text-decoration: underline;">Mailcoach</a>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 16px;" height="16"></td>
+            </tr>
+            <tr>
+                <td>
+                    <table align="center" style="margin-left: auto; margin-right: auto;" cellpadding="0" cellspacing="0"
+                           role="presentation">
+                        <tr>
+                            <th class="sm-block sm-px-0" style="padding: 16px 0 16px 16px;">
+                                <img src="https://freek.dev/images/murzicoon.png"
+                                     style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle; width: 48px;"
+                                     width="48" alt>
+                            </th>
+                            <th class="sm-p-0 sm-block sm-text-center"
+                                style="font-weight: 400; padding: 16px; text-align: left;" align="left">
+                                <h1 style="font-size: 20px; line-height: 32px; margin: 0; color: #161e2e; text-transform: uppercase; text-decoration: none;">
+                                    freek.dev</h1>
+                                <p style="margin: 0; color: #374151;">Hi, welcome to the {{ $editionNumber }} freek.dev
+                                    newsletter!</p>
+                            </th>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 32px;" height="32"></td>
+            </tr>
+            <tr>
+                <td>
+                    <hr style="background-color: #e5e7eb; border-width: 0; height: 1px; margin: 0; color: #e5e7eb;">
+                </td>
+            </tr>
+        </table>
+        <ul style="list-style-type: none; margin: 0; padding: 0;">
+            @foreach($recentPosts as $post)
+                <li style="color: #ffffff;">
+                    <h2 style="margin-bottom: 2px;">
+                        <a href="{{ $post->promotional_url }}"
+                           style="font-size: 18px; color: #161e2e; text-decoration: none;">{{ $post->title }}</a>
+                    </h2>
+                    <p style="font-size: 16px; margin: 0; color: #252f3f;">{{ $post->newsletter_excerpt }}</p>
+                    <hr style="background-color: #e5e7eb; border-width: 0; height: 1px; margin-top: 24px; margin-bottom: 24px; color: #e5e7eb;">
+                </li>
+            @endforeach
+        </ul>
+        @if($recentTweets->count())
+            <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
-                    <td class="pb-32">
-                        <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                                <td class="bg-orange-100 border-solid border-0 border-b-4 border-orange-400 p-24">
-                                    <p class="m-0 text-xl mb-12 font-bold">Community links</p>
-                                    <p>
-                                        Did you write or stumbled across a blog post, tutorial or video that might be good to appear in this section? <a class="text-gray-800" href="https://freek.dev/links">Submit it here</a>.
-                                    </p>
-                                    <ul class="m-0 p-0 list-inside">
-                                        @foreach($communityLinks as $link)
-                                            <li class="m-0 mb-4"><a href="{{ $link->url }}"
-                                                                    class="text-gray-800">{{ $link->title }}</a> (submitted by {{ $link->user->name }})
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                @endif
-
-                <tr>
-                    <td class="pb-32">
-                        <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                                <td class="bg-gray-200 border-solid border-0 border-b-4 border-gray-400 p-24">
-                                    <p class="m-0 text-xl mb-12 font-bold">From the archives</p>
-                                    <ul class="m-0 p-0 list-inside">
-                                        @foreach($oldPosts as $post)
-                                            <li class="m-0 mb-4"><a href="{{ $post->promotional_url }}"
-                                                                    class="text-gray-800">{{ $post->title }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-sm text-gray-600 leading-20 pt-24 border-solid border-0 border-t border-gray-200"
-                        style="border-color: #edf2f7 !important; border-style: solid !important; border-width: 0 !important; border-top-width: 1px !important; line-height: 20px !important; padding-top: 24px !important; color: #718096 !important; font-size: 14px !important;">
-                        <p class="m-0 mb-16" style="margin: 0 !important; margin-bottom: 16px !important;">
-                            Thanks for reading! Did you like this edition of the newsletter?
-                        </p>
-                    </td>
-                </tr>
-                <tr class="text-gray-600" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust:
-100%;">
-                    <td align="center" bgcolor="#ffffff" height="100%"
-                        style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
-mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;
-padding-bottom: 40px;" valign="top" width="100%">
-                        <table align="center" border="0" cellpadding="0" cellspacing="0"
-                               role="presentation" style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
-mso-table-rspace: 0pt !important; border-spacing: 0 !important;
-border-collapse: collapse !important; table-layout: fixed !important; margin:
-0 auto !important; max-width: 560px;" width="100%">
-                            <tbody style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                            <tr style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                <td align="center" valign="top" width="50%"
-                                    style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
-mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
-                                    <table border="0" cellpadding="0" cellspacing="0"
-                                           role="presentation" style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
-mso-table-rspace: 0pt !important; border-spacing: 0 !important;
-border-collapse: collapse !important; table-layout: fixed !important; margin:
-0 auto !important; font-size: 14px; text-align: left;" width="100%">
-                                        <tbody style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                        <tr style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                            <td style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
-mso-table-rspace: 0pt !important; text-align: center; padding: 0 10px;">
-                                                <table align="center" border="0" cellpadding="0"
-                                                       cellspacing="0" role="presentation" style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
-mso-table-rspace: 0pt !important; border-spacing: 0 !important;
-border-collapse: collapse !important; table-layout: fixed !important; margin:
-auto;">
-                                                    <tbody style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                                    <tr style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                                        <td class="btn btn-green">
-                                                            <a target="_blank"
-                                                               href="{{ route('newsletter.like', ['edition' => $editionNumber]) }}"
-                                                               style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
-background: #b1d6a6; border: 15px solid #b1d6a6; font-family: sans-serif;
-font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none;
-display: block; border-radius: 3px; font-weight: bold;">
-
-                                    <span style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; color: #ffffff; font-size: 24px; font-weight:
-100;">
-                                      Yes!
-                                    </span>
-
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                        <tr style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                            <td class="stack-column-center"
-                                                style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
-mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;
-text-align: center; font-family: sans-serif; font-size: 15px;
-mso-height-rule: exactly; line-height: 20px; padding: 10px
-10px 0; font-weight: 100;">
-                                                Really liked it.
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                                <td align="center" valign="top" width="50%"
-                                    style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
-mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
-                                    <table border="0" cellpadding="0" cellspacing="0"
-                                           role="presentation" style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
-mso-table-rspace: 0pt !important; border-spacing: 0 !important;
-border-collapse: collapse !important; table-layout: fixed !important; margin:
-0 auto !important; font-size: 14px; text-align: left;" width="100%">
-                                        <tbody style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                        <tr style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                            <td style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
-mso-table-rspace: 0pt !important; text-align: center; padding: 0 10px;">
-                                                <table align="center" border="0" cellpadding="0"
-                                                       cellspacing="0" role="presentation" style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;
-mso-table-rspace: 0pt !important; border-spacing: 0 !important;
-border-collapse: collapse !important; table-layout: fixed !important; margin:
-auto;">
-                                                    <tbody style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                                    <tr style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                                        <td class="btn btn-red">
-                                                            <a target="_blank"
-                                                               href="{{ route('newsletter.dislike', ['edition' => $editionNumber]) }}"
-                                                               style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
-background: #ba8990; border: 15px solid #ba8990; font-family: sans-serif;
-font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none;
-display: block; border-radius: 3px; font-weight: bold;">
-
-                                    <span style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%; color: #ffffff; font-size: 24px; font-weight:
-100;">
-                                      Nope...
-                                    </span>
-
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                        <tr style="-ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;">
-                                            <td class="stack-column-center"
-                                                style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
-mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;
-text-align: center; font-family: sans-serif; font-size: 15px;
-mso-height-rule: exactly; line-height: 20px; padding: 10px
-10px 0; font-weight: 100;">
-                                                It could be improved.
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <td style="background-color: #ebf5ff; padding: 24px;" bgcolor="#ebf5ff">
+                        <h3 style="font-size: 20px; margin: 0 0 12px;">Meanwhile on Twitter</h3>
+                        <ul align="left" class="o-ml-24"
+                            style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
+                            @foreach($recentTweets as $tweet)
+                                <li style="margin: 0 0 4px; text-align: left;">
+                                    <a href="{{ $tweet->promotional_url }}"
+                                       style="color: #252f3f;">{{ $tweet->title }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-sm text-gray-600 leading-20 pt-24 border-solid border-0 border-t border-gray-200">
-                        <p class="m-0 mb-16">
-                            Advertisement opportunities at
-                            <a href=" {{ url('/advertising') }}" class="text-gray-600">freek.dev/advertising</a>.
-                        </p>
-                        <p class="mb-16">
-                            You are receiving this mail because you've subscribed at
-                            <a href="{{ config('app.url') }}" class="text-gray-600">freek.dev</a>.
-                            Opt out any time.
-                            <a href="::unsubscribeUrl::" class="text-gray-600">Unsubscribe</a>.
-                        </p>
-                        <p class="m-0 mb-16 text-gray-600">
-                            This mail was sent using <a class="text-gray-600" href="https://mailcoach.app">Mailcoach</a>.
-                        </p>
-                    </td>
+                    <td style="background-color: #a4cafe; line-height: 4px;" bgcolor="#a4cafe">&zwnj;</td>
+                </tr>
+                <tr>
+                    <td style="height: 32px;" height="32"></td>
                 </tr>
             </table>
-        </td>
-    </tr>
-</table>
+        @endif
+        @if($communityLinks->count())
+            <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                    <td style="background-color: #fff8f1; padding: 24px;" bgcolor="#fff8f1">
+                        <h3 style="font-size: 20px; margin: 0 0 12px;">Community Links</h3>
+                        <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">Did you write or stumbled across a
+                            blog post, tutorial or video that might be good to appear in this section? <a
+                                href="https://freek.dev/links" style="color: #252f3f;">Submit it here</a>.</p>
+                        <ul align="left" class="o-ml-24"
+                            style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
+                            @foreach($communityLinks as $link)
+                                <li style="margin: 0 0 4px; text-align: left;">
+                                    <a href="{{ $link->url }}" style="color: #252f3f;">{{ $link->title }}</a> (submitted
+                                    by {{ $link->user->name }})
+                                </li>
+                                @endif
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #fdba8c; line-height: 4px;" bgcolor="#fdba8c">&zwnj;</td>
+                </tr>
+                <tr>
+                    <td style="height: 32px;" height="32"></td>
+                </tr>
+            </table>
+        @endif
+        <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            <tr>
+                <td style="background-color: #f1f5f9; padding: 24px;" bgcolor="#f1f5f9">
+                    <h3 style="font-size: 20px; margin: 0 0 12px;">From the archives</h3>
+                    <ul align="left" class="o-ml-24"
+                        style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
+                        @foreach($oldPosts as $post)
+                            <li style="margin: 0 0 4px; text-align: left;">
+                                <a href="{{ $post->promotional_url }}" style="color: #252f3f;">{{ $post->title }}</a>
+                            </li>
+                            @endif
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #cfd8e3; line-height: 4px;" bgcolor="#cfd8e3">&zwnj;</td>
+            </tr>
+        </table>
+        <hr style="background-color: #e5e7eb; border-width: 0; height: 1px; margin-top: 32px; margin-bottom: 32px; color: #e5e7eb;">
+        <p style="font-size: 14px; margin: 0; text-align: center; color: #4b5563;">Thanks for reading! Did you like this
+            edition of the newsletter?</p>
+        <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            <tr>
+                <td style="padding: 32px 0; text-align: center; vertical-align: top; width: 50%;" width="50%"
+                    align="center" valign="top">
+                    <a href="{{ route('newsletter.like', ['edition' => $editionNumber]) }}"
+                       class="sm-text-lg sm-leading-32 hover-bg-green-400"
+                       style="background-color: #84e1bc; border-radius: 4px; display: inline-block; font-size: 24px; padding: 12px 24px; text-align: center; color: #ffffff; text-decoration: none;">
+                        <!--[if mso]><i style="letter-spacing: 24px; mso-font-width: -100%; mso-text-raise:24px;">&nbsp;</i><![endif]--><span
+                            style="mso-text-raise: 12px;">Yes!</span>
+                        <!--[if mso]><i style="letter-spacing: 24px; mso-font-width: -100%;">&nbsp;</i><![endif]--></a>
+                    <p style="font-size: 14px; margin: 10px 0 0; color: #161e2e;">Really liked it.</p>
+                </td>
+                <td style="padding: 32px 0; text-align: center; vertical-align: top; width: 50%;" width="50%"
+                    align="center" valign="top">
+                    <a href="{{ route('newsletter.dislike', ['edition' => $editionNumber]) }}"
+                       class="sm-text-lg sm-leading-32 hover-bg-red-400"
+                       style="background-color: #f8b4b4; border-radius: 4px; display: inline-block; font-size: 24px; padding: 12px 24px; text-align: center; color: #ffffff; text-decoration: none;">
+                        <!--[if mso]><i style="letter-spacing: 24px; mso-font-width: -100%; mso-text-raise:24px;">&nbsp;</i><![endif]--><span
+                            style="mso-text-raise: 12px;">Nope...</span>
+                        <!--[if mso]><i style="letter-spacing: 24px; mso-font-width: -100%;">&nbsp;</i><![endif]--></a>
+                    <p style="font-size: 14px; margin: 10px 0 0; color: #161e2e;">It could be improved.</p>
+                </td>
+            </tr>
+        </table>
+        <hr style="background-color: #e5e7eb; border-width: 0; height: 1px; margin: 0 0 32px; color: #e5e7eb;">
+        <div style="font-size: 14px; line-height: 20px; color: #4b5563;">
+            <p style="margin: 0 0 16px;">
+                Advertisement opportunities at
+                <a href="{{ url('/advertising') }}" style="color: #4b5563;">freek.dev/advertising</a>.
+            </p>
+            <p style="margin: 0 0 16px;">
+                You are receiving this mail because you've subscribed at
+                <a href="{{ config('app.url') }}" style="color: #4b5563;">freek.dev</a>.
+                Opt out any time.
+                <a href="::unsubscribeUrl::" style="color: #4b5563;">Unsubscribe</a>.
+            </p>
+            <p style="margin: 0 0 16px;">
+                This mail was sent using <a href="https://mailcoach.app" style="color: #4b5563;">Mailcoach</a>.
+            </p>
+        </div>
+        <!--[if mso]></td></tr></table><![endif]-->
+    </div>
+</div>
 </body>
+
 </html>
