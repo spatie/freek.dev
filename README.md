@@ -6,7 +6,7 @@ You are free to fork this code and use it for your own blog. Don't reuse my desi
 
 ## Support us
 
-Learn how to create a package like this one, by watching our premium video course:
+Learn how to create packages, watch our premium video course:
 
 [![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
 
