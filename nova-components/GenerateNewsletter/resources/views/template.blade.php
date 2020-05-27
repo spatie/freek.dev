@@ -174,7 +174,7 @@
                                     <a href="{{ $link->url }}" style="color: #252f3f;">{{ $link->title }}</a> (submitted
                                     by {{ $link->user->name }})
                                 </li>
-                                @endif
+                            @endforeach
                         </ul>
                     </td>
                 </tr>
