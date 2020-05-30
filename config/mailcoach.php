@@ -22,6 +22,6 @@ return [
         'fontLigatures' => true,
         'fontWeight' => 400,
         'fontSize' => '16',
-        'lineHeight' => '30'
+        'lineHeight' => '30',
     ],
 ];
