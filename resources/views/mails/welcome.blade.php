@@ -3,6 +3,16 @@ Hi,
 
 welcome to the freek.dev newsletter.  Every two weeks you can expect some nice links to cool stuff on Laravel, PHP and JavaScript in your mailbox.
 
+To thank you for subscribing I'd like to offer you a coupon which grants you a discount when purchasing one of these products that I have created:
+
+- [Oh Dear](https://ohdear.app) get notify you when ever your website goes down. Unlike most other services, Oh Dear does not only monitor your homepage, but your entire website. It can notify you when you have broken links or mixed content. It will also monitor your SSL certificates and much more. The coupon offers you a discount of 5 EUR on your first bill.
+- [The Laravel Package Training video course](https://laravelpackage.training): in this premium video course you'll learn how to create quality framework agnostic PHP and Laravel packages. We'll also source dive a couple of my packages together. I'm sure you will pick up some coding tricks! The coupon grants you a 5% discount.
+- [Mailcoach](https://mailcoach.app): this is a premium Laravel packages that can help sending email campaigns of any size in an affordable way. The coupon grants you a 5% discount.
+
+Here is the coupon code:
+
+{{ config('coupons.subscribing') }}
+
 If you already want to read some stuff, here are links to the latest newsletters:
 @foreach($campaigns as $campaign)
 - [{{ $campaign->subject }}]({{ $campaign->webviewUrl() }}) - sent on {{ $campaign->sent_at->format('jS F Y') }}
