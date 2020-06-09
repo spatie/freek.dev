@@ -37,8 +37,6 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapFrontRoutes()
     {
         Route::get('a-test-page', function () {
-            sleep(5);
-
             return 'ok';
         })->middleware(DoNotCacheResponse::class);
 

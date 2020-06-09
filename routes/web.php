@@ -9,6 +9,7 @@ use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
+use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
 Route::feeds();
