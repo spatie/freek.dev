@@ -58,8 +58,8 @@ Route::redirect('/uses', '/1485-my-current-setup-2019-edition');
 
 Route::view('legal', 'front.legal.index');
 
-Route::get('{postSlug}', PostController::class);
-
 Route::get('a-test-page', function () {
     return 'ok';
 });
+
+Route::get('{postSlug}', PostController::class);
