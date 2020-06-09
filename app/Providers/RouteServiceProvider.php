@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Spatie\ResponseCache\Middlewares\DoNotCacheResponse;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -39,7 +40,7 @@ class RouteServiceProvider extends ServiceProvider
             sleep(5);
 
             return 'ok';
-        });
+        })->middleware(DoNotCacheResponse::class);
 
         Route::middleware(['web', 'cacheResponse'])->group(base_path('routes/web.php'));
 
