@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('responsecache:clear')->daily()->at('00:00');
         $schedule->command('backup:clean')->daily()->at('01:00');
+
         $schedule->command('backup:run')
             ->daily()
             ->pingOnSuccess(config('services.oh_dear.backup_run_ping_endpoint'));
