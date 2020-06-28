@@ -21,10 +21,11 @@ return [
         'access_token_secret' => env('TWITTER_ACCESS_TOKEN_SECRET'),
     ],
     'webmentions' => [
-        'webhook_secret' => env('WEBMENTIONS_WEBHOOK_SECRET')
+        'webhook_secret' => env('WEBMENTIONS_WEBHOOK_SECRET'),
     ],
-    'sendy' => [
-        'archive_feed_url' => 'https://sendy.freek.dev/campaigns-rss?a=2o93mWNeT0VHwKoeswonct82YjK3XL&i=1',
+
+    'oh_dear' => [
+        'publish_scheduled_posts_ping_endpoint' => env('OH_DEAR_PUBLISH_SCHEDULED_POSTS_PING_ENDPOINT'),
     ],
 
     'stripe' => [
