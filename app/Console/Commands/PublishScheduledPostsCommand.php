@@ -17,9 +17,5 @@ class PublishScheduledPostsCommand extends Command
         Post::scheduled()->get()
             ->reject(fn (Post $post) => $post->publish_date->isFuture())
             ->each(fn (Post $post) => $publishPostAction->execute($post));
-
-        $pingEndpoint = config('services.oh_dear.publish_scheduled_posts_ping_endpoint');
-
-        file_get_contents($pingEndpoint);
     }
 }
