@@ -45,6 +45,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "livewire/livewire": "^1.0",
+        "ohdearapp/ohdear-php-sdk": "^3.0",
         "predis/predis": "^1.1",
         "spatie/commonmark-highlighter": "^2.0",
         "spatie/laravel-backup": "^6.8",
