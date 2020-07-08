@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a107b02dffb1673954a8e343567061e",
+    "content-hash": "ec4194800884d68805753ac461168cf8",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -6710,16 +6710,16 @@
         },
         {
             "name": "spatie/laravel-schedule-monitor",
-            "version": "0.0.3",
+            "version": "0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-schedule-monitor.git",
-                "reference": "89a7160f94c88df260cb46089370d14653c02797"
+                "reference": "888036e31edb576a395fc5625ea74e4b938f557c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-schedule-monitor/zipball/89a7160f94c88df260cb46089370d14653c02797",
-                "reference": "89a7160f94c88df260cb46089370d14653c02797",
+                "url": "https://api.github.com/repos/spatie/laravel-schedule-monitor/zipball/888036e31edb576a395fc5625ea74e4b938f557c",
+                "reference": "888036e31edb576a395fc5625ea74e4b938f557c",
                 "shasum": ""
             },
             "require": {
@@ -6771,7 +6771,7 @@
                 "laravel-schedule-monitor",
                 "spatie"
             ],
-            "time": "2020-07-08T18:24:40+00:00"
+            "time": "2020-07-08T19:34:31+00:00"
         },
         {
             "name": "spatie/laravel-schemaless-attributes",
