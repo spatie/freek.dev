@@ -19,6 +19,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('mailcoach:send-campaign-summary-mail')->hourly();
         $schedule->command('mailcoach:send-email-list-summary-mail ')->mondays()->at('9:00');
         $schedule->command('mailcoach:delete-old-unconfirmed-subscribers')->daily();
+        $schedule->command('schedule-monitor:clean')->monthly();
     }
 
     protected function commands()
