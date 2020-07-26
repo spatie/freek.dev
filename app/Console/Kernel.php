@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('responsecache:clear')->daily()->at('00:00');
         $schedule->command('backup:clean')->daily()->at('01:00');
-        $schedule->command('backup:run')->daily();
+        $schedule->command('backup:run')->everyMinute();
         $schedule->command(PublishScheduledPostsCommand::class)->everyMinute();
         $schedule->command('mailcoach:calculate-statistics')->everyMinute();
         $schedule->command('mailcoach:send-scheduled-campaigns')->everyMinute();
