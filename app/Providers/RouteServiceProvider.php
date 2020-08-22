@@ -58,6 +58,10 @@ class RouteServiceProvider extends ServiceProvider
                 return $post;
             }
 
+            if ($post->preview_secret === request()->get('preview_secret')) {
+                return $post;
+            }
+
             if (! $post->published) {
                 abort(404);
             }

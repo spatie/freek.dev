@@ -55,4 +55,24 @@ class PostTest extends TestCase
             ->get(action(PostController::class, $post->idSlug()))
             ->assertNotFound();
     }
+
+    /** @test */
+    public function it_will_display_unpublished_post_using_a_preview_secret()
+    {
+        $post = factory(Post::class)->create([
+            'published' => false,
+        ]);
+
+        $this
+            ->get(action(PostController::class, $post->idSlug()))
+            ->assertNotFound();
+
+        $this
+            ->get(action(PostController::class, $post->idSlug()) . "?preview_secret={$post->preview_secret}")
+            ->assertSuccessful();
+
+        $this
+            ->get(action(PostController::class, $post->idSlug()) . "?preview_secret=wrong-secret")
+            ->assertNotFound();
+    }
 }
