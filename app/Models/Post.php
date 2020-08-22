@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
@@ -40,9 +41,11 @@ class Post extends Model implements Feedable, Sluggable
         'send_automated_tweet' => 'boolean',
     ];
 
-    public static function boot()
+    public static function booted()
     {
-        parent::boot();
+        static::creating(function (Post $post) {
+            $post->preview_secret = Str::random(10);
+        });
 
         static::saved(function (Post $post) {
             if ($post->published) {
@@ -181,6 +184,11 @@ class Post extends Model implements Feedable, Sluggable
     public function getUrlAttribute(): string
     {
         return action(PostController::class, [$this->idSlug()]);
+    }
+
+    public function getPreviewUrlAttribute(): string
+    {
+        return action(PostController::class, [$this->idSlug()]) . "?preview_secret={$this->preview_secret}";
     }
 
     public function getPromotionalUrlAttribute(): string

@@ -41,7 +41,7 @@ class Post extends Resource
                         return '';
                     }
 
-                    return '<a target="freekdev_preview" href="' . url($this->url) . '">Show</a>';
+                    return '<a target="freekdev_preview" href="' . url($this->published ? $this->url : $this->preview_url) . '">Show</a>';
                 })->asHtml(),
 
                 Markdown::make('Text')
