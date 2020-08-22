@@ -13,6 +13,8 @@ class CacheAllGuestRequests extends CacheAllSuccessfulGetRequests
             return false;
         }
 
+
+
         return parent::shouldCacheRequest($request);
     }
 }

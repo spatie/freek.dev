@@ -48,12 +48,12 @@ class Post extends Model implements Feedable, Sluggable
         });
 
         static::saved(function (Post $post) {
+            ResponseCache::clear();
+
             if ($post->published) {
                 static::withoutEvents(function () use ($post) {
                     (new PublishPostAction())->execute($post);
                 });
-
-                ResponseCache::clear();
             }
         });
     }
