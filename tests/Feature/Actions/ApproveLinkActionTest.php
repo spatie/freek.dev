@@ -12,7 +12,7 @@ class ApproveLinkActionTest extends TestCase
 {
     private ApproveLinkAction $approveLinkAction;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
