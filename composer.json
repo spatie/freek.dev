@@ -39,7 +39,7 @@
         "laravel/scout": "^8.3",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.2",
-        "livewire/livewire": "^1.0",
+        "livewire/livewire": "^2.0",
         "ohdearapp/ohdear-php-sdk": "^3.0",
         "predis/predis": "^1.1",
         "spatie/commonmark-highlighter": "^2.0",
