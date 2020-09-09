@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Post;
 use App\Models\Webmention;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factory;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
@@ -31,7 +31,7 @@ class WebmentionFactory extends Factory
         Webmention::TYPE_RETWEET,
     ]);
 
-    return [
+        return [
         'post_id' => Post::factory(),
         'type' => $type,
         'webmention_id' => $this->faker->randomNumber(),

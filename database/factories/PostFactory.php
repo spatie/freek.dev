@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Post;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
 
