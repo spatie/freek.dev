@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders;
+
+use Database\Factories\TagFactory;
 use Illuminate\Database\Seeder;
-use Spatie\Tags\Tag;
 
 class TagSeeder extends Seeder
 {
     public function run()
     {
-        factory(Tag::class, 20)->create();
+        TagFactory::times(20)->create();
     }
 }

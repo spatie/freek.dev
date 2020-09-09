@@ -80,6 +80,6 @@ class AdTest extends TestCase
 
         $attributes = array_merge($defaultAttributes, $attributes);
 
-        return factory(Ad::class)->create($attributes);
+        return Ad::factory()->create($attributes);
     }
 }

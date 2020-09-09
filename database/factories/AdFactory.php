@@ -1,17 +1,24 @@
 <?php
 
+namespace Database\Factories;
+
 use App\Models\Ad;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/* @var Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Ad::class, function (Faker $faker) {
-    $startsAt = now()->addDays(rand(-30, 30));
-    $endsAt = $startsAt->copy()->addDays(30);
+class AdFactory extends Factory
+{
+    protected $model = Ad::class;
 
-    return [
-        'display_on_url' => $faker->boolean(50) ? $faker->url : '',
-        'text' => $faker->sentence(),
-        'starts_at' => $startsAt->toDateString(),
-        'ends_at' => $endsAt->toDateString(),
-    ];
-});
+    public function definition()
+    {
+        $startsAt = now()->addDays(rand(-30, 30));
+        $endsAt = $startsAt->copy()->addDays(30);
+
+        return [
+            'display_on_url' => $this->faker->boolean(50) ? $this->faker->url : '',
+            'text' => $this->faker->sentence(),
+            'starts_at' => $startsAt->toDateString(),
+            'ends_at' => $endsAt->toDateString(),
+        ];
+    }
+}

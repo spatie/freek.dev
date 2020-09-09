@@ -11,7 +11,7 @@ class CreatePostFormLinkActionTest extends TestCase
     /** @test */
     public function it_can_create_a_post_from_a_link()
     {
-        $link = factory(Link::class)->create();
+        $link = Link::factory()->create();
 
         (new CreatePostFromLinkAction())->execute($link);
 

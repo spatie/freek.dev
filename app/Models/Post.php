@@ -9,6 +9,7 @@ use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -22,6 +23,8 @@ use Spatie\Tags\Tag;
 
 class Post extends Model implements Feedable, Sluggable
 {
+    use HasFactory;
+
     public const TYPE_LINK = 'link';
     public const TYPE_TWEET = 'tweet';
     public const TYPE_ORIGINAL = 'originalPost';

@@ -10,11 +10,11 @@ class PostTest extends TestCase
 {
     private Post $post;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
-        $this->post = factory(Post::class)->create();
+        $this->post = Post::factory()->create();
     }
 
     /** @test */
@@ -47,7 +47,7 @@ class PostTest extends TestCase
     /** @test */
     public function it_will_only_show_posts_with_a_publish_date_in_the_future()
     {
-        $post = factory(Post::class)->create([
+        $post = Post::factory()->create([
             'published' => false,
         ]);
 
@@ -59,7 +59,7 @@ class PostTest extends TestCase
     /** @test */
     public function it_will_display_unpublished_post_using_a_preview_secret()
     {
-        $post = factory(Post::class)->create([
+        $post = Post::factory()->create([
             'published' => false,
         ]);
 

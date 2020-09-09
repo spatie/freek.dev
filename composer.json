@@ -14,15 +14,11 @@
         },
         {
             "type": "composer",
-            "url": "https://satis.mailcoach.app"
+            "url": "https://satis.spatie.be"
         },
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/GenerateNewsletter"
         }
     ],
     "require": {
@@ -30,61 +26,58 @@
         "ext-json": "*",
         "ext-simplexml": "*",
         "abraham/twitteroauth": "^1.1.0",
-        "algolia/algoliasearch-client-php": "^2.2",
-        "beyondcode/laravel-dump-server": "^1.3",
-        "doctrine/dbal": "^2.8",
-        "facade/ignition": "^2.0",
+        "algolia/algoliasearch-client-php": "^2.7",
+        "doctrine/dbal": "^2.10",
+        "facade/ignition": "^2.3.6",
         "fideloper/proxy": "^4.2",
         "freekmurze/generate-newsletter": "*",
-        "fruitcake/laravel-cors": "^1.0",
-        "guzzlehttp/guzzle": "^6.4",
-        "laravel/framework": "^7.0",
-        "laravel/horizon": "^4.0",
-        "laravel/nova": "^3.0",
-        "laravel/scout": "^8.0",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "laravel/framework": "^8.0",
+        "laravel/horizon": "^5.0",
+        "laravel/nova": "^3.9",
+        "laravel/scout": "^8.3",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0",
-        "livewire/livewire": "^1.0",
+        "laravel/ui": "^2.2",
+        "livewire/livewire": "^2.0",
         "ohdearapp/ohdear-php-sdk": "^3.0",
         "predis/predis": "^1.1",
         "spatie/commonmark-highlighter": "^2.0",
-        "spatie/laravel-backup": "^6.8",
+        "spatie/laravel-backup": "^6.11",
         "spatie/laravel-feed": "^2.6",
-        "spatie/laravel-flash": "^1.5",
-        "spatie/laravel-honeypot": "^2.1",
-        "spatie/laravel-log-dumper": "^0.0.2",
+        "spatie/laravel-flash": "^1.7",
+        "spatie/laravel-honeypot": "^2.2",
+        "spatie/laravel-log-dumper": "^1.0",
         "spatie/laravel-mailcoach": "^2.0",
         "spatie/laravel-mailcoach-mailgun-feedback": "^2.0",
         "spatie/laravel-mailcoach-monaco": "^1.0",
         "spatie/laravel-menu": "^3.5",
         "spatie/laravel-missing-page-redirector": "^2.6",
         "spatie/laravel-responsecache": "^6.5",
-        "spatie/laravel-schedule-monitor": "^0",
+        "spatie/laravel-schedule-monitor": "^1.0",
         "spatie/laravel-stubs": "^1.0",
-        "spatie/laravel-tags": "^2.6",
+        "spatie/laravel-tags": "^3.0",
         "spatie/laravel-tail": "^4.2",
-        "spatie/laravel-webhook-client": "^2.5",
+        "spatie/laravel-webhook-client": "^2.7",
         "spatie/nova-backup-tool": "^4.0",
-        "spatie/nova-tags-field": "^3.0",
+        "spatie/nova-tags-field": "^3.0.2",
         "spatie/nova-tail-tool": "^3.0",
-        "stripe/stripe-php": "^7.0"
+        "stripe/stripe-php": "^7.52"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.6.7",
-        "friendsofphp/php-cs-fixer": "^2.8",
-        "fzaninotto/faker": "^1.4",
+        "barryvdh/laravel-ide-helper": "^2.8",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "fzaninotto/faker": "^1.9.1",
         "mockery/mockery": "^1.3.1",
-        "nunomaduro/collision": "^4.1",
-        "phpunit/phpunit": "^9.0",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3",
         "spatie/laravel-cronless-schedule": "^1.0"
     },
     "autoload": {
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {

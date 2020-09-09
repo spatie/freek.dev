@@ -12,7 +12,7 @@ class RejectLinkActionTest extends TestCase
     public function it_can_reject_a_link()
     {
         /** @var Link $submittedLink */
-        $submittedLink = factory(Link::class)->create([
+        $submittedLink = Link::factory()->create([
             'status' => Link::STATUS_SUBMITTED,
         ]);
 
