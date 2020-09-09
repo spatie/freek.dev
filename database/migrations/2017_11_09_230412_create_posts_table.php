@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
             $table->text('text');
             $table->string('wp_id')->nullable();
             $table->string('wp_post_name')->nullable();
-            $table->datetime('publish_date');
+            $table->datetime('publish_date')->nullable();
             $table->boolean('published')->default(false);
             $table->boolean('tweet_sent')->default(false);
             $table->boolean('posted_on_medium')->default(false);

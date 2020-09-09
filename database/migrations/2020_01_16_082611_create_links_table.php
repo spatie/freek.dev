@@ -20,7 +20,7 @@ class CreateLinksTable extends Migration
             $table->text('url');
 
             $table->string('status')->default(Link::STATUS_SUBMITTED);
-            $table->timestamp('publish_date')->default(null);
+            $table->timestamp('publish_date')->nullable()->default(null);
 
             $table->timestamps();
 
