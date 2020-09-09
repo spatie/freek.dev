@@ -43,7 +43,7 @@ class PostFactory
     {
         foreach (range(1, $this->times) as $i) {
             /** @var \App\Models\Post $post */
-            $post = factory(Post::class)->create($attributes);
+            $post = Post::factory()->create($attributes);
             if (is_null($this->type)) {
                 $this->type = Arr::random([
                     Post::TYPE_LINK,

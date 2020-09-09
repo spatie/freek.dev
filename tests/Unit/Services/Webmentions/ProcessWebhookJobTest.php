@@ -12,7 +12,7 @@ class ProcessWebhookJobTest extends TestCase
     /** @test */
     public function it_can_convert_a_webhook_payload_to_a_webmention()
     {
-        factory(Post::class)->create([
+        Post::factory()->create([
            'id' => 1241,
         ]);
 

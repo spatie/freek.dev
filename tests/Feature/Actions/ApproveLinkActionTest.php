@@ -25,7 +25,7 @@ class ApproveLinkActionTest extends TestCase
     public function it_can_approve_a_link()
     {
         /** @var Link $submittedLink */
-        $submittedLink = factory(Link::class)->create([
+        $submittedLink = Link::factory()->create([
             'status' => Link::STATUS_SUBMITTED,
         ]);
 
@@ -40,7 +40,7 @@ class ApproveLinkActionTest extends TestCase
     public function it_will_not_send_a_mail_for_a_link_that_was_already_approved()
     {
         /** @var Link $submittedLink */
-        $approvedLink = factory(Link::class)->create([
+        $approvedLink = Link::factory()->create([
             'status' => Link::STATUS_APPROVED,
         ]);
 

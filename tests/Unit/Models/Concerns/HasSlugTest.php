@@ -10,7 +10,7 @@ class HasSlugTest extends TestCase
     /** @test */
     public function a_model_can_have_a_slug()
     {
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
 
         $this->assertNotEmpty($post->slug);
 
@@ -20,7 +20,7 @@ class HasSlugTest extends TestCase
     /** @test */
     public function a_model_can_be_found_by_an_id_slug()
     {
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
 
         $this->assertEquals($post->id, Post::findByIdSlug($post->idSlug())->id);
 

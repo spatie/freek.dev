@@ -11,7 +11,7 @@ class LinkApprovedMailTest extends TestCase
     /** @test */
     public function the_link_approved_mail_can_be_rendered()
     {
-        $link = factory(Link::class)->create();
+        $link = Link::factory()->create();
 
         $this->assertIsString((new LinkApprovedMail($link))->render());
     }

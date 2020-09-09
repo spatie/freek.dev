@@ -9,7 +9,7 @@ class WebmentionSeeder extends Seeder
     public function run()
     {
         Post::each(function (Post $post) {
-            factory(Webmention::class, 10)->create([
+            Webmention::factory()->times(10)->create([
                 'post_id' => $post->id,
             ]);
         });

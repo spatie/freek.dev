@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Actions\PublishPostAction;
 use App\Http\Controllers\PostController;
 use App\Models\Concerns\HasSlug;
@@ -22,6 +23,8 @@ use Spatie\Tags\Tag;
 
 class Post extends Model implements Feedable, Sluggable
 {
+    use HasFactory;
+
     public const TYPE_LINK = 'link';
     public const TYPE_TWEET = 'tweet';
     public const TYPE_ORIGINAL = 'originalPost';

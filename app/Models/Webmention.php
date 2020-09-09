@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class Webmention extends Model
 {
+    use HasFactory;
+
     const TYPE_REPLY = 'reply';
     const TYPE_LIKE = 'like';
     const TYPE_RETWEET = 'retweet';

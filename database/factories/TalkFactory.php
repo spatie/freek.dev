@@ -1,16 +1,35 @@
 <?php
 
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Talk;
-use Faker\Generator as Faker;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Talk::class, function (Faker $faker) {
-    return [
-        'title' => $faker->sentence,
-        'location' => $faker->city . ', ' . $faker->country,
-        'presented_at' => $faker->dateTimeBetween('-5 years'),
-        'slides_link' => $faker->boolean(50) ? $faker->url : '',
-        'video_link' => $faker->boolean(50) ? $faker->url : '',
-        'joindin_link' => $faker->boolean(50) ? $faker->url : '',
+
+class TalkFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Talk::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+        'title' => $this->faker->sentence,
+        'location' => $this->faker->city . ', ' . $this->faker->country,
+        'presented_at' => $this->faker->dateTimeBetween('-5 years'),
+        'slides_link' => $this->faker->boolean(50) ? $this->faker->url : '',
+        'video_link' => $this->faker->boolean(50) ? $this->faker->url : '',
+        'joindin_link' => $this->faker->boolean(50) ? $this->faker->url : '',
     ];
-});
+    }
+}

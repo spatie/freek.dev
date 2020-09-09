@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,8 @@ use Illuminate\Support\Str;
 
 class Ad extends Model
 {
+    use HasFactory;
+
     protected $dates = ['starts_at', 'ends_at'];
 
     public static function getForCurrentPage(): ?self

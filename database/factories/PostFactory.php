@@ -1,15 +1,34 @@
 <?php
 
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Post;
-use Faker\Generator as Faker;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Post::class, function (Faker $faker) {
-    return [
-        'title' => $faker->sentence,
-        'text' => $faker->paragraph,
-        'publish_date' => $faker->boolean(50) ? $faker->dateTimeBetween('-5 years') : null,
+
+class PostFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Post::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+        'title' => $this->faker->sentence,
+        'text' => $this->faker->paragraph,
+        'publish_date' => $this->faker->boolean(50) ? $this->faker->dateTimeBetween('-5 years') : null,
         'published' => true,
-        'original_content' => $faker->boolean(10),
+        'original_content' => $this->faker->boolean(10),
     ];
-});
+    }
+}
