@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {
@@ -17,6 +18,8 @@ class Handler extends ExceptionHandler
 
     public function register()
     {
-        //
+        $this->reportable(function (ValidationException $exception) {
+            flash()->error('Please correct the errors in the form');
+        });
     }
 }
