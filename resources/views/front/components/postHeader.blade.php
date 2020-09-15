@@ -38,9 +38,11 @@
             - submitted by {{ $post->submittedByUser->name }}
         @endif
         @auth
-            –
-            <a target="_blank" href="/nova/resources/posts/{{ $post->id }}/edit">
-                Edit</a>
+            @if(Auth::user()->admin)
+                –
+                <a target="_blank" href="/nova/resources/posts/{{ $post->id }}/edit">
+                    Edit</a>
+            @endif
         @endauth
     </p>
     </header>
