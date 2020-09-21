@@ -1,4 +1,11 @@
 module.exports = {
+    future: {
+        removeDeprecatedGapUtilities: true,
+        purgeLayersByDefault: true,
+    },
+    purge: {
+        content: ['./resources/**/*.blade.php'],
+    },
     plugins: [require('@tailwindcss/custom-forms')],
     theme: {
         fontFamily: {

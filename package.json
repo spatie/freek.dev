@@ -12,42 +12,19 @@
     "build-generate-newsletter": "cd nova-components/GenerateNewsletter && yarn dev",
     "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && yarn && yarn prod"
   },
-  "dependencies": {
-    "@tailwindcss/custom-forms": "^0.2.1",
-    "algoliasearch": "^3.24.5",
-    "preact": "^8.4.2",
-    "preact-compat": "^3.18.5"
-  },
   "devDependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "cross-env": "^5.1.1",
-    "husky": "^2.3.0",
-    "laravel-mix": "^4.0",
-    "laravel-mix-purgecss": "^4.0",
-    "lint-staged": "^8.1.7",
-    "prettier": "^1.10.2",
-    "tailwindcss": "^1.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "cross-env": "^7.0.2",
+    "husky": "^4.3.0",
+    "laravel-mix": "^5.0.5",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "tailwindcss": "^1.8.10",
+    "vue-template-compiler": "^2.6.12"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "linters": {
-      "*.{css,js,ts,tsx}": [
-        "prettier --write",
-        "git add"
-      ],
-      "*.php": [
-        "php ./vendor/bin/php-cs-fixer fix --config .php_cs",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "public/**/*"
-    ]
   }
 }
