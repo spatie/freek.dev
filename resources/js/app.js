@@ -2,7 +2,7 @@ Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
 
 function lazy(element) {
     function observerCallback(entries, observer) {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (!entry.isIntersecting) {
                 return;
             }
