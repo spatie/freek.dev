@@ -10,9 +10,9 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(PublishScheduledPostsCommand::class)->everyMinute();
         $schedule->command('responsecache:clear')->daily()->at('00:00');
         $schedule->command('backup:clean')->daily()->at('01:00');
+        $schedule->command(PublishScheduledPostsCommand::class)->everyMinute();
         $schedule->command('mailcoach:calculate-statistics')->everyMinute();
         $schedule->command('mailcoach:send-scheduled-campaigns')->everyMinute();
         $schedule->command('mailcoach:send-campaign-summary-mail')->hourly();
