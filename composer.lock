@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4eec44f2e2aaf0acb3c73d2c8d04f5e",
+    "content-hash": "ae063fe12ff2e7ebe0e22d815997f5fc",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -5038,17 +5038,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "v3.x-dev",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "62c7b41eb103050bbdfe369c8c164a45c2b59e33"
+                "reference": "34b1bf76cf0cda4bb2045ae74ac89a543470c9a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-62c7b41eb103050bbdfe369c8c164a45c2b59e33-zip-36cc44.zip",
-                "reference": "62c7b41eb103050bbdfe369c8c164a45c2b59e33",
-                "shasum": "959dbda53052a83d24a645925a2be2bad5546cf1"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-34b1bf76cf0cda4bb2045ae74ac89a543470c9a6-zip-768f26.zip",
+                "reference": "34b1bf76cf0cda4bb2045ae74ac89a543470c9a6",
+                "shasum": "c3122accb2a7b9ea31b4b75857dd67a5311eaaef"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5151,10 +5151,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/v3",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/master",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2020-09-28T11:54:27+00:00"
+            "time": "2020-09-28T12:49:56+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -5309,16 +5309,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.7.2",
+            "version": "8.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "a2fc872e3daa9b8a3473eaf02d86a8ad0112fe1b"
+                "reference": "97c5ca096c92798224e605495ad73c6927fd5b5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/a2fc872e3daa9b8a3473eaf02d86a8ad0112fe1b",
-                "reference": "a2fc872e3daa9b8a3473eaf02d86a8ad0112fe1b",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/97c5ca096c92798224e605495ad73c6927fd5b5a",
+                "reference": "97c5ca096c92798224e605495ad73c6927fd5b5a",
                 "shasum": ""
             },
             "require": {
@@ -5405,7 +5405,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-20T21:17:45+00:00"
+            "time": "2020-09-28T12:21:36+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -11255,28 +11255,28 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.11.1",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "b20034be5efcdab4fb60ca3a29cba2949aead160"
+                "reference": "765cd5d5d237525f8bbadaec5dc161c83a369119"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/b20034be5efcdab4fb60ca3a29cba2949aead160",
-                "reference": "b20034be5efcdab4fb60ca3a29cba2949aead160",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/765cd5d5d237525f8bbadaec5dc161c83a369119",
+                "reference": "765cd5d5d237525f8bbadaec5dc161c83a369119",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.2",
-                "php": "^7.2",
-                "phpdocumentor/reflection-docblock": "^5.0",
+                "php": "^7.2 || ~8.0, <8.1",
+                "phpdocumentor/reflection-docblock": "^5.2",
                 "sebastian/comparator": "^3.0 || ^4.0",
                 "sebastian/recursion-context": "^3.0 || ^4.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "^6.0",
-                "phpunit/phpunit": "^8.0"
+                "phpunit/phpunit": "^8.0 || ^9.0 <9.3"
             },
             "type": "library",
             "extra": {
@@ -11314,7 +11314,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2020-07-08T12:44:21+00:00"
+            "time": "2020-09-28T12:23:07+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -13163,9 +13163,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-mailcoach": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

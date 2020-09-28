@@ -48,7 +48,7 @@
         "spatie/laravel-flash": "^1.7",
         "spatie/laravel-honeypot": "^2.2",
         "spatie/laravel-log-dumper": "^1.0",
-        "spatie/laravel-mailcoach": "v3.x-dev",
+        "spatie/laravel-mailcoach": "^3.0",
         "spatie/laravel-mailcoach-mailgun-feedback": "^2.0",
         "spatie/laravel-mailcoach-monaco": "^1.0",
         "spatie/laravel-menu": "^3.5",
