@@ -5042,13 +5042,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "dbfe0dd18bcb34e5c87607432e44845f5583fd72"
+                "reference": "a0207387382723bd8b26cfafa531f149f6356e1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-dbfe0dd18bcb34e5c87607432e44845f5583fd72-zip-2dcade.zip",
-                "reference": "dbfe0dd18bcb34e5c87607432e44845f5583fd72",
-                "shasum": "e1dae1aaff2d99eedc8b49741fae670c1fba450f"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-a0207387382723bd8b26cfafa531f149f6356e1e-zip-6d141e.zip",
+                "reference": "a0207387382723bd8b26cfafa531f149f6356e1e",
+                "shasum": "894d6facb26c05600f555fbf064363a7d3f6b82c"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5154,7 +5154,7 @@
                 "source": "https://github.com/spatie/laravel-mailcoach/tree/v3",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2020-09-27T20:35:26+00:00"
+            "time": "2020-09-28T07:58:10+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -5233,17 +5233,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach-monaco",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-mailcoach-monaco.git",
-                "reference": "432855ac31b82b6f814810835a6576e35a447827"
+                "reference": "95aebcdc1b625e86dc9f31bc371db6acc09f2335"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-432855ac31b82b6f814810835a6576e35a447827-zip-c6e3e7.zip",
-                "reference": "432855ac31b82b6f814810835a6576e35a447827",
-                "shasum": "b45f308a8da7551ff4d17bbce83d909f6cd827ee"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-95aebcdc1b625e86dc9f31bc371db6acc09f2335-zip-8d60f2.zip",
+                "reference": "95aebcdc1b625e86dc9f31bc371db6acc09f2335",
+                "shasum": "17f8bb3a0c7f220d8cc37b97a29b2f35675db78c"
             },
             "require": {
                 "ext-json": "*",
@@ -5296,7 +5296,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/master",
+                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/1.2.1",
                 "issues": "https://github.com/spatie/laravel-mailcoach-monaco/issues"
             },
             "funding": [
@@ -5305,7 +5305,7 @@
                     "url": "https://spatie.be/open-source/support-us"
                 }
             ],
-            "time": "2020-09-24T13:37:54+00:00"
+            "time": "2020-09-28T07:46:45+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
@@ -12551,20 +12551,20 @@
         },
         {
             "name": "sebastian/resource-operations",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/resource-operations.git",
-                "reference": "0653718a5a629b065e91f774595267f8dc32e213"
+                "reference": "0f4443cb3a1d92ce809899753bc0d5d5a8dd19a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/resource-operations/zipball/0653718a5a629b065e91f774595267f8dc32e213",
-                "reference": "0653718a5a629b065e91f774595267f8dc32e213",
+                "url": "https://api.github.com/repos/sebastianbergmann/resource-operations/zipball/0f4443cb3a1d92ce809899753bc0d5d5a8dd19a8",
+                "reference": "0f4443cb3a1d92ce809899753bc0d5d5a8dd19a8",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.3 || ^8.0"
+                "php": ">=7.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.0"
@@ -12592,7 +12592,13 @@
             ],
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
-            "time": "2020-06-26T12:16:22+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-09-28T06:45:17+00:00"
         },
         {
             "name": "sebastian/type",
