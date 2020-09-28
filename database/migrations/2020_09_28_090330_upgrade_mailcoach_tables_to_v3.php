@@ -9,7 +9,7 @@ class UpgradeMailcoachTablesToV3 extends Migration
     public function up()
     {
         Schema::table('mailcoach_campaigns', function (Blueprint $table) {
-            $table->timestamp('all_jobs_added_to_batch_at')->nullabe();
+            $table->timestamp('all_jobs_added_to_batch_at')->nullable();
             $table->string('reply_to_email')->nullable();
             $table->string('reply_to_name')->nullable();
         });
