@@ -13,10 +13,10 @@ jobs:
                     - 6379:6379
                 options: --entrypoint redis-server
         steps:
-            -   uses: actions/checkout@v1
+            -   uses: actions/checkout@v2
 
             -   name: Setup PHP
-                uses: shivammathur/setup-php@v1
+                uses: shivammathur/setup-php@v2
                 with:
                     php-version: '7.4'
                     extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
@@ -28,7 +28,7 @@ jobs:
                     mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS freekdev_test;'
 
             -   name: Cache yarn dependencies
-                uses: actions/cache@v1
+                uses: actions/cache@v2
                 with:
                     path: node_modules
                     key: yarn-${{ hashFiles('yarn.lock') }}
