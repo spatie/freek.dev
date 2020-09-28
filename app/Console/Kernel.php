@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Console\Commands\PublishScheduledPostsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\ModelCleanup\Commands\CleanUpModelsCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -19,6 +20,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('responsecache:clear')->daily();
         $schedule->command('backup:clean')->daily()->at('01:00');
         $schedule->command('backup:run')->dailyAt('3:00');
+        $schedule->command(CleanUpModelsCommand::class)->daily();
         $schedule->command('mailcoach:send-email-list-summary-mail ')->mondays()->at('9:00');
     }
 
