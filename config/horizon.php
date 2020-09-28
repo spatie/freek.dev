@@ -72,20 +72,31 @@ return [
 
     'environments' => [
         'production' => [
-            'supervisor-1' => [
-                'connection' => 'redis',
-                'queue' => ['default'],
-                'balance' => 'simple',
-                'processes' => 10,
-                'tries' => 2,
-            ],
-            'mailcoach' => [
-                'connection' => 'mailcoach-redis',
-                'queue' => ['send-campaign', 'send-mail', 'mailcoach-feedback', 'mailcoach'],
-                'balance' => 'auto',
-                'processes' => 3,
-                'tries' => 1,
-                'timeout' => 60 * 10,
+            'production' => [
+                'supervisor-1' => [
+                    'connection' => 'redis',
+                    'queue' => ['default'],
+                    'balance' => 'simple',
+                    'processes' => 10,
+                    'tries' => 2,
+                    'timeout' => 60 * 60,
+                ],
+                'mailcoach-general' => [
+                    'connection' => 'mailcoach-redis',
+                    'queue' => ['mailcoach', 'mailcoach-feedback', 'send-mail'],
+                    'balance' => 'auto',
+                    'processes' => 10,
+                    'tries' => 2,
+                    'timeout' => 60 * 60,
+                ],
+                'mailcoach-heavy' => [
+                    'connection' => 'mailcoach-redis',
+                    'queue' => ['send-campaign'],
+                    'balance' => 'auto',
+                    'processes' => 3,
+                    'tries' => 1,
+                    'timeout' => 60 * 60,
+                ],
             ],
         ],
 
@@ -96,14 +107,23 @@ return [
                 'balance' => 'simple',
                 'processes' => 10,
                 'tries' => 2,
+                'timeout' => 60 * 60,
             ],
-            'mailcoach' => [
+            'mailcoach-general' => [
                 'connection' => 'mailcoach-redis',
-                'queue' => ['send-campaign', 'send-mail', 'mailcoach-feedback', 'mailcoach'],
+                'queue' => ['mailcoach', 'mailcoach-feedback', 'send-mail'],
+                'balance' => 'auto',
+                'processes' => 10,
+                'tries' => 2,
+                'timeout' => 60 * 60,
+            ],
+            'mailcoach-heavy' => [
+                'connection' => 'mailcoach-redis',
+                'queue' => ['send-campaign'],
                 'balance' => 'auto',
                 'processes' => 3,
                 'tries' => 1,
-                'timeout' => 60 * 10,
+                'timeout' => 60 * 60,
             ],
         ],
     ],
