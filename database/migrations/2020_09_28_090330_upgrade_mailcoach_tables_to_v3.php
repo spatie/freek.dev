@@ -22,13 +22,13 @@ class UpgradeMailcoachTablesToV3 extends Migration
             $table->boolean('unsubscribe_others')->default(false);
         });
 
-        Schema::table('mailcoach_subscriber_imports', function (Blueprint $table) {
+        Schema::table('mailcoach_email_lists', function (Blueprint $table) {
             $table->string('default_reply_to_email')->nullable();
             $table->string('default_reply_to_name')->nullable();
             $table->text('allowed_form_extra_attributes')->nullable();
         });
 
-        Schema::table('mailcoach_subscriber_imports', function (Blueprint $table) {
+        Schema::table('mailcoach_sends', function (Blueprint $table) {
             $table->index('uuid');
         });
     }
