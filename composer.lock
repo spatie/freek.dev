@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae063fe12ff2e7ebe0e22d815997f5fc",
+    "content-hash": "d1d429ec025b0c184df300b1d307e97d",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1807,16 +1807,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.6.0",
+            "version": "v8.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a71952a6dba55de0bb11b5fbbd84874eda2a755c"
+                "reference": "3fb29e904a152b3e1fe49581f66ba5e02fe991f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a71952a6dba55de0bb11b5fbbd84874eda2a755c",
-                "reference": "a71952a6dba55de0bb11b5fbbd84874eda2a755c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3fb29e904a152b3e1fe49581f66ba5e02fe991f2",
+                "reference": "3fb29e904a152b3e1fe49581f66ba5e02fe991f2",
                 "shasum": ""
             },
             "require": {
@@ -1966,20 +1966,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-09-22T13:42:02+00:00"
+            "time": "2020-09-29T15:39:07+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.1.0",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "09173d933845cb035eeee19ce8debf94b28bb717"
+                "reference": "839bf8b142585f7be142090d4d05c341a4595fae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/09173d933845cb035eeee19ce8debf94b28bb717",
-                "reference": "09173d933845cb035eeee19ce8debf94b28bb717",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/839bf8b142585f7be142090d4d05c341a4595fae",
+                "reference": "839bf8b142585f7be142090d4d05c341a4595fae",
                 "shasum": ""
             },
             "require": {
@@ -2039,21 +2039,21 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2020-09-22T16:21:33+00:00"
+            "time": "2020-09-29T17:39:48+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "v3.10.0",
+            "version": "v3.11.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "5ccdcc817b190505d21cd4ca1a75cf1ca113238f"
+                "reference": "57c67c5da3bfc9e499a81b288ab47919bfb14b4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-5ccdcc817b190505d21cd4ca1a75cf1ca113238f-zip-179efb.zip",
-                "reference": "5ccdcc817b190505d21cd4ca1a75cf1ca113238f",
-                "shasum": "4eb7f94a130999d70ca04fae4d89bcabbc4e2b18"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-57c67c5da3bfc9e499a81b288ab47919bfb14b4c-zip-a2ec0b.zip",
+                "reference": "57c67c5da3bfc9e499a81b288ab47919bfb14b4c",
+                "shasum": "105f97de110ea795d9ec643252cd27fbc893c93e"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2114,7 +2114,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2020-09-15T15:34:07+00:00"
+            "time": "2020-09-29T20:34:45+00:00"
         },
         {
             "name": "laravel/scout",
@@ -5803,16 +5803,16 @@
         },
         {
             "name": "spatie/laravel-schedule-monitor",
-            "version": "1.0.4",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-schedule-monitor.git",
-                "reference": "d4245bb9767071c50ea452261e4bb0bb0843c126"
+                "reference": "38a8f6290fb9f1cd37e00c3588d897ec5424fc6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-schedule-monitor/zipball/d4245bb9767071c50ea452261e4bb0bb0843c126",
-                "reference": "d4245bb9767071c50ea452261e4bb0bb0843c126",
+                "url": "https://api.github.com/repos/spatie/laravel-schedule-monitor/zipball/38a8f6290fb9f1cd37e00c3588d897ec5424fc6a",
+                "reference": "38a8f6290fb9f1cd37e00c3588d897ec5424fc6a",
                 "shasum": ""
             },
             "require": {
@@ -5822,7 +5822,7 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.16",
-                "laravel/legacy-factories": "^1.0",
+                "laravel/legacy-factories": "^1.0.4",
                 "ohdearapp/ohdear-php-sdk": "^3.0",
                 "orchestra/testbench": "^5.0|^6.0",
                 "phpunit/phpunit": "^9.0",
@@ -5870,7 +5870,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-08T20:04:19+00:00"
+            "time": "2020-09-29T20:55:49+00:00"
         },
         {
             "name": "spatie/laravel-schemaless-attributes",
