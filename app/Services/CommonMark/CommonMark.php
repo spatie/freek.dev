@@ -44,7 +44,6 @@ class CommonMark
 
             foreach ($xpath->query("//img") as $node) {
                 $currentLoadingAttribute = $node->getAttribute('loading');
-
                 $node->setAttribute('loading', ! empty($currentLoadingAttribute) ? $currentLoadingAttribute : 'lazy');
             }
 
