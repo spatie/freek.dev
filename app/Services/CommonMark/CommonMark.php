@@ -34,7 +34,8 @@ class CommonMark
         return self::lazyLoadImages($htmlString);
     }
 
-    public static function lazyLoadImages($htmlString) {
+    public static function lazyLoadImages($htmlString)
+    {
         $dom = new DOMDocument;
         $dom->loadHTML($htmlString, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $xpath = new DOMXPath($dom);
@@ -42,7 +43,7 @@ class CommonMark
         foreach ($xpath->query("//img") as $node) {
             $currentLoadingAttribute = $node->getAttribute('loading');
 
-            $node->setAttribute('loading', !empty($currentLoadingAttribute) ? $currentLoadingAttribute : 'lazy');
+            $node->setAttribute('loading', ! empty($currentLoadingAttribute) ? $currentLoadingAttribute : 'lazy');
         }
 
         return $dom->saveHTML();
