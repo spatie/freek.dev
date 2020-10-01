@@ -4,6 +4,7 @@ namespace App\Services\CommonMark;
 
 use DOMDocument;
 use DOMXPath;
+use Exception;
 use League\CommonMark\Block\Element\FencedCode;
 use League\CommonMark\Block\Element\Heading;
 use League\CommonMark\Block\Element\IndentedCode;
@@ -34,17 +35,22 @@ class CommonMark
         return self::lazyLoadImages($htmlString);
     }
 
-    public static function lazyLoadImages($htmlString) {
-        $dom = new DOMDocument;
-        $dom->loadHTML($htmlString, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $xpath = new DOMXPath($dom);
+    public static function lazyLoadImages($htmlString): string
+    {
+        try {
+            $dom = new DOMDocument;
+            $dom->loadHTML($htmlString, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $xpath = new DOMXPath($dom);
 
-        foreach ($xpath->query("//img") as $node) {
-            $currentLoadingAttribute = $node->getAttribute('loading');
+            foreach ($xpath->query("//img") as $node) {
+                $currentLoadingAttribute = $node->getAttribute('loading');
 
-            $node->setAttribute('loading', !empty($currentLoadingAttribute) ? $currentLoadingAttribute : 'lazy');
+                $node->setAttribute('loading', ! empty($currentLoadingAttribute) ? $currentLoadingAttribute : 'lazy');
+            }
+
+            return $dom->saveHTML();
+        } catch (Exception $exception) {
+            return $htmlString;
         }
-
-        return $dom->saveHTML();
     }
 }
