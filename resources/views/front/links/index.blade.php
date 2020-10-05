@@ -47,7 +47,16 @@
                         <a href="{{ $link->url }}">
                             {{ $link->host_url }}</a>
                         -
-                        submitted by {{ $link->user->name }}
+                        submitted by
+                        @if ($link->user->twitter_handle)
+                            <a target="_blank" rel="noopener noreferrer"
+                               title="https://twitter.com/{{ $link->user->twitter_handle }}"
+                               href="https://twitter.com/{{ $link->user->twitter_handle }}">
+                                {{ $link->user->name }}
+                            </a>
+                        @else
+                            {{ $link->user->name }}
+                        @endif
                     </p>
                 </header>
                 <div class="markup leading-relaxed">

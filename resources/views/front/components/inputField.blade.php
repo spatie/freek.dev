@@ -1,15 +1,23 @@
+@props([
+    'label',
+    'name',
+    'type' => 'text',
+    'required' => true,
+    'placeholder' => ''
+])
+
 <div class="mt-4">
     <label class="block">
         <span class="text-gray-700">{{ $label }}</span>
         <input
             id="{{ $name }}"
-            type="{{ $type ?? 'text' }}"
+            type="{{ $type }}"
             class="form-input mt-1 block w-full"
             name="{{ $name }}"
             value="{{ old($name) }}"
-            required
+            {{ ($required) ? 'required' : '' }}
             autocomplete="{{ $name }}"
-            placeholder="{{ $placeholder ?? '' }}"
+            placeholder="{{ $placeholder }}"
         >
     </label>
     @error($name)

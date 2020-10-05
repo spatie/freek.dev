@@ -21,6 +21,10 @@ class RegisterController
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'twitter_handle' => ['nullable', 'max:15', 'regex:/^[A-Za-z0-9_]+$/'],
+        ], [
+            'twitter_handle.max' => 'Your Twitter username may not be greater than 15 characters.',
+            'twitter_handle.regex' => 'Your Twitter username may only contain letters, numbers and underscores.',
         ]);
     }
 
@@ -36,6 +40,7 @@ class RegisterController
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'twitter_handle' => $data['twitter_handle'],
         ]);
     }
 
