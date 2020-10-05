@@ -35,7 +35,16 @@
             – {{ $post->reading_time }} minute read
         @endif
         @if ($post->submittedByUser)
-            - submitted by {{ $post->submittedByUser->name }}
+            - submitted by
+            @if ($post->submittedByUser->twitter_handle)
+                <a target="_blank" rel="noopener noreferrer"
+                   title="https://twitter.com/{{ $post->submittedByUser->twitter_handle }}"
+                   href="https://twitter.com/{{ $post->submittedByUser->twitter_handle }}">
+                    {{ $post->submittedByUser->name }}
+                </a>
+            @else
+                {{ $post->submittedByUser->name }}
+            @endif
         @endif
         @auth
             @if(Auth::user()->admin)

@@ -13,6 +13,8 @@
 
                 <x-input-field label="E-mail" name="email" type="email"/>
 
+                <x-input-field label="Twitter username (optional)" name="twitter_handle" :required="false"/>
+
                 <x-input-field label="Password" name="password" type="password"/>
 
                 <x-input-field label="Confirm password" name="password_confirmation" type="password"/>

@@ -6,6 +6,19 @@
             Did you write or stumbled across a blog post, tutorial or video that might be interesting for my audience?
         </p>
         @auth
+            <p class="mb-2">
+                Logged in as
+                @if(Auth::user()->twitter_handle)
+                    <a target="_blank" rel="noopener noreferrer"
+                       title="https://twitter.com/{{ Auth::user()->twitter_handle }}"
+                       href="https://twitter.com/{{ Auth::user()->twitter_handle }}">
+                        {{ Auth::user()->name }}
+                    </a>
+                @else
+                    {{ Auth::user()->name }}
+                @endif
+                ({{ Auth::user()->email }})
+            </p>
             <div class="flex items-center">
                 <a href="{{ route('links.create') }}" class="mr-4 button button-gray">Submit a link</a>
 
@@ -47,7 +60,16 @@
                         <a href="{{ $link->url }}">
                             {{ $link->host_url }}</a>
                         -
-                        submitted by {{ $link->user->name }}
+                        submitted by
+                        @if ($link->user->twitter_handle)
+                            <a target="_blank" rel="noopener noreferrer"
+                               title="https://twitter.com/{{ $link->user->twitter_handle }}"
+                               href="https://twitter.com/{{ $link->user->twitter_handle }}">
+                                {{ $link->user->name }}
+                            </a>
+                        @else
+                            {{ $link->user->name }}
+                        @endif
                     </p>
                 </header>
                 <div class="markup leading-relaxed">
