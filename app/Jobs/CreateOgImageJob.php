@@ -17,6 +17,8 @@ class CreateOgImageJob implements ShouldQueue
 
     public Post $post;
 
+    public $tries = 2;
+
     public function __construct(Post $post)
     {
         $this->post = $post;
