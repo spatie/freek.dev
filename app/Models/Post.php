@@ -279,4 +279,13 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
 
         $this->save();
     }
+
+    public function ogImageBaseUrl(): string
+    {
+        if ($this->external_url) {
+            return $this->external_url;
+        }
+
+        return route('post.ogImage', $this);
+    }
 }

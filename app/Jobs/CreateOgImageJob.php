@@ -23,7 +23,11 @@ class CreateOgImageJob implements ShouldQueue
 
     public function handle()
     {
-        $base64Image = Browsershot::url(route('post', $this->post))
+        if ($this->post->isTweet()) {
+            return;
+        }
+
+        $base64Image = Browsershot::url($this->post->ogImageBaseUrl())
             ->windowSize(1200, 630)
             ->base64Screenshot();
 

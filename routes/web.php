@@ -62,4 +62,4 @@ Route::view('legal', 'front.legal.index');
 
 
 Route::get('{post}/og-image', PostOgImageController::class)->name('post.ogImage');
-Route::get('{postSlug}', PostController::class);
+Route::get('{postSlug}', PostController::class)->name('post');
