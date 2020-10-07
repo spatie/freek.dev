@@ -24,6 +24,11 @@ trait PostPresenter
         return trim($excerpt);
     }
 
+    public function getPlainTextExcerptAttribute(): string
+    {
+        return strip_tags($this->excerpt);
+    }
+
     public function getNewsletterExcerptAttribute(): string
     {
         $excerpt = $this->getAutomaticExcerpt();
