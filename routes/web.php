@@ -61,5 +61,5 @@ Route::redirect('/uses', '/1485-my-current-setup-2019-edition');
 Route::view('legal', 'front.legal.index');
 
 
-Route::get('{post}/og-image', PostOgImageController::class);
+Route::get('{post}/og-image', PostOgImageController::class)->name('post.ogImage');
 Route::get('{postSlug}', PostController::class);

@@ -4,7 +4,8 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:description" content="Freek Van der Herten is a Laravel enthusiast and PHP developer at Spatie.">
 <meta property="og:url" content="{{ request()->fullUrl() }}">
-<meta property="og:image" content="https://freek.dev/images/avatar-boxed.jpg">
+<meta property="og:image"
+      content="{{ $ogImage ?? 'https://freek.dev/images/avatar-boxed.jpg' }}">
 
 <script type='application/ld+json'>
     {

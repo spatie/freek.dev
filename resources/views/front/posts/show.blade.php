@@ -1,4 +1,6 @@
-<x-app-layout :title="$post->title">
+<x-app-layout
+    :title="$post->title"
+    :og-image="$post->getFirstMediaUrl('ogImage')">
     <x-ad />
 
     <x-post-header :post="$post" class="mb-8">

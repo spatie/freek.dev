@@ -23,7 +23,9 @@
     ],
     "require": {
         "php": "^7.4",
+        "ext-dom": "*",
         "ext-json": "*",
+        "ext-libxml": "*",
         "ext-simplexml": "*",
         "abraham/twitteroauth": "^1.1.0",
         "algolia/algoliasearch-client-php": "^2.7",
@@ -42,6 +44,7 @@
         "livewire/livewire": "^2.0",
         "ohdearapp/ohdear-php-sdk": "^3.0",
         "predis/predis": "^1.1",
+        "spatie/browsershot": "^3.40",
         "spatie/commonmark-highlighter": "^2.0",
         "spatie/laravel-backup": "^6.11",
         "spatie/laravel-feed": "^2.6",
@@ -63,9 +66,7 @@
         "spatie/nova-backup-tool": "^4.0",
         "spatie/nova-tags-field": "^3.0.2",
         "spatie/nova-tail-tool": "^3.0",
-        "stripe/stripe-php": "^7.52",
-        "ext-dom": "*",
-        "ext-libxml": "*"
+        "stripe/stripe-php": "^7.52"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",

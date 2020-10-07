@@ -2,8 +2,10 @@
 
 namespace App\Actions;
 
+use App\Jobs\CreatePostOgImageJob;
 use App\Jobs\SendPostTweetJob;
 use App\Models\Post;
+use Illuminate\Support\Facades\Bus;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class PublishPostAction
@@ -37,7 +39,10 @@ class PublishPostAction
             return;
         }
 
-        dispatch(new SendPostTweetJob($post));
+        Bus::chain([
+            new CreatePostOgImageJob($post),
+            new SendPostTweetJob($post),
+        ])->dispatch();
 
         $post->tweet_sent = true;
 

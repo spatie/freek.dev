@@ -17,13 +17,14 @@ use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
-use Spatie\ResponseCache\Facades\ResponseCache;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
-class Post extends Model implements Feedable, Sluggable
+class Post extends Model implements Feedable, Sluggable, HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     public const TYPE_LINK = 'link';
     public const TYPE_TWEET = 'tweet';
@@ -51,13 +52,15 @@ class Post extends Model implements Feedable, Sluggable
         });
 
         static::saved(function (Post $post) {
-            ResponseCache::clear();
-
             if ($post->published) {
                 static::withoutEvents(function () use ($post) {
                     (new PublishPostAction())->execute($post);
                 });
+
+                return;
             }
+
+            //dispatch()
         });
     }
 
@@ -236,6 +239,13 @@ class Post extends Model implements Feedable, Sluggable
         }
 
         return static::TYPE_LINK;
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('ogImage')
+            ->singleFile();
     }
 
     public function getSluggableValue(): string
