@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Actions\PublishPostAction;
 use App\Http\Controllers\PostController;
+use App\Jobs\CreatePostOgImageJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
@@ -13,12 +14,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\ResponseCache\Facades\ResponseCache;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
@@ -60,7 +63,10 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
                 return;
             }
 
-            //dispatch()
+            Bus::chain([
+                new CreatePostOgImageJob($post),
+                fn () => ResponseCache::clear(),
+            ])->dispatch();
         });
     }
 

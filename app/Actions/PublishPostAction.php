@@ -20,32 +20,10 @@ class PublishPostAction
 
         $post->save();
 
-        $this->sendTweet($post);
-
-        ResponseCache::clear();
-    }
-
-    protected function sendTweet(Post $post)
-    {
-        if (! $post->send_automated_tweet) {
-            return;
-        }
-
-        if ($post->tweet_sent) {
-            return;
-        }
-
-        if ($post->isTweet()) {
-            return;
-        }
-
         Bus::chain([
             new CreatePostOgImageJob($post),
             new SendPostTweetJob($post),
+            fn () => ResponseCache::clear(),
         ])->dispatch();
-
-        $post->tweet_sent = true;
-
-        $post->save();
     }
 }
