@@ -9,7 +9,6 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Spatie\Browsershot\Browsershot;
-use Spatie\ResponseCache\Facades\ResponseCache;
 
 class CreateOgImageJob implements ShouldQueue
 {
@@ -24,15 +23,14 @@ class CreateOgImageJob implements ShouldQueue
 
     public function handle()
     {
-        $base64Image = Browsershot::url(route('post.ogImage', $this->post))
+        $base64Image = Browsershot::url(route('post', $this->post))
             ->windowSize(1200, 630)
-            ->screenshot();
+            ->base64Screenshot();
 
-        $this->post
+        $this
+            ->post
             ->addMediaFromBase64($base64Image)
             ->usingFileName("{$this->post->id}.png")
             ->toMediaCollection('ogImage');
-
-        ResponseCache::clear();
     }
 }

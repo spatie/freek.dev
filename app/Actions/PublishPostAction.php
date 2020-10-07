@@ -3,7 +3,7 @@
 namespace App\Actions;
 
 use App\Jobs\CreateOgImageJob;
-use App\Jobs\TweetPost;
+use App\Jobs\TweetPostJob;
 use App\Models\Post;
 use Illuminate\Support\Facades\Bus;
 use Spatie\ResponseCache\Facades\ResponseCache;
@@ -23,7 +23,7 @@ class PublishPostAction
         Bus::chain([
             new CreateOgImageJob($post),
             fn () => ResponseCache::clear(),
-            new TweetPost($post),
+            new TweetPostJob($post),
         ])->dispatch();
     }
 }
