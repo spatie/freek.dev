@@ -286,6 +286,6 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             return $this->external_url;
         }
 
-        return route('post.ogImage', $this);
+        return route('post.ogImage', $this) . "?preview_secret={$this->preview_secret}";
     }
 }
