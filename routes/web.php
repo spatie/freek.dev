@@ -8,6 +8,7 @@ use App\Http\Controllers\NewsletterSubscriptionController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostOgImageController;
 use App\Http\Controllers\SpeakingController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
@@ -60,5 +61,5 @@ Route::redirect('/uses', '/1485-my-current-setup-2019-edition');
 Route::view('legal', 'front.legal.index');
 
 
-
-Route::get('{postSlug}', PostController::class);
+Route::get('{post}/og-image', PostOgImageController::class)->name('post.ogImage');
+Route::get('{postSlug}', PostController::class)->name('post');

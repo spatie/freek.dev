@@ -1,5 +1,5 @@
 <x-app-layout :title="$post->title">
-    <x-ad />
+    <x-ad/>
 
     <x-post-header :post="$post" class="mb-8">
         {!! $post->formatted_text !!}
@@ -25,19 +25,20 @@
 
     <x-slot name="seo">
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
-        <meta property="og:description" content="{{ $post->excerpt }}"/>
+        <meta property="og:description" content="{{ $post->plain_text_excerpt }}"/>
+        <meta name="og:image" content="{{ $post->getFirstMediaUrl('ogImage') }}"/>
 
         @foreach($post->tags as $tag)
             <meta property="article:tag" content="{{ $tag->name }}"/>
         @endforeach
+
         <meta property="article:published_time" content="{{ optional($post->publish_date)->toIso8601String() }}"/>
         <meta property="og:updated_time" content="{{ $post->updated_at->toIso8601String() }}"/>
-
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:description" content="{{ $post->excerpt }}"/>
+        <meta name="twitter:description" content="{{ $post->plain_text_excerpt }}"/>
         <meta name="twitter:title" content="{{ $post->title }} | freek.dev"/>
         <meta name="twitter:site" content="@freekmurze"/>
-        <meta name="twitter:image" content="https://freek.dev/images/avatar-boxed.jpg"/>
+        <meta name="twitter:image" content="{{ $post->getFirstMediaUrl('ogImage') }}"/>
         <meta name="twitter:creator" content="@freekmurze"/>
     </x-slot>
 </x-app-layout>

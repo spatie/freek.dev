@@ -9,8 +9,8 @@ class PostSeeder extends Seeder
 {
     public function run()
     {
-        (new PostFactory(100))->tweet()->create();
-        (new PostFactory(100))->original()->create();
-        (new PostFactory(100))->link()->create();
+        (new PostFactory(2))->tweet()->create();
+        (new PostFactory(2))->original()->create();
+        (new PostFactory(2))->link()->create();
     }
 }

@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class SendPostTweetJob implements ShouldQueue
+class TweetPostJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -23,6 +23,18 @@ class SendPostTweetJob implements ShouldQueue
 
     public function handle(Twitter $twitter)
     {
+        if (! $this->post->send_automated_tweet) {
+            return;
+        }
+
+        if ($this->post->tweet_sent) {
+            return;
+        }
+
+        if ($this->post->isTweet()) {
+            return;
+        }
+
         $tweetText = $this->post->toTweet();
 
         $tweetResponse = $twitter->tweet($tweetText);
@@ -30,5 +42,7 @@ class SendPostTweetJob implements ShouldQueue
         $tweetUrl = "https://twitter.com/freekmurze/status/{$tweetResponse['id_str']}";
 
         $this->post->onAfterTweet($tweetUrl);
+
+        $this->post->update(['tweet_sent' => true]);
     }
 }

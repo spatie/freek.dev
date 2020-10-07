@@ -54,7 +54,12 @@ class PostFactory
 
             if ($this->type === Post::TYPE_LINK) {
                 $post->original_content = false;
-                $post->external_url = $this->faker()->url;
+                $post->external_url = $this->faker()->randomElement([
+                    'https://spatie.be',
+                    'https://laravel.com',
+                    'https://ohdear.app',
+                    'https://flareapp.io',
+                ]);
                 $post->title = $this->faker()->sentence;
             }
 

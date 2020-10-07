@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Support\Str;
 
+/** @mixin Post */
 trait PostPresenter
 {
     public function getExcerptAttribute(): string
@@ -21,6 +22,11 @@ trait PostPresenter
         $excerpt = CommonMark::convertToHtml($excerpt, false);
 
         return trim($excerpt);
+    }
+
+    public function getPlainTextExcerptAttribute(): string
+    {
+        return strip_tags($this->excerpt);
     }
 
     public function getNewsletterExcerptAttribute(): string
@@ -134,6 +140,25 @@ trait PostPresenter
         }
 
         return '#cbd5e0';
+    }
+
+    public function getGradientColorsAttribute(): string
+    {
+        $tagNames = $this->tags->pluck('name');
+
+        if ($tagNames->contains('laravel')) {
+            return 'from-red-400 to-red-900';
+        }
+
+        if ($tagNames->contains('php')) {
+            return 'from-blue-500 to-blue-900';
+        }
+
+        if ($tagNames->contains('javascript')) {
+            return 'from-yellow-400 to-yellow-900';
+        }
+
+        return 'from-gray-400 to-gray-900';
     }
 
     public function getReadingTimeAttribute(): int

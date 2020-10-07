@@ -2,8 +2,10 @@
 
 namespace App\Actions;
 
-use App\Jobs\SendPostTweetJob;
+use App\Jobs\CreateOgImageJob;
+use App\Jobs\TweetPostJob;
 use App\Models\Post;
+use Illuminate\Support\Facades\Bus;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class PublishPostAction
@@ -18,29 +20,10 @@ class PublishPostAction
 
         $post->save();
 
-        $this->sendTweet($post);
-
-        ResponseCache::clear();
-    }
-
-    protected function sendTweet(Post $post)
-    {
-        if (! $post->send_automated_tweet) {
-            return;
-        }
-
-        if ($post->tweet_sent) {
-            return;
-        }
-
-        if ($post->isTweet()) {
-            return;
-        }
-
-        dispatch(new SendPostTweetJob($post));
-
-        $post->tweet_sent = true;
-
-        $post->save();
+        Bus::chain([
+            new CreateOgImageJob($post),
+            fn () => ResponseCache::clear(),
+            new TweetPostJob($post),
+        ])->dispatch();
     }
 }

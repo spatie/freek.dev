@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Actions\PublishPostAction;
 use App\Http\Controllers\PostController;
+use App\Jobs\CreateOgImageJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
@@ -13,17 +14,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\ResponseCache\Facades\ResponseCache;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
-class Post extends Model implements Feedable, Sluggable
+class Post extends Model implements Feedable, Sluggable, HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     public const TYPE_LINK = 'link';
     public const TYPE_TWEET = 'tweet';
@@ -51,13 +55,18 @@ class Post extends Model implements Feedable, Sluggable
         });
 
         static::saved(function (Post $post) {
-            ResponseCache::clear();
-
             if ($post->published) {
                 static::withoutEvents(function () use ($post) {
                     (new PublishPostAction())->execute($post);
                 });
+
+                return;
             }
+
+            Bus::chain([
+                new CreateOgImageJob($post),
+                fn () => ResponseCache::clear(),
+            ])->dispatch();
         });
     }
 
@@ -238,6 +247,13 @@ class Post extends Model implements Feedable, Sluggable
         return static::TYPE_LINK;
     }
 
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('ogImage')
+            ->singleFile();
+    }
+
     public function getSluggableValue(): string
     {
         return $this->title;
@@ -262,5 +278,14 @@ class Post extends Model implements Feedable, Sluggable
         $this->tweet_url = $tweetUrl;
 
         $this->save();
+    }
+
+    public function ogImageBaseUrl(): string
+    {
+        if ($this->external_url) {
+            return $this->external_url;
+        }
+
+        return route('post.ogImage', $this) . "?preview_secret={$this->preview_secret}";
     }
 }
