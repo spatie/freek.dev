@@ -3066,16 +3066,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.40.1",
+            "version": "2.41.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d9a76d8b7eb0f97cf3a82529393245212f40ba3b"
+                "reference": "8690b13ad4da6d54d692afea15aab30b36fee52e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d9a76d8b7eb0f97cf3a82529393245212f40ba3b",
-                "reference": "d9a76d8b7eb0f97cf3a82529393245212f40ba3b",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8690b13ad4da6d54d692afea15aab30b36fee52e",
+                "reference": "8690b13ad4da6d54d692afea15aab30b36fee52e",
                 "shasum": ""
             },
             "require": {
@@ -3151,7 +3151,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-23T08:17:37+00:00"
+            "time": "2020-10-04T09:11:05+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -5038,17 +5038,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "3.1.1",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "2a3a0e0b60569337c97b2d64756ccad8d33f2021"
+                "reference": "6eae11270f8c11c66b4e173787a686a05c4a5ee5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-2a3a0e0b60569337c97b2d64756ccad8d33f2021-zip-ba40ab.zip",
-                "reference": "2a3a0e0b60569337c97b2d64756ccad8d33f2021",
-                "shasum": "195f83460637b01390d624a1e14346c90b16a9b5"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-6eae11270f8c11c66b4e173787a686a05c4a5ee5-zip-5c6459.zip",
+                "reference": "6eae11270f8c11c66b4e173787a686a05c4a5ee5",
+                "shasum": "2618fa09de9e4da08bb503b470a8d69463a1996e"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5151,10 +5151,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/3.1.1",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/3.2.0",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2020-10-04T18:55:40+00:00"
+            "time": "2020-10-05T13:44:48+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -5606,16 +5606,16 @@
         },
         {
             "name": "spatie/laravel-query-builder",
-            "version": "3.2.4",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-query-builder.git",
-                "reference": "203d86d90eda880b8e3d55d9247ceff6512c2b94"
+                "reference": "873575ec81f1d5f9cc7591fc3a559310de93ed62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/203d86d90eda880b8e3d55d9247ceff6512c2b94",
-                "reference": "203d86d90eda880b8e3d55d9247ceff6512c2b94",
+                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/873575ec81f1d5f9cc7591fc3a559310de93ed62",
+                "reference": "873575ec81f1d5f9cc7591fc3a559310de93ed62",
                 "shasum": ""
             },
             "require": {
@@ -5668,7 +5668,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-10-01T13:52:50+00:00"
+            "time": "2020-10-05T19:08:39+00:00"
         },
         {
             "name": "spatie/laravel-rate-limited-job-middleware",
@@ -6794,16 +6794,16 @@
         },
         {
             "name": "spatie/simple-excel",
-            "version": "1.7.1",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/simple-excel.git",
-                "reference": "eeb9d3eed7c301130fe6b18a1e6db54c1eab51df"
+                "reference": "8be864d06c24e47352f9f1203d53ba3297f59b11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/eeb9d3eed7c301130fe6b18a1e6db54c1eab51df",
-                "reference": "eeb9d3eed7c301130fe6b18a1e6db54c1eab51df",
+                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/8be864d06c24e47352f9f1203d53ba3297f59b11",
+                "reference": "8be864d06c24e47352f9f1203d53ba3297f59b11",
                 "shasum": ""
             },
             "require": {
@@ -6847,7 +6847,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-08T21:15:45+00:00"
+            "time": "2020-10-04T19:04:17+00:00"
         },
         {
             "name": "spatie/ssh",
@@ -9406,16 +9406,16 @@
         },
         {
             "name": "symfony/translation-contracts",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "77ce1c3627c9f39643acd9af086631f842c50c4d"
+                "reference": "e2eaa60b558f26a4b0354e1bbb25636efaaad105"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/77ce1c3627c9f39643acd9af086631f842c50c4d",
-                "reference": "77ce1c3627c9f39643acd9af086631f842c50c4d",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/e2eaa60b558f26a4b0354e1bbb25636efaaad105",
+                "reference": "e2eaa60b558f26a4b0354e1bbb25636efaaad105",
                 "shasum": ""
             },
             "require": {
@@ -9427,7 +9427,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -9477,7 +9477,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-07T11:33:47+00:00"
+            "time": "2020-09-28T13:05:58+00:00"
         },
         {
             "name": "symfony/var-dumper",

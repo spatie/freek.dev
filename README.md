@@ -1,14 +1,4 @@
-# The source code of https://freek.dev
-
-This repo contains the source code of my Laravel powered blog at [https://freek.dev](https://freek.dev). I've written a blogpost on some of its internal details [here](https://murze.be/on-migrating-my-blog-from-wordpress-to-a-laravel-application).
-
-You are free to fork this code and use it for your own blog. Don't reuse my design though, please use your own css. Keep in mind that this code is tailormade for me and it does not aim to be a generic blog solution. 
-
-## Support us
-
-Learn how to create packages, watch our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
+[![Image](https://github-ads.s3.eu-central-1.amazonaws.com/freekdev.jpg)](https://spatie.be/github-ad-click/freek.dev)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
