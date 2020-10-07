@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Post;
+use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -27,14 +28,19 @@ class CreateOgImageJob implements ShouldQueue
             return;
         }
 
-        $base64Image = Browsershot::url($this->post->ogImageBaseUrl())
-            ->windowSize(1200, 630)
-            ->base64Screenshot();
+        try {
+            $base64Image = Browsershot::url($this->post->ogImageBaseUrl())
+                ->devicePixelRatio(2)
+                ->windowSize(1200, 630)
+                ->base64Screenshot();
 
-        $this
-            ->post
-            ->addMediaFromBase64($base64Image)
-            ->usingFileName("{$this->post->id}.png")
-            ->toMediaCollection('ogImage');
+            $this
+                ->post
+                ->addMediaFromBase64($base64Image)
+                ->usingFileName("{$this->post->id}.png")
+                ->toMediaCollection('ogImage');
+        } catch (Exception $exception) {
+            report($exception);
+        }
     }
 }
