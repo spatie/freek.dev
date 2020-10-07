@@ -48,6 +48,11 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'og-images' => [
+            'driver' => 'local',
+            'root' => public_path('og-images'),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

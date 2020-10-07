@@ -251,6 +251,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
     {
         $this
             ->addMediaCollection('ogImage')
+            ->useDisk('og-images')
             ->singleFile();
     }
 
