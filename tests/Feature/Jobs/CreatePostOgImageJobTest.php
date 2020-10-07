@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Jobs;
 
-use App\Jobs\CreatePostOgImageJob;
+use App\Jobs\CreateOgImageJob;
 use App\Models\Post;
 use Tests\TestCase;
 
@@ -15,6 +15,6 @@ class CreatePostOgImageJobTest extends TestCase
             'published' => true,
         ]);
 
-        dispatch_now(new CreatePostOgImageJob($post));
+        dispatch_now(new CreateOgImageJob($post));
     }
 }

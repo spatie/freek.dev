@@ -2,8 +2,8 @@
 
 namespace App\Actions;
 
-use App\Jobs\CreatePostOgImageJob;
-use App\Jobs\SendPostTweetJob;
+use App\Jobs\CreateOgImageJob;
+use App\Jobs\TweetPost;
 use App\Models\Post;
 use Illuminate\Support\Facades\Bus;
 use Spatie\ResponseCache\Facades\ResponseCache;
@@ -21,9 +21,9 @@ class PublishPostAction
         $post->save();
 
         Bus::chain([
-            new CreatePostOgImageJob($post),
-            new SendPostTweetJob($post),
+            new CreateOgImageJob($post),
             fn () => ResponseCache::clear(),
+            new TweetPost($post),
         ])->dispatch();
     }
 }

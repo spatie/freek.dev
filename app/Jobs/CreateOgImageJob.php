@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 use Spatie\Browsershot\Browsershot;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
-class CreatePostOgImageJob implements ShouldQueue
+class CreateOgImageJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 

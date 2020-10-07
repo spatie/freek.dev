@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db67ac4e26b44f96fed95cca0f7d301b",
+    "content-hash": "9c16e79281466d2eedfe258cd38cd112",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -4438,16 +4438,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.39.0",
+            "version": "3.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "572968978e5e07513f44819b0e744403c13fa1a1"
+                "reference": "0aa3a683448efe9c7f2d34fee80dec62bafd6c90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/572968978e5e07513f44819b0e744403c13fa1a1",
-                "reference": "572968978e5e07513f44819b0e744403c13fa1a1",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/0aa3a683448efe9c7f2d34fee80dec62bafd6c90",
+                "reference": "0aa3a683448efe9c7f2d34fee80dec62bafd6c90",
                 "shasum": ""
             },
             "require": {
@@ -4496,7 +4496,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-24T08:59:01+00:00"
+            "time": "2020-10-07T20:56:21+00:00"
         },
         {
             "name": "spatie/commonmark-highlighter",

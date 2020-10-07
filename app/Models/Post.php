@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Actions\PublishPostAction;
 use App\Http\Controllers\PostController;
-use App\Jobs\CreatePostOgImageJob;
+use App\Jobs\CreateOgImageJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
@@ -64,7 +64,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             }
 
             Bus::chain([
-                new CreatePostOgImageJob($post),
+                new CreateOgImageJob($post),
                 fn () => ResponseCache::clear(),
             ])->dispatch();
         });
