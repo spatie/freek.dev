@@ -50,7 +50,8 @@ return [
 
         'og-images' => [
             'driver' => 'local',
-            'root' => public_path('og-images'),
+            'root' => storage_path('og-images'),
+            'url' => '/og-images',
         ],
 
         'public' => [

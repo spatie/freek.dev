@@ -103,6 +103,11 @@ rm -rf {{ $newReleaseDir }}/public/uploads;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/uploads public/uploads;
 
+# Symlink the og images to the public directory
+rm -rf {{ $newReleaseDir }}/public/og-images;
+cd {{ $newReleaseDir }};
+ln -nfs {{ $baseDir }}/persistent/storage/og-images {{ $newReleaseDir }}/public/og-images;
+
 # Import the environment config
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/.env .env;
@@ -111,6 +116,8 @@ ln -nfs {{ $baseDir }}/.env .env;
 cd {{ $baseDir }}/persistent/fonts
 git pull origin master
 ln -nfs {{ $baseDir }}/persistent/fonts {{ $newReleaseDir }}/public/fonts;
+
+
 
 @endtask
 
