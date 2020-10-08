@@ -46,6 +46,17 @@ module.exports = {
             lineHeight: {
                 relaxed: 1.75,
             },
+            spacing: {
+                7: '1.75rem',
+            },
+            borderRadius: {
+                xl: '12px',
+                '2xl': '16px',
+                '3xl': '24px',
+            },
+            rotate: {
+                '-5': '-5deg',
+            },
         },
     },
     variants: {
