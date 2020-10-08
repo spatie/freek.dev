@@ -14,9 +14,13 @@ class GenerateOgImagesForExistingPosts extends Command
 
     public function handle()
     {
-        Post::orderByDesc('created_at')->where('original_content', true)->take(10)->each(function (Post $post) {
-            dispatch(new CreateOgImageJob($post));
-        });
+        Post::orderByDesc('created_at')
+            ->where('original_content', true)
+            ->take(1)
+            ->get()
+            ->each(function (Post $post) {
+                dispatch(new CreateOgImageJob($post));
+            });
 
         $this->info('All done!');
     }

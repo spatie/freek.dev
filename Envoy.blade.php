@@ -116,9 +116,6 @@ ln -nfs {{ $baseDir }}/.env .env;
 cd {{ $baseDir }}/persistent/fonts
 git pull origin master
 ln -nfs {{ $baseDir }}/persistent/fonts {{ $newReleaseDir }}/public/fonts;
-
-
-
 @endtask
 
 @task('optimizeInstallation', ['on' => 'remote'])

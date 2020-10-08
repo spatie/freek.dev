@@ -26,7 +26,7 @@
     <x-slot name="seo">
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
         <meta property="og:description" content="{{ $post->plain_text_excerpt }}"/>
-        <meta name="og:image" content="{{ $post->getFirstMediaUrl('ogImage') }}"/>
+        <meta name="og:image" content="{{ url($post->getFirstMediaUrl('ogImage')) }}"/>
 
         @foreach($post->tags as $tag)
             <meta property="article:tag" content="{{ $tag->name }}"/>
@@ -38,7 +38,7 @@
         <meta name="twitter:description" content="{{ $post->plain_text_excerpt }}"/>
         <meta name="twitter:title" content="{{ $post->title }} | freek.dev"/>
         <meta name="twitter:site" content="@freekmurze"/>
-        <meta name="twitter:image" content="{{ $post->getFirstMediaUrl('ogImage') }}"/>
+        <meta name="twitter:image" content="{{ url($post->getFirstMediaUrl('ogImage')) }}"/>
         <meta name="twitter:creator" content="@freekmurze"/>
     </x-slot>
 </x-app-layout>
