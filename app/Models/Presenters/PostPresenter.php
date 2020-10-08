@@ -147,18 +147,18 @@ trait PostPresenter
         $tagNames = $this->tags->pluck('name');
 
         if ($tagNames->contains('laravel')) {
-            return 'from-red-400 to-red-900';
+            return 'from-red-400 to-red-700';
         }
 
         if ($tagNames->contains('php')) {
-            return 'from-blue-500 to-blue-900';
+            return 'from-blue-500 to-blue-800';
         }
 
         if ($tagNames->contains('javascript')) {
-            return 'from-yellow-400 to-yellow-900';
+            return 'from-yellow-400 to-orange-500';
         }
 
-        return 'from-gray-400 to-gray-900';
+        return 'from-gray-400 to-gray-700';
     }
 
     public function getReadingTimeAttribute(): int
