@@ -5,6 +5,18 @@ module.exports = {
     },
     purge: {
         content: ['./resources/**/*.blade.php'],
+        options: {
+            whitelist: [
+                'from-red-400',
+                'to-red-700',
+                'from-blue-500',
+                'to-blue-800',
+                'from-yellow-400',
+                'to-orange-500',
+                'from-gray-400',
+                'to-gray-700'
+            ],
+        }
     },
     plugins: [require('@tailwindcss/custom-forms')],
     theme: {
