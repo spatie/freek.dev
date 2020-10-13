@@ -84,4 +84,20 @@ class PostTest extends TestCase
 
         dd($posts->first()->formatted_text);
     }
+
+    /** @test */
+    public function it_can_render_a_series_toc_on_post_with_an_intro()
+    {
+        $posts = PostFactory::series(10);
+
+        dd($posts->first()->formatted_text);
+    }
+
+    /** @test */
+    public function it_can_render_a_series_toc_on_post_without_an_intro()
+    {
+        $posts = PostFactory::series(10);
+
+        dd($posts->find(10)->formatted_text);
+    }
 }
