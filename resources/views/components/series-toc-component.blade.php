@@ -3,7 +3,7 @@
         <div class="pb-4">
             This post is a part of a series where we explore the source code of <a
                 href="https://spatie.be">spatie.be</a> which
-            you&#39;ll find in <a href="https://github.com/spatie.be">this repo on GitHub</a>
+            you&#39;ll find in <a href="https://github.com/spatie/spatie.be">this repo on GitHub</a>
         </div>
         @foreach($allPostsInSeries as $post)
             <ul class="list-none">

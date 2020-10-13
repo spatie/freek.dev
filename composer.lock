@@ -1919,16 +1919,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.9.0",
+            "version": "v8.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "8a6bf870bcfa1597e514a9c7ee6df44db98abb54"
+                "reference": "0c80950806cd1bc6d9a7068585a12c2bfa23bdf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/8a6bf870bcfa1597e514a9c7ee6df44db98abb54",
-                "reference": "8a6bf870bcfa1597e514a9c7ee6df44db98abb54",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0c80950806cd1bc6d9a7068585a12c2bfa23bdf3",
+                "reference": "0c80950806cd1bc6d9a7068585a12c2bfa23bdf3",
                 "shasum": ""
             },
             "require": {
@@ -2078,7 +2078,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-10-06T14:22:36+00:00"
+            "time": "2020-10-13T14:20:53+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -6929,17 +6929,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "3.2.2",
+            "version": "3.2.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "e4da0dfe388058d9048d78fcbc4100b690517340"
+                "reference": "7ca93a1d063eee1e2b57535e1af22266feade03f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-e4da0dfe388058d9048d78fcbc4100b690517340-zip-5f7943.zip",
-                "reference": "e4da0dfe388058d9048d78fcbc4100b690517340",
-                "shasum": "a606c413595481b88206fbdf21bc4d81b2ff8ef7"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-7ca93a1d063eee1e2b57535e1af22266feade03f-zip-b5c012.zip",
+                "reference": "7ca93a1d063eee1e2b57535e1af22266feade03f",
+                "shasum": "a6a9184ee1728db88b7853e799453ba81fac0a40"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -7041,10 +7041,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/3.2.2",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/3.2.3",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2020-10-10T13:47:17+00:00"
+            "time": "2020-10-13T12:51:14+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -12468,16 +12468,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.10.14",
+            "version": "1.10.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "bf81c86045d1c3588043827c015b1557cc5ee363"
+                "reference": "547c9ee73fe26c77af09a0ea16419176b1cdbd12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/bf81c86045d1c3588043827c015b1557cc5ee363",
-                "reference": "bf81c86045d1c3588043827c015b1557cc5ee363",
+                "url": "https://api.github.com/repos/composer/composer/zipball/547c9ee73fe26c77af09a0ea16419176b1cdbd12",
+                "reference": "547c9ee73fe26c77af09a0ea16419176b1cdbd12",
                 "shasum": ""
             },
             "require": {
@@ -12558,7 +12558,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-13T12:44:51+00:00"
+            "time": "2020-10-13T13:59:09+00:00"
         },
         {
             "name": "composer/semver",
