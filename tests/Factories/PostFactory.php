@@ -110,6 +110,12 @@ class PostFactory
 
         foreach ($posts as $i => $post) {
             $post->update(['title' => "Series title part {$i}: Lorem ipsum"]);
+
+            if ($i === 0) {
+                $firstSentence = "On [our Laravel powered company website](https://spatie.be) we sell digital products. ";
+
+                $post->update(['text' => "{$firstSentence}{$post->text}"]);
+            }
         }
 
         return $posts;

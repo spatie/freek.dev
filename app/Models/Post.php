@@ -111,7 +111,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             $text = str_replace(
                 ['[spatie-series-toc]', '[series-toc]'],
                 (new SeriesTocComponent($this))->render(),
-                "<div>" . $this->text . "</div>"
+                $this->text
             );
 
             $text = str_replace(
