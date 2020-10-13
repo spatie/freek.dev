@@ -12,5 +12,7 @@ class PostSeeder extends Seeder
         (new PostFactory(2))->tweet()->create();
         (new PostFactory(2))->original()->create();
         (new PostFactory(2))->link()->create();
+
+        PostFactory::series(10);
     }
 }

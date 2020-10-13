@@ -175,4 +175,11 @@ trait PostPresenter
     {
         return parse_url($this->external_url)['host'] ?? '';
     }
+
+    public function getSeriesTocTitleAttribute(): string
+    {
+        $titleAfterPart = Str::after($this->title, 'part');
+
+        return "Part{$titleAfterPart}";
+    }
 }

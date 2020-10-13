@@ -9,11 +9,14 @@ use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
 use App\Services\CommonMark\CommonMark;
+use App\View\Components\SeriesNextPostComponent;
+use App\View\Components\SeriesTocComponent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
@@ -102,14 +105,28 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
 
     public function getFormattedTextAttribute()
     {
-        //$highlightCode = ($this->id === 1609) ? false : true;
+        $text = $this->text;
 
-        return CommonMark::convertToHtml($this->text, $highlightCode = true);
+        if ($this->isPartOfSeries()) {
+            $text = str_replace(
+                ['[spatie-series-toc]', '[series-toc]'],
+                (new SeriesTocComponent($this))->render(),
+                "<div>" . $this->text . "</div>"
+            );
+
+            $text = str_replace(
+                ['[spatie-series-next-post]', '[series-next-post]'],
+                (new SeriesNextPostComponent($this))->render(),
+                $text
+            );
+        }
+
+        return CommonMark::convertToHtml($text, $highlightCode = true);
     }
 
     public function getFormattedTextWithExternalUrlAttribute()
     {
-        $text = $this->text;
+        $text = $this->formatted_text;
 
         if (! $this->isTweet() && $this->external_url) {
             $text .= PHP_EOL . PHP_EOL . "[Read More]({$this->external_url})";
@@ -288,5 +305,22 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         }
 
         return route('post.ogImage', $this) . "?preview_secret={$this->preview_secret}";
+    }
+
+    public function isPartOfSeries()
+    {
+        return ! empty($this->series_slug);
+    }
+
+    public function getAllPostsInSeries(): Collection
+    {
+        if (! $this->isPartOfSeries()) {
+            return collect();
+        }
+
+        return Post::query()
+            ->where('series_slug', $this->series_slug)
+            ->orderBy('id')
+            ->get();
     }
 }

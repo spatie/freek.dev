@@ -2,6 +2,8 @@
     <x-ad/>
 
     <x-post-header :post="$post" class="mb-8">
+
+
         {!! $post->formatted_text !!}
 
         @unless($post->isTweet())

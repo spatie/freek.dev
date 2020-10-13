@@ -4,6 +4,7 @@ namespace Tests\Feature\Models;
 
 use App\Http\Controllers\PostController;
 use App\Models\Post;
+use Tests\Factories\PostFactory;
 use Tests\TestCase;
 
 class PostTest extends TestCase
@@ -74,5 +75,13 @@ class PostTest extends TestCase
         $this
             ->get(action(PostController::class, $post->idSlug()) . "?preview_secret=wrong-secret")
             ->assertNotFound();
+    }
+
+    /** @test */
+    public function it_can_render_a_series_toc()
+    {
+        $posts = PostFactory::series(10);
+
+        dd($posts->first()->formatted_text);
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Post;
 use Faker\Factory;
 use Faker\Generator;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 
 class PostFactory
 {
@@ -95,5 +96,22 @@ class PostFactory
     protected function getStub(string $stubName): string
     {
         return file_get_contents(__DIR__ . "/stubs/{$stubName}.md");
+    }
+
+    public static function series(int $count): Collection
+    {
+        $posts = Post::factory()->count($count)->create([
+            'title' => 'Test post',
+            'original_content' => true,
+            'published' => true,
+            'series_slug' => 'test-series',
+            'text' => '[series-toc] This is the blog post [series-next-post]',
+        ]);
+
+        foreach ($posts as $i => $post) {
+            $post->update(['title' => "Series title part {$i}: Lorem ipsum"]);
+        }
+
+        return $posts;
     }
 }
