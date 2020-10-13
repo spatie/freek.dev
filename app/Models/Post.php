@@ -109,13 +109,13 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
 
         if ($this->isPartOfSeries()) {
             $text = str_replace(
-                ['[spatie-series-toc]', '[series-toc]'],
+                '[series-toc]',
                 (new SeriesTocComponent($this))->render() . PHP_EOL,
                 $this->text
             );
 
             $text = str_replace(
-                ['[spatie-series-next-post]', '[series-next-post]'],
+                '[series-next-post]',
                 (new SeriesNextPostComponent($this))->render(),
                 $text
             );

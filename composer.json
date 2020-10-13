@@ -66,6 +66,7 @@
         "spatie/nova-backup-tool": "^4.0",
         "spatie/nova-tags-field": "^3.0.2",
         "spatie/nova-tail-tool": "^3.0",
+        "spatie/phpunit-snapshot-assertions": "^4.2",
         "stripe/stripe-php": "^7.52"
     },
     "require-dev": {

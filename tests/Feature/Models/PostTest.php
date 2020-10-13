@@ -4,11 +4,14 @@ namespace Tests\Feature\Models;
 
 use App\Http\Controllers\PostController;
 use App\Models\Post;
+use Spatie\Snapshots\MatchesSnapshots;
 use Tests\Factories\PostFactory;
 use Tests\TestCase;
 
 class PostTest extends TestCase
 {
+    use MatchesSnapshots;
+
     private Post $post;
 
     protected function setUp(): void
@@ -78,26 +81,10 @@ class PostTest extends TestCase
     }
 
     /** @test */
-    public function it_can_render_a_series_toc()
+    public function it_can_render_a_series_toc_and_next_link_on_post()
     {
         $posts = PostFactory::series(10);
 
-        dd($posts->first()->formatted_text);
-    }
-
-    /** @test */
-    public function it_can_render_a_series_toc_on_post_with_an_intro()
-    {
-        $posts = PostFactory::series(10);
-
-        dd($posts->first()->formatted_text);
-    }
-
-    /** @test */
-    public function it_can_render_a_series_toc_on_post_without_an_intro()
-    {
-        $posts = PostFactory::series(10);
-
-        dd($posts->find(10)->formatted_text);
+        $this->assertMatchesHtmlSnapshot($posts->first()->formatted_text);
     }
 }
