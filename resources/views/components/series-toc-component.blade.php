@@ -9,7 +9,7 @@
             <ul class="list-none">
                 <li>
                     @if ($post->id === $currentPost->id)
-                        {{ $post->series_toc_title }} <span class="italic font-semibold">(you are here)
+                        {{ $post->series_toc_title }} <span class="font-italic font-light">(you are here)
                     @else
                         <a href="{{ route('post', $post->slug) }}">{{ $post->series_toc_title }}</a>
                     @endif
