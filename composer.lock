@@ -1222,16 +1222,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.3.8",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "e8fed9c382cd1d02b5606688576a35619afdf82c"
+                "reference": "b1b76bc6c169c07a180a045a158a34c3f21c9502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/e8fed9c382cd1d02b5606688576a35619afdf82c",
-                "reference": "e8fed9c382cd1d02b5606688576a35619afdf82c",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/b1b76bc6c169c07a180a045a158a34c3f21c9502",
+                "reference": "b1b76bc6c169c07a180a045a158a34c3f21c9502",
                 "shasum": ""
             },
             "require": {
@@ -1290,7 +1290,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2020-10-01T23:01:14+00:00"
+            "time": "2020-10-14T08:44:28+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -7693,29 +7693,30 @@
         },
         {
             "name": "spatie/laravel-schedule-monitor",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-schedule-monitor.git",
-                "reference": "4ffdaea81b5c27a119b6cbac8f4894657b8fd6d9"
+                "reference": "40964a420d0207780beb9f0667f9ce5d9c25d82a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-schedule-monitor/zipball/4ffdaea81b5c27a119b6cbac8f4894657b8fd6d9",
-                "reference": "4ffdaea81b5c27a119b6cbac8f4894657b8fd6d9",
+                "url": "https://api.github.com/repos/spatie/laravel-schedule-monitor/zipball/40964a420d0207780beb9f0667f9ce5d9c25d82a",
+                "reference": "40964a420d0207780beb9f0667f9ce5d9c25d82a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/bus": "^7.19|^8.0",
+                "illuminate/bus": "^8.0",
                 "lorisleiva/cron-translator": "^0.1.1",
+                "nesbot/carbon": "^2.41.3",
                 "php": "^7.4"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.16",
                 "laravel/legacy-factories": "^1.0.4",
                 "ohdearapp/ohdear-php-sdk": "^3.0",
-                "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^9.0",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.3",
                 "spatie/phpunit-snapshot-assertions": "^4.2",
                 "spatie/test-time": "^1.2",
                 "vimeo/psalm": "^3.11"
@@ -7760,7 +7761,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-06T10:38:45+00:00"
+            "time": "2020-10-14T07:24:48+00:00"
         },
         {
             "name": "spatie/laravel-schemaless-attributes",
@@ -13294,23 +13295,23 @@
         },
         {
             "name": "php-cs-fixer/diff",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/diff.git",
-                "reference": "78bb099e9c16361126c86ce82ec4405ebab8e756"
+                "reference": "dbd31aeb251639ac0b9e7e29405c1441907f5759"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/diff/zipball/78bb099e9c16361126c86ce82ec4405ebab8e756",
-                "reference": "78bb099e9c16361126c86ce82ec4405ebab8e756",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/diff/zipball/dbd31aeb251639ac0b9e7e29405c1441907f5759",
+                "reference": "dbd31aeb251639ac0b9e7e29405c1441907f5759",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0"
+                "php": "^5.6 || ^7.0 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3 || ^7.0",
                 "symfony/process": "^3.3"
             },
             "type": "library",
@@ -13325,12 +13326,12 @@
             ],
             "authors": [
                 {
-                    "name": "Kore Nordmann",
-                    "email": "mail@kore-nordmann.de"
-                },
-                {
                     "name": "Sebastian Bergmann",
                     "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
                 },
                 {
                     "name": "SpacePossum"
@@ -13341,7 +13342,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2018-02-15T16:58:55+00:00"
+            "time": "2020-10-14T08:39:05+00:00"
         },
         {
             "name": "react/event-loop",
