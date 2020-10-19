@@ -6,9 +6,10 @@
 </head>
 <body>
 
-<div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-orange-100 border-b-5 border-orange-200 text-sm text-gray-700 {{ $class ?? '' }} markup">
+<div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-orange-100 border-b-5 border-orange-200 text-xs text-gray-700 {{ $class ?? '' }} markup">
     <p class="mb-3">
-        Subscribe to this newsletter
+        Every two weeks I send out a newsletter like this one, containing lots of interesting stuff for the modern PHP developer.
+        Subscribe to get the next edition in your mailbox
     </p>
     @include('front.newsletter.partials.form', ['class' => 'mb-3'])
 </div>
