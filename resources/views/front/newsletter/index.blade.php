@@ -31,7 +31,7 @@
         </p>
         @foreach($pastCampaigns as $campaign)
             <div>
-                <a href="{{ $campaign->webViewUrl() }}">{{ $campaign->subject }}</a>
+                <a href="{{ route('newsletter.show', $campaign->uuid()) }}">{{ $campaign->subject }}</a>
                 <div class="text-gray-700 text-xs">sent on {{ $campaign->sent_at->format('jS F Y') }}</div>
             </div>
         @endforeach
