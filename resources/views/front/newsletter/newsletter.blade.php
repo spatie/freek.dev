@@ -1,3 +1,5 @@
-@include('front.newsletter.partials.block')
+<x-app-layout title="{{ $campaign->subject }}">
+    @include('front.newsletter.partials.block')
 
-{!! $campaign->webview_html !!}
+    {!! $campaign->webview_html !!}
+</x-app-layout>
