@@ -284,10 +284,13 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             ->map(fn (string $tagName) => '#' . str_replace(' ', '', $tagName))
             ->implode(' ');
 
-        $title = $this->title;
+        $twitterAuthorString = '';
+        if ($twitterHandle = $this->authorTwitterHandle()) {
+            $twitterAuthorString = " (by {$twitterHandle})";
+        }
 
-        return $this->emoji . ' ' . $title
-            . PHP_EOL . $this->promotional_url
+        return $this->emoji . ' ' . $this->title
+            . PHP_EOL . $this->promotional_url . $twitterAuthorString
             . PHP_EOL . $tags;
     }
 
