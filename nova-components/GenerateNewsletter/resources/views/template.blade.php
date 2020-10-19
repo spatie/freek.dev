@@ -128,7 +128,7 @@
                 <li style="color: #ffffff;">
                     <h2 style="margin-bottom: 2px;">
                         <a href="{{ $post->promotional_url }}"
-                           style="font-size: 18px; color: #161e2e; text-decoration: none;">{{ $post->title }}</a>
+                           style="font-size: 18px; color: #161e2e">{{ $post->title }}</a>
                     </h2>
                     <p style="font-size: 16px; margin: 0; color: #252f3f;">{{ $post->newsletter_excerpt }}</p>
                     <hr style="background-color: #e5e7eb; border-width: 0; height: 1px; margin-top: 24px; margin-bottom: 24px; color: #e5e7eb;">

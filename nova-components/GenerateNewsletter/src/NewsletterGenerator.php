@@ -10,14 +10,11 @@ use NumberFormatter;
 
 class NewsletterGenerator
 {
-    /** @var \Carbon\Carbon */
-    protected $startDate;
+    protected Carbon  $startDate;
 
-    /** @var \Carbon\Carbon */
-    protected $endDate;
+    protected Carbon $endDate;
 
-    /** @var string */
-    protected $editionNumber;
+    protected string $editionNumber;
 
     public function __construct(Carbon $startDate, Carbon $endDate, int $editionNumber)
     {
@@ -88,7 +85,7 @@ class NewsletterGenerator
         return Post::published()
             ->whereBetween('publish_date', [
                 $startDate,
-                $endDate
+                $endDate,
             ])
             ->orderBy('original_content', 'desc')
             ->get()
