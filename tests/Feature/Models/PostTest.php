@@ -4,6 +4,7 @@ namespace Tests\Feature\Models;
 
 use App\Http\Controllers\PostController;
 use App\Models\Post;
+use App\Models\User;
 use Spatie\Snapshots\MatchesSnapshots;
 use Tests\Factories\PostFactory;
 use Tests\TestCase;
@@ -86,5 +87,20 @@ class PostTest extends TestCase
         $posts = PostFactory::series(10);
 
         $this->assertMatchesHtmlSnapshot($posts->first()->formatted_text);
+    }
+
+    /** @test */
+    public function it_can_get_the_twitter_handle_of_the_author()
+    {
+        /** @var Post $post */
+        $post = Post::factory()->create(['author_twitter_handle' => null]);
+        $this->assertNull($post->authorTwitterHandle());
+
+        $user = User::factory()->create(['twitter_handle' => 'other']);
+        $post->update(['submitted_by_user_id' => $user->id]);
+        $this->assertEquals('other', $post->refresh()->authorTwitterHandle());
+
+        $post->update(['author_twitter_handle' => 'freekmurze']);
+        $this->assertEquals('freekmurze', $post->authorTwitterHandle());
     }
 }

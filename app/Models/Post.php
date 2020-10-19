@@ -323,4 +323,17 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             ->orderBy('id')
             ->get();
     }
+
+    public function authorTwitterHandle(): ?string
+    {
+        if ($this->author_twitter_handle) {
+            return $this->author_twitter_handle;
+        }
+
+        if ($userTwitterHandle = optional($this->submittedByUser)->twitter_handle) {
+            return $userTwitterHandle;
+        }
+
+        return null;
+    }
 }

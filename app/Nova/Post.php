@@ -69,6 +69,8 @@ class Post extends Resource
                 BelongsTo::make('Submitted by', 'submittedByUser', User::class)
                     ->hideFromIndex()
                     ->nullable(),
+
+                Text::make('author_twitter_handle'),
             ]),
         ];
     }
