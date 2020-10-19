@@ -1,12 +1,17 @@
 <html>
-
 <head>
 <style>{!! file_get_contents(public_path('css/app.css')) !!}</style>
 <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
+    <title>{{ $campaign->subject }}</title>
 </head>
 <body>
 
-@include('front.newsletter.partials.form', ['class' => 'mb-3'])
+<div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-orange-100 border-b-5 border-orange-200 text-sm text-gray-700 {{ $class ?? '' }} markup">
+    <p class="mb-3">
+        Subscribe to this newsletter
+    </p>
+    @include('front.newsletter.partials.form', ['class' => 'mb-3'])
+</div>
 
 <div>
     <div style="position:relative;padding-top:56.25%;">
