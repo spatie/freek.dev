@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
 </head>
 <body>
-$campaign->subject }}">
 @include('front.newsletter.partials.block')
 
 {!! $campaign->webview_html !!}
