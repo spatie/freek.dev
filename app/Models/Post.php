@@ -286,7 +286,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
 
         $twitterAuthorString = '';
         if ($twitterHandle = $this->authorTwitterHandle()) {
-            $twitterAuthorString = " (by {$twitterHandle})";
+            $twitterAuthorString = " (by @{$twitterHandle})";
         }
 
         return $this->emoji . ' ' . $this->title
