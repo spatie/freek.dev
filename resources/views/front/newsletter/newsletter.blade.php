@@ -21,7 +21,7 @@
     </div>
 </div>
 
-{{-- justify-center --}}
-        <iframe src="https://httpstat.us" class="w-screen h-screen"></iframe>
+<iframe src="{{ $campaign->webviewUrl() }}" class="w-screen h-screen"></iframe>
+
 </body>
 </html>
