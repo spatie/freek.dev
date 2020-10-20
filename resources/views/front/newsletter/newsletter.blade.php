@@ -21,8 +21,8 @@
     </div>
 </div>
 
-<div class="w-screen h-screen">
-    <iframe src="{{ $campaign->webviewUrl() }}" />
+<div>
+    <iframe src="{{ $campaign->webviewUrl() }}" class="w-screen h-screen" />
 </div>
 
 </body>
