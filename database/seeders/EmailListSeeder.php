@@ -5,6 +5,8 @@ namespace Database\Seeders;
 
 use App\Mail\WelcomeMail;
 use Illuminate\Database\Seeder;
+use Spatie\Mailcoach\Enums\CampaignStatus;
+use Spatie\Mailcoach\Models\Campaign;
 use Spatie\Mailcoach\Models\EmailList;
 use Spatie\Mailcoach\Models\Subscriber;
 use Spatie\Mailcoach\Models\Template;
@@ -43,6 +45,21 @@ class EmailListSeeder extends Seeder
                             </body>
                         </html>
                         HTML
+        ]);
+
+        Campaign::create([
+            'subject' => 'subject',
+            'from_email' => 'freek@spatie.be',
+            'from_name' => 'Freek',
+            'html' => Template::first()->html,
+            'email_html' => Template::first()->html,
+            'track_opens' => true,
+            'track_clicks' => true,
+            'status' => CampaignStatus::SENT,
+            'uuid' => 'fake-uuid',
+            'last_modified_at' => now(),
+            'sent_at' => now(),
+            'email_list_id' => $emailList->id,
         ]);
     }
 }
