@@ -22,7 +22,7 @@
 </div>
 
 <div>
-    <iframe src="{{ $campaign->webviewUrl() }}" class="w-screen h-screen" />
+    <iframe src="{{ $campaign->webviewUrl() }}" class="w-screen" onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" />
 </div>
 
 </body>
