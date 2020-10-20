@@ -17,7 +17,7 @@
         <p>
             Subscribe to get the next edition in your mailbox.
         </p>
-        @include('front.newsletter.partials.form', ['class' => 'mb-3'])
+        @include('front.newsletter.partials.form')
     </div>
 </div>
 
