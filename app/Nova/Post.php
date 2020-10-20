@@ -70,7 +70,7 @@ class Post extends Resource
                     ->hideFromIndex()
                     ->nullable(),
 
-                Text::make('author_twitter_handle'),
+                Text::make('Author Twitter handle'),
             ]),
         ];
     }
