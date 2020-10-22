@@ -42,7 +42,7 @@ Route::middleware('doNotCacheResponse')->group(function () {
 
 Route::view('newsletter/liked-it', 'front.newsletter.like')->name('newsletter.like');
 Route::view('newsletter/could-be-improved', 'front.newsletter.dislike')->name('newsletter.dislike');
-Route::get('newsletter/archive/{campaignUuid}', ShowNewsletterController::class)->name('newsletter.show');
+Route::get('newsletter/archive/{campaign}', ShowNewsletterController::class)->name('newsletter.show');
 
 Route::prefix('links')->group(function () {
     Route::get('/', LinksIndexController::class)->name('links');
