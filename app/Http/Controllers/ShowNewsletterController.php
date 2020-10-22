@@ -6,13 +6,9 @@ use Spatie\Mailcoach\Models\Campaign;
 
 class ShowNewsletterController
 {
-    public function __invoke(string $campaignUuid)
+    public function __invoke(Campaign $campaign)
     {
-        if (! $campaign = Campaign::findByUuid($campaignUuid)) {
-            abort(404);
-        }
-
-        if ($campaign->isDraft()) {
+        if (! $campaign->isSent()) {
             abort(404);
         }
 
