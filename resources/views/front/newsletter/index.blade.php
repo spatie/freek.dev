@@ -23,7 +23,6 @@
         </p>
     </div>
 
-
     <div class="markup">
         <h2 id="archive">Archive <a href="#archive" class="permalink">#</a></h2>
         <p>
