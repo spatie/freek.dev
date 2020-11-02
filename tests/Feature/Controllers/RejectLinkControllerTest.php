@@ -2,9 +2,7 @@
 
 namespace Tests\Feature\Controllers;
 
-use App\Mail\LinkApprovedMail;
 use App\Models\Link;
-use Mail;
 use Tests\TestCase;
 
 class RejectLinkControllerTest extends TestCase

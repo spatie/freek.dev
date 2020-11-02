@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Links;
 
-use App\Actions\ApproveLinkAction;
 use App\Actions\RejectLinkAction;
 use App\Models\Link;
 
