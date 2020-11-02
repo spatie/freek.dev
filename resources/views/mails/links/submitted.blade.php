@@ -5,9 +5,14 @@ A link titled "[{{ $link->title }}]({{ $link->url }})" was submitted by {{ $link
 
 {{ $link->text }}
 
-You can approve or reject this link [here](https://freek.dev/nova/resources/links/{{ $link->id }}).
+[Approve]({{ $link->approveUrl() }})
+
+[Approve and create post]({{ $link->approveAndCreatePostUrl() }})
+
+[Reject link]({{ $link->rejectUrl() }})
 
 Kr,
+
 
 
 

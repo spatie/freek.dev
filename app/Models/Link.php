@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\URL;
 
 class Link extends Model implements Sluggable
 {
@@ -49,5 +50,26 @@ class Link extends Model implements Sluggable
     public function getHostUrlAttribute(): string
     {
         return parse_url($this->url)['host'] ?? '';
+    }
+
+    public function approveUrl(): string
+    {
+        return URL::temporarySignedRoute(
+            'link.approve', now()->addMonth(), ['link' => $this],
+        );
+    }
+
+    public function approveAndCreatePostUrl(): string
+    {
+        return URL::temporarySignedRoute(
+            'link.approve-and-create-post', now()->addMonth(), ['link' => $this],
+        );
+    }
+
+    public function rejectUrl(): string
+    {
+        return URL::temporarySignedRoute(
+            'link.reject', now()->addMonth(), ['link' => $this],
+        );
     }
 }

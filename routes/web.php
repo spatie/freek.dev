@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Links\ApproveLinkAndCreatePostController;
+use App\Http\Controllers\Links\ApproveLinkController;
 use App\Http\Controllers\Links\CreateLinkController;
 use App\Http\Controllers\Links\LinksIndexController;
+use App\Http\Controllers\Links\RejectLinkController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\NewsletterSubscriptionController;
 use App\Http\Controllers\OriginalsController;
@@ -51,6 +54,13 @@ Route::prefix('links')->group(function () {
         Route::post('create', [CreateLinkController::class, 'store']);
         Route::view('thanks', 'front.links.thanks')->name('links.thanks');
     });
+
+    Route::middleware('signed')->group(function () {
+        Route::get('{link}/approve', ApproveLinkController::class)->name('link.approve');
+        Route::get('{link}/approve-and-create-post', ApproveLinkAndCreatePostController::class)->name('link.approve-and-create-post');
+        Route::get('{link}/reject', RejectLinkController::class)->name('link.reject');
+    });
+
 });
 
 Route::redirect('me', '/about');
