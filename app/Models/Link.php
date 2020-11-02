@@ -55,21 +55,27 @@ class Link extends Model implements Sluggable
     public function approveUrl(): string
     {
         return URL::temporarySignedRoute(
-            'link.approve', now()->addMonth(), ['link' => $this],
+            'link.approve',
+            now()->addMonth(),
+            ['link' => $this],
         );
     }
 
     public function approveAndCreatePostUrl(): string
     {
         return URL::temporarySignedRoute(
-            'link.approve-and-create-post', now()->addMonth(), ['link' => $this],
+            'link.approve-and-create-post',
+            now()->addMonth(),
+            ['link' => $this],
         );
     }
 
     public function rejectUrl(): string
     {
         return URL::temporarySignedRoute(
-            'link.reject', now()->addMonth(), ['link' => $this],
+            'link.reject',
+            now()->addMonth(),
+            ['link' => $this],
         );
     }
 }
