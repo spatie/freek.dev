@@ -11,13 +11,15 @@ class GenerateNewsletterController
     public function __invoke(Request $request)
     {
         $validated = $request->validate([
-            'editionNumber' => 'required|numeric',
-            'startDate' => 'required|date_format:Y-m-d',
-            'endDate' => 'required|date_format:Y-m-d',
+            'editionNumber' => 'numeric',
+            'startDate' => 'date_format:Y-m-d',
+            'endDate' => 'date_format:Y-m-d',
         ]);
 
+        $lastestSentNewsLetter =
+
         $startDate = Carbon::createFromFormat('Y-m-d', $validated['startDate']);
-        $endDate = Carbon::createFromFormat('Y-m-d', $validated['endDate']);
+        $endDate = Carbon::createFromFormat('Y-m-d', $validated['endDate'] ?? now()->addMonth());
 
         $newsletterHtml = (new NewsletterGenerator(
             $startDate,

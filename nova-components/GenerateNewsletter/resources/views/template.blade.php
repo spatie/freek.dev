@@ -135,6 +135,43 @@
                 </li>
             @endforeach
         </ul>
+
+        <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            <tr>
+                <td style="background-color: #f1f5f9; padding: 24px;" bgcolor="#f1f5f9">
+                    <h3 style="font-size: 20px; margin: 0 0 12px;">Get a deep discount on all Spatie products</h3>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">You can use this coupon code (valid for the next two weeks) to get a 30% discount on these products my team and I have created:</p>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">FREEK-DEV-READERS-ARE-AWESOME</p>
+                    <ul align="left" class="o-ml-24" style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://mailcoach.app" style="color: #252f3f;">Mailcoach</a></li>
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://laravel-beyond-crud.com" style="color: #252f3f;">Laravel Beyond CRUD</a></li>
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://laravelpackage.training" style="color: #252f3f;">Laravel Package Training</a></li>
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://spatie.be/products/laravel-backup-server" style="color: #252f3f;">Laravel Backup Server</a></li>
+                    </ul>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;"></p>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">You can that coupon code as wel to get a 30% discount on your first 3 months when subscribing to:</p>
+                    <ul align="left" class="o-ml-24" style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://flareapp.io" style="color: #252f3f;">Flare</a></li>
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://ohdear.app" style="color: #252f3f;">Oh Dear</a></li>
+
+                    </ul>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;"></p>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">Be sure to also take a look at our upcoming products:</p>
+                    <ul align="left" class="o-ml-24" style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://medialibrary.pro" style="color: #252f3f;">Media Library Pro</a></li>
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://front-line-php.com" style="color: #252f3f;">Front Line PHP</a></li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #cfd8e3; line-height: 4px;" bgcolor="#cfd8e3">‌</td>
+            </tr>
+            <tr>
+                <td style="height: 32px;" height="32"></td>
+            </tr>
+        </table>
+
         @if($recentTweets->count())
             <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>

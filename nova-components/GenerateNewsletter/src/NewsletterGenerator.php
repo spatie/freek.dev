@@ -22,6 +22,8 @@ class NewsletterGenerator
 
         $this->endDate = $endDate;
 
+
+
         $this->editionNumber = $this->ordinal($editionNumber);
     }
 
