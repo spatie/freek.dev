@@ -16,8 +16,6 @@ class GenerateNewsletterController
             'endDate' => 'date_format:Y-m-d',
         ]);
 
-        $lastestSentNewsLetter =
-
         $startDate = Carbon::createFromFormat('Y-m-d', $validated['startDate']);
         $endDate = Carbon::createFromFormat('Y-m-d', $validated['endDate'] ?? now()->addMonth());
 
