@@ -177,7 +177,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
     {
         return static::published()
             ->orderBy('publish_date', 'desc')
-            ->limit(100)
+            ->limit(20)
             ->get();
     }
 
@@ -186,7 +186,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         return static::withAnyTags(['php'])
             ->published()
             ->orderBy('publish_date', 'desc')
-            ->limit(100)
+            ->limit(20)
             ->get();
     }
 
@@ -195,7 +195,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         return static::published()
             ->where('original_content', true)
             ->orderBy('publish_date', 'desc')
-            ->limit(100)
+            ->limit(20)
             ->get();
     }
 
