@@ -68,7 +68,7 @@ Route::redirect('php-version', '/1598-how-to-check-which-version-of-php-you-are-
 
 Route::webhooks('webhook-webmentions', 'webmentions');
 
-Route::redirect('/uses', '/1485-my-current-setup-2019-edition');
+Route::redirect('/uses', '/1844-my-current-setup-end-2020-edition');
 
 Route::view('legal', 'front.legal.index');
 
