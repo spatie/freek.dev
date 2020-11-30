@@ -19,6 +19,7 @@ class NavigationServiceProvider extends ServiceProvider
                 ->action(HomeController::class, 'Home')
                 ->action(OriginalsController::class, 'Originals')
                 ->action(NewsletterController::class, 'Newsletter')
+                ->url('/uses', 'My setup')
                 ->action(SpeakingController::class, 'Speaking')
                 ->url('about', 'About')
                 ->setActiveFromRequest('/');
