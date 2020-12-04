@@ -9,6 +9,7 @@ use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\SpeakingController;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Menu\Laravel\Menu;
+use Spatie\Menu\Link;
 
 class NavigationServiceProvider extends ServiceProvider
 {
@@ -18,11 +19,12 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->action(HomeController::class, 'Home')
                 ->action(OriginalsController::class, 'Originals')
-                ->action(NewsletterController::class, 'Newsletter')
-                ->url('/uses', 'My setup')
+                ->action(LinksIndexController::class, 'Community')
+                ->add(Link::to(action(NewsletterController::class), 'Newsletter')->addParentClass('mt-4'))
+
                 ->action(SpeakingController::class, 'Speaking')
                 ->url('about', 'About')
-                ->setActiveFromRequest('/');
+                ->setActiveFromRequest();
         });
 
         Menu::macro('secondary', function () {
@@ -33,8 +35,9 @@ class NavigationServiceProvider extends ServiceProvider
                 ->url('mailcoach-contest', 'Mailcoach contest')
                 ->url('ohdear-contest', 'Oh Dear contest')
                 */
+                ->url('/uses', 'My setup')
                 ->url('advertising', 'Advertising')
-                ->action(LinksIndexController::class, 'Community links')
+
                 ->setActiveFromRequest('/');
         });
     }
