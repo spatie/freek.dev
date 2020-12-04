@@ -6,6 +6,7 @@ use App\Http\Controllers\Links\ApproveLinkController;
 use App\Http\Controllers\Links\CreateLinkController;
 use App\Http\Controllers\Links\LinksIndexController;
 use App\Http\Controllers\Links\RejectLinkController;
+use App\Http\Controllers\MusicController;
 use App\Http\Controllers\MySetupController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\NewsletterSubscriptionController;
@@ -69,6 +70,7 @@ Route::redirect('php-version', '/1598-how-to-check-which-version-of-php-you-are-
 
 Route::webhooks('webhook-webmentions', 'webmentions');
 
+Route::get('music', MusicController::class);
 Route::get('uses', MySetupController::class);
 
 Route::view('legal', 'front.legal.index');

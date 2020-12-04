@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Links\LinksIndexController;
+use App\Http\Controllers\MusicController;
 use App\Http\Controllers\MySetupController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
@@ -21,9 +22,11 @@ class NavigationServiceProvider extends ServiceProvider
                 ->action(HomeController::class, 'Home')
                 ->action(OriginalsController::class, 'Originals')
                 ->action(LinksIndexController::class, 'Community')
+
                 ->add(Link::to(action(NewsletterController::class), 'Newsletter')->addParentClass('mt-4'))
 
-                ->action(SpeakingController::class, 'Speaking')
+                ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
+                ->action(MusicController::class, 'Music')
                 ->url('about', 'About')
                 ->setActiveFromRequest();
         });
