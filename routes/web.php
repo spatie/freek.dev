@@ -47,7 +47,7 @@ Route::view('newsletter/liked-it', 'front.newsletter.like')->name('newsletter.li
 Route::view('newsletter/could-be-improved', 'front.newsletter.dislike')->name('newsletter.dislike');
 Route::get('newsletter/archive/{campaign}', ShowNewsletterController::class)->name('newsletter.show');
 
-Route::prefix('links')->group(function () {
+Route::prefix('community')->group(function () {
     Route::get('/', LinksIndexController::class)->name('links');
     Route::middleware(['auth', 'doNotCacheResponse'])->group(function () {
         Route::get('create', [CreateLinkController::class, 'create'])->name('links.create');
