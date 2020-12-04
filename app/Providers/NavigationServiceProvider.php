@@ -4,10 +4,10 @@ namespace App\Providers;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Links\LinksIndexController;
-use App\Http\Controllers\UsesController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\SpeakingController;
+use App\Http\Controllers\UsesController;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Menu\Laravel\Menu;
 use Spatie\Menu\Link;
