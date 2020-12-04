@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Links\LinksIndexController;
-use App\Http\Controllers\UsesController;
+use App\Http\Controllers\MySetupController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\SpeakingController;
@@ -36,7 +36,7 @@ class NavigationServiceProvider extends ServiceProvider
                 ->url('mailcoach-contest', 'Mailcoach contest')
                 ->url('ohdear-contest', 'Oh Dear contest')
                 */
-                ->action(UsesController::class, 'Uses')
+                ->action(MySetupController::class, 'My setup')
                 ->url('advertising', 'Advertising')
 
                 ->setActiveFromRequest('/');
