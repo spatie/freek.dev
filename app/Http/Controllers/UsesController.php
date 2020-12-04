@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 
-class MySetupController
+class UsesController
 {
     public function __invoke()
     {
