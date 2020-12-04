@@ -30,6 +30,7 @@ class NavigationServiceProvider extends ServiceProvider
 
         Menu::macro('secondary', function () {
             return Menu::new()
+                ->addClass('space-y-2')
                 ->url('search', 'Search')
                 /*
                 ->url('laravel-package-training-contest', 'Package training contest')
