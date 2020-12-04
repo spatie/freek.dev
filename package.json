@@ -13,18 +13,22 @@
     "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && yarn && yarn prod"
   },
   "devDependencies": {
-    "@tailwindcss/custom-forms": "^0.2.1",
     "cross-env": "^7.0.2",
     "husky": "^4.3.0",
     "laravel-mix": "^5.0.5",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
-    "tailwindcss": "^1.8.10",
+    "tailwindcss": "^2.0.1",
     "vue-template-compiler": "^2.6.12"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.14"
   }
 }

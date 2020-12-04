@@ -1,8 +1,4 @@
 module.exports = {
-    future: {
-        removeDeprecatedGapUtilities: true,
-        purgeLayersByDefault: true,
-    },
     purge: {
         content: ['./resources/**/*.blade.php'],
         options: {
@@ -18,7 +14,7 @@ module.exports = {
             ],
         }
     },
-    plugins: [require('@tailwindcss/custom-forms')],
+    plugins: [require('@tailwindcss/forms')],
     theme: {
         fontFamily: {
             sans: [
@@ -73,5 +69,8 @@ module.exports = {
     },
     variants: {
         borderColor: ['focus-within', 'hover', 'focus'],
+        extend: {
+            fontWeight: ['hover', 'focus']
+        }
     },
 };
