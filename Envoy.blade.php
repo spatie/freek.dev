@@ -73,7 +73,7 @@ echo "{{ $newReleaseName }}" > public/release-name.txt
 cd {{ $newReleaseDir }};
 {{ logMessage("🚚  Running Composer…") }}
 ln -nfs {{ $baseDir }}/auth.json auth.json;
-composer install --prefer-dist --no-scripts --no-dev -q -o;
+composer install --prefer-dist --no-scripts --no-dev;
 php artisan nova:publish
 @endtask
 
