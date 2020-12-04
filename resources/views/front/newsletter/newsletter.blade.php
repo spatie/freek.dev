@@ -13,7 +13,7 @@
         </script>
     </head>
     <body>
-        <header class="w-full mb-4 p-4 sm:p-6 md:px-8 md:py-7 bg-yellow-200 border-b-2 border-yellow-400 text-xs text-gray-700">
+        <header class="w-full mb-4 p-4 sm:p-6 md:px-8 md:py-7 bg-yellow-200 border-b-2 border-yellow-300 text-xs text-gray-700">
             <div class="max-w-lg mx-auto space-y-2">
                 <p>
                     Every two weeks I send out a newsletter like this one, containing lots of interesting stuff for the modern
