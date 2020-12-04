@@ -13,7 +13,7 @@
             Want to know what you're getting yourself into? Take a look at <a href="#archive">the newsletter archive</a>.
         </p>
     </div>
-    <div class="mb-8 -mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-yellow-100 border-b-5 border-yellow-500 text-sm text-gray-700">
+    <div class="mb-8 -mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-yellow-50 border-b-5 border-yellow-500 text-sm text-gray-700">
         @include('front.newsletter.partials.form')
     </div>
     <div class="markup">
