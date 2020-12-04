@@ -12,7 +12,7 @@
         </p>
         <h2>The blog</h2>
         <p>
-            In 2018 the blog had 728 243 page views. If you want to view some more statistics and learn which pages were
+            In 2020 the blog had about 800 000 page views. If you want to view some more statistics and learn which pages were
             the most popular read <a href="https://freek.dev/four-years-of-murzebe">this blog post</a>.
         </p>
         <p>
@@ -39,8 +39,7 @@
             As the newsletter should come over as very calm, images or logos are not allowed.
         </p>
         <p>
-            Currently the subscriber list contains close to 7 000 members. The reported open rate is 50%, the click rate
-            is 20%
+            Currently the subscriber list contains {{ \Spatie\Mailcoach\Models\Subscriber::subscribed()->count() }} members. On average open rate is 40%, the click rate 20%.
         <p>
         <p>
             I suspect that a large portion of the readers use software that blocks trackers, so the actual open and
