@@ -140,8 +140,8 @@
             <tr>
                 <td style="background-color: #f1f5f9; padding: 24px;" bgcolor="#f1f5f9">
                     <h3 style="font-size: 20px; margin: 0 0 12px;">Get a deep discount on all Spatie products</h3>
-                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">You can use this coupon code (valid for the next two weeks) to get a 30% discount on these products my team and I have created:</p>
-                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">FREEK-DEV-READERS-ARE-AWESOME</p>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">You can use this coupon code (valid for the next two weeks) to get a 15% discount on these products my team and I have created:</p>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">DISCOUNT-FOR-FREEK-DEV-READERS</p>
                     <ul align="left" class="o-ml-24" style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://front-line-php.com?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Front Line PHP</a></li>
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://medialibrary.pro?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Media Library Pro</a></li>
