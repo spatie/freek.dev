@@ -1,4 +1,4 @@
-<li class="list-none bg-gray-100 border-grey-200">
+<li class="list-none bg-gray-100 border-gray-200">
     <div class="flex space-x-4 space-x-0 items-center">
         <img class="h-28 w-28" src="https://freek.dev/uploads/media/music/{{ $release['artwork'] }}" alt="Artwork">
         <div>
