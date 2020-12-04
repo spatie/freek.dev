@@ -42,7 +42,7 @@
                 href="https://fullstackeurope.com">our website</a>.
         </p>
         <p>
-            Outside of programming, I'm also very passionate about music. Every now and then I spend some time in [Ableton](https://www.ableton.com) to record music of my own. I've released a couple of EPs. You can listen to them at [Spotify](https://open.spotify.com/artist/6m5chdjU0M8j8bMmckXRkc) or [Apple Music](https://music.apple.com/be/artist/kobus/1529028832)
+            Outside of programming, I'm also very passionate about music. Every now and then I spend some time in <a href="https://www.ableton.com">Ableton</a> to record music of my own. I've released a couple of EPs. You can listen to them at <a href="https://open.spotify.com/artist/6m5chdjU0M8j8bMmckXRkc">Spotify</a> or <a href="https://music.apple.com/be/artist/kobus/1529028832">Apple Music</a>.
         </p>
     </div>
 </x-app-layout>
