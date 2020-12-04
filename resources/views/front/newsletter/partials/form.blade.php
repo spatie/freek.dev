@@ -8,7 +8,7 @@
     @honeypot
     <input type="email" autocomplete="off" id="email" name="email" placeholder="Your e-mail address" class="flex-1 px-3 py-2 bg-white focus:outline-none focus:border-gray-400 border-t-3 border-b-3 border-t-transparent mb-2 md:mb-0" aria-label="E-mail" required>
 
-    <input type="submit" name="submit" id="submit" value="Subscribe" class="px-3 py-2 text-sm text-white bg-orange-500 font-semibold border-t-3 border-b-3 border-orange-700 border-t-transparent">
+    <input type="submit" name="submit" id="submit" value="Subscribe" class="px-3 py-2 text-sm text-white bg-yellow-500 font-semibold border-t-3 border-b-3 border-yellow-700 border-t-transparent">
 
 </form>
 
