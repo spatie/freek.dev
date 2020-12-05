@@ -115,7 +115,8 @@
             "@php artisan nova:publish",
             "@php artisan horizon:publish",
             "@php artisan vendor:publish --tag mailcoach-assets --force",
-            "@php artisan vendor:publish --tag mailcoach-monaco-assets --force"
+            "@php artisan vendor:publish --tag mailcoach-monaco-assets --force",
+            "@php artisan vendor:publish --force --tag=livewire:assets --ansi"
         ]
     },
     "config": {
