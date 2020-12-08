@@ -79,4 +79,107 @@ jobs:
                         yarn config set ignore-engines true
                         yarn
 
+            -   name: 🌅 Generate assets
+                uses: appleboy/ssh-action@master
+                with:
+                    host: freek.dev
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        cd ${{ env.newReleaseDir }};
+                        yarn run production -- --progress false
+                        yarn build-generate-newsletter-prod -- --progress false
+                        rm -rf node_modules
+
+            -   name: 🔗 Update symlinks
+                uses: appleboy/ssh-action@master
+                with:
+                    host: freek.dev
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        # Remove the storage directory and replace with persistent data
+                        rm -rf ${{ env.newReleaseDir }}/storage;
+                        cd {{ $newReleaseDir }};
+                        ln -nfs ${{ env.baseDir }}/persistent/storage storage;
+
+                        # Remove the public/uploads directory and replace with persistent data
+                        rm -rf ${{ env.newReleaseDir }}/public/uploads;
+                        cd ${{ env.newReleaseDir }};
+                        ln -nfs ${{ env.baseDir }}/persistent/uploads public/uploads;
+
+                        # Symlink the og images to the public directory
+                        rm -rf ${{ env.newReleaseDir }}/public/og-images;
+                        cd ${{ env.newReleaseDir }};
+                        ln -nfs ${{ env.baseDir }}/persistent/storage/og-images ${{ env.newReleaseDir }}/public/og-images;
+
+                        # Import the environment config
+                        cd ${{ env.newReleaseDir }};
+                        ln -nfs ${{ env.baseDir }}/.env .env;
+
+                        # Symlink the persistent fonts to the public directory
+                        cd ${{ env.baseDir }}/persistent/fonts
+                        git pull origin master
+                        ln -nfs ${{ env.baseDir }}/persistent/fonts ${{ env.newReleaseDir }}/public/fonts;
+
+            -   name: ✨ Optimize installation
+                uses: appleboy/ssh-action@master
+                with:
+                    host: freek.dev
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        cd ${{ env.newReleaseDir }};
+                        php artisan clear-compiled;
+
+            -   name: 📀 Backup database
+                uses: appleboy/ssh-action@master
+                with:
+                    host: freek.dev
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        cd ${{ env.newReleaseDir }}
+                        php artisan backup:run
+
+            -   name: 📀 Migrate database
+                uses: appleboy/ssh-action@master
+                with:
+                    host: freek.dev
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        cd ${{ env.newReleaseDir }}
+                        php artisan migrate --force
+
+            -   name: 🙏 Bless release
+                uses: appleboy/ssh-action@master
+                with:
+                    host: freek.dev
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        ln -nfs ${{ env.newReleaseDir }} ${{ env.currentDir }};
+                        cd ${{ env.newReleaseDir }}
+                        php artisan horizon:terminate
+                        php artisan config:clear
+                        php artisan view:clear
+                        php artisan cache:clear
+                        php artisan config:cache
+                        php artisan responsecache:clear
+                        php artisan schedule-monitor:sync
+
+                        sudo service php7.4-fpm restart
+                        sudo supervisorctl restart all
+
+            -   name: 🚾 Clean up old releases
+                uses: appleboy/ssh-action@master
+                with:
+                    host: freek.dev
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        cd ${{ env.releasesDir }}
+                        ls -dt ${{ env.releasesDir }}/* | tail -n +4 | xargs -d "\n" sudo chown -R forge .;
+                        ls -dt ${{ env.releasesDir }}/* | tail -n +4 | xargs -d "\n" rm -rf;
 
