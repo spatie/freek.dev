@@ -66,7 +66,6 @@ jobs:
                         cd ${{ env.newReleaseDir }}
                         ln -nfs ${{ env.baseDir }}/auth.json auth.json;
                         composer install --prefer-dist --no-scripts --no-dev -q -o;
-                        php artisan nova:publish
 
             -   name: 📦 Run yarn
                 uses: appleboy/ssh-action@master
@@ -142,7 +141,7 @@ jobs:
                         cd ${{ env.newReleaseDir }}
                         php artisan backup:run
 
-            -   name: 📀 Migrate database
+            -   name: 🙈 Migrate database
                 uses: appleboy/ssh-action@master
                 with:
                     host: freek.dev
