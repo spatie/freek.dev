@@ -17,10 +17,11 @@ jobs:
             newReleaseName: '${{ github.run_id }}'
 
         steps:
-            -   name: Set releases dir env
+            -   name: 🌍 Set environment variables
                 run: |
                     echo "releasesDir=${{ env.baseDir }}/releases" >> $GITHUB_ENV
-            -   name: Set env
+
+            -   name: 🌏 Set environment variables (part 2)
                 run: |
                     echo "releasesDir=${{ env.baseDir }}/releases" >> $GITHUB_ENV
                     echo "persistentDir=${{ env.baseDir }}/persistent" >> $GITHUB_ENV
