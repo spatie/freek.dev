@@ -4,15 +4,17 @@ on:
     push:
         branches:
             - production
-env:
-    repository: 'spatie/freek.dev'
-    baseDir: '/home/forge/freek-test.dev'
-    newReleaseName: '${{ github.run_id }}'
+
 jobs:
     deploy:
         name: Deploy
-
         runs-on: ubuntu-latest
+        env:
+            repository: 'spatie/freek.dev'
+            baseDir: '/home/forge/freek-test.dev'
+            newReleaseName: '${{ github.run_id }}'
+            host: ${{ env.host }}
+            username: ${{ env.username }}
 
         steps:
             -   name: Set releases dir env
@@ -28,8 +30,8 @@ jobs:
             -   name: 🌀 Clone repository
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         [ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}
@@ -59,8 +61,8 @@ jobs:
             -   name: 🚚 Run composer
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         cd ${{ env.newReleaseDir }}
@@ -70,8 +72,8 @@ jobs:
             -   name: 📦 Run yarn
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         cd ${{ env.newReleaseDir }};
@@ -81,8 +83,8 @@ jobs:
             -   name: 🌅 Generate assets
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         cd ${{ env.newReleaseDir }};
@@ -93,8 +95,8 @@ jobs:
             -   name: 🔗 Update symlinks
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         # Remove the storage directory and replace with persistent data
@@ -124,8 +126,8 @@ jobs:
             -   name: ✨ Optimize installation
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         cd ${{ env.newReleaseDir }};
@@ -134,8 +136,8 @@ jobs:
             -   name: 📀 Backup database
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         cd ${{ env.newReleaseDir }}
@@ -144,8 +146,8 @@ jobs:
             -   name: 🙈 Migrate database
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         cd ${{ env.newReleaseDir }}
@@ -154,8 +156,8 @@ jobs:
             -   name: 🙏 Bless release
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         ln -nfs ${{ env.newReleaseDir }} ${{ env.currentDir }};
@@ -174,8 +176,8 @@ jobs:
             -   name: 🚾 Clean up old releases
                 uses: appleboy/ssh-action@master
                 with:
-                    host: freek.dev
-                    username: forge
+                    host: ${{ env.host }}
+                    username: ${{ env.username }}
                     key: ${{ secrets.KEY }}
                     script: |
                         cd ${{ env.releasesDir }}
