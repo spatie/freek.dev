@@ -25,7 +25,7 @@ jobs:
                     echo "currentDir=${{ env.baseDir }}/current" >> $GITHUB_ENV
                     echo "newReleaseDir=${{ env.releasesDir }}/${{ env.newReleaseName }}" >> $GITHUB_ENV
 
-            -   name: Clone repository
+            -   name: Create directories
                 uses: appleboy/ssh-action@master
                 with:
                     host: ${{ secrets.HOST }}
@@ -39,5 +39,12 @@ jobs:
                         # Create new directory
                         mkdir ${{ env.newReleaseDir }}
 
-                        # Clone directory
+            -   name: Clone repository
+                uses: appleboy/ssh-action@master
+                with:
+                    host: ${{ secrets.HOST }}
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        cd ${{ env.newReleaseDir }}
                         git clone --depth 1 git@github.com:${{ env.repository }} ${{ env.newReleaseName }}
