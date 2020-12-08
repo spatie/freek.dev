@@ -38,6 +38,7 @@
         "laravel/framework": "^8.0",
         "laravel/horizon": "^5.0",
         "laravel/nova": "^3.9",
+        "laravel/sail": "^0.0.5",
         "laravel/scout": "^8.3",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.2",
