@@ -154,10 +154,10 @@ sudo supervisorctl restart all
 
 @task('cleanOldReleases', ['on' => 'remote'])
 {{ logMessage("🚾  Cleaning up old releases…") }}
-# Delete all but the 5 most recent.
+# Delete all but the 3 most recent.
 cd {{ $releasesDir }}
-ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" sudo chown -R forge .;
-ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
+ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" sudo chown -R forge .;
+ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" rm -rf;
 @endtask
 
 @task('finishDeploy', ['on' => 'local'])
