@@ -43,7 +43,7 @@ jobs:
                         git clone --depth 1 git@github.com:${{ env.repository }} ${{ env.newReleaseName }}
 
                         # Configure sparse checkout
-                        cd {{ $newReleaseDir }}
+                        cd ${{ env.newReleaseDir }}
                         git config core.sparsecheckout true
                         echo "*" > .git/info/sparse-checkout
                         echo "!storage" >> .git/info/sparse-checkout
