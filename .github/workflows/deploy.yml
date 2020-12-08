@@ -19,6 +19,7 @@ jobs:
         steps:
             -   name: 🌍 Set environment variables
                 run: |
+                    mqkmsdjfqmsldkfjqmsdfklqsmjm
                     echo "releasesDir=${{ env.baseDir }}/releases" >> $GITHUB_ENV
 
             -   name: 🌏 Set environment variables (part 2)
