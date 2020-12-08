@@ -35,7 +35,7 @@ jobs:
                         '[ -d ${{ env.persistentDir }}/storage ] || mkdir ${{ env.persistentDir }}/storage'
 
                         '# Create the releasesDir
-                        'cd ${{ env.newReleaseDir }}'
+                        'mkdir ${{ env.newReleaseDir }}'
 
                         '# Clone the repo'
                         'git clone --depth 1 git@github.com:${{ env.repository }} ${{ env.newReleaseName }}
