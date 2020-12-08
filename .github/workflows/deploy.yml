@@ -36,10 +36,10 @@ jobs:
                         '[ -d ${{ env.persistentDir }}/uploads ] || mkdir ${{ env.persistentDir }}/uploads'
                         '[ -d ${{ env.persistentDir }}/storage ] || mkdir ${{ env.persistentDir }}/storage'
 
-                        '# Create the releasesDir'
+                        # Create the releasesDir
                         'mkdir ${{ env.newReleaseDir }}'
 
-                        '# Clone the repo'
+                        # Clone the repo
                         'git clone --depth 1 git@github.com:${{ env.repository }} ${{ env.newReleaseName }}
 
 
