@@ -54,27 +54,27 @@ jobs:
                         cd {{ $newReleaseDir }}
                         echo "{{ $newReleaseName }}" > public/release-name.txt
 
-                -   name: 🚚 Run composer
-                    uses: appleboy/ssh-action@master
-                    with:
-                        host: ${{ secrets.HOST }}
-                        username: forge
-                        key: ${{ secrets.KEY }}
-                        script: |
-                            cd ${{ newReleaseDir }}
-                            ln -nfs ${{ $baseDir }}/auth.json auth.json;
-                            composer install --prefer-dist --no-scripts --no-dev -q -o;
-                            php artisan nova:publish
+            -   name: 🚚 Run composer
+                uses: appleboy/ssh-action@master
+                with:
+                    host: ${{ secrets.HOST }}
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        cd ${{ newReleaseDir }}
+                        ln -nfs ${{ $baseDir }}/auth.json auth.json;
+                        composer install --prefer-dist --no-scripts --no-dev -q -o;
+                        php artisan nova:publish
 
-                -   name: 📦 Run yarn
-                    uses: appleboy/ssh-action@master
-                    with:
-                        host: ${{ secrets.HOST }}
-                        username: forge
-                        key: ${{ secrets.KEY }}
-                        script: |
-                            cd ${{ newReleaseDir }};
-                            yarn config set ignore-engines true
-                            yarn
+            -   name: 📦 Run yarn
+                uses: appleboy/ssh-action@master
+                with:
+                    host: ${{ secrets.HOST }}
+                    username: forge
+                    key: ${{ secrets.KEY }}
+                    script: |
+                        cd ${{ newReleaseDir }};
+                        yarn config set ignore-engines true
+                        yarn
 
 
