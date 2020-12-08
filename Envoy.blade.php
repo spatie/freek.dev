@@ -89,6 +89,7 @@ yarn
 cd {{ $newReleaseDir }};
 yarn run production -- --progress false
 yarn build-generate-newsletter-prod -- --progress false
+rm -rf node_modules
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
