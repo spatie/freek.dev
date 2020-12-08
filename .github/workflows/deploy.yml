@@ -15,13 +15,15 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            -   name: Set releases dir env
+                run: |
+                    echo "releasesDir=${{ env.baseDir }}/releases" >> $GITHUB_ENV
             -   name: Set env
                 run: |
                     echo "releasesDir=${{ env.baseDir }}/releases" >> $GITHUB_ENV
                     echo "persistentDir=${{ env.baseDir }}/persistent" >> $GITHUB_ENV
                     echo "currentDir=${{ env.baseDir }}/current" >> $GITHUB_ENV
                     echo "newReleaseDir=${{ env.releasesDir }}/${{ env.newReleaseName }}" >> $GITHUB_ENV
-
 
             -   name: Clone repository
                 uses: appleboy/ssh-action@master
