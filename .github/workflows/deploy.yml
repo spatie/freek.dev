@@ -12,10 +12,10 @@ jobs:
     deploy:
         name: Deploy
         env:
-            releasesDir: '${{ baseDir }}/releases-test'
-            persistentDir: '${{ baseDir }}/persistent'
-            currentDir: '${{ baseDir }}/current'
-            newReleaseDir: '${{ releasesDir }}/${{ newReleaseName }}'
+            releasesDir: '${{ env.baseDir }}/releases-test'
+            persistentDir: '${{ env.baseDir }}/persistent'
+            currentDir: '${{ env.baseDir }}/current'
+            newReleaseDir: '${{ env.releasesDir }}/${{ env.newReleaseName }}'
         runs-on: ubuntu-latest
         steps:
             -   name: Clone repository
