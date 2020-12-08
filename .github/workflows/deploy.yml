@@ -32,8 +32,10 @@ jobs:
                     username: forge
                     key: ${{ secrets.KEY }}
                     script: |
-                        '[ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}'
-                        '[ -d ${{ env.persistentDir }}/uploads ] || mkdir ${{ env.persistentDir }}/uploads'
-                        '[ -d ${{ env.persistentDir }}/storage ] || mkdir ${{ env.persistentDir }}/storage'
-                        'mkdir ${{ env.newReleaseDir }}'
-                        'git clone --depth 1 git@github.com:${{ env.repository }} ${{ env.newReleaseName }}
+                        [ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}
+                        [ -d ${{ env.persistentDir }}/uploads ] || mkdir ${{ env.persistentDir }}/uploads
+                        [ -d ${{ env.persistentDir }}/storage ] || mkdir ${{ env.persistentDir }}/storage
+                        # Create new directory
+                        mkdir ${{ env.newReleaseDir }}
+                        # Clone directory
+                        git clone --depth 1 git@github.com:${{ env.repository }} ${{ env.newReleaseName }}
