@@ -6,7 +6,7 @@ on:
             - production
 env:
     repository: 'spatie/freek.dev'
-    baseDir: '/home/forge/freek.dev'
+    baseDir: '/home/forge/freek-test.dev'
     newReleaseName: '${{ github.run_id }}'
 jobs:
     deploy:
@@ -17,7 +17,12 @@ jobs:
         steps:
             -   name: Set env
                 run: |
-                    echo "releasesDir=${{ env.baseDir }}/releases-test" >> $GITHUB_ENV
+                    echo "releasesDir=${{ env.baseDir }}/releases" >> $GITHUB_ENV
+                    echo "persistentDir=${{ env.baseDir }}/persistent" >> $GITHUB_ENV
+                    echo "currentDir=${{ env.baseDir }}/current" >> $GITHUB_ENV
+                    echo "newReleaseDir=${{ env.releasesDir }}/${{ env.newReleaseName }}" >> $GITHUB_ENV
+
+
             -   name: Clone repository
                 uses: appleboy/ssh-action@master
                 with:
@@ -25,5 +30,14 @@ jobs:
                     username: ${{ secrets.USERNAME }}
                     key: ${{ secrets.KEY }}
                     script:
-                      '[ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}'
+                        '[ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}'
+                        '[ -d ${{ env.persistentDir }}/uploads ] || mkdir ${{ env.persistentDir }}/uploads'
+                        '[ -d ${{ env.persistentDir }}/storage ] || mkdir ${{ env.persistentDir }}/storage'
+
+                        '# Create the releasesDir
+                        'cd ${{ env.newReleaseDir }}'
+
+                        '# Clone the repo'
+                        'git clone --depth 1 git@github.com:${{ env.repository }} ${{ env.newReleaseName }}
+
 
