@@ -8,6 +8,7 @@ on:
 
 jobs:
     deploy:
+        name: Deploy
         env:
             repository: 'spatie/freek.dev'
             baseDir: '/home/forge/freek.dev'
@@ -16,8 +17,6 @@ jobs:
             currentDir: '${{ baseDir }}/current'
             newReleaseName: '${{ GITHUB_RUN_ID }}'
             newReleaseDir: '${{ releasesDir }}/${{ newReleaseName }}'
-
-        name: Deploy
         runs-on: ubuntu-latest
         steps:
             -   name: Clone repository
