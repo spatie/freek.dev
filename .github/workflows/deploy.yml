@@ -15,7 +15,7 @@ jobs:
             persistentDir: '${{ baseDir }}/persistent'
             currentDir: '${{ baseDir }}/current'
             newReleaseName: '${{ GITHUB_RUN_ID }}'
-            newReleaseDir = '${{ releasesDir }}/${{ newReleaseName }}'
+            newReleaseDir: '${{ releasesDir }}/${{ newReleaseName }}'
 
         name: Deploy
         runs-on: ubuntu-latest
