@@ -51,7 +51,7 @@ jobs:
                         git read-tree -mu HEAD
 
                         # Mark release
-                        cd {{ $newReleaseDir }}
+                        cd ${{ env.newReleaseDir }}
                         echo "${{ env.newReleaseName }}" > public/release-name.txt
 
             -   name: 🚚 Run composer
