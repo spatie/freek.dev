@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "03c40d4674a7f86d964d763637f0ea1e",
+    "content-hash": "c701f88bd0b9a9d2a1e906fdb816438b",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -6536,16 +6536,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.41.0",
+            "version": "3.41.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "2cc87d4dad788b372549cf856c773a7e5a8fcace"
+                "reference": "73e6a1f51c52af548600fa89e78ac0ef1c08ccf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/2cc87d4dad788b372549cf856c773a7e5a8fcace",
-                "reference": "2cc87d4dad788b372549cf856c773a7e5a8fcace",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/73e6a1f51c52af548600fa89e78ac0ef1c08ccf0",
+                "reference": "73e6a1f51c52af548600fa89e78ac0ef1c08ccf0",
                 "shasum": ""
             },
             "require": {
@@ -6590,7 +6590,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/browsershot/issues",
-                "source": "https://github.com/spatie/browsershot/tree/3.41.0"
+                "source": "https://github.com/spatie/browsershot/tree/3.41.1"
             },
             "funding": [
                 {
@@ -6598,7 +6598,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-18T08:51:42+00:00"
+            "time": "2020-12-08T09:47:47+00:00"
         },
         {
             "name": "spatie/commonmark-highlighter",
@@ -7347,17 +7347,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "3.3.0",
+            "version": "v3.x-dev",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "6f77c0f5310ee150feb46013ff3480d7677dc800"
+                "reference": "62c7b41eb103050bbdfe369c8c164a45c2b59e33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-6f77c0f5310ee150feb46013ff3480d7677dc800-zip-6a6d51.zip",
-                "reference": "6f77c0f5310ee150feb46013ff3480d7677dc800",
-                "shasum": "9491928564480f9589445b6c39f4d689d3a4e41f"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-62c7b41eb103050bbdfe369c8c164a45c2b59e33-zip-36cc44.zip",
+                "reference": "62c7b41eb103050bbdfe369c8c164a45c2b59e33",
+                "shasum": "959dbda53052a83d24a645925a2be2bad5546cf1"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -7378,7 +7378,7 @@
                 "spatie/laravel-feed": "^2.7",
                 "spatie/laravel-flash": "^1.6",
                 "spatie/laravel-json-api-paginate": "^1.7",
-                "spatie/laravel-medialibrary": "^8.4.1|^9.0",
+                "spatie/laravel-medialibrary": "^8.4.1",
                 "spatie/laravel-model-cleanup": "^3.1",
                 "spatie/laravel-query-builder": "^3.0",
                 "spatie/laravel-rate-limited-job-middleware": "^1.4",
@@ -7397,6 +7397,7 @@
                 "friendsofphp/php-cs-fixer": "^2.16",
                 "fzaninotto/faker": "^1.9",
                 "laravel/framework": "^8.0",
+                "laravel/legacy-factories": "^1.0",
                 "orchestra/testbench": "^6.0",
                 "orchestra/testbench-core": "^6.0",
                 "phpunit/phpunit": "^9.2",
@@ -7459,10 +7460,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/3.3.0",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/v3",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2020-11-19T07:11:37+00:00"
+            "time": "2020-09-28T11:54:27+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -7616,30 +7617,29 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "9.4.0",
+            "version": "8.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "04434d0a50fb2af31f60fe359e37c37373350e44"
+                "reference": "72b408972ba0b994eb52f39d38169621699e549b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/04434d0a50fb2af31f60fe359e37c37373350e44",
-                "reference": "04434d0a50fb2af31f60fe359e37c37373350e44",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/72b408972ba0b994eb52f39d38169621699e549b",
+                "reference": "72b408972ba0b994eb52f39d38169621699e549b",
                 "shasum": ""
             },
             "require": {
-                "ext-exif": "*",
                 "ext-fileinfo": "*",
                 "ext-json": "*",
-                "illuminate/bus": "^7.0|^8.0",
-                "illuminate/console": "^7.0|^8.0",
-                "illuminate/database": "^7.0|^8.0",
-                "illuminate/pipeline": "^7.0|^8.0",
-                "illuminate/support": "^7.0|^8.0",
+                "illuminate/bus": "^6.18|^7.0|^8.0",
+                "illuminate/console": "^6.18|^7.0|^8.0",
+                "illuminate/database": "^6.18|^7.0|^8.0",
+                "illuminate/pipeline": "^6.18|^7.0|^8.0",
+                "illuminate/support": "^6.18|^7.0|^8.0",
                 "league/flysystem": "^1.0.64",
                 "maennchen/zipstream-php": "^1.0|^2.0",
-                "php": "^7.4|^8.0",
+                "php": "^7.4",
                 "spatie/image": "^1.4.0",
                 "spatie/temporary-directory": "^1.1",
                 "symfony/console": "^4.4|^5.0"
@@ -7655,7 +7655,8 @@
                 "guzzlehttp/guzzle": "^6.3|^7.0",
                 "league/flysystem-aws-s3-v3": "^1.0.23",
                 "mockery/mockery": "^1.3",
-                "orchestra/testbench": "^5.0|^6.0",
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "php-ffmpeg/php-ffmpeg": "^0.16.0",
                 "phpunit/phpunit": "^9.1",
                 "spatie/pdf-to-image": "^2.0",
                 "spatie/phpunit-snapshot-assertions": "^4.0"
@@ -7704,7 +7705,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.4.0"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/8.10.1"
             },
             "funding": [
                 {
@@ -7716,7 +7717,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-02T16:32:47+00:00"
+            "time": "2020-10-05T21:54:57+00:00"
         },
         {
             "name": "spatie/laravel-menu",
