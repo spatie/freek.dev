@@ -17,7 +17,7 @@ jobs:
         steps:
             -   name: Set env
                 run: |
-                    echo "releasesDir={env.baseDir}/releases-test" >> $GITHUB_ENV
+                    echo "releasesDir=${{ env.baseDir }}/releases-test" >> $GITHUB_ENV
             -   name: Clone repository
                 uses: appleboy/ssh-action@master
                 with:
