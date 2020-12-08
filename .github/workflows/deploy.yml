@@ -4,18 +4,17 @@ on:
     push:
         branches:
             - production
-
-
+env:
+    repository: 'spatie/freek.dev'
+    baseDir: '/home/forge/freek.dev'
+    newReleaseName: '${{ env.GITHUB_RUN_ID }}'
 jobs:
     deploy:
         name: Deploy
         env:
-            repository: 'spatie/freek.dev'
-            baseDir: '/home/forge/freek.dev'
             releasesDir: '${{ env.baseDir }}/releases-test'
             persistentDir: '${{ env.baseDir }}/persistent'
             currentDir: '${{ env.baseDir }}/current'
-            newReleaseName: '${{ env.GITHUB_RUN_ID }}'
             newReleaseDir: '${{ env.releasesDir }}/${{ env.newReleaseName }}'
         runs-on: ubuntu-latest
         steps:
