@@ -17,6 +17,10 @@ jobs:
             newReleaseName: '${{ github.run_id }}'
 
         steps:
+            -   name: ✋ Load Slack committer
+                id: slack-committer
+                uses: spatie/slack-committer@1.0.1
+
             -   name: 🌍 Set environment variables
                 run: |
                     mqkmsdjfqmsldkfjqmsdfklqsmjm
@@ -185,10 +189,6 @@ jobs:
                         cd ${{ env.releasesDir }}
                         ls -dt ${{ env.releasesDir }}/* | tail -n +4 | xargs -d "\n" sudo chown -R forge .;
                         ls -dt ${{ env.releasesDir }}/* | tail -n +4 | xargs -d "\n" rm -rf;
-
-            -   name: ✋ Load Slack committer
-                id: slack-committer
-                uses: spatie/slack-committer@1.0.1
 
             -   name: 🥳 Send deploy succeeded notification
                 uses: rtCamp/action-slack-notify@master
