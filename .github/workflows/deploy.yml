@@ -12,11 +12,11 @@ jobs:
         env:
             repository: 'spatie/freek.dev'
             baseDir: '/home/forge/freek.dev'
-            releasesDir: '${{ baseDir }}/releases-test'
-            persistentDir: '${{ baseDir }}/persistent'
-            currentDir: '${{ baseDir }}/current'
-            newReleaseName: '${{ GITHUB_RUN_ID }}'
-            newReleaseDir: '${{ releasesDir }}/${{ newReleaseName }}'
+            releasesDir: '${{ env.baseDir }}/releases-test'
+            persistentDir: '${{ env.baseDir }}/persistent'
+            currentDir: '${{ env.baseDir }}/current'
+            newReleaseName: '${{ env.GITHUB_RUN_ID }}'
+            newReleaseDir: '${{ env.releasesDir }}/${{ env.newReleaseName }}'
         runs-on: ubuntu-latest
         steps:
             -   name: Clone repository
