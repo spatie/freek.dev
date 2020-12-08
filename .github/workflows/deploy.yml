@@ -195,7 +195,7 @@ jobs:
                     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_DEPLOY }}
                     SLACK_USERNAME: 'Spatie'
                     SLACK_TITLE: 'Deploy of https://github.com/${{ github.repository }} succeeded'
-                    SLACK_MESSAGE: "You should fix this: ${{ steps.slack-committer.outputs.username }}"
+                    SLACK_MESSAGE: "Well done ${{ steps.slack-committer.outputs.username }} 👍"
                     SLACK_ICON: 'https://lh5.googleusercontent.com/-kDe1cClrALE/AAAAAAAAAAI/AAAAAAAAAAA/ZpXA_eJKjag/s44-p-k-no-ns-nd/photo.jpg'
                     SLACK_COLOR: '#04b518'
                     SLACK_FOOTER: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
@@ -211,4 +211,3 @@ jobs:
                     SLACK_ICON: 'https://lh5.googleusercontent.com/-kDe1cClrALE/AAAAAAAAAAI/AAAAAAAAAAA/ZpXA_eJKjag/s44-p-k-no-ns-nd/photo.jpg'
                     SLACK_COLOR: '#ff0000'
                     SLACK_FOOTER: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
-
