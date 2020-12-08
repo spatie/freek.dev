@@ -13,8 +13,8 @@ jobs:
             repository: 'spatie/freek.dev'
             baseDir: '/home/forge/freek-test.dev'
             newReleaseName: '${{ github.run_id }}'
-            host: ${{ env.host }}
-            username: ${{ env.username }}
+            host: '${{ env.host }}'
+            username: '${{ env.username }}'
 
         steps:
             -   name: Set releases dir env
