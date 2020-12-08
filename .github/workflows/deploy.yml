@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+    push:
+        branches:
+            - production
+
+
+jobs:
+    deploy:
+        env:
+            repository: 'spatie/freek.dev'
+            baseDir: '/home/forge/freek.dev'
+
+        name: Deploy
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Clone repository
+                uses: appleboy/ssh-action@master
+                with:
+                    host: ${{ secrets.HOST }}
+                    username: ${{ secrets.USERNAME }}
+                    script: whoami
