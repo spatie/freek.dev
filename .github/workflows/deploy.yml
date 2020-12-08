@@ -11,10 +11,10 @@ jobs:
         runs-on: ubuntu-latest
         env:
             repository: 'spatie/freek.dev'
+            host: 'freek.dev'
+            username: 'forge'
             baseDir: '/home/forge/freek-test.dev'
             newReleaseName: '${{ github.run_id }}'
-            host: ${{ env.host }}
-            username: ${{ env.username }}
 
         steps:
             -   name: Set releases dir env
