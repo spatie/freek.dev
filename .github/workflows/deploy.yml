@@ -7,7 +7,7 @@ on:
 env:
     repository: 'spatie/freek.dev'
     baseDir: '/home/forge/freek.dev'
-    newReleaseName: '${{ GITHUB_RUN_ID }}'
+    newReleaseName: '${{ github.run_id }}'
 jobs:
     deploy:
         name: Deploy
