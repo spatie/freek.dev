@@ -99,7 +99,7 @@ jobs:
                     script: |
                         # Remove the storage directory and replace with persistent data
                         rm -rf ${{ env.newReleaseDir }}/storage;
-                        cd {{ $newReleaseDir }};
+                        cd ${{ env.newReleaseDir }};
                         ln -nfs ${{ env.baseDir }}/persistent/storage storage;
 
                         # Remove the public/uploads directory and replace with persistent data
@@ -149,7 +149,7 @@ jobs:
                     key: ${{ secrets.KEY }}
                     script: |
                         cd ${{ env.newReleaseDir }}
-                        php artisan migrate --force
+                        # php artisan migrate --force
 
             -   name: 🙏 Bless release
                 uses: appleboy/ssh-action@master
