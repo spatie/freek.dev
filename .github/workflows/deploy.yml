@@ -25,5 +25,5 @@ jobs:
                     username: ${{ secrets.USERNAME }}
                     key: ${{ secrets.KEY }}
                     script:
-                      '[ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}]'
+                      '[ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}'
 
