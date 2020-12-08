@@ -7,15 +7,15 @@ on:
 env:
     repository: 'spatie/freek.dev'
     baseDir: '/home/forge/freek.dev'
-    newReleaseName: '${{ env.GITHUB_RUN_ID }}'
+    newReleaseName: '${{ GITHUB_RUN_ID }}'
 jobs:
     deploy:
         name: Deploy
         env:
-            releasesDir: '${{ env.baseDir }}/releases-test'
-            persistentDir: '${{ env.baseDir }}/persistent'
-            currentDir: '${{ env.baseDir }}/current'
-            newReleaseDir: '${{ env.releasesDir }}/${{ env.newReleaseName }}'
+            releasesDir: '${{ baseDir }}/releases-test'
+            persistentDir: '${{ baseDir }}/persistent'
+            currentDir: '${{ baseDir }}/current'
+            newReleaseDir: '${{ releasesDir }}/${{ newReleaseName }}'
         runs-on: ubuntu-latest
         steps:
             -   name: Clone repository
