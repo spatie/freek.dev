@@ -11,6 +11,11 @@ jobs:
         env:
             repository: 'spatie/freek.dev'
             baseDir: '/home/forge/freek.dev'
+            releasesDir: '${{ baseDir }}/releases-test'
+            persistentDir: '${{ baseDir }}/persistent'
+            currentDir: '${{ baseDir }}/current'
+            newReleaseName: '${{ GITHUB_RUN_ID }}'
+            newReleaseDir = '${{ releasesDir }}/${{ newReleaseName }}'
 
         name: Deploy
         runs-on: ubuntu-latest
@@ -21,4 +26,6 @@ jobs:
                     host: ${{ secrets.HOST }}
                     username: ${{ secrets.USERNAME }}
                     key: ${{ secrets.KEY }}
-                    script: whoami
+                    script:
+                      '[ -d ${{ $releasesDir }} ] || mkdir ${{ releasesDir }}';
+
