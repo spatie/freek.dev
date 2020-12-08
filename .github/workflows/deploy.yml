@@ -11,13 +11,16 @@ env:
 jobs:
     deploy:
         name: Deploy
-        env:
-            releasesDir: '${{ env.baseDir }}/releases-test'
-            persistentDir: '${{ env.baseDir }}/persistent'
-            currentDir: '${{ env.baseDir }}/current'
-            newReleaseDir: '${{ env.releasesDir }}/${{ env.newReleaseName }}'
+
         runs-on: ubuntu-latest
+
         steps:
+            -   name: Set env
+                run: |
+                    echo ::set-env name=releasesDir::${{ env.baseDir }}/releases-test
+                    echo ::set-env name=persistentDir::${{ env.baseDir }}/persistent
+                    echo ::set-env name=currentDir::${{ env.baseDir }}/current
+                    echo ::set-env name=newReleaseDir::${{ env.baseDir }}/${{ env.newReleaseName }}
             -   name: Clone repository
                 uses: appleboy/ssh-action@master
                 with:
@@ -25,5 +28,5 @@ jobs:
                     username: ${{ secrets.USERNAME }}
                     key: ${{ secrets.KEY }}
                     script:
-                      '[ -d ${{ $releasesDir }} ] || mkdir ${{ releasesDir }}]'
+                      '[ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}]'
 
