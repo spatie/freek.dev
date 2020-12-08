@@ -25,7 +25,7 @@ jobs:
                     echo "currentDir=${{ env.baseDir }}/current" >> $GITHUB_ENV
                     echo "newReleaseDir=${{ env.releasesDir }}/${{ env.newReleaseName }}" >> $GITHUB_ENV
 
-            -   name: Create directories
+            -   name: 🌀 Clone repository
                 uses: appleboy/ssh-action@master
                 with:
                     host: ${{ secrets.HOST }}
@@ -39,12 +39,42 @@ jobs:
                         # Create new directory
                         mkdir ${{ env.newReleaseDir }}
 
-            -   name: Clone repository
-                uses: appleboy/ssh-action@master
-                with:
-                    host: ${{ secrets.HOST }}
-                    username: forge
-                    key: ${{ secrets.KEY }}
-                    script: |
-                        cd ${{ env.newReleaseDir }}
+                        # Clone directory
                         git clone --depth 1 git@github.com:${{ env.repository }} ${{ env.newReleaseName }}
+
+                        # Configure sparse checkout
+                        cd {{ $newReleaseDir }}
+                        git config core.sparsecheckout true
+                        echo "*" > .git/info/sparse-checkout
+                        echo "!storage" >> .git/info/sparse-checkout
+                        echo "!public/build" >> .git/info/sparse-checkout
+                        git read-tree -mu HEAD
+
+                        # Mark release
+                        cd {{ $newReleaseDir }}
+                        echo "{{ $newReleaseName }}" > public/release-name.txt
+
+                -   name: 🚚 Run composer
+                    uses: appleboy/ssh-action@master
+                    with:
+                        host: ${{ secrets.HOST }}
+                        username: forge
+                        key: ${{ secrets.KEY }}
+                        script: |
+                            cd ${{ newReleaseDir }}
+                            ln -nfs ${{ $baseDir }}/auth.json auth.json;
+                            composer install --prefer-dist --no-scripts --no-dev -q -o;
+                            php artisan nova:publish
+
+                -   name: 📦 Run yarn
+                    uses: appleboy/ssh-action@master
+                    with:
+                        host: ${{ secrets.HOST }}
+                        username: forge
+                        key: ${{ secrets.KEY }}
+                        script: |
+                            cd ${{ newReleaseDir }};
+                            yarn config set ignore-engines true
+                            yarn
+
+
