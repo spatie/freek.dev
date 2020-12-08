@@ -29,7 +29,7 @@ jobs:
                     host: ${{ secrets.HOST }}
                     username: ${{ secrets.USERNAME }}
                     key: ${{ secrets.KEY }}
-                    script:
+                    script: |
                         '[ -d ${{ env.releasesDir }} ] || mkdir ${{ env.releasesDir }}'
                         '[ -d ${{ env.persistentDir }}/uploads ] || mkdir ${{ env.persistentDir }}/uploads'
                         '[ -d ${{ env.persistentDir }}/storage ] || mkdir ${{ env.persistentDir }}/storage'
