@@ -36,6 +36,8 @@ jobs:
                         [ -d ${{ env.persistentDir }}/uploads ] || mkdir ${{ env.persistentDir }}/uploads
                         [ -d ${{ env.persistentDir }}/storage ] || mkdir ${{ env.persistentDir }}/storage
 
+                        cd ${{ env.releasesDir }}
+
                         # Create new directory
                         mkdir ${{ env.newReleaseDir }}
 
