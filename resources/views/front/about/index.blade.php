@@ -14,7 +14,7 @@
 
         </p>
         <p>
-            I'm a I'm a PHP developer and Laravel enthusiast. Most of my time is spent at <a href="https://spatie.be">Spatie</a> of which I'm the co-owner.
+            I'm a PHP developer and Laravel enthusiast. Most of my time is spent at <a href="https://spatie.be">Spatie</a> of which I'm the co-owner.
 
             <p>
             At Spatie we use a
