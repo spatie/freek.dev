@@ -12,7 +12,7 @@
         </p>
         <h2>The blog</h2>
         <p>
-            In 2020 the blog had about 800 000 page views. If you want to view some more statistics and learn which pages were
+            In 2020 the blog had about 930 000 page views. If you want to view some more statistics and learn which pages were
             the most popular read <a href="https://freek.dev/four-years-of-murzebe">this blog post</a>.
         </p>
         <p>
