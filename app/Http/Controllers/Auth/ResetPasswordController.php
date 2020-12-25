@@ -16,6 +16,6 @@ class ResetPasswordController
             return '/nova';
         }
 
-        return action(LinksIndexController::class);
+        return redirect()->to(action(LinksIndexController::class));
     }
 }
