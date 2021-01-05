@@ -11,12 +11,9 @@ class LinkSumittedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public Link $link;
-
-    public function __construct(Link $link)
-    {
-        $this->link = $link;
-    }
+    public function __construct(
+        public Link $link
+    ) {}
 
     public function build()
     {

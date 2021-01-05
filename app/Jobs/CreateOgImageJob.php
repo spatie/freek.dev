@@ -15,14 +15,11 @@ class CreateOgImageJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public Post $post;
-
     public $tries = 2;
 
-    public function __construct(Post $post)
-    {
-        $this->post = $post;
-    }
+    public function __construct(
+        public Post $post
+    ) {}
 
     public function handle()
     {
