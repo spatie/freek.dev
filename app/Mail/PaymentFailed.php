@@ -14,7 +14,8 @@ class PaymentFailed extends Mailable
         public string $email,
         public int $amount,
         public string $exceptionMessage
-    ) {}
+    ) {
+    }
 
     public function build()
     {
