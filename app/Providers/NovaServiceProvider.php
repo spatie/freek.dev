@@ -41,8 +41,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new GenerateNewsletterTool(),
-            new BackupTool(),
-            new TailTool(),
         ];
     }
 
