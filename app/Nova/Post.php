@@ -77,6 +77,8 @@ class Post extends Resource
 
     public static function indexQuery(NovaRequest $request, $query)
     {
-        return $query->orderByDesc('publish_date');
+        return $query
+            ->orderBy('published')
+            ->orderByDesc('publish_date');
     }
 }
