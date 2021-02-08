@@ -13,7 +13,8 @@ class LinkApprovedMail extends Mailable
 
     public function __construct(
         public Link $link
-    ) {}
+    ) {
+    }
 
     public function build()
     {

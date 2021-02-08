@@ -13,7 +13,8 @@ class PaymentSuccessfulMail extends Mailable
     public function __construct(
         public string $email,
         public int $amount
-    ) {}
+    ) {
+    }
 
     public function build()
     {
