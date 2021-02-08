@@ -47,10 +47,9 @@ class Post extends Resource
                 Markdown::make('Text')
                     ->rules('required'),
 
-                Tags::make('Tags'),
+                Tags::make('Tags')->hideFromIndex(),
 
                 DateTime::make('Publish date')
-                    ->hideFromIndex()
                     ->sortable(),
             ]),
 
