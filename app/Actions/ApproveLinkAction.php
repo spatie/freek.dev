@@ -18,7 +18,6 @@ class ApproveLinkAction
         Mail::to($link->user->email)->queue(new LinkApprovedMail($link));
 
         $link->update([
-            'status' => Link::STATUS_APPROVED,
             'publish_date' => now(),
         ]);
 

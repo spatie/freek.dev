@@ -22,7 +22,7 @@ class ApproveLinkActionTest extends TestCase
     }
 
     /** @test */
-    public function it_can_approve_a_link()
+    public function the_action_can_approve_a_link()
     {
         /** @var Link $submittedLink */
         $submittedLink = Link::factory()->create([
