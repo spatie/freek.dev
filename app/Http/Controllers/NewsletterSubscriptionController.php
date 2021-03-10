@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SubscribeToNewsletterRequest;
-use Spatie\Mailcoach\Models\Subscriber;
+use Spatie\Mailcoach\Domain\Audience\Models\Subscriber;
 
 class NewsletterSubscriptionController
 {
