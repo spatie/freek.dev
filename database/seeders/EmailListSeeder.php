@@ -5,17 +5,17 @@ namespace Database\Seeders;
 
 use App\Mail\WelcomeMail;
 use Illuminate\Database\Seeder;
-use Spatie\Mailcoach\Enums\CampaignStatus;
-use Spatie\Mailcoach\Models\Campaign;
-use Spatie\Mailcoach\Models\EmailList;
-use Spatie\Mailcoach\Models\Subscriber;
-use Spatie\Mailcoach\Models\Template;
+use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
+use Spatie\Mailcoach\Domain\Audience\Models\Subscriber;
+use Spatie\Mailcoach\Domain\Campaign\Enums\CampaignStatus;
+use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
+use Spatie\Mailcoach\Domain\Campaign\Models\Template;
 
 class EmailListSeeder extends Seeder
 {
     public function run()
     {
-        /** @var \Spatie\Mailcoach\Models\EmailList $emailList */
+
         $emailList = EmailList::create([
             'name' => 'freek.dev newsletter',
             'requires_confirmation' => true,
