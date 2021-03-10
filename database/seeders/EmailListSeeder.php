@@ -15,7 +15,6 @@ class EmailListSeeder extends Seeder
 {
     public function run()
     {
-
         $emailList = EmailList::create([
             'name' => 'freek.dev newsletter',
             'requires_confirmation' => true,
