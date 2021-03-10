@@ -91,11 +91,14 @@ class UpgradeMailcoachV3ToV4 extends Migration
                 ->constrained('mailcoach_transactional_mails')
                 ->cascadeOnDelete()
                 ->after('automation_mail_id');
+
+            $table->timestamp('failed_at')->nullable();
         });
 
         Schema::table('mailcoach_subscriber_imports', function (Blueprint $table) {
             $table->boolean('replace_tags')->default(false)->after('unsubscribe_others');
         });
+
 
         Schema::table('mailcoach_tags', function (Blueprint $table) {
             $table->string('type')->default('default')->after('name');
@@ -289,6 +292,15 @@ class UpgradeMailcoachV3ToV4 extends Migration
             $table->boolean('track_clicks')->default(false);
             $table->text('test_using_mailable')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('mailcoach_subscribers', function (Blueprint $table) {
+            $table->index([
+                'email_list_id',
+                'subscribed_at',
+                'unsubscribed_at'
+            ],
+                'email_list_subscribed_index');
         });
     }
 }

@@ -47,6 +47,7 @@ class EmailListSeeder extends Seeder
         ]);
 
         Campaign::create([
+            'name' => 'My campaign',
             'subject' => 'subject',
             'from_email' => 'freek@spatie.be',
             'from_name' => 'Freek',
@@ -59,6 +60,19 @@ class EmailListSeeder extends Seeder
             'last_modified_at' => now(),
             'sent_at' => now(),
             'email_list_id' => $emailList->id,
+        ]);
+
+        Template::create([
+            'name' => 'My template',
+            'html' => '<html>
+    <body>
+        <a href="::webViewUrl::">Cannot read this email? See it in your browser.</a>
+
+        <!-- insert content here -->
+
+        <a href="::unsubscribeUrl::">Click here to unsubscribe</a>
+    </body>
+</html>'
         ]);
     }
 }
