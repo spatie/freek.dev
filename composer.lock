@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d060c2021a1894c063e23069d2c97460",
+    "content-hash": "a4171e4d7f9264589f0e9a7df77ef8f4",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -5829,13 +5829,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "68765f1c3ac2e2441b7e544abd05078cf877bb8c"
+                "reference": "99526f910f9d963a7c6e2a87eb1221575e7159c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-68765f1c3ac2e2441b7e544abd05078cf877bb8c-zip-ffcd3c.zip",
-                "reference": "68765f1c3ac2e2441b7e544abd05078cf877bb8c",
-                "shasum": "bacbdce95c287f9968da347e6a833bc00722e967"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-99526f910f9d963a7c6e2a87eb1221575e7159c3-zip-f83aeb.zip",
+                "reference": "99526f910f9d963a7c6e2a87eb1221575e7159c3",
+                "shasum": "2d6949cf6d6fb2419cc79cacd15338fcc6da803e"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5859,7 +5859,7 @@
                 "spatie/laravel-json-api-paginate": "^1.7",
                 "spatie/laravel-medialibrary": "^9.4",
                 "spatie/laravel-model-cleanup": "^3.1",
-                "spatie/laravel-package-tools": "^1.2.2",
+                "spatie/laravel-package-tools": "^1.4.3",
                 "spatie/laravel-query-builder": "^3.0",
                 "spatie/laravel-rate-limited-job-middleware": "^1.4",
                 "spatie/laravel-schemaless-attributes": "^1.8",
@@ -5944,32 +5944,29 @@
                 "source": "https://github.com/spatie/laravel-mailcoach/tree/v4",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2021-03-10T09:01:01+00:00"
+            "time": "2021-03-10T10:25:44+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
-            "version": "v4.x-dev",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback.git",
-                "reference": "8978c3fe4f18830d2c984d7ddb8d3737725135c8"
+                "reference": "5b406b32cab88864b87af6e28d440721fde98fc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-8978c3fe4f18830d2c984d7ddb8d3737725135c8-zip-d7c200.zip",
-                "reference": "8978c3fe4f18830d2c984d7ddb8d3737725135c8",
-                "shasum": "06b55b604b7af3afd6389dca7ff19e250455ae0e"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-5b406b32cab88864b87af6e28d440721fde98fc1-zip-f94bea.zip",
+                "reference": "5b406b32cab88864b87af6e28d440721fde98fc1",
+                "shasum": "bec1f895914b5f6e0f965e50193152eb5022eeda"
             },
             "require": {
-                "illuminate/http": "^8.0",
                 "php": "^8.0",
-                "spatie/laravel-mailcoach": "^4.0",
-                "spatie/laravel-webhook-client": "^2.7"
+                "spatie/laravel-mailcoach": "^4.0"
             },
             "require-dev": {
                 "ext-json": "*",
                 "fakerphp/faker": "^1.12",
-                "laravel/legacy-factories": "^1.0.4",
                 "orchestra/testbench": "^6.0",
                 "phpunit/phpunit": "^9.4",
                 "symfony/var-dumper": "^5.2"
@@ -5989,7 +5986,8 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Spatie\\MailcoachMailgunFeedback\\Tests\\": "tests"
+                    "Spatie\\MailcoachMailgunFeedback\\Tests\\": "tests",
+                    "Spatie\\Mailcoach\\Database\\Factories\\": "vendor/spatie/laravel-mailcoach/database/factories"
                 }
             },
             "scripts": {
@@ -6015,24 +6013,24 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback/tree/v4",
+                "source": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback/tree/3.0.0",
                 "issues": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback/issues"
             },
-            "time": "2021-02-16T10:37:02+00:00"
+            "time": "2021-03-10T08:19:27+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-monaco",
-            "version": "v4.x-dev",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-mailcoach-monaco.git",
-                "reference": "9a929526214de1f9ea9f9ec27e5d98b447685b6f"
+                "reference": "e45153c1929d592f1db53295d3ff582ae062dce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-9a929526214de1f9ea9f9ec27e5d98b447685b6f-zip-c69416.zip",
-                "reference": "9a929526214de1f9ea9f9ec27e5d98b447685b6f",
-                "shasum": "e11653def9c950c6e297a03bc94311bf2735ae62"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-e45153c1929d592f1db53295d3ff582ae062dce0-zip-f31ee4.zip",
+                "reference": "e45153c1929d592f1db53295d3ff582ae062dce0",
+                "shasum": "4a18af31fd9f7d1efd06c301cbd442c6557ee214"
             },
             "require": {
                 "ext-json": "*",
@@ -6085,7 +6083,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/v4",
+                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/2.0.0",
                 "issues": "https://github.com/spatie/laravel-mailcoach-monaco/issues"
             },
             "funding": [
@@ -6094,7 +6092,7 @@
                     "url": "https://spatie.be/open-source/support-us"
                 }
             ],
-            "time": "2020-12-18T15:31:14+00:00"
+            "time": "2021-03-10T10:37:05+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
@@ -6677,6 +6675,77 @@
                 }
             ],
             "time": "2021-03-09T16:53:08+00:00"
+        },
+        {
+            "name": "spatie/laravel-remote",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-remote.git",
+                "reference": "12a434e77b0e98ab50f7194abea850d3d7a828b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-remote/zipball/12a434e77b0e98ab50f7194abea850d3d7a828b2",
+                "reference": "12a434e77b0e98ab50f7194abea850d3d7a828b2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.1",
+                "spatie/ssh": "^1.5"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.3",
+                "spatie/laravel-ray": "^1.9",
+                "spatie/phpunit-snapshot-assertions": "^4.2",
+                "spatie/ray": "^1.21",
+                "vimeo/psalm": "^4.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Remote\\RemoteServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Remote\\": "src",
+                    "Spatie\\Remote\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Execute Artisan commands on remote servers",
+            "homepage": "https://github.com/spatie/laravel-remote",
+            "keywords": [
+                "laravel-remote",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-remote/issues",
+                "source": "https://github.com/spatie/laravel-remote/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-03-10T09:43:13+00:00"
         },
         {
             "name": "spatie/laravel-responsecache",
@@ -14286,9 +14355,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spatie/laravel-mailcoach": 20,
-        "spatie/laravel-mailcoach-mailgun-feedback": 20,
-        "spatie/laravel-mailcoach-monaco": 20
+        "spatie/laravel-mailcoach": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
