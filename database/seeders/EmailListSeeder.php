@@ -72,7 +72,7 @@ class EmailListSeeder extends Seeder
 
         <a href="::unsubscribeUrl::">Click here to unsubscribe</a>
     </body>
-</html>'
+</html>',
         ]);
     }
 }

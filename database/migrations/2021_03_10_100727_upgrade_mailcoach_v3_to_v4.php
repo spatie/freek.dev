@@ -295,12 +295,14 @@ class UpgradeMailcoachV3ToV4 extends Migration
         });
 
         Schema::table('mailcoach_subscribers', function (Blueprint $table) {
-            $table->index([
+            $table->index(
+                [
                 'email_list_id',
                 'subscribed_at',
-                'unsubscribed_at'
+                'unsubscribed_at',
             ],
-                'email_list_subscribed_index');
+                'email_list_subscribed_index'
+            );
         });
     }
 }
