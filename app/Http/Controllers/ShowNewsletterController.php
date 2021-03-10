@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Spatie\Mailcoach\Models\Campaign;
+use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
 
 class ShowNewsletterController
 {
