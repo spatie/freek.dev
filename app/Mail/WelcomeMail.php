@@ -5,8 +5,8 @@ namespace App\Mail;
 use App\Models\Post;
 use Illuminate\Support\Collection;
 use Spatie\Mailcoach\Domain\Audience\Models\Subscriber;
-use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
 use Spatie\Mailcoach\Domain\Campaign\Mails\WelcomeMail as MailcoachWelcomeMail;
+use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
 
 class WelcomeMail extends MailcoachWelcomeMail
 {
