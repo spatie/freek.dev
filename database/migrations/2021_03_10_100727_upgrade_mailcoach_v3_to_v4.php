@@ -91,8 +91,6 @@ class UpgradeMailcoachV3ToV4 extends Migration
                 ->constrained('mailcoach_transactional_mails')
                 ->cascadeOnDelete()
                 ->after('automation_mail_id');
-
-            $table->timestamp('failed_at')->nullable();
         });
 
         Schema::table('mailcoach_subscriber_imports', function (Blueprint $table) {
