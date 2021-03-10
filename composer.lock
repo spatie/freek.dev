@@ -1490,7 +1490,7 @@
         },
         {
             "name": "freekmurze/generate-newsletter",
-            "version": "dev-mailcoach",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GenerateNewsletter",
