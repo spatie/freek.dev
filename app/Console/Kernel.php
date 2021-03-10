@@ -11,6 +11,9 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('mailcoach:run-automation-triggers')->everyMinute()->runInBackground();
+        $schedule->command('mailcoach:run-automation-actions')->everyMinute()->runInBackground();
+        $schedule->command('mailcoach:calculate-automation-mail-statistics')->everyMinute();
         $schedule->command(PublishScheduledPostsCommand::class)->everyMinute();
         $schedule->command('mailcoach:calculate-statistics')->everyMinute();
         $schedule->command('mailcoach:send-scheduled-campaigns')->everyMinute();

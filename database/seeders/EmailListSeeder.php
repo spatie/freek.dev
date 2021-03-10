@@ -5,17 +5,16 @@ namespace Database\Seeders;
 
 use App\Mail\WelcomeMail;
 use Illuminate\Database\Seeder;
-use Spatie\Mailcoach\Enums\CampaignStatus;
-use Spatie\Mailcoach\Models\Campaign;
-use Spatie\Mailcoach\Models\EmailList;
-use Spatie\Mailcoach\Models\Subscriber;
-use Spatie\Mailcoach\Models\Template;
+use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
+use Spatie\Mailcoach\Domain\Audience\Models\Subscriber;
+use Spatie\Mailcoach\Domain\Campaign\Enums\CampaignStatus;
+use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
+use Spatie\Mailcoach\Domain\Campaign\Models\Template;
 
 class EmailListSeeder extends Seeder
 {
     public function run()
     {
-        /** @var \Spatie\Mailcoach\Models\EmailList $emailList */
         $emailList = EmailList::create([
             'name' => 'freek.dev newsletter',
             'requires_confirmation' => true,
@@ -48,6 +47,7 @@ class EmailListSeeder extends Seeder
         ]);
 
         Campaign::create([
+            'name' => 'My campaign',
             'subject' => 'subject',
             'from_email' => 'freek@spatie.be',
             'from_name' => 'Freek',
@@ -60,6 +60,19 @@ class EmailListSeeder extends Seeder
             'last_modified_at' => now(),
             'sent_at' => now(),
             'email_list_id' => $emailList->id,
+        ]);
+
+        Template::create([
+            'name' => 'My template',
+            'html' => '<html>
+    <body>
+        <a href="::webViewUrl::">Cannot read this email? See it in your browser.</a>
+
+        <!-- insert content here -->
+
+        <a href="::unsubscribeUrl::">Click here to unsubscribe</a>
+    </body>
+</html>',
         ]);
     }
 }

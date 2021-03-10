@@ -31,6 +31,7 @@ class UpgradeMailcoachTablesToV3 extends Migration
 
         Schema::table('mailcoach_sends', function (Blueprint $table) {
             $table->index('uuid');
+            $table->timestamp('failed_at')->nullable();
         });
 
         Schema::table('webhook_calls', function (Blueprint $table) {

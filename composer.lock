@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77afdfc22c0c53a19730220b0e0c2f50",
+    "content-hash": "a4171e4d7f9264589f0e9a7df77ef8f4",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -517,79 +517,6 @@
                 }
             ],
             "time": "2021-01-12T12:10:35+00:00"
-        },
-        {
-            "name": "composer/package-versions-deprecated",
-            "version": "1.11.99.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/package-versions-deprecated.git",
-                "reference": "7413f0b55a051e89485c5cb9f765fe24bb02a7b6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/7413f0b55a051e89485c5cb9f765fe24bb02a7b6",
-                "reference": "7413f0b55a051e89485c5cb9f765fe24bb02a7b6",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1.0 || ^2.0",
-                "php": "^7 || ^8"
-            },
-            "replace": {
-                "ocramius/package-versions": "1.11.99"
-            },
-            "require-dev": {
-                "composer/composer": "^1.9.3 || ^2.0@dev",
-                "ext-zip": "^1.13",
-                "phpunit/phpunit": "^6.5 || ^7"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "PackageVersions\\Installer",
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PackageVersions\\": "src/PackageVersions"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be"
-                }
-            ],
-            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "support": {
-                "issues": "https://github.com/composer/package-versions-deprecated/issues",
-                "source": "https://github.com/composer/package-versions-deprecated/tree/1.11.99.1"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-11-11T10:22:58+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1563,7 +1490,7 @@
         },
         {
             "name": "freekmurze/generate-newsletter",
-            "version": "dev-master",
+            "version": "dev-mailcoach",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GenerateNewsletter",
@@ -2267,16 +2194,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.7.0",
+            "version": "v5.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "40ca8137087e90fcd6b91265698fbc009a4fc861"
+                "reference": "20b6862a069af48a50e963256d325407e7a93a85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/40ca8137087e90fcd6b91265698fbc009a4fc861",
-                "reference": "40ca8137087e90fcd6b91265698fbc009a4fc861",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/20b6862a069af48a50e963256d325407e7a93a85",
+                "reference": "20b6862a069af48a50e963256d325407e7a93a85",
                 "shasum": ""
             },
             "require": {
@@ -2338,9 +2265,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.7.0"
+                "source": "https://github.com/laravel/horizon/tree/v5.7.1"
             },
-            "time": "2021-02-16T15:52:59+00:00"
+            "time": "2021-03-09T16:40:46+00:00"
         },
         {
             "name": "laravel/nova",
@@ -5254,21 +5181,98 @@
             "time": "2021-01-18T00:32:12+00:00"
         },
         {
-            "name": "spatie/image",
-            "version": "1.10.2",
+            "name": "spatie/enum",
+            "version": "3.7.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/spatie/image.git",
-                "reference": "12662673fbe649bffcd3a24188a404dc31fa118c"
+                "url": "https://github.com/spatie/enum.git",
+                "reference": "cfbcf53147d993fa6120e73018c8d6d6e9218b20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image/zipball/12662673fbe649bffcd3a24188a404dc31fa118c",
-                "reference": "12662673fbe649bffcd3a24188a404dc31fa118c",
+                "url": "https://api.github.com/repos/spatie/enum/zipball/cfbcf53147d993fa6120e73018c8d6d6e9218b20",
+                "reference": "cfbcf53147d993fa6120e73018c8d6d6e9218b20",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.9.1",
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^9.0",
+                "vimeo/psalm": "^4.3"
+            },
+            "suggest": {
+                "fakerphp/faker": "To use the enum faker provider",
+                "phpunit/phpunit": "To use the enum assertions"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Enum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev@gummibeer.de",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Enums",
+            "homepage": "https://github.com/spatie/enum",
+            "keywords": [
+                "enum",
+                "enumerable",
+                "spatie"
+            ],
+            "support": {
+                "docs": "https://docs.spatie.be/enum",
+                "issues": "https://github.com/spatie/enum/issues",
+                "source": "https://github.com/spatie/enum"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-03-10T16:48:55+00:00"
+        },
+        {
+            "name": "spatie/image",
+            "version": "1.10.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/image.git",
+                "reference": "7ea129bc7b7521864c5a540e3b1c14ea194316d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/image/zipball/7ea129bc7b7521864c5a540e3b1c14ea194316d3",
+                "reference": "7ea129bc7b7521864c5a540e3b1c14ea194316d3",
                 "shasum": ""
             },
             "require": {
                 "ext-exif": "*",
+                "ext-json": "*",
                 "ext-mbstring": "*",
                 "league/glide": "^1.6",
                 "php": "^7.2|^8.0",
@@ -5278,7 +5282,8 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.0|^9.0",
-                "symfony/var-dumper": "^4.0|^5.0"
+                "symfony/var-dumper": "^4.0|^5.0",
+                "vimeo/psalm": "^4.6"
             },
             "type": "library",
             "autoload": {
@@ -5306,7 +5311,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/image/issues",
-                "source": "https://github.com/spatie/image/tree/1.10.2"
+                "source": "https://github.com/spatie/image/tree/1.10.4"
             },
             "funding": [
                 {
@@ -5318,7 +5323,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-01-26T07:53:19+00:00"
+            "time": "2021-03-10T16:11:40+00:00"
         },
         {
             "name": "spatie/image-optimizer",
@@ -5822,17 +5827,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "3.10.4",
+            "version": "v4.x-dev",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "9e5fe9dd140a7b77a05e45326c701f7b18a01474"
+                "reference": "1126d45e3e6f82479a6008569cfa599214c4e1fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-9e5fe9dd140a7b77a05e45326c701f7b18a01474-zip-8f0417.zip",
-                "reference": "9e5fe9dd140a7b77a05e45326c701f7b18a01474",
-                "shasum": "86b79483fc6c94a9600d5f3c3db6e49c31a36918"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-1126d45e3e6f82479a6008569cfa599214c4e1fc-zip-47a1e0.zip",
+                "reference": "1126d45e3e6f82479a6008569cfa599214c4e1fc",
+                "shasum": "4a31779d0e86fe737892a899a2e662959e3202b1"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5847,14 +5852,16 @@
                 "illuminate/support": "^8.0",
                 "laravel/horizon": "^5.0",
                 "league/html-to-markdown": "^4.10",
+                "livewire/livewire": "^2.4",
                 "nesbot/carbon": "^2.37",
-                "ocramius/package-versions": "^1.9",
-                "php": "^7.4|^8.0",
+                "php": "^8.0",
+                "spatie/enum": "^3.7",
                 "spatie/laravel-feed": "^3.0",
                 "spatie/laravel-flash": "^1.6",
                 "spatie/laravel-json-api-paginate": "^1.7",
-                "spatie/laravel-medialibrary": "^8.4.1|^9.0",
+                "spatie/laravel-medialibrary": "^9.4",
                 "spatie/laravel-model-cleanup": "^3.1",
+                "spatie/laravel-package-tools": "^1.4.3",
                 "spatie/laravel-query-builder": "^3.0",
                 "spatie/laravel-rate-limited-job-middleware": "^1.4",
                 "spatie/laravel-schemaless-attributes": "^1.8",
@@ -5862,10 +5869,10 @@
                 "spatie/laravel-view-models": "^1.3.2",
                 "spatie/laravel-webhook-client": "^2.7.4",
                 "spatie/query-string": "^1.0",
-                "spatie/simple-excel": "^1.7",
-                "spatie/temporary-directory": "^1.2",
-                "symfony/css-selector": "^5.1",
-                "symfony/dom-crawler": "^5.1",
+                "spatie/simple-excel": "^1.10",
+                "spatie/temporary-directory": "^1.3",
+                "symfony/css-selector": "^5.2",
+                "symfony/dom-crawler": "^5.2",
                 "tijsverkoyen/css-to-inline-styles": "^2.2"
             },
             "require-dev": {
@@ -5873,13 +5880,14 @@
                 "friendsofphp/php-cs-fixer": "^2.17",
                 "laravel/framework": "^8.0",
                 "orchestra/testbench": "^6.0",
-                "orchestra/testbench-core": "^6.0",
-                "phpunit/phpunit": "^9.2",
+                "orchestra/testbench-core": "^6.9",
+                "phpunit/phpunit": "^9.5",
                 "predis/predis": "^1.1",
+                "psalm/plugin-laravel": "^1.4",
                 "spatie/laravel-ray": "^1.9",
                 "spatie/phpunit-snapshot-assertions": "^4.2",
                 "spatie/test-time": "^1.2",
-                "symfony/var-dumper": "^5.1",
+                "symfony/var-dumper": "^5.2",
                 "vimeo/psalm": "^4.3"
             },
             "type": "library",
@@ -5935,38 +5943,35 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/3.10.4",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/v4",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2021-02-19T08:54:49+00:00"
+            "time": "2021-03-10T19:00:35+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
-            "version": "2.3.2",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback.git",
-                "reference": "8cd37ee8944fcee67376c3d7022dd763e77494c5"
+                "reference": "5b406b32cab88864b87af6e28d440721fde98fc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-8cd37ee8944fcee67376c3d7022dd763e77494c5-zip-363783.zip",
-                "reference": "8cd37ee8944fcee67376c3d7022dd763e77494c5",
-                "shasum": "8c0b48c874471cf815f369115187c305876e84d8"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-mailgun-feedback/spatie-laravel-mailcoach-mailgun-feedback-5b406b32cab88864b87af6e28d440721fde98fc1-zip-f94bea.zip",
+                "reference": "5b406b32cab88864b87af6e28d440721fde98fc1",
+                "shasum": "bec1f895914b5f6e0f965e50193152eb5022eeda"
             },
             "require": {
-                "illuminate/http": "^7.0|^8.0",
-                "php": "^8.0|^7.4",
-                "spatie/laravel-mailcoach": "^2.23.11|^3.0",
-                "spatie/laravel-webhook-client": "^2.7"
+                "php": "^8.0",
+                "spatie/laravel-mailcoach": "^4.0"
             },
             "require-dev": {
                 "ext-json": "*",
-                "fakerphp/faker": "^1.9",
-                "laravel/legacy-factories": "^1.0.4",
-                "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^9.0",
-                "symfony/var-dumper": "^5.0"
+                "fakerphp/faker": "^1.12",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.4",
+                "symfony/var-dumper": "^5.2"
             },
             "type": "library",
             "extra": {
@@ -5983,7 +5988,8 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Spatie\\MailcoachMailgunFeedback\\Tests\\": "tests"
+                    "Spatie\\MailcoachMailgunFeedback\\Tests\\": "tests",
+                    "Spatie\\Mailcoach\\Database\\Factories\\": "vendor/spatie/laravel-mailcoach/database/factories"
                 }
             },
             "scripts": {
@@ -6009,34 +6015,34 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback/tree/master",
+                "source": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback/tree/3.0.0",
                 "issues": "https://github.com/spatie/laravel-mailcoach-mailgun-feedback/issues"
             },
-            "time": "2020-12-07T11:16:53+00:00"
+            "time": "2021-03-10T08:19:27+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-monaco",
-            "version": "1.3.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-mailcoach-monaco.git",
-                "reference": "ae48ba9af4dbf04caeacbabeb95a2e0c02ea10e9"
+                "reference": "e45153c1929d592f1db53295d3ff582ae062dce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-ae48ba9af4dbf04caeacbabeb95a2e0c02ea10e9-zip-143786.zip",
-                "reference": "ae48ba9af4dbf04caeacbabeb95a2e0c02ea10e9",
-                "shasum": "016fb5452a6b843095118700f47a036f56bdc139"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-e45153c1929d592f1db53295d3ff582ae062dce0-zip-f31ee4.zip",
+                "reference": "e45153c1929d592f1db53295d3ff582ae062dce0",
+                "shasum": "4a18af31fd9f7d1efd06c301cbd442c6557ee214"
             },
             "require": {
                 "ext-json": "*",
-                "php": "^8.0|^7.4",
-                "spatie/laravel-mailcoach": "^3.0"
+                "php": "^8.0",
+                "spatie/laravel-mailcoach": "^4.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^9.0",
-                "symfony/var-dumper": "^5.0"
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.4",
+                "symfony/var-dumper": "^5.2"
             },
             "type": "library",
             "extra": {
@@ -6079,7 +6085,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/1.3.0",
+                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/2.0.0",
                 "issues": "https://github.com/spatie/laravel-mailcoach-monaco/issues"
             },
             "funding": [
@@ -6088,7 +6094,7 @@
                     "url": "https://spatie.be/open-source/support-us"
                 }
             ],
-            "time": "2020-11-30T19:21:05+00:00"
+            "time": "2021-03-10T10:37:05+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
@@ -6404,16 +6410,16 @@
         },
         {
             "name": "spatie/laravel-package-tools",
-            "version": "1.4.2",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "f03683d2b2c52a436d517accb86e34f742d3ae85"
+                "reference": "faabcdf71fb12be35dbd2376d4f10e12ed2551ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/f03683d2b2c52a436d517accb86e34f742d3ae85",
-                "reference": "f03683d2b2c52a436d517accb86e34f742d3ae85",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/faabcdf71fb12be35dbd2376d4f10e12ed2551ab",
+                "reference": "faabcdf71fb12be35dbd2376d4f10e12ed2551ab",
                 "shasum": ""
             },
             "require": {
@@ -6452,7 +6458,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.4.2"
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.5.0"
             },
             "funding": [
                 {
@@ -6460,7 +6466,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-05T10:08:12+00:00"
+            "time": "2021-03-10T11:35:17+00:00"
         },
         {
             "name": "spatie/laravel-query-builder",
@@ -6594,16 +6600,16 @@
         },
         {
             "name": "spatie/laravel-ray",
-            "version": "1.14.0",
+            "version": "1.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ray.git",
-                "reference": "b70f3cfb0a3a06c2fcd3a1974d6ca7cba3204504"
+                "reference": "4b2a00b3992b068ff760c25c45e389543996e25b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/b70f3cfb0a3a06c2fcd3a1974d6ca7cba3204504",
-                "reference": "b70f3cfb0a3a06c2fcd3a1974d6ca7cba3204504",
+                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/4b2a00b3992b068ff760c25c45e389543996e25b",
+                "reference": "4b2a00b3992b068ff760c25c45e389543996e25b",
                 "shasum": ""
             },
             "require": {
@@ -6658,7 +6664,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-ray/issues",
-                "source": "https://github.com/spatie/laravel-ray/tree/1.14.0"
+                "source": "https://github.com/spatie/laravel-ray/tree/1.15.1"
             },
             "funding": [
                 {
@@ -6670,7 +6676,78 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-03-04T11:11:21+00:00"
+            "time": "2021-03-10T11:38:37+00:00"
+        },
+        {
+            "name": "spatie/laravel-remote",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-remote.git",
+                "reference": "12a434e77b0e98ab50f7194abea850d3d7a828b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-remote/zipball/12a434e77b0e98ab50f7194abea850d3d7a828b2",
+                "reference": "12a434e77b0e98ab50f7194abea850d3d7a828b2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.1",
+                "spatie/ssh": "^1.5"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.3",
+                "spatie/laravel-ray": "^1.9",
+                "spatie/phpunit-snapshot-assertions": "^4.2",
+                "spatie/ray": "^1.21",
+                "vimeo/psalm": "^4.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Remote\\RemoteServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Remote\\": "src",
+                    "Spatie\\Remote\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Execute Artisan commands on remote servers",
+            "homepage": "https://github.com/spatie/laravel-remote",
+            "keywords": [
+                "laravel-remote",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-remote/issues",
+                "source": "https://github.com/spatie/laravel-remote/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-03-10T09:43:13+00:00"
         },
         {
             "name": "spatie/laravel-responsecache",
@@ -7825,16 +7902,16 @@
         },
         {
             "name": "spatie/ssh",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ssh.git",
-                "reference": "fdb5f8c04fb1ee7f61f34ce40d666d2c0f3ee073"
+                "reference": "4266927d26a26082e013cdd710a00bad487455df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ssh/zipball/fdb5f8c04fb1ee7f61f34ce40d666d2c0f3ee073",
-                "reference": "fdb5f8c04fb1ee7f61f34ce40d666d2c0f3ee073",
+                "url": "https://api.github.com/repos/spatie/ssh/zipball/4266927d26a26082e013cdd710a00bad487455df",
+                "reference": "4266927d26a26082e013cdd710a00bad487455df",
                 "shasum": ""
             },
             "require": {
@@ -7872,7 +7949,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/ssh/issues",
-                "source": "https://github.com/spatie/ssh/tree/1.5.0"
+                "source": "https://github.com/spatie/ssh/tree/1.6.0"
             },
             "funding": [
                 {
@@ -7880,7 +7957,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-01-04T12:27:46+00:00"
+            "time": "2021-03-10T13:41:32+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -8123,16 +8200,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d6d0cc30d8c0fda4e7b213c20509b0159a8f4556"
+                "reference": "938ebbadae1b0a9c9d1ec313f87f9708609f1b79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d6d0cc30d8c0fda4e7b213c20509b0159a8f4556",
-                "reference": "d6d0cc30d8c0fda4e7b213c20509b0159a8f4556",
+                "url": "https://api.github.com/repos/symfony/console/zipball/938ebbadae1b0a9c9d1ec313f87f9708609f1b79",
+                "reference": "938ebbadae1b0a9c9d1ec313f87f9708609f1b79",
                 "shasum": ""
             },
             "require": {
@@ -8200,7 +8277,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.2.4"
+                "source": "https://github.com/symfony/console/tree/v5.2.5"
             },
             "funding": [
                 {
@@ -8216,7 +8293,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-23T10:08:49+00:00"
+            "time": "2021-03-06T13:42:15+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -8872,16 +8949,16 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "c452dbe4f385f030c3957821bf921b13815d6140"
+                "reference": "b8c63ef63c2364e174c3b3e0ba0bf83455f97f73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/c452dbe4f385f030c3957821bf921b13815d6140",
-                "reference": "c452dbe4f385f030c3957821bf921b13815d6140",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/b8c63ef63c2364e174c3b3e0ba0bf83455f97f73",
+                "reference": "b8c63ef63c2364e174c3b3e0ba0bf83455f97f73",
                 "shasum": ""
             },
             "require": {
@@ -8964,7 +9041,7 @@
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v5.2.4"
+                "source": "https://github.com/symfony/http-kernel/tree/v5.2.5"
             },
             "funding": [
                 {
@@ -8980,7 +9057,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-04T18:05:55+00:00"
+            "time": "2021-03-10T17:07:35+00:00"
         },
         {
             "name": "symfony/intl",
@@ -9072,16 +9149,16 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "5155d2fe14ef1eb150e3bdbbc1ec1455df95e9cd"
+                "reference": "554ba128f1955038b45db5e1fa7e93bfc683b139"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/5155d2fe14ef1eb150e3bdbbc1ec1455df95e9cd",
-                "reference": "5155d2fe14ef1eb150e3bdbbc1ec1455df95e9cd",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/554ba128f1955038b45db5e1fa7e93bfc683b139",
+                "reference": "554ba128f1955038b45db5e1fa7e93bfc683b139",
                 "shasum": ""
             },
             "require": {
@@ -9092,12 +9169,13 @@
                 "symfony/polyfill-php80": "^1.15"
             },
             "conflict": {
+                "egulias/email-validator": "~3.0.0",
                 "phpdocumentor/reflection-docblock": "<3.2.2",
                 "phpdocumentor/type-resolver": "<1.4.0",
                 "symfony/mailer": "<4.4"
             },
             "require-dev": {
-                "egulias/email-validator": "^2.1.10",
+                "egulias/email-validator": "^2.1.10|^3.1",
                 "phpdocumentor/reflection-docblock": "^3.0|^4.0|^5.0",
                 "symfony/dependency-injection": "^4.4|^5.0",
                 "symfony/property-access": "^4.4|^5.1",
@@ -9134,7 +9212,7 @@
                 "mime-type"
             ],
             "support": {
-                "source": "https://github.com/symfony/mime/tree/v5.2.4"
+                "source": "https://github.com/symfony/mime/tree/v5.2.5"
             },
             "funding": [
                 {
@@ -9150,7 +9228,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-15T18:55:04+00:00"
+            "time": "2021-03-07T16:08:20+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -10346,16 +10424,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "74b0353ab34ff4cca827a2cf909e325d96815e60"
+                "reference": "0947ab1e3aabd22a6bef393874b2555d2bb976da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/74b0353ab34ff4cca827a2cf909e325d96815e60",
-                "reference": "74b0353ab34ff4cca827a2cf909e325d96815e60",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/0947ab1e3aabd22a6bef393874b2555d2bb976da",
+                "reference": "0947ab1e3aabd22a6bef393874b2555d2bb976da",
                 "shasum": ""
             },
             "require": {
@@ -10419,7 +10497,7 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/translation/tree/v5.2.4"
+                "source": "https://github.com/symfony/translation/tree/v5.2.5"
             },
             "funding": [
                 {
@@ -10435,7 +10513,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-04T15:41:09+00:00"
+            "time": "2021-03-06T07:59:01+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -10517,16 +10595,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "6a81fec0628c468cf6d5c87a4d003725e040e223"
+                "reference": "002ab5a36702adf0c9a11e6d8836623253e9045e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/6a81fec0628c468cf6d5c87a4d003725e040e223",
-                "reference": "6a81fec0628c468cf6d5c87a4d003725e040e223",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/002ab5a36702adf0c9a11e6d8836623253e9045e",
+                "reference": "002ab5a36702adf0c9a11e6d8836623253e9045e",
                 "shasum": ""
             },
             "require": {
@@ -10585,7 +10663,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.2.4"
+                "source": "https://github.com/symfony/var-dumper/tree/v5.2.5"
             },
             "funding": [
                 {
@@ -10601,7 +10679,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-18T23:11:19+00:00"
+            "time": "2021-03-06T07:59:01+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -14153,16 +14231,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.2.4",
+            "version": "v5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "7d6ae0cce3c33965af681a4355f1c4de326ed277"
+                "reference": "298a08ddda623485208506fcee08817807a251dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/7d6ae0cce3c33965af681a4355f1c4de326ed277",
-                "reference": "7d6ae0cce3c33965af681a4355f1c4de326ed277",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/298a08ddda623485208506fcee08817807a251dd",
+                "reference": "298a08ddda623485208506fcee08817807a251dd",
                 "shasum": ""
             },
             "require": {
@@ -14208,7 +14286,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.2.4"
+                "source": "https://github.com/symfony/yaml/tree/v5.2.5"
             },
             "funding": [
                 {
@@ -14224,7 +14302,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-22T15:48:39+00:00"
+            "time": "2021-03-06T07:59:01+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -14279,7 +14357,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "spatie/laravel-mailcoach": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
