@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
 
 class NewsletterController
