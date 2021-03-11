@@ -7,9 +7,12 @@ use Illuminate\Support\Collection;
 use Spatie\Mailcoach\Domain\Audience\Models\Subscriber;
 use Spatie\Mailcoach\Domain\Campaign\Mails\WelcomeMail as MailcoachWelcomeMail;
 use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
+use Spatie\Mailcoach\Domain\TransactionalMail\Mails\Concerns\StoresMail;
 
 class WelcomeMail extends MailcoachWelcomeMail
 {
+    use StoresMail;
+
     public Collection $posts;
 
     public Collection $campaigns;
@@ -27,6 +30,7 @@ class WelcomeMail extends MailcoachWelcomeMail
     {
         return
             $this
+                ->trackOpensAndClicks()
                 ->markdown('mails.welcome')
                 ->subject('Welcome to the freek.dev newsletter');
     }
