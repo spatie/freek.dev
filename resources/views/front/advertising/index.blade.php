@@ -39,7 +39,7 @@
             As the newsletter should come over as very calm, images or logos are not allowed.
         </p>
         <p>
-            Currently the subscriber list contains {{ \Spatie\Mailcoach\Models\Subscriber::subscribed()->count() }} members. On average open rate is 40%, the click rate 20%.
+            Currently the subscriber list contains {{ \Spatie\Mailcoach\Domain\Audience\Models\Subscriber::subscribed()->count() }} members. On average open rate is 40%, the click rate 20%.
         <p>
         <p>
             I suspect that a large portion of the readers use software that blocks trackers, so the actual open and
