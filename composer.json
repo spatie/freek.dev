@@ -67,6 +67,7 @@
         "spatie/laravel-tail": "^4.2",
         "spatie/laravel-webhook-client": "^2.7",
         "spatie/nova-tags-field": "^3.0.2",
+        "spatie/ray": "^1.21",
         "stripe/stripe-php": "^7.52"
     },
     "require-dev": {

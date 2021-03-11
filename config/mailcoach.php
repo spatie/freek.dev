@@ -326,4 +326,8 @@ return [
          */
         'use_blade_components' => true,
     ],
+
+    'mailgun_feedback' => [
+        'signing_secret' => env('MAILGUN_SIGNING_SECRET'),
+    ],
 ];
