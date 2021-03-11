@@ -70,6 +70,11 @@ echo "{{ $newReleaseName }}" > public/release-name.txt
 @endtask
 
 @task('runComposer', ['on' => 'remote'])
+
+# Import the environment config
+cd {{ $newReleaseDir }};
+ln -nfs {{ $baseDir }}/.env .env;
+
 cd {{ $newReleaseDir }};
 {{ logMessage("🚚  Running Composer…") }}
 ln -nfs {{ $baseDir }}/auth.json auth.json;
@@ -108,10 +113,6 @@ ln -nfs {{ $baseDir }}/persistent/uploads public/uploads;
 rm -rf {{ $newReleaseDir }}/public/og-images;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/storage/og-images {{ $newReleaseDir }}/public/og-images;
-
-# Import the environment config
-cd {{ $newReleaseDir }};
-ln -nfs {{ $baseDir }}/.env .env;
 
 # Symlink the persistent fonts to the public directory
 cd {{ $baseDir }}/persistent/fonts
