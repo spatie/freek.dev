@@ -5831,13 +5831,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "157f1026531141c6e30dd33989a476aa348e37e7"
+                "reference": "8de8a754d438f6e0d2f4e4e7fe59e10a477ec06e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-157f1026531141c6e30dd33989a476aa348e37e7-zip-054996.zip",
-                "reference": "157f1026531141c6e30dd33989a476aa348e37e7",
-                "shasum": "38ee3d31b0265f49d13a82cea906ee17ec9dd0d5"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-8de8a754d438f6e0d2f4e4e7fe59e10a477ec06e-zip-82ec52.zip",
+                "reference": "8de8a754d438f6e0d2f4e4e7fe59e10a477ec06e",
+                "shasum": "461248c838b52f80933a63f19c85f07cecf025b1"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5946,7 +5946,7 @@
                 "source": "https://github.com/spatie/laravel-mailcoach/tree/v4",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2021-03-11T11:08:29+00:00"
+            "time": "2021-03-11T12:20:43+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
