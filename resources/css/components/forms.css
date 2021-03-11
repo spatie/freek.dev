@@ -1,0 +1,24 @@
+@layer base {
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+        @apply rounded border border-gray-300 w-full shadow-sm focus:border-blue-700 focus:ring-blue-700;
+    }
+
+    [type='radio'],
+    [type='checkbox'] {
+        @apply border-gray-300 text-blue-700 rounded focus:border-blue-700 focus:ring-blue-700;
+    }
+}

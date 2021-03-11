@@ -9,9 +9,10 @@
 @import './components/pagination.css';
 
 @import './vendor/hljs.css';
-
 @import './utilties.css';
 
 @tailwind components;
 
 @tailwind utilities;
+
+@import './components/forms.css';
