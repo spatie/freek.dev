@@ -302,5 +302,10 @@ class UpgradeMailcoachV3ToV4 extends Migration
                 'email_list_subscribed_index'
             );
         });
+
+        Schema::table('mailcoach_sends', function (Blueprint $table) {
+            $table->unsignedBigInteger('campaign_id')->nullable()->change();
+            $table->unsignedBigInteger('subscriber_id')->nullable()->change();
+        });
     }
 }
