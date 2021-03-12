@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.2.1",
+    "alpinejs": "^2.8.1",
     "autoprefixer": "^10.0.4",
     "postcss": "^8.1.14"
   }

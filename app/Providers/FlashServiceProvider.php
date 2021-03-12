@@ -10,8 +10,8 @@ class FlashServiceProvider extends ServiceProvider
     public function register()
     {
         Flash::levels([
-            'success' => 'alert-success',
-            'error' => 'alert-error',
+            'success' => 'bg-green-400',
+            'error' => 'bg-red-400',
         ]);
     }
 }
