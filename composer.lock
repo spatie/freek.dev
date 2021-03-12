@@ -5471,23 +5471,24 @@
         },
         {
             "name": "spatie/laravel-feed",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-feed.git",
-                "reference": "50bf7976920da38c0432034e3e448a95dfc6473e"
+                "reference": "2fcbb3684e4c141b821de842c03f71ff8715e89e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/50bf7976920da38c0432034e3e448a95dfc6473e",
-                "reference": "50bf7976920da38c0432034e3e448a95dfc6473e",
+                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/2fcbb3684e4c141b821de842c03f71ff8715e89e",
+                "reference": "2fcbb3684e4c141b821de842c03f71ff8715e89e",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^7.0|^8.0",
                 "illuminate/http": "^7.0|^8.0",
                 "illuminate/support": "^7.0|^8.0",
-                "php": "^7.4|^8.0"
+                "php": "^7.4|^8.0",
+                "spatie/laravel-package-tools": "^1.5"
             },
             "require-dev": {
                 "orchestra/testbench": "^5.0|^6.0",
@@ -5542,7 +5543,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-feed/issues",
-                "source": "https://github.com/spatie/laravel-feed/tree/3.1.2"
+                "source": "https://github.com/spatie/laravel-feed/tree/3.1.3"
             },
             "funding": [
                 {
@@ -5550,7 +5551,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-09T09:31:08+00:00"
+            "time": "2021-03-12T16:15:31+00:00"
         },
         {
             "name": "spatie/laravel-flash",
@@ -5831,13 +5832,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "65f5c860f558ac36b5c81e865b6e330e740ab07a"
+                "reference": "8113ba29b2616ad24cf038dba25edc2b0bf26259"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-65f5c860f558ac36b5c81e865b6e330e740ab07a-zip-7696fc.zip",
-                "reference": "65f5c860f558ac36b5c81e865b6e330e740ab07a",
-                "shasum": "38022a55c4ba1732b044fd652094d60ccd9b11bc"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-8113ba29b2616ad24cf038dba25edc2b0bf26259-zip-5e374f.zip",
+                "reference": "8113ba29b2616ad24cf038dba25edc2b0bf26259",
+                "shasum": "ba20f091a7de34427ff2dc9075c46334ee0bbb51"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5946,7 +5947,7 @@
                 "source": "https://github.com/spatie/laravel-mailcoach/tree/v4",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2021-03-11T15:27:37+00:00"
+            "time": "2021-03-12T13:19:19+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -6410,16 +6411,16 @@
         },
         {
             "name": "spatie/laravel-package-tools",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "faabcdf71fb12be35dbd2376d4f10e12ed2551ab"
+                "reference": "c190a294db3a10a14e27db67cd286c3ce10c8277"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/faabcdf71fb12be35dbd2376d4f10e12ed2551ab",
-                "reference": "faabcdf71fb12be35dbd2376d4f10e12ed2551ab",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/c190a294db3a10a14e27db67cd286c3ce10c8277",
+                "reference": "c190a294db3a10a14e27db67cd286c3ce10c8277",
                 "shasum": ""
             },
             "require": {
@@ -6458,7 +6459,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.5.0"
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.6.0"
             },
             "funding": [
                 {
@@ -6466,7 +6467,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-10T11:35:17+00:00"
+            "time": "2021-03-12T12:08:43+00:00"
         },
         {
             "name": "spatie/laravel-query-builder",
@@ -6600,16 +6601,16 @@
         },
         {
             "name": "spatie/laravel-ray",
-            "version": "1.15.1",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ray.git",
-                "reference": "4b2a00b3992b068ff760c25c45e389543996e25b"
+                "reference": "14241290305ba08f4cb1ce7aa5bb8015b48a80b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/4b2a00b3992b068ff760c25c45e389543996e25b",
-                "reference": "4b2a00b3992b068ff760c25c45e389543996e25b",
+                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/14241290305ba08f4cb1ce7aa5bb8015b48a80b4",
+                "reference": "14241290305ba08f4cb1ce7aa5bb8015b48a80b4",
                 "shasum": ""
             },
             "require": {
@@ -6664,7 +6665,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-ray/issues",
-                "source": "https://github.com/spatie/laravel-ray/tree/1.15.1"
+                "source": "https://github.com/spatie/laravel-ray/tree/1.16.0"
             },
             "funding": [
                 {
@@ -6676,7 +6677,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-03-10T11:38:37+00:00"
+            "time": "2021-03-12T16:10:47+00:00"
         },
         {
             "name": "spatie/laravel-remote",
