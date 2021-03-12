@@ -225,7 +225,6 @@ class UpgradeMailcoachV3ToV4 extends Migration
             $table->id();
 
             $table->foreignId('send_id')->constrained('mailcoach_sends');
-            $table->foreignId('automation_mail_id')->constrained('mailcoach_automation_mails');
 
             $table
                 ->foreignId('subscriber_id')
@@ -233,7 +232,6 @@ class UpgradeMailcoachV3ToV4 extends Migration
                 ->constrained('mailcoach_subscribers')
                 ->cascadeOnDelete();
 
-            $table->longText('url');
 
             $table->timestamps();
         });
