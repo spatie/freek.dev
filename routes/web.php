@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AutomationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Links\ApproveLinkAndCreatePostController;
 use App\Http\Controllers\Links\ApproveLinkController;
@@ -44,6 +45,9 @@ Route::middleware('doNotCacheResponse')->group(function () {
     Route::get('payments', [PaymentsController::class, 'index']);
     Route::post('payments/set-amount', [PaymentsController::class, 'setAmount']);
     Route::post('payments', [PaymentsController::class, 'handlePayment']);
+
+    Route::get('automation', [AutomationController::class, 'index']);
+    Route::post('automation', [AutomationController::class, 'subscribe'])->name('automation.subscribe');
 });
 
 Route::view('newsletter/liked-it', 'front.newsletter.like')->name('newsletter.like');
