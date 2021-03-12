@@ -9,7 +9,3 @@
         {{ flash()->message }}
     </div>
 @endif
-
-
-
-
