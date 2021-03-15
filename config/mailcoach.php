@@ -114,6 +114,7 @@ return [
                 \Spatie\Mailcoach\Domain\Automation\Support\Actions\AddTagsAction::class,
                 \Spatie\Mailcoach\Domain\Automation\Support\Actions\SendAutomationMailAction::class,
                 \Spatie\Mailcoach\Domain\Automation\Support\Actions\ConditionAction::class,
+                \Spatie\Mailcoach\Domain\Automation\Support\Actions\SplitAction::class,
                 \Spatie\Mailcoach\Domain\Automation\Support\Actions\RemoveTagsAction::class,
                 \Spatie\Mailcoach\Domain\Automation\Support\Actions\WaitAction::class,
                 \Spatie\Mailcoach\Domain\Automation\Support\Actions\HaltAction::class,
