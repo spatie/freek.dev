@@ -4013,16 +4013,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "7c751ea006577e4c2e83326d90c8b1e8c11b8ede"
+                "reference": "906a5fafabe5e6ba51ef3dc65b2722a677908837"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/7c751ea006577e4c2e83326d90c8b1e8c11b8ede",
-                "reference": "7c751ea006577e4c2e83326d90c8b1e8c11b8ede",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/906a5fafabe5e6ba51ef3dc65b2722a677908837",
+                "reference": "906a5fafabe5e6ba51ef3dc65b2722a677908837",
                 "shasum": ""
             },
             "require": {
@@ -4104,7 +4104,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpseclib/phpseclib/issues",
-                "source": "https://github.com/phpseclib/phpseclib/tree/3.0.5"
+                "source": "https://github.com/phpseclib/phpseclib/tree/3.0.6"
             },
             "funding": [
                 {
@@ -4120,7 +4120,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-12T16:18:16+00:00"
+            "time": "2021-03-10T13:58:31+00:00"
         },
         {
             "name": "predis/predis",
@@ -4507,16 +4507,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.10.6",
+            "version": "v0.10.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "6f990c19f91729de8b31e639d6e204ea59f19cf3"
+                "reference": "a395af46999a12006213c0c8346c9445eb31640c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/6f990c19f91729de8b31e639d6e204ea59f19cf3",
-                "reference": "6f990c19f91729de8b31e639d6e204ea59f19cf3",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/a395af46999a12006213c0c8346c9445eb31640c",
+                "reference": "a395af46999a12006213c0c8346c9445eb31640c",
                 "shasum": ""
             },
             "require": {
@@ -4577,9 +4577,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.10.6"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.10.7"
             },
-            "time": "2021-01-18T15:53:43+00:00"
+            "time": "2021-03-14T02:14:56+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -6099,16 +6099,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "9.4.3",
+            "version": "9.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "2eae7416a6d7762e147f26f6cac7cf099eda109b"
+                "reference": "9d27d602351516dc09c8d6e01b1430c2d1c2a7df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/2eae7416a6d7762e147f26f6cac7cf099eda109b",
-                "reference": "2eae7416a6d7762e147f26f6cac7cf099eda109b",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/9d27d602351516dc09c8d6e01b1430c2d1c2a7df",
+                "reference": "9d27d602351516dc09c8d6e01b1430c2d1c2a7df",
                 "shasum": ""
             },
             "require": {
@@ -6187,7 +6187,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.4.3"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.4.4"
             },
             "funding": [
                 {
@@ -6199,7 +6199,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-07T18:42:19+00:00"
+            "time": "2021-03-15T07:39:17+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -6601,16 +6601,16 @@
         },
         {
             "name": "spatie/laravel-ray",
-            "version": "1.16.0",
+            "version": "1.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ray.git",
-                "reference": "14241290305ba08f4cb1ce7aa5bb8015b48a80b4"
+                "reference": "c25f2c2cdf3221abce3b1250cb7296721acfd2b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/14241290305ba08f4cb1ce7aa5bb8015b48a80b4",
-                "reference": "14241290305ba08f4cb1ce7aa5bb8015b48a80b4",
+                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/c25f2c2cdf3221abce3b1250cb7296721acfd2b8",
+                "reference": "c25f2c2cdf3221abce3b1250cb7296721acfd2b8",
                 "shasum": ""
             },
             "require": {
@@ -6665,7 +6665,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-ray/issues",
-                "source": "https://github.com/spatie/laravel-ray/tree/1.16.0"
+                "source": "https://github.com/spatie/laravel-ray/tree/1.17.1"
             },
             "funding": [
                 {
@@ -6677,7 +6677,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-03-12T16:10:47+00:00"
+            "time": "2021-03-13T12:50:02+00:00"
         },
         {
             "name": "spatie/laravel-remote",
