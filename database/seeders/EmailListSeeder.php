@@ -85,5 +85,4 @@ class EmailListSeeder extends Seeder
             'send_welcome_mail' => true,
         ]);
     }
-
 }
