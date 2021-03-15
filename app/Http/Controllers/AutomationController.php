@@ -17,7 +17,7 @@ class AutomationController
         Subscriber::createWithEmail($request->email)
             ->subscribeTo($request->emailList());
 
-        flash()->success('Thanks');
+        flash()->success('Thank you for helping me test this out!');
 
         return back();
     }

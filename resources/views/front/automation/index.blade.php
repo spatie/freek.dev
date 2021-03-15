@@ -1,6 +1,14 @@
 <x-app-layout title="Automation">
     <div class="markup">
         <h1>Automation</h1>
+
+        <p>
+            You can help me test automations, by entering your email address here. You will get two or three mails.
+        </p>
+        <p>
+            I won't share your email with anyone, and after the test I will delete it from the database.
+        </p>
+
         <form
             action="{{ route('automation.subscribe') }}"
             method="post"
@@ -12,7 +20,7 @@
             <input class="mb-2 md:mb-0" type="email" autocomplete="off" id="email" name="email"
                    placeholder="Your e-mail address" aria-label="E-mail" required>
 
-            <input type="submit" name="submit" id="submit" value="Subscribe"
+            <input type="submit" name="submit" id="submit" value="Submit"
                    class="px-3 py-2 text-sm text-white bg-yellow-500 font-semibold border-t-3 border-b-3 border-yellow-700 border-t-transparent">
 
         </form>

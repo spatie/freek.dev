@@ -74,5 +74,16 @@ class EmailListSeeder extends Seeder
     </body>
 </html>',
         ]);
+
+
+        EmailList::create([
+            'name' => 'automation list',
+            'requires_confirmation' => false,
+            'default_from_email' => 'freek@spatie.be',
+            'default_from_name' => 'Freek Van der Herten',
+            'welcome_mailable_class' => WelcomeMail::class,
+            'send_welcome_mail' => true,
+        ]);
     }
+
 }
