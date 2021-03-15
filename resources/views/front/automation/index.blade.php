@@ -3,7 +3,7 @@
         <h1>Automation</h1>
 
         <p>
-            You can help me test automations, by entering your email address here. You will get two or three mails.
+            You can help me test automations, by entering your email address here. You will enter <a href="https://twitter.com/freekmurze/status/1371467273366609921">this automation</a> and get two or three mails.
         </p>
         <p>
             I won't share your email with anyone, and after the test I will delete it from the database.
