@@ -1419,16 +1419,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.10.0",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "6ecda5217bf048088b891f7403b262906be5a957"
+                "reference": "f6e14679f948d8a5cfb866fa7065a30c66bd64d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/6ecda5217bf048088b891f7403b262906be5a957",
-                "reference": "6ecda5217bf048088b891f7403b262906be5a957",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/f6e14679f948d8a5cfb866fa7065a30c66bd64d3",
+                "reference": "f6e14679f948d8a5cfb866fa7065a30c66bd64d3",
                 "shasum": ""
             },
             "require": {
@@ -1478,7 +1478,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.10.0"
+                "source": "https://github.com/filp/whoops/tree/2.11.0"
             },
             "funding": [
                 {
@@ -1486,7 +1486,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-16T12:00:00+00:00"
+            "time": "2021-03-19T12:00:00+00:00"
         },
         {
             "name": "freekmurze/generate-newsletter",
@@ -5832,13 +5832,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "5706e2430383226d00f8836522a599a2063dbaee"
+                "reference": "6abb07d353ebf9aba4eb3fe090fb8ac8e2bcbe09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-5706e2430383226d00f8836522a599a2063dbaee-zip-d91459.zip",
-                "reference": "5706e2430383226d00f8836522a599a2063dbaee",
-                "shasum": "1f083552aab4205c2907adac73f0f36fc46897ce"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-6abb07d353ebf9aba4eb3fe090fb8ac8e2bcbe09-zip-bcb337.zip",
+                "reference": "6abb07d353ebf9aba4eb3fe090fb8ac8e2bcbe09",
+                "shasum": "41430a81b9128b17a93176ee25534eb350a6088c"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5947,7 +5947,7 @@
                 "source": "https://github.com/spatie/laravel-mailcoach/tree/v4",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2021-03-18T12:58:13+00:00"
+            "time": "2021-03-19T19:50:50+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -6023,17 +6023,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach-monaco",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-mailcoach-monaco.git",
-                "reference": "e45153c1929d592f1db53295d3ff582ae062dce0"
+                "reference": "a40e7c216ff1a231f1ec59a3a0f0d8de1de944db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-e45153c1929d592f1db53295d3ff582ae062dce0-zip-f31ee4.zip",
-                "reference": "e45153c1929d592f1db53295d3ff582ae062dce0",
-                "shasum": "4a18af31fd9f7d1efd06c301cbd442c6557ee214"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach-monaco/spatie-laravel-mailcoach-monaco-a40e7c216ff1a231f1ec59a3a0f0d8de1de944db-zip-19655c.zip",
+                "reference": "a40e7c216ff1a231f1ec59a3a0f0d8de1de944db",
+                "shasum": "bb3837274c59ea16912d88580cba8a1aead41daa"
             },
             "require": {
                 "ext-json": "*",
@@ -6086,7 +6086,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/2.0.0",
+                "source": "https://github.com/spatie/laravel-mailcoach-monaco/tree/2.0.1",
                 "issues": "https://github.com/spatie/laravel-mailcoach-monaco/issues"
             },
             "funding": [
@@ -6095,7 +6095,7 @@
                     "url": "https://spatie.be/open-source/support-us"
                 }
             ],
-            "time": "2021-03-10T10:37:05+00:00"
+            "time": "2021-03-19T07:55:50+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
