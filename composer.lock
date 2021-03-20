@@ -5832,13 +5832,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "e658c17e44726056c8845e45b3b2028a69271fee"
+                "reference": "5706e2430383226d00f8836522a599a2063dbaee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-e658c17e44726056c8845e45b3b2028a69271fee-zip-7f8139.zip",
-                "reference": "e658c17e44726056c8845e45b3b2028a69271fee",
-                "shasum": "fc8581bcb48899154dd710f82439ca0fd1cd9e06"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-5706e2430383226d00f8836522a599a2063dbaee-zip-d91459.zip",
+                "reference": "5706e2430383226d00f8836522a599a2063dbaee",
+                "shasum": "1f083552aab4205c2907adac73f0f36fc46897ce"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -5947,7 +5947,7 @@
                 "source": "https://github.com/spatie/laravel-mailcoach/tree/v4",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2021-03-16T08:04:16+00:00"
+            "time": "2021-03-18T12:58:13+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",
@@ -12222,16 +12222,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.12.2",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "245710e971a030f42e08f4912863805570f23d39"
+                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/245710e971a030f42e08f4912863805570f23d39",
-                "reference": "245710e971a030f42e08f4912863805570f23d39",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/be1996ed8adc35c3fd795488a653f4b518be70ea",
+                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea",
                 "shasum": ""
             },
             "require": {
@@ -12283,9 +12283,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.12.2"
+                "source": "https://github.com/phpspec/prophecy/tree/1.13.0"
             },
-            "time": "2020-12-19T10:15:11+00:00"
+            "time": "2021-03-17T13:42:18+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

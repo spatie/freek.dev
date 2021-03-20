@@ -1721,7 +1721,7 @@ code.markup-code, .markup-code code{
   line-height: 1.25rem;
   font-weight: 600;
   --tw-text-opacity: 1;
-  color: rgba(217, 119, 6, var(--tw-text-opacity));
+  color: rgba(180, 83, 9, var(--tw-text-opacity));
 }
 
 .legend-accent {
