@@ -19,6 +19,7 @@ class ApproveLinkAction
 
         $link->update([
             'publish_date' => now(),
+            'status' => Link::STATUS_APPROVED,
         ]);
 
         ResponseCache::clear();
