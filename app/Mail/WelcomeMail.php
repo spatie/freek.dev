@@ -30,8 +30,6 @@ class WelcomeMail extends MailcoachWelcomeMail
 
     public function build()
     {
-        return
-            $this
-                ->template('welcome');
+        return $this->template('welcome');
     }
 }
