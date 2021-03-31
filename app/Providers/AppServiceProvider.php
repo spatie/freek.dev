@@ -21,10 +21,6 @@ class AppServiceProvider extends ServiceProvider
             return $user->email === 'freek@spatie.be';
         });
 
-        Flare::determineVersionUsing(function() {
-           return '1.0';
-        });
-
         Carbon::setToStringFormat('jS F Y');
 
         Model::unguard();
