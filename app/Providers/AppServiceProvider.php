@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Models\User;
-use Facade\Ignition\Facades\Flare;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Gate;
