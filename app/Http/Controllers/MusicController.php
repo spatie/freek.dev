@@ -6,7 +6,8 @@ class MusicController
 {
     public function __invoke()
     {
-dd('stop');
+        ray('we are on the music page');
+
         $releases = [
             [
                 'title' => 'Draw',
