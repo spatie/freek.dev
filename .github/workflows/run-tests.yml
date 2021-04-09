@@ -36,12 +36,6 @@ jobs:
             -   name: Run yarn
                 run: yarn && yarn dev
 
-            -   name: Cache composer dependencies
-                uses: actions/cache@v1
-                with:
-                    path: vendor
-                    key: composer-${{ hashFiles('composer.lock') }}
-
             -   name: Run composer install
                 run: composer install -n --prefer-dist
                 env:
