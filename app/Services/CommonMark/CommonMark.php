@@ -12,6 +12,7 @@ use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
 use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
+use Throwable;
 
 class CommonMark
 {
@@ -39,7 +40,7 @@ class CommonMark
     {
         try {
             $dom = new DOMDocument;
-            $dom->loadHTML($htmlString, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $dom->loadHTML($htmlString ?? '', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $xpath = new DOMXPath($dom);
 
             foreach ($xpath->query("//img") as $node) {
@@ -48,7 +49,7 @@ class CommonMark
             }
 
             return $dom->saveHTML();
-        } catch (Exception $exception) {
+        } catch (Throwable) {
             return $htmlString;
         }
     }
