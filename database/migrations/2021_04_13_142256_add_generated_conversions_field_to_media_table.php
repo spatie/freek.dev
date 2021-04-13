@@ -6,12 +6,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class AddGeneratedConversionsFieldToMediaTable extends Migration {
-    public function up() {
-        if ( ! Schema::hasColumn( 'media', 'generated_conversions' ) ) {
-            Schema::table( 'media', function ( Blueprint $table ) {
-                $table->json( 'generated_conversions' );
-            } );
+class AddGeneratedConversionsFieldToMediaTable extends Migration
+{
+    public function up()
+    {
+        if (! Schema::hasColumn('media', 'generated_conversions')) {
+            Schema::table('media', function (Blueprint $table) {
+                $table->json('generated_conversions');
+            });
         }
 
         Media::query()
