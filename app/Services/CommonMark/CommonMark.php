@@ -4,7 +4,6 @@ namespace App\Services\CommonMark;
 
 use DOMDocument;
 use DOMXPath;
-use Exception;
 use League\CommonMark\Block\Element\FencedCode;
 use League\CommonMark\Block\Element\Heading;
 use League\CommonMark\Block\Element\IndentedCode;
