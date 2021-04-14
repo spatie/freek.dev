@@ -12,8 +12,8 @@ class RegenerateOgImagesCommand extends Command
 
     public function handle()
     {
-        Post::query()->latest()->limit(200)->each(function(Post $post) {
-        dispatch(new CreateOgImageJob($post));
+        Post::query()->latest()->limit(200)->each(function (Post $post) {
+            dispatch(new CreateOgImageJob($post));
         });
 
         $this->info('All done!');
