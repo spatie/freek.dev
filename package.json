@@ -16,7 +16,7 @@
     "laravel-mix": "^6.0.0-beta.17",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
-    "tailwindcss": "^2.0.1",
+    "tailwindcss": "^2.1",
     "vue-template-compiler": "^2.6.12"
   },
   "husky": {
