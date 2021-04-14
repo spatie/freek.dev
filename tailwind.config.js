@@ -1,8 +1,11 @@
 module.exports = {
     purge: {
-        content: ['./resources/**/*.blade.php'],
+        content: [
+            './resources/**/*.blade.php',
+            './app/*.php'
+        ],
         options: {
-            whitelist: [
+            safelist: [
                 'from-red-400',
                 'to-red-700',
                 'from-blue-500',
