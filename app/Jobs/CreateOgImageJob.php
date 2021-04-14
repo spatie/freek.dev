@@ -10,6 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Spatie\Browsershot\Browsershot;
+use Spatie\ResponseCache\Facades\ResponseCache;
 
 class CreateOgImageJob implements ShouldQueue
 {
@@ -42,5 +43,7 @@ class CreateOgImageJob implements ShouldQueue
         } catch (Exception $exception) {
             report($exception);
         }
+
+        ResponseCache::clear();
     }
 }
