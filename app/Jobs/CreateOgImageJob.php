@@ -3,12 +3,14 @@
 namespace App\Jobs;
 
 use App\Models\Post;
+use App\Models\User;
 use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Queue;
 use Spatie\Browsershot\Browsershot;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
@@ -25,6 +27,8 @@ class CreateOgImageJob implements ShouldQueue
 
     public function handle()
     {
+        $this->job->payload();
+
         if ($this->post->isTweet()) {
             return;
         }
@@ -43,6 +47,8 @@ class CreateOgImageJob implements ShouldQueue
         } catch (Exception $exception) {
             report($exception);
         }
+
+        $this->job->payload()
 
         ResponseCache::clear();
     }
