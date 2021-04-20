@@ -27,8 +27,6 @@ class CreateOgImageJob implements ShouldQueue
 
     public function handle()
     {
-        $this->job->payload();
-
         if ($this->post->isTweet()) {
             return;
         }
@@ -47,8 +45,6 @@ class CreateOgImageJob implements ShouldQueue
         } catch (Exception $exception) {
             report($exception);
         }
-
-        $this->job->payload()
 
         ResponseCache::clear();
     }
