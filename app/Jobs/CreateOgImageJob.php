@@ -3,14 +3,12 @@
 namespace App\Jobs;
 
 use App\Models\Post;
-use App\Models\User;
 use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Queue;
 use Spatie\Browsershot\Browsershot;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
