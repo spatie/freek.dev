@@ -1,8 +1,9 @@
 @setup
+$branch = 'octane';
 $server = "freek.dev";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/freek.dev";
-$baseDir = "/home/forge/freek.dev";
+$baseDir = "/home/forge/octane.freek.dev";
 $releasesDir = "{$baseDir}/releases";
 $persistentDir = "{$baseDir}/persistent";
 $currentDir = "{$baseDir}/current";
@@ -116,7 +117,7 @@ ln -nfs {{ $baseDir }}/persistent/storage/og-images {{ $newReleaseDir }}/public/
 
 # Symlink the persistent fonts to the public directory
 cd {{ $baseDir }}/persistent/fonts
-git pull origin master
+git pull origin {{ $branch }}
 ln -nfs {{ $baseDir }}/persistent/fonts {{ $newReleaseDir }}/public/fonts;
 @endtask
 
@@ -147,8 +148,7 @@ php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
-php artisan responsecache:clear
-php artisan schedule-monitor:sync
+php artisan octane:reload
 
 sudo service php8.0-fpm restart
 sudo supervisorctl restart all
@@ -176,6 +176,5 @@ php artisan cache:clear
 php artisan config:cache
 php artisan responsecache:clear
 php artisan schedule-monitor:sync
-sudo supervisorctl restart all
-sudo service php8.0-fpm restart
+php artisan octane:reload
 @endtask
