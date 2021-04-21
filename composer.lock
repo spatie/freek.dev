@@ -1496,7 +1496,7 @@
         },
         {
             "name": "freekmurze/generate-newsletter",
-            "version": "dev-octane",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GenerateNewsletter",
