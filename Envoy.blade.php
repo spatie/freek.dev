@@ -1,9 +1,9 @@
 @setup
-$branch = 'octane';
+$branch = 'master';
 $server = "freek.dev";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/freek.dev";
-$baseDir = "/home/forge/octane.freek.dev";
+$baseDir = "/home/forge/freek.dev";
 $releasesDir = "{$baseDir}/releases";
 $persistentDir = "{$baseDir}/persistent";
 $currentDir = "{$baseDir}/current";
