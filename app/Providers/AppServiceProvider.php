@@ -13,8 +13,6 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        URL::forceScheme('https');
-
         Gate::define('viewHorizon', function (User $user) {
             return $user->admin;
         });
