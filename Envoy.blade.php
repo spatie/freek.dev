@@ -117,7 +117,7 @@ ln -nfs {{ $baseDir }}/persistent/storage/og-images {{ $newReleaseDir }}/public/
 
 # Symlink the persistent fonts to the public directory
 cd {{ $baseDir }}/persistent/fonts
-git pull origin {{ $branch }}
+git pull origin master
 ln -nfs {{ $baseDir }}/persistent/fonts {{ $newReleaseDir }}/public/fonts;
 @endtask
 
