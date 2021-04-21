@@ -39,8 +39,8 @@ deployOnlyCode
 
 @task('startDeployment', ['on' => 'local'])
 {{ logMessage("🏃  Starting deployment…") }}
-git checkout master
-git pull origin master
+git checkout {{ $branch }}
+git pull origin {{ $branch }}
 @endtask
 
 @task('cloneRepository', ['on' => 'remote'])
@@ -169,7 +169,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" rm -rf;
 @task('deployOnlyCode',['on' => 'remote'])
 {{ logMessage("💻  Deploying code changes…") }}
 cd {{ $currentDir }}
-git pull origin master
+git pull origin {{ $branch }}
 php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
