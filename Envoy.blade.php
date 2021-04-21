@@ -1,8 +1,9 @@
 @setup
+$branch = 'octane';
 $server = "freek.dev";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/freek.dev";
-$baseDir = "/home/forge/freek.dev";
+$baseDir = "/home/forge/octane.freek.dev";
 $releasesDir = "{$baseDir}/releases";
 $persistentDir = "{$baseDir}/persistent";
 $currentDir = "{$baseDir}/current";
@@ -38,8 +39,8 @@ deployOnlyCode
 
 @task('startDeployment', ['on' => 'local'])
 {{ logMessage("🏃  Starting deployment…") }}
-git checkout master
-git pull origin master
+git checkout {{ $branch }}
+git pull origin {{ $branch }}
 @endtask
 
 @task('cloneRepository', ['on' => 'remote'])
@@ -54,7 +55,7 @@ cd {{ $releasesDir }};
 mkdir {{ $newReleaseDir }};
 
 # Clone the repo
-git clone --depth 1 git@github.com:{{ $repository }} {{ $newReleaseName }}
+git clone --depth 1 git@github.com:{{ $repository }} --branch {{ $branch }} {{ $newReleaseName }}
 
 # Configure sparse checkout
 cd {{ $newReleaseDir }}
@@ -147,8 +148,7 @@ php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
-php artisan responsecache:clear
-php artisan schedule-monitor:sync
+php artisan octane:reload
 
 sudo service php8.0-fpm restart
 sudo supervisorctl restart all
@@ -169,13 +169,12 @@ ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" rm -rf;
 @task('deployOnlyCode',['on' => 'remote'])
 {{ logMessage("💻  Deploying code changes…") }}
 cd {{ $currentDir }}
-git pull origin master
+git pull origin {{ $branch }}
 php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
 php artisan responsecache:clear
 php artisan schedule-monitor:sync
-sudo supervisorctl restart all
-sudo service php8.0-fpm restart
+php artisan octane:reload
 @endtask
