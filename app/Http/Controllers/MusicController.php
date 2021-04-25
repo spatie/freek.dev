@@ -62,7 +62,7 @@ class MusicController
 
         $releases['corporateMelodies'] = [
             [
-                'title' => 'Corporate Melodies #2: My Opel Cors',
+                'title' => 'Corporate Melodies #2: My Opel Corsa',
                 'artwork' => 'cm002.jpg',
                 'links' => [
                     'Spotify' => 'https://open.spotify.com/playlist/0rw7PsTmtm8PEfsF63lsF0',
