@@ -2,7 +2,7 @@
     <div class="markup mb-8">
         <h1>Music</h1>
         <p>
-            I love both listening to and creating music. On this page you'll find playlists created by the team at <a href="https://spatie.be">Spatie</a>, and some music of my own.
+            I love both listening to and creating music. On this page you'll find playlists created by the team at <a href="https://spatie.be">Spatie</a>, and <a href="#kobus">some music of my own</a>.
         </p>
 
         <h2>Corporate Melodies</h2>
@@ -17,7 +17,7 @@
             @endforeach
         </ul>
 
-        <h2>Kobus</h2>
+        <h2><a id="kobus">Kobus</a></h2>
 
         <p>
             Every now and then I take some time to record some
