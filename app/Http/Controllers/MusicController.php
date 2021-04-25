@@ -6,7 +6,7 @@ class MusicController
 {
     public function __invoke()
     {
-        $releases = [
+        $releases['kobus'] = [
             [
                 'title' => 'Draw',
                 'artwork' => 'draw.jpg',
@@ -29,6 +29,33 @@ class MusicController
                 'links' => [
                     'Spotify' => 'https://open.spotify.com/album/03WFNNWoiNHOxMntno8EG3',
                     'Apple Music' => 'https://music.apple.com/be/album/left-ep/1542815899',
+                ],
+            ],
+        ];
+
+        $releases['jarenduren'] = [
+            [
+                'title' => '5+9',
+                'artwork' => '59.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/album/43qIwN1wzYJGRYBRndQXwI',
+                    'Apple Music' => 'https://music.apple.com/be/album/5-9-single/1563513563',
+                ],
+            ],
+            [
+                'title' => '3+2',
+                'artwork' => '32.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/album/1CjaSyMReZycwLidhtyVSA',
+                    'Apple Music' => 'https://music.apple.com/be/album/3-2-ep/1563510697',
+                ],
+            ],
+            [
+                'title' => 'D+R',
+                'artwork' => 'dr.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/album/6voFOEd5gEwo2Fjeo28iV2',
+                    'Apple Music' => 'https://music.apple.com/be/album/d-r-ep/1563562003',
                 ],
             ],
         ];
