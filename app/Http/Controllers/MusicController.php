@@ -77,14 +77,6 @@ class MusicController
                     'Apple Music' => 'https://music.apple.com/be/playlist/corporate-melodies-1-late-night-something/pl.u-RmWDiP6A24',
                 ],
             ],
-            [
-                'title' => 'D+R',
-                'artwork' => 'dr.jpg',
-                'links' => [
-                    'Spotify' => 'https://open.spotify.com/album/6voFOEd5gEwo2Fjeo28iV2',
-                    'Apple Music' => 'https://music.apple.com/be/album/d-r-ep/1563562003',
-                ],
-            ],
         ];
 
         return view('front.music.index', compact('releases'));
