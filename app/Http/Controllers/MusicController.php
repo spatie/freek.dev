@@ -60,6 +60,33 @@ class MusicController
             ],
         ];
 
+        $releases['corporateMelodies'] = [
+            [
+                'title' => 'Corporate Melodies #2: My Opel Cors',
+                'artwork' => 'cm002.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/playlist/0rw7PsTmtm8PEfsF63lsF0',
+                    'Apple Music' => 'https://music.apple.com/be/playlist/corporate-melodies-2-my-opel-corsa/pl.u-vmG3TYoaLr',
+                ],
+            ],
+            [
+                'title' => 'Corporate Melodies #1: Late Nite Something',
+                'artwork' => 'cm001.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/playlist/3PONMswLMDbeRdCEx4MOxO',
+                    'Apple Music' => 'https://music.apple.com/be/playlist/corporate-melodies-1-late-night-something/pl.u-RmWDiP6A24',
+                ],
+            ],
+            [
+                'title' => 'D+R',
+                'artwork' => 'dr.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/album/6voFOEd5gEwo2Fjeo28iV2',
+                    'Apple Music' => 'https://music.apple.com/be/album/d-r-ep/1563562003',
+                ],
+            ],
+        ];
+
         return view('front.music.index', compact('releases'));
     }
 }
