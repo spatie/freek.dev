@@ -7,8 +7,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
 use Spatie\Mailcoach\Domain\Audience\Models\Subscriber;
 
