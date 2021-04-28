@@ -1,26 +1,12 @@
 {
     "name": "laravel/laravel",
+    "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
         "framework",
         "laravel"
     ],
     "license": "MIT",
-    "type": "project",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./nova-components/GenerateNewsletter"
-        },
-        {
-            "type": "composer",
-            "url": "https://satis.spatie.be"
-        },
-        {
-            "type": "composer",
-            "url": "https://nova.laravel.com"
-        }
-    ],
     "require": {
         "php": "^8.0",
         "ext-dom": "*",
@@ -76,8 +62,19 @@
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3",
         "spatie/phpunit-snapshot-assertions": "^4.2",
-        "phpunit/phpunit": "^9.3"
+        "wulfheart/pretty_routes": "^0.1.2"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
     },
     "autoload": {
         "psr-4": {
@@ -91,17 +88,33 @@
             "Tests\\": "tests/"
         }
     },
-    "extra": {
-        "laravel": {
-            "dont-discover": []
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./nova-components/GenerateNewsletter"
+        },
+        {
+            "type": "composer",
+            "url": "https://satis.spatie.be"
+        },
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
         }
-    },
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
-        "format": [
-            "vendor/bin/php-cs-fixer fix"
+        "post-update-cmd": [
+            "@php artisan nova:publish",
+            "@php artisan horizon:publish",
+            "@php artisan vendor:publish --tag mailcoach-assets --force",
+            "@php artisan vendor:publish --tag mailcoach-monaco-assets --force",
+            "@php artisan vendor:publish --force --tag=livewire:assets --ansi"
         ],
-        "check-security": [
-            "vendor/bin/security-checker security:check"
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -109,23 +122,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate"
         ],
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
+        "check-security": [
+            "vendor/bin/security-checker security:check"
         ],
-        "post-update-cmd": [
-            "@php artisan nova:publish",
-            "@php artisan horizon:publish",
-            "@php artisan vendor:publish --tag mailcoach-assets --force",
-            "@php artisan vendor:publish --tag mailcoach-monaco-assets --force",
-            "@php artisan vendor:publish --force --tag=livewire:assets --ansi"
+        "format": [
+            "vendor/bin/php-cs-fixer fix"
         ]
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
