@@ -10,7 +10,7 @@
             <a href="#corporate-melodies" class="permalink">#</a>
         </h2>
         <p>
-            Every month, my colleagues and I created a playlist around a theme.
+            Every month, our team at Spatie creates a playlist around a theme.
 
         </p>
 
