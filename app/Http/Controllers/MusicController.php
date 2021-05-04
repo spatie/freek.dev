@@ -62,6 +62,14 @@ class MusicController
 
         $releases['corporateMelodies'] = [
             [
+                'title' => 'Corporate Melodies #3: Belgian Wonders',
+                'artwork' => 'cm003.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/playlist/6RoreKy23iKHj09TLfEoFr?si=c874a4fb0c2b4708',
+                    'Apple Music' => 'https://music.apple.com/be/playlist/corporate-melodies-3-belgian-wonders/pl.u-RmZxCP6A24',
+                ],
+            ],
+            [
                 'title' => 'Corporate Melodies #2: My Opel Corsa',
                 'artwork' => 'cm002.jpg',
                 'links' => [
