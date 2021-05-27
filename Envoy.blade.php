@@ -1,5 +1,5 @@
 @setup
-$branch = 'master';
+$branch = 'main';
 $server = "freek.dev";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/freek.dev";
@@ -117,7 +117,7 @@ ln -nfs {{ $baseDir }}/persistent/storage/og-images {{ $newReleaseDir }}/public/
 
 # Symlink the persistent fonts to the public directory
 cd {{ $baseDir }}/persistent/fonts
-git pull origin master
+git pull origin {{ $branch }}
 ln -nfs {{ $baseDir }}/persistent/fonts {{ $newReleaseDir }}/public/fonts;
 @endtask
 
