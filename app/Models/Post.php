@@ -207,7 +207,8 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             ->summary($this->formatted_text_with_external_url)
             ->updated($this->publish_date)
             ->link($this->url)
-            ->author('Freek Van der Herten');
+            ->authorName('Freek Van der Herten')
+            ->authorEmail('freek@spatie.be');
     }
 
     public function getUrlAttribute(): string
