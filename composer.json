@@ -35,7 +35,7 @@
         "spatie/browsershot": "^3.40",
         "spatie/commonmark-highlighter": "^2.0",
         "spatie/laravel-backup": "^7.0",
-        "spatie/laravel-feed": "^4.0.1",
+        "spatie/laravel-feed": "^4.0.2",
         "spatie/laravel-flash": "^1.7",
         "spatie/laravel-honeypot": "^3.0",
         "spatie/laravel-log-dumper": "^1.0",
