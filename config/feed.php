@@ -1,25 +1,35 @@
 <?php
 
-return [
+use App\Models\Post;
 
+return [
     'feeds' => [
         'main' => [
-            'url' => '/',
+            'url' => '',
             'title' => 'freek.dev - all blogposts',
-            'items' => \App\Models\Post::class . '@getFeedItems',
+            'items' => [Post::class, 'getFeedItems'],
+            'description' => 'All blogposts on freek.dev',
+            'language' => 'en-US',
+            'format' => 'atom',
+            'view' => 'feed::atom',
         ],
-
         'php' => [
-            'url' => '/php',
-            'title' => 'freek.dev - all php blogposts',
-            'items' => \App\Models\Post::class . '@getPhpFeedItems',
+            'url' => 'php',
+            'title' => 'freek.dev - all PHP blogposts',
+            'items' => [Post::class, 'getPhpFeedItems'],
+            'description' => 'All PHP blogposts on freek.dev',
+            'language' => 'en-US',
+            'format' => 'atom',
+            'view' => 'feed::atom',
         ],
-
         'originals' => [
-            'url' => '/originals',
+            'url' => 'originals',
             'title' => 'freek.dev - all originally written blogposts',
-            'items' => \App\Models\Post::class . '@getOriginalContentFeedItems',
+            'items' => [Post::class, 'getOriginalContentFeedItems'],
+            'description' => 'All originally written blogposts on freek.dev',
+            'language' => 'en-US',
+            'format' => 'atom',
+            'view' => 'feed::atom',
         ],
     ],
-
 ];
