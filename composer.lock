@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed7d1961d01f75dd834c94ef8900ae42",
+    "content-hash": "167e1d3c0018c5b27b50c93ee346f7c5",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1496,7 +1496,7 @@
         },
         {
             "name": "freekmurze/generate-newsletter",
-            "version": "dev-main",
+            "version": "dev-upgrade-feed",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GenerateNewsletter",
@@ -5772,16 +5772,16 @@
         },
         {
             "name": "spatie/laravel-feed",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-feed.git",
-                "reference": "75306a2e9b099f503663347d053c6d7193f5a843"
+                "reference": "277d7fe60c2a96ed9b1957c2369ba5d4a5a473a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/75306a2e9b099f503663347d053c6d7193f5a843",
-                "reference": "75306a2e9b099f503663347d053c6d7193f5a843",
+                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/277d7fe60c2a96ed9b1957c2369ba5d4a5a473a1",
+                "reference": "277d7fe60c2a96ed9b1957c2369ba5d4a5a473a1",
                 "shasum": ""
             },
             "require": {
@@ -5849,7 +5849,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-feed/issues",
-                "source": "https://github.com/spatie/laravel-feed/tree/4.0.1"
+                "source": "https://github.com/spatie/laravel-feed/tree/4.0.2"
             },
             "funding": [
                 {
@@ -5861,7 +5861,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-05-31T07:14:13+00:00"
+            "time": "2021-05-31T07:31:42+00:00"
         },
         {
             "name": "spatie/laravel-flash",

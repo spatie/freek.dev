@@ -5,7 +5,7 @@ use App\Models\Post;
 return [
     'feeds' => [
         'main' => [
-            'url' => '/',
+            'url' => '',
             'title' => 'freek.dev - all blogposts',
             'items' => [Post::class, 'getFeedItems'],
             'description' => 'All blogposts on freek.dev',
@@ -14,7 +14,7 @@ return [
             'view' => 'feed::atom',
         ],
         'php' => [
-            'url' => '/',
+            'url' => 'php',
             'title' => 'freek.dev - all PHP blogposts',
             'items' => [Post::class, 'getPhpFeedItems'],
             'description' => 'All PHP blogposts on freek.dev',
@@ -23,7 +23,7 @@ return [
             'view' => 'feed::atom',
         ],
         'originals' => [
-            'url' => '/',
+            'url' => 'originals',
             'title' => 'freek.dev - all originally written blogposts',
             'items' => [Post::class, 'getOriginalContentFeedItems'],
             'description' => 'All originally written blogposts on freek.dev',
