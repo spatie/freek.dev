@@ -62,6 +62,14 @@ class MusicController
 
         $releases['corporateMelodies'] = [
             [
+                'title' => 'Corporate Melodies #4: Acceptable in the 80s',
+                'artwork' => 'cm004.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/playlist/5KX46Xr7RctbWKQSvJFwma?si=aff1158084214f58&nd=1',
+                    'Apple Music' => 'https://music.apple.com/be/playlist/corporate-melodies-4-acceptable-in-the-80s/pl.u-bEZDC9NWZa',
+                ],
+            ],
+            [
                 'title' => 'Corporate Melodies #3: Belgian Wonders',
                 'artwork' => 'cm003.jpg',
                 'links' => [
