@@ -144,10 +144,11 @@
                     <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">DISCOUNT-FOR-FREEK-DEV-READERS</p>
                     <ul align="left" class="o-ml-24" style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://myray.app?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Ray</a></li>
-                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://front-line-php.com?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Front Line PHP</a></li>
-                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://medialibrary.pro?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Media Library Pro</a></li>
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://mailcoach.app?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Mailcoach</a></li>
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://laravel-beyond-crud.com?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Laravel Beyond CRUD</a></li>
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://event-sourcing-laravel.com?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Event Sourcing in Laravel</a></li>
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://front-line-php.com?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Front Line PHP</a></li>
+                        <li style="margin: 0 0 4px; text-align: left;"><a href="https://medialibrary.pro?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Media Library Pro</a></li>
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://laravelpackage.training?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Laravel Package Training</a></li>
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://spatie.be/products/laravel-backup-server?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Laravel Backup Server</a></li>
                     </ul>
