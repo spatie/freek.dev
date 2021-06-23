@@ -2,7 +2,7 @@
 
 namespace App\Actions;
 
-use App\Mail\LinkSumittedMail;
+use App\Mail\LinkSubmittedMail;
 use App\Models\Link;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
@@ -18,6 +18,6 @@ class CreateLinkAction
             'user_id' => $user->id,
         ]);
 
-        Mail::to('freek@spatie.be')->queue(new LinkSumittedMail($link));
+        Mail::to('freek@spatie.be')->queue(new LinkSubmittedMail($link));
     }
 }

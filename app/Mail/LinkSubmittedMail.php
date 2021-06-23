@@ -7,7 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class LinkSumittedMail extends Mailable
+class LinkSubmittedMail extends Mailable
 {
     use Queueable, SerializesModels;
 

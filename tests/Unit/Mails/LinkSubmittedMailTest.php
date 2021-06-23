@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Mails;
 
-use App\Mail\LinkSumittedMail;
+use App\Mail\LinkSubmittedMail;
 use App\Models\Link;
 use Tests\TestCase;
 
@@ -13,6 +13,6 @@ class LinkSubmittedMailTest extends TestCase
     {
         $link = Link::factory()->create();
 
-        $this->assertIsString((new LinkSumittedMail($link))->render());
+        $this->assertIsString((new LinkSubmittedMail($link))->render());
     }
 }

@@ -3,7 +3,7 @@
 namespace Tests\Feature\Controllers;
 
 use App\Http\Controllers\Links\CreateLinkController;
-use App\Mail\LinkSumittedMail;
+use App\Mail\LinkSubmittedMail;
 use App\Models\Link;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
@@ -44,7 +44,7 @@ class CreateLinkControllerTest extends TestCase
 
         $this->assertDatabaseHas('links', $expectedAttributes);
 
-        Mail::assertQueued(LinkSumittedMail::class);
+        Mail::assertQueued(LinkSubmittedMail::class);
     }
 
     /** @test */
