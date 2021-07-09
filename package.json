@@ -29,6 +29,7 @@
     "@tailwindcss/forms": "^0.2.1",
     "alpinejs": "^2.8.1",
     "autoprefixer": "^10.0.4",
-    "postcss": "^8.1.14"
+    "postcss": "^8.1.14",
+    "shiki": "^0.9.5"
   }
 }
