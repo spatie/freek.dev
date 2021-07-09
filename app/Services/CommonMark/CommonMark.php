@@ -17,10 +17,12 @@ class CommonMark
         $environment = Environment::createCommonMarkEnvironment()
             ->addBlockRenderer(Heading::class, new HeadingRenderer());
 
+        /*
         if ($highlightCode) {
             $environment
                ->addExtension(new HighlightCodeExtension('material-lighter'));
         }
+        */
 
         $commonMarkConverter = new CommonMarkConverter([], $environment);
 
