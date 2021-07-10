@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSendAutomatedTweetFieldToPostsTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -12,4 +12,4 @@ class AddSendAutomatedTweetFieldToPostsTable extends Migration
             $table->boolean('send_automated_tweet')->default(true);
         });
     }
-}
+};

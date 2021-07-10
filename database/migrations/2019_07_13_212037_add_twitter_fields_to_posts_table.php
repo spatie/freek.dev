@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTwitterFieldsToPostsTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -12,4 +12,4 @@ class AddTwitterFieldsToPostsTable extends Migration
             $table->string('tweet_url')->nullable();
         });
     }
-}
+};

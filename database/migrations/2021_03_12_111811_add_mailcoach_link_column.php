@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddMailcoachLinkColumn extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -12,4 +12,4 @@ class AddMailcoachLinkColumn extends Migration
             $table->foreignId('automation_mail_link_id')->nullable()->constrained('mailcoach_automation_mail_links');
         });
     }
-}
+};

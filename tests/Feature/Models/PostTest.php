@@ -86,7 +86,9 @@ class PostTest extends TestCase
     {
         $posts = PostFactory::series(10);
 
-        $this->assertMatchesHtmlSnapshot($posts->first()->formatted_text);
+        ray()->newScreen('rendering');
+
+        $this->assertMatchesHtmlSnapshot($posts->first()->refresh()->html);
     }
 
     /** @test */

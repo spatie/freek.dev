@@ -3,8 +3,7 @@
 
     <x-post-header :post="$post" class="mb-8">
 
-
-        {!! $post->formatted_text !!}
+        {!! $post->html !!}
 
         @unless($post->isTweet())
             @if($post->external_url)

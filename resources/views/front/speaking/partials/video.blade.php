@@ -8,7 +8,7 @@
         </div>
         <div class="flex-1">
             <div class="markup">
-                {!! $video->formatted_text !!}
+                {!! $video->html !!}
             </div>
         </div>
     </div>

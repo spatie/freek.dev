@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateWebhookCallsTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -17,9 +17,4 @@ class CreateWebhookCallsTable extends Migration
             $table->timestamps();
         });
     }
-
-    public function down()
-    {
-        Schema::dropIfExists('webhook_calls');
-    }
-}
+};

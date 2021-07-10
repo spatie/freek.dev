@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTagTables extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -24,4 +24,4 @@ class CreateTagTables extends Migration
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
-}
+};

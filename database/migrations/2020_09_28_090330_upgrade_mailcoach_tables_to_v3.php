@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpgradeMailcoachTablesToV3 extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -39,4 +39,4 @@ class UpgradeMailcoachTablesToV3 extends Migration
             $table->index('external_id');
         });
     }
-}
+};

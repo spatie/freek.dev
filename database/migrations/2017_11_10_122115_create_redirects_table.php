@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRedirectsTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -17,4 +17,4 @@ class CreateRedirectsTable extends Migration
             $table->timestamps();
         });
     }
-}
+};

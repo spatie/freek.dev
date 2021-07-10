@@ -8,7 +8,6 @@
 @import './components/mobile-menu.css';
 @import './components/pagination.css';
 
-@import './vendor/hljs.css';
 @import './utilties.css';
 
 @tailwind components;

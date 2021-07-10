@@ -3,7 +3,7 @@
            type="text"
            autofocus
            placeholder="Laravel, PHP, JavaScript,…"
-           class="bg-gray-100 px-3 pb-2 pt-3 w-full focus:outline-none border-gray-200 focus:border-gray-300 border-t-4 border-b-4 border-t-transparent mb-4"
+           class="form-input mt-1 block w-full"
     >
 
     @if ($query === 'greece woods')

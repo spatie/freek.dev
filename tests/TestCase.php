@@ -12,6 +12,13 @@ abstract class TestCase extends BaseTestCase
 
     use RefreshDatabase;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        ray()->newScreen($this->getName());
+    }
+
     protected function setNow(...$dateTimeParts): Carbon
     {
         $now = Carbon::create(...$dateTimeParts);

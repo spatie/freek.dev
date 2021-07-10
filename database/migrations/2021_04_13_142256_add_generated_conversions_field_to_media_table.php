@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class AddGeneratedConversionsFieldToMediaTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -24,4 +24,4 @@ class AddGeneratedConversionsFieldToMediaTable extends Migration
                 'generated_conversions' => DB::raw('custom_properties->"$.generated_conversions"'),
             ]);
     }
-}
+};

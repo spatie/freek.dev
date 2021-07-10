@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    public function getFormattedTextAttribute()
+    public static function booted()
     {
-        return CommonMark::convertToHtml($this->text);
+        static::saved(function (Video $ad) {
+            static::withoutEvents(function () use ($ad) {
+                $ad->update(['html' => CommonMark::convertToHtml($ad->text, false)]);
+            });
+        });
     }
 }

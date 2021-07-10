@@ -5,7 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPreviewSecretToPostsTable extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -17,4 +17,4 @@ class AddPreviewSecretToPostsTable extends Migration
             $post->update(['preview_secret' => \Illuminate\Support\Str::random(10)]);
         });
     }
-}
+};

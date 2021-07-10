@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateMailcoachTablesToV2 extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -29,4 +29,4 @@ class UpdateMailcoachTablesToV2 extends Migration
             $table->string('url', 2048)->change();
         });
     }
-}
+};

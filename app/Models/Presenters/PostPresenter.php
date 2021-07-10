@@ -53,10 +53,10 @@ trait PostPresenter
     protected function getAutomaticExcerpt(): string
     {
         if (! $this->original_content) {
-            return $this->formatted_text;
+            return $this->html;
         }
 
-        $excerpt = $this->formatted_text;
+        $excerpt = $this->html;
 
         $excerpt = Str::before($excerpt, '<blockquote>');
 
@@ -77,7 +77,7 @@ trait PostPresenter
 
         $excerpt = substr($ww, 0, strpos($ww, "\n")) . '…';
 
-        return $excerpt;
+        return $excerpt ?? '';
     }
 
     public function getTagsTextAttribute(): string

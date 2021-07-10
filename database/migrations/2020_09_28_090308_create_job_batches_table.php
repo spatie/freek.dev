@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJobBatchesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -26,14 +26,4 @@ class CreateJobBatchesTable extends Migration
             $table->integer('finished_at')->nullable();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('job_batches');
-    }
-}
+};

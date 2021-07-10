@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Actions\ConvertPostTextToHtmlAction;
 use App\Actions\PublishPostAction;
 use App\Http\Controllers\PostController;
 use App\Jobs\CreateOgImageJob;
@@ -57,7 +58,18 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             $post->preview_secret = Str::random(10);
         });
 
+
         static::saved(function (Post $post) {
+            static::withoutEvents(function () use ($post) {
+                (new ConvertPostTextToHtmlAction())->execute($post);
+
+                if ($post->isPartOfSeries()) {
+                    $post->getAllPostsInSeries()->each(function(Post $post) {
+                        (new ConvertPostTextToHtmlAction())->execute($post);
+                    });
+                }
+            });
+
             if ($post->published) {
                 static::withoutEvents(function () use ($post) {
                     (new PublishPostAction())->execute($post);
@@ -103,36 +115,15 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             ->whereNotNull('publish_date');
     }
 
-    public function getFormattedTextAttribute()
+    public function getHtmlWithExternalUrlAttribute()
     {
-        $text = $this->text;
-
-        if ($this->isPartOfSeries()) {
-            $text = str_replace(
-                '[series-toc]',
-                (new SeriesTocComponent($this))->render() . PHP_EOL,
-                $this->text
-            );
-
-            $text = str_replace(
-                '[series-next-post]',
-                (new SeriesNextPostComponent($this))->render(),
-                $text
-            );
-        }
-
-        return CommonMark::convertToHtml($text, $highlightCode = true);
-    }
-
-    public function getFormattedTextWithExternalUrlAttribute()
-    {
-        $text = $this->formatted_text;
+        $html = $this->html;
 
         if (! $this->isTweet() && $this->external_url) {
-            $text .= PHP_EOL . PHP_EOL . "[Read More]({$this->external_url})";
+            $html .= PHP_EOL . PHP_EOL . "<a href='{$this->external_url}'>Read more</a>";
         }
 
-        return CommonMark::convertToHtml($text, false);
+        return $html;
     }
 
     public function updateAttributes(array $attributes)
@@ -204,7 +195,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         return FeedItem::create()
             ->id($this->id)
             ->title($this->formatted_title)
-            ->summary($this->formatted_text_with_external_url)
+            ->summary($this->html_with_external_url)
             ->updated($this->publish_date)
             ->link($this->url)
             ->authorName('Freek Van der Herten')

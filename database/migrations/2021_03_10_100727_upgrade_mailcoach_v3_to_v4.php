@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpgradeMailcoachV3ToV4 extends Migration
+return new class extends Migration
 {
     public function up()
     {
@@ -306,4 +306,4 @@ class UpgradeMailcoachV3ToV4 extends Migration
             $table->unsignedBigInteger('subscriber_id')->nullable()->change();
         });
     }
-}
+};
