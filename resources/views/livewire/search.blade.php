@@ -3,7 +3,7 @@
            type="text"
            autofocus
            placeholder="Laravel, PHP, JavaScript,…"
-           class="form-input mt-1 block w-full"
+           class="form-input mt-1 block w-full mb-4"
     >
 
     @if ($query === 'greece woods')
