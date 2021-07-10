@@ -30,7 +30,7 @@ class ConvertPostTextToHtmlAction
 
         }
 
-        $html = CommonMark::convertToHtml($text);
+        $html = CommonMark::convertToHtml($text, highlightCode: true);
 
         $post->update(['html' => $html]);
     }

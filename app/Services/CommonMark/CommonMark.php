@@ -12,7 +12,7 @@ use Throwable;
 
 class CommonMark
 {
-    public static function convertToHtml(string $markdown, $highlightCode = true): string
+    public static function convertToHtml(string $markdown, $highlightCode = false): string
     {
         $environment = Environment::createCommonMarkEnvironment()
             ->addBlockRenderer(Heading::class, new HeadingRenderer());
