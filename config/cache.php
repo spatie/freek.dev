@@ -52,6 +52,11 @@ return [
             'path' => storage_path('framework/cache/data'),
         ],
 
+        'markdown' => [
+            'driver' => 'file',
+            'path' => storage_path('framework/cache/markdown'),
+        ],
+
         'memcached' => [
             'driver' => 'memcached',
             'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),

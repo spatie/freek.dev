@@ -5,26 +5,24 @@ namespace App\Services\CommonMark;
 use DOMDocument;
 use DOMXPath;
 use League\CommonMark\Block\Element\Heading;
-use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Environment;
-use Spatie\CommonMarkShikiHighlighter\HighlightCodeExtension;
+use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Throwable;
 
 class CommonMark
 {
     public static function convertToHtml(string $markdown, $highlightCode = false): string
     {
-        $environment = Environment::createCommonMarkEnvironment()
+        /** @var MarkdownRenderer $markdownRenderer */
+        $markdownRenderer = app(MarkdownRenderer::class);
+
+        $markdownRenderer
             ->addBlockRenderer(Heading::class, new HeadingRenderer());
 
-        if ($highlightCode) {
-            $environment
-               ->addExtension(new HighlightCodeExtension('github-light'));
+        if (! $highlightCode) {
+            $markdownRenderer->disableHighlighting();
         }
 
-        $commonMarkConverter = new CommonMarkConverter([], $environment);
-
-        $htmlString = $commonMarkConverter->convertToHtml($markdown);
+        $htmlString = $markdownRenderer->toHtml($markdown);
 
         return self::lazyLoadImages($htmlString);
     }
