@@ -153,7 +153,7 @@
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://spatie.be/products/laravel-backup-server?utm_source=freek_dev?utm_medium=newsletter&utm_campaing=newsletter_{{ $editionNumber }}" style="color: #252f3f;">Laravel Backup Server</a></li>
                     </ul>
                     <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;"></p>
-                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">You can that coupon code as wel to get a 30% discount on your first 3 months when subscribing to:</p>
+                    <p style="font-size: 16px; margin: 0 0 16px; color: #161e2e;">You can use that coupon code as wel to get a 30% discount on your first 3 months when subscribing to:</p>
                     <ul align="left" class="o-ml-24" style="font-size: 16px; list-style-type: disc; margin: 0 0 0 20px; padding: 0;">
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://flareapp.io" style="color: #252f3f;">Flare</a></li>
                         <li style="margin: 0 0 4px; text-align: left;"><a href="https://ohdear.app" style="color: #252f3f;">Oh Dear</a></li>
