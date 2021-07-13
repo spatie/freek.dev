@@ -2,6 +2,7 @@
 
 @import './bootstrap.css';
 
+@import './components/shiki.css';
 @import './components/button.css';
 @import './components/carbon.css';
 @import './components/markup.css';
