@@ -62,6 +62,22 @@ class MusicController
 
         $releases['corporateMelodies'] = [
             [
+                'title' => 'Corporate Melodies #6: Can I Kick It?',
+                'artwork' => 'cm006.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/playlist/0ky2gt77qwYyMnbSEJY5rp?si=ae9579e77804494a',
+                    'Apple Music' => 'https://music.apple.com/be/playlist/corporate-melodies-6-can-i-kick-it/pl.u-bEJ7s9NWZa',
+                ],
+            ],
+            [
+                'title' => 'Corporate Melodies #5: Guilty Pleasures',
+                'artwork' => 'cm005.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/playlist/3UiHWL9l95iu7LWtR7sQyq?si=e92944e2fed547e2',
+                    'Apple Music' => 'https://music.apple.com/be/playlist/corporate-melodies-5-guilty-pleasures/pl.u-6YJ3tAmqbd',
+                ],
+            ],
+            [
                 'title' => 'Corporate Melodies #4: Acceptable in the 80s',
                 'artwork' => 'cm004.jpg',
                 'links' => [
