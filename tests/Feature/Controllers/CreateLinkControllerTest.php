@@ -24,7 +24,6 @@ class CreateLinkControllerTest extends TestCase
         Mail::fake();
     }
 
-    /** @test */
     public function it_can_create_a_link()
     {
         $attributes = [
