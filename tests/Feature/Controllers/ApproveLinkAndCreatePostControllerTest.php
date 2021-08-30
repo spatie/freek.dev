@@ -1,30 +1,24 @@
 <?php
 
-namespace Tests\Feature\Controllers;
-
 use App\Models\Link;
-use Mail;
 use Tests\TestCase;
+use function Pest\Laravel\assertDatabaseHas;
+use function \Pest\Laravel\get;
 
-class ApproveLinkAndCreatePostControllerTest extends TestCase
-{
-    /** @test */
-    public function it_can_approve_a_link_and_create_a_post_using_a_signed_url()
-    {
-        Mail::fake();
+it('can approve a link and create a post using a signed url', function () {
+    Mail::fake();
 
-        /** @var \App\Models\Link $link */
-        $link = Link::factory()->create([
-            'status' => Link::STATUS_SUBMITTED,
-        ]);
+    /** @var \App\Models\Link $link */
+    $link = Link::factory()->create([
+        'status' => Link::STATUS_SUBMITTED,
+    ]);
 
-        $this->assertFalse($link->isApproved());
+    expect($link->isApproved())->toBeFalse();
 
-        $this->get($link->approveAndCreatePostUrl());
+    get($link->approveAndCreatePostUrl());
 
-        $this->assertTrue($link->refresh()->isApproved());
-        $this->assertDatabaseHas('posts', [
-            'title' => $link->title,
-        ]);
-    }
-}
+    expect($link->refresh()->isApproved())->toBeTrue();
+    assertDatabaseHas('posts', [
+        'title' => $link->title,
+    ]);
+});

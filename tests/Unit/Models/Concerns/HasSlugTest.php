@@ -1,33 +1,24 @@
 <?php
 
-namespace Tests\Unit\Models\Concerns;
-
 use App\Models\Post;
 use Tests\TestCase;
 
-class HasSlugTest extends TestCase
-{
-    /** @test */
-    public function a_model_can_have_a_slug()
-    {
-        $post = Post::factory()->create();
+test('a model can have a slug', function () {
+    $post = Post::factory()->create();
 
-        $this->assertNotEmpty($post->slug);
+    $this->assertNotEmpty($post->slug);
 
-        $this->assertEquals("{$post->id}-{$post->slug}", $post->idSlug());
-    }
+    expect($post->idSlug())->toEqual("{$post->id}-{$post->slug}");
+});
 
-    /** @test */
-    public function a_model_can_be_found_by_an_id_slug()
-    {
-        $post = Post::factory()->create();
+test('a model can be found by an id slug', function () {
+    $post = Post::factory()->create();
 
-        $this->assertEquals($post->id, Post::findByIdSlug($post->idSlug())->id);
+    expect(Post::findByIdSlug($post->idSlug())->id)->toEqual($post->id);
 
-        $this->assertEquals($post->id, Post::findByIdSlug($post->id . 'blabla')->id);
+    expect(Post::findByIdSlug($post->id . 'blabla')->id)->toEqual($post->id);
 
-        $this->assertEquals($post->id, Post::findByIdSlug($post->id)->id);
+    expect(Post::findByIdSlug($post->id)->id)->toEqual($post->id);
 
-        $this->assertNull(Post::findByIdSlug(1234 . 'blabla'));
-    }
-}
+    expect(Post::findByIdSlug(1234 . 'blabla'))->toBeNull();
+});

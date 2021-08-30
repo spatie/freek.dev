@@ -1,30 +1,23 @@
 <?php
 
-namespace Tests\Feature\Controllers;
-
 use App\Mail\LinkApprovedMail;
 use App\Models\Link;
-use Mail;
 use Tests\TestCase;
+use function \Pest\Laravel\get;
 
-class ApproveLinkControllerTest extends TestCase
-{
-    /** @test */
-    public function it_can_approve_a_link_using_a_signed_url()
-    {
-        Mail::fake();
+it('can approve a link using a signed url', function () {
+    Mail::fake();
 
-        /** @var \App\Models\Link $link */
-        $link = Link::factory()->create([
-            'status' => Link::STATUS_SUBMITTED,
-        ]);
+    /** @var \App\Models\Link $link */
+    $link = Link::factory()->create([
+        'status' => Link::STATUS_SUBMITTED,
+    ]);
 
-        $this->assertFalse($link->isApproved());
+    expect($link->isApproved())->toBeFalse();
 
-        $this->get($link->approveUrl());
+    get($link->approveUrl());
 
-        $this->assertTrue($link->refresh()->isApproved());
+    expect($link->refresh()->isApproved())->toBeTrue();
 
-        Mail::assertQueued(LinkApprovedMail::class);
-    }
-}
+    Mail::assertQueued(LinkApprovedMail::class);
+});
