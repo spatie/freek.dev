@@ -1,18 +1,13 @@
 <?php
 
-namespace Tests\Unit\Mails;
-
 use App\Mail\LinkSubmittedMail;
 use App\Models\Link;
 use Tests\TestCase;
 
-class LinkSubmittedMailTest extends TestCase
-{
-    /** @test */
-    public function the_link_approved_mail_can_be_rendered()
-    {
-        $link = Link::factory()->create();
+uses(TestCase::class);
 
-        $this->assertIsString((new LinkSubmittedMail($link))->render());
-    }
-}
+test('the link approved mail can be rendered', function () {
+    $link = Link::factory()->create();
+
+    expect((new LinkSubmittedMail($link))->render())->toBeString();
+});

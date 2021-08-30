@@ -1,7 +1,5 @@
 <?php
 
-namespace Tests\Feature\Models;
-
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use App\Models\User;
@@ -9,100 +7,81 @@ use Spatie\Snapshots\MatchesSnapshots;
 use Tests\Factories\PostFactory;
 use Tests\TestCase;
 
-class PostTest extends TestCase
-{
-    use MatchesSnapshots;
+uses(TestCase::class);
+uses(MatchesSnapshots::class);
 
-    private Post $post;
+beforeEach(function () {
+    parent::setUp();
 
-    protected function setUp(): void
-    {
-        parent::setUp();
+    $this->post = Post::factory()->create();
+});
 
-        $this->post = Post::factory()->create();
-    }
+it('can find a post by its id slug', function () {
+    $this->withoutExceptionHandling();
 
-    /** @test */
-    public function it_can_find_a_post_by_its_id_slug()
-    {
-        $this->withoutExceptionHandling();
+    $this
+        ->get(action(PostController::class, $this->post->idSlug()))
+        ->assertSuccessful()
+        ->assertSee($this->post->title);
+});
 
-        $this
-            ->get(action(PostController::class, $this->post->idSlug()))
-            ->assertSuccessful()
-            ->assertSee($this->post->title);
-    }
+it('can redirects a slug to an id slug', function () {
+    $this
+        ->get(action(PostController::class, $this->post->slug))
+        ->assertRedirect(action(PostController::class, $this->post->idSlug()));
+});
 
-    /** @test */
-    public function it_can_redirects_a_slug_to_an_id_slug()
-    {
-        $this
-            ->get(action(PostController::class, $this->post->slug))
-            ->assertRedirect(action(PostController::class, $this->post->idSlug()));
-    }
+it('will return a 404 for an invalid slug', function () {
+    $this
+        ->get(action(PostController::class, 'invalid'))
+        ->assertNotFound();
+});
 
-    /** @test */
-    public function it_will_return_a_404_for_an_invalid_slug()
-    {
-        $this
-            ->get(action(PostController::class, 'invalid'))
-            ->assertNotFound();
-    }
+it('will only show posts with a publish date in the future', function () {
+    $post = Post::factory()->create([
+        'published' => false,
+    ]);
 
-    /** @test */
-    public function it_will_only_show_posts_with_a_publish_date_in_the_future()
-    {
-        $post = Post::factory()->create([
-            'published' => false,
-        ]);
+    $this
+        ->get(action(PostController::class, $post->idSlug()))
+        ->assertNotFound();
+});
 
-        $this
-            ->get(action(PostController::class, $post->idSlug()))
-            ->assertNotFound();
-    }
+it('will display unpublished post using a preview secret', function () {
+    $post = Post::factory()->create([
+        'published' => false,
+    ]);
 
-    /** @test */
-    public function it_will_display_unpublished_post_using_a_preview_secret()
-    {
-        $post = Post::factory()->create([
-            'published' => false,
-        ]);
+    $this
+        ->get(action(PostController::class, $post->idSlug()))
+        ->assertNotFound();
 
-        $this
-            ->get(action(PostController::class, $post->idSlug()))
-            ->assertNotFound();
+    $this
+        ->get(action(PostController::class, $post->idSlug()) . "?preview_secret={$post->preview_secret}")
+        ->assertSuccessful();
 
-        $this
-            ->get(action(PostController::class, $post->idSlug()) . "?preview_secret={$post->preview_secret}")
-            ->assertSuccessful();
+    $this
+        ->get(action(PostController::class, $post->idSlug()) . "?preview_secret=wrong-secret")
+        ->assertNotFound();
+});
 
-        $this
-            ->get(action(PostController::class, $post->idSlug()) . "?preview_secret=wrong-secret")
-            ->assertNotFound();
-    }
+it('can render a series toc and next link on post', function () {
+    $posts = PostFactory::series(10);
 
-    /** @test */
-    public function it_can_render_a_series_toc_and_next_link_on_post()
-    {
-        $posts = PostFactory::series(10);
+    ray()->newScreen('rendering');
 
-        ray()->newScreen('rendering');
+    $this->assertMatchesHtmlSnapshot($posts->first()->refresh()->html);
+});
 
-        $this->assertMatchesHtmlSnapshot($posts->first()->refresh()->html);
-    }
+it('can get the twitter handle of the author', function () {
+    /** @var Post $post */
+    $post = Post::factory()->create(['author_twitter_handle' => null]);
+    expect($post->authorTwitterHandle())->toBeNull();
 
-    /** @test */
-    public function it_can_get_the_twitter_handle_of_the_author()
-    {
-        /** @var Post $post */
-        $post = Post::factory()->create(['author_twitter_handle' => null]);
-        $this->assertNull($post->authorTwitterHandle());
+    $user = User::factory()->create(['twitter_handle' => 'other']);
+    $post->update(['submitted_by_user_id' => $user->id]);
+    expect($post->refresh()->authorTwitterHandle())->toEqual('other');
 
-        $user = User::factory()->create(['twitter_handle' => 'other']);
-        $post->update(['submitted_by_user_id' => $user->id]);
-        $this->assertEquals('other', $post->refresh()->authorTwitterHandle());
-
-        $post->update(['author_twitter_handle' => 'freekmurze']);
-        $this->assertEquals('freekmurze', $post->authorTwitterHandle());
-    }
-}
+    $post->update(['author_twitter_handle' => 'freekmurze']);
+    expect($post->authorTwitterHandle())->toEqual('freekmurze');
+});

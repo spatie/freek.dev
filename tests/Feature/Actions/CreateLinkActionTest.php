@@ -1,7 +1,4 @@
 <?php
 
-namespace Tests\Feature\Actions;
+uses(::class);
 
-class CreateLinkActionTest
-{
-}

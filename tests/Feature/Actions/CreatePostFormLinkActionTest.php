@@ -1,26 +1,21 @@
 <?php
 
-namespace Tests\Feature\Actions;
-
 use App\Actions\CreatePostFromLinkAction;
 use App\Models\Link;
 use Tests\TestCase;
 
-class CreatePostFormLinkActionTest extends TestCase
-{
-    /** @test */
-    public function it_can_create_a_post_from_a_link()
-    {
-        $link = Link::factory()->create();
+uses(TestCase::class);
 
-        (new CreatePostFromLinkAction())->execute($link);
+it('can create a post from a link', function () {
+    $link = Link::factory()->create();
 
-        $this->assertDatabaseHas('posts', [
-            'submitted_by_user_id' => $link->user_id,
-            'title' => $link->title,
-            'text' => $link->text,
-            'external_url' => $link->url,
-            'published' => false,
-        ]);
-    }
-}
+    (new CreatePostFromLinkAction())->execute($link);
+
+    $this->assertDatabaseHas('posts', [
+        'submitted_by_user_id' => $link->user_id,
+        'title' => $link->title,
+        'text' => $link->text,
+        'external_url' => $link->url,
+        'published' => false,
+    ]);
+});

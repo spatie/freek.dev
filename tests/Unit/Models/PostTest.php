@@ -1,121 +1,104 @@
 <?php
 
-namespace Tests\Unit\Models;
-
 use App\Models\Post;
 use Tests\TestCase;
 
-class PostTest extends TestCase
-{
-    /** @test */
-    public function it_can_determine_the_promotional_url()
-    {
-        $post = Post::factory()->create([
-            'title' => 'test',
-        ]);
-        $this->assertEquals(
-            "http://freek.dev.test/{$post->id}-test",
-            $post->promotional_url,
-        );
+uses(TestCase::class);
 
-        $post = Post::factory()->create([
-            'title' => 'test',
-            'external_url' => 'https://external-blog.com/page',
-        ]);
-        $this->assertEquals(
-            'https://external-blog.com/page',
-            $post->promotional_url,
-        );
-    }
+it('can determine the promotional url', function () {
+    $post = Post::factory()->create([
+        'title' => 'test',
+    ]);
+    $this->assertEquals(
+        "http://freek.dev.test/{$post->id}-test",
+        $post->promotional_url,
+    );
 
-    /** @test */
-    public function it_can_get_scheduled_posts()
-    {
-        $this->assertCount(0, Post::scheduled()->get());
+    $post = Post::factory()->create([
+        'title' => 'test',
+        'external_url' => 'https://external-blog.com/page',
+    ]);
+    $this->assertEquals(
+        'https://external-blog.com/page',
+        $post->promotional_url,
+    );
+});
 
-        Post::factory()->create([
-            'publish_date' => now()->subMinute(),
-            'published' => false,
-        ]);
-        $this->assertCount(1, Post::scheduled()->get());
+it('can get scheduled posts', function () {
+    expect(Post::scheduled()->get())->toHaveCount(0);
 
-        Post::factory()->create([
-            'publish_date' => now()->subMinute(),
-            'published' => true,
-        ]);
-        $this->assertCount(1, Post::scheduled()->get());
+    Post::factory()->create([
+        'publish_date' => now()->subMinute(),
+        'published' => false,
+    ]);
+    expect(Post::scheduled()->get())->toHaveCount(1);
 
-        Post::factory()->create([
-            'publish_date' => now()->addMinute(),
-            'published' => false,
-        ]);
-        $this->assertCount(2, Post::scheduled()->get());
+    Post::factory()->create([
+        'publish_date' => now()->subMinute(),
+        'published' => true,
+    ]);
+    expect(Post::scheduled()->get())->toHaveCount(1);
 
-        Post::factory()->create([
-            'publish_date' => null,
-            'published' => false,
-        ]);
-        $this->assertCount(2, Post::scheduled()->get());
-    }
+    Post::factory()->create([
+        'publish_date' => now()->addMinute(),
+        'published' => false,
+    ]);
+    expect(Post::scheduled()->get())->toHaveCount(2);
 
-    /** @test */
-    public function it_can_determine_if_the_post_concerns_a_tweet()
-    {
-        $post = Post::factory()->create();
+    Post::factory()->create([
+        'publish_date' => null,
+        'published' => false,
+    ]);
+    expect(Post::scheduled()->get())->toHaveCount(2);
+});
 
-        $this->assertFalse($post->isTweet());
+it('can determine if the post concerns a tweet', function () {
+    $post = Post::factory()->create();
 
-        $post->syncTags(['php', 'tweet']);
+    expect($post->isTweet())->toBeFalse();
 
-        $this->assertTrue($post->refresh()->isTweet());
-    }
+    $post->syncTags(['php', 'tweet']);
 
-    /** @test */
-    public function it_can_determine_that_a_post_is_a_tweet()
-    {
-        $post = Post::factory()->create();
-        $this->assertFalse($post->isTweet());
+    expect($post->refresh()->isTweet())->toBeTrue();
+});
 
-        $post = Post::factory()->create()->attachTag('tweet');
-        $this->assertTrue($post->isTweet());
+it('can determine that a post is a tweet', function () {
+    $post = Post::factory()->create();
+    expect($post->isTweet())->toBeFalse();
 
-        $post = Post::factory()->create()->attachTags([
-            'tag',
-            'tweet',
-            'another-tag',
-        ]);
-        $this->assertTrue($post->isTweet());
-    }
+    $post = Post::factory()->create()->attachTag('tweet');
+    expect($post->isTweet())->toBeTrue();
 
-    /** @test */
-    public function it_can_determine_the_excerpt()
-    {
-        $post = Post::factory()->create([
-           'text' => 'excerpt<!--more-->full post',
-        ]);
+    $post = Post::factory()->create()->attachTags([
+        'tag',
+        'tweet',
+        'another-tag',
+    ]);
+    expect($post->isTweet())->toBeTrue();
+});
 
-        $this->assertEquals('<p>excerpt</p>', $post->excerpt);
-    }
+it('can determine the excerpt', function () {
+    $post = Post::factory()->create([
+       'text' => 'excerpt<!--more-->full post',
+    ]);
 
-    /** @test */
-    public function a_post_is_tweetable()
-    {
-        /** @var \App\Models\Post $post */
-        $post = Post::factory()->create();
+    expect($post->excerpt)->toEqual('<p>excerpt</p>');
+});
 
-        $this->assertTrue(is_string($post->toTweet()));
-    }
+test('a post is tweetable', function () {
+    /** @var \App\Models\Post $post */
+    $post = Post::factory()->create();
 
-    /** @test */
-    public function it_can_save_the_tweeted_url()
-    {
-        /** @var \App\Models\Post $post */
-        $post = Post::factory()->create();
+    expect(is_string($post->toTweet()))->toBeTrue();
+});
 
-        $url = 'https://twitter.com/freekmurze/status/123';
+it('can save the tweeted url', function () {
+    /** @var \App\Models\Post $post */
+    $post = Post::factory()->create();
 
-        $post->onAfterTweet($url);
+    $url = 'https://twitter.com/freekmurze/status/123';
 
-        $this->assertEquals($url, $post->refresh()->tweet_url);
-    }
-}
+    $post->onAfterTweet($url);
+
+    expect($post->refresh()->tweet_url)->toEqual($url);
+});

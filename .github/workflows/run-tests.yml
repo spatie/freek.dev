@@ -47,7 +47,7 @@ jobs:
                     php artisan key:generate
 
             -   name: Run tests
-                run: ./vendor/bin/phpunit
+                run: ./vendor/bin/pest
                 env:
                     DB_PASSWORD: root
                     REDIS_PORT: ${{ job.services.redis.ports[6379] }}

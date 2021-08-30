@@ -1,24 +1,19 @@
 <?php
 
-namespace Tests\Feature\Controllers;
-
 use App\Models\Link;
 use Tests\TestCase;
 
-class RejectLinkControllerTest extends TestCase
-{
-    /** @test */
-    public function it_can_reject_a_link_using_a_signed_url()
-    {
-        /** @var \App\Models\Link $link */
-        $link = Link::factory()->create([
-            'status' => Link::STATUS_SUBMITTED,
-        ]);
+uses(TestCase::class);
 
-        $this->assertFalse($link->isRejected());
+it('can reject a link using a signed url', function () {
+    /** @var \App\Models\Link $link */
+    $link = Link::factory()->create([
+        'status' => Link::STATUS_SUBMITTED,
+    ]);
 
-        $this->get($link->rejectUrl());
+    expect($link->isRejected())->toBeFalse();
 
-        $this->assertTrue($link->refresh()->isRejected());
-    }
-}
+    $this->get($link->rejectUrl());
+
+    expect($link->refresh()->isRejected())->toBeTrue();
+});

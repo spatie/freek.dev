@@ -1,34 +1,27 @@
 <?php
 
-namespace Tests\Feature\Commands;
-
 use Tests\Factories\PostFactory;
 use Tests\TestCase;
 
-class UpdateExternalUrlsWithTweetPermalinksCommandTest extends TestCase
-{
-    /** @test */
-    public function it_can_save_the_permalink_of_a_tweet_as_the_external_url()
-    {
-        $tweetPost = (new PostFactory())->tweet()->create([
-            'external_url' => null,
-        ]);
+uses(TestCase::class);
 
-        $this->artisan('blog:update-external-urls-with-tweet-permalinks');
+it('can save the permalink of a tweet as the external url', function () {
+    $tweetPost = (new PostFactory())->tweet()->create([
+        'external_url' => null,
+    ]);
 
-        $this->assertEquals('https://twitter.com/sebdedeyne/status/1130875746577264642?ref_src=twsrc%5Etfw', $tweetPost->refresh()->external_url);
-    }
+    $this->artisan('blog:update-external-urls-with-tweet-permalinks');
 
-    /** @test */
-    public function it_will_not_overwrite_existing_external_urls()
-    {
-        $tweetPost = (new PostFactory())->tweet()->create();
+    expect($tweetPost->refresh()->external_url)->toEqual('https://twitter.com/sebdedeyne/status/1130875746577264642?ref_src=twsrc%5Etfw');
+});
 
-        $tweetPost->external_url = 'https://already-exists.com';
-        $tweetPost->save();
+it('will not overwrite existing external urls', function () {
+    $tweetPost = (new PostFactory())->tweet()->create();
 
-        $this->artisan('blog:update-external-urls-with-tweet-permalinks');
+    $tweetPost->external_url = 'https://already-exists.com';
+    $tweetPost->save();
 
-        $this->assertEquals('https://already-exists.com', $tweetPost->refresh()->external_url);
-    }
-}
+    $this->artisan('blog:update-external-urls-with-tweet-permalinks');
+
+    expect($tweetPost->refresh()->external_url)->toEqual('https://already-exists.com');
+});
