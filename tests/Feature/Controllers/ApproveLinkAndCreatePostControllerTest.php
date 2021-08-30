@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Link;
-use Mail;
 use Tests\TestCase;
 
 uses(TestCase::class);
