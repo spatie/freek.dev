@@ -76,12 +76,12 @@ it('can render a series toc and next link on post', function () {
 it('can get the twitter handle of the author', function () {
     /** @var Post $post */
     $post = Post::factory()->create(['author_twitter_handle' => null]);
-    $this->assertNull($post->authorTwitterHandle());
+    expect($post->authorTwitterHandle())->toBeNull();
 
     $user = User::factory()->create(['twitter_handle' => 'other']);
     $post->update(['submitted_by_user_id' => $user->id]);
-    $this->assertEquals('other', $post->refresh()->authorTwitterHandle());
+    expect($post->refresh()->authorTwitterHandle())->toEqual('other');
 
     $post->update(['author_twitter_handle' => 'freekmurze']);
-    $this->assertEquals('freekmurze', $post->authorTwitterHandle());
+    expect($post->authorTwitterHandle())->toEqual('freekmurze');
 });

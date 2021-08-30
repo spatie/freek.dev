@@ -13,11 +13,11 @@ it('can approve a link and create a post using a signed url', function () {
         'status' => Link::STATUS_SUBMITTED,
     ]);
 
-    $this->assertFalse($link->isApproved());
+    expect($link->isApproved())->toBeFalse();
 
     $this->get($link->approveAndCreatePostUrl());
 
-    $this->assertTrue($link->refresh()->isApproved());
+    expect($link->refresh()->isApproved())->toBeTrue();
     $this->assertDatabaseHas('posts', [
         'title' => $link->title,
     ]);

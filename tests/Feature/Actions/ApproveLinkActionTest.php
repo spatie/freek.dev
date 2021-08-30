@@ -24,7 +24,7 @@ test('the action can approve a link', function () {
 
     $this->approveLinkAction->execute($submittedLink);
 
-    $this->assertEquals(Link::STATUS_APPROVED, $submittedLink->status);
+    expect($submittedLink->status)->toEqual(Link::STATUS_APPROVED);
 
     Mail::assertQueued(LinkApprovedMail::class, fn (LinkApprovedMail $mail) => $mail->hasTo($submittedLink->user->email));
 });

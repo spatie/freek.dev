@@ -14,5 +14,5 @@ it('can reject a link', function () {
 
     (new RejectLinkAction())->execute($submittedLink);
 
-    $this->assertEquals(Link::STATUS_REJECTED, $submittedLink->status);
+    expect($submittedLink->status)->toEqual(Link::STATUS_REJECTED);
 });

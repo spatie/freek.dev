@@ -9,5 +9,5 @@ uses(TestCase::class);
 test('the link approved mail can be rendered', function () {
     $link = Link::factory()->create();
 
-    $this->assertIsString((new LinkApprovedMail($link))->render());
+    expect((new LinkApprovedMail($link))->render())->toBeString();
 });

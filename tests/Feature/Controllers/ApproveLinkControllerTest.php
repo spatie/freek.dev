@@ -14,11 +14,11 @@ it('can approve a link using a signed url', function () {
         'status' => Link::STATUS_SUBMITTED,
     ]);
 
-    $this->assertFalse($link->isApproved());
+    expect($link->isApproved())->toBeFalse();
 
     $this->get($link->approveUrl());
 
-    $this->assertTrue($link->refresh()->isApproved());
+    expect($link->refresh()->isApproved())->toBeTrue();
 
     Mail::assertQueued(LinkApprovedMail::class);
 });

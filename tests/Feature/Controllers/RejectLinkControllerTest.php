@@ -11,9 +11,9 @@ it('can reject a link using a signed url', function () {
         'status' => Link::STATUS_SUBMITTED,
     ]);
 
-    $this->assertFalse($link->isRejected());
+    expect($link->isRejected())->toBeFalse();
 
     $this->get($link->rejectUrl());
 
-    $this->assertTrue($link->refresh()->isRejected());
+    expect($link->refresh()->isRejected())->toBeTrue();
 });

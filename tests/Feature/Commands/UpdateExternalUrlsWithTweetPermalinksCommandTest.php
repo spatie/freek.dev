@@ -12,7 +12,7 @@ it('can save the permalink of a tweet as the external url', function () {
 
     $this->artisan('blog:update-external-urls-with-tweet-permalinks');
 
-    $this->assertEquals('https://twitter.com/sebdedeyne/status/1130875746577264642?ref_src=twsrc%5Etfw', $tweetPost->refresh()->external_url);
+    expect($tweetPost->refresh()->external_url)->toEqual('https://twitter.com/sebdedeyne/status/1130875746577264642?ref_src=twsrc%5Etfw');
 });
 
 it('will not overwrite existing external urls', function () {
@@ -23,5 +23,5 @@ it('will not overwrite existing external urls', function () {
 
     $this->artisan('blog:update-external-urls-with-tweet-permalinks');
 
-    $this->assertEquals('https://already-exists.com', $tweetPost->refresh()->external_url);
+    expect($tweetPost->refresh()->external_url)->toEqual('https://already-exists.com');
 });

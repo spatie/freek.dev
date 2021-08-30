@@ -25,56 +25,56 @@ it('can determine the promotional url', function () {
 });
 
 it('can get scheduled posts', function () {
-    $this->assertCount(0, Post::scheduled()->get());
+    expect(Post::scheduled()->get())->toHaveCount(0);
 
     Post::factory()->create([
         'publish_date' => now()->subMinute(),
         'published' => false,
     ]);
-    $this->assertCount(1, Post::scheduled()->get());
+    expect(Post::scheduled()->get())->toHaveCount(1);
 
     Post::factory()->create([
         'publish_date' => now()->subMinute(),
         'published' => true,
     ]);
-    $this->assertCount(1, Post::scheduled()->get());
+    expect(Post::scheduled()->get())->toHaveCount(1);
 
     Post::factory()->create([
         'publish_date' => now()->addMinute(),
         'published' => false,
     ]);
-    $this->assertCount(2, Post::scheduled()->get());
+    expect(Post::scheduled()->get())->toHaveCount(2);
 
     Post::factory()->create([
         'publish_date' => null,
         'published' => false,
     ]);
-    $this->assertCount(2, Post::scheduled()->get());
+    expect(Post::scheduled()->get())->toHaveCount(2);
 });
 
 it('can determine if the post concerns a tweet', function () {
     $post = Post::factory()->create();
 
-    $this->assertFalse($post->isTweet());
+    expect($post->isTweet())->toBeFalse();
 
     $post->syncTags(['php', 'tweet']);
 
-    $this->assertTrue($post->refresh()->isTweet());
+    expect($post->refresh()->isTweet())->toBeTrue();
 });
 
 it('can determine that a post is a tweet', function () {
     $post = Post::factory()->create();
-    $this->assertFalse($post->isTweet());
+    expect($post->isTweet())->toBeFalse();
 
     $post = Post::factory()->create()->attachTag('tweet');
-    $this->assertTrue($post->isTweet());
+    expect($post->isTweet())->toBeTrue();
 
     $post = Post::factory()->create()->attachTags([
         'tag',
         'tweet',
         'another-tag',
     ]);
-    $this->assertTrue($post->isTweet());
+    expect($post->isTweet())->toBeTrue();
 });
 
 it('can determine the excerpt', function () {
@@ -82,14 +82,14 @@ it('can determine the excerpt', function () {
        'text' => 'excerpt<!--more-->full post',
     ]);
 
-    $this->assertEquals('<p>excerpt</p>', $post->excerpt);
+    expect($post->excerpt)->toEqual('<p>excerpt</p>');
 });
 
 test('a post is tweetable', function () {
     /** @var \App\Models\Post $post */
     $post = Post::factory()->create();
 
-    $this->assertTrue(is_string($post->toTweet()));
+    expect(is_string($post->toTweet()))->toBeTrue();
 });
 
 it('can save the tweeted url', function () {
@@ -100,5 +100,5 @@ it('can save the tweeted url', function () {
 
     $post->onAfterTweet($url);
 
-    $this->assertEquals($url, $post->refresh()->tweet_url);
+    expect($post->refresh()->tweet_url)->toEqual($url);
 });

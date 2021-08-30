@@ -12,29 +12,29 @@ it('can get an ad for the current date', function () {
     $februaryAd = createAdForYearMonth(2018, 2);
 
     $this->setNow(2017, 12, 31);
-    $this->assertNull(Ad::getForPage());
+    expect(Ad::getForPage())->toBeNull();
 
     $this->setNow(2018, 1, 1, 1, 0, 0);
 
-    $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
+    expect(Ad::getForPage()->id)->toEqual($januaryAd->id);
 
     $this->setNow(2018, 1, 15, 0, 0, 0);
-    $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
+    expect(Ad::getForPage()->id)->toEqual($januaryAd->id);
 
     $this->setNow(2018, 1, 31, 0, 0, 0);
-    $this->assertEquals($januaryAd->id, Ad::getForPage()->id);
+    expect(Ad::getForPage()->id)->toEqual($januaryAd->id);
 
     $this->setNow(2018, 2, 1, 0, 0, 0);
-    $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
+    expect(Ad::getForPage()->id)->toEqual($februaryAd->id);
 
     $this->setNow(2018, 2, 15, 0, 0, 0);
-    $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
+    expect(Ad::getForPage()->id)->toEqual($februaryAd->id);
 
     $this->setNow(2018, 2, 28, 0, 0, 0);
-    $this->assertEquals($februaryAd->id, Ad::getForPage()->id);
+    expect(Ad::getForPage()->id)->toEqual($februaryAd->id);
 
     $this->setNow(2018, 3, 1, 0, 0, 0);
-    $this->assertNull(Ad::getForPage());
+    expect(Ad::getForPage())->toBeNull();
 });
 
 test('an url specific ad will be displayed on that url', function () {
@@ -42,9 +42,9 @@ test('an url specific ad will be displayed on that url', function () {
 
     $ad = createAdForYearMonth(2018, 1, ['display_on_url' => 'test-url']);
 
-    $this->assertNull(Ad::getForPage());
+    expect(Ad::getForPage())->toBeNull();
 
-    $this->assertEquals($ad->id, Ad::getForPage('test-url')->id);
+    expect(Ad::getForPage('test-url')->id)->toEqual($ad->id);
 });
 
 test('a url specific ad takes precedence over the site wide one', function () {
@@ -54,9 +54,9 @@ test('a url specific ad takes precedence over the site wide one', function () {
 
     $siteWideAd = createAdForYearMonth(2018, 1);
 
-    $this->assertEquals($urlSpecificAd->id, Ad::getForPage('test-url')->id);
+    expect(Ad::getForPage('test-url')->id)->toEqual($urlSpecificAd->id);
 
-    $this->assertEquals($siteWideAd->id, Ad::getForPage('another-url')->id);
+    expect(Ad::getForPage('another-url')->id)->toEqual($siteWideAd->id);
 });
 
 // Helpers
