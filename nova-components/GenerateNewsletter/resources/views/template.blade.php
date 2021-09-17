@@ -11,7 +11,7 @@ Here are a couple of interesting links
 
 Community links
 
-@foreach($communityLinks->count() as $communityLink)
+@foreach($communityLinks->count() as $link)
     <a href="{{ $link->url }}">{{ $link->title }}</a> (submitted
     by {{ $link->user->name }})
 @endforeach
