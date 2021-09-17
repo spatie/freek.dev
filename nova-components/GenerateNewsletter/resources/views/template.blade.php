@@ -4,7 +4,7 @@ welcome to the {{ $editionNumber }} freek.dev newsletter!
 
 Here are a couple of interesting links
 
-@foreach($recentsPosts as $post)
+@foreach($recentPosts as $post)
     <a href="{{ $post->promotional_url }}">{{ $post->title }}</a>
     {{ $post->newsletter_excerpt }}
 @endforeach
