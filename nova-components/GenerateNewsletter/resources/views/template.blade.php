@@ -9,12 +9,14 @@ Here are a couple of interesting links
     {{ $post->newsletter_excerpt }}
 @endforeach
 
+@if(count($communityLinks))
 Community links
 
-@foreach($communityLinks->count() as $link)
+@foreach($communityLinks as $link)
     <a href="{{ $link->url }}">{{ $link->title }}</a> (submitted
     by {{ $link->user->name }})
 @endforeach
+@endif
 
 Old posts
 
