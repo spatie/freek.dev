@@ -1,41 +1,43 @@
-Hi,
-
-welcome to the {{ $editionNumber }} freek.dev newsletter!
-
-Here are a couple of interesting links
-
+Hi,<br />
+<br />
+welcome to the {{ $editionNumber }} freek.dev newsletter!<br />
+<br />
+Here are a couple of interesting links<br />
+<br />
 @foreach($recentPosts as $post)
-    <a href="{{ $post->promotional_url }}">{{ $post->title }}</a>
-    {{ $post->newsletter_excerpt }}
+    <a href="{{ $post->promotional_url }}">{{ $post->title }}</a><br />
+    {{ $post->newsletter_excerpt }}<br />
+    <br />
 @endforeach
-
+<br />
 @if(count($communityLinks))
-Community links
-
+Community links<br />
+<br />
 @foreach($communityLinks as $link)
-    <a href="{{ $link->url }}">{{ $link->title }}</a> (submitted
-    by {{ $link->user->name }})
+    <a href="{{ $link->url }}">{{ $link->title }}</a> (submitted by {{ $link->user->name }})<br />
+    <br />
 @endforeach
 @endif
-
-Old posts
-
+<br />
+Old posts<br />
+<br />
 @foreach($oldPosts as $post)
-    <a href="{{ $post->promotional_url }}">{{ $post->title }}</a>
+    <a href="{{ $post->promotional_url }}">{{ $post->title }}</a><br />
 @endforeach
-
-<a href="::unsubscribeUrl::">Unsubcribe</a>
-<a href="::webViewUrl::">View mail in browser</a>
-
-Did you like this newsletter?
-<a href="{{ route('newsletter.like', ['edition' => $editionNumber]) }}">Yes</a>
-
-DISCOUNT-FOR-FREEK-DEV-READERS
-
-This mail was sent using <a href="https://mailcoach.app">Mailcoach</a>
-
-Thank you so much for reading!
-
-
-
+<br />
+<a href="::unsubscribeUrl::">Unsubcribe</a><br />
+<a href="::webViewUrl::">View mail in browser</a><br />
+<br />
+Did you like this newsletter?<br />
+<a href="{{ route('newsletter.like', ['edition' => $editionNumber]) }}">Yes</a><br />
+<br />
+DISCOUNT-FOR-FREEK-DEV-READERS<br />
+<br />
+This mail was sent using <a href="https://mailcoach.app">Mailcoach</a><br />
+<br />
+Thank you so much for reading!<br />
+<br />
+<br />
+<br />
+<br />
 Freek
