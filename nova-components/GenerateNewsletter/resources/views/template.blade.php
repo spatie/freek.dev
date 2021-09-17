@@ -42,13 +42,13 @@ I take a lot of time curating the right links for you. You could do me a favor b
     href="{{ route('newsletter.like', ['edition' => $editionNumber]) }}">spreading the
     word</a> and letting others know about my newsletter.<br/>
 <br/>
-Alternatively you could consider picking up one of the paid products my team and I have worked on:<br/>
+Alternatively you could consider picking up one of the paid products my team and I have worked on:<br/><br/>
 <a href="https://spatie.be/products">All spatie products</a><br/>
 <a href="https://ohdear.app">Oh Dear</a><br/>
 <a href="https://flareapp.io">Flare</a><br/>
-
-For each of the above you can use this coupon code to get a discount:
-<br/>DISCOUNT-FOR-FREEK-DEV-READERS<br>
+<br/>
+For each of the above you can use this coupon code to get a discount:<br/>
+DISCOUNT-FOR-FREEK-DEV-READERS<br>
 <br/>
 If you have any questions, remarks or thoughts about this newsletter, simply hit reply!
 <br/>
@@ -60,7 +60,7 @@ Thank you so much for reading!<br/>
 Freek
 <br/>
 <br/>
-You are receiving this newsletter because you subscribed at <a href="freek.dev">https://freek.dev</a>
+You are receiving this newsletter because you subscribed at <a href="freek.dev">https://freek.dev</a><br />
 <a href="::unsubscribeUrl::">Unsubcribe from this newsletter</a><br/>
 This mail was sent using <a href="https://mailcoach.app">Mailcoach</a><br/>
 
