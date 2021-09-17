@@ -15,8 +15,8 @@ Here are a couple of links of which I hope you'll enjoy that as much as I did.
     <b>Community links</b><br/>
     <br/>
     In this section you'll find links submitted by others. <br/>
-    Did you write or stumbled across a blog post, tutorial or video that might be interesting for others? <br/>
-    <a href="https://freek.dev/community">Let me know!</a> <br/>
+    <a href="https://freek.dev/community">Let me know </a>if you did write or stumbled across a blog post, tutorial or video that might be interesting to appear in this section<br/>
+     <br/>
     <br/>
     @foreach($communityLinks as $link)
         <a href="{{ $link->url }}">{{ $link->title }}</a> (submitted by {{ $link->user->name }})<br/>
@@ -26,7 +26,7 @@ Here are a couple of links of which I hope you'll enjoy that as much as I did.
 <br/>
 <b>Old posts</b><br/>
 <br/>
-Here are a couple of links from a while ago!
+Here are a couple of links from a while ago!<br/>
 <br/>
 
 @foreach($oldPosts as $post)
@@ -43,9 +43,9 @@ I take a lot of time curating the right links for you. You could do me a favor b
     word</a> and letting others know about my newsletter.<br/>
 <br/>
 Alternatively you could consider picking up one of the paid products my team and I have worked on:<br/>
-<a href="https://spatie.be/products">All spatie products</a>
-<a href="https://ohdear.app">Oh Dear</a>
-<a href="https://flareapp.io">Flare</a>
+<a href="https://spatie.be/products">All spatie products</a><br/>
+<a href="https://ohdear.app">Oh Dear</a><br/>
+<a href="https://flareapp.io">Flare</a><br/>
 
 For each of the above you can use this coupon code to get a discount:
 <br/>DISCOUNT-FOR-FREEK-DEV-READERS<br>
