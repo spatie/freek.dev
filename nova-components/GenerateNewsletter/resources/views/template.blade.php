@@ -11,7 +11,7 @@ Here are a couple of interesting links<br />
 @endforeach
 <br />
 @if(count($communityLinks))
-Community links<br />
+<b>Community links</b><br />
 <br />
 @foreach($communityLinks as $link)
     <a href="{{ $link->url }}">{{ $link->title }}</a> (submitted by {{ $link->user->name }})<br />
@@ -19,16 +19,16 @@ Community links<br />
 @endforeach
 @endif
 <br />
-Old posts<br />
+<b>Old posts</b><br />
 <br />
 @foreach($oldPosts as $post)
     <a href="{{ $post->promotional_url }}">{{ $post->title }}</a><br />
+    <br />
 @endforeach
 <br />
-<a href="::unsubscribeUrl::">Unsubcribe</a><br />
-<a href="::webViewUrl::">View mail in browser</a><br />
+
 <br />
-Did you like this newsletter?<br />
+<b>Did you like this newsletter?</b><br />
 <a href="{{ route('newsletter.like', ['edition' => $editionNumber]) }}">Yes</a><br />
 <br />
 DISCOUNT-FOR-FREEK-DEV-READERS<br />
@@ -41,3 +41,10 @@ Thank you so much for reading!<br />
 <br />
 <br />
 Freek
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+You are receiving this newsletter because you subscribed at <a href="freek.dev">https://freek.dev</a>
+<a href="::unsubscribeUrl::">Unsubcribe from this newsleter</a><br />
