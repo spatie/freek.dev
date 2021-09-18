@@ -84,13 +84,16 @@ class NewsletterGenerator
     {
         $method = $tweets ? 'filter' : 'reject';
 
-        return Post::published()
+        return Post::query()
+            ->published()
             ->whereBetween('publish_date', [
                 $startDate,
                 $endDate,
             ])
-            ->orderBy('original_content', 'desc')
+            ->orderByDesc('original_content')
+            ->orderBy('publish_date')
             ->get()
+            ->sortBy(fn(Post $post) => $post->hasTag('php'))
             ->$method->hasTag('tweet');
     }
 

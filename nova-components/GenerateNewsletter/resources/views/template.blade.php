@@ -6,6 +6,7 @@ Here are a couple of links of which I hope you'll enjoy that as much as I did.
 <br/>
 <br/>
 @foreach($recentPosts as $post)
+    @if ($post->original_content) ⭐️ @endif
     <a href="{{ $post->promotional_url }}">{{ $post->title }}</a><br/>
     {{ $post->newsletter_excerpt }}<br/>
     <br/>
