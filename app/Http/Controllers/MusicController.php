@@ -62,6 +62,14 @@ class MusicController
 
         $releases['corporateMelodies'] = [
             [
+                'title' => 'Corporate Melodies #8: The Best?',
+                'artwork' => 'cm008.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/playlist/5bK6FaF6BuQntx5G7T8q5v?si=9f427ffbc6864785',
+                    'Apple Music' => 'https://music.apple.com/be/playlist/corporate-melodies-8-the-best/pl.u-lEj8T2YV48',
+                ],
+            ],
+            [
                 'title' => 'Corporate Melodies #6: Can I Kick It?',
                 'artwork' => 'cm006.jpg',
                 'links' => [

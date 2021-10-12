@@ -56,7 +56,9 @@
         "spatie/nova-tags-field": "^3.0.2",
         "spatie/pest-plugin-test-time": "^1.0",
         "spatie/ray": "^1.21",
-        "stripe/stripe-php": "^7.52"
+        "stripe/stripe-php": "^7.52",
+      "ext-openssl": "*",
+        "ext-curl": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
