@@ -9,9 +9,6 @@ use App\Jobs\CreateOgImageJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
-use App\Services\CommonMark\CommonMark;
-use App\View\Components\SeriesNextPostComponent;
-use App\View\Components\SeriesTocComponent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -20,7 +17,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
-use Laravel\Scout\Searchable;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\MediaLibrary\HasMedia;
@@ -39,8 +35,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
 
     use HasSlug,
         HasTags,
-        PostPresenter,
-        Searchable;
+        PostPresenter;
 
     public $with = ['tags'];
 
@@ -144,24 +139,6 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         $this->syncTags($tags);
 
         return $this;
-    }
-
-    public function searchableAs(): string
-    {
-        return config('scout.algolia.index');
-    }
-
-    public function toSearchableArray(): array
-    {
-        if (! $this->published) {
-            return [];
-        }
-
-        $postAttributes = $this->toArray();
-
-        unset($postAttributes['text']);
-
-        return $postAttributes;
     }
 
     public static function getFeedItems()
