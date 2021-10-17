@@ -20,14 +20,16 @@ class SearchComponent extends Component
         ]);
     }
 
-    public function getResults(): ?Paginator
+    public function getResults(): Collection
     {
         if ($this->query === '') {
-            return null;
+            return collect();
         }
 
         return SearchIndexQuery::onIndex('freek')
+            ->limit(40)
             ->search($this->query)
-            ->paginate(40);
+            ->get()
+            ->hits;
     }
 }

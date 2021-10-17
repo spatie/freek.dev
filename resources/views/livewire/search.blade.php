@@ -12,7 +12,7 @@
         @if ($query !== '')
             @if (count($hits))
                 <ul>
-                    @foreach($hits->items() as $hit)
+                    @foreach($hits as $hit)
                         <li wire:key="{{ $hit->id }}" class="mb-6">
                             <a href="{{ $hit->url }}">
                                 <div class="font-bold leading-tight hover:underline">{{ $hit->title() }}</div>
