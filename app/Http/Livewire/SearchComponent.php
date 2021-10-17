@@ -11,8 +11,6 @@ use Spatie\SiteSearch\SearchIndexQuery;
 
 class SearchComponent extends Component
 {
-    use WithPagination;
-
     public string $query = '';
 
     public function render()
@@ -20,11 +18,6 @@ class SearchComponent extends Component
         return view('livewire.search', [
             'hits' => $this->getResults(),
         ]);
-    }
-
-    public function updatingQuery()
-    {
-        $this->resetPage();
     }
 
     public function getResults(): ?Paginator
@@ -35,6 +28,6 @@ class SearchComponent extends Component
 
         return SearchIndexQuery::onIndex('freek')
             ->search($this->query)
-            ->paginate();
+            ->paginate(40);
     }
 }
