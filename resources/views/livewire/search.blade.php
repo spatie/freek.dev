@@ -10,16 +10,12 @@
         🌳 We love you Greece! 🇬🇷
     @else
         @if ($query !== '')
-            @if (count($results))
+            @if (count($hits))
                 <ul>
-                    @foreach($results as $post)
-                        <li class="mb-6">
-                            <strong class="text-lg">
-                                <a href={{ $post->url }}>{{ $post->title }}</a>
-                            </strong>
-                            <br/>
-                            <a href="{{ $post->url }}" class="text-sm text-gray-700">
-                                {{ $post->formatted_type }} - {{ $post->publish_date->format('M jS Y') }}
+                    @foreach($hits->items() as $hit)
+                        <li wire:key="{{ $hit->id }}" class="mb-6">
+                            <a href="{{ $hit->url }}">
+                                <div class="font-bold leading-tight hover:underline">{{ $hit->title() }}</div>
                             </a>
                         </li>
                     @endforeach
