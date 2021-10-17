@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\URL;
 class Link extends Model implements Sluggable
 {
     use HasFactory;
-
     use HasSlug;
 
     public $dates = ['publish_date'];

@@ -9,9 +9,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
+        "ext-curl": "*",
         "ext-dom": "*",
         "ext-json": "*",
         "ext-libxml": "*",
+        "ext-openssl": "*",
         "ext-simplexml": "*",
         "abraham/twitteroauth": "^2.0",
         "algolia/algoliasearch-client-php": "^2.7",
@@ -26,10 +28,10 @@
         "laravel/nova": "^3.19",
         "laravel/octane": "^1.0",
         "laravel/sail": "^0.0.5",
-        "laravel/scout": "^8.3",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.1",
         "livewire/livewire": "^2.0",
+        "meilisearch/meilisearch-php": "^0.19.2",
         "ohdearapp/ohdear-php-sdk": "^3.0",
         "predis/predis": "^1.1",
         "spatie/browsershot": "^3.40",
@@ -49,6 +51,7 @@
         "spatie/laravel-remote": "^1.0",
         "spatie/laravel-responsecache": "^6.5",
         "spatie/laravel-schedule-monitor": "^2.0",
+        "spatie/laravel-site-search": "^0.0.3",
         "spatie/laravel-stubs": "^2.2",
         "spatie/laravel-tags": "^3.0",
         "spatie/laravel-tail": "^4.2",
@@ -56,9 +59,7 @@
         "spatie/nova-tags-field": "^3.0.2",
         "spatie/pest-plugin-test-time": "^1.0",
         "spatie/ray": "^1.21",
-        "stripe/stripe-php": "^7.52",
-      "ext-openssl": "*",
-        "ext-curl": "*"
+        "stripe/stripe-php": "^7.52"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
