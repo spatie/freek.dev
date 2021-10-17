@@ -176,5 +176,6 @@ php artisan cache:clear
 php artisan config:cache
 php artisan responsecache:clear
 php artisan octane:reload
+php artisan horizon:terminate
 php artisan schedule-monitor:sync
 @endtask
