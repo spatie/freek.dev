@@ -16,6 +16,7 @@ class SearchComponent extends Component
     public function render()
     {
         info($this->query);
+        info(count($this->getResults()) . ' hits');
         return view('livewire.search', [
             'hits' => $this->getResults(),
         ]);
