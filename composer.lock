@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf0811dd57a17e90e609561646eb9f3e",
+    "content-hash": "edcab67a4571d7d0d079d52e1d978c25",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -4246,83 +4246,6 @@
                 }
             ],
             "time": "2021-09-20T15:06:32+00:00"
-        },
-        {
-            "name": "nunomaduro/termwind",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "ff2fd3f388c5bc9ef90852d012e320617211701b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/ff2fd3f388c5bc9ef90852d012e320617211701b",
-                "reference": "ff2fd3f388c5bc9ef90852d012e320617211701b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": "^8.0",
-                "symfony/console": "^5.3.0"
-            },
-            "require-dev": {
-                "ergebnis/phpstan-rules": "^0.15.3",
-                "pestphp/pest": "^1.20.0",
-                "phpstan/phpstan": "^0.12.99",
-                "phpstan/phpstan-strict-rules": "^0.12.11",
-                "styleci/cli": "^1.2",
-                "symfony/var-dumper": "^5.2.7",
-                "thecodingmachine/phpstan-strict-rules": "^0.12.1"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Termwind\\": "src/"
-                },
-                "files": [
-                    "src/Functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nuno Maduro",
-                    "email": "enunomaduro@gmail.com"
-                }
-            ],
-            "description": "Its like Tailwind CSS, but for the console.",
-            "keywords": [
-                "cli",
-                "console",
-                "css",
-                "package",
-                "php",
-                "style"
-            ],
-            "support": {
-                "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/master"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/paypalme/enunomaduro",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2021-10-18T08:38:42+00:00"
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
@@ -10235,23 +10158,22 @@
         },
         {
             "name": "spatie/laravel-site-search",
-            "version": "0.0.3",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-site-search.git",
-                "reference": "e49e061a894587559c5299acfa1fb11f0b104742"
+                "reference": "fb09682b3140d5f520f11332abc351045482b5ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-site-search/zipball/e49e061a894587559c5299acfa1fb11f0b104742",
-                "reference": "e49e061a894587559c5299acfa1fb11f0b104742",
+                "url": "https://api.github.com/repos/spatie/laravel-site-search/zipball/fb09682b3140d5f520f11332abc351045482b5ff",
+                "reference": "fb09682b3140d5f520f11332abc351045482b5ff",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/psr7": "^2.1",
                 "illuminate/contracts": "^8.37",
                 "illuminate/http": "^8.60",
-                "nunomaduro/termwind": "dev-master",
                 "php": "^8.0",
                 "spatie/crawler": "^7.0",
                 "spatie/laravel-package-tools": "^1.4.3"
@@ -10268,7 +10190,6 @@
                 "spatie/laravel-ray": "^1.26"
             },
             "suggest": {
-                "fivefilters/readability.php": "Required to use the ReadabilityIndexer",
                 "meilisearch/meilisearch-php": "Required to use the MeiliSearch engine (^0.17)."
             },
             "type": "library",
@@ -10311,7 +10232,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-site-search/issues",
-                "source": "https://github.com/spatie/laravel-site-search/tree/0.0.3"
+                "source": "https://github.com/spatie/laravel-site-search/tree/0.0.5"
             },
             "funding": [
                 {
@@ -10319,7 +10240,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-17T12:13:36+00:00"
+            "time": "2021-10-18T14:25:39+00:00"
         },
         {
             "name": "spatie/laravel-stubs",
