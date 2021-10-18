@@ -7,6 +7,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Spatie\SiteSearch\Search;
 use Spatie\SiteSearch\SearchIndexQuery;
 
 class SearchComponent extends Component
@@ -28,9 +29,9 @@ class SearchComponent extends Component
             return collect();
         }
 
-        return SearchIndexQuery::onIndex('freek')
+        return Search::onIndex('freek')
             ->limit(40)
-            ->search($this->query)
+            ->query($this->query)
             ->get()
             ->hits;
     }
