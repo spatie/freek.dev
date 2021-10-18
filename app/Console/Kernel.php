@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('backup:run')->dailyAt('3:00');
         $schedule->command(CleanUpModelsCommand::class)->daily();
         $schedule->command('mailcoach:send-email-list-summary-mail ')->mondays()->at('9:00');
-        $schedule->command('site-search:crawl')->everyThreeHours();
+        $schedule->command('site-search:crawl')->daily();
     }
 
     protected function commands()
