@@ -10,7 +10,7 @@ return [
      * You may use `*` as a wildcard.
      */
     'do_not_index_content_on_urls' => [
-        '*?page=*',
+        '*page=*',
         '/',
         '/rss',
         '/search',
