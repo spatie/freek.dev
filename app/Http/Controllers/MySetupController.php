@@ -8,7 +8,7 @@ class MySetupController
 {
     public function __invoke()
     {
-        $post = Post::find('1844');
+        $post = Post::find('2119');
 
         return view('front.posts.show', compact('post'));
     }
