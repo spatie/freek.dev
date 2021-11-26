@@ -18,7 +18,10 @@ use App\Http\Controllers\PostOgImageController;
 use App\Http\Controllers\ShowNewsletterController;
 use App\Http\Controllers\SpeakingController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 use Spatie\Honeypot\ProtectAgainstSpam;
+
+Route::get('health', HealthCheckResultsController::class);
 
 Route::feeds('feed');
 
