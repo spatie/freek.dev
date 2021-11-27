@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6897ebae7e5940a39bf15ce6541a63b",
+    "content-hash": "6eaf4dcc36ac3d534ced758d6a414a8c",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -4314,12 +4314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "b232f934944aae13940f223af1e1e773e334c8f6"
+                "reference": "8bb4d63ad2797f175038d8841831fd3a7ec01348"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/b232f934944aae13940f223af1e1e773e334c8f6",
-                "reference": "b232f934944aae13940f223af1e1e773e334c8f6",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/8bb4d63ad2797f175038d8841831fd3a7ec01348",
+                "reference": "8bb4d63ad2797f175038d8841831fd3a7ec01348",
                 "shasum": ""
             },
             "require": {
@@ -4383,7 +4383,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-26T18:17:44+00:00"
+            "time": "2021-11-27T02:45:17+00:00"
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
@@ -8771,11 +8771,17 @@
         },
         {
             "name": "spatie/laravel-health",
-            "version": "dev-main",
+            "version": "0.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-health.git",
+                "reference": "e5e1b56a4d1bc4a517a6da2c03cd46f0e2375952"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-health",
-                "reference": "e40b8fbe0fc5ef23b37150335b5ecccd9034164d"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/e5e1b56a4d1bc4a517a6da2c03cd46f0e2375952",
+                "reference": "e5e1b56a4d1bc4a517a6da2c03cd46f0e2375952",
+                "shasum": ""
             },
             "require": {
                 "dragonmantank/cron-expression": "^3.1",
@@ -8825,22 +8831,7 @@
                     "Spatie\\Health\\Database\\Factories\\": "database/factories"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\Health\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "test-coverage": [
-                    "vendor/bin/pest coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8858,9 +8849,17 @@
                 "laravel-health",
                 "spatie"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/spatie/laravel-health/issues",
+                "source": "https://github.com/spatie/laravel-health/tree/0.0.5"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-11-27T13:06:57+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
@@ -8936,16 +8935,16 @@
         },
         {
             "name": "spatie/laravel-json-api-paginate",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-json-api-paginate.git",
-                "reference": "c0b3bd93600ca03c1e216fd519db16f286b8b1cf"
+                "reference": "1ab89010493ef65c9e01d469859794f12e05bab5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-json-api-paginate/zipball/c0b3bd93600ca03c1e216fd519db16f286b8b1cf",
-                "reference": "c0b3bd93600ca03c1e216fd519db16f286b8b1cf",
+                "url": "https://api.github.com/repos/spatie/laravel-json-api-paginate/zipball/1ab89010493ef65c9e01d469859794f12e05bab5",
+                "reference": "1ab89010493ef65c9e01d469859794f12e05bab5",
                 "shasum": ""
             },
             "require": {
@@ -8988,8 +8987,7 @@
                 "spatie"
             ],
             "support": {
-                "issues": "https://github.com/spatie/laravel-json-api-paginate/issues",
-                "source": "https://github.com/spatie/laravel-json-api-paginate/tree/1.10.0"
+                "source": "https://github.com/spatie/laravel-json-api-paginate/tree/1.11.0"
             },
             "funding": [
                 {
@@ -8997,7 +8995,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-11-27T08:21:48+00:00"
+            "time": "2021-11-27T11:45:52+00:00"
         },
         {
             "name": "spatie/laravel-log-dumper",
@@ -16827,9 +16825,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-health": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

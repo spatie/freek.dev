@@ -42,7 +42,7 @@
         "spatie/laravel-backup": "^7.0",
         "spatie/laravel-feed": "^4.0.2",
         "spatie/laravel-flash": "^1.7",
-        "spatie/laravel-health": "dev-main",
+        "spatie/laravel-health": "^0.0",
         "spatie/laravel-honeypot": "^3.0",
         "spatie/laravel-log-dumper": "^1.0",
         "spatie/laravel-mailcoach": "^4.4.3",
@@ -99,10 +99,6 @@
         }
     },
     "repositories": [
-        {
-            "type": "path",
-            "url": "../laravel-health"
-        },
         {
             "type": "path",
             "url": "./nova-components/GenerateNewsletter"
