@@ -56,7 +56,7 @@ return [
     ],
 
     'flare' => [
-        'api_token' => env('FLARE_KEY'),
+        'api_token' => env('FLARE_API_KEY'),
         'project_id' => 271,
     ],
 ];
