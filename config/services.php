@@ -55,4 +55,8 @@ return [
         'salt' => env('MEDIA_LIBRARY_PATH_GENERATOR_SALT'),
     ],
 
+    'flare' => [
+        'api_token' => env('FLARE_KEY'),
+        'project_id' => 271,
+    ],
 ];
