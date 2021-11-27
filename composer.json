@@ -101,6 +101,10 @@
     "repositories": [
         {
             "type": "path",
+            "url": "../laravel-health"
+        },
+        {
+            "type": "path",
             "url": "./nova-components/GenerateNewsletter"
         },
         {
