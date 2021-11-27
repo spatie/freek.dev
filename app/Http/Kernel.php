@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Admin;
 use App\Http\Middleware\CacheControl;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -46,5 +47,6 @@ class Kernel extends HttpKernel
         'cacheResponse' => \Spatie\ResponseCache\Middlewares\CacheResponse::class,
         'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'admin' => Admin::class,
     ];
 }

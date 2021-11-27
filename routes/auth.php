@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 Route::middleware(['guest', 'doNotCacheResponse'])->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -19,3 +20,7 @@ Route::middleware(['guest', 'doNotCacheResponse'])->group(function () {
 });
 
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::middleware('admin')->group(function () {
+    Route::get('health', HealthCheckResultsController::class)->middleware('auth');
+});

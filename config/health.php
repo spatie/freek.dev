@@ -1,8 +1,5 @@
 <?php
 
-use Spatie\Health\ResultStores\EloquentHealthResultStore;
-use Spatie\Health\ResultStores\JsonFileHealthResultStore;
-
 return [
 
     /*
@@ -11,13 +8,17 @@ return [
      * can use multiple stores at the same time.
      */
     'result_stores' => [
-        JsonFileHealthResultStore::class => [
-            'disk' => 'local',
+        Spatie\Health\ResultStores\EloquentHealthResultStore::class,
+
+        /*
+        Spatie\Health\ResultStores\EloquentHealthResultStore\JsonFileHealthResultStore::class => [
+            'disk' => 's3',
             'path' => 'health.json',
         ],
 
-        EloquentHealthResultStore::class,
+        */
     ],
+
 
     /*
      * The amount of days the `EloquentHealthResultStore` will keep history
@@ -35,7 +36,7 @@ return [
     'notifications' => [
 
         'notifications' => [
-            Spatie\Health\Notifications\CheckFailedNotification::class => ['slack'],
+            Spatie\Health\Notifications\CheckFailedNotification::class => ['mail'],
         ],
 
         /*
@@ -45,22 +46,25 @@ return [
         'notifiable' => Spatie\Health\Notifications\Notifiable::class,
 
         /*
-         * When a frequent check starts failing, you could potentially end up getting
-         * a lot of notification. Here you TODO
+         * When checks start failing, you could potentially end up getting
+         * a notification every minute.
+         *
+         * With this setting, notifications are throttled. By default, you'll
+         * only get one notification per hour.
          */
         'throttle_notifications_for_minutes' => 60,
 
         'mail' => [
-            'to' => 'freek@spatie.be',
+            'to' => 'your@example.com',
 
             'from' => [
-                'address' => env('MAIL_FROM_ADDRESS', 'freek@spatie.be'),
-                'name' => env('MAIL_FROM_NAME', 'Freek'),
+                'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+                'name' => env('MAIL_FROM_NAME', 'Example'),
             ],
         ],
 
         'slack' => [
-            'webhook_url' => 'https://hooks.slack.com/services/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',
+            'webhook_url' => '',
 
             /*
              * If this is set to null the default channel of the webhook will be used.

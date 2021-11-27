@@ -5,6 +5,8 @@ namespace App\Console;
 use App\Console\Commands\PublishScheduledPostsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\Health\Commands\ScheduleCheckHeartbeatCommand;
+use Spatie\Health\Models\HealthCheckResultHistoryItem;
 use Spatie\ModelCleanup\Commands\CleanUpModelsCommand;
 
 class Kernel extends ConsoleKernel
@@ -26,6 +28,10 @@ class Kernel extends ConsoleKernel
         $schedule->command(CleanUpModelsCommand::class)->daily();
         $schedule->command('mailcoach:send-email-list-summary-mail ')->mondays()->at('9:00');
         $schedule->command('site-search:crawl')->daily();
+        $schedule->command('model:prune', ['--m', [
+            HealthCheckResultHistoryItem::class
+        ]]);
+        $schedule->command(ScheduleCheckHeartbeatCommand::class)->everyMinute();
     }
 
     protected function commands()
