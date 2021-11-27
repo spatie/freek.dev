@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6897ebae7e5940a39bf15ce6541a63b",
+    "content-hash": "d62258163ca56ce8f7f0714d3eb780ca",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -8772,10 +8772,16 @@
         {
             "name": "spatie/laravel-health",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-health.git",
+                "reference": "aea1aec0c381a56a72c4e30c5eae1980718cb2e2"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-health",
-                "reference": "dc3aa007aa61e6a5b86919a395b69123bd417ddf"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/aea1aec0c381a56a72c4e30c5eae1980718cb2e2",
+                "reference": "aea1aec0c381a56a72c4e30c5eae1980718cb2e2",
+                "shasum": ""
             },
             "require": {
                 "dragonmantank/cron-expression": "^3.1",
@@ -8808,6 +8814,7 @@
                 "spatie/pest-plugin-test-time": "^1.0",
                 "spatie/test-time": "^1.2"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -8825,22 +8832,7 @@
                     "Spatie\\Health\\Database\\Factories\\": "database/factories"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\Health\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "test-coverage": [
-                    "vendor/bin/pest coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8858,9 +8850,17 @@
                 "laravel-health",
                 "spatie"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/spatie/laravel-health/issues",
+                "source": "https://github.com/spatie/laravel-health/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-11-27T19:45:07+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
