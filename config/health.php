@@ -19,7 +19,6 @@ return [
         EloquentHealthResultStore::class,
     ],
 
-
     /*
      * The amount of days the `EloquentHealthResultStore` will keep history
      * before pruning items.
@@ -36,7 +35,7 @@ return [
     'notifications' => [
 
         'notifications' => [
-            Spatie\Health\Notifications\CheckFailedNotification::class => ['mail'],
+            Spatie\Health\Notifications\CheckFailedNotification::class => ['slack'],
         ],
 
         /*
@@ -52,16 +51,16 @@ return [
         'throttle_notifications_for_minutes' => 60,
 
         'mail' => [
-            'to' => 'your@example.com',
+            'to' => 'freek@spatie.be',
 
             'from' => [
-                'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-                'name' => env('MAIL_FROM_NAME', 'Example'),
+                'address' => env('MAIL_FROM_ADDRESS', 'freek@spatie.be'),
+                'name' => env('MAIL_FROM_NAME', 'Freek'),
             ],
         ],
 
         'slack' => [
-            'webhook_url' => '',
+            'webhook_url' => 'https://hooks.slack.com/services/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',
 
             /*
              * If this is set to null the default channel of the webhook will be used.
