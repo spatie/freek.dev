@@ -22,7 +22,9 @@ class HealthServiceProvider extends ServiceProvider
             new EnvironmentCheck(),
             new DatabaseCheck(),
             new HorizonCheck(),
-            new UsedDiskSpaceCheck(),
+            (new UsedDiskSpaceCheck())
+                ->warnWhenUsedSpaceIsAbovePercentage(90)
+            ->failWhenUsedSpaceIsAbovePercentage(95),
             new ScheduleCheck(),
             (new FlareErrorOccurrenceCountCheck())
                     ->projectId(config('services.flare.project_id'))
