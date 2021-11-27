@@ -18,17 +18,17 @@ class HealthServiceProvider extends ServiceProvider
     public function register()
     {
         Health::checks([
-            new DebugModeCheck(),
-            new EnvironmentCheck(),
-            new DatabaseCheck(),
-            new HorizonCheck(),
-            (new UsedDiskSpaceCheck())
+            DebugModeCheck::new(),
+            EnvironmentCheck::new(),
+            DatabaseCheck::new(),
+            HorizonCheck::new(),
+            UsedDiskSpaceCheck::new()
                 ->warnWhenUsedSpaceIsAbovePercentage(90)
-            ->failWhenUsedSpaceIsAbovePercentage(95),
-            new ScheduleCheck(),
-            (new FlareErrorOccurrenceCountCheck())
-                    ->projectId(config('services.flare.project_id'))
-                    ->apiToken(config('services.flare.api_token'))
+                ->failWhenUsedSpaceIsAbovePercentage(95),
+            ScheduleCheck::new(),
+            FlareErrorOccurrenceCountCheck::new()
+                ->projectId(config('services.flare.project_id'))
+                ->apiToken(config('services.flare.api_token'))
         ]);
     }
 }
