@@ -152,6 +152,7 @@ php artisan octane:reload
 
 sudo service php8.0-fpm restart
 sudo supervisorctl restart all
+php artisan health:run
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])
@@ -178,4 +179,5 @@ php artisan responsecache:clear
 php artisan octane:reload
 php artisan horizon:terminate
 php artisan schedule-monitor:sync
+php artisan health:run
 @endtask
