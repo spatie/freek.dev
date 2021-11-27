@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Console\Commands\PublishScheduledPostsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\Health\Commands\RunChecksCommand;
 use Spatie\Health\Commands\ScheduleCheckHeartbeatCommand;
 use Spatie\Health\Models\HealthCheckResultHistoryItem;
 use Spatie\ModelCleanup\Commands\CleanUpModelsCommand;
@@ -13,6 +14,7 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command(RunChecksCommand::class);
         $schedule->command('mailcoach:run-automation-triggers')->everyMinute()->runInBackground();
         $schedule->command('mailcoach:run-automation-actions')->everyMinute()->runInBackground();
         $schedule->command('mailcoach:calculate-automation-mail-statistics')->everyMinute();
