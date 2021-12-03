@@ -178,6 +178,6 @@ php artisan config:cache
 php artisan responsecache:clear
 php artisan octane:reload
 php artisan horizon:terminate
+php artisan health:check
 php artisan schedule-monitor:sync
-php artisan health:run
 @endtask
