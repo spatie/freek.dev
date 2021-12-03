@@ -7,7 +7,7 @@
         "laravel"
     ],
     "platform": {
-        "php": "8.0.7"
+        "php": "8.0.0"
     },
     "license": "MIT",
     "require": {
