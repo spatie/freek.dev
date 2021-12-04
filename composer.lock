@@ -8778,12 +8778,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "3b22b9a4621007fa0a7696456b8ff7c87883c174"
+                "reference": "b00c0b158ae617587b6663222ae0158d1e367380"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/3b22b9a4621007fa0a7696456b8ff7c87883c174",
-                "reference": "3b22b9a4621007fa0a7696456b8ff7c87883c174",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/b00c0b158ae617587b6663222ae0158d1e367380",
+                "reference": "b00c0b158ae617587b6663222ae0158d1e367380",
                 "shasum": ""
             },
             "require": {
@@ -8863,7 +8863,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-03T22:05:06+00:00"
+            "time": "2021-12-04T11:19:51+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
