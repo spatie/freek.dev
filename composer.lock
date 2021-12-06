@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45df7fb06b979a49587cb7ece741b3d3",
+    "content-hash": "7f3a1b55e11d6cfc1bdb64e0e27f6924",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -8776,16 +8776,16 @@
         },
         {
             "name": "spatie/laravel-health",
-            "version": "0.9.0",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "b95cbff7aeaec5fa94aecd66af7fe7d5ca3fa0f7"
+                "reference": "35f718b4b898d9be8a54bfd50478b69122fb5b2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/b95cbff7aeaec5fa94aecd66af7fe7d5ca3fa0f7",
-                "reference": "b95cbff7aeaec5fa94aecd66af7fe7d5ca3fa0f7",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/35f718b4b898d9be8a54bfd50478b69122fb5b2f",
+                "reference": "35f718b4b898d9be8a54bfd50478b69122fb5b2f",
                 "shasum": ""
             },
             "require": {
@@ -8819,6 +8819,7 @@
                 "spatie/pest-plugin-test-time": "^1.0",
                 "spatie/test-time": "^1.2"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -8856,7 +8857,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-health/issues",
-                "source": "https://github.com/spatie/laravel-health/tree/0.9.0"
+                "source": "https://github.com/spatie/laravel-health/tree/main"
             },
             "funding": [
                 {
@@ -8864,7 +8865,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-06T16:16:40+00:00"
+            "time": "2021-12-06T19:43:22+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
@@ -16767,7 +16768,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "spatie/laravel-health": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
