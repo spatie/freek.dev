@@ -25,7 +25,7 @@ class HealthServiceProvider extends ServiceProvider
             UsedDiskSpaceCheck::new()
                 ->warnWhenUsedSpaceIsAbovePercentage(90)
                 ->failWhenUsedSpaceIsAbovePercentage(95),
-            ScheduleCheck::new(),
+            ScheduleCheck::new()->heartbeatMaxAgeInMinutes(2),
             FlareErrorOccurrenceCountCheck::new()
                 ->projectId(config('services.flare.project_id'))
                 ->apiToken(config('services.flare.api_token'))
