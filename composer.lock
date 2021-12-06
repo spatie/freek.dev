@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f3a1b55e11d6cfc1bdb64e0e27f6924",
+    "content-hash": "45df7fb06b979a49587cb7ece741b3d3",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1855,16 +1855,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.4.0",
+            "version": "7.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "868b3571a039f0ebc11ac8f344f4080babe2cb94"
+                "reference": "ee0a041b1760e6a53d2a39c8c34115adc2af2c79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/868b3571a039f0ebc11ac8f344f4080babe2cb94",
-                "reference": "868b3571a039f0ebc11ac8f344f4080babe2cb94",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ee0a041b1760e6a53d2a39c8c34115adc2af2c79",
+                "reference": "ee0a041b1760e6a53d2a39c8c34115adc2af2c79",
                 "shasum": ""
             },
             "require": {
@@ -1873,7 +1873,7 @@
                 "guzzlehttp/psr7": "^1.8.3 || ^2.1",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
-                "symfony/deprecation-contracts": "^2.2"
+                "symfony/deprecation-contracts": "^2.2 || ^3.0"
             },
             "provide": {
                 "psr/http-client-implementation": "1.0"
@@ -1959,7 +1959,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.4.0"
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.1"
             },
             "funding": [
                 {
@@ -1975,7 +1975,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-18T09:52:00+00:00"
+            "time": "2021-12-06T18:43:05+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -8776,16 +8776,16 @@
         },
         {
             "name": "spatie/laravel-health",
-            "version": "dev-main",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "8f7a38c22a46845c68b444294d32ef25c91211ad"
+                "reference": "b95cbff7aeaec5fa94aecd66af7fe7d5ca3fa0f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/8f7a38c22a46845c68b444294d32ef25c91211ad",
-                "reference": "8f7a38c22a46845c68b444294d32ef25c91211ad",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/b95cbff7aeaec5fa94aecd66af7fe7d5ca3fa0f7",
+                "reference": "b95cbff7aeaec5fa94aecd66af7fe7d5ca3fa0f7",
                 "shasum": ""
             },
             "require": {
@@ -8819,7 +8819,6 @@
                 "spatie/pest-plugin-test-time": "^1.0",
                 "spatie/test-time": "^1.2"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -8857,7 +8856,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-health/issues",
-                "source": "https://github.com/spatie/laravel-health/tree/main"
+                "source": "https://github.com/spatie/laravel-health/tree/0.9.0"
             },
             "funding": [
                 {
@@ -8865,7 +8864,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-05T12:17:09+00:00"
+            "time": "2021-12-06T16:16:40+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
@@ -10251,16 +10250,16 @@
         },
         {
             "name": "spatie/laravel-schemaless-attributes",
-            "version": "2.1.1",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-schemaless-attributes.git",
-                "reference": "c8f6b25b531e4a6bb550d225920be34f5cbbbf89"
+                "reference": "c37289ce655d7f36f1abad9d802f2d025f239525"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-schemaless-attributes/zipball/c8f6b25b531e4a6bb550d225920be34f5cbbbf89",
-                "reference": "c8f6b25b531e4a6bb550d225920be34f5cbbbf89",
+                "url": "https://api.github.com/repos/spatie/laravel-schemaless-attributes/zipball/c37289ce655d7f36f1abad9d802f2d025f239525",
+                "reference": "c37289ce655d7f36f1abad9d802f2d025f239525",
                 "shasum": ""
             },
             "require": {
@@ -10310,7 +10309,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-schemaless-attributes/issues",
-                "source": "https://github.com/spatie/laravel-schemaless-attributes/tree/2.1.1"
+                "source": "https://github.com/spatie/laravel-schemaless-attributes/tree/2.2.0"
             },
             "funding": [
                 {
@@ -10322,7 +10321,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-09T07:53:20+00:00"
+            "time": "2021-12-06T13:58:28+00:00"
         },
         {
             "name": "spatie/laravel-signal-aware-command",
@@ -10846,25 +10845,25 @@
         },
         {
             "name": "spatie/laravel-view-models",
-            "version": "1.3.2",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-view-models.git",
-                "reference": "b36db218acd395df3a10ac9e717c1e930e9b5b58"
+                "reference": "7037fbef87982acb089b7cb6b1c157b211e350f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-view-models/zipball/b36db218acd395df3a10ac9e717c1e930e9b5b58",
-                "reference": "b36db218acd395df3a10ac9e717c1e930e9b5b58",
+                "url": "https://api.github.com/repos/spatie/laravel-view-models/zipball/7037fbef87982acb089b7cb6b1c157b211e350f3",
+                "reference": "7037fbef87982acb089b7cb6b1c157b211e350f3",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^7.0|^8.0",
+                "illuminate/support": "^8.0",
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.16",
-                "orchestra/testbench": "^5.0|^6.0"
+                "orchestra/testbench": "^6.23"
             },
             "type": "library",
             "extra": {
@@ -10899,7 +10898,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-view-models/issues",
-                "source": "https://github.com/spatie/laravel-view-models/tree/1.3.2"
+                "source": "https://github.com/spatie/laravel-view-models/tree/1.4.0"
             },
             "funding": [
                 {
@@ -10911,7 +10910,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-30T15:27:50+00:00"
+            "time": "2021-12-06T09:13:38+00:00"
         },
         {
             "name": "spatie/laravel-webhook-client",
@@ -15659,22 +15658,22 @@
         },
         {
             "name": "fakerphp/faker",
-            "version": "v1.16.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "271d384d216e5e5c468a6b28feedf95d49f83b35"
+                "reference": "b85e9d44eae8c52cca7aa0939483611f7232b669"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/271d384d216e5e5c468a6b28feedf95d49f83b35",
-                "reference": "271d384d216e5e5c468a6b28feedf95d49f83b35",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/b85e9d44eae8c52cca7aa0939483611f7232b669",
+                "reference": "b85e9d44eae8c52cca7aa0939483611f7232b669",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0",
                 "psr/container": "^1.0 || ^2.0",
-                "symfony/deprecation-contracts": "^2.2"
+                "symfony/deprecation-contracts": "^2.2 || ^3.0"
             },
             "conflict": {
                 "fzaninotto/faker": "*"
@@ -15693,7 +15692,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "v1.16-dev"
+                    "dev-main": "v1.17-dev"
                 }
             },
             "autoload": {
@@ -15718,9 +15717,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.16.0"
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.17.0"
             },
-            "time": "2021-09-06T14:53:37+00:00"
+            "time": "2021-12-05T17:14:47+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -16768,9 +16767,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-health": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
