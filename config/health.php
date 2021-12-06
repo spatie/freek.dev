@@ -65,7 +65,7 @@ return [
      * Oh Dear, you can also have access to more advanced notification options.
      */
     'oh_dear_endpoint' => [
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * The secret that is displayed at the Application Health settings at Oh Dear.
