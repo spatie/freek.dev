@@ -8,54 +8,17 @@ return [
      * can use multiple stores at the same time.
      */
     'result_stores' => [
-        Spatie\Health\ResultStores\EloquentHealthResultStore::class,
-
-        /*
-        Spatie\Health\ResultStores\EloquentHealthResultStore\JsonFileHealthResultStore::class => [
-            'disk' => 's3',
-            'path' => 'health.json',
-        ],
-
-        */
-    ],
-
-
-    /*
-     * The amount of days the `EloquentHealthResultStore` will keep history
-     * before pruning items.
-     */
-    'keep_history_for_days' => 5,
-
-    /*
-    * You can let Oh Dear monitor the results of all health checks. This way, you'll
-    * get notified of any problems even if your application goes totally down. Via
-    * Oh Dear, you can also have access to more advanced notification options.
-    */
-    'oh_dear_endpoint' => [
-        'enabled' => true,
-
-        /*
-         * The secret that is displayed at the Application Health settings at Oh Dear.
-         */
-        'secret' => env('OH_DEAR_HEALTH_CHECK_SECRET'),
-
-        /*
-         * The URL that should be configured in the Application health settings at Oh Dear.
-         */
-        'url' => '/oh-dear-health-check-results',
+        Spatie\Health\ResultStores\InMemoryHealthResultStore::class,
     ],
 
     /*
      * You can get notified when specific events occur. Out of the box you can use 'mail' and 'slack'.
      * For Slack you need to install laravel/slack-notification-channel.
-     *
-     * You can also use your own notification classes, just make sure the class is named after one of
-     * the `Spatie\Backup\Notifications\Notifications` classes.
      */
     'notifications' => [
 
         'notifications' => [
-            Spatie\Health\Notifications\CheckFailedNotification::class => ['mail'],
+            Spatie\Health\Notifications\CheckFailedNotification::class => [],
         ],
 
         /*
@@ -74,7 +37,7 @@ return [
         'throttle_notifications_for_minutes' => 60,
 
         'mail' => [
-            'to' => 'freek@spatie.be',
+            'to' => 'your@example.com',
 
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
@@ -94,5 +57,24 @@ return [
 
             'icon' => null,
         ],
+    ],
+
+    /*
+     * You can let Oh Dear monitor the results of all health checks. This way, you'll
+     * get notified of any problems even if your application goes totally down. Via
+     * Oh Dear, you can also have access to more advanced notification options.
+     */
+    'oh_dear_endpoint' => [
+        'enabled' => false,
+
+        /*
+         * The secret that is displayed at the Application Health settings at Oh Dear.
+         */
+        'secret' => env('OH_DEAR_HEALTH_CHECK_SECRET'),
+
+        /*
+         * The URL that should be configured in the Application health settings at Oh Dear.
+         */
+        'url' => '/oh-dear-health-check-results',
     ],
 ];
