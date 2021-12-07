@@ -2533,16 +2533,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.7.16",
+            "version": "v5.7.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "393e0a9a66a1028d236fc7067eb2f8ba655e2e15"
+                "reference": "5b14ede6cd8b63cd42d3585096bb55561866c6d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/393e0a9a66a1028d236fc7067eb2f8ba655e2e15",
-                "reference": "393e0a9a66a1028d236fc7067eb2f8ba655e2e15",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/5b14ede6cd8b63cd42d3585096bb55561866c6d9",
+                "reference": "5b14ede6cd8b63cd42d3585096bb55561866c6d9",
                 "shasum": ""
             },
             "require": {
@@ -2604,9 +2604,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.7.16"
+                "source": "https://github.com/laravel/horizon/tree/v5.7.17"
             },
-            "time": "2021-11-23T17:27:41+00:00"
+            "time": "2021-12-07T16:02:09+00:00"
         },
         {
             "name": "laravel/nova",
@@ -2960,16 +2960,16 @@
         },
         {
             "name": "laravel/tinker",
-            "version": "v2.6.2",
+            "version": "v2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "c808a7227f97ecfd9219fbf913bad842ea854ddc"
+                "reference": "a9ddee4761ec8453c584e393b393caff189a3e42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/c808a7227f97ecfd9219fbf913bad842ea854ddc",
-                "reference": "c808a7227f97ecfd9219fbf913bad842ea854ddc",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/a9ddee4761ec8453c584e393b393caff189a3e42",
+                "reference": "a9ddee4761ec8453c584e393b393caff189a3e42",
                 "shasum": ""
             },
             "require": {
@@ -3022,9 +3022,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/tinker/issues",
-                "source": "https://github.com/laravel/tinker/tree/v2.6.2"
+                "source": "https://github.com/laravel/tinker/tree/v2.6.3"
             },
-            "time": "2021-09-28T15:47:34+00:00"
+            "time": "2021-12-07T16:41:42+00:00"
         },
         {
             "name": "laravel/ui",
@@ -8776,39 +8776,40 @@
         },
         {
             "name": "spatie/laravel-health",
-            "version": "1.0.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "01558f83f637694847cd2b83c3cbf01de4f050a0"
+                "reference": "18a0e2faa94eea1489a16e7705e63dfb22b52e47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/01558f83f637694847cd2b83c3cbf01de4f050a0",
-                "reference": "01558f83f637694847cd2b83c3cbf01de4f050a0",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/18a0e2faa94eea1489a16e7705e63dfb22b52e47",
+                "reference": "18a0e2faa94eea1489a16e7705e63dfb22b52e47",
                 "shasum": ""
             },
             "require": {
                 "dragonmantank/cron-expression": "^3.1",
-                "illuminate/console": "^8.70",
-                "illuminate/contracts": "^8.37",
-                "illuminate/database": "^8.70",
-                "illuminate/notifications": "^8.73",
-                "illuminate/support": "^8.70",
-                "nunomaduro/termwind": "^1.0",
+                "guzzlehttp/guzzle": "^6.5|^7.4",
+                "illuminate/console": "^8.75",
+                "illuminate/contracts": "^8.75",
+                "illuminate/database": "^8.75",
+                "illuminate/notifications": "^8.75",
+                "illuminate/support": "^8.75",
+                "nunomaduro/termwind": "^1.1",
                 "php": "^8.0",
-                "spatie/enum": "^3.10",
+                "spatie/enum": "^3.11",
                 "spatie/laravel-package-tools": "^1.9.2",
                 "spatie/regex": "^3.1",
-                "symfony/process": "^5.3"
+                "symfony/process": "^5.4|^6.0"
             },
             "require-dev": {
                 "laravel/horizon": "^5.7",
                 "laravel/slack-notification-channel": "^2.3",
                 "nunomaduro/collision": "^5.10",
                 "nunomaduro/larastan": "^1.0",
-                "orchestra/testbench": "^6.22",
-                "pestphp/pest": "^1.10",
+                "orchestra/testbench": "^6.23",
+                "pestphp/pest": "^1.21",
                 "pestphp/pest-plugin-laravel": "^1.1",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
@@ -8856,7 +8857,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-health/issues",
-                "source": "https://github.com/spatie/laravel-health/tree/1.0.0"
+                "source": "https://github.com/spatie/laravel-health/tree/1.2.0"
             },
             "funding": [
                 {
@@ -8864,7 +8865,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-07T15:08:00+00:00"
+            "time": "2021-12-07T21:58:05+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
