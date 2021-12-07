@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a1a4607d7bddcadf14a517a05568f3a",
+    "content-hash": "e3be7a73890770253ac670482675165e",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -2361,16 +2361,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.74.0",
+            "version": "v8.75.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "004ea195012d5132eca07a176a6e587c6a74815e"
+                "reference": "0bb91d3176357da232da69762a64b0e0a0988637"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/004ea195012d5132eca07a176a6e587c6a74815e",
-                "reference": "004ea195012d5132eca07a176a6e587c6a74815e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0bb91d3176357da232da69762a64b0e0a0988637",
+                "reference": "0bb91d3176357da232da69762a64b0e0a0988637",
                 "shasum": ""
             },
             "require": {
@@ -2529,7 +2529,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-11-30T15:26:05+00:00"
+            "time": "2021-12-07T14:55:46+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -8776,16 +8776,16 @@
         },
         {
             "name": "spatie/laravel-health",
-            "version": "0.15.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "5d5b4c84a47ce54e25e9c47a17e0b3ce3d14226c"
+                "reference": "01558f83f637694847cd2b83c3cbf01de4f050a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/5d5b4c84a47ce54e25e9c47a17e0b3ce3d14226c",
-                "reference": "5d5b4c84a47ce54e25e9c47a17e0b3ce3d14226c",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/01558f83f637694847cd2b83c3cbf01de4f050a0",
+                "reference": "01558f83f637694847cd2b83c3cbf01de4f050a0",
                 "shasum": ""
             },
             "require": {
@@ -8856,7 +8856,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-health/issues",
-                "source": "https://github.com/spatie/laravel-health/tree/0.15.0"
+                "source": "https://github.com/spatie/laravel-health/tree/1.0.0"
             },
             "funding": [
                 {
@@ -8864,7 +8864,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-07T13:07:51+00:00"
+            "time": "2021-12-07T15:08:00+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
