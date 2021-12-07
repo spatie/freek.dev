@@ -4314,30 +4314,30 @@
         },
         {
             "name": "nunomaduro/termwind",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "0454f539f0c5239136e6a22ecc9aac5dd203658c"
+                "reference": "d4307db8155620cd39a34e8877d3dc8df45b0441"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/0454f539f0c5239136e6a22ecc9aac5dd203658c",
-                "reference": "0454f539f0c5239136e6a22ecc9aac5dd203658c",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/d4307db8155620cd39a34e8877d3dc8df45b0441",
+                "reference": "d4307db8155620cd39a34e8877d3dc8df45b0441",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": "^8.0",
-                "symfony/console": "^5.3.0"
+                "symfony/console": "^5.3.0|^6.0.0"
             },
             "require-dev": {
                 "ergebnis/phpstan-rules": "^0.15.3",
-                "pestphp/pest": "^1.20.0",
+                "pestphp/pest": "^2.0.0",
                 "phpstan/phpstan": "^0.12.99",
                 "phpstan/phpstan-strict-rules": "^0.12.11",
-                "styleci/cli": "^1.2",
-                "symfony/var-dumper": "^5.2.7",
+                "styleci/cli": "^1.2.0",
+                "symfony/var-dumper": "^5.2.7|^6.0.0",
                 "thecodingmachine/phpstan-strict-rules": "^0.12.1"
             },
             "type": "library",
@@ -4370,7 +4370,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/v1.0.0"
+                "source": "https://github.com/nunomaduro/termwind/tree/v1.1.0"
             },
             "funding": [
                 {
@@ -4386,7 +4386,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-28T05:11:02+00:00"
+            "time": "2021-12-06T20:01:30+00:00"
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
@@ -8780,12 +8780,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "d5c19e308cf99a04534f9274d67febb494340470"
+                "reference": "5d5b4c84a47ce54e25e9c47a17e0b3ce3d14226c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/d5c19e308cf99a04534f9274d67febb494340470",
-                "reference": "d5c19e308cf99a04534f9274d67febb494340470",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/5d5b4c84a47ce54e25e9c47a17e0b3ce3d14226c",
+                "reference": "5d5b4c84a47ce54e25e9c47a17e0b3ce3d14226c",
                 "shasum": ""
             },
             "require": {
@@ -8865,7 +8865,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-06T19:52:46+00:00"
+            "time": "2021-12-07T13:07:51+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
@@ -11900,16 +11900,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.104.0",
+            "version": "v7.105.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "6bfd895eaa3f6ebb49c10f9ab9ccc9e5baadded5"
+                "reference": "3a926610ca772aa7519fb132c88a6e7472788d90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/6bfd895eaa3f6ebb49c10f9ab9ccc9e5baadded5",
-                "reference": "6bfd895eaa3f6ebb49c10f9ab9ccc9e5baadded5",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/3a926610ca772aa7519fb132c88a6e7472788d90",
+                "reference": "3a926610ca772aa7519fb132c88a6e7472788d90",
                 "shasum": ""
             },
             "require": {
@@ -11954,9 +11954,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v7.104.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v7.105.0"
             },
-            "time": "2021-12-01T22:24:54+00:00"
+            "time": "2021-12-06T22:51:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
