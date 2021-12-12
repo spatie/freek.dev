@@ -1,3 +1,5 @@
+@tailwind base
+
 @layer base {
     [type='text'],
     [type='email'],

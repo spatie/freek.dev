@@ -1,22 +1,8 @@
 module.exports = {
-    purge: {
-        content: [
-            './resources/**/*.blade.php',
-            './app/*.php'
-        ],
-        options: {
-            safelist: [
-                'from-red-400',
-                'to-red-700',
-                'from-blue-500',
-                'to-blue-800',
-                'from-yellow-400',
-                'to-orange-500',
-                'from-gray-400',
-                'to-gray-700'
-            ],
-        }
-    },
+    content: [
+        './resources/**/*.blade.php',
+        './app/*.php',
+    ],
     plugins: [require('@tailwindcss/forms')],
     theme: {
         fontFamily: {

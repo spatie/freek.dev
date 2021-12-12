@@ -11,8 +11,8 @@
 
 @import './utilties.css';
 
+@tailwind base
 @tailwind components;
-
 @tailwind utilities;
 
 @import './components/forms.css';
