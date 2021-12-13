@@ -36,6 +36,7 @@
         "ohdearapp/ohdear-php-sdk": "^3.0",
         "predis/predis": "^1.1",
         "spatie/browsershot": "^3.40",
+        "spatie/cpu-load-health-check": "^1.0",
         "spatie/laravel-backup": "^7.0",
         "spatie/laravel-feed": "^4.0.2",
         "spatie/laravel-flash": "^1.7",
