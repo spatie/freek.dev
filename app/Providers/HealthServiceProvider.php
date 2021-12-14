@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Spatie\Health\Checks\Checks\DebugModeCheck;
 use Spatie\Health\Checks\Checks\EnvironmentCheck;
 use Spatie\Health\Facades\Health;
 
@@ -12,6 +13,7 @@ class HealthServiceProvider extends ServiceProvider
     {
         Health::checks([
            EnvironmentCheck::new(),
+           DebugModeCheck::new(),
         ]);
     }
 }
