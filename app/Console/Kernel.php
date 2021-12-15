@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(CleanUpModelsCommand::class)->daily();
         $schedule->command('mailcoach:send-email-list-summary-mail ')->mondays()->at('9:00');
         $schedule->command('site-search:crawl')->daily();
-        $schedule->command('model:prune', ['----model' => [
+        $schedule->command('model:prune', ['--model' => [
             HealthCheckResultHistoryItem::class
         ]]);
         $schedule->command(ScheduleCheckHeartbeatCommand::class)->everyMinute();
