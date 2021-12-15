@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use Exception;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 use Spatie\SiteSearch\Search;
@@ -14,7 +13,7 @@ class SearchComponent extends Component
     public function render()
     {
         return view('livewire.search', [
-            'hits' => $this->getResultz(),
+            'hits' => $this->getResults(),
         ]);
     }
 
