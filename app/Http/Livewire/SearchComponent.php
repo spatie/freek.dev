@@ -14,7 +14,7 @@ class SearchComponent extends Component
     public function render()
     {
         return view('livewire.search', [
-            'hits' => $this->getResults(),
+            'hits' => $this->getResultz(),
         ]);
     }
 
@@ -23,8 +23,6 @@ class SearchComponent extends Component
         if ($this->query === '') {
             return collect();
         }
-
-        throw new Exception("Computer says no");
 
         return Search::onIndex('freek')
             ->limit(40)
