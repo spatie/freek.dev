@@ -148,7 +148,6 @@ php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
-php artisan octane:reload
 
 sudo service php8.1-fpm restart
 sudo supervisorctl restart all
