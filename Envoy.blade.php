@@ -1,6 +1,7 @@
 @setup
 $branch = 'main';
 $server = "freek.dev";
+$server = "138.68.76.137";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/freek.dev";
 $baseDir = "/home/forge/freek.dev";
@@ -150,7 +151,7 @@ php artisan cache:clear
 php artisan config:cache
 php artisan octane:reload
 
-sudo service php8.0-fpm restart
+sudo service php8.1-fpm restart
 sudo supervisorctl restart all
 php artisan health:run
 @endtask
@@ -176,7 +177,7 @@ php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
 php artisan responsecache:clear
-php artisan octane:reload
 php artisan horizon:terminate
+sudo service php8.1-fpm restart
 php artisan health:check
 @endtask
