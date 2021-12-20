@@ -151,7 +151,7 @@ php artisan config:cache
 
 sudo service php8.1-fpm restart
 sudo supervisorctl restart all
-php artisan health:run
+php artisan health:check
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])
