@@ -2178,16 +2178,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "9a8cc99d30415ec0b3f7649e1647d03a55698545"
+                "reference": "744ebba495319501b873a4e48787759c72e3fb8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/9a8cc99d30415ec0b3f7649e1647d03a55698545",
-                "reference": "9a8cc99d30415ec0b3f7649e1647d03a55698545",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/744ebba495319501b873a4e48787759c72e3fb8c",
+                "reference": "744ebba495319501b873a4e48787759c72e3fb8c",
                 "shasum": ""
             },
             "require": {
@@ -2246,7 +2246,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
-                "source": "https://github.com/Intervention/image/tree/2.7.0"
+                "source": "https://github.com/Intervention/image/tree/2.7.1"
             },
             "funding": [
                 {
@@ -2258,7 +2258,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-03T14:17:12+00:00"
+            "time": "2021-12-16T16:49:26+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -2361,16 +2361,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.75.0",
+            "version": "v8.76.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0bb91d3176357da232da69762a64b0e0a0988637"
+                "reference": "c67acfdc968f487b6235435080eef62a7e2ed055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0bb91d3176357da232da69762a64b0e0a0988637",
-                "reference": "0bb91d3176357da232da69762a64b0e0a0988637",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c67acfdc968f487b6235435080eef62a7e2ed055",
+                "reference": "c67acfdc968f487b6235435080eef62a7e2ed055",
                 "shasum": ""
             },
             "require": {
@@ -2529,7 +2529,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-12-07T14:55:46+00:00"
+            "time": "2021-12-15T14:02:14+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2705,16 +2705,16 @@
         },
         {
             "name": "laravel/octane",
-            "version": "v1.0.21",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/octane.git",
-                "reference": "612544b429c01e31a8b2480eb6e08a36f946dd88"
+                "reference": "7a1fa01a8381f2b031678dc2b1507ba58623edbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/octane/zipball/612544b429c01e31a8b2480eb6e08a36f946dd88",
-                "reference": "612544b429c01e31a8b2480eb6e08a36f946dd88",
+                "url": "https://api.github.com/repos/laravel/octane/zipball/7a1fa01a8381f2b031678dc2b1507ba58623edbe",
+                "reference": "7a1fa01a8381f2b031678dc2b1507ba58623edbe",
                 "shasum": ""
             },
             "require": {
@@ -2777,7 +2777,7 @@
                 "issues": "https://github.com/laravel/octane/issues",
                 "source": "https://github.com/laravel/octane"
             },
-            "time": "2021-11-30T15:48:12+00:00"
+            "time": "2021-12-14T17:43:03+00:00"
         },
         {
             "name": "laravel/sail",
@@ -4314,16 +4314,16 @@
         },
         {
             "name": "nunomaduro/termwind",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "d4307db8155620cd39a34e8877d3dc8df45b0441"
+                "reference": "a03cc7067ea9ee95ce69aa10359025ef631b9c07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/d4307db8155620cd39a34e8877d3dc8df45b0441",
-                "reference": "d4307db8155620cd39a34e8877d3dc8df45b0441",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/a03cc7067ea9ee95ce69aa10359025ef631b9c07",
+                "reference": "a03cc7067ea9ee95ce69aa10359025ef631b9c07",
                 "shasum": ""
             },
             "require": {
@@ -4370,7 +4370,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/v1.1.0"
+                "source": "https://github.com/nunomaduro/termwind/tree/v1.2.0"
             },
             "funding": [
                 {
@@ -4386,7 +4386,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-06T20:01:30+00:00"
+            "time": "2021-12-16T00:58:11+00:00"
         },
         {
             "name": "ohdearapp/ohdear-php-sdk",
@@ -5545,23 +5545,23 @@
         },
         {
             "name": "phpseclib/bcmath_compat",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/bcmath_compat.git",
-                "reference": "fd896dfceffc13d8cf45d2ee3470777a70026f3c"
+                "reference": "2ffea8bfe1702b4535a7b3c2649c4301968e9a3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/bcmath_compat/zipball/fd896dfceffc13d8cf45d2ee3470777a70026f3c",
-                "reference": "fd896dfceffc13d8cf45d2ee3470777a70026f3c",
+                "url": "https://api.github.com/repos/phpseclib/bcmath_compat/zipball/2ffea8bfe1702b4535a7b3c2649c4301968e9a3c",
+                "reference": "2ffea8bfe1702b4535a7b3c2649c4301968e9a3c",
                 "shasum": ""
             },
             "require": {
                 "phpseclib/phpseclib": "^3.0"
             },
             "provide": {
-                "ext-bcmath": "8.0.0"
+                "ext-bcmath": "8.1.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8.35|^5.7|^6.0|^9.4",
@@ -5590,7 +5590,7 @@
                     "homepage": "http://phpseclib.sourceforge.net"
                 }
             ],
-            "description": "PHP 5.x/7.x polyfill for bcmath extension",
+            "description": "PHP 5.x-8.x polyfill for bcmath extension",
             "keywords": [
                 "BigInteger",
                 "bcmath",
@@ -5603,7 +5603,7 @@
                 "issues": "https://github.com/phpseclib/bcmath_compat/issues",
                 "source": "https://github.com/phpseclib/bcmath_compat"
             },
-            "time": "2020-12-22T16:38:51+00:00"
+            "time": "2021-12-16T02:35:52+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -8006,23 +8006,23 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.52.1",
+            "version": "3.52.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "5e3e2b4449f47c97079ea2bcfef41719abd34afb"
+                "reference": "4f8584e835035a4696a496c4508c3c35edaef28a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/5e3e2b4449f47c97079ea2bcfef41719abd34afb",
-                "reference": "5e3e2b4449f47c97079ea2bcfef41719abd34afb",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/4f8584e835035a4696a496c4508c3c35edaef28a",
+                "reference": "4f8584e835035a4696a496c4508c3c35edaef28a",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
                 "spatie/image": "^1.5.3|^2.0",
                 "spatie/temporary-directory": "^1.1|^2.0",
-                "symfony/process": "^4.2|^5.0"
+                "symfony/process": "^4.2|^5.0|^6.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.0",
@@ -8059,7 +8059,8 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/3.52.1"
+                "issues": "https://github.com/spatie/browsershot/issues",
+                "source": "https://github.com/spatie/browsershot/tree/3.52.3"
             },
             "funding": [
                 {
@@ -8067,7 +8068,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-24T10:41:33+00:00"
+            "time": "2021-12-17T23:11:39+00:00"
         },
         {
             "name": "spatie/commonmark-shiki-highlighter",
@@ -8841,16 +8842,16 @@
         },
         {
             "name": "spatie/laravel-health",
-            "version": "1.3.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "9bf5f221690922c5d8c7ee0431467edd668399ee"
+                "reference": "a90e0a8faf5568d6a6645e92b4469107f4e3ba31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/9bf5f221690922c5d8c7ee0431467edd668399ee",
-                "reference": "9bf5f221690922c5d8c7ee0431467edd668399ee",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/a90e0a8faf5568d6a6645e92b4469107f4e3ba31",
+                "reference": "a90e0a8faf5568d6a6645e92b4469107f4e3ba31",
                 "shasum": ""
             },
             "require": {
@@ -8922,7 +8923,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-health/issues",
-                "source": "https://github.com/spatie/laravel-health/tree/1.3.0"
+                "source": "https://github.com/spatie/laravel-health/tree/1.6.0"
             },
             "funding": [
                 {
@@ -8930,7 +8931,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-13T11:03:31+00:00"
+            "time": "2021-12-17T23:09:48+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
@@ -9495,16 +9496,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "9.10.0",
+            "version": "9.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "9b0371e66eb7c9a5a3903f9631c65b617c8fa3cb"
+                "reference": "cdd43963635680bbfceae933882eabf2757470c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/9b0371e66eb7c9a5a3903f9631c65b617c8fa3cb",
-                "reference": "9b0371e66eb7c9a5a3903f9631c65b617c8fa3cb",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/cdd43963635680bbfceae933882eabf2757470c5",
+                "reference": "cdd43963635680bbfceae933882eabf2757470c5",
                 "shasum": ""
             },
             "require": {
@@ -9586,7 +9587,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.10.0"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.11.1"
             },
             "funding": [
                 {
@@ -9598,7 +9599,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-09T12:28:50+00:00"
+            "time": "2021-12-17T13:52:45+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -9811,16 +9812,16 @@
         },
         {
             "name": "spatie/laravel-package-tools",
-            "version": "1.9.2",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "f710fe196c126fb9e0aee67eb5af49ad8f13f528"
+                "reference": "97c24d0bc58e04d55e4a6a7b6d6102cb45b75789"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/f710fe196c126fb9e0aee67eb5af49ad8f13f528",
-                "reference": "f710fe196c126fb9e0aee67eb5af49ad8f13f528",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/97c24d0bc58e04d55e4a6a7b6d6102cb45b75789",
+                "reference": "97c24d0bc58e04d55e4a6a7b6d6102cb45b75789",
                 "shasum": ""
             },
             "require": {
@@ -9829,8 +9830,8 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^9.3",
+                "orchestra/testbench": "^5.0|^6.23",
+                "phpunit/phpunit": "^9.4",
                 "spatie/test-time": "^1.2"
             },
             "type": "library",
@@ -9859,7 +9860,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.9.2"
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.10.0"
             },
             "funding": [
                 {
@@ -9867,7 +9868,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-21T13:06:51+00:00"
+            "time": "2021-12-18T20:33:51+00:00"
         },
         {
             "name": "spatie/laravel-query-builder",
@@ -11161,16 +11162,16 @@
         },
         {
             "name": "spatie/nova-tags-field",
-            "version": "3.4.0",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/nova-tags-field.git",
-                "reference": "51c3c5a0a09b164013d0dfd3659e2ae4a55eadda"
+                "reference": "34cdd9336778f9167cf8fe613c5b777c913d7d8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/51c3c5a0a09b164013d0dfd3659e2ae4a55eadda",
-                "reference": "51c3c5a0a09b164013d0dfd3659e2ae4a55eadda",
+                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/34cdd9336778f9167cf8fe613c5b777c913d7d8e",
+                "reference": "34cdd9336778f9167cf8fe613c5b777c913d7d8e",
                 "shasum": ""
             },
             "require": {
@@ -11215,7 +11216,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/nova-tags-field/issues",
-                "source": "https://github.com/spatie/nova-tags-field/tree/3.4.0"
+                "source": "https://github.com/spatie/nova-tags-field/tree/3.4.1"
             },
             "funding": [
                 {
@@ -11223,7 +11224,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-10-04T06:25:35+00:00"
+            "time": "2021-12-15T10:53:15+00:00"
         },
         {
             "name": "spatie/once",
