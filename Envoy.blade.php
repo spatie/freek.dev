@@ -95,7 +95,6 @@ yarn
 {{ logMessage("🌅  Generating assets…") }}
 cd {{ $newReleaseDir }};
 yarn run production
-yarn build-generate-newsletter-prod
 rm -rf node_modules
 @endtask
 
