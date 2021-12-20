@@ -9,7 +9,6 @@ use App\Nova\Tag;
 use App\Nova\Talk;
 use App\Nova\User;
 use App\Nova\Video;
-use Freekmurze\GenerateNewsletter\GenerateNewsletterTool;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -38,7 +37,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            new GenerateNewsletterTool(),
         ];
     }
 

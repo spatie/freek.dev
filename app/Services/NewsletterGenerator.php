@@ -1,6 +1,6 @@
 <?php
 
-namespace Freekmurze\GenerateNewsletter;
+namespace App\Services;
 
 use App\Models\Link;
 use App\Models\Post;
@@ -21,8 +21,6 @@ class NewsletterGenerator
         $this->startDate = $startDate;
 
         $this->endDate = $endDate;
-
-
 
         $this->editionNumber = $this->ordinal($editionNumber);
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27e03b0c150e4d5e3e9ba428622497f5",
+    "content-hash": "d4598763b743ec67d2fb96a5450feb93",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1677,42 +1677,6 @@
                 }
             ],
             "time": "2021-10-03T12:00:00+00:00"
-        },
-        {
-            "name": "freekmurze/generate-newsletter",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./nova-components/GenerateNewsletter",
-                "reference": "b117a94e1293a045cf7cb8f67c654d84953936e0"
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Freekmurze\\GenerateNewsletter\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Freekmurze\\GenerateNewsletter\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova tool.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "transport-options": {
-                "relative": true
-            }
         },
         {
             "name": "fruitcake/laravel-cors",
