@@ -6,9 +6,7 @@
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
     "production": "mix --production",
-    "format": "prettier 'resources/**/*.{css,js,json,css,ts,tsx}' '*.{js,css}' --write",
-    "build-generate-newsletter": "cd nova-components/GenerateNewsletter && yarn dev",
-    "build-generate-newsletter-prod": "cd nova-components/GenerateNewsletter && yarn && yarn prod"
+    "format": "prettier 'resources/**/*.{css,js,json,css,ts,tsx}' '*.{js,css}' --write"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.4.0",
