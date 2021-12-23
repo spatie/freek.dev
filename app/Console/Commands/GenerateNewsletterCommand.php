@@ -30,7 +30,7 @@ class GenerateNewsletterCommand extends Command
         Campaign::create([
             'name' => "freek.dev newsletter #{$newEditionNumber}",
             'uuid' => Str::uuid(),
-            'html' > $html,
+            'html' => $html,
             'from_email' => 'freek@spatie.be',
             'from_name' => 'Freek Van der Herten',
             'subject' => "freek.dev newsletter #{$newEditionNumber}",
