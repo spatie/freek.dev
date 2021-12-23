@@ -20,7 +20,7 @@ class HealthServiceProvider extends ServiceProvider
     public function register()
     {
         Health::checks([
-            CpuLoadCheck::new()->failWhenLoadIsHigherInTheLast5Minutes(3.0),
+            CpuLoadCheck::new()->failWhenLoadIsHigherInTheLast5Minutes(4.0),
             DebugModeCheck::new(),
             MeiliSearchCheck::new(),
             EnvironmentCheck::new(),
