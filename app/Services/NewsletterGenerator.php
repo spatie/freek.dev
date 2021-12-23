@@ -33,7 +33,7 @@ class NewsletterGenerator
         $oldPosts = $this->getOldPosts();
         $editionNumber = $this->editionNumber;
 
-        return view('generate-newsletter::template', compact(
+        return view('newsletter.template', compact(
             'recentPosts',
             'recentTweets',
             'communityLinks',
