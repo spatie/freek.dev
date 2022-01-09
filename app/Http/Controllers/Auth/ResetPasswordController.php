@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Links\LinksIndexController;
+use App\Http\Controllers\Discovery\Community\IndexController;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -16,6 +16,6 @@ class ResetPasswordController
             return '/nova';
         }
 
-        return redirect()->to(action(LinksIndexController::class));
+        return redirect()->to(action(IndexController::class));
     }
 }

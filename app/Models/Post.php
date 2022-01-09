@@ -181,12 +181,12 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
 
     public function getUrlAttribute(): string
     {
-        return action(PostController::class, [$this->idSlug()]);
+        return route('post', [$this->idSlug()]);
     }
 
     public function getPreviewUrlAttribute(): string
     {
-        return action(PostController::class, [$this->idSlug()]) . "?preview_secret={$this->preview_secret}";
+        return route('post', [$this->idSlug()]) . "?preview_secret={$this->preview_secret}";
     }
 
     public function getPromotionalUrlAttribute(): string

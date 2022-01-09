@@ -35,5 +35,6 @@ return [
         Spatie\RouteDiscovery\PendingRouteTransformers\HandleWheresAttribute::class,
         Spatie\RouteDiscovery\PendingRouteTransformers\AddDefaultRouteName::class,
         Spatie\RouteDiscovery\PendingRouteTransformers\HandleDomainAttribute::class,
+        Spatie\RouteDiscovery\PendingRouteTransformers\MoveRoutesStartingWithParametersLast::class,
     ],
 ];

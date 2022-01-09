@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Links\LinksIndexController;
+use App\Http\Controllers\Discovery\Community\IndexController;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -51,6 +51,6 @@ class RegisterController
             return '/nova/posts';
         }
 
-        return action(LinksIndexController::class);
+        return action(IndexController::class);
     }
 }

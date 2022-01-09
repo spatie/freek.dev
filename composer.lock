@@ -9654,16 +9654,16 @@
         },
         {
             "name": "spatie/laravel-query-builder",
-            "version": "3.6.1",
+            "version": "3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-query-builder.git",
-                "reference": "b78b14d60271e4f3a803d0707adb73006730d781"
+                "reference": "3768381e9f2f80b01f0088eca49f061c269e0e8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/b78b14d60271e4f3a803d0707adb73006730d781",
-                "reference": "b78b14d60271e4f3a803d0707adb73006730d781",
+                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/3768381e9f2f80b01f0088eca49f061c269e0e8b",
+                "reference": "3768381e9f2f80b01f0088eca49f061c269e0e8b",
                 "shasum": ""
             },
             "require": {
@@ -9720,7 +9720,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-11-17T15:39:59+00:00"
+            "time": "2022-01-09T15:39:13+00:00"
         },
         {
             "name": "spatie/laravel-rate-limited-job-middleware",
@@ -10026,7 +10026,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-route-discovery",
-                "reference": "223666cae0dc3cdbfe03c8c0203cbc5e00ee34da"
+                "reference": "34307416b45a380ab9060b81de6496d53999bd3e"
             },
             "require": {
                 "illuminate/contracts": "^8.67",
