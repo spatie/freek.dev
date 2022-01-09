@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discovery;
 
 use App\Models\Talk;
 use App\Models\Video;

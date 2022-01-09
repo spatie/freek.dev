@@ -2,13 +2,12 @@
 
 namespace App\Providers;
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Discovery\HomeController;
+use App\Http\Controllers\Discovery\MusicController;
+use App\Http\Controllers\Discovery\NewsletterController;
+use App\Http\Controllers\Discovery\OriginalsController;
+use App\Http\Controllers\Discovery\SpeakingController;
 use App\Http\Controllers\Links\LinksIndexController;
-use App\Http\Controllers\MusicController;
-use App\Http\Controllers\MySetupController;
-use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\OriginalsController;
-use App\Http\Controllers\SpeakingController;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Menu\Laravel\Menu;
 use Spatie\Menu\Link;
@@ -35,12 +34,7 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->addClass('space-y-2')
                 ->url('search', 'Search')
-                /*
-                ->url('laravel-package-training-contest', 'Package training contest')
-                ->url('mailcoach-contest', 'Mailcoach contest')
-                ->url('ohdear-contest', 'Oh Dear contest')
-                */
-                ->action(MySetupController::class, 'My setup')
+                ->action(SpeakingController::class, 'My setup')
                 ->url('advertising', 'Advertising')
 
                 ->setActiveFromRequest('/');

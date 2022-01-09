@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discovery;
 
 use App\Models\Post;
+use function view;
 
 class OriginalsController
 {

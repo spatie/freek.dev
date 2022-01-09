@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discovery;
 
 use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
+use function view;
 
 class NewsletterController
 {
