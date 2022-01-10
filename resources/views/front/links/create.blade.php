@@ -9,7 +9,7 @@
             audience is interested in, I'll publish it and you'll get notified via mail.
         </div>
 
-        <form method="POST">
+        <form method="POST" target="{{ route('community.link.create') }}">
             @csrf
             <x-input-field label="Title" name="title"/>
 
