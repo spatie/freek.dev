@@ -51,7 +51,7 @@
         "spatie/laravel-ray": "^1.13",
         "spatie/laravel-remote": "^1.0",
         "spatie/laravel-responsecache": "^6.5",
-        "spatie/laravel-route-discovery": "dev-main",
+        "spatie/laravel-route-discovery": "0.10.0",
         "spatie/laravel-schedule-monitor": "^2.0",
         "spatie/laravel-site-search": "^1.0",
         "spatie/laravel-stubs": "^2.2",
@@ -102,10 +102,6 @@
         }
     },
     "repositories": [
-        {
-            "type": "path",
-            "url": "../laravel-route-discovery"
-        },
         {
             "type": "composer",
             "url": "https://satis.spatie.be"

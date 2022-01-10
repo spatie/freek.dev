@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26837ad3518531177792ca9e8f5a2afd",
+    "content-hash": "6aef903d8ab4188cef16f5d5668b8dcb",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -10022,11 +10022,17 @@
         },
         {
             "name": "spatie/laravel-route-discovery",
-            "version": "dev-main",
+            "version": "0.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-route-discovery.git",
+                "reference": "832c11de925f0561541734ce4c09d7fa2ca04ed4"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-route-discovery",
-                "reference": "34307416b45a380ab9060b81de6496d53999bd3e"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-route-discovery/zipball/832c11de925f0561541734ce4c09d7fa2ca04ed4",
+                "reference": "832c11de925f0561541734ce4c09d7fa2ca04ed4",
+                "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^8.67",
@@ -10058,22 +10064,7 @@
                     "Spatie\\RouteDiscovery\\Database\\Factories\\": "database/factories"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\RouteDiscovery\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test": [
-                    "vendor/bin/pest --colors=always"
-                ],
-                "test-coverage": [
-                    "vendor/bin/pest --coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -10091,19 +10082,21 @@
                 "laravel-route-discovery",
                 "spatie"
             ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-route-discovery/issues",
+                "source": "https://github.com/spatie/laravel-route-discovery/tree/0.10.0"
+            },
             "funding": [
                 {
-                    "type": "github",
-                    "url": "https://github.com/sponsors/spatie"
+                    "url": "https://github.com/sponsors/spatie",
+                    "type": "github"
                 },
                 {
-                    "type": "other",
-                    "url": "https://spatie.be/open-source/support-us"
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "other"
                 }
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2022-01-10T14:48:38+00:00"
         },
         {
             "name": "spatie/laravel-schedule-monitor",
@@ -16686,9 +16679,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-route-discovery": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
