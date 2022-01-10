@@ -18,6 +18,6 @@ class LinkController
     {
         $createLinkAction->execute($request->validated(), auth()->user());
 
-        return redirect()->route('links.thanks');
+        return redirect()->route('community.thanks');
     }
 }

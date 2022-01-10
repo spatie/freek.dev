@@ -8,6 +8,7 @@ use App\Actions\RejectLinkAction;
 use App\Models\Link;
 use Spatie\RouteDiscovery\Attributes\Route;
 
+#[Route(middleware: 'signed')]
 class LinkApproval
 {
     #[Route(name: 'link.approve')]

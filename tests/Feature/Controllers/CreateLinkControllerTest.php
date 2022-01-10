@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Controllers\Links\CreateLinkController;
+use App\Http\Controllers\Discovery\Community\LinkController;
 use App\Mail\LinkSubmittedMail;
 use App\Models\Link;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
-use Tests\TestCase;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\post;
 
@@ -26,11 +25,11 @@ it('will not accept a link that was already submitted', function () {
         'url' => 'https://freek.dev',
     ];
 
-    post(action([CreateLinkController::class, 'store'], $attributes))
-        ->assertRedirect(route('links.thanks'));
+    post(action([LinkController::class, 'store'], $attributes))
+        ->assertRedirect(route('community.thanks'));
 
     $this
-        ->post(action([CreateLinkController::class, 'store'], $attributes))
+        ->post(action([LinkController::class, 'store'], $attributes))
         ->assertSessionHasErrors('url');
 });
 
@@ -40,8 +39,8 @@ it('can create a link without text', function () {
         'url' => 'https://freek.dev',
     ];
 
-    post(action([CreateLinkController::class, 'store'], $attributes))
-        ->assertRedirect(route('links.thanks'));
+    post(action([LinkController::class, 'store'], $attributes))
+        ->assertRedirect(route('community.thanks'));
 });
 
 // Helpers
@@ -53,8 +52,8 @@ function it_can_create_a_link()
         'url' => 'https://freek.dev',
     ];
 
-    post(action([CreateLinkController::class, 'store'], $attributes))
-        ->assertRedirect(route('links.thanks'));
+    post(action([LinkController::class, 'store'], $attributes))
+        ->assertRedirect(route('community.thanks'));
 
     $expectedAttributes = array_merge([
         'user_id' => $this->user->id,
