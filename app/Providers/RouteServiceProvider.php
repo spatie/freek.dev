@@ -24,6 +24,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this
             ->mapAuthRoutes()
+            ->mapRedirects()
+            ->mapPackageRoutes()
             ->mapFrontRoutes();
     }
 
@@ -36,10 +38,6 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapFrontRoutes()
     {
-        Route::get('a-test-page', function () {
-            return 'ok';
-        })->middleware(DoNotCacheResponse::class);
-
         Route::middleware(['web', 'cacheResponse'])->group(base_path('routes/web.php'));
 
         return $this;
@@ -68,5 +66,22 @@ class RouteServiceProvider extends ServiceProvider
 
             return $post;
         });
+    }
+
+    protected function mapPackageRoutes(): self
+    {
+        Route::middleware(['web', 'cacheResponse'])->group(function() {
+            Route::feeds('feed');
+            Route::webhooks('webhook-webmentions', 'webmentions');
+        });
+
+        return $this;
+    }
+
+    protected function mapRedirects(): self
+    {
+        Route::middleware(['web', 'cacheResponse'])->group(base_path('routes/redirects.php'));
+
+        return $this;
     }
 }
