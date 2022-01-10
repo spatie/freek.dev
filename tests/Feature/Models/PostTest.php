@@ -18,6 +18,11 @@ it('can find a post by its id slug', function () {
         ->assertSee($this->post->title);
 });
 
+it('can redirects a slug to an id slug', function () {
+    get(action(ShowPostController::class, $this->post->slug))
+        ->assertRedirect(action(ShowPostController::class, $this->post->idSlug()));
+});
+
 it('will return a 404 for an invalid slug', function () {
     get(action(ShowPostController::class, 'invalid'))
         ->assertNotFound();
