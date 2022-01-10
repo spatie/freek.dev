@@ -8,6 +8,7 @@ use App\Http\Controllers\Discovery\MusicController;
 use App\Http\Controllers\Discovery\Newsletter\IndexController as NewsletterIndexController;
 use App\Http\Controllers\Discovery\OriginalsController;
 use App\Http\Controllers\Discovery\SpeakingController;
+use App\Http\Controllers\Discovery\UsesController;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Menu\Laravel\Menu;
 use Spatie\Menu\Link;
@@ -34,7 +35,7 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->addClass('space-y-2')
                 ->url('search', 'Search')
-                ->action(SpeakingController::class, 'My setup')
+                ->action(UsesController::class, 'My setup')
                 ->url('advertising', 'Advertising')
 
                 ->setActiveFromRequest('/');
