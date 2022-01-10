@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discovery\Newsletter;
 
 use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
+use Spatie\RouteDiscovery\Attributes\Route;
 
-class ShowNewsletterController
+class ArchiveController
 {
-    public function __invoke(Campaign $campaign)
+    #[Route(name: 'newsletter.show')]
+    public function index(Campaign $campaign)
     {
         if (! $campaign->isSent()) {
             abort(404);

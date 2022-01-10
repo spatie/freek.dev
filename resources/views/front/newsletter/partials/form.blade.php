@@ -1,5 +1,5 @@
 <form
-    action="{{ action([\App\Http\Controllers\NewsletterSubscriptionController::class, 'subscribe']) }}"
+    action="{{ route('newsletter.subscribe') }}"
     method="post"
     accept-charset="utf-8"
     class="flex flex-col md:flex-row items-stretch {{ $class ?? '' }}"

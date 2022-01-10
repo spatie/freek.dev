@@ -1,13 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discovery\Newsletter;
 
 use App\Http\Requests\SubscribeToNewsletterRequest;
+use Spatie\Honeypot\ProtectAgainstSpam;
 use Spatie\Mailcoach\Domain\Audience\Models\Subscriber;
+use Spatie\RouteDiscovery\Attributes\Route;
 
-class NewsletterSubscriptionController
+class SubscribeController
 {
-    public function subscribe(SubscribeToNewsletterRequest $request)
+    #[Route(method: 'post', middleware: ['doNotCacheResponse', ProtectAgainstSpam::class])]
+    public function __invoke(SubscribeToNewsletterRequest $request)
     {
         $emailList = $request->emailList();
 
@@ -16,15 +19,5 @@ class NewsletterSubscriptionController
             ->subscribeTo($emailList);
 
         return redirect()->action([static::class, 'confirm']);
-    }
-
-    public function confirm()
-    {
-        return view('front.newsletter.confirm');
-    }
-
-    public function confirmed()
-    {
-        return view('front.newsletter.confirmed');
     }
 }

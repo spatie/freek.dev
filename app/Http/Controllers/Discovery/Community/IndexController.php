@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Links;
+namespace App\Http\Controllers\Discovery\Community;
 
 use App\Models\Link;
+use Spatie\RouteDiscovery\Attributes\Route;
+use function view;
 
-class LinksIndexController
+class IndexController
 {
     public function __invoke()
     {

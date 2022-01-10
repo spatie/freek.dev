@@ -24,7 +24,7 @@
                 ({{ Auth::user()->email }})
             </p>
             <div class="flex items-center">
-                <a href="{{ route('links.create') }}" class="mr-4 button button-gray">Submit a link</a>
+                <a href="{{ route('community.link.create') }}" class="mr-4 button button-gray">Submit a link</a>
 
                 <form method="post" action="/logout">
                     @csrf
@@ -37,7 +37,7 @@
                 To be able to submit a link you need to log in first.
             </p>
 
-            <a href="{{ route('links.create') }}" class="button button-gray">Log in</a>
+            <a href="{{ route('community.link.create') }}" class="button button-gray">Log in</a>
         @endguest
     </div>
 

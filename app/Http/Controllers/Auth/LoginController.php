@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Links\LinksIndexController;
+use App\Http\Controllers\Discovery\Community\IndexController;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -16,6 +16,6 @@ class LoginController
             return '/nova';
         }
 
-        return action(LinksIndexController::class);
+        return action(IndexController::class);
     }
 }

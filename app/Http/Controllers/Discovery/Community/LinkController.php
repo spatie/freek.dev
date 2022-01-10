@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Links;
+namespace App\Http\Controllers\Discovery\Community;
 
 use App\Actions\CreateLinkAction;
 use App\Http\Requests\CreateLinkRequest;
+use Spatie\RouteDiscovery\Attributes\Route;
 
-class CreateLinkController
+#[Route(middleware: ['auth', 'doNotCacheResponse'])]
+class LinkController
 {
     public function create()
     {

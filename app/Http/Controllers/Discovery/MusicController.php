@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discovery;
+
+use function view;
 
 class MusicController
 {

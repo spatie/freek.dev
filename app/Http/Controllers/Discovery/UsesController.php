@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Discovery;
 
 use App\Models\Post;
+use function view;
 
-class MySetupController
+class UsesController
 {
     public function __invoke()
     {
