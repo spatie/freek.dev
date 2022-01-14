@@ -18,6 +18,6 @@ class SubscribeController
             ->redirectAfterSubscribed(route('newsletter.confirmed'))
             ->subscribeTo($emailList);
 
-        return redirect()->action(route('newsletter.confirm'));
+        return redirect()->route('newsletter.confirm');
     }
 }
