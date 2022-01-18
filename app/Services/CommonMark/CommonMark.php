@@ -24,7 +24,9 @@ class CommonMark
 
         $htmlString = $markdownRenderer->toHtml($markdown);
 
-        return self::lazyLoadImages($htmlString);
+        return $htmlString;
+
+        // return self::lazyLoadImages($htmlString);
     }
 
     public static function lazyLoadImages($htmlString): string
