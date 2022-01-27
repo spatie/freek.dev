@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "456471e4b9a0dde38605cf3b6efa590a",
+    "content-hash": "3750fc2170ca220af0f422436b55f595",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -8804,6 +8804,172 @@
             "time": "2021-12-10T12:55:45+00:00"
         },
         {
+            "name": "spatie/laravel-comments",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-comments.git",
+                "reference": "a7cbe121129f421513f04c1b1b04b944e4f42a4a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-comments/zipball/a7cbe121129f421513f04c1b1b04b944e4f42a4a",
+                "reference": "a7cbe121129f421513f04c1b1b04b944e4f42a4a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.73",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^5.10",
+                "nunomaduro/larastan": "^1.0",
+                "orchestra/testbench": "^6.22",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-markdown": "^2.1",
+                "spatie/laravel-ray": "^1.26",
+                "spatie/pest-plugin-snapshots": "^1.1"
+            },
+            "suggest": {
+                "spatie/laravel-markdown": "Required to convert markdown to HTML"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Comments\\CommentsServiceProvider"
+                    ],
+                    "aliases": {
+                        "Comments": "Spatie\\Comments\\Facades\\Comments"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Comments\\": "src",
+                    "Spatie\\Comments\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Associate comments and reactions with Eloquent models",
+            "homepage": "https://github.com/spatie/laravel-comments",
+            "keywords": [
+                "laravel",
+                "laravel-comments",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-comments/issues",
+                "source": "https://github.com/spatie/laravel-comments/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-01-26T15:34:10+00:00"
+        },
+        {
+            "name": "spatie/laravel-comments-livewire",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-comments-livewire",
+                "reference": "4db371d5444fe0e45fe417f2cfcca04b8f14a06e"
+            },
+            "require": {
+                "illuminate/contracts": "^8.73",
+                "livewire/livewire": "^2.8",
+                "php": "^8.1",
+                "spatie/laravel-comments": "dev-main",
+                "spatie/laravel-package-tools": "^1.10.0"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^5.10",
+                "nunomaduro/larastan": "^1.0",
+                "orchestra/testbench": "^6.22",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-markdown": "^2.1",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "suggest": {
+                "spatie/laravel-markdown": "Required to convert markdown to HTML"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\LivewireComments\\LivewireCommentsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LivewireComments\\": "src",
+                    "Spatie\\LivewireComments\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\LivewireComments\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "test-coverage": [
+                    "vendor/bin/pest coverage"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Livewire components for laravel-comments",
+            "homepage": "https://github.com/spatie/laravel-comments",
+            "keywords": [
+                "laravel",
+                "laravel-comments",
+                "spatie"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "spatie/laravel-feed",
             "version": "4.1.0",
             "source": {
@@ -16897,7 +17063,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "spatie/laravel-comments-livewire": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

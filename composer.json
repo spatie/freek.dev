@@ -36,6 +36,7 @@
         "spatie/browsershot": "^3.40",
         "spatie/cpu-load-health-check": "^1.0",
         "spatie/laravel-backup": "^7.0",
+        "spatie/laravel-comments-livewire": "dev-main",
         "spatie/laravel-feed": "^4.0.2",
         "spatie/laravel-flash": "^1.7",
         "spatie/laravel-health": "^1.0",
@@ -109,6 +110,10 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-comments-livewire"
         }
     ],
     "minimum-stability": "dev",

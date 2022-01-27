@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
+use Spatie\Comments\Models\Concerns\HasComments;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\MediaLibrary\HasMedia;
@@ -35,6 +36,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
 
     use HasSlug,
         HasTags,
+        HasComments,
         PostPresenter;
 
     public $with = ['tags'];
@@ -307,5 +309,15 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         }
 
         return null;
+    }
+
+    public function commentableName(): string
+    {
+        return $this->title;
+    }
+
+    public function commentUrl(): string
+    {
+        return route('post', $this->idSlug());
     }
 }
