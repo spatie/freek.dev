@@ -15,9 +15,9 @@
   </testsuites>
   <php>
     <env name="APP_ENV" value="testing"/>
-    <server name="BCRYPT_ROUNDS" value="4"/>
+    <env name="BCRYPT_ROUNDS" value="4"/>
     <env name="CACHE_DRIVER" value="array"/>
     <env name="SESSION_DRIVER" value="array"/>
-    <server name="DB_DATABASE" value="freekdev_test"/>
+    <env name="DB_DATABASE" value="freekdev_test"/>
   </php>
 </phpunit>
