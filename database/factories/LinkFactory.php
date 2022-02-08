@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LinkFactory extends Factory
 {
-    protected $model = Link::class;
-
     public function definition()
     {
         $status = $this->faker->randomElement([

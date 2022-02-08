@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WebmentionFactory extends Factory
 {
-    protected $model = Webmention::class;
-
     public function definition()
     {
         $type = $this->faker->randomElement([

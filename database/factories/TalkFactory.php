@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TalkFactory extends Factory
 {
-    protected $model = Talk::class;
-
     public function definition()
     {
         return [

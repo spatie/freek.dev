@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AdFactory extends Factory
 {
-    protected $model = Ad::class;
-
     public function definition()
     {
         $startsAt = now()->addDays(rand(-30, 30));
