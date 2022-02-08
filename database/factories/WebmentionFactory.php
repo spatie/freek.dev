@@ -22,11 +22,11 @@ class WebmentionFactory extends Factory
             'post_id' => Post::factory(),
             'type' => $type,
             'webmention_id' => $this->faker->randomNumber(),
-            'author_name' => $this->faker->name,
-            'author_url' => $this->faker->url,
-            'author_photo_url' => $this->faker->imageUrl,
-            'interaction_url' => $this->faker->url,
-            'text' => $type === Webmention::TYPE_REPLY ? $this->faker->sentence : null,
+            'author_name' => $this->faker->name(),
+            'author_url' => $this->faker->url(),
+            'author_photo_url' => $this->faker->imageUrl(),
+            'interaction_url' => $this->faker->url(),
+            'text' => $type === Webmention::TYPE_REPLY ? $this->faker->sentence() : null,
         ];
     }
 }

@@ -15,7 +15,7 @@ class AdFactory extends Factory
         $endsAt = $startsAt->copy()->addDays(30);
 
         return [
-            'display_on_url' => $this->faker->boolean(50) ? $this->faker->url : '',
+            'display_on_url' => $this->faker->boolean(50) ? $this->faker->url() : '',
             'text' => $this->faker->sentence(),
             'starts_at' => $startsAt->toDateString(),
             'ends_at' => $endsAt->toDateString(),
