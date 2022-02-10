@@ -2,14 +2,15 @@
 
 namespace App\Services\Models;
 
-use Spatie\ModelCleanup\CleanupConfig;
-use Spatie\ModelCleanup\GetsCleanedUp;
+use Illuminate\Database\Eloquent\MassPrunable;
 use Spatie\WebhookClient\Models\WebhookCall  as BaseWebhookCall;
 
-class WebhookCall extends BaseWebhookCall implements GetsCleanedUp
+class WebhookCall extends BaseWebhookCall
 {
-    public function cleanUp(CleanupConfig $config): void
+    use MassPrunable;
+
+    public function prunable()
     {
-        $config->olderThanDays(5);
+        return static::where('created_at', '<=', now()->subDays(5));
     }
 }
