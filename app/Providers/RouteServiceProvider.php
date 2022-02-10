@@ -52,7 +52,7 @@ class RouteServiceProvider extends ServiceProvider
                 abort(404);
             }
 
-            if (optional(auth()->user())->email === 'freek@spatie.be') {
+            if (auth()->user()?->email === 'freek@spatie.be') {
                 return $post;
             }
 

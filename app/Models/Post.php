@@ -302,7 +302,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             return $this->author_twitter_handle;
         }
 
-        if ($userTwitterHandle = optional($this->submittedByUser)->twitter_handle) {
+        if ($userTwitterHandle = $this->submittedByUser?->twitter_handle) {
             return $userTwitterHandle;
         }
 

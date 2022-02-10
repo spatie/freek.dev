@@ -2,48 +2,26 @@
 
 namespace App\Services\CommonMark;
 
-use DOMDocument;
-use DOMXPath;
-use League\CommonMark\Block\Element\Heading;
+use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
+use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
+use League\CommonMark\Extension\CommonMark\Node\Block\IndentedCode;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkRenderer;
+use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
+use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 use Spatie\LaravelMarkdown\MarkdownRenderer;
-use Throwable;
 
 class CommonMark
 {
-    public static function convertToHtml(string $markdown, $highlightCode = false): string
+    public static function convertToHtml(string $markdown, bool $highlightCode = false): string
     {
-        /** @var MarkdownRenderer $markdownRenderer */
-        $markdownRenderer = app(MarkdownRenderer::class);
+        $renderer = app(MarkdownRenderer::class);
 
-        $markdownRenderer
-            ->addBlockRenderer(Heading::class, new HeadingRenderer());
-
-        if (! $highlightCode) {
-            $markdownRenderer->disableHighlighting();
+        if (!$highlightCode) {
+            $renderer->disableHighlighting();
         }
 
-        $htmlString = $markdownRenderer->toHtml($markdown);
-
-        return $htmlString;
-
-        // return self::lazyLoadImages($htmlString);
-    }
-
-    public static function lazyLoadImages($htmlString): string
-    {
-        try {
-            $dom = new DOMDocument;
-            $dom->loadHTML($htmlString ?? '', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-            $xpath = new DOMXPath($dom);
-
-            foreach ($xpath->query("//img") as $node) {
-                $currentLoadingAttribute = $node->getAttribute('loading');
-                $node->setAttribute('loading', ! empty($currentLoadingAttribute) ? $currentLoadingAttribute : 'lazy');
-            }
-
-            return $dom->saveHTML();
-        } catch (Throwable) {
-            return $htmlString;
-        }
+        return $renderer->toHtml($markdown);
     }
 }
