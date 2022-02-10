@@ -29,7 +29,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
         "livewire/livewire": "^2.0",
-        "meilisearch/meilisearch-php": "^0.21",
+        "meilisearch/meilisearch-php": "0.20",
         "ohdearapp/ohdear-php-sdk": "^3.3",
         "predis/predis": "^1.1",
         "spatie/browsershot": "^3.52",
