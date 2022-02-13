@@ -6,7 +6,7 @@ use App\Models\Post;
 use App\Models\Webmention;
 use Illuminate\Support\Arr;
 use Spatie\Url\Url;
-use Spatie\WebhookClient\ProcessWebhookJob as SpatieProcessWebhookJob;
+use Spatie\WebhookClient\Jobs\ProcessWebhookJob as SpatieProcessWebhookJob;
 
 class ProcessWebhookJob extends SpatieProcessWebhookJob
 {
