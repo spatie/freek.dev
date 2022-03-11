@@ -5,7 +5,7 @@ use Spatie\RouteDiscovery\Discovery\Discover;
 Route::get('ray', function() {
     ray('Greetings from the server');
 
-    return 'hello there';
+    return 'hello there2';
 });
 
 Discover::views()->in(resource_path('views/discovery'));
