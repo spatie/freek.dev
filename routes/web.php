@@ -2,11 +2,7 @@
 
 use Spatie\RouteDiscovery\Discovery\Discover;
 
-Route::get('ray', function() {
-    ray('Greetings from the server');
-
-    return 'hello there2';
-});
+Route::redirect('nova', '/nova/resources/posts');
 
 Discover::views()->in(resource_path('views/discovery'));
 Discover::controllers()->in(app_path('Http/Controllers/Discovery'));
