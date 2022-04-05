@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05d617cfe76cac27d5bbff67f1123f7c",
+    "content-hash": "1070d31a00233c2c62f0222fc91dcb44",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -9154,7 +9154,7 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "dev-main",
+            "version": "5.4.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
@@ -9273,7 +9273,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/main",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/5.4.4",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
             "time": "2022-04-04T14:34:06+00:00"
@@ -15832,18 +15832,9 @@
             "time": "2022-01-26T17:23:29+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "spatie/laravel-mailcoach",
-            "version": "dev-main",
-            "alias": "5.4.0",
-            "alias_normalized": "5.4.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-mailcoach": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
