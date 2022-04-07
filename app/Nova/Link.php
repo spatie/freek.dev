@@ -24,7 +24,7 @@ class Link extends Resource
         'text',
     ];
 
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             Text::make('Title')
@@ -52,7 +52,7 @@ class Link extends Resource
                 ->alwaysShow()
                 ->hideFromIndex(),
 
-            DateTime::make('Created at')->format('YYYY-MM-DD HH:mm'),
+            DateTime::make('Created at'),
         ];
     }
 

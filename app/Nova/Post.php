@@ -25,7 +25,7 @@ class Post extends Resource
         'text',
     ];
 
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             new Panel('Post', [

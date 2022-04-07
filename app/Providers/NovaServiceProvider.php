@@ -2,54 +2,52 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use App\Nova\Ad;
+use App\Nova\Dashboards\Main;
 use App\Nova\Link;
 use App\Nova\Post;
 use App\Nova\Tag;
 use App\Nova\Talk;
-use App\Nova\User;
 use App\Nova\Video;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Menu\MenuItem;
+use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
-    protected function routes()
+    public function boot()
     {
-        Nova::routes();
+        parent::boot();
+
+        Nova::mainMenu(function (Request $request) {
+            return [
+                MenuSection::make('Content', [
+                    MenuItem::resource(Post::class),
+                    MenuItem::resource(Ad::class),
+                    MenuItem::resource(Link::class),
+                    MenuItem::resource(Talk::class),
+                    MenuItem::resource(Tag::class),
+                    MenuItem::resource(Video::class),
+                ])->icon('document-text'),
+
+                MenuItem::resource(\App\Nova\User::class),
+            ];
+        });
     }
 
     protected function gate()
     {
-        Gate::define('viewNova', function (\App\Models\User $user) {
-            return $user->admin;
-        });
+        Gate::define('viewNova', fn(User $user) => $user->admin);
     }
 
-    protected function cards()
+    protected function dashboards()
     {
         return [
-
+            new Main(),
         ];
-    }
-
-    public function tools()
-    {
-        return [
-        ];
-    }
-
-    protected function resources()
-    {
-        Nova::resources([
-            Post::class,
-            Link::class,
-            Talk::class,
-            Video::class,
-            Ad::class,
-            Tag::class,
-            User::class,
-        ]);
     }
 }

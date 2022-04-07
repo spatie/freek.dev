@@ -22,7 +22,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.0",
         "laravel/horizon": "^5.8",
-        "laravel/nova": "^3.19",
+        "laravel/nova": "^4.0",
         "laravel/sail": "^1.13",
         "laravel/sanctum": "^2.14",
         "laravel/slack-notification-channel": "^2.4",
@@ -57,7 +57,7 @@
         "spatie/laravel-tags": "^4.3",
         "spatie/laravel-tail": "^4.4",
         "spatie/laravel-webhook-client": "^3.1",
-        "spatie/nova-tags-field": "^3.4",
+        "spatie/nova-tags-field": "^4.0",
         "spatie/pest-plugin-test-time": "^1.0",
         "spatie/ray": "^1.33",
         "stripe/stripe-php": "^7.113"

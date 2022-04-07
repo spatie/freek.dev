@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Spatie\Tags\Tag as TagModel;
 
 class Tag extends Resource
@@ -16,7 +17,7 @@ class Tag extends Resource
         'name',
     ];
 
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             Text::make('Name')->sortable(),

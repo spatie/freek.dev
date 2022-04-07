@@ -11,6 +11,7 @@ use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ApproveLink extends Action
 {
@@ -29,7 +30,7 @@ class ApproveLink extends Action
         return Action::message('The link was approved!');
     }
 
-    public function fields()
+    public function fields(NovaRequest $request)
     {
         return [
             Boolean::make('Also create post'),

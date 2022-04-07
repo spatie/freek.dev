@@ -6,6 +6,7 @@ use App\Models\Talk as TalkModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Talk extends Resource
 {
@@ -15,7 +16,7 @@ class Talk extends Resource
 
     public static $search = ['title', 'location'];
 
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             Text::make('Title')
