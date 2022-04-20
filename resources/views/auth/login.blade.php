@@ -22,10 +22,10 @@
                 </label>
             </div>
 
-            <div class="mt-4">
+            <div class="mt-4 flex space-x-4 items-center">
                 <x-submit-button label="Login"/>
 
-                <span class="text-xs text-gray-700">
+                <div class="ml-4 text-xs text-gray-700">
                     <a href="{{ route('password.request') }}">
                         Forgot your password?
                     </a>
@@ -33,7 +33,7 @@
                     <a href="{{ route('register') }}">
                         No account yet?
                     </a>
-                </span>
+                </div>
             </div>
         </form>
     </div>

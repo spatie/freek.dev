@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use App\Nova\Ad;
+use App\Nova\Comment;
 use App\Nova\Dashboards\Main;
 use App\Nova\Link;
 use App\Nova\Post;
@@ -27,6 +28,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return [
                 MenuSection::make('Content', [
                     MenuItem::resource(Post::class),
+                    MenuItem::resource(Comment::class),
                     MenuItem::resource(Ad::class),
                     MenuItem::resource(Link::class),
                     MenuItem::resource(Talk::class),

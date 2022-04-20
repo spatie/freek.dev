@@ -78,8 +78,8 @@ return [
          */
         'mail' => [
             'from' => [
-                'address' => 'info@spatie.be',
-                'name' => 'Spatie',
+                'address' => 'freek@spatie.be',
+                'name' => 'freek.dev',
             ],
         ],
     ],
