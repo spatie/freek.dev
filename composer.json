@@ -36,6 +36,8 @@
         "spatie/commonmark-highlighter": "^3.0",
         "spatie/cpu-load-health-check": "^1.0",
         "spatie/laravel-backup": "^8.0",
+        "spatie/laravel-comments": "dev-main",
+        "spatie/laravel-comments-livewire": "dev-main",
         "spatie/laravel-feed": "^4.1",
         "spatie/laravel-flash": "^1.9",
         "spatie/laravel-health": "^1.8",

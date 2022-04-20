@@ -10,6 +10,7 @@ use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -17,6 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
+use Spatie\Comments\Models\Concerns\HasComments;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\MediaLibrary\HasMedia;
@@ -27,15 +29,16 @@ use Spatie\Tags\Tag;
 
 class Post extends Model implements Feedable, Sluggable, HasMedia
 {
-    use HasFactory, InteractsWithMedia;
-
     public const TYPE_LINK = 'link';
     public const TYPE_TWEET = 'tweet';
     public const TYPE_ORIGINAL = 'originalPost';
 
     use HasSlug,
         HasTags,
-        PostPresenter;
+        PostPresenter,
+        HasFactory,
+        HasComments,
+        InteractsWithMedia;
 
     public $with = ['tags'];
 
@@ -179,23 +182,31 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             ->authorEmail('freek@spatie.be');
     }
 
-    public function getUrlAttribute(): string
+    public function url(): Attribute
     {
-        return route('post', [$this->idSlug()]);
+        return new Attribute(function() {
+            return route('post', [$this->idSlug()]);
+        });
     }
 
-    public function getPreviewUrlAttribute(): string
+    public function previewUrl(): Attribute
     {
-        return route('post', [$this->idSlug()]) . "?preview_secret={$this->preview_secret}";
+        return new Attribute(function() {
+            return route('post', [$this->idSlug()]) . "?preview_secret={$this->preview_secret}";
+        });
     }
 
-    public function getPromotionalUrlAttribute(): string
+    public function promotionalUrl(): Attribute
     {
-        if (! empty($this->external_url)) {
-            return $this->external_url;
-        }
+        return new Attribute(function() {
+            if (! empty($this->external_url)) {
+                return $this->external_url;
+            }
 
-        return $this->url;
+            return $this->url;
+        });
+
+
     }
 
     public function hasTag(string $tagName): bool
@@ -307,5 +318,15 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         }
 
         return null;
+    }
+
+    public function commentableName(): string
+    {
+        return $this->title;
+    }
+
+    public function commentUrl(): string
+    {
+        return $this->url;
     }
 }

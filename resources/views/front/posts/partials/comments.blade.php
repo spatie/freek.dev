@@ -1,13 +1,3 @@
-{{--
-@if (! $post->tweet_url)
-    <div class="mb-8">
-        <x-lazy>
-            @include('front.posts.partials.disqus')
-        </x-lazy>
-    </div>
-@endif
---}}
-
 <div class="markup mb-8">
     <h2 id="comments">
         Comments
@@ -15,12 +5,20 @@
     </h2>
 </div>
 
-<script src="https://utteranc.es/client.js"
-        repo="freekmurze/freek-dev-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+@php
+    $noCommentsText = 'What are your thoughts on "' . $post->title . '"?'
+@endphp
+
+@guest
+    <livewire:comments read-only :no-comments-text="$noCommentsText" :model="$post"/>
+
+    <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-gray-200 text-sm text-gray-700">
+        Want to join the conversation? <a class="underline" href="{{ route('login') }}">Log in</a> or <a class="underline" href="{{ route('register') }}">create an account</a> to post a comment.
+    </div>
+@endguest
+
+@auth
+<livewire:comments :no-comments-text="$noCommentsText" :model="$post"/>
+@endauth
 
 @include('front.posts.partials.webmentions')

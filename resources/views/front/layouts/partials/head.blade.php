@@ -24,5 +24,8 @@
 <link href="https://twitter.com/freekmurze" rel="me">
 <link rel="webmention" href="https://webmention.io/freek.dev/webmention" />
 <link rel="pingback" href="https://webmention.io/freek.dev/xmlrpc" />
-<livewire:styles />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
+<livewire:styles />
+<x-comments::styles />

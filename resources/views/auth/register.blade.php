@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="mt-4">
-                    <x-submit-button label="register"/>
+                    <x-submit-button label="Register"/>
                 </div>
             </form>
         </div>
