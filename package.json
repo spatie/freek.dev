@@ -27,7 +27,6 @@
     }
   },
   "dependencies": {
-    "alpinejs": "^2.8.1",
     "shiki": "^0.9.5"
   }
 }
