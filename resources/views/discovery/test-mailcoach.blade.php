@@ -3,7 +3,7 @@
 <form method="POST" action="https://php-foundation-mailcoach.com/subscribe/9be4e2bd-f9d8-475c-b00e-2dcc4cf90056">
     <div>
         <label for="email">Email</label>
-        <input name="email">
+        <input type="email" name="email">
     </div>
     <div>
         <button type="submit">Subscribe</button>
