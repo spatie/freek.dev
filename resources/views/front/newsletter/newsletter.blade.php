@@ -16,7 +16,7 @@
         <header class="w-full mb-4 p-4 sm:p-6 md:px-8 md:py-7 bg-yellow-50 border-b-2 border-yellow-500 text-xs text-gray-700">
             <div class="max-w-lg mx-auto space-y-2">
                 <p>
-                    Every two weeks I send out a newsletter like this one, containing lots of interesting stuff for the modern
+                    Every month I send out a newsletter like this one, containing lots of interesting stuff for the modern
                     PHP
                     developer.
                 </p>

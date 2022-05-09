@@ -6,7 +6,7 @@
         <a href="https://twitter.com/freekmurze">Follow me on Twitter</a>. I regularly tweet out programming tips, and what I myself have learned in ongoing projects.
     </p>
     <p class="mb-2">
-        Every two weeks I send out a newsletter containing lots of interesting stuff for the modern PHP developer.
+        Every month I send out a newsletter containing lots of interesting stuff for the modern PHP developer.
     </p>
     <p class="mb-3">
         Expect quick tips & tricks, interesting tutorials, opinions and packages. Because I work with Laravel every day there is an emphasis on that framework.

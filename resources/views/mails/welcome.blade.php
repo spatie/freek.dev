@@ -1,7 +1,7 @@
 @component('mail::message')
 Hi,
 
-Welcome to the freek.dev newsletter.  Every two weeks you can expect some nice links to cool stuff on Laravel, PHP and JavaScript in your mailbox.
+Welcome to the freek.dev newsletter.  Every month you can expect some nice links to cool stuff on Laravel, PHP and JavaScript in your mailbox.
 
 To thank you for subscribing I'd like to offer you a coupon which grants you a discount when purchasing one of these products of mine:
 

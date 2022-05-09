@@ -25,7 +25,7 @@
                         <input class="form-checkbox" type="checkbox" name="newsletter"
                                id="newsletter" {{ old('newsletter') ? 'checked' : '' }}>
 
-                        <span class="text-sm ml-2">Subscribe me to <a href="/newsletter">the freek.dev newsletter</a>, a newsletter published once every two weeks with useful links on PHP, Laravel and JavaScript</span>
+                        <span class="text-sm ml-2">Subscribe me to <a href="/newsletter">the freek.dev newsletter</a>, a newsletter published once a month with useful links on PHP, Laravel and JavaScript</span>
                     </label>
                 </div>
 

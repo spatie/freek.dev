@@ -26,12 +26,8 @@
         </p>
         <h2>The newsletter</h2>
         <p>
-            The freek.dev newsletter is sent out every two weeks to an audience of PHP developers with a heavy interest
+            The freek.dev newsletter is sent out every month to an audience of PHP developers with a heavy interest
             in Laravel, JavaScript and devops.
-        </p>
-        <p>
-            An advertisement will run for an entire month (but keep in mind that the newsletter is only sent out once
-            every two weeks).
         </p>
         <p>
             An advertisement consists of a title, a link that goes behind it, and a short description of one or two
