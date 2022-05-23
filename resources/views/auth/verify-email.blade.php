@@ -10,7 +10,7 @@
     <div class="mt-4">
         <form method="POST" action="{{ route('verification.resend') }}">
             @csrf
-            <x-submit-button label="Resend verification email"/>
+            <x-submit-button label="Send verification email"/>
         </form>
     </div>
 </x-app-layout>
