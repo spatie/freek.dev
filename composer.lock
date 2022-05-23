@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf41376a6f593ee0fa61528fe0c4b82f",
+    "content-hash": "e20b8b481627b8ac10cd56d9abc82e14",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -8860,10 +8860,16 @@
         {
             "name": "spatie/laravel-comments-livewire",
             "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-comments-livewire",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-comments-livewire.git",
                 "reference": "278b675dd638cf5f654ba8923ec8431bf3efef26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments-livewire/spatie-laravel-comments-livewire-278b675dd638cf5f654ba8923ec8431bf3efef26-zip-c2e7b9.zip",
+                "reference": "278b675dd638cf5f654ba8923ec8431bf3efef26",
+                "shasum": "5e6732af3e0a84cbcad6058cd2cfd809af63db4a"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -8935,9 +8941,16 @@
                 "laravel-comments",
                 "spatie"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/spatie/laravel-comments-livewire/tree/main"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/spatie"
+                }
+            ],
+            "time": "2022-05-18T09:12:38+00:00"
         },
         {
             "name": "spatie/laravel-feed",
