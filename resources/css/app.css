@@ -9,11 +9,9 @@
 @import './components/markup.css';
 @import './components/mobile-menu.css';
 @import './components/pagination.css';
-
 @import './utilties.css';
+@import './components/forms.css';
 
 @tailwind base
 @tailwind components;
 @tailwind utilities;
-
-@import './components/forms.css';
