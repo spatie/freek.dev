@@ -6,7 +6,7 @@ use App\Actions\CreateLinkAction;
 use App\Http\Requests\CreateLinkRequest;
 use Spatie\RouteDiscovery\Attributes\Route;
 
-#[Route(middleware: ['auth', 'doNotCacheResponse'])]
+#[Route(middleware: ['auth', 'verified', 'doNotCacheResponse'])]
 class LinkController
 {
     public function create()

@@ -3,8 +3,11 @@
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResendVerificationMailController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::middleware(['guest', 'doNotCacheResponse'])->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -18,6 +21,18 @@ Route::middleware(['guest', 'doNotCacheResponse'])->group(function () {
     Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
     Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 });
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::post('email/verify/send-link-again', ResendVerificationMailController::class)->name('verification.resend');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return view('auth.verified');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 

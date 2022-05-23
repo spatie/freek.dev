@@ -18,7 +18,15 @@
 @endguest
 
 @auth
+    @if (auth()->user()->hasVerifiedEmail())
 <livewire:comments :no-comments-text="$noCommentsText" :model="$post"/>
+        @else
+        <livewire:comments read-only :no-comments-text="$noCommentsText" :model="$post"/>
+
+        <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-gray-200 text-sm text-gray-700">
+            Want to join the conversation? <a class="underline" href="{{ route('verification.notice') }}">Verify your email address</a> to post a comment.
+        </div>
+        @endif
 @endauth
 
 @include('front.posts.partials.webmentions')
