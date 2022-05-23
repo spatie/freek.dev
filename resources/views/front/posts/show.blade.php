@@ -21,7 +21,6 @@
     ])
 
     <div class="mb-8">
-
         @include('front.posts.partials.comments')
     </div>
 

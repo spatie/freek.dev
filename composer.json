@@ -104,6 +104,14 @@
     },
     "repositories": [
         {
+            "type": "path",
+            "url": "../laravel-comments"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-comments-livewire"
+        },
+        {
             "type": "composer",
             "url": "https://satis.spatie.be"
         },
