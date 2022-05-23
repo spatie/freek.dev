@@ -33,7 +33,7 @@ return [
      * Comments need to be approved before they are shown. You can opt
      * to have all comments to be approved automatically.
      */
-    'automatically_approve_all_comments' => true,
+    'automatically_approve_all_comments' => false,
 
     'models' => [
         /*
