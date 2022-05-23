@@ -51,6 +51,8 @@ class RegisterController
         ]);
 
         $user->sendEmailVerificationNotification();
+
+        return $user;
     }
 
     public function redirectPath()
