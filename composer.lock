@@ -565,16 +565,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.3.1",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b"
+                "reference": "fd5dd441932a7e10ca6e5b490e272d34c8430640"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b",
-                "reference": "4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/fd5dd441932a7e10ca6e5b490e272d34c8430640",
+                "reference": "fd5dd441932a7e10ca6e5b490e272d34c8430640",
                 "shasum": ""
             },
             "require": {
@@ -621,7 +621,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.3.1"
+                "source": "https://github.com/composer/ca-bundle/tree/1.3.2"
             },
             "funding": [
                 {
@@ -637,7 +637,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-28T20:44:15+00:00"
+            "time": "2022-05-24T11:56:16+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2082,16 +2082,16 @@
         },
         {
             "name": "inertiajs/inertia-laravel",
-            "version": "v0.6.0",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inertiajs/inertia-laravel.git",
-                "reference": "ea8f8a5a377cfdc567820b6afd50767f1794c3df"
+                "reference": "a232be0c66de6552314e32effaf78b3dd16a20b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/ea8f8a5a377cfdc567820b6afd50767f1794c3df",
-                "reference": "ea8f8a5a377cfdc567820b6afd50767f1794c3df",
+                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/a232be0c66de6552314e32effaf78b3dd16a20b0",
+                "reference": "a232be0c66de6552314e32effaf78b3dd16a20b0",
                 "shasum": ""
             },
             "require": {
@@ -2139,7 +2139,7 @@
             ],
             "support": {
                 "issues": "https://github.com/inertiajs/inertia-laravel/issues",
-                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.0"
+                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.1"
             },
             "funding": [
                 {
@@ -2147,7 +2147,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-10T11:02:47+00:00"
+            "time": "2022-05-24T13:08:48+00:00"
         },
         {
             "name": "intervention/image",
@@ -2235,16 +2235,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.13.0",
+            "version": "v9.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb"
+                "reference": "5356f15d008c1b23088ccf21a5fb4aa2f87af034"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb",
-                "reference": "87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5356f15d008c1b23088ccf21a5fb4aa2f87af034",
+                "reference": "5356f15d008c1b23088ccf21a5fb4aa2f87af034",
                 "shasum": ""
             },
             "require": {
@@ -2410,7 +2410,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-05-17T14:07:43+00:00"
+            "time": "2022-05-24T14:03:46+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2600,16 +2600,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.14.6",
+            "version": "v1.14.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "f00f3a8f83e71436d473cda7700ae7b4b68d26cc"
+                "reference": "c049316f9bcb02598607307f18b514b66202b639"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/f00f3a8f83e71436d473cda7700ae7b4b68d26cc",
-                "reference": "f00f3a8f83e71436d473cda7700ae7b4b68d26cc",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/c049316f9bcb02598607307f18b514b66202b639",
+                "reference": "c049316f9bcb02598607307f18b514b66202b639",
                 "shasum": ""
             },
             "require": {
@@ -2656,7 +2656,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-05-18T15:56:59+00:00"
+            "time": "2022-05-21T17:14:14+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -2913,16 +2913,16 @@
         },
         {
             "name": "laravel/ui",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/ui.git",
-                "reference": "f11d295de1508c5bb56206a620b00b6616de414c"
+                "reference": "65ec5c03f7fee2c8ecae785795b829a15be48c2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/f11d295de1508c5bb56206a620b00b6616de414c",
-                "reference": "f11d295de1508c5bb56206a620b00b6616de414c",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/65ec5c03f7fee2c8ecae785795b829a15be48c2c",
+                "reference": "65ec5c03f7fee2c8ecae785795b829a15be48c2c",
                 "shasum": ""
             },
             "require": {
@@ -2968,9 +2968,9 @@
                 "ui"
             ],
             "support": {
-                "source": "https://github.com/laravel/ui/tree/v3.4.5"
+                "source": "https://github.com/laravel/ui/tree/v3.4.6"
             },
-            "time": "2022-02-21T14:59:16+00:00"
+            "time": "2022-05-20T13:38:08+00:00"
         },
         {
             "name": "league/commonmark",
@@ -8817,13 +8817,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments.git",
-                "reference": "0887ebb79beb5183446020dfca5f65a740e5bec7"
+                "reference": "32e1e330c2d3e3d0896d88b67731df164760754d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-0887ebb79beb5183446020dfca5f65a740e5bec7-zip-e188ea.zip",
-                "reference": "0887ebb79beb5183446020dfca5f65a740e5bec7",
-                "shasum": "49fffa15982fcf8968b8195fee7919d4fed320a5"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-32e1e330c2d3e3d0896d88b67731df164760754d-zip-2bb978.zip",
+                "reference": "32e1e330c2d3e3d0896d88b67731df164760754d",
+                "shasum": "dc7b47537116e7947f6a7e392719b42b1e8bfaae"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -8908,7 +8908,7 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-05-16T21:19:35+00:00"
+            "time": "2022-05-24T15:05:18+00:00"
         },
         {
             "name": "spatie/laravel-comments-livewire",
@@ -8916,13 +8916,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments-livewire.git",
-                "reference": "278b675dd638cf5f654ba8923ec8431bf3efef26"
+                "reference": "34ea7884d5413443ed7008caf39287148037c10c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments-livewire/spatie-laravel-comments-livewire-278b675dd638cf5f654ba8923ec8431bf3efef26-zip-c2e7b9.zip",
-                "reference": "278b675dd638cf5f654ba8923ec8431bf3efef26",
-                "shasum": "5e6732af3e0a84cbcad6058cd2cfd809af63db4a"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments-livewire/spatie-laravel-comments-livewire-34ea7884d5413443ed7008caf39287148037c10c-zip-6ae14d.zip",
+                "reference": "34ea7884d5413443ed7008caf39287148037c10c",
+                "shasum": "acffc2a539bdc4d6a5d55121bc6ec3516539ebeb"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -9003,7 +9003,7 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-05-18T09:12:38+00:00"
+            "time": "2022-05-24T15:29:55+00:00"
         },
         {
             "name": "spatie/laravel-feed",
@@ -9252,16 +9252,16 @@
         },
         {
             "name": "spatie/laravel-honeypot",
-            "version": "4.2.3",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-honeypot.git",
-                "reference": "5a34166af6d96578f58eee07adf69a67086a76fc"
+                "reference": "f29e3cd612699a2a3a2912da3f638ee987a3d31d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-honeypot/zipball/5a34166af6d96578f58eee07adf69a67086a76fc",
-                "reference": "5a34166af6d96578f58eee07adf69a67086a76fc",
+                "url": "https://api.github.com/repos/spatie/laravel-honeypot/zipball/f29e3cd612699a2a3a2912da3f638ee987a3d31d",
+                "reference": "f29e3cd612699a2a3a2912da3f638ee987a3d31d",
                 "shasum": ""
             },
             "require": {
@@ -9276,6 +9276,7 @@
                 "symfony/http-foundation": "^5.1.2|^6.0"
             },
             "require-dev": {
+                "livewire/livewire": "^2.10",
                 "orchestra/testbench": "^6.23|^7.0",
                 "phpunit/phpunit": "^9.4",
                 "spatie/phpunit-snapshot-assertions": "^4.2",
@@ -9313,7 +9314,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-honeypot/tree/4.2.3"
+                "source": "https://github.com/spatie/laravel-honeypot/tree/4.3.0"
             },
             "funding": [
                 {
@@ -9321,7 +9322,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-05-12T12:13:23+00:00"
+            "time": "2022-05-21T11:49:59+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
