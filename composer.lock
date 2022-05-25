@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf4d13c34ac94fd9a7cc49ba09e2b6b8",
+    "content-hash": "5b5b5af74385d8514258419ed4e43841",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -2082,16 +2082,16 @@
         },
         {
             "name": "inertiajs/inertia-laravel",
-            "version": "v0.6.1",
+            "version": "v0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inertiajs/inertia-laravel.git",
-                "reference": "a232be0c66de6552314e32effaf78b3dd16a20b0"
+                "reference": "75859fb1586c3d37ed8705500b5f43e87eee3cb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/a232be0c66de6552314e32effaf78b3dd16a20b0",
-                "reference": "a232be0c66de6552314e32effaf78b3dd16a20b0",
+                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/75859fb1586c3d37ed8705500b5f43e87eee3cb2",
+                "reference": "75859fb1586c3d37ed8705500b5f43e87eee3cb2",
                 "shasum": ""
             },
             "require": {
@@ -2139,7 +2139,7 @@
             ],
             "support": {
                 "issues": "https://github.com/inertiajs/inertia-laravel/issues",
-                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.1"
+                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.2"
             },
             "funding": [
                 {
@@ -2147,7 +2147,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-24T13:08:48+00:00"
+            "time": "2022-05-25T02:00:06+00:00"
         },
         {
             "name": "intervention/image",
@@ -4900,16 +4900,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.14.1",
+            "version": "1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "de90ab2b41d7d61609f504e031339776bc8c7223"
+                "reference": "c8d48852fbc052454af42f6de27635ddd916b959"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/de90ab2b41d7d61609f504e031339776bc8c7223",
-                "reference": "de90ab2b41d7d61609f504e031339776bc8c7223",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/c8d48852fbc052454af42f6de27635ddd916b959",
+                "reference": "c8d48852fbc052454af42f6de27635ddd916b959",
                 "shasum": ""
             },
             "require": {
@@ -4922,8 +4922,7 @@
                 "graham-campbell/phpspec-skip-example-extension": "^5.0",
                 "php-http/httplug": "^1.0 || ^2.0",
                 "php-http/message-factory": "^1.0",
-                "phpspec/phpspec": "^5.1 || ^6.1",
-                "puli/composer-plugin": "1.0.0-beta10"
+                "phpspec/phpspec": "^5.1 || ^6.1"
             },
             "suggest": {
                 "php-http/message": "Allow to use Guzzle, Diactoros or Slim Framework factories"
@@ -4962,9 +4961,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/discovery/issues",
-                "source": "https://github.com/php-http/discovery/tree/1.14.1"
+                "source": "https://github.com/php-http/discovery/tree/1.14.2"
             },
-            "time": "2021-09-18T07:57:46+00:00"
+            "time": "2022-05-25T07:26:05+00:00"
         },
         {
             "name": "php-http/httplug",
@@ -8813,17 +8812,17 @@
         },
         {
             "name": "spatie/laravel-comments",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments.git",
-                "reference": "32e1e330c2d3e3d0896d88b67731df164760754d"
+                "reference": "ddd47d9c6ecf362cd3a0646afff5de562ab207c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-32e1e330c2d3e3d0896d88b67731df164760754d-zip-2bb978.zip",
-                "reference": "32e1e330c2d3e3d0896d88b67731df164760754d",
-                "shasum": "dc7b47537116e7947f6a7e392719b42b1e8bfaae"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-ddd47d9c6ecf362cd3a0646afff5de562ab207c4-zip-9db794.zip",
+                "reference": "ddd47d9c6ecf362cd3a0646afff5de562ab207c4",
+                "shasum": "5e2a56bd83f03d786b01c80c0b27c02968383a59"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -8899,7 +8898,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-comments/tree/main",
+                "source": "https://github.com/spatie/laravel-comments/tree/1.0.0",
                 "issues": "https://github.com/spatie/laravel-comments/issues"
             },
             "funding": [
@@ -8908,27 +8907,27 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-05-24T15:05:18+00:00"
+            "time": "2022-05-25T09:42:19+00:00"
         },
         {
             "name": "spatie/laravel-comments-livewire",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments-livewire.git",
-                "reference": "6afb3e1cd628e19f2564e72063e75d9e04b68449"
+                "reference": "a7e3d3e8b07a32e029cbfa28bdfb3ec974d95fbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments-livewire/spatie-laravel-comments-livewire-6afb3e1cd628e19f2564e72063e75d9e04b68449-zip-740022.zip",
-                "reference": "6afb3e1cd628e19f2564e72063e75d9e04b68449",
-                "shasum": "6797226340427bdc913dc0ab3107d20c3696c8fe"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments-livewire/spatie-laravel-comments-livewire-a7e3d3e8b07a32e029cbfa28bdfb3ec974d95fbe-zip-7ca8c4.zip",
+                "reference": "a7e3d3e8b07a32e029cbfa28bdfb3ec974d95fbe",
+                "shasum": "33a37b2492aa4b5d7cb9d56528e9b22f8282cf6a"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
                 "livewire/livewire": "^2.8",
                 "php": "^8.1",
-                "spatie/laravel-comments": "dev-main",
+                "spatie/laravel-comments": "^1.0",
                 "spatie/laravel-package-tools": "^1.10.0"
             },
             "require-dev": {
@@ -8995,7 +8994,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-comments-livewire/tree/main"
+                "source": "https://github.com/spatie/laravel-comments-livewire/tree/1.0.0"
             },
             "funding": [
                 {
@@ -9003,7 +9002,7 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-05-24T18:56:02+00:00"
+            "time": "2022-05-25T09:54:10+00:00"
         },
         {
             "name": "spatie/laravel-feed",
@@ -16605,10 +16604,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-comments": 20,
-        "spatie/laravel-comments-livewire": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
