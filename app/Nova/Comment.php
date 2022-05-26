@@ -41,7 +41,7 @@ class Comment extends Resource
 
             Text::make('status', function(CommentModel $comment) {
                  if ($comment->isApproved()) {
-                     return "<div>Approved</div>";
+                     return "<div class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800'>Approved</div>";
                  }
 
                  return "<div class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800'>Pending</div>";
