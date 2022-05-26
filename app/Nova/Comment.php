@@ -25,7 +25,7 @@ class Comment extends Resource
             })->readonly(),
 
             MorphTo::make('Commentator')->types([
-                \App\Nova\User::class,
+                User::class,
             ]),
 
             Markdown::make('Original text'),
@@ -35,8 +35,16 @@ class Comment extends Resource
                     return '';
                 }
 
-                return "<a target=\"comment_preview\" href=\"{$url}\">Show</a>";
+                return "<a target=\"show_comment\" href=\"{$url}\">Show</a>";
 
+            })->asHtml(),
+
+            Text::make('status', function(CommentModel $comment) {
+                 if ($comment->isApproved()) {
+                     return "<div>Approved</div>";
+                 }
+
+                 return "<div class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800'>Pending</div>";
             })->asHtml(),
 
             DateTime::make('Created at'),
