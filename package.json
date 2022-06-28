@@ -1,11 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "mix",
-    "watch": "mix watch",
-    "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "production": "mix --production",
+    "dev": "vite",
+    "build": "vite build",
     "format": "prettier 'resources/**/*.{css,js,json,css,ts,tsx}' '*.{js,css}' --write"
   },
   "devDependencies": {
@@ -14,7 +11,6 @@
     "chokidar": "^3.4.3",
     "cross-env": "^7.0.2",
     "husky": "^4.3.0",
-    "laravel-mix": "^6.0.0-beta.17",
     "lint-staged": "^10.4.0",
     "postcss": "^8.4.4",
     "prettier": "^2.1.2",
@@ -27,6 +23,8 @@
     }
   },
   "dependencies": {
-    "shiki": "^0.9.5"
+    "laravel-vite-plugin": "^0.2.3",
+    "shiki": "^0.9.5",
+    "vite": "^2.9.13"
   }
 }
