@@ -18,7 +18,7 @@ if (fs.existsSync(keyPath) && fs.existsSync(certPath)) {
             cert: fs.readFileSync(certPath),
         },
         hmr: {host},
-        host: host,
+        host,
     }
 }
 
