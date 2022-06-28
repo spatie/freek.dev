@@ -1,8 +1,8 @@
 import fs from 'fs';
 import laravel from 'laravel-vite-plugin'
 import {defineConfig} from 'vite'
-import {homedir} from 'os';
-import {resolve} from 'path';
+import {homedir} from 'os'
+import {resolve} from 'path'
 
 let host = 'freek.dev.test'
 
