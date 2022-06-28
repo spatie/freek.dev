@@ -24,7 +24,7 @@ function detectServerConfig(host) {
     }
 
     if (!fs.existsSync(certPath)) {
-        return;
+        return {}
     }
 
     return {
