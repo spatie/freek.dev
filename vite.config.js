@@ -23,10 +23,10 @@ if (fs.existsSync(keyPath) && fs.existsSync(certPath)) {
 }
 
 export default defineConfig({
-    server: serverConfig,
     plugins: [
         laravel([
             'resources/js/app.js',
         ]),
     ],
+    server: serverConfig,
 })
