@@ -6,17 +6,17 @@ import { homedir } from 'os';
 
 let host = 'freek.dev.test'
 let homeDirectory = homedir();
+let key = fs.readFileSync(resolve(homeDirectory, `.config/valet/Certificates/${host}.key`))
+let cert = fs.readFileSync(resolve(homeDirectory, `.config/valet/Certificates/${host}.crt`))
 
-serverConfig = {
-    https: {
-        key: fs.readFileSync(resolve(homeDirectory, `.config/valet/Certificates/${host}.key`)),
-        cert: fs.readFileSync(resolve(homeDirectory, `.config/valet/Certificates/${host}.crt`)),
-    },
-    hmr: {
+if (fs.existsSync(key) && fs.existsSync(cert)) {
+
+    serverConfig = {
+        https: {key, cert},
+        hmr: {host},
         host: host,
-    },
-    host: host,
-};
+    }
+}
 
 export default defineConfig({
     server: serverConfig,
