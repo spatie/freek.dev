@@ -1,18 +1,22 @@
 import {defineConfig} from 'vite'
 import laravel from 'laravel-vite-plugin'
 import fs from 'fs';
-import { resolve } from 'path';
-import { homedir } from 'os';
+import {resolve} from 'path';
+import {homedir} from 'os';
 
 let host = 'freek.dev.test'
-let homeDirectory = homedir();
-let key = fs.readFileSync(resolve(homeDirectory, `.config/valet/Certificates/${host}.key`))
-let cert = fs.readFileSync(resolve(homeDirectory, `.config/valet/Certificates/${host}.crt`))
 
-if (fs.existsSync(key) && fs.existsSync(cert)) {
+let homeDirectory = homedir()
+let keyPath = resolve(homeDirectory, `.config/valet/Certificates/${host}.key`)
+let certPath = resolve(homeDirectory, `.config/valet/Certificates/${host}.crt`)
+let serverConfig = {}
 
+if (fs.existsSync(keyPath) && fs.existsSync(certPath)) {
     serverConfig = {
-        https: {key, cert},
+        https: {
+            key: fs.readFileSync(keyPath),
+            cert: fs.readFileSync(certPath),
+        },
         hmr: {host},
         host: host,
     }
