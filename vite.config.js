@@ -22,7 +22,6 @@ export default defineConfig({
     server: serverConfig,
     plugins: [
         laravel([
-            'resources/css/app.css',
             'resources/js/app.js',
         ]),
     ],

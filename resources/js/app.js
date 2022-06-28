@@ -1,3 +1,5 @@
+import '../css/app.css';
+
 Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
 
 function lazy(element) {
