@@ -6,10 +6,9 @@ import {resolve} from 'path';
 
 let host = 'freek.dev.test'
 
-let homeDirectory = homedir()
-let keyPath = resolve(homeDirectory, `.config/valet/Certificates/${host}.key`)
-let certPath = resolve(homeDirectory, `.config/valet/Certificates/${host}.crt`)
 let serverConfig = {}
+let keyPath = resolve(homedir(), `.config/valet/Certificates/${host}.key`)
+let certPath = resolve(homedir(), `.config/valet/Certificates/${host}.crt`)
 
 if (fs.existsSync(keyPath) && fs.existsSync(certPath)) {
     serverConfig = {
