@@ -13,12 +13,12 @@ let serverConfig = {}
 
 if (fs.existsSync(keyPath) && fs.existsSync(certPath)) {
     serverConfig = {
+        hmr: {host},
+        host,
         https: {
             key: fs.readFileSync(keyPath),
             cert: fs.readFileSync(certPath),
         },
-        hmr: {host},
-        host,
     }
 }
 
