@@ -2,23 +2,8 @@
     <div class="markup mb-8">
         <h1>Music</h1>
         <p>
-            I love both listening to and creating music. On this page you'll find playlists created by the team at <a href="https://spatie.be">Spatie</a>, and <a href="#kobus">some music of my own</a>.
+            I love both listening to and creating music. On this page you'll find some music that I made.
         </p>
-
-        <h2 id="corporate-melodies">
-            Corporate Melodies
-            <a href="#corporate-melodies" class="permalink">#</a>
-        </h2>
-        <p>
-            Every month, our team at Spatie creates a playlist around a theme.
-
-        </p>
-
-        <ul class="list-none text-gray-700 space-y-4">
-            @foreach($releases['corporateMelodies'] as $release)
-                @include('front.music.partials.release')
-            @endforeach
-        </ul>
 
         <h2 id="kobus">
             Kobus
