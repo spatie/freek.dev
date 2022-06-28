@@ -23,4 +23,5 @@ _ide_helper_models.php
 /storage/temp
 _ide_helper.php
 storage/og-images
+/public/build
 

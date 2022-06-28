@@ -15,10 +15,10 @@
 @include('feed::links')
 @include('front.layouts.partials.seo')
 
-<style>{!! file_get_contents(public_path('css/app.css')) !!}</style>
+@vite(['resources/js/app.js'])
+
 <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
 
-<script src="{{ mix('js/app.js') }}" defer="defer"></script>
 <script src="/scope.js" defer></script>
 
 <link href="https://twitter.com/freekmurze" rel="me">
