@@ -28,13 +28,13 @@ export default defineConfig({
 
 function detectServerConfig(host) {
     let keyPath = resolve(homedir(), `.config/valet/Certificates/${host}.key`)
-    let certPath = resolve(homedir(), `.config/valet/Certificates/${host}.crt`)
+    let certificatePath = resolve(homedir(), `.config/valet/Certificates/${host}.crt`)
 
     if (!fs.existsSync(keyPath)) {
         return {}
     }
 
-    if (!fs.existsSync(certPath)) {
+    if (!fs.existsSync(certificatePath)) {
         return {}
     }
 
@@ -43,7 +43,7 @@ function detectServerConfig(host) {
         host,
         https: {
             key: fs.readFileSync(keyPath),
-            cert: fs.readFileSync(certPath),
+            cert: fs.readFileSync(certificatePath),
         },
     }
 }
