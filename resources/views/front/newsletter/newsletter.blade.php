@@ -27,6 +27,8 @@
             </div>
         </header>
 
+        <div class="p-4">
         <campaign-webview contents="{{ $webview }}"></campaign-webview>
+        </div>
     </body>
 </html>
