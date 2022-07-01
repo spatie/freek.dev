@@ -1,6 +1,6 @@
 <html>
     <head>
-        <style>{!! file_get_contents(public_path('css/app.css')) !!}</style>
+        @vite(['resources/js/app.js'])
         <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
         <title>{{ $campaign->subject }}</title>
         <script>
