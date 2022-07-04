@@ -1,16 +1,12 @@
 @if(app()->environment('production'))
     <script src="https://cdn.usefathom.com/script.js" data-site="FBTOHQOK" defer></script>
 
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-57290920-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GJZL20X1RL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'UA-57290920-1');
+        gtag('config', 'G-GJZL20X1RL');
     </script>
 @endif
