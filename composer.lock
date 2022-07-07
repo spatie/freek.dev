@@ -9059,17 +9059,17 @@
         },
         {
             "name": "spatie/laravel-comments",
-            "version": "1.0.9",
+            "version": "1.0.10",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments.git",
-                "reference": "29bd1cb6f8d68f2a36d2955beb7421448f5389c1"
+                "reference": "f477f9674e15e5bb035da904baad96f16e7688f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-29bd1cb6f8d68f2a36d2955beb7421448f5389c1-zip-198541.zip",
-                "reference": "29bd1cb6f8d68f2a36d2955beb7421448f5389c1",
-                "shasum": "b598e3b919ad8f9bfbaa2e58da8787b697c6e1ec"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-f477f9674e15e5bb035da904baad96f16e7688f6-zip-9c63aa.zip",
+                "reference": "f477f9674e15e5bb035da904baad96f16e7688f6",
+                "shasum": "28503d33b7420b3fb3eef1bc0753c6a99660882a"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -9146,7 +9146,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-comments/tree/1.0.9",
+                "source": "https://github.com/spatie/laravel-comments/tree/1.0.10",
                 "issues": "https://github.com/spatie/laravel-comments/issues"
             },
             "funding": [
@@ -9155,7 +9155,7 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-07-07T17:13:54+00:00"
+            "time": "2022-07-07T17:26:52+00:00"
         },
         {
             "name": "spatie/laravel-comments-livewire",
