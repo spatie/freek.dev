@@ -69,16 +69,16 @@
         },
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "8d78421f831b31868506e429828935c4dd1a0f23"
+                "reference": "aa491a36579d8470c99c15064a79b6b4f83e85e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/8d78421f831b31868506e429828935c4dd1a0f23",
-                "reference": "8d78421f831b31868506e429828935c4dd1a0f23",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/aa491a36579d8470c99c15064a79b6b4f83e85e4",
+                "reference": "aa491a36579d8470c99c15064a79b6b4f83e85e4",
                 "shasum": ""
             },
             "require": {
@@ -137,9 +137,9 @@
             ],
             "support": {
                 "issues": "https://github.com/algolia/algoliasearch-client-php/issues",
-                "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.2.0"
+                "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.3.0"
             },
-            "time": "2022-01-04T15:48:50+00:00"
+            "time": "2022-07-06T14:08:05+00:00"
         },
         {
             "name": "artisansdk/ratelimiter",
@@ -9059,17 +9059,17 @@
         },
         {
             "name": "spatie/laravel-comments",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments.git",
-                "reference": "ce19c89c0fc520f67155187a22e0e87c5f4046a2"
+                "reference": "a07c46d40b4b2ebf5e892b08faf1781e7624f1a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-ce19c89c0fc520f67155187a22e0e87c5f4046a2-zip-760243.zip",
-                "reference": "ce19c89c0fc520f67155187a22e0e87c5f4046a2",
-                "shasum": "374fdd36e42e8b7cd13e9c554a84189a3e58391e"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-a07c46d40b4b2ebf5e892b08faf1781e7624f1a6-zip-eaf05c.zip",
+                "reference": "a07c46d40b4b2ebf5e892b08faf1781e7624f1a6",
+                "shasum": "749e8b4ab4776acfb9d962e8d449d8531de73492"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -9146,7 +9146,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-comments/tree/1.0.7",
+                "source": "https://github.com/spatie/laravel-comments/tree/1.0.8",
                 "issues": "https://github.com/spatie/laravel-comments/issues"
             },
             "funding": [
@@ -9155,7 +9155,7 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-07-03T20:39:31+00:00"
+            "time": "2022-07-07T09:16:28+00:00"
         },
         {
             "name": "spatie/laravel-comments-livewire",
