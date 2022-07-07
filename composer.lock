@@ -6711,16 +6711,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.11.6",
+            "version": "v0.11.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "3f5b5f8aaa979fbd0d1783173f4c82ad529fe621"
+                "reference": "77fc7270031fbc28f9a7bea31385da5c4855cb7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3f5b5f8aaa979fbd0d1783173f4c82ad529fe621",
-                "reference": "3f5b5f8aaa979fbd0d1783173f4c82ad529fe621",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/77fc7270031fbc28f9a7bea31385da5c4855cb7a",
+                "reference": "77fc7270031fbc28f9a7bea31385da5c4855cb7a",
                 "shasum": ""
             },
             "require": {
@@ -6781,9 +6781,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.11.6"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.7"
             },
-            "time": "2022-07-03T16:40:23+00:00"
+            "time": "2022-07-07T13:49:11+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -9059,17 +9059,17 @@
         },
         {
             "name": "spatie/laravel-comments",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments.git",
-                "reference": "a07c46d40b4b2ebf5e892b08faf1781e7624f1a6"
+                "reference": "29bd1cb6f8d68f2a36d2955beb7421448f5389c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-a07c46d40b4b2ebf5e892b08faf1781e7624f1a6-zip-eaf05c.zip",
-                "reference": "a07c46d40b4b2ebf5e892b08faf1781e7624f1a6",
-                "shasum": "749e8b4ab4776acfb9d962e8d449d8531de73492"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-29bd1cb6f8d68f2a36d2955beb7421448f5389c1-zip-198541.zip",
+                "reference": "29bd1cb6f8d68f2a36d2955beb7421448f5389c1",
+                "shasum": "b598e3b919ad8f9bfbaa2e58da8787b697c6e1ec"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -9146,7 +9146,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-comments/tree/1.0.8",
+                "source": "https://github.com/spatie/laravel-comments/tree/1.0.9",
                 "issues": "https://github.com/spatie/laravel-comments/issues"
             },
             "funding": [
@@ -9155,21 +9155,21 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-07-07T09:16:28+00:00"
+            "time": "2022-07-07T17:13:54+00:00"
         },
         {
             "name": "spatie/laravel-comments-livewire",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments-livewire.git",
-                "reference": "0d34c791353063d39abcca82ca42c8e3c35d774b"
+                "reference": "31d06e4a5f8e849a287fa6c6adb7e89c7a38dfd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments-livewire/spatie-laravel-comments-livewire-0d34c791353063d39abcca82ca42c8e3c35d774b-zip-b7c003.zip",
-                "reference": "0d34c791353063d39abcca82ca42c8e3c35d774b",
-                "shasum": "5a7134ab6474ee6b33ba710f74221512fd3f91aa"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments-livewire/spatie-laravel-comments-livewire-31d06e4a5f8e849a287fa6c6adb7e89c7a38dfd3-zip-04db93.zip",
+                "reference": "31d06e4a5f8e849a287fa6c6adb7e89c7a38dfd3",
+                "shasum": "c689c8845372d37d138aacca322fed1b7113adb3"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -9239,7 +9239,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-comments-livewire/tree/1.2.3"
+                "source": "https://github.com/spatie/laravel-comments-livewire/tree/1.2.4"
             },
             "funding": [
                 {
@@ -9247,7 +9247,7 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-06-21T07:34:03+00:00"
+            "time": "2022-07-07T17:01:52+00:00"
         },
         {
             "name": "spatie/laravel-feed",
