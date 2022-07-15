@@ -179,6 +179,7 @@ php artisan cache:clear
 php artisan config:cache
 php artisan route:clear
 php artisan route:cache
+php artisan event:cache
 php artisan responsecache:clear
 php artisan horizon:terminate
 sudo service php8.1-fpm restart

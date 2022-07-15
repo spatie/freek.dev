@@ -2236,16 +2236,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.19.0",
+            "version": "v9.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "bbce25bd823133f6a5a724f2d62680b711f1d0df"
+                "reference": "c99868f1c9bf2f5d250993121838db905591864f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/bbce25bd823133f6a5a724f2d62680b711f1d0df",
-                "reference": "bbce25bd823133f6a5a724f2d62680b711f1d0df",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c99868f1c9bf2f5d250993121838db905591864f",
+                "reference": "c99868f1c9bf2f5d250993121838db905591864f",
                 "shasum": ""
             },
             "require": {
@@ -2411,20 +2411,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-06-28T14:33:19+00:00"
+            "time": "2022-07-13T13:26:22+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.9.8",
+            "version": "v5.9.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "71291b2dc8172f46a8a503aee97b80d9a4139cdf"
+                "reference": "93f5d74e1b6126d0de4416c230cb35aaddbe51bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/71291b2dc8172f46a8a503aee97b80d9a4139cdf",
-                "reference": "71291b2dc8172f46a8a503aee97b80d9a4139cdf",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/93f5d74e1b6126d0de4416c230cb35aaddbe51bc",
+                "reference": "93f5d74e1b6126d0de4416c230cb35aaddbe51bc",
                 "shasum": ""
             },
             "require": {
@@ -2486,23 +2486,23 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.9.8"
+                "source": "https://github.com/laravel/horizon/tree/v5.9.9"
             },
-            "time": "2022-06-08T13:23:36+00:00"
+            "time": "2022-07-11T18:08:25+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "4.11.1",
+            "version": "4.12.6",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "fb662b6a9100f0cd2a490fd09d627dc719b68d90"
+                "reference": "65b9c6e4d8a3c5b4234a2005a42db9c8f83eb4f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-fb662b6a9100f0cd2a490fd09d627dc719b68d90-zip-927456.zip",
-                "reference": "fb662b6a9100f0cd2a490fd09d627dc719b68d90",
-                "shasum": "1c483517592690bbf39bb5708b6e904cf7da6af1"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-65b9c6e4d8a3c5b4234a2005a42db9c8f83eb4f3-zip-39bdd6.zip",
+                "reference": "65b9c6e4d8a3c5b4234a2005a42db9c8f83eb4f3",
+                "shasum": "62a4cc8266a63b3ea4dc5d6b6dc5120ba9548320"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2596,9 +2596,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.11.1"
+                "source": "https://github.com/laravel/nova/tree/v4.12.6"
             },
-            "time": "2022-06-29T19:17:37+00:00"
+            "time": "2022-07-13T15:31:53+00:00"
         },
         {
             "name": "laravel/sail",
@@ -5147,16 +5147,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.14.2",
+            "version": "1.14.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "c8d48852fbc052454af42f6de27635ddd916b959"
+                "reference": "31d8ee46d0215108df16a8527c7438e96a4d7735"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/c8d48852fbc052454af42f6de27635ddd916b959",
-                "reference": "c8d48852fbc052454af42f6de27635ddd916b959",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/31d8ee46d0215108df16a8527c7438e96a4d7735",
+                "reference": "31d8ee46d0215108df16a8527c7438e96a4d7735",
                 "shasum": ""
             },
             "require": {
@@ -5208,9 +5208,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/discovery/issues",
-                "source": "https://github.com/php-http/discovery/tree/1.14.2"
+                "source": "https://github.com/php-http/discovery/tree/1.14.3"
             },
-            "time": "2022-05-25T07:26:05+00:00"
+            "time": "2022-07-11T14:04:40+00:00"
         },
         {
             "name": "php-http/httplug",
@@ -9059,17 +9059,17 @@
         },
         {
             "name": "spatie/laravel-comments",
-            "version": "1.0.10",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments.git",
-                "reference": "f477f9674e15e5bb035da904baad96f16e7688f6"
+                "reference": "7cddb5f7837203ecabcfb438128b7445967c1b2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-f477f9674e15e5bb035da904baad96f16e7688f6-zip-9c63aa.zip",
-                "reference": "f477f9674e15e5bb035da904baad96f16e7688f6",
-                "shasum": "28503d33b7420b3fb3eef1bc0753c6a99660882a"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-7cddb5f7837203ecabcfb438128b7445967c1b2b-zip-1404eb.zip",
+                "reference": "7cddb5f7837203ecabcfb438128b7445967c1b2b",
+                "shasum": "61c41ba29fd29c1c89d69df53692defacb5ebd37"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -9146,7 +9146,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-comments/tree/1.0.10",
+                "source": "https://github.com/spatie/laravel-comments/tree/1.1.0",
                 "issues": "https://github.com/spatie/laravel-comments/issues"
             },
             "funding": [
@@ -9155,7 +9155,7 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-07-07T17:26:52+00:00"
+            "time": "2022-07-14T20:57:57+00:00"
         },
         {
             "name": "spatie/laravel-comments-livewire",
@@ -9404,16 +9404,16 @@
         },
         {
             "name": "spatie/laravel-health",
-            "version": "1.11.1",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "2feeca0bd99a2a774fa1b28b3f5b0bdef150b04b"
+                "reference": "3e239476aba6382c34b1c89b3535b3526c43a23a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/2feeca0bd99a2a774fa1b28b3f5b0bdef150b04b",
-                "reference": "2feeca0bd99a2a774fa1b28b3f5b0bdef150b04b",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/3e239476aba6382c34b1c89b3535b3526c43a23a",
+                "reference": "3e239476aba6382c34b1c89b3535b3526c43a23a",
                 "shasum": ""
             },
             "require": {
@@ -9484,7 +9484,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-health/tree/1.11.1"
+                "source": "https://github.com/spatie/laravel-health/tree/1.12.0"
             },
             "funding": [
                 {
@@ -9492,7 +9492,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-30T09:46:18+00:00"
+            "time": "2022-07-15T12:28:12+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
@@ -9799,17 +9799,17 @@
         },
         {
             "name": "spatie/laravel-mailcoach",
-            "version": "5.7.0",
+            "version": "5.7.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-mailcoach.git",
-                "reference": "66a8fca5b1fdd3f15320f1434344b1b560a3aa30"
+                "reference": "1e5ac8ab3ad88c36237caab3f52e7c53f6ecba8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-66a8fca5b1fdd3f15320f1434344b1b560a3aa30-zip-f309f5.zip",
-                "reference": "66a8fca5b1fdd3f15320f1434344b1b560a3aa30",
-                "shasum": "870ed3d3bd8568c724b85cfebe93e7ae86c35bc3"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-mailcoach/spatie-laravel-mailcoach-1e5ac8ab3ad88c36237caab3f52e7c53f6ecba8b-zip-92423c.zip",
+                "reference": "1e5ac8ab3ad88c36237caab3f52e7c53f6ecba8b",
+                "shasum": "c71843e0704f191ab6344f93a6048e82892a3755"
             },
             "require": {
                 "cakephp/chronos": "^2.0",
@@ -9919,10 +9919,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-mailcoach/tree/5.7.0",
+                "source": "https://github.com/spatie/laravel-mailcoach/tree/5.7.1",
                 "issues": "https://github.com/spatie/laravel-mailcoach/issues"
             },
-            "time": "2022-07-01T13:24:46+00:00"
+            "time": "2022-07-11T06:56:39+00:00"
         },
         {
             "name": "spatie/laravel-mailcoach-mailgun-feedback",

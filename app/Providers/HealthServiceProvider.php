@@ -11,6 +11,7 @@ use Spatie\Health\Checks\Checks\EnvironmentCheck;
 use Spatie\Health\Checks\Checks\FlareErrorOccurrenceCountCheck;
 use Spatie\Health\Checks\Checks\HorizonCheck;
 use Spatie\Health\Checks\Checks\MeiliSearchCheck;
+use Spatie\Health\Checks\Checks\OptimizedAppCheck;
 use Spatie\Health\Checks\Checks\ScheduleCheck;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Facades\Health;
@@ -21,6 +22,7 @@ class HealthServiceProvider extends ServiceProvider
     {
         Health::checks([
             CpuLoadCheck::new()->failWhenLoadIsHigherInTheLast15Minutes(4.0),
+            OptimizedAppCheck::new(),
             DebugModeCheck::new(),
             MeiliSearchCheck::new(),
             EnvironmentCheck::new(),
