@@ -150,6 +150,7 @@ php artisan cache:clear
 php artisan config:cache
 php artisan route:clear
 php artisan route:cache
+php artisan event:cache
 
 sudo service php8.1-fpm restart
 sudo supervisorctl restart all
