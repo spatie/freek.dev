@@ -4,9 +4,7 @@ namespace App\Providers;
 
 use App\Models\Post;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Spatie\ResponseCache\Middlewares\DoNotCacheResponse;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -70,7 +68,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapPackageRoutes(): self
     {
-        Route::middleware(['web', 'cacheResponse'])->group(function() {
+        Route::middleware(['web', 'cacheResponse'])->group(function () {
             Route::feeds('feed');
             Route::webhooks('webhook-webmentions', 'webmentions');
         });

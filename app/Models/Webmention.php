@@ -12,7 +12,9 @@ class Webmention extends Model
     use HasFactory;
 
     const TYPE_REPLY = 'reply';
+
     const TYPE_LIKE = 'like';
+
     const TYPE_RETWEET = 'retweet';
 
     public static function boot()
@@ -37,9 +39,9 @@ class Webmention extends Model
     public function getVerbAttribute(): string
     {
         $verbs = [
-          static::TYPE_REPLY => 'replied',
-          static::TYPE_RETWEET => 'retweeted',
-          static::TYPE_LIKE => 'liked',
+            static::TYPE_REPLY => 'replied',
+            static::TYPE_RETWEET => 'retweeted',
+            static::TYPE_LIKE => 'liked',
         ];
 
         return $verbs[$this->type];

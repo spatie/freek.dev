@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::table('site_search_configs', function(Blueprint $table) {
+        Schema::table('site_search_configs', function (Blueprint $table) {
             $table->integer('number_of_urls_indexed')->default(0);
         });
     }

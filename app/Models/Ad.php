@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Actions\ConvertPostTextToHtmlAction;
 use App\Services\CommonMark\CommonMark;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,6 +11,7 @@ use Illuminate\Support\Str;
 class Ad extends Model
 {
     use HasFactory;
+
     protected $casts = [
         'starts_at' => 'datetime',
         'ends_at' => 'datetime',

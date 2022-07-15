@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use MeiliSearch\MeiliSearch;
 use Spatie\CpuLoadHealthCheck\CpuLoadCheck;
 use Spatie\Health\Checks\Checks\DatabaseCheck;
 use Spatie\Health\Checks\Checks\DebugModeCheck;
@@ -12,7 +11,6 @@ use Spatie\Health\Checks\Checks\FlareErrorOccurrenceCountCheck;
 use Spatie\Health\Checks\Checks\HorizonCheck;
 use Spatie\Health\Checks\Checks\MeiliSearchCheck;
 use Spatie\Health\Checks\Checks\OptimizedAppCheck;
-use Spatie\Health\Checks\Checks\ScheduleCheck;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Facades\Health;
 
@@ -34,7 +32,7 @@ class HealthServiceProvider extends ServiceProvider
             FlareErrorOccurrenceCountCheck::new()
                 ->projectId(config('services.flare.project_id'))
                 ->apiToken(config('services.flare.api_token'))
-                ->failWhenMoreErrorsReceivedThan(300)
+                ->failWhenMoreErrorsReceivedThan(300),
         ]);
     }
 }

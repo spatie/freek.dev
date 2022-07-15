@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Actions\ConvertPostTextToHtmlAction;
 use App\Actions\PublishPostAction;
-use App\Http\Controllers\PostController;
 use App\Jobs\CreateOgImageJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
@@ -30,7 +29,9 @@ use Spatie\Tags\Tag;
 class Post extends Model implements Feedable, Sluggable, HasMedia
 {
     public const TYPE_LINK = 'link';
+
     public const TYPE_TWEET = 'tweet';
+
     public const TYPE_ORIGINAL = 'originalPost';
 
     use HasSlug,
@@ -56,13 +57,12 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             $post->preview_secret = Str::random(10);
         });
 
-
         static::saved(function (Post $post) {
             static::withoutEvents(function () use ($post) {
                 (new ConvertPostTextToHtmlAction())->execute($post);
 
                 if ($post->isPartOfSeries()) {
-                    $post->getAllPostsInSeries()->each(function(Post $post) {
+                    $post->getAllPostsInSeries()->each(function (Post $post) {
                         (new ConvertPostTextToHtmlAction())->execute($post);
                     });
                 }
@@ -118,7 +118,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         $html = $this->html;
 
         if (! $this->isTweet() && $this->external_url) {
-            $html .= PHP_EOL . PHP_EOL . "<a href='{$this->external_url}'>Read more</a>";
+            $html .= PHP_EOL.PHP_EOL."<a href='{$this->external_url}'>Read more</a>";
         }
 
         return $html;
@@ -184,29 +184,27 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
 
     public function url(): Attribute
     {
-        return new Attribute(function() {
+        return new Attribute(function () {
             return route('post', [$this->idSlug()]);
         });
     }
 
     public function previewUrl(): Attribute
     {
-        return new Attribute(function() {
-            return route('post', [$this->idSlug()]) . "?preview_secret={$this->preview_secret}";
+        return new Attribute(function () {
+            return route('post', [$this->idSlug()])."?preview_secret={$this->preview_secret}";
         });
     }
 
     public function promotionalUrl(): Attribute
     {
-        return new Attribute(function() {
+        return new Attribute(function () {
             if (! empty($this->external_url)) {
                 return $this->external_url;
             }
 
             return $this->url;
         });
-
-
     }
 
     public function hasTag(string $tagName): bool
@@ -261,7 +259,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
     {
         $tags = $this->tags
             ->map(fn (Tag $tag) => $tag->name)
-            ->map(fn (string $tagName) => '#' . str_replace(' ', '', $tagName))
+            ->map(fn (string $tagName) => '#'.str_replace(' ', '', $tagName))
             ->implode(' ');
 
         $twitterAuthorString = '';
@@ -269,9 +267,9 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             $twitterAuthorString = " (by @{$twitterHandle})";
         }
 
-        return $this->emoji . ' ' . $this->title . $twitterAuthorString
-            . PHP_EOL . $this->promotional_url
-            . PHP_EOL . $tags;
+        return $this->emoji.' '.$this->title.$twitterAuthorString
+            .PHP_EOL.$this->promotional_url
+            .PHP_EOL.$tags;
     }
 
     public function onAfterTweet(string $tweetUrl): void
@@ -287,7 +285,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
             return $this->external_url;
         }
 
-        return route('post.ogImage', $this) . "?preview_secret={$this->preview_secret}";
+        return route('post.ogImage', $this)."?preview_secret={$this->preview_secret}";
     }
 
     public function isPartOfSeries()

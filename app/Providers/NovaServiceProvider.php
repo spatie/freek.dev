@@ -43,7 +43,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     protected function gate()
     {
-        Gate::define('viewNova', fn(User $user) => $user->admin);
+        Gate::define('viewNova', fn (User $user) => $user->admin);
     }
 
     protected function dashboards()

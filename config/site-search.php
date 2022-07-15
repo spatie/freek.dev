@@ -69,5 +69,5 @@ return [
      * A driver is responsible for writing all scraped content
      * to a search index.
      */
-    'default_driver' =>  Spatie\SiteSearch\Drivers\MeiliSearchDriver::class,
+    'default_driver' => Spatie\SiteSearch\Drivers\MeiliSearchDriver::class,
 ];

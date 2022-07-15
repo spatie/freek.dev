@@ -11,14 +11,12 @@ class ConvertPostTextToHtmlAction
 {
     public function execute(Post $post): void
     {
-
         $text = $post->text;
 
         if ($post->isPartOfSeries()) {
-
             $text = str_replace(
                 '[series-toc]',
-                (new SeriesTocComponent($post))->render() . PHP_EOL,
+                (new SeriesTocComponent($post))->render().PHP_EOL,
                 $text
             );
 
@@ -27,7 +25,6 @@ class ConvertPostTextToHtmlAction
                 (new SeriesNextPostComponent($post))->render(),
                 $text
             );
-
         }
 
         $html = CommonMark::convertToHtml($text, highlightCode: true);

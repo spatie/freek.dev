@@ -19,6 +19,6 @@ class Twitter
             return;
         }
 
-        return (array)$this->twitter->post('statuses/update', compact('status'));
+        return (array) $this->twitter->post('statuses/update', compact('status'));
     }
 }

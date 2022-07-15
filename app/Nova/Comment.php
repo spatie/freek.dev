@@ -36,15 +36,14 @@ class Comment extends Resource
                 }
 
                 return "<a target=\"show_comment\" href=\"{$url}\">Show</a>";
-
             })->asHtml(),
 
-            Text::make('status', function(CommentModel $comment) {
-                 if ($comment->isApproved()) {
-                     return "<div class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800'>Approved</div>";
-                 }
+            Text::make('status', function (CommentModel $comment) {
+                if ($comment->isApproved()) {
+                    return "<div class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800'>Approved</div>";
+                }
 
-                 return "<div class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800'>Pending</div>";
+                return "<div class='inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800'>Pending</div>";
             })->asHtml(),
 
             DateTime::make('Created at'),

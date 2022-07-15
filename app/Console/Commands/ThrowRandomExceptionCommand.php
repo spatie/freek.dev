@@ -11,6 +11,6 @@ class ThrowRandomExceptionCommand extends Command
 
     public function handle()
     {
-        throw new Exception("Random exception" . rand(1, 10000));
+        throw new Exception('Random exception'.rand(1, 10000));
     }
 }

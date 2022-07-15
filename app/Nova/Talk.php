@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use App\Models\Talk as TalkModel;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;

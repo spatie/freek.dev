@@ -5,9 +5,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResendVerificationMailController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::middleware(['guest', 'doNotCacheResponse'])->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');

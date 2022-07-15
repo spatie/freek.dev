@@ -24,6 +24,6 @@ class PerformTestConversion extends Command
 
         (new ConvertPostTextToHtmlAction())->execute($post);
 
-        $this->info('Done ' . $id);
+        $this->info('Done '.$id);
     }
 }

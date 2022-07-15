@@ -16,9 +16,9 @@ class GenerateNewsletterCommand extends Command
     {
         /** @var Campaign $latestNewsletter */
         $latestNewsletter = Campaign::latest()->first();
-        $latestEditionNumber = (int)Str::after($latestNewsletter->name, '#');
+        $latestEditionNumber = (int) Str::after($latestNewsletter->name, '#');
         $newEditionNumber = $latestEditionNumber + 1;
-        $startDate =  $latestNewsletter->created_at->addDay()->startOfDay();
+        $startDate = $latestNewsletter->created_at->addDay()->startOfDay();
         $endDate = now();
 
         $html = (new NewsletterGenerator(

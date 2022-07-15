@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::table('webhook_calls', function(Blueprint $table) {
+        Schema::table('webhook_calls', function (Blueprint $table) {
             $table->string('url')->nullable();
         });
     }

@@ -2,7 +2,6 @@
 
 use App\Models\Ad;
 use Carbon\Carbon;
-use Tests\TestCase;
 use function Spatie\PestPluginTestTime\testTime;
 
 it('can get an ad for the current date', function () {
