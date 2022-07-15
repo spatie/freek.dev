@@ -3,11 +3,10 @@
 use App\Models\Post;
 use App\Services\Webmentions\ProcessWebhookJob;
 use Spatie\WebhookClient\Models\WebhookCall;
-use Tests\TestCase;
 
 it('can convert a webhook payload to a webmention', function () {
     Post::factory()->create([
-       'id' => 1241,
+        'id' => 1241,
     ]);
 
     $webhookCall = WebhookCall::create([
@@ -32,5 +31,5 @@ it('can convert a webhook payload to a webmention', function () {
 // Helpers
 function getStub(string $name): array
 {
-    return json_decode(file_get_contents(__DIR__ . "/stubs/{$name}"), true);
+    return json_decode(file_get_contents(__DIR__."/stubs/{$name}"), true);
 }

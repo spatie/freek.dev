@@ -3,8 +3,8 @@
 use App\Http\Controllers\Discovery\Post\ShowPostController;
 use App\Models\Post;
 use App\Models\User;
+use function Pest\Laravel\get;
 use Tests\Factories\PostFactory;
-use function \Pest\Laravel\get;
 
 beforeEach(function () {
     $this->post = Post::factory()->create();
@@ -45,10 +45,10 @@ it('will display unpublished post using a preview secret', function () {
     get(action(ShowPostController::class, $post->idSlug()))
         ->assertNotFound();
 
-    get(action(ShowPostController::class, $post->idSlug()) . "?preview_secret={$post->preview_secret}")
+    get(action(ShowPostController::class, $post->idSlug())."?preview_secret={$post->preview_secret}")
         ->assertSuccessful();
 
-    get(action(ShowPostController::class, $post->idSlug()) . "?preview_secret=wrong-secret")
+    get(action(ShowPostController::class, $post->idSlug()).'?preview_secret=wrong-secret')
         ->assertNotFound();
 });
 

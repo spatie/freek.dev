@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
 
         Model::unguard();
 
-        PendingCommentNotification::sendTo(function(Comment $comment) {
+        PendingCommentNotification::sendTo(function (Comment $comment) {
             return User::where('email', 'freek@spatie.be')->first();
         });
     }

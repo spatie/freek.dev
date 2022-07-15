@@ -18,19 +18,19 @@ class PerformHtmlConversionCommand extends Command
     {
         $this->info('Performing HTML conversions...');
 
-        Video::each(function(Video $video) {
+        Video::each(function (Video $video) {
             $video->touch();
 
             $this->comment("Conversion done for video `{$video->id}`");
         });
 
-        Ad::each(function(Ad $ad) {
+        Ad::each(function (Ad $ad) {
             $ad->touch();
 
             $this->comment("Conversion done for ad `{$ad->id}`");
         });
 
-        Post::all()->reverse()->each(function(Post $post) {
+        Post::all()->reverse()->each(function (Post $post) {
             (new ConvertPostTextToHtmlAction())->execute($post);
 
             $this->comment("Conversion done for post `{$post->id}`");

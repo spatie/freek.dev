@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Database\Seeders;
 
 use App\Mail\WelcomeMail;
@@ -33,7 +32,7 @@ class EmailListSeeder extends Seeder
 
         Template::create([
             'name' => 'Spatie',
-            'html' => <<<HTML
+            'html' => <<<'HTML'
                         <html>
                             <body>
                                 <ul>
@@ -74,7 +73,6 @@ class EmailListSeeder extends Seeder
     </body>
 </html>',
         ]);
-
 
         EmailList::create([
             'name' => 'automation list',

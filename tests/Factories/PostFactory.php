@@ -95,7 +95,7 @@ class PostFactory
 
     protected function getStub(string $stubName): string
     {
-        return file_get_contents(__DIR__ . "/stubs/{$stubName}.md");
+        return file_get_contents(__DIR__."/stubs/{$stubName}.md");
     }
 
     public static function series(int $count): Collection
@@ -112,7 +112,7 @@ class PostFactory
             $post->update(['title' => "Series title part {$i}: Lorem ipsum"]);
 
             if ($i === 0) {
-                $firstSentence = "On [our Laravel powered company website](https://spatie.be) we sell digital products. ";
+                $firstSentence = 'On [our Laravel powered company website](https://spatie.be) we sell digital products. ';
 
                 $post->update(['text' => "{$firstSentence}{$post->text}"]);
             }

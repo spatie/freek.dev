@@ -2,7 +2,6 @@
 
 use App\Actions\RejectLinkAction;
 use App\Models\Link;
-use Tests\TestCase;
 
 it('can reject a link', function () {
     /** @var Link $submittedLink */

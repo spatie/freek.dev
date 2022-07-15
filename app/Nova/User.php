@@ -15,7 +15,6 @@ class User extends Resource
 
     public static $title = 'name';
 
-
     public static $search = [
         'id', 'name', 'email',
     ];

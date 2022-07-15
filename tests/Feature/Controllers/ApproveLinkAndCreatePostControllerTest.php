@@ -1,9 +1,8 @@
 <?php
 
 use App\Models\Link;
-use Tests\TestCase;
 use function Pest\Laravel\assertDatabaseHas;
-use function \Pest\Laravel\get;
+use function Pest\Laravel\get;
 
 it('can approve a link and create a post using a signed url', function () {
     Mail::fake();

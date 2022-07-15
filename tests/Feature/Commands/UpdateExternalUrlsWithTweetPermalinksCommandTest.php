@@ -1,7 +1,6 @@
 <?php
 
 use Tests\Factories\PostFactory;
-use Tests\TestCase;
 
 it('can save the permalink of a tweet as the external url', function () {
     $tweetPost = (new PostFactory())->tweet()->create([

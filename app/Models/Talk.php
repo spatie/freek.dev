@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Talk extends Model
 {
     use HasFactory;
-
     use TalkPresenter;
 
     public $dates = ['presented_at'];

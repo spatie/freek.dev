@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Services\Webmentions;
 
 use Illuminate\Http\Request;

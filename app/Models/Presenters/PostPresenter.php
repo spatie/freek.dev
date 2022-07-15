@@ -75,7 +75,7 @@ trait PostPresenter
 
         $ww = wordwrap($excerpt, 300, "\n");
 
-        $excerpt = substr($ww, 0, strpos($ww, "\n")) . '…';
+        $excerpt = substr($ww, 0, strpos($ww, "\n")).'…';
 
         return $excerpt ?? '';
     }
@@ -94,7 +94,7 @@ trait PostPresenter
             ? '★ '
             : '';
 
-        return $prefix . $this->title;
+        return $prefix.$this->title;
     }
 
     public function getEmojiAttribute(): string
@@ -163,7 +163,7 @@ trait PostPresenter
 
     public function getReadingTimeAttribute(): int
     {
-        return (int)ceil(str_word_count(strip_tags($this->text)) / 200);
+        return (int) ceil(str_word_count(strip_tags($this->text)) / 200);
     }
 
     public function getIsOriginalAttribute(): bool

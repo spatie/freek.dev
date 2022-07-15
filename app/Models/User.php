@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Comments\Models\Concerns\InteractsWithComments;
 use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
 
-class User extends Authenticatable  implements CanComment, MustVerifyEmail
+class User extends Authenticatable implements CanComment, MustVerifyEmail
 {
     use HasFactory;
     use InteractsWithComments;

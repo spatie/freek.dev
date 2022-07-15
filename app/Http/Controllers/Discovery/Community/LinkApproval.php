@@ -39,6 +39,4 @@ class LinkApproval
 
         return view('front.links.rejected');
     }
-
-
 }

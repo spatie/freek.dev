@@ -18,7 +18,9 @@ class Link extends Model implements Sluggable
     public $dates = ['publish_date'];
 
     public const STATUS_SUBMITTED = 'pending';
+
     public const STATUS_APPROVED = 'approved';
+
     public const STATUS_REJECTED = 'rejected';
 
     public function user(): BelongsTo

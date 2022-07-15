@@ -8,16 +8,16 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::table('posts', function(Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             $table->longText('html')->nullable();
         });
 
-        Schema::table('ads', function(Blueprint $table) {
+        Schema::table('ads', function (Blueprint $table) {
             $table->longText('html')->nullable();
         });
 
-        Schema::table('videos', function(Blueprint $table) {
+        Schema::table('videos', function (Blueprint $table) {
             $table->longText('html')->nullable();
         });
     }
-};;
+};

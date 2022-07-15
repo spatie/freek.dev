@@ -2,7 +2,6 @@
 
 use App\Actions\CreatePostFromLinkAction;
 use App\Models\Link;
-use Tests\TestCase;
 
 it('can create a post from a link', function () {
     $link = Link::factory()->create();

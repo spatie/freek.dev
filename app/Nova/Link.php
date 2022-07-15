@@ -42,7 +42,7 @@ class Link extends Resource
                     return '';
                 }
 
-                return '<a target="link_preview" href="' . url($this->url) . '">Show</a>';
+                return '<a target="link_preview" href="'.url($this->url).'">Show</a>';
             })->asHtml(),
 
             Text::make('Status')->readonly(),
@@ -64,7 +64,7 @@ class Link extends Resource
                 ->confirmButtonText('Approve')
                 ->cancelButtonText("Don't approve")
                 ->onlyOnDetail()
-                ->canSee(function () use ($request) {
+                ->canSee(function () {
                     $model = $this->getModel();
 
                     return $model

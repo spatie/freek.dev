@@ -91,7 +91,7 @@ class NewsletterGenerator
             ->orderByDesc('original_content')
             ->orderBy('publish_date')
             ->get()
-            ->sortBy(fn(Post $post) => $post->hasTag('php'))
+            ->sortBy(fn (Post $post) => $post->hasTag('php'))
             ->$method->hasTag('tweet');
     }
 

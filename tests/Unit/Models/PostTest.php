@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Post;
-use Tests\TestCase;
 
 it('can determine the promotional url', function () {
     $post = Post::factory()->create([
@@ -77,7 +76,7 @@ it('can determine that a post is a tweet', function () {
 
 it('can determine the excerpt', function () {
     $post = Post::factory()->create([
-       'text' => 'excerpt<!--more-->full post',
+        'text' => 'excerpt<!--more-->full post',
     ]);
 
     expect($post->excerpt)->toEqual('<p>excerpt</p>');

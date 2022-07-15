@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Discovery\Community;
 
 use App\Models\Link;
-use Spatie\RouteDiscovery\Attributes\Route;
 use function view;
 
 class IndexController

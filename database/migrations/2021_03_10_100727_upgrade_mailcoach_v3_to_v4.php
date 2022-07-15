@@ -97,7 +97,6 @@ return new class extends Migration
             $table->boolean('replace_tags')->default(false)->after('unsubscribe_others');
         });
 
-
         Schema::table('mailcoach_tags', function (Blueprint $table) {
             $table->string('type')->default('default')->after('name');
         });
@@ -232,7 +231,6 @@ return new class extends Migration
                 ->constrained('mailcoach_subscribers')
                 ->cascadeOnDelete();
 
-
             $table->timestamps();
         });
 
@@ -293,10 +291,10 @@ return new class extends Migration
         Schema::table('mailcoach_subscribers', function (Blueprint $table) {
             $table->index(
                 [
-                'email_list_id',
-                'subscribed_at',
-                'unsubscribed_at',
-            ],
+                    'email_list_id',
+                    'subscribed_at',
+                    'unsubscribed_at',
+                ],
                 'email_list_subscribed_index'
             );
         });

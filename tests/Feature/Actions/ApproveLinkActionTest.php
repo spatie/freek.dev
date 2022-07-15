@@ -4,7 +4,6 @@ use App\Actions\ApproveLinkAction;
 use App\Mail\LinkApprovedMail;
 use App\Models\Link;
 use Illuminate\Support\Facades\Mail;
-use Tests\TestCase;
 
 beforeEach(function () {
     Mail::fake();
