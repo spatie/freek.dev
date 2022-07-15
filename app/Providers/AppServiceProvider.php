@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Gate::define('viewMailcoach', function (User $user) {
-            return $user->email === 'freek@spatie.be';
+            return $user->admin;
         });
 
         Carbon::setToStringFormat('jS F Y');
