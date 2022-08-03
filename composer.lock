@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8836e89282c2f8adf90ced4d3d20657e",
+    "content-hash": "e14d72c61042a5521d0b1ed3106d7809",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -9580,49 +9580,49 @@
         },
         {
             "name": "spatie/laravel-health",
-            "version": "1.12.1",
+            "version": "1.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-health.git",
-                "reference": "738a9ab2e5627112f95ade92eabf2118283a95de"
+                "reference": "cb38876a40e555ea3c4172a287a5bb1ff50b9227"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/738a9ab2e5627112f95ade92eabf2118283a95de",
-                "reference": "738a9ab2e5627112f95ade92eabf2118283a95de",
+                "url": "https://api.github.com/repos/spatie/laravel-health/zipball/cb38876a40e555ea3c4172a287a5bb1ff50b9227",
+                "reference": "cb38876a40e555ea3c4172a287a5bb1ff50b9227",
                 "shasum": ""
             },
             "require": {
-                "dragonmantank/cron-expression": "^3.1",
-                "guzzlehttp/guzzle": "^6.5|^7.4",
+                "dragonmantank/cron-expression": "^3.3.1",
+                "guzzlehttp/guzzle": "^6.5|^7.4.5",
                 "illuminate/console": "^8.75|^9.0",
                 "illuminate/contracts": "^8.75|^9.0",
                 "illuminate/database": "^8.75|^9.0",
                 "illuminate/notifications": "^8.75|^9.0",
                 "illuminate/support": "^8.75|^9.0",
-                "nunomaduro/termwind": "^1.3",
+                "nunomaduro/termwind": "^1.14",
                 "php": "^8.0",
-                "spatie/enum": "^3.11",
-                "spatie/laravel-package-tools": "^1.9.2",
-                "spatie/regex": "^3.1",
-                "symfony/process": "^5.4|^6.0"
+                "spatie/enum": "^3.13",
+                "spatie/laravel-package-tools": "^1.12.1",
+                "spatie/regex": "^3.1.1",
+                "symfony/process": "^5.4|^6.1.3"
             },
             "require-dev": {
-                "laravel/horizon": "^5.7",
-                "laravel/slack-notification-channel": "^2.3",
-                "nunomaduro/collision": "^5.10|^6.0",
-                "nunomaduro/larastan": "^1.0",
-                "orchestra/testbench": "^6.23|^7.0",
-                "pestphp/pest": "^1.21",
-                "pestphp/pest-plugin-laravel": "^1.1",
+                "laravel/horizon": "^5.9.10",
+                "laravel/slack-notification-channel": "^2.4",
+                "nunomaduro/collision": "^5.10|^6.2.1",
+                "nunomaduro/larastan": "^1.0.3",
+                "orchestra/testbench": "^6.23|^7.6",
+                "pestphp/pest": "^1.21.3",
+                "pestphp/pest-plugin-laravel": "^1.2",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^9.4",
-                "spatie/laravel-ray": "^1.26",
+                "phpstan/phpstan-phpunit": "^1.1.1",
+                "phpunit/phpunit": "^9.5.21",
+                "spatie/laravel-ray": "^1.30",
                 "spatie/pest-plugin-snapshots": "^1.1",
-                "spatie/pest-plugin-test-time": "^1.0",
-                "spatie/test-time": "^1.2"
+                "spatie/pest-plugin-test-time": "^1.1.1",
+                "spatie/test-time": "^1.3"
             },
             "type": "library",
             "extra": {
@@ -9660,7 +9660,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-health/tree/1.12.1"
+                "source": "https://github.com/spatie/laravel-health/tree/1.12.3"
             },
             "funding": [
                 {
@@ -9668,20 +9668,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-07-29T07:05:39+00:00"
+            "time": "2022-08-03T22:51:27+00:00"
         },
         {
             "name": "spatie/laravel-honeypot",
-            "version": "4.3.0",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-honeypot.git",
-                "reference": "f29e3cd612699a2a3a2912da3f638ee987a3d31d"
+                "reference": "8879f1952c1d8a733f9b9eab439340597bcfb1ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-honeypot/zipball/f29e3cd612699a2a3a2912da3f638ee987a3d31d",
-                "reference": "f29e3cd612699a2a3a2912da3f638ee987a3d31d",
+                "url": "https://api.github.com/repos/spatie/laravel-honeypot/zipball/8879f1952c1d8a733f9b9eab439340597bcfb1ac",
+                "reference": "8879f1952c1d8a733f9b9eab439340597bcfb1ac",
                 "shasum": ""
             },
             "require": {
@@ -9734,7 +9734,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-honeypot/tree/4.3.0"
+                "source": "https://github.com/spatie/laravel-honeypot/tree/4.3.1"
             },
             "funding": [
                 {
@@ -9742,7 +9742,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-05-21T11:49:59+00:00"
+            "time": "2022-08-03T22:31:36+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
