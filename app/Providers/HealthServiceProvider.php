@@ -34,7 +34,7 @@ class HealthServiceProvider extends ServiceProvider
                 ->projectId(config('services.flare.project_id'))
                 ->apiToken(config('services.flare.api_token'))
                 ->failWhenMoreErrorsReceivedThan(300),
-            SecurityAdvisoriesCheck::new()
+            SecurityAdvisoriesCheck::new(),
         ]);
     }
 }
