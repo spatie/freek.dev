@@ -13,6 +13,7 @@ use Spatie\Health\Checks\Checks\MeiliSearchCheck;
 use Spatie\Health\Checks\Checks\OptimizedAppCheck;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Facades\Health;
+use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 
 class HealthServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,7 @@ class HealthServiceProvider extends ServiceProvider
                 ->projectId(config('services.flare.project_id'))
                 ->apiToken(config('services.flare.api_token'))
                 ->failWhenMoreErrorsReceivedThan(300),
+            SecurityAdvisoriesCheck::new()
         ]);
     }
 }

@@ -61,6 +61,7 @@
         "spatie/laravel-webhook-client": "^3.1.2",
         "spatie/nova-tags-field": "^4.0.3",
         "spatie/pest-plugin-test-time": "^1.1.1",
+        "spatie/security-advisories-health-check": "^0.0.2",
         "stripe/stripe-php": "^7.128"
     },
     "require-dev": {
