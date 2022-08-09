@@ -16,6 +16,7 @@
         "ext-openssl": "*",
         "ext-simplexml": "*",
         "abraham/twitteroauth": "^3.3",
+        "spatie/laravel-model-info": "dev-main",
         "algolia/algoliasearch-client-php": "^3.3",
         "doctrine/dbal": "^3.3.7",
         "fruitcake/laravel-cors": "^2.2",
@@ -113,6 +114,10 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-model-info"
         }
     ],
     "minimum-stability": "dev",

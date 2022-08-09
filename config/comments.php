@@ -40,7 +40,7 @@ return [
          * The class that will comment on other things. Typically, this
          * would be a user model.
          */
-        'commentator' => null,
+        'commentator' => \App\Models\User::class,
 
         /*
          * The model you want to use as a Comment model. It needs to be or
@@ -59,6 +59,8 @@ return [
          * extend the `Spatie\Comments\Models\CommentNotificationSubscription::class` model.
          */
         'comment_notification_subscription' => CommentNotificationSubscription::class,
+
+        'comment_notification_opt_out'=> \Spatie\Comments\Models\CommentNotificationOptOut::class,
     ],
 
     'notifications' => [
