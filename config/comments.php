@@ -60,7 +60,7 @@ return [
          */
         'comment_notification_subscription' => CommentNotificationSubscription::class,
 
-        'comment_notification_opt_out'=> \Spatie\Comments\Models\CommentNotificationOptOut::class,
+        'comment_notification_opt_out' => \Spatie\Comments\Models\CommentNotificationOptOut::class,
     ],
 
     'notifications' => [
