@@ -54,9 +54,9 @@ DISCOUNT-FOR-FREEK-DEV-READERS<br>
 If you have any questions, remarks or thoughts about this newsletter, simply hit reply!
 
 Thank you so much for reading!
-
-
-
+<br />
+<br />
+<br />
 Freek
 
 You are receiving this newsletter because you subscribed at [freek.dev](https://freek.dev)
