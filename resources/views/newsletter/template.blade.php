@@ -10,8 +10,10 @@ Here are a couple of links of which I hope you'll enjoy that as much as I did.
 
 @endforeach
 
+<br />
+
 @if(count($communityLinks))
-### Community links
+# Community links
 
 In this section you'll find links submitted by others. [Let me know](https://freek.dev/community) if you did write or stumbled across a blog post, tutorial or video that might be interesting to appear in this section
 
@@ -21,8 +23,10 @@ In this section you'll find links submitted by others. [Let me know](https://fre
 @endforeach
 @endif
 
+<br />
+
 @if (count($oldPosts))
-### Old posts
+# Old posts
 
 Here are a couple of links from a while ago!
 
@@ -32,7 +36,9 @@ Here are a couple of links from a while ago!
 @endforeach
 @endif
 
-### Did you like this newsletter?
+<br />
+
+# Did you like this newsletter?
 
 I take a lot of time curating the right links for you. You could do me a favor by either [{{ route('newsletter.like', ['edition' => $editionNumber]) }}](spreading the word) and letting others know about my newsletter.
 
