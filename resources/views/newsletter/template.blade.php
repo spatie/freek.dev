@@ -31,7 +31,7 @@ In this section you'll find links submitted by others. [Let me know](https://fre
 Here are a couple of links from a while ago!
 
 @foreach($oldPosts as $post)
-[{{ $post->title }}]({{ $post->promotional_url }}) (submitted by {{ $link->user->name }})
+[{{ $post->title }}]({{ $post->promotional_url }})
 
 @endforeach
 @endif
