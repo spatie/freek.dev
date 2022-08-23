@@ -61,6 +61,6 @@ return [
     ],
 
     'mailcoach' => [
-        'api_key' => env('MAILCOACH_API_KEY')
+        'api_key' => env('MAILCOACH_API_KEY'),
     ],
 ];
