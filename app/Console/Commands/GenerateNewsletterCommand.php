@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Services\NewsletterGenerator;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use Spatie\Mailcoach\Domain\Audience\Support\Segments\EverySubscriberSegment;
 use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;

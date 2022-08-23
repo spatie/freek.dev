@@ -59,4 +59,8 @@ return [
         'api_token' => env('FLARE_API_KEY'),
         'project_id' => 271,
     ],
+
+    'mailcoach' => [
+        'api_key' => env('MAILCOACH_API_KEY')
+    ],
 ];
