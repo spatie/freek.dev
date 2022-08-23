@@ -5,31 +5,34 @@ Welcome to the {{ $editionNumber }} freek.dev newsletter!
 Here are a couple of links of which I hope you'll enjoy that as much as I did.
 
 @foreach($recentPosts as $post)
-    @if ($post->original_content)
-        ⭐️
-    @endif
-    [{{ $post->title  }}]({{ $post->promotional_url }})
-    {{ $post->newsletter_excerpt }}
+@if ($post->original_content)
+⭐️
+@endif
+[{{ $post->title  }}]({{ $post->promotional_url }})
+{{ $post->newsletter_excerpt }}
+
 @endforeach
 
 @if(count($communityLinks))
-    ### Community links
+### Community links
 
-    In this section you'll find links submitted by others. [Let me know](https://freek.dev/community) if you did write or stumbled across a blog post, tutorial or video that might be interesting to appear in this section
+In this section you'll find links submitted by others. [Let me know](https://freek.dev/community) if you did write or stumbled across a blog post, tutorial or video that might be interesting to appear in this section
 
-    @foreach($communityLinks as $link)
-        [{{ $link->title }}]({{ $link->url }}) (submitted by {{ $link->user->name }})
-    @endforeach
+@foreach($communityLinks as $link)
+[{{ $link->title }}]({{ $link->url }}) (submitted by {{ $link->user->name }})
+
+@endforeach
 @endif
 
 @if (count($oldPosts))
-    ### Old posts
+### Old posts
 
-    Here are a couple of links from a while ago!
+Here are a couple of links from a while ago!
 
-    @foreach($oldPosts as $post)
-        [{{ $post->title }}]({{ $post->promotional_url }}) (submitted by {{ $link->user->name }})
-    @endforeach
+@foreach($oldPosts as $post)
+[{{ $post->title }}]({{ $post->promotional_url }}) (submitted by {{ $link->user->name }})
+
+@endforeach
 @endif
 
 ### Did you like this newsletter?
