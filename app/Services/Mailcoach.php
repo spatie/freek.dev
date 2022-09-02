@@ -10,7 +10,6 @@ class Mailcoach
 {
     protected static function base(): PendingRequest
     {
-
         return Http::withToken(config('services.mailcoach.api_key'))
             ->acceptJson()
             ->baseUrl('https://freek-dev.mailcoach.app/api/');
