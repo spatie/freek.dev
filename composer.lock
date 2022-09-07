@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "450346d504fd4df92290c5974fd0904a",
+    "content-hash": "b59d511816d8cbf0d9409c6e56863547",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -808,16 +808,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "3.4.3",
+            "version": "3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "a24b89d663d8f261199bc0a91c48016042ebda85"
+                "reference": "4cbbe6e4b9ef6c69d5f4c968c637476f47bb54f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/a24b89d663d8f261199bc0a91c48016042ebda85",
-                "reference": "a24b89d663d8f261199bc0a91c48016042ebda85",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/4cbbe6e4b9ef6c69d5f4c968c637476f47bb54f5",
+                "reference": "4cbbe6e4b9ef6c69d5f4c968c637476f47bb54f5",
                 "shasum": ""
             },
             "require": {
@@ -832,14 +832,14 @@
             "require-dev": {
                 "doctrine/coding-standard": "10.0.0",
                 "jetbrains/phpstorm-stubs": "2022.2",
-                "phpstan/phpstan": "1.8.2",
+                "phpstan/phpstan": "1.8.3",
                 "phpstan/phpstan-strict-rules": "^1.3",
-                "phpunit/phpunit": "9.5.21",
+                "phpunit/phpunit": "9.5.24",
                 "psalm/plugin-phpunit": "0.17.0",
                 "squizlabs/php_codesniffer": "3.7.1",
                 "symfony/cache": "^5.4|^6.0",
                 "symfony/console": "^4.4|^5.4|^6.0",
-                "vimeo/psalm": "4.24.0"
+                "vimeo/psalm": "4.27.0"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -899,7 +899,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/3.4.3"
+                "source": "https://github.com/doctrine/dbal/tree/3.4.4"
             },
             "funding": [
                 {
@@ -915,7 +915,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-28T17:26:36+00:00"
+            "time": "2022-09-01T21:26:42+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -2186,16 +2186,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.27.0",
+            "version": "v9.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "27572f45120fd3977d92651a71d8c711a9aaa790"
+                "reference": "396a89e1f3654123d1c7f56306051212e5c75bc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/27572f45120fd3977d92651a71d8c711a9aaa790",
-                "reference": "27572f45120fd3977d92651a71d8c711a9aaa790",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/396a89e1f3654123d1c7f56306051212e5c75bc0",
+                "reference": "396a89e1f3654123d1c7f56306051212e5c75bc0",
                 "shasum": ""
             },
             "require": {
@@ -2362,20 +2362,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-08-30T13:34:43+00:00"
+            "time": "2022-09-06T14:57:01+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.10.0",
+            "version": "v5.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "8cbdf156dbbc146be5527d0c5fae185a3d31fff0"
+                "reference": "1570c8a4612484a37392eca986f06d01b771cb96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/8cbdf156dbbc146be5527d0c5fae185a3d31fff0",
-                "reference": "8cbdf156dbbc146be5527d0c5fae185a3d31fff0",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/1570c8a4612484a37392eca986f06d01b771cb96",
+                "reference": "1570c8a4612484a37392eca986f06d01b771cb96",
                 "shasum": ""
             },
             "require": {
@@ -2437,9 +2437,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.10.0"
+                "source": "https://github.com/laravel/horizon/tree/v5.10.1"
             },
-            "time": "2022-08-11T17:05:00+00:00"
+            "time": "2022-09-05T16:33:43+00:00"
         },
         {
             "name": "laravel/nova",
@@ -2553,16 +2553,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.15.4",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "853dea1fa866a52a93beccc4e5affdc49b98e7d5"
+                "reference": "73030c18b769f27e6f6aacf7848d024fa9a55560"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/853dea1fa866a52a93beccc4e5affdc49b98e7d5",
-                "reference": "853dea1fa866a52a93beccc4e5affdc49b98e7d5",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/73030c18b769f27e6f6aacf7848d024fa9a55560",
+                "reference": "73030c18b769f27e6f6aacf7848d024fa9a55560",
                 "shasum": ""
             },
             "require": {
@@ -2609,7 +2609,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-08-17T13:17:15+00:00"
+            "time": "2022-08-31T16:38:14+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -4148,16 +4148,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.62.0",
+            "version": "2.62.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7507aec3d626797ce2123cf6c6556683be22b5f8"
+                "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7507aec3d626797ce2123cf6c6556683be22b5f8",
-                "reference": "7507aec3d626797ce2123cf6c6556683be22b5f8",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
+                "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
                 "shasum": ""
             },
             "require": {
@@ -4246,7 +4246,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-28T19:48:05+00:00"
+            "time": "2022-09-02T07:48:13+00:00"
         },
         {
             "name": "nette/schema",
@@ -4443,16 +4443,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.14.0",
+            "version": "v4.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "34bea19b6e03d8153165d8f30bba4c3be86184c1"
+                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/34bea19b6e03d8153165d8f30bba4c3be86184c1",
-                "reference": "34bea19b6e03d8153165d8f30bba4c3be86184c1",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
+                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
                 "shasum": ""
             },
             "require": {
@@ -4493,9 +4493,63 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.14.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.1"
             },
-            "time": "2022-05-31T20:59:12+00:00"
+            "time": "2022-09-04T07:30:47+00:00"
+        },
+        {
+            "name": "nova-kit/nova-packages-tool",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nova-kit/nova-packages-tool.git",
+                "reference": "2c7f47731c405e2cd8915d77230e28ba9874ef0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nova-kit/nova-packages-tool/zipball/2c7f47731c405e2cd8915d77230e28ba9874ef0e",
+                "reference": "2c7f47731c405e2cd8915d77230e28ba9874ef0e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": ">=4.13.0 <4.14.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.24 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "NovaKit\\NovaPackagesTool\\LaravelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NovaKit\\NovaPackagesTool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com"
+                }
+            ],
+            "description": "Tool for Laravel Nova Packages Development",
+            "support": {
+                "issues": "https://github.com/nova-kit/nova-packages-tool/issues",
+                "source": "https://github.com/nova-kit/nova-packages-tool/tree/v1.2.0"
+            },
+            "time": "2022-09-01T03:12:30+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -8305,16 +8359,16 @@
         },
         {
             "name": "spatie/db-dumper",
-            "version": "3.2.1",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/db-dumper.git",
-                "reference": "e90bdffb902b43c7d76dd45dd350a54f4330fee5"
+                "reference": "129b8254b2c9f10881a754a692bd9507b09a1893"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/e90bdffb902b43c7d76dd45dd350a54f4330fee5",
-                "reference": "e90bdffb902b43c7d76dd45dd350a54f4330fee5",
+                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/129b8254b2c9f10881a754a692bd9507b09a1893",
+                "reference": "129b8254b2c9f10881a754a692bd9507b09a1893",
                 "shasum": ""
             },
             "require": {
@@ -8352,7 +8406,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/db-dumper/tree/3.2.1"
+                "source": "https://github.com/spatie/db-dumper/tree/3.3.0"
             },
             "funding": [
                 {
@@ -8364,7 +8418,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-15T13:27:17+00:00"
+            "time": "2022-09-01T20:20:26+00:00"
         },
         {
             "name": "spatie/eloquent-sortable",
@@ -8882,17 +8936,17 @@
         },
         {
             "name": "spatie/laravel-comments",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-comments.git",
-                "reference": "9826e8532b8e78ab2fd9750469b61447275251e3"
+                "reference": "cc08befa309828d25933585d48247e8702859b14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-9826e8532b8e78ab2fd9750469b61447275251e3-zip-11e2fa.zip",
-                "reference": "9826e8532b8e78ab2fd9750469b61447275251e3",
-                "shasum": "d344f9462c2aafc8ea42748a31447ff5ed36c11d"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-comments/spatie-laravel-comments-cc08befa309828d25933585d48247e8702859b14-zip-517070.zip",
+                "reference": "cc08befa309828d25933585d48247e8702859b14",
+                "shasum": "175435901ca3d9eff68acc5bfcc312b999c2c165"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -8969,7 +9023,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-comments/tree/1.1.4",
+                "source": "https://github.com/spatie/laravel-comments/tree/1.1.5",
                 "issues": "https://github.com/spatie/laravel-comments/issues"
             },
             "funding": [
@@ -8978,7 +9032,7 @@
                     "url": "https://github.com/spatie"
                 }
             ],
-            "time": "2022-08-15T11:23:32+00:00"
+            "time": "2022-09-05T09:21:26+00:00"
         },
         {
             "name": "spatie/laravel-comments-livewire",
@@ -9394,16 +9448,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "71c627a0838f107562e89bc2b0201a81f26e9011"
+                "reference": "29deea5d9cf921590184be6956e657c4f4566440"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/71c627a0838f107562e89bc2b0201a81f26e9011",
-                "reference": "71c627a0838f107562e89bc2b0201a81f26e9011",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/29deea5d9cf921590184be6956e657c4f4566440",
+                "reference": "29deea5d9cf921590184be6956e657c4f4566440",
                 "shasum": ""
             },
             "require": {
@@ -9480,7 +9534,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-08-26T13:28:24+00:00"
+            "time": "2022-09-01T11:31:14+00:00"
         },
         {
             "name": "spatie/laravel-json-api-paginate",
@@ -9967,16 +10021,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "10.4.4",
+            "version": "10.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "e66c599717e96e692c3abc506a7a2a3760c952ab"
+                "reference": "1704b4de4d8d1f83a84e9f660b78b93301984daa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/e66c599717e96e692c3abc506a7a2a3760c952ab",
-                "reference": "e66c599717e96e692c3abc506a7a2a3760c952ab",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/1704b4de4d8d1f83a84e9f660b78b93301984daa",
+                "reference": "1704b4de4d8d1f83a84e9f660b78b93301984daa",
                 "shasum": ""
             },
             "require": {
@@ -10059,7 +10113,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/10.4.4"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/10.4.5"
             },
             "funding": [
                 {
@@ -10071,7 +10125,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-08-22T09:17:01+00:00"
+            "time": "2022-09-02T17:15:27+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -10213,16 +10267,16 @@
         },
         {
             "name": "spatie/laravel-model-info",
-            "version": "0.0.4",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-model-info.git",
-                "reference": "c0e0f0d32f96f41c733469b6a933c4ac9d99752e"
+                "reference": "5d3a5e482d85f9527b1c5805fde28b6d305d6814"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-model-info/zipball/c0e0f0d32f96f41c733469b6a933c4ac9d99752e",
-                "reference": "c0e0f0d32f96f41c733469b6a933c4ac9d99752e",
+                "url": "https://api.github.com/repos/spatie/laravel-model-info/zipball/5d3a5e482d85f9527b1c5805fde28b6d305d6814",
+                "reference": "5d3a5e482d85f9527b1c5805fde28b6d305d6814",
                 "shasum": ""
             },
             "require": {
@@ -10265,9 +10319,9 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-model-info/tree/0.0.4"
+                "source": "https://github.com/spatie/laravel-model-info/tree/0.0.5"
             },
-            "time": "2022-08-09T13:51:01+00:00"
+            "time": "2022-09-07T07:50:29+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -10620,16 +10674,16 @@
         },
         {
             "name": "spatie/laravel-responsecache",
-            "version": "7.4.1",
+            "version": "7.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-responsecache.git",
-                "reference": "b9b5486b0843765c371ed9e47759504e92a79fef"
+                "reference": "370e53e225ef5391ccd28d07b41b300fb2279c89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/b9b5486b0843765c371ed9e47759504e92a79fef",
-                "reference": "b9b5486b0843765c371ed9e47759504e92a79fef",
+                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/370e53e225ef5391ccd28d07b41b300fb2279c89",
+                "reference": "370e53e225ef5391ccd28d07b41b300fb2279c89",
                 "shasum": ""
             },
             "require": {
@@ -10687,7 +10741,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-responsecache/tree/7.4.1"
+                "source": "https://github.com/spatie/laravel-responsecache/tree/7.4.2"
             },
             "funding": [
                 {
@@ -10699,7 +10753,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-08-09T07:24:23+00:00"
+            "time": "2022-09-02T08:50:14+00:00"
         },
         {
             "name": "spatie/laravel-route-discovery",
@@ -11702,26 +11756,27 @@
         },
         {
             "name": "spatie/nova-tags-field",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/nova-tags-field.git",
-                "reference": "8e766beb3de9bbe76b59de921d91af9da3a6485b"
+                "reference": "0263aea02968a7fa89255724c461439607dd9264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/8e766beb3de9bbe76b59de921d91af9da3a6485b",
-                "reference": "8e766beb3de9bbe76b59de921d91af9da3a6485b",
+                "url": "https://api.github.com/repos/spatie/nova-tags-field/zipball/0263aea02968a7fa89255724c461439607dd9264",
+                "reference": "0263aea02968a7fa89255724c461439607dd9264",
                 "shasum": ""
             },
             "require": {
-                "laravel/nova": "^4.0",
+                "laravel/nova": "^4.13",
+                "nova-kit/nova-packages-tool": "^1.2",
                 "php": "^8.0",
                 "spatie/laravel-tags": "^4.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^5.0|^6.0",
+                "orchestra/testbench": "^6.24|^7.0",
                 "phpunit/phpunit": "^9.4"
             },
             "type": "library",
@@ -11756,7 +11811,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/nova-tags-field/issues",
-                "source": "https://github.com/spatie/nova-tags-field/tree/4.0.3"
+                "source": "https://github.com/spatie/nova-tags-field/tree/4.0.4"
             },
             "funding": [
                 {
@@ -11764,7 +11819,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-04-13T08:01:16+00:00"
+            "time": "2022-09-01T18:02:13+00:00"
         },
         {
             "name": "spatie/once",
@@ -12342,16 +12397,16 @@
         },
         {
             "name": "spatie/simple-excel",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/simple-excel.git",
-                "reference": "59577197be5ac25e69948a8148a62e3fefc06586"
+                "reference": "c5048f5025606cd3bd10ae824cd73613161e9fc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/59577197be5ac25e69948a8148a62e3fefc06586",
-                "reference": "59577197be5ac25e69948a8148a62e3fefc06586",
+                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/c5048f5025606cd3bd10ae824cd73613161e9fc9",
+                "reference": "c5048f5025606cd3bd10ae824cd73613161e9fc9",
                 "shasum": ""
             },
             "require": {
@@ -12390,7 +12445,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/simple-excel/issues",
-                "source": "https://github.com/spatie/simple-excel/tree/2.1.0"
+                "source": "https://github.com/spatie/simple-excel/tree/2.2.0"
             },
             "funding": [
                 {
@@ -12398,7 +12453,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-09T19:57:28+00:00"
+            "time": "2022-09-02T13:31:43+00:00"
         },
         {
             "name": "spatie/ssh",
@@ -15798,16 +15853,16 @@
         },
         {
             "name": "zbateson/mail-mime-parser",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zbateson/mail-mime-parser.git",
-                "reference": "24955de7ec352b3258c1d4551efd21202cb8710c"
+                "reference": "318cd809afebe48e8fb41625b05b25470fb3fa86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zbateson/mail-mime-parser/zipball/24955de7ec352b3258c1d4551efd21202cb8710c",
-                "reference": "24955de7ec352b3258c1d4551efd21202cb8710c",
+                "url": "https://api.github.com/repos/zbateson/mail-mime-parser/zipball/318cd809afebe48e8fb41625b05b25470fb3fa86",
+                "reference": "318cd809afebe48e8fb41625b05b25470fb3fa86",
                 "shasum": ""
             },
             "require": {
@@ -15867,7 +15922,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-22T21:35:59+00:00"
+            "time": "2022-09-01T15:59:13+00:00"
         },
         {
             "name": "zbateson/mb-wrapper",
