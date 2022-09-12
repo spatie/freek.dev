@@ -42,6 +42,7 @@ class GenerateNewsletterCommand extends Command
             'from_name' => 'Freek Van der Herten',
             'subject' => "freek.dev newsletter #{$newEditionNumber}",
             'email_list_uuid' => '585c113f-8479-42cb-a0d4-5f472f82130e',
+            'template_uuid' => '86232043-4924-40a1-a0c6-6c9568c4e540',
         ]);
 
         if ($response->failed()) {
