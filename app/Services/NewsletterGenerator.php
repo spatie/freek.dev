@@ -25,7 +25,7 @@ class NewsletterGenerator
         $this->editionNumber = $this->ordinal($editionNumber);
     }
 
-    public function getHtml()
+    public function getMarkdown()
     {
         $recentPosts = $this->getRecentPosts();
         $recentTweets = $this->getRecentTweets();
