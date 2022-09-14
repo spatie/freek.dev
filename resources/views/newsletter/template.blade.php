@@ -46,10 +46,8 @@ Alternatively, you could consider picking up one of the paid products my team an
 
 - [All spatie products](https://spatie.be/products)
 - [Oh Dear](https://ohdear.app)
+- [Mailcoach](https://mailcoach.app)
 - [Flare](https://flareapp.io)
-
-For each of the above you can use this coupon code to get a discount:
-DISCOUNT-FOR-FREEK-DEV-READERS<br>
 
 If you have any questions, remarks or thoughts about this newsletter, simply hit reply!
 
