@@ -2,7 +2,7 @@ Hi there!
 
 Welcome to the {{ $editionNumber }} freek.dev newsletter!
 
-Here are a couple of links of which I hope you'll enjoy that as much as I did.
+Here are a couple of links I hope you'll enjoy as much as I did.
 
 @foreach($recentPosts as $post)
 @if ($post->original_content)⭐ @endif[{!! html_entity_decode($post->title)  !!}]({{ $post->promotional_url }})<br/>
