@@ -89,13 +89,12 @@ class NewsletterGenerator
                 $endDate,
             ])
             ->orderByDesc('original_content')
-            ->orderBy('publish_date')
             ->get()
             ->sortBy(fn (Post $post) => $post->hasTag('php'))
             ->$method->hasTag('tweet');
     }
 
-    private function ordinal(int $number): string
+    protected function ordinal(int $number): string
     {
         return (new NumberFormatter('en_US', NumberFormatter::ORDINAL))->format($number);
     }
