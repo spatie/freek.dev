@@ -10,6 +10,10 @@ class SearchComponent extends Component
 {
     public string $query = '';
 
+    protected $queryString = [
+        'query' => ['except' => ''],
+    ];
+
     public function render()
     {
         return view('livewire.search', [
