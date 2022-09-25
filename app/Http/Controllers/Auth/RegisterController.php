@@ -10,8 +10,6 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
-use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
-use Spatie\Mailcoach\Domain\Audience\Models\Subscriber;
 
 class RegisterController
 {
@@ -38,8 +36,6 @@ class RegisterController
 
     protected function create(array $data)
     {
-
-
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -50,7 +46,7 @@ class RegisterController
         $user->sendEmailVerificationNotification();
 
         if (isset($data['newsletter'])) {
-            Mailcoach::post('/email-lists/' . config('services.mailcoach.email_list_uuid') . '/subscribers', ['email' => $user->email]);
+            Mailcoach::post('/email-lists/'.config('services.mailcoach.email_list_uuid').'/subscribers', ['email' => $user->email]);
         }
 
         return $user;
