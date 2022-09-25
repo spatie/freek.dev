@@ -120,8 +120,6 @@
         "post-update-cmd": [
             "@php artisan nova:publish",
             "@php artisan horizon:publish",
-            "@php artisan vendor:publish --tag mailcoach-assets --force",
-            "@php artisan vendor:publish --tag mailcoach-monaco-assets --force",
             "@php artisan vendor:publish --force --tag=livewire:assets --ansi",
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
@@ -134,9 +132,6 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate"
-        ],
-        "check-security": [
-            "vendor/bin/security-checker security:check"
         ],
         "format": [
             "vendor/bin/php-cs-fixer fix"

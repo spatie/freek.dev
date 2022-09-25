@@ -62,5 +62,6 @@ return [
 
     'mailcoach' => [
         'api_key' => env('MAILCOACH_API_KEY'),
+        'email_list_uuid' => env('MAILCOACH_EMAIL_LIST_UUID')
     ],
 ];

@@ -41,7 +41,7 @@ class GenerateNewsletterCommand extends Command
             'from_email' => 'freek@spatie.be',
             'from_name' => 'Freek Van der Herten',
             'subject' => "freek.dev newsletter #{$newEditionNumber}",
-            'email_list_uuid' => '590f564a-3f79-4981-8814-188fe39cc918',
+            'email_list_uuid' => config('services.mailcoach.email_list_uuid'),
             'template_uuid' => '86232043-4924-40a1-a0c6-6c9568c4e540',
         ]);
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Discovery\Community\IndexController;
 use App\Models\User;
+use App\Services\Mailcoach;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
@@ -37,11 +38,7 @@ class RegisterController
 
     protected function create(array $data)
     {
-        if (isset($data['newsletter'])) {
-            $emailList = EmailList::where('name', 'freek.dev newsletter')->first();
 
-            Subscriber::createWithEmail($data['email'])->subscribeTo($emailList);
-        }
 
         $user = User::create([
             'name' => $data['name'],
@@ -51,6 +48,10 @@ class RegisterController
         ]);
 
         $user->sendEmailVerificationNotification();
+
+        if (isset($data['newsletter'])) {
+            Mailcoach::post('/email-lists/' . config('services.mailcoach.email_list_uuid') . '/subscribers', ['email' => $user->email]);
+        }
 
         return $user;
     }
