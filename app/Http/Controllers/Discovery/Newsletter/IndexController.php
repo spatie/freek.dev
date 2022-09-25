@@ -11,8 +11,6 @@ class IndexController
 {
     public function __invoke()
     {
-        $pastCampaigns = Campaign::sent()->orderByDesc('sent_at')->limit(100)->get();
-
-        return view('front.newsletter.index', compact('pastCampaigns'));
+        return view('front.newsletter.index');
     }
 }
