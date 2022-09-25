@@ -1,1 +1,0 @@
-{{ $email }} made a payment of {{ $amount / 100 }} EUR

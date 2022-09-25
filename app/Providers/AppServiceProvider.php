@@ -18,10 +18,6 @@ class AppServiceProvider extends ServiceProvider
             return $user->admin;
         });
 
-        Gate::define('viewMailcoach', function (User $user) {
-            return $user->admin;
-        });
-
         Carbon::setToStringFormat('jS F Y');
 
         Model::unguard();
