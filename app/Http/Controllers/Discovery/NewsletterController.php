@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Discovery\Newsletter;
+namespace App\Http\Controllers\Discovery;
 
 use Spatie\RouteDiscovery\Attributes\Route;
-use function view;
 
 #[Route(middleware: 'doNotCacheResponse')]
-class IndexController
+class NewsletterController
 {
     public function __invoke()
     {

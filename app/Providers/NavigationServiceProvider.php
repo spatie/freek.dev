@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use App\Http\Controllers\Discovery\Community\IndexController;
 use App\Http\Controllers\Discovery\HomeController;
+use App\Http\Controllers\Discovery\NewsletterController as NewsletterIndexController;
 use App\Http\Controllers\Discovery\MusicController;
-use App\Http\Controllers\Discovery\Newsletter\IndexController as NewsletterIndexController;
 use App\Http\Controllers\Discovery\OriginalsController;
 use App\Http\Controllers\Discovery\SpeakingController;
 use App\Http\Controllers\Discovery\UsesController;
