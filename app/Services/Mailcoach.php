@@ -8,13 +8,6 @@ use Illuminate\Support\Facades\Http;
 
 class Mailcoach
 {
-    protected static function base(): PendingRequest
-    {
-        return Http::withToken(config('services.mailcoach.api_key'))
-            ->acceptJson()
-            ->baseUrl('https://freek-dev.mailcoach.app/api/');
-    }
-
     public static function get(string $url): Response
     {
         return self::base()->get($url);
@@ -23,5 +16,12 @@ class Mailcoach
     public static function post(string $url, array $payload = []): Response
     {
         return self::base()->post($url, $payload);
+    }
+
+    protected static function base(): PendingRequest
+    {
+        return Http::withToken(config('services.mailcoach.api_key'))
+            ->acceptJson()
+            ->baseUrl('https://freek-dev.mailcoach.app/api/');
     }
 }
