@@ -18,7 +18,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('backup:clean')->daily()->at('01:00');
         $schedule->command('backup:run')->dailyAt('3:00');
         $schedule->command('site-search:crawl')->daily();
-        $schedule->command('model:prune', ['--model' =>  MonitoredScheduledTaskLogItem::class])->daily();
+        $schedule->command('model:prune', ['--model' => MonitoredScheduledTaskLogItem::class])->daily();
     }
 
     protected function commands()
