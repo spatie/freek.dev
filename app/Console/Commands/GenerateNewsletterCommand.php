@@ -15,11 +15,12 @@ class GenerateNewsletterCommand extends Command
     public function handle()
     {
         $campaigns = Mailcoach::get('campaigns')->json()['data'];
+        $latestCampaign = $campaigns[0];
 
-        $latestCampaignName = $campaigns[0]['name'];
+        $latestCampaignName = $latestCampaign['name'];
         $latestEditionNumber = (int) Str::after($latestCampaignName, '#');
 
-        $latestCampaignCreatedAt = Carbon::parse($campaigns[0]['created_at']);
+        $latestCampaignCreatedAt = Carbon::parse($latestCampaign['created_at']);
         $startDate = $latestCampaignCreatedAt->addDay()->startOfDay();
         $endDate = now();
 
