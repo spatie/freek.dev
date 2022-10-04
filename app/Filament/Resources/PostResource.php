@@ -60,7 +60,7 @@ class PostResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')->sortable(),
                 Tables\Columns\TextColumn::make('publish_date')
-                    ->sortable(query: fn (Builder $query, string $direction) => $query->orderByRaw("case when publish_date is null then 99999999999 else publish_date end desc"))
+                    ->sortable(query: fn (Builder $query, string $direction) => $query->orderByRaw('case when publish_date is null then 99999999999 else publish_date end desc'))
                     ->dateTime(),
                 Tables\Columns\BooleanColumn::make('published'),
                 Tables\Columns\BooleanColumn::make('original_content')->label('Original'),
