@@ -18,7 +18,7 @@
         "abraham/twitteroauth": "^3.3",
         "algolia/algoliasearch-client-php": "^3.3",
         "doctrine/dbal": "^3.3.7",
-        "filament/filament": "^2.0",
+        "filament/filament": "2.x-dev",
         "filament/spatie-laravel-tags-plugin": "^2.0",
         "fruitcake/laravel-cors": "^2.2",
         "guzzlehttp/guzzle": "^7.4.5",
