@@ -56,10 +56,7 @@ class UserResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\OwnedTeamsRelationManager::class,
-            RelationManagers\TeamsRelationManager::class,
-            RelationManagers\PersonalAccessTokensRelationManager::class,
-            RelationManagers\PostsRelationManager::class,
+
         ];
     }
 
