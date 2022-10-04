@@ -24,7 +24,6 @@
         "guzzlehttp/guzzle": "^7.4.5",
         "laravel/framework": "^9.22.1",
         "laravel/horizon": "^5.9.10",
-        "laravel/nova": "^4.12.13",
         "laravel/sail": "^1.15.1",
         "laravel/sanctum": "^2.15.1",
         "laravel/slack-notification-channel": "^2.4",
@@ -60,7 +59,6 @@
         "spatie/laravel-tags": "^4.3.2",
         "spatie/laravel-tail": "^4.4",
         "spatie/laravel-webhook-client": "^3.1.2",
-        "spatie/nova-tags-field": "^4.0.3",
         "spatie/pest-plugin-test-time": "^1.1.1",
         "spatie/security-advisories-health-check": "^0.0.2",
         "stripe/stripe-php": "^7.128",
@@ -112,17 +110,12 @@
         {
             "type": "composer",
             "url": "https://satis.spatie.be"
-        },
-        {
-            "type": "composer",
-            "url": "https://nova.laravel.com"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "post-update-cmd": [
-            "@php artisan nova:publish",
             "@php artisan horizon:publish",
             "@php artisan filament:upgrade",
             "@php artisan vendor:publish --force --tag=livewire:assets --ansi",
