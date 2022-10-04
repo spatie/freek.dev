@@ -33,10 +33,7 @@ class AppServiceProvider extends ServiceProvider
             Filament::registerTheme(
                 app(Vite::class)('resources/css/filament.css'),
             );
-        } catch (Exception)
-        {
-
+        } catch (Exception) {
         }
-
     }
 }
