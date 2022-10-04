@@ -25,7 +25,7 @@ class LinkResource extends Resource
         return $form
             ->columns(1)
             ->schema([
-                Forms\Components\TextInput::make('title'),
+                Forms\Components\TextInput::make('title')->length(60),
                 Forms\Components\TextInput::make('url'),
                 Forms\Components\TextInput::make('status')->disabled(),
 
