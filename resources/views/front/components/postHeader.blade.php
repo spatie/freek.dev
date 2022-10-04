@@ -49,7 +49,7 @@
         @auth
             @if(Auth::user()->admin)
                 –
-                <a target="_blank" href="/nova/resources/posts/{{ $post->id }}/edit">
+                <a target="_blank" href="/admin/posts/{{ $post->id }}/edit">
                     Edit</a>
             @endif
         @endauth
