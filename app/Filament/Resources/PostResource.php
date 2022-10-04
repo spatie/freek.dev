@@ -54,7 +54,7 @@ class PostResource extends Resource
 
     public static function table(Table $table): Table
     {
-        Post::addGlobalScope('order', function(Builder $query) {
+        Post::addGlobalScope('order', function (Builder $query) {
             $query->orderByRaw('case when publish_date is null then 9999999999999999 else timestamp(publish_date) end desc');
         });
 
