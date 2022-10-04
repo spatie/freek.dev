@@ -37,7 +37,7 @@ class AdResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('text')->sortable(),
+                Tables\Columns\TextColumn::make('text')->limit(70)->sortable(),
                 Tables\Columns\TextColumn::make('starts_at')->sortable()->date(),
                 Tables\Columns\TextColumn::make('ends_at')->sortable()->date(),
 
