@@ -60,7 +60,7 @@ class PostResource extends Resource
 
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')->sortable(),
+                Tables\Columns\TextColumn::make('title')->limit(70)->sortable(),
                 Tables\Columns\TextColumn::make('publish_date')
                     ->dateTime(),
                 Tables\Columns\BooleanColumn::make('published'),

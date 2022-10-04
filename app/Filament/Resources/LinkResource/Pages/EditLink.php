@@ -22,7 +22,7 @@ class EditLink extends EditRecord
         $actions = [Actions\DeleteAction::make()];
 
         if ($this->record->status === Link::STATUS_SUBMITTED) {
-            $actions = array_merge($actions, [
+            $actions = array_merge([
                 Actions\Action::make('Approve and create post')
                     ->color('primary')
                     ->requiresConfirmation()
@@ -63,7 +63,7 @@ class EditLink extends EditRecord
 
                         $this->data['status'] = $this->record->status;
                     }),
-            ]);
+            ], $actions);
         }
 
         return $actions;
