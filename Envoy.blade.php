@@ -49,7 +49,9 @@ git pull origin {{ $branch }}
 [ -d {{ $releasesDir }} ] || mkdir {{ $releasesDir }};
 [ -d {{ $persistentDir }} ] || mkdir {{ $persistentDir }};
 [ -d {{ $persistentDir }}/uploads ] || mkdir {{ $persistentDir }}/uploads;
+[ -d {{ $persistentDir }}/admin-uploads ] || mkdir {{ $persistentDir }}/admin-uploads;
 [ -d {{ $persistentDir }}/storage ] || mkdir {{ $persistentDir }}/storage;
+
 cd {{ $releasesDir }};
 
 # Create the release dir
