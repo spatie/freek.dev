@@ -196,6 +196,11 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         });
     }
 
+    public function adminPreviewUrl(): string
+    {
+        return $this->published ? $this->url : $this->preview_url;
+    }
+
     public function promotionalUrl(): Attribute
     {
         return new Attribute(function () {

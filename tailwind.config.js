@@ -1,9 +1,17 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
     content: [
         './resources/**/*.blade.php',
         './app/*.php',
+        './vendor/filament/**/*.blade.php',
+        './vendor/filament/**/*.css',
+
     ],
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
+    ],
     theme: {
         fontFamily: {
             sans: [
@@ -33,6 +41,12 @@ module.exports = {
             ],
         },
         extend: {
+            colors: {
+                danger: colors.rose,
+                primary: colors.blue,
+                success: colors.green,
+                warning: colors.yellow,
+            },
             borderWidth: {
                 3: '3px',
                 5: '5px',

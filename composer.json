@@ -18,6 +18,8 @@
         "abraham/twitteroauth": "^3.3",
         "algolia/algoliasearch-client-php": "^3.3",
         "doctrine/dbal": "^3.3.7",
+        "filament/filament": "^2.0",
+        "filament/spatie-laravel-tags-plugin": "^2.0",
         "fruitcake/laravel-cors": "^2.2",
         "guzzlehttp/guzzle": "^7.4.5",
         "laravel/framework": "^9.22.1",
@@ -122,6 +124,7 @@
         "post-update-cmd": [
             "@php artisan nova:publish",
             "@php artisan horizon:publish",
+            "@php artisan filament:upgrade",
             "@php artisan vendor:publish --force --tag=livewire:assets --ansi",
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],

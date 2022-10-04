@@ -33,4 +33,9 @@ class User extends Authenticatable implements CanComment, MustVerifyEmail
     {
         return $this->hasMany(Post::class, 'submitted_by_user_id');
     }
+
+    public function canAccessFilament(): bool
+    {
+        return $this->email === 'freek@spatie.be';
+    }
 }
