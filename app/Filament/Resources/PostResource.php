@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class PostResource extends Resource
 {
@@ -93,5 +94,15 @@ class PostResource extends Resource
             'create' => Pages\CreatePost::route('/create'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
+    }
+
+    public static function getGlobalSearchResultTitle(Model $record): string
+    {
+        return $record->title;
+    }
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title', 'text'];
     }
 }

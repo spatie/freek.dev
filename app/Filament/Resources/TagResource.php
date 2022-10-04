@@ -8,6 +8,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\Tags\Tag;
 
 class TagResource extends Resource
@@ -59,5 +60,15 @@ class TagResource extends Resource
             'create' => Pages\CreateTag::route('/create'),
             'edit' => Pages\EditTag::route('/{record}/edit'),
         ];
+    }
+
+    public static function getGlobalSearchResultTitle(Model $record): string
+    {
+        return $record->name;
+    }
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name'];
     }
 }

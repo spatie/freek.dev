@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Model;
 
 class TalkResource extends Resource
 {
@@ -68,5 +69,15 @@ class TalkResource extends Resource
             'create' => Pages\CreateTalk::route('/create'),
             'edit' => Pages\EditTalk::route('/{record}/edit'),
         ];
+    }
+
+    public static function getGlobalSearchResultTitle(Model $record): string
+    {
+        return $record->title;
+    }
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title', 'location'];
     }
 }
