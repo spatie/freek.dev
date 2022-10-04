@@ -3,14 +3,11 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TagResource\Pages;
-use App\Filament\Resources\TagResource\RelationManagers;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Spatie\Tags\Tag;
 
 class TagResource extends Resource
@@ -18,7 +15,6 @@ class TagResource extends Resource
     protected static ?string $model = Tag::class;
 
     protected static ?int $navigationSort = 2;
-
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
