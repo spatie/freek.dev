@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
 use Filament\Forms\Components\SpatieTagsInput;
@@ -11,13 +10,10 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PostResource extends Resource
 {
     protected static ?int $navigationSort = 0;
-
 
     protected static ?string $model = Post::class;
 
@@ -62,14 +58,14 @@ class PostResource extends Resource
                 Tables\Columns\TextColumn::make('title')->limit(50)->sortable(),
                 Tables\Columns\TextColumn::make('publish_date')->sortable()->dateTime(),
                 Tables\Columns\BooleanColumn::make('published'),
-                Tables\Columns\BooleanColumn::make('original_content')->label('Original')
+                Tables\Columns\BooleanColumn::make('original_content')->label('Original'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\Action::make('preview')
-                    ->url(fn(Post $record) => $record->adminPreviewUrl(), shouldOpenInNewTab: true),
+                    ->url(fn (Post $record) => $record->adminPreviewUrl(), shouldOpenInNewTab: true),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
