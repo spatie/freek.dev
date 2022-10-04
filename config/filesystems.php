@@ -50,10 +50,10 @@ return [
             'visibility' => 'public',
         ],
 
-        'uploads' => [
+        'admin-uploads' => [
             'driver' => 'local',
-            'root' => storage_path('persistent/uploads'),
-            'url' => env('APP_URL').'/uploads',
+            'root' => storage_path('persistent/admin-uploads'),
+            'url' => env('APP_URL').'/admin-uploads',
             'visibility' => 'public',
         ],
 

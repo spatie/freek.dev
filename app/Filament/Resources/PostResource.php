@@ -28,9 +28,8 @@ class PostResource extends Resource
             ->schema([
                 Forms\Components\Section::make('Post')->schema([
                     Forms\Components\TextInput::make('title')->required(),
-
                     Forms\Components\MarkdownEditor::make('text')
-                        ->fileAttachmentsDisk('uploads')
+                        ->fileAttachmentsDisk('admin-uploads')
                         ->fileAttachmentsVisibility('public')
                         ->enableToolbarButtons([
                             'attachFiles',
@@ -46,7 +45,6 @@ class PostResource extends Resource
                     Forms\Components\Checkbox::make('published'),
                     Forms\Components\Checkbox::make('original_content'),
                     Forms\Components\Checkbox::make('send_automated_tweet'),
-
                     Forms\Components\Select::make('submitted_by_user_id')
                         ->relationship('submittedByUser', 'name'),
                     Forms\Components\TextInput::make('author_twitter_handle'),

@@ -110,6 +110,11 @@ rm -rf {{ $newReleaseDir }}/public/uploads;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/uploads public/uploads;
 
+# Remove the public/admin-uploads directory and replace with persistent data
+rm -rf {{ $newReleaseDir }}/public/admin-uploads;
+cd {{ $newReleaseDir }};
+ln -nfs {{ $baseDir }}/persistent/admin-uploads public/admin-uploads;
+
 # Symlink the og images to the public directory
 rm -rf {{ $newReleaseDir }}/public/og-images;
 cd {{ $newReleaseDir }};
