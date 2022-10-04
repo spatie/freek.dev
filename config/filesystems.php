@@ -52,7 +52,7 @@ return [
 
         'admin-uploads' => [
             'driver' => 'local',
-            'root' => storage_path('persistent/admin-uploads'),
+            'root' => storage_path('admin-uploads'),
             'url' => env('APP_URL').'/admin-uploads',
             'visibility' => 'public',
         ],
