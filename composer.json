@@ -124,7 +124,6 @@
         "post-update-cmd": [
             "@php artisan nova:publish",
             "@php artisan horizon:publish",
-            "@php artisan filament:upgrade",
             "@php artisan vendor:publish --force --tag=livewire:assets --ansi",
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
