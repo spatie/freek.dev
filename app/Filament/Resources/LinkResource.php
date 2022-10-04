@@ -3,16 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\LinkResource\Pages;
-use App\Filament\Resources\LinkResource\RelationManagers;
 use App\Models\Link;
-use App\Models\Post;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class LinkResource extends Resource
 {
@@ -54,7 +50,7 @@ class LinkResource extends Resource
             ])
             ->actions([
                 Tables\Actions\Action::make('preview')
-                    ->url(fn(Link $record) => $record->url, shouldOpenInNewTab: true),
+                    ->url(fn (Link $record) => $record->url, shouldOpenInNewTab: true),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([

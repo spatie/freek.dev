@@ -7,7 +7,6 @@ use App\Actions\CreatePostFromLinkAction;
 use App\Actions\RejectLinkAction;
 use App\Filament\Resources\LinkResource;
 use App\Models\Link;
-use App\Nova\Actions\RejectLink;
 use Filament\Notifications\Notification;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
@@ -27,7 +26,7 @@ class EditLink extends EditRecord
                 Actions\Action::make('Approve and create post')
                     ->color('primary')
                     ->requiresConfirmation()
-                    ->action(function (ApproveLinkAction $approveLink,  CreatePostFromLinkAction $createPostFromLink) {
+                    ->action(function (ApproveLinkAction $approveLink, CreatePostFromLinkAction $createPostFromLink) {
                         $approveLink->execute($this->record);
                         $createPostFromLink->execute($this->record);
 
@@ -68,6 +67,5 @@ class EditLink extends EditRecord
         }
 
         return $actions;
-
     }
 }
