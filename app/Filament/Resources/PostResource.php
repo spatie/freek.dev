@@ -10,10 +10,13 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Builder;
 
 class PostResource extends Resource
 {
     protected static ?int $navigationSort = 0;
+
+    protected static ?string $navigationGroup = 'Content';
 
     protected static ?string $model = Post::class;
 
@@ -56,7 +59,9 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')->sortable(),
-                Tables\Columns\TextColumn::make('publish_date')->sortable()->dateTime(),
+                Tables\Columns\TextColumn::make('publish_date')
+                    ->sortable(query: fn (Builder $query, string $direction) => $query->orderByRaw("case when publish_date is null then 99999999999 else publish_date end desc"))
+                    ->dateTime(),
                 Tables\Columns\BooleanColumn::make('published'),
                 Tables\Columns\BooleanColumn::make('original_content')->label('Original'),
             ])
@@ -70,8 +75,7 @@ class PostResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
-            ])
-            ->defaultSort('publish_date', 'desc');
+            ]);
     }
 
     public static function getRelations(): array
