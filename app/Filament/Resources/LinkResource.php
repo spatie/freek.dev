@@ -25,7 +25,7 @@ class LinkResource extends Resource
         return $form
             ->columns(1)
             ->schema([
-                Forms\Components\TextInput::make('title')->length(60),
+                Forms\Components\TextInput::make('title'),
                 Forms\Components\TextInput::make('url'),
                 Forms\Components\TextInput::make('status')->disabled(),
 
@@ -36,7 +36,7 @@ class LinkResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')->sortable(),
+                Tables\Columns\TextColumn::make('title')->limit(70)->sortable(),
                 Tables\Columns\BadgeColumn::make('status')
                     ->colors([
                         'bg-gray-200' => static fn ($state): bool => $state === Link::STATUS_SUBMITTED,
