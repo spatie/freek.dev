@@ -56,11 +56,14 @@ class PostResource extends Resource
 
     public static function table(Table $table): Table
     {
+        Post::addGlobalScope('order', function(Builder $query) {
+            $query->orderByRaw('case when publish_date is null then 9999999999999999 else timestamp(publish_date) end desc');
+        });
+
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')->sortable(),
                 Tables\Columns\TextColumn::make('publish_date')
-                    ->sortable(query: fn (Builder $query, string $direction) => $query->orderByRaw('case when publish_date is null then 99999999999 else publish_date end desc'))
                     ->dateTime(),
                 Tables\Columns\BooleanColumn::make('published'),
                 Tables\Columns\BooleanColumn::make('original_content')->label('Original'),
