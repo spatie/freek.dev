@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\User;
+use Exception;
 use Filament\Facades\Filament;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Vite;
@@ -28,8 +29,14 @@ class AppServiceProvider extends ServiceProvider
             return User::where('email', 'freek@spatie.be')->first();
         });
 
-        Filament::registerTheme(
-            app(Vite::class)('resources/css/filament.css'),
-        );
+        try {
+            Filament::registerTheme(
+                app(Vite::class)('resources/css/filament.css'),
+            );
+        } catch (Exception)
+        {
+
+        }
+
     }
 }
