@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Comments\Models\Concerns\InteractsWithComments;
 use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
 
-class User extends Authenticatable implements CanComment, MustVerifyEmail
+class User extends Authenticatable implements CanComment, MustVerifyEmail, FilamentUser
 {
     use HasFactory;
     use InteractsWithComments;
