@@ -83,7 +83,6 @@ cd {{ $newReleaseDir }};
 {{ logMessage("🚚  Running Composer…") }}
 ln -nfs {{ $baseDir }}/auth.json auth.json;
 composer install --prefer-dist --no-scripts --no-dev -q -o;
-php artisan nova:publish
 @endtask
 
 @task('runYarn', ['on' => 'remote'])
