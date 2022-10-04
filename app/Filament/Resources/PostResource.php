@@ -59,7 +59,7 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')->limit(50)->sortable(),
+                Tables\Columns\TextColumn::make('title')->sortable(),
                 Tables\Columns\TextColumn::make('publish_date')->sortable()->dateTime(),
                 Tables\Columns\BooleanColumn::make('published'),
                 Tables\Columns\BooleanColumn::make('original_content')->label('Original')
