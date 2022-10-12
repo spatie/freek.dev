@@ -24,3 +24,4 @@ _ide_helper.php
 storage/og-images
 /public/build
 data.ms
+/storage/admin-uploads
