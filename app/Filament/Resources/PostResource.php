@@ -12,6 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\FilamentMarkdownEditor\MarkdownEditor;
 
 class PostResource extends Resource
 {
@@ -29,13 +30,11 @@ class PostResource extends Resource
             ->schema([
                 Forms\Components\Section::make('Post')->schema([
                     Forms\Components\TextInput::make('title')->required(),
-                    Forms\Components\MarkdownEditor::make('text')
+                    MarkdownEditor::make('text')
                         ->fileAttachmentsDisk('admin-uploads')
                         ->fileAttachmentsVisibility('public')
-                        ->enableToolbarButtons([
-                            'attachFiles',
-                        ])
                         ->required(),
+
                     Forms\Components\DateTimePicker::make('publish_date')
                         ->withoutSeconds()
                         ->nullable(),
@@ -64,8 +63,8 @@ class PostResource extends Resource
                 Tables\Columns\TextColumn::make('title')->limit(70)->sortable(),
                 Tables\Columns\TextColumn::make('publish_date')
                     ->dateTime(),
-                Tables\Columns\BooleanColumn::make('published'),
-                Tables\Columns\BooleanColumn::make('original_content')->label('Original'),
+                Tables\Columns\IconColumn::make('published')->boolean(),
+                Tables\Columns\IconColumn::make('original_content')->label('Original')->boolean(),
             ])
             ->filters([
                 //
