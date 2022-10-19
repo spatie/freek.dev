@@ -34,7 +34,6 @@ class NavigationServiceProvider extends ServiceProvider
             return Menu::new()
                 ->addClass('space-y-2')
                 ->url('search', 'Search')
-                ->action(UsesController::class, 'My setup')
                 ->url('advertising', 'Advertising')
 
                 ->setActiveFromRequest();
