@@ -9,7 +9,7 @@ class UsesController
 {
     public function __invoke()
     {
-        $post = Post::find('2119');
+        $post = Post::find('2357');
 
         return view('front.posts.show', compact('post'));
     }
