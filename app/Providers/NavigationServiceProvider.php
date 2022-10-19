@@ -27,6 +27,8 @@ class NavigationServiceProvider extends ServiceProvider
 
                 ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
                 ->action(MusicController::class, 'Music')
+                ->url('uses', 'Uses')
+
                 ->url('about', 'About')
                 ->setActiveFromRequest();
         });
