@@ -6,13 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
 @isset($title)
 <title>{{ $title }} - Freek Van der Herten's blog on PHP, Laravel and JavaScript</title>
 @else
 <title>Freek Van der Herten's blog on PHP, Laravel and JavaScript</title>
 @endisset
-
+@isset($canonical)
+<link rel="canonical" href="{{ $canonical }}" />
+@endisset
 @include('feed::links')
 @include('front.layouts.partials.seo')
 
