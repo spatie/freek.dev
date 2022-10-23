@@ -8,7 +8,6 @@ use App\Http\Controllers\Discovery\MusicController;
 use App\Http\Controllers\Discovery\NewsletterController;
 use App\Http\Controllers\Discovery\OriginalsController;
 use App\Http\Controllers\Discovery\SpeakingController;
-use App\Http\Controllers\Discovery\UsesController;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Menu\Laravel\Menu;
 use Spatie\Menu\Link;
