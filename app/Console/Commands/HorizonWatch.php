@@ -18,8 +18,6 @@ class HorizonWatch extends Command
     {
         $this->info('Starting Horizon and will restart it when any files change...');
 
-        $this->trap([SIGTERM, SIGQUIT], fn () => $this->info('👋 Stopping Horizon'));
-
         $this
             ->startHorizon()
             ->listenForChanges();
@@ -28,7 +26,13 @@ class HorizonWatch extends Command
     protected function listenForChanges(): self
     {
         Watch::paths([app_path(), resource_path('views')])
-            ->onAnyChange(fn() => $this->restartHorizon())
+            ->onAnyChange(function (string $event, string $path) {
+                if ($this->isPhpFile($path)) {
+                    $this->restartHorizon();
+                }
+            })
+
+
             ->start();
 
         return $this;
@@ -42,20 +46,22 @@ class HorizonWatch extends Command
 
         $this->horizonProcess->start(fn($type, $output) => $this->info($output));
 
-
-
         return $this;
     }
 
     public function restartHorizon(): self
     {
-        $this->comment('Change detected... Restarting horizon');
+        $this->comment('Change detected! Restarting horizon...');
 
         $this->horizonProcess->stop();
 
         $this->startHorizon();
 
-
         return $this;
+    }
+
+    protected function isPhpFile(string $path): bool
+    {
+        return str_ends_with(strtolower($path), '.php');
     }
 }
