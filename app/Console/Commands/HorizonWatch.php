@@ -28,7 +28,7 @@ class HorizonWatch extends Command
     protected function listenForChanges(): self
     {
         Watch::paths([app_path(), resource_path('views')])
-            ->onAnyChange(fn() => $this->restartHorizon())
+            ->onAnyChange(fn () => $this->restartHorizon())
             ->start();
 
         return $this;
@@ -40,9 +40,7 @@ class HorizonWatch extends Command
 
         $this->horizonProcess->setTty(true)->setTimeout(null);
 
-        $this->horizonProcess->start(fn($type, $output) => $this->info($output));
-
-
+        $this->horizonProcess->start(fn ($type, $output) => $this->info($output));
 
         return $this;
     }
@@ -54,7 +52,6 @@ class HorizonWatch extends Command
         $this->horizonProcess->stop();
 
         $this->startHorizon();
-
 
         return $this;
     }
