@@ -12,7 +12,7 @@ class HorizonWatch extends Command
 
     protected $signature = 'horizon:watch';
 
-    protected $description = 'Run Horizon and restart it when files are changes';
+    protected $description = 'Run Horizon and restart it when PHP files are changed';
 
     public function handle()
     {
@@ -34,7 +34,6 @@ class HorizonWatch extends Command
                     $this->restartHorizon();
                 }
             })
-
 
             ->start();
 
