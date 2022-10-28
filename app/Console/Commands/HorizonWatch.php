@@ -16,11 +16,14 @@ class HorizonWatch extends Command
 
     public function handle()
     {
-        $this->info('Starting Horizon and will restart it when any files change...');
+        $this->components->info('Starting Horizon and will restart it when any files change...');
 
-        $this
-            ->startHorizon()
-            ->listenForChanges();
+        $horizonStarted = $this->startHorizon();
+
+        if (! $horizonStarted) {
+            return Command::FAILURE;
+        }
+            $this->listenForChanges();
     }
 
     protected function listenForChanges(): self
@@ -38,7 +41,7 @@ class HorizonWatch extends Command
         return $this;
     }
 
-    public function startHorizon(): self
+    public function startHorizon(): bool
     {
         $this->horizonProcess = Process::fromShellCommandline('php artisan horizon');
 
@@ -46,12 +49,14 @@ class HorizonWatch extends Command
 
         $this->horizonProcess->start(fn($type, $output) => $this->info($output));
 
-        return $this;
+        sleep(1);
+
+        return ! $this->horizonProcess->isTerminated();
     }
 
     public function restartHorizon(): self
     {
-        $this->comment('Change detected! Restarting horizon...');
+        $this->components->info('Change detected! Restarting horizon...');
 
         $this->horizonProcess->stop();
 
