@@ -23,7 +23,7 @@ class HorizonWatch extends Command
         if (! $horizonStarted) {
             return Command::FAILURE;
         }
-            $this->listenForChanges();
+        $this->listenForChanges();
     }
 
     protected function listenForChanges(): self
@@ -34,7 +34,6 @@ class HorizonWatch extends Command
                     $this->restartHorizon();
                 }
             })
-
 
             ->start();
 
@@ -47,7 +46,7 @@ class HorizonWatch extends Command
 
         $this->horizonProcess->setTty(true)->setTimeout(null);
 
-        $this->horizonProcess->start(fn($type, $output) => $this->info($output));
+        $this->horizonProcess->start(fn ($type, $output) => $this->info($output));
 
         sleep(1);
 
