@@ -36,6 +36,8 @@
         "spatie/browsershot": "^3.57",
         "spatie/commonmark-highlighter": "^3.0",
         "spatie/cpu-load-health-check": "^1.0.2",
+        "spatie/filament-markdown-editor": "0.0.3",
+        "spatie/file-system-watcher": "^1.1",
         "spatie/laravel-backup": "^8.1.2",
         "spatie/laravel-comments-livewire": "^1.2.5",
         "spatie/laravel-feed": "^4.1.4",
@@ -48,7 +50,6 @@
         "spatie/laravel-medialibrary": "^10.5",
         "spatie/laravel-menu": "^4.1",
         "spatie/laravel-missing-page-redirector": "^2.9.2",
-        "spatie/filament-markdown-editor": "0.0.3",
         "spatie/laravel-model-info": "^0.0.5",
         "spatie/laravel-ray": "^1.30",
         "spatie/laravel-remote": "^1.2",
@@ -64,7 +65,8 @@
         "spatie/security-advisories-health-check": "^0.0.2",
         "stripe/stripe-php": "^7.128",
         "symfony/http-client": "^6.1",
-        "symfony/mailgun-mailer": "^6.1"
+        "symfony/mailgun-mailer": "^6.1",
+      "ext-pcntl": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12.3",

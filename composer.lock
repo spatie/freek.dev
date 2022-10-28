@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e180db173fe0bafd79e9a7850ee5d0e1",
+    "content-hash": "a923030dfd47a7c102f7a0d2873b0670",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -8799,6 +8799,65 @@
                 "source": "https://github.com/spatie/filament-markdown-editor/tree/0.0.3"
             },
             "time": "2022-10-13T09:20:46+00:00"
+        },
+        {
+            "name": "spatie/file-system-watcher",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/file-system-watcher.git",
+                "reference": "472b499f70d3c9f2d5dcdd08534ac0ba246befb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/file-system-watcher/zipball/472b499f70d3c9f2d5dcdd08534ac0ba246befb4",
+                "reference": "472b499f70d3c9f2d5dcdd08534ac0ba246befb4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "symfony/process": "^5.2|^6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5",
+                "spatie/ray": "^1.22",
+                "spatie/temporary-directory": "^2.0",
+                "vimeo/psalm": "^4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Watcher\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Watch changes in the file system using PHP",
+            "homepage": "https://github.com/spatie/file-system-watcher",
+            "keywords": [
+                "file-system-watcher",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/file-system-watcher/issues",
+                "source": "https://github.com/spatie/file-system-watcher/tree/1.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-06-16T06:32:24+00:00"
         },
         {
             "name": "spatie/flare-client-php",
