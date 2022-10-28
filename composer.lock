@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a923030dfd47a7c102f7a0d2873b0670",
+    "content-hash": "0b8ae8b0f32f2a864dcbb8247d241489",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -9803,6 +9803,76 @@
             "time": "2022-08-03T22:31:36+00:00"
         },
         {
+            "name": "spatie/laravel-horizon-watcher",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-horizon-watcher.git",
+                "reference": "c88b9b46121b3564167d3eb383bda7d6b463649d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-horizon-watcher/zipball/c88b9b46121b3564167d3eb383bda7d6b463649d",
+                "reference": "c88b9b46121b3564167d3eb383bda7d6b463649d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "php": "^8.1",
+                "spatie/file-system-watcher": "^1.1",
+                "spatie/laravel-package-tools": "^1.13.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "orchestra/testbench": "^7.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\HorizonWatcher\\HorizonWatcherServiceProvider"
+                    ],
+                    "aliases": {
+                        "HorizonWatcher": "Spatie\\HorizonWatcher\\Facades\\HorizonWatcher"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\HorizonWatcher\\": "src",
+                    "Spatie\\HorizonWatcher\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Automatically restart Horizon when local file changes are detected",
+            "homepage": "https://github.com/spatie/laravel-horizon-watcher",
+            "keywords": [
+                "laravel",
+                "laravel-horizon-watcher",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-horizon-watcher/issues",
+                "source": "https://github.com/spatie/laravel-horizon-watcher/tree/0.0.1"
+            },
+            "time": "2022-10-28T18:51:24+00:00"
+        },
+        {
             "name": "spatie/laravel-ignition",
             "version": "1.5.1",
             "source": {
@@ -16736,6 +16806,7 @@
         "ext-json": "*",
         "ext-libxml": "*",
         "ext-openssl": "*",
+        "ext-pcntl": "*",
         "ext-simplexml": "*"
     },
     "platform-dev": [],
