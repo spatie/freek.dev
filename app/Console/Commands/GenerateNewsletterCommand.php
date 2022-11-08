@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Mailcoach;
 use App\Services\NewsletterGenerator;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
+use Spatie\MailcoachSdk\Facades\Mailcoach;
 
 class GenerateNewsletterCommand extends Command
 {
@@ -14,13 +14,13 @@ class GenerateNewsletterCommand extends Command
 
     public function handle()
     {
-        $campaigns = Mailcoach::get('campaigns')->json()['data'];
+        $campaigns = Mailcoach::campaigns();
         $latestCampaign = $campaigns[0];
 
-        $latestCampaignName = $latestCampaign['name'];
+        $latestCampaignName = $latestCampaign->name;
         $latestEditionNumber = (int) Str::after($latestCampaignName, '#');
 
-        $latestCampaignCreatedAt = Carbon::parse($latestCampaign['created_at']);
+        $latestCampaignCreatedAt = Carbon::parse($latestCampaign->createdAt);
         $startDate = $latestCampaignCreatedAt->addDay()->startOfDay();
         $endDate = now();
 
@@ -34,7 +34,7 @@ class GenerateNewsletterCommand extends Command
 
         $title = "freek.dev newsletter #{$newEditionNumber}";
 
-        $response = Mailcoach::post('campaigns', [
+        Mailcoach::createCampaign([
             'name' => $title,
             'fields' => [
                 'title' => $title,
@@ -46,13 +46,6 @@ class GenerateNewsletterCommand extends Command
             'email_list_uuid' => config('services.mailcoach.email_list_uuid'),
             'template_uuid' => '86232043-4924-40a1-a0c6-6c9568c4e540',
         ]);
-
-        if ($response->failed()) {
-            $this->error('Failed to create campaign');
-            $this->error($response->body());
-
-            return self::FAILURE;
-        }
 
         $this->info("freek.dev newsletter #{$newEditionNumber} has been created with posts from {$startDate->format('Y-m-d')} until {$endDate->format('Y-m-d')}!");
 
