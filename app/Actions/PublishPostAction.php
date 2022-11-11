@@ -6,7 +6,6 @@ use App\Jobs\CreateOgImageJob;
 use App\Jobs\TootPostJob;
 use App\Jobs\TweetPostJob;
 use App\Models\Post;
-use Illuminate\Support\Facades\Bus;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class PublishPostAction
