@@ -49,6 +49,7 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         'published' => 'boolean',
         'original_content' => 'boolean',
         'send_automated_tweet' => 'boolean',
+        'toot_sent' => 'boolean',
     ];
 
     public static function booted()
@@ -273,6 +274,18 @@ class Post extends Model implements Feedable, Sluggable, HasMedia
         }
 
         return $this->emoji.' '.$this->title.$twitterAuthorString
+            .PHP_EOL.$this->promotional_url
+            .PHP_EOL.$tags;
+    }
+
+    public function toToot(): string
+    {
+        $tags = $this->tags
+            ->map(fn (Tag $tag) => $tag->name)
+            ->map(fn (string $tagName) => '#'.str_replace(' ', '', $tagName))
+            ->implode(' ');
+
+        return $this->emoji.' '.$this->title
             .PHP_EOL.$this->promotional_url
             .PHP_EOL.$tags;
     }
