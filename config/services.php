@@ -22,7 +22,7 @@ return [
     ],
 
     'mastodon' => [
-        'token' => env('MASTODON_TOKEN')
+        'token' => env('MASTODON_TOKEN'),
     ],
 
     'webmentions' => [

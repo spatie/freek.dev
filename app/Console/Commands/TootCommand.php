@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Http;
 
 class TootCommand extends Command
 {
@@ -13,6 +12,5 @@ class TootCommand extends Command
 
     public function handle()
     {
-
     }
 }
