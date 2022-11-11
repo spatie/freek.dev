@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Jobs\CreateOgImageJob;
+use App\Jobs\TootPostJob;
 use App\Jobs\TweetPostJob;
 use App\Models\Post;
 use Illuminate\Support\Facades\Bus;
@@ -24,6 +25,7 @@ class PublishPostAction
             new CreateOgImageJob($post),
             fn () => ResponseCache::clear(),
             new TweetPostJob($post),
+            new TootPostJob($post),
         ])->dispatch();
     }
 }
