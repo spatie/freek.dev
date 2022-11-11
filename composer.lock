@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7de99308dac192ffb9d58d8493a8eba4",
+    "content-hash": "77d2860aba48322388408abb8b6feab2",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1628,16 +1628,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v2.16.45",
+            "version": "v2.16.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/admin.git",
-                "reference": "f79b1c32ef1b0c6901367cb6f854ad8ccdb1fb1a"
+                "reference": "38406080632fa6de0640e9a7aa1061d83b56c2db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/admin/zipball/f79b1c32ef1b0c6901367cb6f854ad8ccdb1fb1a",
-                "reference": "f79b1c32ef1b0c6901367cb6f854ad8ccdb1fb1a",
+                "url": "https://api.github.com/repos/filamentphp/admin/zipball/38406080632fa6de0640e9a7aa1061d83b56c2db",
+                "reference": "38406080632fa6de0640e9a7aa1061d83b56c2db",
                 "shasum": ""
             },
             "require": {
@@ -1687,20 +1687,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2022-11-09T22:06:02+00:00"
+            "time": "2022-11-11T16:52:50+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v2.16.45",
+            "version": "v2.16.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "3ec7df2e33a9eba76a4a3845d9fb211c0762b8f2"
+                "reference": "71f82b7d06b665d140658aeb8c7ea63156d810e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/3ec7df2e33a9eba76a4a3845d9fb211c0762b8f2",
-                "reference": "3ec7df2e33a9eba76a4a3845d9fb211c0762b8f2",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/71f82b7d06b665d140658aeb8c7ea63156d810e7",
+                "reference": "71f82b7d06b665d140658aeb8c7ea63156d810e7",
                 "shasum": ""
             },
             "require": {
@@ -1745,20 +1745,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2022-11-09T22:06:02+00:00"
+            "time": "2022-11-11T16:52:48+00:00"
         },
         {
             "name": "filament/notifications",
-            "version": "v2.16.45",
+            "version": "v2.16.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
-                "reference": "45a17e50dbffe17852811c4181309e23deb24b97"
+                "reference": "9155b644bdeb694c9d760c340a7110369a97757e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/notifications/zipball/45a17e50dbffe17852811c4181309e23deb24b97",
-                "reference": "45a17e50dbffe17852811c4181309e23deb24b97",
+                "url": "https://api.github.com/repos/filamentphp/notifications/zipball/9155b644bdeb694c9d760c340a7110369a97757e",
+                "reference": "9155b644bdeb694c9d760c340a7110369a97757e",
                 "shasum": ""
             },
             "require": {
@@ -1795,11 +1795,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2022-11-09T16:25:58+00:00"
+            "time": "2022-11-11T16:52:47+00:00"
         },
         {
             "name": "filament/spatie-laravel-tags-plugin",
-            "version": "v2.16.45",
+            "version": "v2.16.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/spatie-laravel-tags-plugin.git",
@@ -1836,7 +1836,7 @@
         },
         {
             "name": "filament/support",
-            "version": "v2.16.45",
+            "version": "v2.16.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
@@ -1886,16 +1886,16 @@
         },
         {
             "name": "filament/tables",
-            "version": "v2.16.45",
+            "version": "v2.16.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
-                "reference": "4f546c9b916c688cac4f1d905c84e10bf577f408"
+                "reference": "c92768ac7996ba75d2c62fb2b6f8babc9208b57c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/tables/zipball/4f546c9b916c688cac4f1d905c84e10bf577f408",
-                "reference": "4f546c9b916c688cac4f1d905c84e10bf577f408",
+                "url": "https://api.github.com/repos/filamentphp/tables/zipball/c92768ac7996ba75d2c62fb2b6f8babc9208b57c",
+                "reference": "c92768ac7996ba75d2c62fb2b6f8babc9208b57c",
                 "shasum": ""
             },
             "require": {
@@ -1938,7 +1938,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2022-11-09T22:06:36+00:00"
+            "time": "2022-11-11T16:52:55+00:00"
         },
         {
             "name": "filp/whoops",
@@ -10531,91 +10531,6 @@
             "time": "2022-09-07T07:50:29+00:00"
         },
         {
-            "name": "spatie/laravel-newsletter",
-            "version": "5.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-newsletter",
-                "reference": "bb820a10f9c09c271af4aa75cdbf32eb57b89313"
-            },
-            "require": {
-                "php": "^8.1",
-                "spatie/laravel-package-tools": "^1.13"
-            },
-            "require-dev": {
-                "drewm/mailchimp-api": "^2.5",
-                "guzzlehttp/guzzle": "^7.5",
-                "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^7.11",
-                "pestphp/pest": "^1.20",
-                "phpstan/phpstan": "^1.9",
-                "phpunit/phpunit": "^9.5",
-                "spatie/mailcoach-sdk-php": "^1.0",
-                "spatie/ray": "^1.28"
-            },
-            "suggest": {
-                "drewm/mailchimp-api": "For working with MailChimp",
-                "spatie/mailcoach-sdk-php": "For working with Mailcoach"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Newsletter\\NewsletterServiceProvider"
-                    ],
-                    "aliases": {
-                        "Newsletter": "Spatie\\Newsletter\\NewsletterFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Newsletter\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\Newsletter\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "analyse": [
-                    "vendor/bin/phpstan"
-                ],
-                "test-coverage": [
-                    "vendor/bin/pest --coverage"
-                ],
-                "format": [
-                    "vendor/bin/pint"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Manage Mailcoach and MailChimp newsletters in Laravel",
-            "homepage": "https://github.com/spatie/laravel-newsletter",
-            "keywords": [
-                "laravel",
-                "mailchimp",
-                "mailcoach",
-                "newsletter"
-            ],
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "spatie/laravel-package-tools",
             "version": "1.13.6",
             "source": {
@@ -17067,9 +16982,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-newsletter": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
