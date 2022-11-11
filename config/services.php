@@ -20,6 +20,11 @@ return [
         'access_token' => env('TWITTER_ACCESS_TOKEN'),
         'access_token_secret' => env('TWITTER_ACCESS_TOKEN_SECRET'),
     ],
+
+    'mastodon' => [
+        'token' => env('MASTODON_TOKEN'),
+    ],
+
     'webmentions' => [
         'webhook_secret' => env('WEBMENTIONS_WEBHOOK_SECRET'),
     ],
