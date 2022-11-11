@@ -21,11 +21,10 @@ class PublishPostAction
 
         $post->save();
 
-        Bus::chain([
-            new CreateOgImageJob($post),
-            fn () => ResponseCache::clear(),
-            new TweetPostJob($post),
-            new TootPostJob($post),
-        ])->dispatch();
+        ResponseCache::clear();
+
+        dispatch(new CreateOgImageJob($post));
+        dispatch(new TweetPostJob($post))->delay(now()->addSeconds(20));
+        dispatch(new TootPostJob($post))->delay(now()->addSecond(20));
     }
 }
