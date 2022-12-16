@@ -22,7 +22,7 @@
         </ul>
 
         <h2 id="topologies">
-            Kobus
+            Topologies
             <a href="#topologies" class="permalink">#</a>
         </h2>
 
