@@ -58,8 +58,8 @@ class MusicController
                 'links' => [
                     'Spotify' => 'https://open.spotify.com/album/4qHt2PkVl7vbJt3xe8XaxG',
                     'Apple Music' => 'https://music.apple.com/be/album/topologies-ep/1659961230',
-                ]
-            ]
+                ],
+            ],
         ];
 
         $releases['jarenduren'] = [
