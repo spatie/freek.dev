@@ -21,6 +21,21 @@
             @endforeach
         </ul>
 
+        <h2 id="topologies">
+            Kobus
+            <a href="#topologies" class="permalink">#</a>
+        </h2>
+
+        <p>
+            Topologies is my currently active band. We converted our rehearsal room to a recording space, and are usually crafting songs without the aim of ever performing them live. Expect songs with wild structures, and a wide range of instruments and electronics.
+        </p>
+
+        <ul class="list-none text-gray-700 space-y-4">
+            @foreach($releases['topologies'] as $release)
+                @include('front.music.partials.release')
+            @endforeach
+        </ul>
+
         <h2 id="jarenduren">
             jarenduren
             <a href="#jarenduren" class="permalink">#</a>
