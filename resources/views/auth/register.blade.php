@@ -7,6 +7,8 @@
 
         <div>
             <form method="POST" action="{{ route('register') }}">
+                <x-honeypot />
+
                 @csrf
 
                 <x-input-field label="Name" name="name"/>

@@ -8,13 +8,14 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 Route::middleware(['guest', 'doNotCacheResponse'])->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('login', [LoginController::class, 'login']);
 
     Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::post('register', [RegisterController::class, 'register']);
+    Route::post('register', [RegisterController::class, 'register'])->middleware(ProtectAgainstSpam::class);
 
     Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
     Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
