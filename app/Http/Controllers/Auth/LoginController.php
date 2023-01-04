@@ -13,7 +13,7 @@ class LoginController
     public function redirectPath()
     {
         if (auth()->user()->admin) {
-            return '/nova';
+            return '/admin';
         }
 
         return action(IndexController::class);

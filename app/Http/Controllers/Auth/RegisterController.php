@@ -55,7 +55,7 @@ class RegisterController
     public function redirectPath()
     {
         if (auth()->user()->admin) {
-            return '/nova/posts';
+            return '/admin/posts';
         }
 
         return action(IndexController::class);

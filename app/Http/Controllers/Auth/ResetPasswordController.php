@@ -13,7 +13,7 @@ class ResetPasswordController
     public function redirectPath()
     {
         if (auth()->user()->admin) {
-            return '/nova';
+            return '/admin';
         }
 
         return redirect()->to(action(IndexController::class));
