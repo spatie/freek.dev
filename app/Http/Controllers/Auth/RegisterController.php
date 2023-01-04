@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Discovery\Community\IndexController;
 use App\Models\User;
-use App\Services\Mailcoach;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
+use Spatie\MailcoachSdk\Facades\Mailcoach;
 
 class RegisterController
 {
@@ -46,7 +46,7 @@ class RegisterController
         $user->sendEmailVerificationNotification();
 
         if (isset($data['newsletter'])) {
-            Mailcoach::post('/email-lists/'.config('services.mailcoach.email_list_uuid').'/subscribers', ['email' => $user->email]);
+            Mailcoach::createSubscriber(config('services.mailcoach.email_list_uuid'), ['email' => $user->email]);
         }
 
         return $user;
