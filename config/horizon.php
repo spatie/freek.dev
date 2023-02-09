@@ -76,7 +76,7 @@ return [
                 'connection' => 'redis',
                 'queue' => ['default'],
                 'balance' => 'simple',
-                'processes' => 1,
+                'processes' => 4,
                 'tries' => 2,
                 'timeout' => 60,
             ],
