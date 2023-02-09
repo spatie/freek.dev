@@ -76,5 +76,5 @@ return [
      * you can extend the default one, and specify the class name of
      * your customized job here.
      */
-    'crawl_site_job' => Spatie\SiteSearch\Jobs\CrawlSiteJob::class,
+    'crawl_site_job' => \App\Jobs\CrawlSiteJob::class,
 ];
