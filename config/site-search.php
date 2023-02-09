@@ -70,4 +70,11 @@ return [
      * to a search index.
      */
     'default_driver' => Spatie\SiteSearch\Drivers\MeiliSearchDriver::class,
+
+    /*
+     * This job is responsible for crawling your site. To customize this job,
+     * you can extend the default one, and specify the class name of
+     * your customized job here.
+     */
+    'crawl_site_job' => Spatie\SiteSearch\Jobs\CrawlSiteJob::class,
 ];

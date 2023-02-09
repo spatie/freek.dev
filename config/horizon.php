@@ -78,7 +78,7 @@ return [
                 'balance' => 'simple',
                 'processes' => 4,
                 'tries' => 2,
-                'timeout' => 60,
+                'timeout' => 60 * 30,
             ],
         ],
 
