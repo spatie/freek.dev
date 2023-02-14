@@ -7,7 +7,7 @@ it('can determine the promotional url', function () {
         'title' => 'test',
     ]);
     $this->assertEquals(
-        "http://freek.dev.test/{$post->id}-test",
+        url("{$post->id}-test"),
         $post->promotional_url,
     );
 
