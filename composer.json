@@ -22,7 +22,6 @@
         "drewm/mailchimp-api": "^2.5",
         "filament/filament": "^2.0",
         "filament/spatie-laravel-tags-plugin": "^2.0",
-        "fruitcake/laravel-cors": "^2.2",
         "guzzlehttp/guzzle": "^7.4.5",
         "laravel/framework": "^9.22.1",
         "laravel/horizon": "^5.9.10",
