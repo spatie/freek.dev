@@ -33,7 +33,7 @@
             <meta property="article:tag" content="{{ $tag->name }}"/>
         @endforeach
 
-        <meta property="article:published_time" content="{{ optional($post->publish_date)->toIso8601String() }}"/>
+        <meta property="article:published_time" content="{{ $post->publish_date?->toIso8601String() }}"/>
         <meta property="og:updated_time" content="{{ $post->updated_at->toIso8601String() }}"/>
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:description" content="{{ $post->plain_text_excerpt }}"/>
