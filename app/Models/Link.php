@@ -17,7 +17,7 @@ class Link extends Model implements Sluggable
 
     public $casts = [
         'publish_date' => 'datetime',
-    ]
+    ];
 
     public const STATUS_SUBMITTED = 'pending';
 
