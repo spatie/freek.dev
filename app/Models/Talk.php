@@ -13,5 +13,5 @@ class Talk extends Model
 
     public $casts = [
         'presented_at' => 'datetime'
-    ]
+    ];
 }
