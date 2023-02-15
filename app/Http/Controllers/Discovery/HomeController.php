@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Discovery;
 
 use App\Models\Post;
+use Illuminate\View\View;
 use Spatie\RouteDiscovery\Attributes\Route;
 use function view;
 
 class HomeController
 {
     #[Route(fullUri: '/')]
-    public function __invoke()
+    public function __invoke(): View
     {
         $posts = Post::query()
             ->published()

@@ -7,12 +7,12 @@ use Tests\Factories\PostFactory;
 
 class PostSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         (new PostFactory(2))->tweet()->create();
         (new PostFactory(2))->original()->create();
         (new PostFactory(2))->link()->create();
 
-        PostFactory::series(10);
+        PostFactory::series(4);
     }
 }

@@ -6,13 +6,14 @@ use App\Actions\ApproveLinkAction;
 use App\Actions\CreatePostFromLinkAction;
 use App\Actions\RejectLinkAction;
 use App\Models\Link;
+use Illuminate\View\View;
 use Spatie\RouteDiscovery\Attributes\Route;
 
 #[Route(middleware: 'signed')]
 class LinkApproval
 {
     #[Route(name: 'link.approve')]
-    public function approve(Link $link, ApproveLinkAction $approveLinkAction)
+    public function approve(Link $link, ApproveLinkAction $approveLinkAction): View
     {
         $approveLinkAction->execute($link);
 
@@ -24,7 +25,7 @@ class LinkApproval
         Link $link,
         ApproveLinkAction $approveLinkAction,
         CreatePostFromLinkAction $createPostFromLinkAction
-    ) {
+    ): View {
         $approveLinkAction->execute($link);
 
         $createPostFromLinkAction->execute($link);
@@ -33,7 +34,7 @@ class LinkApproval
     }
 
     #[Route(name: 'link.reject')]
-    public function reject(Link $link, RejectLinkAction $rejectLinkAction)
+    public function reject(Link $link, RejectLinkAction $rejectLinkAction): View
     {
         $rejectLinkAction->execute($link);
 

@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 class WebmentionSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         Post::each(function (Post $post) {
             Webmention::factory()->times(10)->create([

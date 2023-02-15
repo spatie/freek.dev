@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 
 class TalkSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         $this->getTalks()->each(function (array $talkAttributes) {
             Talk::create($talkAttributes);

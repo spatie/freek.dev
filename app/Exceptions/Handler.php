@@ -16,7 +16,7 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    public function register()
+    public function register(): void
     {
         $this->reportable(function (ValidationException $exception) {
             flash()->error('Please correct the errors in the form');

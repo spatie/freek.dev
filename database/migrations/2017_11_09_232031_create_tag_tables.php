@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');

@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class VideoSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         Video::create([
             'title' => 'Taking care of backups with Laravel',

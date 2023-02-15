@@ -56,7 +56,7 @@
 
                     <p class="text-sm text-gray-700">
                         <a href="{{ $link->url }}">
-                            <time datetime="{{ optional($link->created_at)->format(DateTime::ATOM) }}">
+                            <time datetime="{{ $link->created_at?->format(DateTime::ATOM) }}">
                                 {{ $link->created_at->format('M jS Y') }}
                             </time>
                         </a>

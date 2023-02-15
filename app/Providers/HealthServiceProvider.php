@@ -17,7 +17,7 @@ use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 
 class HealthServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         Health::checks([
             CpuLoadCheck::new()->failWhenLoadIsHigherInTheLast15Minutes(4.0),

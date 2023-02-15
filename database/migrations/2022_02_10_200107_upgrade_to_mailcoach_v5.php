@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::table('mailcoach_campaigns', function (Blueprint $table) {
             $table->dropColumn('send_batch_id');

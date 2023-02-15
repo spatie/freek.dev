@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::table('mailcoach_campaigns', function (Blueprint $table) {
             $table->timestamp('all_jobs_added_to_batch_at')->nullable();

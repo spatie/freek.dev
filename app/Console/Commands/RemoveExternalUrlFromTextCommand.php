@@ -11,7 +11,7 @@ class RemoveExternalUrlFromTextCommand extends Command
 
     protected $description = 'Remove the external url from the text field';
 
-    public function handle()
+    public function handle(): void
     {
         Post::query()->whereNotNull('external_url')->each(
             fn (Post $post) => $post->update(['text' => $this->getSanitizedText($post)])

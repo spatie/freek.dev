@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class UserFactory extends Factory
 {
-    public function definition()
+    public function definition(): array
     {
         static $password;
 
@@ -22,10 +22,8 @@ class UserFactory extends Factory
 
     /**
      * Define the model's unverified state.
-     *
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function unverified()
+    public function unverified(): Factory
     {
         return $this->state(function (array $attributes) {
             return [

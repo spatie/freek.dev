@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Discovery;
 
+use Illuminate\View\View;
 use function view;
 
 class MusicController
 {
-    public function __invoke()
+    public function __invoke(): View
     {
         $releases['kobus'] = [
             [

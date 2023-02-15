@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CreateLinkRequest extends FormRequest
 {
-    public function rules()
+    public function rules(): array
     {
         return [
             'title' => 'required|max:255',

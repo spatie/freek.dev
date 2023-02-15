@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Discovery;
 
 use App\Models\Talk;
 use App\Models\Video;
+use Illuminate\View\View;
 
 class SpeakingController
 {
-    public function __invoke()
+    public function __invoke(): View
     {
         $talks = Talk::orderBy('presented_at', 'desc')
             ->get()

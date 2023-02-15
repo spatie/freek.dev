@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 class CommentSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         Post::each(function (Post $post) {
             if (faker()->boolean) {

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Discovery;
 
 use App\Models\Post;
+use Illuminate\View\View;
 use function view;
 
 class OriginalsController
 {
-    public function __invoke()
+    public function __invoke(): View
     {
         $posts = Post::query()
             ->published()

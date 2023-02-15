@@ -10,7 +10,7 @@ use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
 
 class Kernel extends ConsoleKernel
 {
-    protected function schedule(Schedule $schedule)
+    protected function schedule(Schedule $schedule): void
     {
         $schedule->command(RunHealthChecksCommand::class)->everyMinute();
         $schedule->command(PublishScheduledPostsCommand::class)->everyMinute();
@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('model:prune', ['--model' => MonitoredScheduledTaskLogItem::class])->daily();
     }
 
-    protected function commands()
+    protected function commands(): void
     {
         $this->load(__DIR__.'/Commands');
     }

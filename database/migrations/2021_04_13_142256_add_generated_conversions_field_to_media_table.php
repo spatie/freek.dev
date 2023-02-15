@@ -8,7 +8,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         if (! Schema::hasColumn('media', 'generated_conversions')) {
             Schema::table('media', function (Blueprint $table) {

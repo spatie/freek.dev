@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class TwitterServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->bind(Twitter::class, function () {
             $connection = new TwitterOAuth(

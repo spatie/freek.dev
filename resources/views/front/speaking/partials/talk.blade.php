@@ -6,7 +6,7 @@
         @foreach ($talks as $talk)
             <li class="text-sm text-gray-700">
                 {{ $talk->location }} on
-                <time datetime="{{ optional($talk->presented_at)->format(DateTime::ATOM) }}">
+                <time datetime="{{ $talk->presented_at?->format(DateTime::ATOM) }}">
                     {{ $talk->presented_at->format('M jS Y') }}
                 </time>
                 @if($talk->video_link)
