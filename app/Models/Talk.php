@@ -11,5 +11,7 @@ class Talk extends Model
     use HasFactory;
     use TalkPresenter;
 
-    public $dates = ['presented_at'];
+    public $casts = [
+        'presented_at' => 'datetime'
+    ]
 }

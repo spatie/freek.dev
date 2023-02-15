@@ -15,7 +15,9 @@ class Link extends Model implements Sluggable
     use HasFactory;
     use HasSlug;
 
-    public $dates = ['publish_date'];
+    public $casts = [
+        'publish_date' => 'datetime',
+    ]
 
     public const STATUS_SUBMITTED = 'pending';
 
