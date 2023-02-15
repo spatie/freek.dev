@@ -37,7 +37,7 @@
         "spatie/browsershot": "^3.57.5",
         "spatie/commonmark-highlighter": "^3.0",
         "spatie/cpu-load-health-check": "^1.0.2",
-        "spatie/filament-markdown-editor": "0.0.3",
+        "spatie/filament-markdown-editor": "^1.0",
         "spatie/laravel-backup": "^8.1.2",
         "spatie/laravel-comments-livewire": "^1.2.5",
         "spatie/laravel-feed": "^4.2",
@@ -89,7 +89,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
         }
     },
     "extra": {

@@ -10,7 +10,7 @@ class ProcessWebhookCommand extends Command
 {
     protected $signature = 'blog:process-webhook {webhookCallId}';
 
-    public function handle(): void
+    public function handle()
     {
         $webhookCall = WebhookCall::find($this->argument('webhookCallId'));
 
