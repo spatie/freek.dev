@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Discovery;
 
-use Illuminate\View\View;
 use App\Models\Talk;
 use App\Models\Video;
+use Illuminate\View\View;
 
 class SpeakingController
 {

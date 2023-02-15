@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Discovery;
 
-use Illuminate\View\View;
 use App\Models\Post;
+use Illuminate\View\View;
 use Spatie\RouteDiscovery\Attributes\Route;
 use function view;
 

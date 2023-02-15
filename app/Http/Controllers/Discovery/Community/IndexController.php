@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Discovery\Community;
 
-use Illuminate\View\View;
 use App\Models\Link;
+use Illuminate\View\View;
 use function view;
 
 class IndexController

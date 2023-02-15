@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Discovery\Community;
 
-use Illuminate\View\View;
 use App\Actions\ApproveLinkAction;
 use App\Actions\CreatePostFromLinkAction;
 use App\Actions\RejectLinkAction;
 use App\Models\Link;
+use Illuminate\View\View;
 use Spatie\RouteDiscovery\Attributes\Route;
 
 #[Route(middleware: 'signed')]

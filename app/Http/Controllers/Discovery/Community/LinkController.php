@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Discovery\Community;
 
-use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
 use App\Actions\CreateLinkAction;
 use App\Http\Requests\CreateLinkRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 use Spatie\RouteDiscovery\Attributes\Route;
 
 #[Route(middleware: ['auth', 'verified', 'doNotCacheResponse'])]
