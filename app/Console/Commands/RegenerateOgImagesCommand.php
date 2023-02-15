@@ -10,7 +10,7 @@ class RegenerateOgImagesCommand extends Command
 {
     protected $signature = 'regenerate-og-images';
 
-    public function handle()
+    public function handle(): void
     {
         Post::query()->latest()->limit(200)->each(function (Post $post) {
             dispatch(new CreateOgImageJob($post));

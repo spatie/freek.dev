@@ -10,7 +10,7 @@ class SendTestMailCommand extends Command
 {
     protected $signature = 'send-test-mail';
 
-    public function handle()
+    public function handle(): void
     {
         Mail::to('freek@spatie.be')->send(new TestMail());
 

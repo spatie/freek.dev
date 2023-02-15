@@ -15,7 +15,7 @@ use Spatie\Comments\Notifications\PendingCommentNotification;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         Gate::define('viewHorizon', function (User $user) {
             return $user->admin;

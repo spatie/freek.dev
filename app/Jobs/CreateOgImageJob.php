@@ -23,7 +23,7 @@ class CreateOgImageJob implements ShouldQueue
     ) {
     }
 
-    public function handle()
+    public function handle(): void
     {
         if ($this->post->isTweet()) {
             return;

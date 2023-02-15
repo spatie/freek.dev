@@ -2,12 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Http\Request;
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
 
 class CacheControl
 {
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
         /** @var \Illuminate\Http\Response $response */
         $response = $next($request);

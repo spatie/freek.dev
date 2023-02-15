@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class LinkSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         Link::factory()->times(50)->create();
     }

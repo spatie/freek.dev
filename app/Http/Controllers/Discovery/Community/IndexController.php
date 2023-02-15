@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Discovery\Community;
 
+use Illuminate\View\View;
 use App\Models\Link;
 use function view;
 
 class IndexController
 {
-    public function __invoke()
+    public function __invoke(): View
     {
         $links = Link::query()
             ->latest()

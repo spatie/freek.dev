@@ -12,7 +12,7 @@ use Spatie\Mailcoach\Domain\Campaign\Models\Template;
 
 class EmailListSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         $emailList = EmailList::create([
             'name' => 'freek.dev newsletter',

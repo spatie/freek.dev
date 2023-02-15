@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WebmentionFactory extends Factory
 {
-    public function definition()
+    public function definition(): array
     {
         $type = $this->faker->randomElement([
             Webmention::TYPE_LIKE,

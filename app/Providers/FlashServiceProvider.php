@@ -7,7 +7,7 @@ use Spatie\Flash\Flash;
 
 class FlashServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         Flash::levels([
             'success' => 'bg-green-400',

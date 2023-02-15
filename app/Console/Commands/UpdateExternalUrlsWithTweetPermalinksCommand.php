@@ -11,7 +11,7 @@ class UpdateExternalUrlsWithTweetPermalinksCommand extends Command
 
     protected $description = 'Update external links with tweet permalinks';
 
-    public function handle()
+    public function handle(): void
     {
         Post::all()
             ->filter->isTweet()

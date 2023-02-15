@@ -12,7 +12,7 @@ class GenerateNewsletterCommand extends Command
 {
     protected $signature = 'newsletter:generate';
 
-    public function handle()
+    public function handle(): void
     {
         $campaigns = Mailcoach::campaigns();
         $latestCampaign = $campaigns[0];

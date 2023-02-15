@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::table('mailcoach_email_lists', function (Blueprint $table) {
             $table->text('confirmation_mail_content')->nullable()->change();

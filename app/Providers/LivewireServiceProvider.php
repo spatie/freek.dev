@@ -8,7 +8,7 @@ use Livewire\Livewire;
 
 class LivewireServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         Livewire::component('search', SearchComponent::class);
     }
