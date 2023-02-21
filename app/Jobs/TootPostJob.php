@@ -22,7 +22,7 @@ class TootPostJob implements ShouldQueue
         $this->post = $post;
     }
 
-    public function handle(Twitter $twitter): void
+    public function handle(): void
     {
         if (! $this->post->send_automated_tweet) {
             return;

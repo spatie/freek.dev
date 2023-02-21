@@ -24,6 +24,6 @@ class PublishPostAction
 
         dispatch(new CreateOgImageJob($post));
         dispatch(new TweetPostJob($post))->delay(now()->addSeconds(20));
-        dispatch(new TootPostJob($post))->delay(now()->addSecond(20));
+        dispatch(new TootPostJob($post))->delay(now()->addSeconds(20));
     }
 }
