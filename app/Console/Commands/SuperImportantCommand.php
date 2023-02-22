@@ -8,7 +8,7 @@ class SuperImportantCommand extends Command
 {
     protected $signature = 'super-important';
 
-    protected $description = 'Needs to run every day';
+    protected $description = 'Needs to run every minute';
 
     public function handle()
     {
