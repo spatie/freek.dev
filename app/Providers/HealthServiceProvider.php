@@ -20,20 +20,15 @@ class HealthServiceProvider extends ServiceProvider
     public function register(): void
     {
         Health::checks([
-            CpuLoadCheck::new()->failWhenLoadIsHigherInTheLast15Minutes(4.0),
-            OptimizedAppCheck::new(),
             DebugModeCheck::new(),
-            MeiliSearchCheck::new(),
             EnvironmentCheck::new(),
             DatabaseCheck::new(),
             HorizonCheck::new(),
+            OptimizedAppCheck::new(),
+            MeiliSearchCheck::new(),
             UsedDiskSpaceCheck::new()
                 ->warnWhenUsedSpaceIsAbovePercentage(90)
                 ->failWhenUsedSpaceIsAbovePercentage(95),
-            FlareErrorOccurrenceCountCheck::new()
-                ->projectId(config('services.flare.project_id'))
-                ->apiToken(config('services.flare.api_token'))
-                ->failWhenMoreErrorsReceivedThan(300),
             SecurityAdvisoriesCheck::new(),
         ]);
     }
