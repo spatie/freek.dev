@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\PublishScheduledPostsCommand;
+use App\Console\Commands\SuperImportantCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Laravel\Horizon\Console\SupervisorCommand;
@@ -13,7 +14,7 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command(SupervisorCommand::class)->everyMinute();
+        $schedule->command(SuperImportantCommand::class)->everyMinute();
         $schedule->command(RunHealthChecksCommand::class)->everyMinute();
         $schedule->command(PublishScheduledPostsCommand::class)->everyMinute();
         $schedule->command('responsecache:clear')->daily();

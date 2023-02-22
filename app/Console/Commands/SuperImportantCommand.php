@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class DummyCommand extends Command
+class SuperImportantCommand extends Command
 {
     protected $signature = 'super-important';
 
