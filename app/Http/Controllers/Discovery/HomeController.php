@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Discovery;
 
+use App\Mail\TestMail;
 use App\Models\Post;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 use Spatie\RouteDiscovery\Attributes\Route;
 use function view;
