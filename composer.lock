@@ -9056,12 +9056,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ignition.git",
-                "reference": "50cf4da46a73f2ddc558828cb1a7621e2c14ad5e"
+                "reference": "e7056fe1358c55f752269bfc9bfaaf54c93bb1f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ignition/zipball/50cf4da46a73f2ddc558828cb1a7621e2c14ad5e",
-                "reference": "50cf4da46a73f2ddc558828cb1a7621e2c14ad5e",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/e7056fe1358c55f752269bfc9bfaaf54c93bb1f7",
+                "reference": "e7056fe1358c55f752269bfc9bfaaf54c93bb1f7",
                 "shasum": ""
             },
             "require": {
@@ -9085,6 +9085,10 @@
                 "symfony/cache": "^6.2",
                 "symfony/process": "^5.4|^6.0",
                 "vlucas/phpdotenv": "^5.5"
+            },
+            "suggest": {
+                "openai-php/client": "Require get solutions from OpenAI",
+                "simple-cache-implementation": "To cache solutions from OpenAI"
             },
             "type": "library",
             "extra": {
@@ -9128,7 +9132,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-04T12:00:55+00:00"
+            "time": "2023-03-04T13:36:10+00:00"
         },
         {
             "name": "spatie/image",
@@ -10009,7 +10013,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-ignition",
-                "reference": "1133c0be7e1ac63f7c03e78b9d2329941a7442fd"
+                "reference": "66e42042beb7b20ea7f60a7b4bbc8322acf7bcdc"
             },
             "require": {
                 "ext-curl": "*",
