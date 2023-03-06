@@ -11,9 +11,6 @@
     >
     <div class="markup">
         <p>
-
-        </p>
-        <p>
             I'm a PHP developer and Laravel enthusiast. Most of my time is spent at <a href="https://spatie.be">Spatie</a> of which I'm the co-owner.
 
             <p>
@@ -24,7 +21,7 @@
             Whenever my colleagues and I stumble upon a problem that we can solve in a clean way, we extract our solution so other
             developers can use it. Together with my colleagues I regularly release <a
                 href="https://spatie.be/open-source">PHP, Laravel and JavaScript packages</a>. Those packages have been
-            downloaded more than 100 million times.
+            downloaded more than 500 million times.
         </p>
         <h2 id="side-projects">
             Side projects
