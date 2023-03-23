@@ -3,7 +3,6 @@
 namespace App\Console;
 
 use App\Console\Commands\PublishScheduledPostsCommand;
-use App\Console\Commands\SuperImportantCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Spatie\Health\Commands\RunHealthChecksCommand;
