@@ -13,7 +13,6 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command(SuperImportantCommand::class)->everyMinute();
         $schedule->command(RunHealthChecksCommand::class)->everyMinute();
         $schedule->command(PublishScheduledPostsCommand::class)->everyMinute();
         $schedule->command('responsecache:clear')->daily();
