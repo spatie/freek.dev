@@ -12,7 +12,7 @@ class SendTestMailCommand extends Command
 
     public function handle(): void
     {
-        Mail::to('freek@spatie.be')->send(new TestMail());
+        Mail::to('someone-else@spatie.be')->send(new TestMail());
 
         $this->info('Test sent!');
     }
