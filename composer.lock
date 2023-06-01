@@ -10664,12 +10664,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-prometheus.git",
-                "reference": "4f89e00fe77b629d8507198795e2f762d6017f17"
+                "reference": "c9e6043eea3eac6cea95f0018ee66c9800c8e99e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-prometheus/zipball/4f89e00fe77b629d8507198795e2f762d6017f17",
-                "reference": "4f89e00fe77b629d8507198795e2f762d6017f17",
+                "url": "https://api.github.com/repos/spatie/laravel-prometheus/zipball/c9e6043eea3eac6cea95f0018ee66c9800c8e99e",
+                "reference": "c9e6043eea3eac6cea95f0018ee66c9800c8e99e",
                 "shasum": ""
             },
             "require": {
@@ -10732,7 +10732,7 @@
                 "issues": "https://github.com/spatie/laravel-prometheus/issues",
                 "source": "https://github.com/spatie/laravel-prometheus/tree/main"
             },
-            "time": "2023-06-01T08:03:00+00:00"
+            "time": "2023-06-01T08:17:26+00:00"
         },
         {
             "name": "spatie/laravel-ray",

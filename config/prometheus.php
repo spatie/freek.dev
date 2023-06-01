@@ -11,18 +11,24 @@ return [
     ],
 
     /*
-     * The middleware that will be applied to the urls above
-     */
-    'middleware' => [
-        Spatie\Prometheus\Http\Middleware\AllowIps::class,
-    ],
-
-    /*
      * Only these IP's will be allowed to visit the above urls.
      * When set to `null` all IP's are allowed.
      */
     'allowed_ips' => [
+        // 1.2.3.4,
+    ],
 
+    /*
+     * This is the default namespace that will be
+     * used by all metrics
+     */
+    'default_namespace' => 'freek_dev',
+
+    /*
+     * The middleware that will be applied to the urls above
+     */
+    'middleware' => [
+        Spatie\Prometheus\Http\Middleware\AllowIps::class,
     ],
 
     /*
