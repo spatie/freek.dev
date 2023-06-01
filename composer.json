@@ -86,6 +86,7 @@
         "pestphp/pest": "^1.21.3",
         "pestphp/pest-plugin-laravel": "^1.4",
         "phpunit/phpunit": "^9.5.21",
+        "spatie/laravel-blade-comments": "^1.0",
         "spatie/pest-plugin-snapshots": "^1.1"
     },
     "config": {
