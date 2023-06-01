@@ -24,7 +24,7 @@ class PrometheusServiceProvider extends ServiceProvider
             return 123.45;
         })->helpText('this is my gauge');
 
-        $this ->registerHorizonCollectors();
+        $this->registerHorizonCollectors();
     }
 
     public function registerHorizonCollectors(): self
