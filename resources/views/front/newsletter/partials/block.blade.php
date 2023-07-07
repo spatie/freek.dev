@@ -7,6 +7,7 @@
         <ul>
         <li><a href="https://twitter.com/freekmurze">Twitter</a></li>
         <li><a href="https://phpc.social/@freekmurze">Mastodon</a></li>
+        <li><a href="https://www.threads.net/@freek">Threads</a></li>
         <li><a href="https://www.linkedin.com/in/freek-van-der-herten-3487a7181">LinkedIn</a></li>
     </ul>
     <p>
