@@ -3,7 +3,7 @@
 namespace App\Services\Models;
 
 use Illuminate\Database\Eloquent\MassPrunable;
-use Spatie\WebhookClient\Models\WebhookCall  as BaseWebhookCall;
+use Spatie\WebhookClient\Models\WebhookCall as BaseWebhookCall;
 
 class WebhookCall extends BaseWebhookCall
 {
