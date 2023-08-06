@@ -10,7 +10,7 @@ use NumberFormatter;
 
 class NewsletterGenerator
 {
-    protected Carbon  $startDate;
+    protected Carbon $startDate;
 
     protected Carbon $endDate;
 
