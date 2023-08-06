@@ -11,7 +11,7 @@
         </h2>
 
         <p>
-            Together with my buddy Thomas, I create music using mainly analogue synths. We've already made a lot of tracks, which we're slowly releasing. These songs are for the most instrumental and are for adventurous listeners.
+            Together with my buddy Thomas, we make music using analog synths. We've already finished a load of tracks and are slowly putting them out. They're mostly instrumental, made for adventurous listeners who love exploring new sounds.
         </p>
 
         <ul class="list-none text-gray-700 space-y-4">
