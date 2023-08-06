@@ -8,6 +8,10 @@
     ],
     "repositories": [
         {
+            "type": "path",
+            "url": "../laravel-site-search"
+        },
+        {
             "type": "composer",
             "url": "https://satis.spatie.be"
         }
@@ -66,7 +70,7 @@
         "spatie/laravel-responsecache": "^7.4",
         "spatie/laravel-route-discovery": "^1.0.1",
         "spatie/laravel-schedule-monitor": "^3.1",
-        "spatie/laravel-site-search": "^1.2",
+        "spatie/laravel-site-search": "dev-main",
         "spatie/laravel-stubs": "^2.5",
         "spatie/laravel-tags": "^4.3.2",
         "spatie/laravel-tail": "^4.4",

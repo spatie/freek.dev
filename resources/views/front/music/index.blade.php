@@ -5,6 +5,21 @@
             I love both listening to and creating music. On this page you'll find some music that I made.
         </p>
 
+        <h2 id="tax-shelter">
+            Tax Shelter
+            <a href="#tax-shelter" class="permalink">#</a>
+        </h2>
+
+        <p>
+            Together with my buddy Thomas, I create music using mainly analogue synths. We've already made a lot of tracks, which we're slowly releasing. These songs are for the most instrumental and are for adventurous listeners.
+        </p>
+
+        <ul class="list-none text-gray-700 space-y-4">
+            @foreach($releases['taxShelter'] as $release)
+                @include('front.music.partials.release')
+            @endforeach
+        </ul>
+
         <h2 id="kobus">
             Kobus
             <a href="#kobus" class="permalink">#</a>

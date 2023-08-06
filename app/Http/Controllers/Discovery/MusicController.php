@@ -9,6 +9,17 @@ class MusicController
 {
     public function __invoke(): View
     {
+        $releases['taxShelter'] = [
+            [
+                'title' => 'Beach Architecture',
+                'artwork' => 'beach-architecture.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/album/0XE1YrUaxmE6Dy09MqY4Iu',
+                    'Apple Music' => 'https://music.apple.com/be/album/beach-architecture/1700522501',
+                ],
+            ],
+        ];
+
         $releases['kobus'] = [
             [
                 'title' => 'Current',
