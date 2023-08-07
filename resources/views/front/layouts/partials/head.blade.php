@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link href="https://github.com/riasvdv" rel="me">
+<link href="https://github.com/freekmurze" rel="me">
 @isset($title)
 <title>{{ $title }} - Freek Van der Herten's blog on PHP, Laravel and JavaScript</title>
 @else
