@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Comments\Models\Concerns\InteractsWithComments;
 use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
 
-class User extends Authenticatable implements CanComment, MustVerifyEmail, FilamentUser
+class User extends Authenticatable implements CanComment, FilamentUser, MustVerifyEmail
 {
     use HasFactory;
     use InteractsWithComments;

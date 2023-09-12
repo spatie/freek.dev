@@ -5,6 +5,7 @@ use App\Mail\LinkSubmittedMail;
 use App\Models\Link;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
+
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\post;
 

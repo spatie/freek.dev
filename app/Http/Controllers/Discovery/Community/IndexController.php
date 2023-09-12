@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Discovery\Community;
 
 use App\Models\Link;
 use Illuminate\View\View;
+
 use function view;
 
 class IndexController

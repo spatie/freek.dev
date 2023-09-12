@@ -2,6 +2,7 @@
 
 use App\Mail\LinkApprovedMail;
 use App\Models\Link;
+
 use function Pest\Laravel\get;
 
 it('can approve a link using a signed url', function () {

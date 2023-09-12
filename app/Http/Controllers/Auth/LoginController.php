@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class LoginController
 {
-    use ValidatesRequests, AuthenticatesUsers;
+    use AuthenticatesUsers, ValidatesRequests;
 
     public function redirectPath()
     {
