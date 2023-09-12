@@ -22,6 +22,14 @@ class MusicController
 
         $releases['kobus'] = [
             [
+                'title' => 'Kind',
+                'artwork' => 'kind.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/album/3nFyyigKPTzp7rzYtK8fq4',
+                    'Apple Music' => 'https://music.apple.com/be/album/kind/1706583729',
+                ],
+            ],
+            [
                 'title' => 'Current',
                 'artwork' => 'current.jpg',
                 'links' => [
