@@ -39,7 +39,6 @@ class TweetPostJob implements ShouldQueue
 
         $tweetResponse = $twitter->tweet($tweetText);
 
-
         if (! isset($tweetResponse['data']->id)) {
             return;
         }
