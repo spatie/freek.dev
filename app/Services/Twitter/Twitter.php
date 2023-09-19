@@ -16,7 +16,7 @@ class Twitter
     public function tweet(string $text): ?array
     {
         if (! app()->environment('production')) {
-            return;
+            return null;
         }
 
         return (array) $this->twitter->post('tweets', compact('text'));
