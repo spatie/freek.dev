@@ -18,7 +18,8 @@ class Twitter
         if (! app()->environment('production')) {
             //return;
         }
-dump('here');
+        dump('here');
+
         return (array) $this->twitter->post('tweets', compact('text'));
     }
 }
