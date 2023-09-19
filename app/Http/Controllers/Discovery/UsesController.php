@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Discovery;
 
 use App\Models\Post;
 use Illuminate\View\View;
+
 use function view;
 
 class UsesController

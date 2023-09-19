@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Discovery;
 
 use Illuminate\View\View;
+
 use function view;
 
 class MusicController

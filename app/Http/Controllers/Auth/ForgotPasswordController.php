@@ -7,5 +7,5 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class ForgotPasswordController
 {
-    use ValidatesRequests, SendsPasswordResetEmails;
+    use SendsPasswordResetEmails, ValidatesRequests;
 }

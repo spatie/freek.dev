@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Link;
+
 use function Pest\Laravel\get;
 
 it('can reject a link using a signed url', function () {
