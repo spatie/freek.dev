@@ -22,7 +22,7 @@
         "ext-openssl": "*",
         "ext-pcntl": "*",
         "ext-simplexml": "*",
-        "abraham/twitteroauth": "^3.3",
+        "abraham/twitteroauth": "^6.1",
         "algolia/algoliasearch-client-php": "^3.3",
         "doctrine/dbal": "^3.5",
         "drewm/mailchimp-api": "^2.5",

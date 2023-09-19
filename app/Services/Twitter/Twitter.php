@@ -13,12 +13,12 @@ class Twitter
         $this->twitter = $twitter;
     }
 
-    public function tweet(string $status)
+    public function tweet(string $text)
     {
         if (! app()->environment('production')) {
-            return;
+            //return;
         }
-
-        return (array) $this->twitter->post('statuses/update', compact('status'));
+dump('here');
+        return (array) $this->twitter->post('tweets', compact('text'));
     }
 }
