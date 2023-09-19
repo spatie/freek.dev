@@ -39,11 +39,12 @@ class TweetPostJob implements ShouldQueue
 
         $tweetResponse = $twitter->tweet($tweetText);
 
-        if (! isset($tweetResponse['data']['id'])) {
+
+        if (! isset($tweetResponse['data']->id)) {
             return;
         }
 
-        $tweetUrl = "https://twitter.com/freekmurze/status/{$tweetResponse['data']['id']}";
+        $tweetUrl = "https://twitter.com/freekmurze/status/{$tweetResponse['data']->id}";
 
         $this->post->onAfterTweet($tweetUrl);
 
