@@ -3,8 +3,8 @@
 /public/storage
 /public/mix-manifest.json
 /public/uploads
-/public/css
-/public/js
+/public/css/app.css
+/public/js/app.js
 /public/sitemap.xml
 /public/vendor/nova
 /storage/*.key
