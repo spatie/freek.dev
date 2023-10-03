@@ -69,6 +69,8 @@
     </div>
 </div>
 
+@livewireScripts
+
 </body>
 
 

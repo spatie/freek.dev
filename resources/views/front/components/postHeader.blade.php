@@ -8,7 +8,13 @@
         <{{ $heading ?? 'h1' }} class
         ="max-w-lg text-2xl md:text-3xl font-extrabold leading-tight mb-1">
         @isset($url)
-            <a href="{{ $url }}">{{ $post->title }}</a>
+            <a
+                href="{{ $url }}"
+                @if(\Illuminate\Support\Str::startsWith($url, ['/', url('/')]))
+                    wire:navigate.hover
+                @endif
+            >{{ $post->title }}
+            </a>
         @else
             {{ $post->title }}
         @endisset

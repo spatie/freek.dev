@@ -15,27 +15,33 @@ class NavigationServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Menu::macro('primary', function () {
-            return Menu::new()
-                ->url('/', 'Home')
-                    /*
-                ->action(OriginalsController::class, 'Originals')
-                ->action(IndexController::class, 'Community')
-                ->add(Link::to(action(NewsletterController::class), 'Newsletter')->addParentClass('mt-4'))
-                ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
-                ->action(MusicController::class, 'Music')
-                ->url('uses', 'Uses')
-                */
-                ->url('about', 'About')
-                ->setActiveFromRequest();
-        });
+        Menu::macro('primary', /*
+    ->action(OriginalsController::class, 'Originals')
+    ->action(IndexController::class, 'Community')
+    ->add(Link::to(action(NewsletterController::class), 'Newsletter')->addParentClass('mt-4'))
+    ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
+    ->action(MusicController::class, 'Music')
+    ->url('uses', 'Uses')
+    */ fn() => Menu::new()
+        ->url('/', 'Home')
+            /*
+        ->action(OriginalsController::class, 'Originals')
+        ->action(IndexController::class, 'Community')
+        ->add(Link::to(action(NewsletterController::class), 'Newsletter')->addParentClass('mt-4'))
+        ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
+        ->action(MusicController::class, 'Music')
+        ->url('uses', 'Uses')
+        */
+        ->url('about', 'About')
+        ->each(fn(Link $link) => $link->setAttribute('wire:navigate.hover'))
+        ->setActiveFromRequest());
 
         Menu::macro('secondary', function () {
             return Menu::new()
                 ->addClass('space-y-2')
                 ->url('search', 'Search')
                 ->url('advertising', 'Advertising')
-
+                ->each(fn(Link $link) => $link->setAttribute('wire:navigate.hover'))
                 ->setActiveFromRequest();
         });
     }

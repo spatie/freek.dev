@@ -23,5 +23,4 @@
     <p>
         Rest assured that I will only use your email address to send you the newsletter and will not use it for any other purposes.
     </p>
-
 </div>
