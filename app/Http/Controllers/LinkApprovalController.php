@@ -8,7 +8,7 @@ use App\Actions\RejectLinkAction;
 use App\Models\Link;
 use Illuminate\View\View;
 
-class LinkApproval
+class LinkApprovalController
 {
     public function approve(Link $link, ApproveLinkAction $approveLinkAction): View
     {

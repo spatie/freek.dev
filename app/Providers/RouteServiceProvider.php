@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Link;
 use App\Models\Post;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -67,7 +68,6 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware(['web', 'cacheResponse'])->group(function () {
             Route::feeds('feed');
-            Route::webhooks('webhook-webmentions', 'webmentions');
         });
 
         return $this;
