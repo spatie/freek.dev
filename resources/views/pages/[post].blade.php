@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Ad;
 
 render(function(View $view, Post|string $post) {
+    // TODO: investigate why model binding isn't always working
     if (is_string($post)) {
         $post = Post::findByIdSlug($post);
 
