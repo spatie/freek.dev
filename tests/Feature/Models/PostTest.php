@@ -13,11 +13,10 @@ beforeEach(function () {
 });
 
 it('can find a post by its id slug', function () {
-    get('/' . $this->post->idSlug())
+    get('/'.$this->post->idSlug())
         ->assertSuccessful()
         ->assertSee($this->post->title);
 });
-
 
 it('will return a 404 for an invalid slug', function () {
     get('/this-post-does-not-exist')
@@ -29,7 +28,7 @@ it('will only show published posts', function () {
         'published' => false,
     ]);
 
-    get('/' . $post->idSlug())->assertNotFound();
+    get('/'.$post->idSlug())->assertNotFound();
 });
 
 it('will display unpublished post using a preview secret', function () {
@@ -37,13 +36,13 @@ it('will display unpublished post using a preview secret', function () {
         'published' => false,
     ]);
 
-    get('/' . $post->idSlug())
+    get('/'.$post->idSlug())
         ->assertNotFound();
 
-    get('/' . $post->idSlug()."?preview_secret={$post->preview_secret}")
+    get('/'.$post->idSlug()."?preview_secret={$post->preview_secret}")
         ->assertSuccessful();
 
-    get('/' . $post->idSlug().'?preview_secret=wrong-secret')
+    get('/'.$post->idSlug().'?preview_secret=wrong-secret')
         ->assertNotFound();
 });
 

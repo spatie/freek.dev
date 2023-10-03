@@ -4,8 +4,8 @@ use App\Enums\LinkStatus;
 use App\Mail\LinkSubmittedMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
-
 use Livewire\Volt\Volt;
+
 use function Pest\Laravel\assertDatabaseHas;
 
 beforeEach(function () {
@@ -16,8 +16,7 @@ beforeEach(function () {
     Mail::fake();
 });
 
-it('can create a link with all attributes', function()
-{
+it('can create a link with all attributes', function () {
     $attributes = [
         'title' => 'my title',
         'url' => 'https://freek.dev',
