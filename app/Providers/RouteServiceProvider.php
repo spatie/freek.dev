@@ -40,27 +40,7 @@ class RouteServiceProvider extends ServiceProvider
 
     public function registerRouteModelBindings()
     {
-        Route::bind('postSlug', function ($slug) {
-            $post = Post::findByIdSlug($slug);
-
-            if (! $post) {
-                abort(404);
-            }
-
-            if (auth()->user()?->email === 'freek@spatie.be') {
-                return $post;
-            }
-
-            if ($post->preview_secret === request()->get('preview_secret')) {
-                return $post;
-            }
-
-            if (! $post->published) {
-                abort(404);
-            }
-
-            return $post;
-        });
+        
     }
 
     protected function mapPackageRoutes(): self

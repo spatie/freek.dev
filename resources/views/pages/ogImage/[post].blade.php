@@ -6,7 +6,7 @@ use function Laravel\Folio\render;
 
 render(function (View $view, Post $post) {
     $view->with(compact('post'));
-});
+})->name('post.ogImage');
 
 ?>
 
