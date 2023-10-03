@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Http\Controllers\Discovery\Community\IndexController;
-use App\Http\Controllers\Discovery\HomeController;
 use App\Http\Controllers\Discovery\MusicController;
 use App\Http\Controllers\Discovery\NewsletterController;
 use App\Http\Controllers\Discovery\OriginalsController;
