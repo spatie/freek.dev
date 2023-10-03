@@ -7,7 +7,6 @@ use App\Actions\CreatePostFromLinkAction;
 use App\Actions\RejectLinkAction;
 use App\Enums\LinkStatus;
 use App\Filament\Resources\LinkResource;
-use App\Models\Link;
 use Filament\Notifications\Notification;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;

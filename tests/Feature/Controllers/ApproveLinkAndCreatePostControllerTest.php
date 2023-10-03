@@ -2,8 +2,8 @@
 
 use App\Enums\LinkStatus;
 use App\Models\Link;
-
 use Illuminate\Support\Facades\Mail;
+
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\get;
 
