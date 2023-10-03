@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Enums\LinkStatus;
-use App\Models\Link;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

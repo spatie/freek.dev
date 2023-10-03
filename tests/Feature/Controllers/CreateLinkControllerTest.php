@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Discovery\Community\LinkController;
 use App\Mail\LinkSubmittedMail;
-use App\Models\Link;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
