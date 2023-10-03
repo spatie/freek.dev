@@ -6,7 +6,7 @@ use Illuminate\View\View;
 use App\Models\Post;
 use App\Models\Ad;
 
-render(function(Post $post, View $view) {
+render(function(View $view, Post $post) {
     $ad = Ad::getForCurrentPage();
 
     abort_unless($post->shouldShow(), 404);
