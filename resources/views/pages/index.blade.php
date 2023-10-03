@@ -15,8 +15,6 @@ render(function (View $view) {
 <x-app-layout>
     <x-ad/>
 
-    <livewire:counter />
-    
     @include('front.posts.partials.list')
 
     {{ $posts->links() }}

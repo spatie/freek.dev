@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6df4e7f22ac00f39466a120575e3a4c",
+    "content-hash": "9ef153ec0b9e7a856aa086cb4d645a92",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1505,16 +1505,16 @@
         },
         {
             "name": "filament/actions",
-            "version": "v3.0.63",
+            "version": "v3.0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
-                "reference": "7533ade9edf0ca07d9fccc3c49f41318c8aadb1c"
+                "reference": "97359ba89a106be3a6b52f3a115b1ae39405f522"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/actions/zipball/7533ade9edf0ca07d9fccc3c49f41318c8aadb1c",
-                "reference": "7533ade9edf0ca07d9fccc3c49f41318c8aadb1c",
+                "url": "https://api.github.com/repos/filamentphp/actions/zipball/97359ba89a106be3a6b52f3a115b1ae39405f522",
+                "reference": "97359ba89a106be3a6b52f3a115b1ae39405f522",
                 "shasum": ""
             },
             "require": {
@@ -1551,20 +1551,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-09-30T14:07:50+00:00"
+            "time": "2023-10-03T18:16:36+00:00"
         },
         {
             "name": "filament/filament",
-            "version": "v3.0.63",
+            "version": "v3.0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
-                "reference": "0d8f301ffcccfa9b6a7f9f1049b7ce80a278b01e"
+                "reference": "3c3e7121bc0b2743ae8f6123153135fee1f62a8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/panels/zipball/0d8f301ffcccfa9b6a7f9f1049b7ce80a278b01e",
-                "reference": "0d8f301ffcccfa9b6a7f9f1049b7ce80a278b01e",
+                "url": "https://api.github.com/repos/filamentphp/panels/zipball/3c3e7121bc0b2743ae8f6123153135fee1f62a8a",
+                "reference": "3c3e7121bc0b2743ae8f6123153135fee1f62a8a",
                 "shasum": ""
             },
             "require": {
@@ -1616,20 +1616,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-09-30T14:07:59+00:00"
+            "time": "2023-10-03T18:16:37+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v3.0.63",
+            "version": "v3.0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "65166c53015f0bee0abac491aaed2311ca4d083a"
+                "reference": "a08496c01fca5c60b28d0b07063e7b2923276938"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/65166c53015f0bee0abac491aaed2311ca4d083a",
-                "reference": "65166c53015f0bee0abac491aaed2311ca4d083a",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/a08496c01fca5c60b28d0b07063e7b2923276938",
+                "reference": "a08496c01fca5c60b28d0b07063e7b2923276938",
                 "shasum": ""
             },
             "require": {
@@ -1672,11 +1672,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-09-30T14:07:48+00:00"
+            "time": "2023-10-03T18:16:40+00:00"
         },
         {
             "name": "filament/infolists",
-            "version": "v3.0.63",
+            "version": "v3.0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
@@ -1727,16 +1727,16 @@
         },
         {
             "name": "filament/notifications",
-            "version": "v3.0.63",
+            "version": "v3.0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
-                "reference": "bcca58686b750084d9052bfc71b56ff2d0defa6f"
+                "reference": "489d3caff1e5b2dae46bd1cb926e2fe7567d1e8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/notifications/zipball/bcca58686b750084d9052bfc71b56ff2d0defa6f",
-                "reference": "bcca58686b750084d9052bfc71b56ff2d0defa6f",
+                "url": "https://api.github.com/repos/filamentphp/notifications/zipball/489d3caff1e5b2dae46bd1cb926e2fe7567d1e8b",
+                "reference": "489d3caff1e5b2dae46bd1cb926e2fe7567d1e8b",
                 "shasum": ""
             },
             "require": {
@@ -1775,7 +1775,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-09-30T14:07:48+00:00"
+            "time": "2023-10-03T18:16:40+00:00"
         },
         {
             "name": "filament/spatie-laravel-tags-plugin",
@@ -1816,16 +1816,16 @@
         },
         {
             "name": "filament/support",
-            "version": "v3.0.63",
+            "version": "v3.0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
-                "reference": "d4f1fd574969a628c691c1603115769f438f4618"
+                "reference": "f619cef19853da30ce36688d96b014ca7d966579"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/support/zipball/d4f1fd574969a628c691c1603115769f438f4618",
-                "reference": "d4f1fd574969a628c691c1603115769f438f4618",
+                "url": "https://api.github.com/repos/filamentphp/support/zipball/f619cef19853da30ce36688d96b014ca7d966579",
+                "reference": "f619cef19853da30ce36688d96b014ca7d966579",
                 "shasum": ""
             },
             "require": {
@@ -1869,20 +1869,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-09-30T14:08:13+00:00"
+            "time": "2023-10-03T18:16:49+00:00"
         },
         {
             "name": "filament/tables",
-            "version": "v3.0.63",
+            "version": "v3.0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
-                "reference": "b2cb8a6c8a0f86b72343bba965e4c18710ae0828"
+                "reference": "785f049f94ed97b15ad717ee8988d7dd5f0627f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/tables/zipball/b2cb8a6c8a0f86b72343bba965e4c18710ae0828",
-                "reference": "b2cb8a6c8a0f86b72343bba965e4c18710ae0828",
+                "url": "https://api.github.com/repos/filamentphp/tables/zipball/785f049f94ed97b15ad717ee8988d7dd5f0627f8",
+                "reference": "785f049f94ed97b15ad717ee8988d7dd5f0627f8",
                 "shasum": ""
             },
             "require": {
@@ -1922,20 +1922,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-09-30T14:08:15+00:00"
+            "time": "2023-10-03T18:16:51+00:00"
         },
         {
             "name": "filament/widgets",
-            "version": "v3.0.63",
+            "version": "v3.0.64",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",
-                "reference": "0201110d2dec8a14044bbbff5d1de1659d8dd6ec"
+                "reference": "39ecca54898f10491330e239b5e56571d09eae99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/widgets/zipball/0201110d2dec8a14044bbbff5d1de1659d8dd6ec",
-                "reference": "0201110d2dec8a14044bbbff5d1de1659d8dd6ec",
+                "url": "https://api.github.com/repos/filamentphp/widgets/zipball/39ecca54898f10491330e239b5e56571d09eae99",
+                "reference": "39ecca54898f10491330e239b5e56571d09eae99",
                 "shasum": ""
             },
             "require": {
@@ -1966,7 +1966,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-09-30T14:08:22+00:00"
+            "time": "2023-10-03T18:16:53+00:00"
         },
         {
             "name": "filp/whoops",
@@ -11148,84 +11148,6 @@
                 }
             ],
             "time": "2023-10-02T09:55:32+00:00"
-        },
-        {
-            "name": "spatie/laravel-route-discovery",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-route-discovery.git",
-                "reference": "d82193bdd2c79be0ba83a9e334259bab4b2d5732"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-route-discovery/zipball/d82193bdd2c79be0ba83a9e334259bab4b2d5732",
-                "reference": "d82193bdd2c79be0ba83a9e334259bab4b2d5732",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^8.67|^9.0|^10.0",
-                "illuminate/support": "^8.77|^9.0|^10.0",
-                "php": "^8.0",
-                "spatie/laravel-package-tools": "^1.10",
-                "symfony/finder": "^5.4.2|^6.0"
-            },
-            "require-dev": {
-                "nunomaduro/larastan": "^1.0.2|^2.0",
-                "orchestra/testbench": "^6.23.2|^7.0|^8.0",
-                "pestphp/pest": "^1.21",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "spatie/laravel-ray": "^1.27"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\RouteDiscovery\\RouteDiscoveryServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\RouteDiscovery\\": "src",
-                    "Spatie\\RouteDiscovery\\Database\\Factories\\": "database/factories"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Auto register routes using PHP attributes",
-            "homepage": "https://github.com/spatie/laravel-route-discovery",
-            "keywords": [
-                "laravel-route-discovery",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-route-discovery/issues",
-                "source": "https://github.com/spatie/laravel-route-discovery/tree/1.0.3"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/spatie",
-                    "type": "github"
-                },
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "other"
-                }
-            ],
-            "time": "2023-02-15T07:47:59+00:00"
         },
         {
             "name": "spatie/laravel-schedule-monitor",

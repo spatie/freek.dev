@@ -28,12 +28,5 @@ class AppServiceProvider extends ServiceProvider
         PendingCommentNotification::sendTo(function (Comment $comment) {
             return User::where('email', 'freek@spatie.be')->first();
         });
-
-        try {
-            Filament::registerTheme(
-                app(Vite::class)('resources/css/filament.css'),
-            );
-        } catch (Exception) {
-        }
     }
 }
