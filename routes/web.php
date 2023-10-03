@@ -3,6 +3,8 @@
 use App\Http\Controllers\LinkApprovalController;
 use Illuminate\Support\Facades\Route;
 
+Route::redirect('admin', 'admin/posts');
+
 Route::middleware('signed')->prefix('links/{link}')->group(function () {
     Route::get('approve', [LinkApprovalController::class, 'approve'])->name('link.approve');
     Route::get('approve-and-create-post', [LinkApprovalController::class, 'approveAndCreatePost'])->name('link.approve-and-create-post');

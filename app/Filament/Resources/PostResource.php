@@ -12,7 +12,7 @@ use Filament\Tables\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\FilamentMarkdownEditor\MarkdownEditor;
+use Filament\Forms\Components\MarkdownEditor;
 
 class PostResource extends Resource
 {
