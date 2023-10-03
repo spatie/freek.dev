@@ -3,10 +3,7 @@
 namespace App\Providers;
 
 use App\Models\User;
-use Exception;
-use Filament\Facades\Filament;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Vite;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
