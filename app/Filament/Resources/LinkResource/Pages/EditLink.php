@@ -15,7 +15,7 @@ class EditLink extends EditRecord
 {
     protected static string $resource = LinkResource::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         $actions = [Actions\DeleteAction::make()];
 

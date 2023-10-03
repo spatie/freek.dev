@@ -5,9 +5,9 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\AdResource\Pages;
 use App\Models\Ad;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 
 class AdResource extends Resource

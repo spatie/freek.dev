@@ -5,9 +5,9 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\VideoResource\Pages;
 use App\Models\Video;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 
 class VideoResource extends Resource

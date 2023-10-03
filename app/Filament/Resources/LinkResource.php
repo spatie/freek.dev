@@ -6,9 +6,9 @@ use App\Enums\LinkStatus;
 use App\Filament\Resources\LinkResource\Pages;
 use App\Models\Link;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Model;
 

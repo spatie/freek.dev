@@ -2,10 +2,7 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
+    "keywords": ["framework", "laravel"],
     "repositories": [
         {
             "type": "composer",
@@ -27,8 +24,8 @@
         "barryvdh/laravel-debugbar": "^3.9",
         "doctrine/dbal": "^3.5",
         "drewm/mailchimp-api": "^2.5",
-        "filament/filament": "^3.0",
-        "filament/spatie-laravel-tags-plugin": "^2.0",
+        "filament/filament": "^3.0-stable",
+        "filament/spatie-laravel-tags-plugin": "^3.0-stable",
         "guzzlehttp/guzzle": "^7.4.5",
         "laravel/folio": "^1.1",
         "laravel/framework": "^10.0",
@@ -131,7 +128,8 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
+            "@php artisan package:discover",
+            "@php artisan filament:upgrade"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
