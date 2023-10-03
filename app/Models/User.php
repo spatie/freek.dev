@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -35,7 +36,7 @@ class User extends Authenticatable implements CanComment, FilamentUser, MustVeri
         return $this->hasMany(Post::class, 'submitted_by_user_id');
     }
 
-    public function canAccessFilament(): bool
+    public function canAccessPanel(Panel $panel): bool
     {
         return $this->email === 'freek@spatie.be';
     }
