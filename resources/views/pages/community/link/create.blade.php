@@ -28,7 +28,7 @@ $save = function () {
             audience is interested in, I'll publish it, and you'll get notified via mail.
         </div>
 
-        @volt('form')
+        @volt('linkForm')
 
         <form wire:submit.prevent="save">
             <div class="mt-4">
@@ -67,11 +67,11 @@ $save = function () {
                     <span class="text-gray-700">Description</span>
                     <textarea
                         type="text"
-                        wire:model="form.description"
+                        wire:model="form.text"
                         placeholder="Describe the content in one or two sentences. You can use markdown."
                     ></textarea>
                 </label>
-                @error('form.description')
+                @error('form.text')
                 <div
                     class="mt-2 py-2 px-2 flex-1 bg-red-500 focus:outline-none md:mb-0 text-white text-2xs">{{ $message }}</div>
                 @enderror

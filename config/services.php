@@ -13,10 +13,6 @@ return [
         'token' => env('MASTODON_TOKEN'),
     ],
 
-    'webmentions' => [
-        'webhook_secret' => env('WEBMENTIONS_WEBHOOK_SECRET'),
-    ],
-
     'oh_dear' => [
         'backup_run_ping_endpoint' => env('OH_DEAR_BACKUP_PING_ENDPOINT'),
         'publish_scheduled_posts_ping_endpoint' => env('OH_DEAR_PUBLISH_SCHEDULED_POSTS_PING_ENDPOINT'),

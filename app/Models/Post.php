@@ -88,11 +88,6 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         return $this->belongsTo(User::class, 'submitted_by_user_id');
     }
 
-    public function webmentions(): HasMany
-    {
-        return $this->hasMany(Webmention::class)->latest();
-    }
-
     public function scopePublished(Builder $query)
     {
         $query

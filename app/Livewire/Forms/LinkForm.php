@@ -14,8 +14,7 @@ class LinkForm extends Form
     #[Rule('required|url|unique:links,url')]
     public string $url;
 
-    #[Rule('required')]
-    public string $description;
+    public string $text;
 
     public function store()
     {
