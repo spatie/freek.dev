@@ -185,7 +185,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     public function url(): Attribute
     {
         return new Attribute(function () {
-            return route('post', [$this->idSlug()]);
+            return route('post', ['post' => $this->idSlug()]);
         });
     }
 

@@ -18,13 +18,15 @@ class NavigationServiceProvider extends ServiceProvider
     {
         Menu::macro('primary', function () {
             return Menu::new()
-                ->action(HomeController::class, 'Home')
+                ->url('/', 'Home')
+                    /*
                 ->action(OriginalsController::class, 'Originals')
                 ->action(IndexController::class, 'Community')
                 ->add(Link::to(action(NewsletterController::class), 'Newsletter')->addParentClass('mt-4'))
                 ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
                 ->action(MusicController::class, 'Music')
                 ->url('uses', 'Uses')
+                */
                 ->url('about', 'About')
                 ->setActiveFromRequest();
         });
