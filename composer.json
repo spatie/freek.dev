@@ -24,6 +24,7 @@
         "ext-simplexml": "*",
         "abraham/twitteroauth": "^6.1",
         "algolia/algoliasearch-client-php": "^3.3",
+        "barryvdh/laravel-debugbar": "^3.9",
         "doctrine/dbal": "^3.5",
         "drewm/mailchimp-api": "^2.5",
         "filament/filament": "^3.0",
