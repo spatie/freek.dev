@@ -42,5 +42,3 @@
         </div>
     @endif
 @endauth
-
-@include('front.posts.partials.webmentions')

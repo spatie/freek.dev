@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Discovery\Post\ShowPostController;
 use App\Models\Post;
 use App\Models\User;
 use Tests\Factories\PostFactory;
@@ -8,34 +7,28 @@ use Tests\Factories\PostFactory;
 use function Pest\Laravel\get;
 
 beforeEach(function () {
-    $this->post = Post::factory()->create();
+    $this->post = Post::factory()->create([
+        'published' => true,
+    ]);
 });
 
 it('can find a post by its id slug', function () {
-    $this->withoutExceptionHandling();
-
-    get(action(ShowPostController::class, $this->post->idSlug()))
+    get('/'.$this->post->idSlug())
         ->assertSuccessful()
         ->assertSee($this->post->title);
 });
 
-it('can redirects a slug to an id slug', function () {
-    get(action(ShowPostController::class, $this->post->slug))
-        ->assertRedirect(action(ShowPostController::class, $this->post->idSlug()));
-});
-
 it('will return a 404 for an invalid slug', function () {
-    get(action(ShowPostController::class, 'invalid'))
+    get('/this-post-does-not-exist')
         ->assertNotFound();
 });
 
-it('will only show posts with a publish date in the future', function () {
+it('will only show published posts', function () {
     $post = Post::factory()->create([
         'published' => false,
     ]);
 
-    get(action(ShowPostController::class, $post->idSlug()))
-        ->assertNotFound();
+    get('/'.$post->idSlug())->assertNotFound();
 });
 
 it('will display unpublished post using a preview secret', function () {
@@ -43,13 +36,13 @@ it('will display unpublished post using a preview secret', function () {
         'published' => false,
     ]);
 
-    get(action(ShowPostController::class, $post->idSlug()))
+    get('/'.$post->idSlug())
         ->assertNotFound();
 
-    get(action(ShowPostController::class, $post->idSlug())."?preview_secret={$post->preview_secret}")
+    get('/'.$post->idSlug()."?preview_secret={$post->preview_secret}")
         ->assertSuccessful();
 
-    get(action(ShowPostController::class, $post->idSlug()).'?preview_secret=wrong-secret')
+    get('/'.$post->idSlug().'?preview_secret=wrong-secret')
         ->assertNotFound();
 });
 

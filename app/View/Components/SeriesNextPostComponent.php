@@ -22,6 +22,9 @@ class SeriesNextPostComponent extends Component
             ->orderBy('id')
             ->first();
 
-        return view('components.series-next-post-component', compact('nextPost'));
+        return view('components.series-next-post-component', [
+            'nextPost' => $nextPost,
+            'post' => $this->post,
+        ]);
     }
 }

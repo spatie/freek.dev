@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\LinkApprovalController;
 use Illuminate\Support\Facades\Route;
-use Spatie\RouteDiscovery\Discovery\Discover;
 
-Route::redirect('/admin', '/admin/posts');
+Route::redirect('admin', 'admin/posts');
 
-Discover::views()->in(resource_path('views/discovery'));
-Discover::controllers()->in(app_path('Http/Controllers/Discovery'));
+Route::middleware('signed')->prefix('links/{link}')->group(function () {
+    Route::get('approve', [LinkApprovalController::class, 'approve'])->name('link.approve');
+    Route::get('approve-and-create-post', [LinkApprovalController::class, 'approveAndCreatePost'])->name('link.approve-and-create-post');
+    Route::get('reject', [LinkApprovalController::class, 'reject'])->name('link.reject');
+});

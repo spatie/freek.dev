@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
@@ -86,11 +85,6 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     public function submittedByUser(): BelongsTo
     {
         return $this->belongsTo(User::class, 'submitted_by_user_id');
-    }
-
-    public function webmentions(): HasMany
-    {
-        return $this->hasMany(Webmention::class)->latest();
     }
 
     public function scopePublished(Builder $query)
@@ -185,7 +179,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     public function url(): Attribute
     {
         return new Attribute(function () {
-            return route('post', [$this->idSlug()]);
+            return route('post', ['post' => $this->idSlug()]);
         });
     }
 
@@ -302,7 +296,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
             return $this->external_url;
         }
 
-        return route('post.ogImage', $this)."?preview_secret={$this->preview_secret}";
+        return route('post.ogImage', ['post' => $this])."?preview_secret={$this->preview_secret}";
     }
 
     public function isPartOfSeries()
@@ -343,5 +337,22 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     public function commentUrl(): string
     {
         return $this->url;
+    }
+
+    public function shouldShow(): bool
+    {
+        if (auth()->user()?->email === 'freek@spatie.be') {
+            return true;
+        }
+
+        if ($this->preview_secret === request()->get('preview_secret')) {
+            return true;
+        }
+
+        if (! $this->published) {
+            return false;
+        }
+
+        return true;
     }
 }

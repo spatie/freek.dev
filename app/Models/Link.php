@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\LinkStatus;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use Illuminate\Database\Eloquent\Builder;
@@ -19,12 +20,6 @@ class Link extends Model implements Sluggable
         'publish_date' => 'datetime',
     ];
 
-    public const STATUS_SUBMITTED = 'pending';
-
-    public const STATUS_APPROVED = 'approved';
-
-    public const STATUS_REJECTED = 'rejected';
-
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -32,7 +27,7 @@ class Link extends Model implements Sluggable
 
     public function scopeApproved(Builder $query): void
     {
-        $query->where('status', static::STATUS_APPROVED);
+        $query->where('status', LinkStatus::Approved->value);
     }
 
     public function getSluggableValue(): string
@@ -42,12 +37,12 @@ class Link extends Model implements Sluggable
 
     public function isApproved(): bool
     {
-        return $this->status === self::STATUS_APPROVED;
+        return $this->status === LinkStatus::Approved->value;
     }
 
     public function isRejected(): bool
     {
-        return $this->status === self::STATUS_REJECTED;
+        return $this->status === LinkStatus::Rejected->value;
     }
 
     public function getHostUrlAttribute(): string

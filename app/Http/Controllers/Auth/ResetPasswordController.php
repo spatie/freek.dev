@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Discovery\Community\IndexController;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -16,6 +15,6 @@ class ResetPasswordController
             return '/admin';
         }
 
-        return redirect()->to(action(IndexController::class));
+        return redirect()->to('/community');
     }
 }

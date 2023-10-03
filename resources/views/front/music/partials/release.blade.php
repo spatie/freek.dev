@@ -13,9 +13,6 @@
                     @endif
                     @endforeach
             </div>
-
-
         </div>
     </div>
-
 </li>

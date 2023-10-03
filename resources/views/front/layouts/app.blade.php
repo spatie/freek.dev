@@ -10,13 +10,13 @@
         <header class="mt-8 md:mt-12 mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 leading-tight">
             <div class="md:flex items-end">
                 <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
-                    <a href="/" title="Freek.dev">
+                    <a wire:navigate.hover href="/" title="Freek.dev">
                         <img src="/images/murzicoon.svg" class="w-full" alt="Freek.dev logotype" />
                     </a>
                 </figure>
                 <div>
                     <h1 class="text-lg uppercase tracking-wider font-extrabold">
-                        <a href="/">Freek.dev</a>
+                        <a wire:navigate.hover href="/">Freek.dev</a>
                     </h1>
                     <p class="text-sm font-bold text-gray-600">
                         <a href="/">
@@ -69,9 +69,8 @@
     </div>
 </div>
 
-<livewire:scripts />
-<x-comments::scripts />
-<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+@livewireScripts
+
 </body>
 
 

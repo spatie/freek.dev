@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Enums\LinkStatus;
 use App\Mail\LinkApprovedMail;
 use App\Models\Link;
 use Illuminate\Support\Facades\Mail;
@@ -19,7 +20,7 @@ class ApproveLinkAction
 
         $link->update([
             'publish_date' => now(),
-            'status' => Link::STATUS_APPROVED,
+            'status' => LinkStatus::Approved->value,
         ]);
 
         ResponseCache::clear();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\ApproveLinkAction;
+use App\Enums\LinkStatus;
 use App\Mail\LinkApprovedMail;
 use App\Models\Link;
 use Illuminate\Support\Facades\Mail;
@@ -14,12 +15,12 @@ beforeEach(function () {
 test('the action can approve a link', function () {
     /** @var Link $submittedLink */
     $submittedLink = Link::factory()->create([
-        'status' => Link::STATUS_SUBMITTED,
+        'status' => LinkStatus::Submitted->value,
     ]);
 
     $this->approveLinkAction->execute($submittedLink);
 
-    expect($submittedLink->status)->toEqual(Link::STATUS_APPROVED);
+    expect($submittedLink->status)->toEqual(LinkStatus::Approved->value);
 
     Mail::assertQueued(LinkApprovedMail::class, fn (LinkApprovedMail $mail) => $mail->hasTo($submittedLink->user->email));
 });
@@ -27,7 +28,7 @@ test('the action can approve a link', function () {
 it('will not send a mail for a link that was already approved', function () {
     /** @var Link $submittedLink */
     $approvedLink = Link::factory()->create([
-        'status' => Link::STATUS_APPROVED,
+        'status' => LinkStatus::Approved->value,
     ]);
 
     $this->approveLinkAction->execute($approvedLink);

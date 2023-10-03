@@ -21,7 +21,7 @@
                         Read more</a>
                     <span class="text-xs text-gray-700">[{{ $post->external_url_host }}]</span>
                 @else
-                    <a href="{{ $post->url }}">
+                    <a wire:navigate.hover href="{{ $post->url }}">
                         Read more
                     </a>
                 @endif

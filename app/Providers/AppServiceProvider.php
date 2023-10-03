@@ -3,10 +3,7 @@
 namespace App\Providers;
 
 use App\Models\User;
-use Exception;
-use Filament\Facades\Filament;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Vite;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
@@ -28,12 +25,5 @@ class AppServiceProvider extends ServiceProvider
         PendingCommentNotification::sendTo(function (Comment $comment) {
             return User::where('email', 'freek@spatie.be')->first();
         });
-
-        try {
-            Filament::registerTheme(
-                app(Vite::class)('resources/css/filament.css'),
-            );
-        } catch (Exception) {
-        }
     }
 }

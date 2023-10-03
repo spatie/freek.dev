@@ -5,10 +5,10 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\TalkResource\Pages;
 use App\Models\Talk;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 
 class TalkResource extends Resource
