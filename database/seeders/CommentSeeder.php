@@ -11,14 +11,14 @@ class CommentSeeder extends Seeder
     public function run(): void
     {
         Post::each(function (Post $post) {
-            if (faker()->boolean) {
+            if (fake()->boolean) {
                 return;
             }
 
             foreach (range(1, rand(1, 10)) as $i) {
                 $user = User::all()->random();
 
-                $post->comment(faker()->text, $user);
+                $post->comment(fake()->text, $user);
             }
         });
     }
