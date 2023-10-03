@@ -6,7 +6,15 @@ use Illuminate\View\View;
 use App\Models\Post;
 use App\Models\Ad;
 
-render(function(View $view, Post $post) {
+render(function(View $view, Post|string $post) {
+    if (is_string($post)) {
+        $post = Post::findByIdSlug($post);
+
+        if (! $post) {
+            abort(404);
+        }
+    }
+
     $ad = Ad::getForCurrentPage();
 
     abort_unless($post->shouldShow(), 404);
