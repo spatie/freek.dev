@@ -1,9 +1,6 @@
 <x-app-layout title="Register">
-
-
     <div class="markup mb-8">
         <h1>Register</h1>
-
 
         <div>
             <form method="POST" action="{{ route('register') }}">
