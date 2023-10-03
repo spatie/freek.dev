@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Discovery\Community\IndexController;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -58,6 +57,6 @@ class RegisterController
             return '/admin/posts';
         }
 
-        return action(IndexController::class);
+        return '/community';
     }
 }

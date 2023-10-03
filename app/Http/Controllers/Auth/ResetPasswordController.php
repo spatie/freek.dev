@@ -16,6 +16,6 @@ class ResetPasswordController
             return '/admin';
         }
 
-        return redirect()->to(action(IndexController::class));
+        return redirect()->to('/community');
     }
 }
