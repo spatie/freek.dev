@@ -3,7 +3,6 @@
 namespace App\Livewire\Forms;
 
 use App\Actions\CreateLinkAction;
-use App\Models\Post;
 use Livewire\Attributes\Rule;
 use Livewire\Form;
 
