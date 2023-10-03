@@ -18,8 +18,6 @@ new class extends Component {
 
     public function getResults()
     {
-        return [];
-
         if ($this->query === '') {
             return collect();
         }
@@ -40,7 +38,7 @@ new class extends Component {
 
     @volt('search')
     <div>
-        <input wire:model.debounce="query"
+        <input wire:model.live="query"
                type="text"
                autofocus
                placeholder="Laravel, PHP, JavaScript,…"
