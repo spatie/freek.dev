@@ -43,6 +43,10 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('post', function($slugId) {
             return Post::findByIdSlug($slugId);
         });
+
+        Route::bind('postSlug', function($slugId) {
+            return Post::findByIdSlug($slugId);
+        });
     }
 
     protected function mapPackageRoutes(): self
