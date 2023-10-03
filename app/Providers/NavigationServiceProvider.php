@@ -15,19 +15,12 @@ class NavigationServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Menu::macro('primary', /*
-    ->action(OriginalsController::class, 'Originals')
-    ->action(IndexController::class, 'Community')
-    ->add(Link::to(action(NewsletterController::class), 'Newsletter')->addParentClass('mt-4'))
-    ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
-    ->action(MusicController::class, 'Music')
-    ->url('uses', 'Uses')
-    */ fn () => Menu::new()
+        Menu::macro('primary', fn () => Menu::new()
             ->url('/', 'Home')
             ->url('originals', 'Originals')
             ->url('community', 'Community')
-            ->add(Link::to('newsletter', 'Newsletter')->addParentClass('mt-4'))
-            ->add(Link::to('speaking', 'Speaking')->addParentClass('mt-4'))
+            ->add(Link::to(url('/newsletter'), 'Newsletter')->addParentClass('mt-4'))
+            ->add(Link::to(url('/speaking'), 'Speaking')->addParentClass('mt-4'))
             ->url('music', 'Music')
             ->url('uses', 'Uses')
             ->url('about', 'About')
