@@ -1,3 +1,21 @@
+<?php
+
+use Illuminate\View\View;
+use App\Models\Talk;
+use App\Models\Video;
+use function Laravel\Folio\render;
+
+render(function(View $view) {
+    $talks = Talk::orderBy('presented_at', 'desc')
+        ->get()
+        ->groupBy('title');
+
+    $videos = Video::latest()->get();
+
+    $view->with(compact('talks', 'videos'));
+});
+?>
+
 <x-app-layout title="Speaking">
     <div class="markup | mb-8">
         <h1>Speaking</h1>

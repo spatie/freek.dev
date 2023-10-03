@@ -23,18 +23,16 @@ class NavigationServiceProvider extends ServiceProvider
     ->action(MusicController::class, 'Music')
     ->url('uses', 'Uses')
     */ fn() => Menu::new()
-        ->url('/', 'Home')
-            /*
-        ->action(OriginalsController::class, 'Originals')
-        ->action(IndexController::class, 'Community')
-        ->add(Link::to(action(NewsletterController::class), 'Newsletter')->addParentClass('mt-4'))
-        ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
-        ->action(MusicController::class, 'Music')
-        ->url('uses', 'Uses')
-        */
-        ->url('about', 'About')
-        ->each(fn(Link $link) => $link->setAttribute('wire:navigate.hover'))
-        ->setActiveFromRequest());
+            ->url('/', 'Home')
+            ->url('originals', 'Originals')
+            ->url('community', 'Community')
+            ->add(Link::to('newsletter', 'Newsletter')->addParentClass('mt-4'))
+            ->add(Link::to('speaking', 'Speaking')->addParentClass('mt-4'))
+            ->url('music', 'Music')
+            ->url('uses', 'Uses')
+            ->url('about', 'About')
+            ->each(fn(Link $link) => $link->setAttribute('wire:navigate.hover'))
+            ->setActiveFromRequest());
 
         Menu::macro('secondary', function () {
             return Menu::new()
