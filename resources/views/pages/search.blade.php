@@ -7,7 +7,7 @@ use Spatie\SiteSearch\Search;
 new class extends Component {
     public string $query = '';
 
-    protected $queryString = [
+    protected array $queryString = [
         'query' => ['except' => ''],
     ];
 
@@ -30,7 +30,7 @@ new class extends Component {
             ->get()
             ->hits;
     }
-} ?>
+}; ?>
 
 <x-app-layout title="Search">
 

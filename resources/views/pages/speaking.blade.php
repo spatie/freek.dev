@@ -13,8 +13,7 @@ render(function(View $view) {
     $videos = Video::latest()->get();
 
     $view->with(compact('talks', 'videos'));
-});
-?>
+}); ?>
 
 <x-app-layout title="Speaking">
     <div class="markup | mb-8">

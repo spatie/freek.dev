@@ -1,3 +1,15 @@
+<?php
+
+use Illuminate\View\View;
+use App\Models\Post;
+use function Laravel\Folio\render;
+
+render(function (View $view, Post $post) {
+    $view->with(compact('post'));
+});
+
+?>
+
 <html>
 <head>
     @vite(['resources/js/app.js'])

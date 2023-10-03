@@ -8,8 +8,7 @@ render(function (View $view) {
     $releases = Releases::all();
 
     $view->with(compact('releases'));
-});
-?>
+}); ?>
 
 <x-app-layout title="Music">
     <div class="markup mb-8">

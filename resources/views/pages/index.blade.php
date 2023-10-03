@@ -10,7 +10,7 @@ render(function (View $view) {
         ->simplePaginate(20);
 
     $view->with(compact('posts'));
-}) ?>
+}); ?>
 
 <x-app-layout>
     <x-ad/>
