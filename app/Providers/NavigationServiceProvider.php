@@ -22,7 +22,7 @@ class NavigationServiceProvider extends ServiceProvider
     ->add(Link::to(action(SpeakingController::class), 'Speaking')->addParentClass('mt-4'))
     ->action(MusicController::class, 'Music')
     ->url('uses', 'Uses')
-    */ fn() => Menu::new()
+    */ fn () => Menu::new()
             ->url('/', 'Home')
             ->url('originals', 'Originals')
             ->url('community', 'Community')
@@ -31,7 +31,7 @@ class NavigationServiceProvider extends ServiceProvider
             ->url('music', 'Music')
             ->url('uses', 'Uses')
             ->url('about', 'About')
-            ->each(fn(Link $link) => $link->setAttribute('wire:navigate.hover'))
+            ->each(fn (Link $link) => $link->setAttribute('wire:navigate.hover'))
             ->setActiveFromRequest());
 
         Menu::macro('secondary', function () {
@@ -39,7 +39,7 @@ class NavigationServiceProvider extends ServiceProvider
                 ->addClass('space-y-2')
                 ->url('search', 'Search')
                 ->url('advertising', 'Advertising')
-                ->each(fn(Link $link) => $link->setAttribute('wire:navigate.hover'))
+                ->each(fn (Link $link) => $link->setAttribute('wire:navigate.hover'))
                 ->setActiveFromRequest();
         });
     }
