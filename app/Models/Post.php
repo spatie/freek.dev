@@ -339,4 +339,21 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     {
         return $this->url;
     }
+
+    public function shouldShow(): bool
+    {
+        if (auth()->user()?->email === 'freek@spatie.be') {
+            return true;
+        }
+
+        if ($this->preview_secret === request()->get('preview_secret')) {
+            return true;
+        }
+
+        if (! $this->published) {
+            return false;
+        }
+
+        return true;
+    }
 }

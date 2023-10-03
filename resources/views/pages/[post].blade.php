@@ -6,8 +6,10 @@ use Illuminate\View\View;
 use App\Models\Post;
 use App\Models\Ad;
 
-render(function(View $view, Post $post) {
+render(function(Post $post, View $view) {
     $ad = Ad::getForCurrentPage();
+
+    abort_unless($post->shouldShow(), 404);
 
     return $view->with(compact('post', 'ad'));
 })->name('post'); ?>
