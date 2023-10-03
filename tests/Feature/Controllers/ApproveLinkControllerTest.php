@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\LinkStatus;
 use App\Mail\LinkApprovedMail;
 use App\Models\Link;
 
@@ -10,7 +11,7 @@ it('can approve a link using a signed url', function () {
 
     /** @var \App\Models\Link $link */
     $link = Link::factory()->create([
-        'status' => Link::STATUS_SUBMITTED,
+        'status' => LinkStatus::Submitted->value,
     ]);
 
     expect($link->isApproved())->toBeFalse();

@@ -1,7 +1,9 @@
 <?php
 
+use App\Enums\LinkStatus;
 use App\Models\Link;
 
+use Illuminate\Support\Facades\Mail;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\get;
 
@@ -10,7 +12,7 @@ it('can approve a link and create a post using a signed url', function () {
 
     /** @var \App\Models\Link $link */
     $link = Link::factory()->create([
-        'status' => Link::STATUS_SUBMITTED,
+        'status' => LinkStatus::Submitted->value,
     ]);
 
     expect($link->isApproved())->toBeFalse();

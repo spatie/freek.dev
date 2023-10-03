@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\LinkStatus;
 use App\Filament\Resources\LinkResource\Pages;
 use App\Models\Link;
 use Filament\Forms;
@@ -40,9 +41,9 @@ class LinkResource extends Resource
                 Tables\Columns\TextColumn::make('title')->limit(70)->sortable(),
                 Tables\Columns\BadgeColumn::make('status')
                     ->colors([
-                        'bg-gray-200' => static fn ($state): bool => $state === Link::STATUS_SUBMITTED,
-                        'success' => static fn ($state): bool => $state === Link::STATUS_APPROVED,
-                        'danger' => static fn ($state): bool => $state === Link::STATUS_REJECTED,
+                        'bg-gray-200' => static fn ($state): bool => $state === LinkStatus::Submitted->value,
+                        'success' => static fn ($state): bool => $state === LinkStatus::Approved->value,
+                        'danger' => static fn ($state): bool => $state === LinkStatus::Rejected->value,
                     ]),
 
                 Tables\Columns\TextColumn::make('created_at')->limit(50)->dateTime()->sortable(),

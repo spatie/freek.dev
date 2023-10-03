@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Link;
+use App\Enums\LinkStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->longText('text');
             $table->text('url');
 
-            $table->string('status')->default(Link::STATUS_SUBMITTED);
+            $table->string('status')->default(LinkStatus::Submitted->value);
             $table->timestamp('publish_date')->nullable()->default(null);
 
             $table->timestamps();

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\LinkResource\Pages;
 use App\Actions\ApproveLinkAction;
 use App\Actions\CreatePostFromLinkAction;
 use App\Actions\RejectLinkAction;
+use App\Enums\LinkStatus;
 use App\Filament\Resources\LinkResource;
 use App\Models\Link;
 use Filament\Notifications\Notification;
@@ -17,11 +18,9 @@ class EditLink extends EditRecord
 
     protected function getActions(): array
     {
-        ray('get actions');
-
         $actions = [Actions\DeleteAction::make()];
 
-        if ($this->record->status === Link::STATUS_SUBMITTED) {
+        if ($this->record->status === LinkStatus::Submitted) {
             $actions = array_merge([
                 Actions\Action::make('Approve and create post')
                     ->color('primary')

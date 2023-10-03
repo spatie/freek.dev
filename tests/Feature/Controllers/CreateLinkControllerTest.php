@@ -58,7 +58,7 @@ function it_can_create_a_link()
 
     $expectedAttributes = array_merge([
         'user_id' => $this->user->id,
-        'status' => Link::STATUS_SUBMITTED,
+        'status' => \App\Enums\LinkStatus::Submitted->value,
     ], $attributes);
 
     assertDatabaseHas('links', $expectedAttributes);
