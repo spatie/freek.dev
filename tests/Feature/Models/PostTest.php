@@ -14,7 +14,7 @@ beforeEach(function () {
 it('can find a post by its id slug', function () {
     $this->withoutExceptionHandling();
 
-    get(action(ShowPostController::class, $this->post->idSlug()))
+    get('/' . $this->post->idSlug())
         ->assertSuccessful()
         ->assertSee($this->post->title);
 });

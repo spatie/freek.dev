@@ -7,6 +7,5 @@ return [
      * will be cleaned.
      */
     'models' => [
-        App\Services\Models\WebhookCall::class,
     ],
 ];
