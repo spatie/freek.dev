@@ -16,6 +16,6 @@ class LoginController
             return '/admin';
         }
 
-        return action(IndexController::class);
+        return '/community';
     }
 }
