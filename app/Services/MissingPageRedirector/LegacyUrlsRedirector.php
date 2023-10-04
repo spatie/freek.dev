@@ -2,7 +2,6 @@
 
 namespace App\Services\MissingPageRedirector;
 
-use App\Http\Controllers\Discovery\Post\ShowPostController;
 use App\Models\Post;
 use App\Models\Redirect;
 use Spatie\MissingPageRedirector\Redirector\Redirector;
@@ -17,7 +16,7 @@ class LegacyUrlsRedirector implements Redirector
         $post = Post::where('slug', $slug)->first();
 
         if ($post) {
-            return ["/{$slug}" => action(ShowPostController::class, $post->idSlug())];
+            return ["/{$slug}" => '/' . $post->idSlug()];
         }
 
         return Redirect::all()->flatMap(function ($redirect) {
