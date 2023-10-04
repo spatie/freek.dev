@@ -40,11 +40,11 @@ class RouteServiceProvider extends ServiceProvider
 
     public function registerRouteModelBindings()
     {
-        Route::bind('post', function($slugId) {
+        Route::bind('post', function ($slugId) {
             return Post::findByIdSlug($slugId);
         });
 
-        Route::bind('postSlug', function($slugId) {
+        Route::bind('postSlug', function ($slugId) {
             return Post::findByIdSlug($slugId);
         });
     }
