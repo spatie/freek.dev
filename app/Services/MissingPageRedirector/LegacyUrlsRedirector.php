@@ -16,7 +16,7 @@ class LegacyUrlsRedirector implements Redirector
         $post = Post::where('slug', $slug)->first();
 
         if ($post) {
-            return ["/{$slug}" => '/' . $post->idSlug()];
+            return ["/{$slug}" => '/'.$post->idSlug()];
         }
 
         return Redirect::all()->flatMap(function ($redirect) {
