@@ -186,7 +186,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     public function previewUrl(): Attribute
     {
         return new Attribute(function () {
-            return route('post', [$this->idSlug()])."?preview_secret={$this->preview_secret}";
+            return route('post', ['post' => $this->idSlug()])."?preview_secret={$this->preview_secret}";
         });
     }
 
