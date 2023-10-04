@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\Post;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -40,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
     public function registerRouteModelBindings()
     {
-        
+
     }
 
     protected function mapPackageRoutes(): self
