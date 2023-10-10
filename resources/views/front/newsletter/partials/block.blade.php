@@ -5,7 +5,7 @@
     <p class="mb-2">
         You can follow me on these platforms:
         <ul>
-        <li><a href="https://twitter.com/freekmurze">Twitter</a></li>
+        <li><a href="https://x.com/freekmurze">X</a></li>
         <li><a href="https://phpc.social/@freekmurze">Mastodon</a></li>
         <li><a href="https://www.threads.net/@freek">Threads</a></li>
         <li><a href="https://www.linkedin.com/in/freek-van-der-herten-3487a7181">LinkedIn</a></li>
