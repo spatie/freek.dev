@@ -40,7 +40,7 @@ Here are a couple of links from a while ago!
 
 # Did you like this newsletter?
 
-I take a lot of time curating the right links for you. You could do me a favor by either [spreading the word]({{ route('newsletter.like', ['edition' => $editionNumber]) }}) and letting others know about my newsletter.
+I take a lot of time curating the right links for you. You could do me a favor by either [spreading the word]({{ url('/newsletter/like', ['edition' => $editionNumber]) }}) and letting others know about my newsletter.
 
 Alternatively, you could consider picking up one of the paid products my team and I have worked on:
 
