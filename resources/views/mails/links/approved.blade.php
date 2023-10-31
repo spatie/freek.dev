@@ -1,7 +1,7 @@
 @component('mail::message')
 Hi,
 
-Your link [{{ $link->title }}]({{ $link->url }}) was approved. You can now view it on [the links page at freek.dev](/community)
+Your link [{{ $link->title }}]({{ $link->url }}) was approved. You can now view it on [the links page at freek.dev]({{ url('community') }}).
 
 To thank you for this link, I'd like to offer you a coupon which grants you a discount when purchasing one of these products of mine:
 
