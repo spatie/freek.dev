@@ -30,6 +30,7 @@
         "laravel/folio": "^1.1",
         "laravel/framework": "^10.0",
         "laravel/horizon": "^5.12",
+        "laravel/pulse": "^1.0@beta",
         "laravel/sail": "^1.18",
         "laravel/sanctum": "^3.2",
         "laravel/slack-notification-channel": "^2.5",
