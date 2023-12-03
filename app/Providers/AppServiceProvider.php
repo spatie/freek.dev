@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Comments\Models\Comment;
 use Spatie\Comments\Notifications\PendingCommentNotification;
+use Spatie\Ray\Ray;
 
 class AppServiceProvider extends ServiceProvider
 {

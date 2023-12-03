@@ -67,7 +67,7 @@
         "spatie/laravel-stubs": "^2.5",
         "spatie/laravel-tags": "^4.3.2",
         "spatie/laravel-tail": "^4.4",
-        "spatie/pest-plugin-test-time": "^1.1.1",
+        "spatie/pest-plugin-test-time": "^2.0",
         "spatie/security-advisories-health-check": "^0.0.2",
         "stripe/stripe-php": "^7.128",
         "symfony/http-client": "^6.2",
@@ -75,15 +75,14 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
-        "brianium/paratest": "^6.6",
         "fakerphp/faker": "^1.20",
         "mockery/mockery": "^1.5",
-        "nunomaduro/collision": "^6.2.1",
-        "pestphp/pest": "^1.21.3",
-        "pestphp/pest-plugin-laravel": "^1.4",
-        "phpunit/phpunit": "^9.5.21",
+        "nunomaduro/collision": "^7.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpunit/phpunit": "^10.0",
         "spatie/laravel-blade-comments": "^1.0",
-        "spatie/pest-plugin-snapshots": "^1.1"
+        "spatie/pest-plugin-snapshots": "^2.0"
     },
     "config": {
         "platform": {
@@ -117,7 +116,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "prefer-stable": true,
     "scripts": {
         "post-update-cmd": [
