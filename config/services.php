@@ -14,6 +14,10 @@ return [
     ],
 
     'oh_dear' => [
+        'pulse' => [
+            'api_key' => env('OH_DEAR_API_TOKEN'),
+            'site_id' => env('OH_DEAR_SITE_ID'),
+        ],
         'backup_run_ping_endpoint' => env('OH_DEAR_BACKUP_PING_ENDPOINT'),
         'publish_scheduled_posts_ping_endpoint' => env('OH_DEAR_PUBLISH_SCHEDULED_POSTS_PING_ENDPOINT'),
     ],
@@ -63,8 +67,13 @@ return [
     ],
 
     'mailcoach' => [
-        'api_key' => env('MAILCOACH_API_KEY'),
+        'pulse' => [
+            'api_key' => env('MAILCOACH_API_TOKEN'),
+            'api_endpoint' => env('MAILCOACH_API_ENDPOINT'),
+            'email_list_uuid' => env('MAILCOACH_EMAIL_LIST_UUID'),
+        ],
+
+        'api_key' => env('MAILCOACH_API_TOKEN'),
         'email_list_uuid' => env('MAILCOACH_EMAIL_LIST_UUID'),
     ],
-
 ];

@@ -2,11 +2,13 @@
 
 namespace App\Providers;
 
+use App\Livewire\CustomCardComponent;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Spatie\Comments\Models\Comment;
 use Spatie\Comments\Notifications\PendingCommentNotification;
 

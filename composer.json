@@ -7,6 +7,14 @@
         {
             "type": "composer",
             "url": "https://satis.spatie.be"
+        },
+        {
+            "type": "path",
+            "url": "../ohdear-pulse"
+        },
+        {
+            "type": "path",
+            "url": "../mailcoach-pulse"
         }
     ],
     "license": "MIT",
@@ -29,6 +37,8 @@
         "guzzlehttp/guzzle": "^7.4.5",
         "laravel/folio": "^1.1",
         "laravel/framework": "^10.0",
+        "ohdearapp/ohdear-pulse": "dev-main",
+        "spatie/mailcoach-pulse": "dev-main",
         "laravel/horizon": "^5.12",
         "laravel/pulse": "^1.0@beta",
         "laravel/sail": "^1.18",

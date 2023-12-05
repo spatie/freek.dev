@@ -1,9 +1,17 @@
 <x-pulse>
     <livewire:pulse.servers cols="full" />
 
+    <livewire:ohdear.pulse.uptime cols="4" />
+
+    {{--
+    <livewire:mailcoach.pulse cols="4" rows="1" />
+    --}}
+
+    {{--
     <livewire:pulse.usage cols="4" rows="2" />
 
     <livewire:pulse.queues cols="4" />
+     --}}
 
     <livewire:pulse.cache cols="4" />
 
