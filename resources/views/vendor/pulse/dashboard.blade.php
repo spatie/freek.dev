@@ -3,6 +3,11 @@
 
     <livewire:ohdear.pulse.uptime cols="4" />
 
+    <livewire:ohdear.pulse.cron cols="8" />
+
+    <livewire:ohdear.pulse.brokenLinks cols="8" />
+
+
     {{--
     <livewire:mailcoach.pulse cols="4" rows="1" />
     --}}
