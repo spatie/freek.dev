@@ -1,11 +1,20 @@
 name: Run tests
 
-on: [push]
+on:
+    push:
+        paths:
+            - '**.php'
+            - '.github/workflows/run-tests.yml'
+            - 'phpunit.xml.dist'
+            - 'composer.json'
+            - 'composer.lock'
+
 
 jobs:
     run-tests:
         name: Run tests
         runs-on: ubuntu-latest
+        timeout-minutes: 10
         services:
             redis:
                 image: redis
@@ -13,12 +22,12 @@ jobs:
                     - 6379:6379
                 options: --entrypoint redis-server
         steps:
-            -   uses: actions/checkout@v2
+            -   uses: actions/checkout@v4
 
             -   name: Setup PHP
                 uses: shivammathur/setup-php@v2
                 with:
-                    php-version: '8.0'
+                    php-version: '8.1'
                     extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
                     coverage: none
 
@@ -34,7 +43,7 @@ jobs:
                     key: yarn-${{ hashFiles('yarn.lock') }}
 
             -   name: Run yarn
-                run: yarn && yarn dev
+                run: yarn && yarn build
 
             -   name: Run composer install
                 run: composer install -n --prefer-dist
