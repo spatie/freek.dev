@@ -34,7 +34,7 @@ jobs:
                     key: yarn-${{ hashFiles('yarn.lock') }}
 
             -   name: Run yarn
-                run: yarn && yarn dev
+                run: yarn && yarn build
 
             -   name: Run composer install
                 run: composer install -n --prefer-dist
