@@ -40,7 +40,7 @@
         "ohdearapp/ohdear-pulse": "dev-main",
         "spatie/mailcoach-pulse": "dev-main",
         "laravel/horizon": "^5.12",
-        "laravel/pulse": "^1.0@beta",
+        "laravel/pulse": "1.x-dev",
         "laravel/sail": "^1.18",
         "laravel/sanctum": "^3.2",
         "laravel/slack-notification-channel": "^2.5",
@@ -127,7 +127,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "post-update-cmd": [
