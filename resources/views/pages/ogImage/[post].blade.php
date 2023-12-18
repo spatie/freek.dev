@@ -4,9 +4,14 @@ use Illuminate\View\View;
 use App\Models\Post;
 use function Laravel\Folio\render;
 
-render(function (View $view, Post $post) {
+render(function (View $view, Post|int $post) {
+    if (is_int($post)) {
+        $post = Post::findOrFail($post);
+    }
+
     $view->with(compact('post'));
 })->name('post.ogImage');
+
 
 ?>
 
