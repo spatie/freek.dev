@@ -11,7 +11,6 @@ class Talk extends Model
     use HasFactory;
     use TalkPresenter;
 
-
     protected function casts(): array
     {
         return [
