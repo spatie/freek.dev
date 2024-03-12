@@ -42,13 +42,16 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
 
     public $with = ['tags'];
 
-    public $casts = [
-        'published' => 'boolean',
-        'original_content' => 'boolean',
-        'send_automated_tweet' => 'boolean',
-        'toot_sent' => 'boolean',
-        'publish_date' => 'datetime',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'published' => 'boolean',
+            'original_content' => 'boolean',
+            'send_automated_tweet' => 'boolean',
+            'toot_sent' => 'boolean',
+            'publish_date' => 'datetime',
+        ];
+    }
 
     public static function booted()
     {

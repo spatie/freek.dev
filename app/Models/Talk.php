@@ -11,7 +11,11 @@ class Talk extends Model
     use HasFactory;
     use TalkPresenter;
 
-    public $casts = [
-        'presented_at' => 'datetime',
-    ];
+
+    protected function casts(): array
+    {
+        return [
+            'presented_at' => 'datetime',
+        ];
+    }
 }
