@@ -14,7 +14,24 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->redirectGuestsTo(fn () => route('login'));
+        $middleware->redirectUsersTo('/');
+
+        $middleware->append(\Spatie\MissingPageRedirector\RedirectsMissingPages::class);
+
+        $middleware->web(\App\Http\Middleware\CacheControl::class);
+
+        $middleware->api('throttle:60,1');
+
+        $middleware->replace(\Illuminate\Foundation\Http\Middleware\TrimStrings::class, \App\Http\Middleware\TrimStrings::class);
+
+        $middleware->replaceInGroup('web', \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class, \App\Http\Middleware\VerifyCsrfToken::class);
+
+        $middleware->alias([
+            'admin' => \App\Http\Middleware\Admin::class,
+            'cacheResponse' => \Spatie\ResponseCache\Middlewares\CacheResponse::class,
+            'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
