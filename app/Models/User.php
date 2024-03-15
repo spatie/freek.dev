@@ -22,9 +22,12 @@ class User extends Authenticatable implements CanComment, FilamentUser, MustVeri
         'password', 'remember_token',
     ];
 
-    protected $casts = [
-        'admin' => 'boolean',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'admin' => 'boolean',
+        ];
+    }
 
     public function links(): HasMany
     {

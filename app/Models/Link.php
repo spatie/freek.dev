@@ -16,9 +16,12 @@ class Link extends Model implements Sluggable
     use HasFactory;
     use HasSlug;
 
-    public $casts = [
-        'publish_date' => 'datetime',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'publish_date' => 'datetime',
+        ];
+    }
 
     public function user(): BelongsTo
     {
