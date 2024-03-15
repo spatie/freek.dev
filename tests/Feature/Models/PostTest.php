@@ -32,6 +32,7 @@ it('will only show published posts', function () {
 });
 
 it('will display unpublished post using a preview secret', function () {
+
     $post = Post::factory()->create([
         'published' => false,
     ]);

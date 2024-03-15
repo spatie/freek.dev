@@ -39,7 +39,7 @@
         <meta name="twitter:description" content="{{ $post->plain_text_excerpt }}"/>
         <meta name="twitter:title" content="{{ $post->title }} | freek.dev"/>
         <meta name="twitter:site" content="@freekmurze"/>
-        <meta name="twitter:image" content="{{ url($post->getFirstMediaUrl('ogImage')) }}"/>
+        <meta name="twitter:image" content=""/>
         <meta name="twitter:creator" content="@freekmurze"/>
     </x-slot>
 </x-app-layout>
