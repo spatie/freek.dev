@@ -32,14 +32,5 @@ class AppServiceProvider extends ServiceProvider
         PendingCommentNotification::sendTo(function (Comment $comment) {
             return User::where('email', 'freek@spatie.be')->first();
         });
-
-        $this->bootAuth();
-    }
-
-    public function bootAuth(): void
-    {
-        $this->registerPolicies();
-
-        //
     }
 }
