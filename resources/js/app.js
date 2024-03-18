@@ -1,4 +1,7 @@
 import '../css/app.css';
+import { Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm';
+
+Livewire.start();
 
 Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
 
