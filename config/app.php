@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Facade;
 
 return [
+    'timezone' => 'Europe/Brussels',
 
     'log' => env('APP_LOG', 'single'),
 
