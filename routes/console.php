@@ -1,7 +1,7 @@
 <?php
 
 use App\Console\Commands\PublishScheduledPostsCommand;
-use \Illuminate\Support\Facades\Schedule;
+use Illuminate\Support\Facades\Schedule;
 use Spatie\Health\Commands\RunHealthChecksCommand;
 use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
 
