@@ -26,7 +26,7 @@ class CreatePostFromLinkAction
 
     protected function determinePublishDate(Link $link): Carbon
     {
-        $publishDate = now()->addDay()->hour(14);
+        $publishDate = now()->hour(14);
 
         // If the date falls on a weekend or a post already exists on this date, increment the date
         while ($publishDate->isWeekend() || Post::whereDate('publish_date', $publishDate)->exists()) {
