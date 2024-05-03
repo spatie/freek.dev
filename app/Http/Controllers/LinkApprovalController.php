@@ -12,6 +12,10 @@ class LinkApprovalController
 {
     public function approve(Link $link, ApproveLinkAction $approveLinkAction): View
     {
+        if ($link->isApproved()) {
+            return view('front.links.already-approved');
+        }
+
         $approveLinkAction->execute($link);
 
         return view('front.links.approved');
@@ -22,11 +26,15 @@ class LinkApprovalController
         ApproveLinkAction $approveLinkAction,
         CreatePostFromLinkAction $createPostFromLinkAction
     ): View {
+        if ($link->isApproved()) {
+            return view('front.links.already-approved');
+        }
+
         $approveLinkAction->execute($link);
 
-        $createPostFromLinkAction->execute($link);
+        $publishDate = $createPostFromLinkAction->execute($link);
 
-        return view('front.links.approved-and-post-created');
+        return view('front.links.approved-and-post-created', compact('publishDate'));
     }
 
     public function reject(Link $link, RejectLinkAction $rejectLinkAction): View
