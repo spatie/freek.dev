@@ -3,10 +3,12 @@
 namespace App\Console\Commands;
 
 use App\Services\NewsletterGenerator;
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Spatie\MailcoachSdk\Facades\Mailcoach;
+use Spatie\MailcoachSdk\Resources\Campaign;
 
 class GenerateNewsletterCommand extends Command
 {
@@ -14,8 +16,7 @@ class GenerateNewsletterCommand extends Command
 
     public function handle(): int
     {
-        $campaigns = Mailcoach::campaigns();
-        $latestCampaign = $campaigns[0];
+        $latestCampaign = $this->getLatestFreekDevCampaign();
 
         $latestCampaignName = $latestCampaign->name;
         $latestEditionNumber = (int) Str::after($latestCampaignName, '#');
@@ -50,5 +51,18 @@ class GenerateNewsletterCommand extends Command
         $this->info("freek.dev newsletter #{$newEditionNumber} has been created with posts from {$startDate->format('Y-m-d')} until {$endDate->format('Y-m-d')}!");
 
         return self::SUCCESS;
+    }
+
+    protected function getLatestFreekDevCampaign(): Campaign
+    {
+        $campaigns = Mailcoach::campaigns();
+
+        foreach($campaigns as $campaign) {
+            if(Str::startsWith($campaign->name, 'freek.dev newsletter')) {
+                return $campaign;
+            }
+        }
+
+        throw new Exception('Could not find a freek.dev campaign');
     }
 }
