@@ -57,8 +57,8 @@ class GenerateNewsletterCommand extends Command
     {
         $campaigns = Mailcoach::campaigns();
 
-        foreach($campaigns as $campaign) {
-            if(Str::startsWith($campaign->name, 'freek.dev newsletter')) {
+        foreach ($campaigns as $campaign) {
+            if (Str::startsWith($campaign->name, 'freek.dev newsletter')) {
                 return $campaign;
             }
         }
