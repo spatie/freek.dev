@@ -85,6 +85,7 @@
         "pestphp/pest": "^2.23",
         "pestphp/pest-plugin-laravel": "^2.2",
         "phpunit/phpunit": "^10.5",
+        "spatie/laravel-error-solutions": "^0.0.1",
         "spatie/pest-plugin-snapshots": "^2.0"
     },
     "config": {
