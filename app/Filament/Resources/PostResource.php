@@ -36,7 +36,6 @@ class PostResource extends Resource
                         ->required(),
 
                     Forms\Components\DateTimePicker::make('publish_date')
-                        ->withoutSeconds()
                         ->nullable(),
                     SpatieTagsInput::make('tags'),
                 ]),
@@ -71,6 +70,15 @@ class PostResource extends Resource
             ->actions([
                 Tables\Actions\Action::make('preview')
                     ->url(fn (Post $record) => $record->adminPreviewUrl(), shouldOpenInNewTab: true),
+                Tables\Actions\Action::make('schedule')->action(function(Post $post) {
+                    if ($post->publish_date) {
+                        return;
+                    }
+
+                    $post->update([
+                        'publish_date' => Post::nextFreePublishDate(),
+                    ]);
+                }),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([

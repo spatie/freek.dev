@@ -3,7 +3,9 @@
 namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
-use Filament\Pages\Actions;
+use App\Models\Post;
+use Filament\Actions\Action;
+use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
 class EditPost extends EditRecord
@@ -13,8 +15,19 @@ class EditPost extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\Action::make('preview')->url($this->record->adminPreviewUrl(), shouldOpenInNewTab: true),
-            Actions\DeleteAction::make(),
+            Action::make('preview')->url($this->record->adminPreviewUrl(), shouldOpenInNewTab: true),
+            Action::make('schedule')->action(function(Post $post) {
+                if ($post->publish_date) {
+                    return;
+                }
+
+                $post->update([
+                    'publish_date' => Post::nextFreePublishDate(),
+                ]);
+
+                $this->redirect(back()->getTargetUrl());
+            }),
+            DeleteAction::make(),
         ];
     }
 }

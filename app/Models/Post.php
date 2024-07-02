@@ -8,6 +8,7 @@ use App\Jobs\CreateOgImageJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -357,5 +358,17 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         }
 
         return true;
+    }
+
+    public static function nextFreePublishDate(): Carbon
+    {
+        $publishDate = now()->hour(14);
+
+        // If the date falls on a weekend or a post already exists on this date, increment the date
+        while ($publishDate->isWeekend() || Post::whereDate('publish_date', $publishDate)->exists()) {
+            $publishDate->addDay();
+        }
+
+        return $publishDate;
     }
 }

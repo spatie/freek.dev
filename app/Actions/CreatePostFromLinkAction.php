@@ -10,7 +10,7 @@ class CreatePostFromLinkAction
 {
     public function execute(Link $link): Carbon
     {
-        $publishDate = $this->determinePublishDate($link);
+        $publishDate = Post::nextFreePublishDate();
 
         Post::create([
             'submitted_by_user_id' => $link->user_id,
@@ -18,20 +18,8 @@ class CreatePostFromLinkAction
             'text' => $link->text,
             'external_url' => $link->url,
             'published' => false,
-            'publish_date' => $this->determinePublishDate($link),
+            'publish_date' => $publishDate,
         ]);
-
-        return $publishDate;
-    }
-
-    protected function determinePublishDate(Link $link): Carbon
-    {
-        $publishDate = now()->hour(14);
-
-        // If the date falls on a weekend or a post already exists on this date, increment the date
-        while ($publishDate->isWeekend() || Post::whereDate('publish_date', $publishDate)->exists()) {
-            $publishDate->addDay();
-        }
 
         return $publishDate;
     }
