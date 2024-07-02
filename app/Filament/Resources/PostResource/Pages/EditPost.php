@@ -16,7 +16,7 @@ class EditPost extends EditRecord
     {
         return [
             Action::make('preview')->url($this->record->adminPreviewUrl(), shouldOpenInNewTab: true),
-            Action::make('schedule')->action(function(Post $post) {
+            Action::make('schedule')->action(function (Post $post) {
                 if ($post->publish_date) {
                     return;
                 }
