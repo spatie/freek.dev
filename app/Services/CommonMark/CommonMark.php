@@ -3,6 +3,9 @@
 namespace App\Services\CommonMark;
 
 use Spatie\LaravelMarkdown\MarkdownRenderer;
+use Tempest\Highlight\CommonMark\HighlightExtension;
+use Tempest\Highlight\Highlighter;
+use Tempest\Highlight\Themes\LightTerminalTheme;
 
 class CommonMark
 {
@@ -10,8 +13,11 @@ class CommonMark
     {
         $renderer = app(MarkdownRenderer::class);
 
-        if (! $highlightCode) {
-            $renderer->disableHighlighting();
+        $renderer->disableHighlighting();
+
+        if ($highlightCode) {
+            $highlighter = new Highlighter();
+            $renderer->addExtension(new HighlightExtension($highlighter));
         }
 
         return $renderer->toHtml($markdown);

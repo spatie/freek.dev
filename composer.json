@@ -75,7 +75,8 @@
         "spatie/security-advisories-health-check": "^0.0.2",
         "stripe/stripe-php": "^7.128",
         "symfony/http-client": "^7.0",
-        "symfony/mailgun-mailer": "^7.0"
+        "symfony/mailgun-mailer": "^7.0",
+        "tempest/highlight": "^2.7"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80f798c42cdda506a8c434776d5be6f1",
+    "content-hash": "b1114b0792a7d81ba0a503bc5a36c235",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -16638,6 +16638,64 @@
                 "source": "https://github.com/ta-tikoma/phpunit-architecture-test/tree/0.8.4"
             },
             "time": "2024-01-05T14:10:56+00:00"
+        },
+        {
+            "name": "tempest/highlight",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tempestphp/highlight.git",
+                "reference": "ea8bb975aeef56e6c01ee471a77aa8bd8f4c07fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/ea8bb975aeef56e6c01ee471a77aa8bd8f4c07fb",
+                "reference": "ea8bb975aeef56e6c01ee471a77aa8bd8f4c07fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "assertchris/ellison": "^1.0.2",
+                "friendsofphp/php-cs-fixer": "^3.21",
+                "larapack/dd": "^1.1",
+                "league/commonmark": "^2.4",
+                "phpstan/phpstan": "^1.10.0",
+                "phpunit/phpunit": "^10.0"
+            },
+            "suggest": {
+                "assertchris/ellison": "Allows you to analyse sentence complexity",
+                "league/commonmark": "Adds markdown support"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tempest\\Highlight\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brendt@stitcher.io"
+                }
+            ],
+            "description": "Fast, extensible, server-side code highlighting",
+            "support": {
+                "issues": "https://github.com/tempestphp/highlight/issues",
+                "source": "https://github.com/tempestphp/highlight/tree/2.7.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/brendt",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-05-28T09:10:05+00:00"
         },
         {
             "name": "theseer/tokenizer",
