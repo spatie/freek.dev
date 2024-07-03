@@ -5,7 +5,6 @@ namespace App\Services\CommonMark;
 use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Tempest\Highlight\CommonMark\HighlightExtension;
 use Tempest\Highlight\Highlighter;
-use Tempest\Highlight\Themes\LightTerminalTheme;
 
 class CommonMark
 {
