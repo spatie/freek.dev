@@ -70,7 +70,7 @@ class PostResource extends Resource
             ->actions([
                 Tables\Actions\Action::make('preview')
                     ->url(fn (Post $record) => $record->adminPreviewUrl(), shouldOpenInNewTab: true),
-                Tables\Actions\Action::make('schedule')->action(function(Post $post) {
+                Tables\Actions\Action::make('schedule')->action(function (Post $post) {
                     if ($post->publish_date) {
                         return;
                     }
