@@ -3,7 +3,7 @@
 use Tests\Factories\PostFactory;
 
 it('can save the permalink of a tweet as the external url', function () {
-    $tweetPost = (new PostFactory())->tweet()->create([
+    $tweetPost = (new PostFactory)->tweet()->create([
         'external_url' => null,
     ]);
 
@@ -13,7 +13,7 @@ it('can save the permalink of a tweet as the external url', function () {
 });
 
 it('will not overwrite existing external urls', function () {
-    $tweetPost = (new PostFactory())->tweet()->create();
+    $tweetPost = (new PostFactory)->tweet()->create();
 
     $tweetPost->external_url = 'https://already-exists.com';
     $tweetPost->save();

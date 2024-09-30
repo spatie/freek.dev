@@ -10,7 +10,7 @@ it('can reject a link', function () {
         'status' => LinkStatus::Submitted,
     ]);
 
-    (new RejectLinkAction())->execute($submittedLink);
+    (new RejectLinkAction)->execute($submittedLink);
 
     expect($submittedLink->status)->toEqual(LinkStatus::Rejected->value);
 });

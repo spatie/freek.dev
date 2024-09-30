@@ -31,7 +31,7 @@ class PerformHtmlConversionCommand extends Command
         });
 
         Post::all()->reverse()->each(function (Post $post) {
-            (new ConvertPostTextToHtmlAction())->execute($post);
+            (new ConvertPostTextToHtmlAction)->execute($post);
 
             $this->comment("Conversion done for post `{$post->id}`");
         });
