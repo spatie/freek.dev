@@ -15,7 +15,7 @@ class CommonMark
         $renderer->disableHighlighting();
 
         if ($highlightCode) {
-            $highlighter = new Highlighter();
+            $highlighter = new Highlighter;
             $renderer->addExtension(new HighlightExtension($highlighter));
         }
 

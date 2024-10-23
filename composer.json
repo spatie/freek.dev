@@ -27,7 +27,7 @@
         "barryvdh/laravel-debugbar": "^3.10",
         "doctrine/dbal": "^3.5",
         "drewm/mailchimp-api": "^2.5",
-        "filament/filament": "^3.2",
+        "filament/filament": "^3.2.115",
         "filament/spatie-laravel-tags-plugin": "^3.0-stable",
         "guzzlehttp/guzzle": "^7.4.5",
         "laravel/folio": "^1.1",
