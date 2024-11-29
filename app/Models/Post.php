@@ -284,7 +284,6 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
             ->implode(' ');
 
         return $this->emoji.' '.$this->title
-            .PHP_EOL.$this->promotional_url
             .PHP_EOL.$tags;
     }
 

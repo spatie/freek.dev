@@ -10,6 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use NotificationChannels\Bluesky\BlueskyPost;
 use NotificationChannels\Bluesky\BlueskyService;
+use NotificationChannels\Bluesky\Embeds\External;
 
 class PostOnBlueskyJob implements ShouldQueue
 {
@@ -24,7 +25,7 @@ class PostOnBlueskyJob implements ShouldQueue
 
     public function handle(): void
     {
-        if (! $this->post->send_automated_tweet) {
+        if (!$this->post->send_automated_tweet) {
             return;
         }
 
@@ -36,8 +37,19 @@ class PostOnBlueskyJob implements ShouldQueue
             return;
         }
 
-        app(BlueskyService::class)->createPost($this->post->toBlueskyText());
+        $blueskyPost = BlueskyPost::make()
+            ->text($this->post->toBlueskyText())
+            ->withoutAutomaticEmbeds()
+            ->language(['en-US'])
+            ->embed(new External(
+                uri: $this->post->title,
+                title: $this->post->title,
+                description: $this->post->text,
+            ));
 
-        $this->post->update(['posted_on_bluesky' => true]);
+        app(BlueskyService::class)->createPost($blueskyPost);
+
+
+        $this->post->update(['posted_on_bluesky_at' => true]);
     }
 }
