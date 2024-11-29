@@ -24,7 +24,7 @@ class PostOnBlueskyJob implements ShouldQueue
 
     public function handle(): void
     {
-        if (!$this->post->send_automated_tweet) {
+        if (! $this->post->send_automated_tweet) {
             return;
         }
 
@@ -47,7 +47,6 @@ class PostOnBlueskyJob implements ShouldQueue
             ));
 
         app(BlueskyService::class)->createPost($blueskyPost);
-
 
         $this->post->update(['posted_on_bluesky_at' => true]);
     }
