@@ -48,5 +48,5 @@ return [
     'bluesky' => [
         'username' => env('BLUESKY_USERNAME'),
         'password' => env('BLUESKY_PASSWORD'),
-    ]
+    ],
 ];
