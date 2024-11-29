@@ -9,6 +9,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use NotificationChannels\Bluesky\BlueskyPost;
+use NotificationChannels\Bluesky\BlueskyService;
 
 class PostOnBlueskyJob implements ShouldQueue
 {
@@ -35,9 +36,7 @@ class PostOnBlueskyJob implements ShouldQueue
             return;
         }
 
-        BlueskyPost::make()
-            ->text($this->post->toBlueskyText())
-            ->language(['en-US']);
+        app(BlueskyService::class)->createPost($this->post->toBlueskyText());
 
         $this->post->update(['posted_on_bluesky' => true]);
     }
