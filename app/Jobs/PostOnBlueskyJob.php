@@ -25,7 +25,7 @@ class PostOnBlueskyJob implements ShouldQueue
 
     public function handle(): void
     {
-        if (!$this->post->send_automated_tweet) {
+        if (! $this->post->send_automated_tweet) {
             return;
         }
 
