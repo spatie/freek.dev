@@ -30,6 +30,7 @@
         "filament/filament": "^3.2.115",
         "filament/spatie-laravel-tags-plugin": "^3.0-stable",
         "guzzlehttp/guzzle": "^7.4.5",
+        "innocenzi/bluesky-notification-channel": "^0.2.0",
         "laravel/folio": "^1.1",
         "laravel/framework": "^11.0",
         "laravel/horizon": "^5.22",

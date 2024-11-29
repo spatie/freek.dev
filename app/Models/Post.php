@@ -51,6 +51,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
             'send_automated_tweet' => 'boolean',
             'toot_sent' => 'boolean',
             'publish_date' => 'datetime',
+            'posted_on_bluesky_at' => 'datetime',
         ];
     }
 
@@ -271,6 +272,18 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         }
 
         return $this->emoji.' '.$this->title.$twitterAuthorString
+            .PHP_EOL.$this->promotional_url
+            .PHP_EOL.$tags;
+    }
+
+    public function toBlueskyText(): string
+    {
+        $tags = $this->tags
+            ->map(fn (Tag $tag) => $tag->name)
+            ->map(fn (string $tagName) => '#'.str_replace(' ', '', $tagName))
+            ->implode(' ');
+
+        return $this->emoji.' '.$this->title
             .PHP_EOL.$this->promotional_url
             .PHP_EOL.$tags;
     }

@@ -45,4 +45,8 @@ return [
         'email_list_uuid' => env('MAILCOACH_EMAIL_LIST_UUID'),
     ],
 
+    'bluesky' => [
+        'username' => env('BLUESKY_USERNAME'),
+        'password' => env('BLUESKY_PASSWORD'),
+    ]
 ];
