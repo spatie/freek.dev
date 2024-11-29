@@ -43,7 +43,7 @@ class PostResource extends Resource
                     Forms\Components\TextInput::make('external_url'),
                     Forms\Components\Checkbox::make('published'),
                     Forms\Components\Checkbox::make('original_content'),
-                    Forms\Components\Checkbox::make('send_automated_tweet'),
+                    Forms\Components\Checkbox::make('send_automated_tweet')->default(true),
                     Forms\Components\Select::make('submitted_by_user_id')
                         ->relationship('submittedByUser', 'name'),
                     Forms\Components\TextInput::make('author_twitter_handle'),
