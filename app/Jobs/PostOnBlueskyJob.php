@@ -42,7 +42,7 @@ class PostOnBlueskyJob implements ShouldQueue
             ->withoutAutomaticEmbeds()
             ->language(['en-US'])
             ->embed(new External(
-                uri: $this->post->title,
+                uri: $this->post->promotional_url,
                 title: $this->post->title,
                 description: $this->post->text,
             ));
