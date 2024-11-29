@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use NotificationChannels\Bluesky\BlueskyPost;
 use NotificationChannels\Bluesky\BlueskyService;
 use NotificationChannels\Bluesky\Embeds\External;
 
@@ -48,7 +49,6 @@ class PostOnBlueskyJob implements ShouldQueue
 
         app(BlueskyService::class)->createPost($blueskyPost);
 
-
-        $this->post->update(['posted_on_bluesky_at' => true]);
+        $this->post->update(['posted_on_bluesky' => true]);
     }
 }
