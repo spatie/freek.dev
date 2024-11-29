@@ -8,7 +8,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use NotificationChannels\Bluesky\BlueskyPost;
 use NotificationChannels\Bluesky\BlueskyService;
 use NotificationChannels\Bluesky\Embeds\External;
 
