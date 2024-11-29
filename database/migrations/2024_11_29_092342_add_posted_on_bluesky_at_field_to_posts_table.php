@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->boolean('posted_on_bluesky_at')->default(false);
+            $table->datetime('posted_on_bluesky')->default(false);
         });
     }
 };

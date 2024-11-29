@@ -27,7 +27,7 @@ class PostOnBlueskyJob implements ShouldQueue
             return;
         }
 
-        if ($this->post->posted_on_bluesky_at) {
+        if ($this->post->posted_on_bluesky) {
             return;
         }
 
@@ -39,6 +39,6 @@ class PostOnBlueskyJob implements ShouldQueue
             ->text($this->post->toBlueskyText())
             ->language(['en-US']);
 
-        $this->post->update(['posted_on_bluesky_at' => true]);
+        $this->post->update(['posted_on_bluesky' => true]);
     }
 }
