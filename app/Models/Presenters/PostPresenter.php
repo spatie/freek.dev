@@ -62,7 +62,7 @@ trait PostPresenter
 
         $excerpt = strip_tags($excerpt);
 
-        //replace multiple spaces
+        // replace multiple spaces
         $excerpt = preg_replace("/\s+/", ' ', $excerpt);
 
         if (strlen($excerpt) == 0) {
