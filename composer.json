@@ -10,6 +10,14 @@
         {
             "type": "composer",
             "url": "https://satis.spatie.be"
+        },
+        {
+            "type" : "vcs",
+            "url" : "git@github.com:spatie/flare-php-client-private.git"
+        },
+        {
+            "type" : "vcs",
+            "url" : "git@github.com:spatie/laravel-flare-private.git"
         }
     ],
     "license": "MIT",
@@ -22,6 +30,8 @@
         "ext-openssl": "*",
         "ext-pcntl": "*",
         "ext-simplexml": "*",
+        "spatie/laravel-flare": "v2.x-dev#2c7436fc1eaaddf6e9fd47a34282dcc9aa3d7279",
+        "spatie/flare-client-php": "v2.x-dev#214b3002fcf2131b2ed40d1c0459c79cd947c220",
         "abraham/twitteroauth": "^6.1",
         "algolia/algoliasearch-client-php": "^3.3",
         "barryvdh/laravel-debugbar": "^3.10",

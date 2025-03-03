@@ -64,6 +64,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
+        Flare::handles($exceptions);
         $exceptions->reportable(function (ValidationException $exception) {
             flash()->error('Please correct the errors in the form');
         });
