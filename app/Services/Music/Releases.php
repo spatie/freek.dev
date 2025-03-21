@@ -19,6 +19,15 @@ class Releases
 
         $releases['kobus'] = [
             [
+                'title' => 'Even',
+                'artwork' => 'even.jpg',
+                'links' => [
+                    'Spotify' => 'https://open.spotify.com/album/6pJRmFAhWvUjgUvRHYdbym',
+                    'Apple Music' => 'https://music.apple.com/be/album/even/1803125870
+',
+                ],
+            ],
+            [
                 'title' => 'Kind',
                 'artwork' => 'kind.jpg',
                 'links' => [
