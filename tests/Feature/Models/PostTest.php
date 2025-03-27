@@ -13,15 +13,15 @@ beforeEach(function () {
 });
 
 it('can find a post by its id slug', function () {
-get('/'.$this->post->idSlug())
-->assertSuccessful()
-->assertSee($this->post->title);
-    });
+    get('/'.$this->post->idSlug())
+        ->assertSuccessful()
+        ->assertSee($this->post->title);
+});
 
 it('will return a 404 for an invalid slug', function () {
-get('/this-post-does-not-exist')
-->assertNotFound();
-    });
+    get('/this-post-does-not-exist')
+        ->assertNotFound();
+});
 
 it('will only show published posts', function () {
     $post = Post::factory()->create([
