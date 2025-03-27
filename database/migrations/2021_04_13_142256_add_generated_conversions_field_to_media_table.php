@@ -15,13 +15,5 @@ return new class extends Migration
                 $table->json('generated_conversions');
             });
         }
-
-        Media::query()
-            ->whereNull('generated_conversions')
-            ->orWhere('generated_conversions', '')
-            ->orWhereRaw("JSON_TYPE(generated_conversions) = 'NULL'")
-            ->update([
-                'generated_conversions' => DB::raw('custom_properties->"$.generated_conversions"'),
-            ]);
     }
 };
