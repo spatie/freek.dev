@@ -95,7 +95,8 @@ yarn
 @task('generateAssets', ['on' => 'remote'])
 {{ logMessage("🌅  Generating assets…") }}
 cd {{ $newReleaseDir }};
-yarn run build
+npm ci --audit false
+npm run build
 rm -rf node_modules
 @endtask
 
