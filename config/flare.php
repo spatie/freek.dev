@@ -1,7 +1,44 @@
 <?php
 
-use Spatie\LaravelFlare\AttributesProviders\LaravelUserAttributesProvider;
-use Spatie\LaravelFlare\FlareConfig;
+use Spatie\FlareClient\FlareMiddleware\AddGitInformation;
+use Spatie\FlareClient\FlareMiddleware\RemoveRequestIp;
+use Spatie\FlareClient\FlareMiddleware\CensorRequestBodyFields;
+use Spatie\FlareClient\FlareMiddleware\CensorRequestHeaders;
+use Spatie\ErrorSolutions\SolutionProviders\BadMethodCallSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\MergeConflictSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\UndefinedPropertySolutionProvider;
+use Spatie\LaravelFlare\FlareMiddleware\AddDumps;
+use Spatie\LaravelFlare\FlareMiddleware\AddEnvironmentInformation;
+use Spatie\LaravelFlare\FlareMiddleware\AddExceptionHandledStatus;
+use Spatie\LaravelFlare\FlareMiddleware\AddExceptionInformation;
+use Spatie\LaravelFlare\FlareMiddleware\AddJobs;
+use Spatie\LaravelFlare\FlareMiddleware\AddLogs;
+use Spatie\LaravelFlare\FlareMiddleware\AddQueries;
+use Spatie\LaravelFlare\FlareMiddleware\AddContext;
+use Spatie\LaravelFlare\FlareMiddleware\AddNotifierName;
+use Spatie\LaravelFlare\Recorders\DumpRecorder\DumpRecorder;
+use Spatie\LaravelFlare\Recorders\JobRecorder\JobRecorder;
+use Spatie\LaravelFlare\Recorders\LogRecorder\LogRecorder;
+use Spatie\LaravelFlare\Recorders\QueryRecorder\QueryRecorder;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\DefaultDbNameSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\GenericLaravelExceptionSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\IncorrectValetDbCredentialsSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\InvalidRouteActionSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingAppKeySolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingColumnSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingImportSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingLivewireComponentSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingMixManifestSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\MissingViteManifestSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\OpenAiSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\RunningLaravelDuskInProductionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\SailNetworkSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\TableNotFoundSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\UndefinedViewVariableSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\UnknownMariadbCollationSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\UnknownMysql8CollationSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\UnknownValidationSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\Laravel\ViewNotFoundSolutionProvider;
 
 return [
     /*
@@ -19,19 +56,6 @@ return [
     'key' => env('FLARE_KEY'),
 
     /*
-    |
-    |--------------------------------------------------------------------------
-    | Flare Base URL
-    |--------------------------------------------------------------------------
-    |
-    | Which server should be used to send the reports/traces to.
-    |
-    | Default: https://flareapp.io
-    |
-    */
-    'base_url' => env('FLARE_BASE_URL', 'https://ingress-staging.flareapp.io'),
-
-    /*
     |--------------------------------------------------------------------------
     | Middleware
     |--------------------------------------------------------------------------
@@ -40,66 +64,41 @@ return [
     |
     */
 
-    'middleware' => [
-        ...FlareConfig::defaultMiddleware(),
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Recorders
-    |--------------------------------------------------------------------------
-    |
-    | These recorders, will record events that happen in your application. They
-    | will be included in the error report or trace that is sent to Flare,
-    | depending on the configuration.
-    |
-    */
-
-    'recorders' => [
-        ...FlareConfig::defaultRecorders(),
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Attribute providers
-    |--------------------------------------------------------------------------
-    |
-    | When sending an error report or trace to Flare attributes can be added to
-    | the report or trace for common entries. An example of such an entry is
-    | the currently authenticated user. In an attribute provider you can
-    | specify which attributes should be sent.
-    |
-    */
-
-    'attribute_providers' => [
-        'user' => LaravelUserAttributesProvider::class,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Censor data
-    |--------------------------------------------------------------------------
-    |
-    | It is possible to censor sensitive data from the reports and sent to
-    | Flare. Below you can specify which fields and header should be
-    | censored. It is also possible to hide the client's IP address.
-    |
-    */
-
-    'censor' => [
-        'body_fields' => [
-            'password',
-            'password_confirmation',
+    'flare_middleware' => [
+        RemoveRequestIp::class,
+        AddGitInformation::class,
+        AddNotifierName::class,
+        AddEnvironmentInformation::class,
+        AddExceptionInformation::class,
+        AddDumps::class,
+        AddLogs::class => [
+            'maximum_number_of_collected_logs' => 200,
         ],
-        'headers' => [
-            'API-KEY',
-            'Authorization',
-            'Cookie',
-            'Set-Cookie',
-            'X-CSRF-TOKEN',
-            'X-XSRF-TOKEN',
+        AddQueries::class => [
+            'maximum_number_of_collected_queries' => 200,
+            'report_query_bindings' => true,
         ],
-        'client_ips' => false,
+        AddJobs::class => [
+            'max_chained_job_reporting_depth' => 5,
+        ],
+        AddContext::class,
+        AddExceptionHandledStatus::class,
+        CensorRequestBodyFields::class => [
+            'censor_fields' => [
+                'password',
+                'password_confirmation',
+            ],
+        ],
+        CensorRequestHeaders::class => [
+            'headers' => [
+                'API-KEY',
+                'Authorization',
+                'Cookie',
+                'Set-Cookie',
+                'X-CSRF-TOKEN',
+                'X-XSRF-TOKEN',
+            ]
+        ],
     ],
 
     /*
@@ -114,6 +113,7 @@ return [
 
     'send_logs_as_events' => true,
 
+
     /*
     |--------------------------------------------------------------------------
     | Solution Providers
@@ -125,19 +125,70 @@ return [
     */
 
     'solution_providers' => [
-        ...FlareConfig::defaultSolutionProviders(),
+        // from spatie/ignition
+        BadMethodCallSolutionProvider::class,
+        MergeConflictSolutionProvider::class,
+        UndefinedPropertySolutionProvider::class,
+
+        // from spatie/laravel-flare
+        IncorrectValetDbCredentialsSolutionProvider::class,
+        MissingAppKeySolutionProvider::class,
+        DefaultDbNameSolutionProvider::class,
+        TableNotFoundSolutionProvider::class,
+        MissingImportSolutionProvider::class,
+        InvalidRouteActionSolutionProvider::class,
+        ViewNotFoundSolutionProvider::class,
+        RunningLaravelDuskInProductionProvider::class,
+        MissingColumnSolutionProvider::class,
+        UnknownValidationSolutionProvider::class,
+        MissingMixManifestSolutionProvider::class,
+        MissingViteManifestSolutionProvider::class,
+        MissingLivewireComponentSolutionProvider::class,
+        UndefinedViewVariableSolutionProvider::class,
+        GenericLaravelExceptionSolutionProvider::class,
+        OpenAiSolutionProvider::class,
+        SailNetworkSolutionProvider::class,
+        UnknownMysql8CollationSolutionProvider::class,
+        UnknownMariadbCollationSolutionProvider::class,
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Report error levels
+    | Ignored Solution Providers
     |--------------------------------------------------------------------------
-    | When reporting errors, you can specify which error levels should be
-    | reported. By default, all error levels are reported by setting
-    | this value to `null`.
+    |
+    | You may specify a list of solution providers (as fully qualified class
+    | names) that shouldn't be loaded. Flare will ignore these classes
+    | and possible solutions provided by them will never be displayed.
+    |
+    */
+
+    'ignored_solution_providers' => [
+
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Recorders
+    |--------------------------------------------------------------------------
+    |
+    | Flare registers a couple of recorders when it is enabled. Below you may
+    | specify a recorders will be used to record specific events.
+    |
+    */
+
+    'recorders' => [
+        DumpRecorder::class,
+        JobRecorder::class,
+        LogRecorder::class,
+        QueryRecorder::class,
+    ],
+
+    /*
+     * When a key is set, we'll send your exceptions to Open AI to generate a solution
      */
 
-    'report_error_levels' => null,
+    'open_ai_key' => env('FLARE_OPEN_AI_KEY'),
 
     /*
    |--------------------------------------------------------------------------
@@ -176,7 +227,17 @@ return [
    */
 
     'argument_reducers' => [
-        ...FlareConfig::defaultArgumentReducers(),
+        \Spatie\Backtrace\Arguments\Reducers\BaseTypeArgumentReducer::class,
+        \Spatie\Backtrace\Arguments\Reducers\ArrayArgumentReducer::class,
+        \Spatie\Backtrace\Arguments\Reducers\StdClassArgumentReducer::class,
+        \Spatie\Backtrace\Arguments\Reducers\EnumArgumentReducer::class,
+        \Spatie\Backtrace\Arguments\Reducers\ClosureArgumentReducer::class,
+        \Spatie\Backtrace\Arguments\Reducers\DateTimeArgumentReducer::class,
+        \Spatie\Backtrace\Arguments\Reducers\DateTimeZoneArgumentReducer::class,
+        \Spatie\Backtrace\Arguments\Reducers\SymphonyRequestArgumentReducer::class,
+        \Spatie\LaravelFlare\ArgumentReducers\ModelArgumentReducer::class,
+        \Spatie\LaravelFlare\ArgumentReducers\CollectionArgumentReducer::class,
+        \Spatie\Backtrace\Arguments\Reducers\StringableArgumentReducer::class,
     ],
 
     /*
@@ -206,54 +267,6 @@ return [
     */
 
     'overridden_groupings' => [
-        //        Illuminate\Http\Client\ConnectionException::class => Spatie\FlareClient\Enums\OverriddenGrouping::ExceptionMessageAndClass,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Sender
-    |--------------------------------------------------------------------------
-    |
-    | The sender is responsible for sending the error reports and traces to
-    | Flare it can be configured if needed.
-    |
-    */
-    'sender' => [
-        'class' => \Spatie\LaravelFlare\Senders\LaravelHttpSender::class,
-        'config' => [
-            'timeout' => 10,
-        ],
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Tracing
-    |--------------------------------------------------------------------------
-    |
-    | Tracing allows you to see the flow of your application. It shows you
-    | which parts of your application are slow and which parts are fast.
-    |
-    */
-    'tracing' => [
-        'enabled' => true,
-
-        // The sampler is used to determine which traces should be recorded
-        'sampler' => [
-            'class' => \Spatie\FlareClient\Sampling\RateSampler::class,
-            'config' => [
-                'rate' => 1,
-            ],
-        ],
-
-        // Whether to trace throwables
-        'trace_throwables' => true,
-
-        // Limits for the tracing data
-        'limits' => [
-            'max_spans' => 512,
-            'max_attributes_per_span' => 128,
-            'max_span_events_per_span' => 128,
-            'max_attributes_per_span_event' => 128,
-        ],
+//        Illuminate\Http\Client\ConnectionException::class => Spatie\FlareClient\Enums\OverriddenGrouping::ExceptionMessageAndClass,
     ],
 ];

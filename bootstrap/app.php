@@ -20,6 +20,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Foundation\Http\Middleware\TrimStrings;
 use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Validation\ValidationException;
+use Spatie\LaravelFlare\Facades\Flare;
 use Spatie\MissingPageRedirector\RedirectsMissingPages;
 use Spatie\ResponseCache\Middlewares\CacheResponse;
 use Spatie\ResponseCache\Middlewares\DoNotCacheResponse;
@@ -65,6 +66,7 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         Flare::handles($exceptions);
+
         $exceptions->reportable(function (ValidationException $exception) {
             flash()->error('Please correct the errors in the form');
         });
