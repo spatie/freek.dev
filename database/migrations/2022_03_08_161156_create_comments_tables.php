@@ -24,7 +24,7 @@ return new class extends Migration
             $table->id();
             $this->nullableMorphs($table, 'commentator', 'commentator_reactions');
             $table->foreignId('comment_id')->references('id')->on('comments')->cascadeOnDelete();
-            $table->string('reaction')->collation('utf8mb4_bin');
+            $table->string('reaction');
             $table->timestamps();
         });
 
