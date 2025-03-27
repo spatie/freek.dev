@@ -1,25 +1,6 @@
 <?php
 
-use Spatie\FlareClient\FlareMiddleware\AddGitInformation;
-use Spatie\FlareClient\FlareMiddleware\RemoveRequestIp;
-use Spatie\FlareClient\FlareMiddleware\CensorRequestBodyFields;
-use Spatie\FlareClient\FlareMiddleware\CensorRequestHeaders;
 use Spatie\ErrorSolutions\SolutionProviders\BadMethodCallSolutionProvider;
-use Spatie\ErrorSolutions\SolutionProviders\MergeConflictSolutionProvider;
-use Spatie\ErrorSolutions\SolutionProviders\UndefinedPropertySolutionProvider;
-use Spatie\LaravelFlare\FlareMiddleware\AddDumps;
-use Spatie\LaravelFlare\FlareMiddleware\AddEnvironmentInformation;
-use Spatie\LaravelFlare\FlareMiddleware\AddExceptionHandledStatus;
-use Spatie\LaravelFlare\FlareMiddleware\AddExceptionInformation;
-use Spatie\LaravelFlare\FlareMiddleware\AddJobs;
-use Spatie\LaravelFlare\FlareMiddleware\AddLogs;
-use Spatie\LaravelFlare\FlareMiddleware\AddQueries;
-use Spatie\LaravelFlare\FlareMiddleware\AddContext;
-use Spatie\LaravelFlare\FlareMiddleware\AddNotifierName;
-use Spatie\LaravelFlare\Recorders\DumpRecorder\DumpRecorder;
-use Spatie\LaravelFlare\Recorders\JobRecorder\JobRecorder;
-use Spatie\LaravelFlare\Recorders\LogRecorder\LogRecorder;
-use Spatie\LaravelFlare\Recorders\QueryRecorder\QueryRecorder;
 use Spatie\ErrorSolutions\SolutionProviders\Laravel\DefaultDbNameSolutionProvider;
 use Spatie\ErrorSolutions\SolutionProviders\Laravel\GenericLaravelExceptionSolutionProvider;
 use Spatie\ErrorSolutions\SolutionProviders\Laravel\IncorrectValetDbCredentialsSolutionProvider;
@@ -39,6 +20,25 @@ use Spatie\ErrorSolutions\SolutionProviders\Laravel\UnknownMariadbCollationSolut
 use Spatie\ErrorSolutions\SolutionProviders\Laravel\UnknownMysql8CollationSolutionProvider;
 use Spatie\ErrorSolutions\SolutionProviders\Laravel\UnknownValidationSolutionProvider;
 use Spatie\ErrorSolutions\SolutionProviders\Laravel\ViewNotFoundSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\MergeConflictSolutionProvider;
+use Spatie\ErrorSolutions\SolutionProviders\UndefinedPropertySolutionProvider;
+use Spatie\FlareClient\FlareMiddleware\AddGitInformation;
+use Spatie\FlareClient\FlareMiddleware\CensorRequestBodyFields;
+use Spatie\FlareClient\FlareMiddleware\CensorRequestHeaders;
+use Spatie\FlareClient\FlareMiddleware\RemoveRequestIp;
+use Spatie\LaravelFlare\FlareMiddleware\AddContext;
+use Spatie\LaravelFlare\FlareMiddleware\AddDumps;
+use Spatie\LaravelFlare\FlareMiddleware\AddEnvironmentInformation;
+use Spatie\LaravelFlare\FlareMiddleware\AddExceptionHandledStatus;
+use Spatie\LaravelFlare\FlareMiddleware\AddExceptionInformation;
+use Spatie\LaravelFlare\FlareMiddleware\AddJobs;
+use Spatie\LaravelFlare\FlareMiddleware\AddLogs;
+use Spatie\LaravelFlare\FlareMiddleware\AddNotifierName;
+use Spatie\LaravelFlare\FlareMiddleware\AddQueries;
+use Spatie\LaravelFlare\Recorders\DumpRecorder\DumpRecorder;
+use Spatie\LaravelFlare\Recorders\JobRecorder\JobRecorder;
+use Spatie\LaravelFlare\Recorders\LogRecorder\LogRecorder;
+use Spatie\LaravelFlare\Recorders\QueryRecorder\QueryRecorder;
 
 return [
     /*
@@ -97,7 +97,7 @@ return [
                 'Set-Cookie',
                 'X-CSRF-TOKEN',
                 'X-XSRF-TOKEN',
-            ]
+            ],
         ],
     ],
 
@@ -112,7 +112,6 @@ return [
     */
 
     'send_logs_as_events' => true,
-
 
     /*
     |--------------------------------------------------------------------------
@@ -267,6 +266,6 @@ return [
     */
 
     'overridden_groupings' => [
-//        Illuminate\Http\Client\ConnectionException::class => Spatie\FlareClient\Enums\OverriddenGrouping::ExceptionMessageAndClass,
+        //        Illuminate\Http\Client\ConnectionException::class => Spatie\FlareClient\Enums\OverriddenGrouping::ExceptionMessageAndClass,
     ],
 ];
