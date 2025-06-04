@@ -4,8 +4,8 @@ namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
 use App\Models\Post;
-use Filament\Resources\Pages\CreateRecord;
 use Filament\Actions\Action;
+use Filament\Resources\Pages\CreateRecord;
 
 class CreatePost extends CreateRecord
 {
@@ -45,6 +45,4 @@ class CreatePost extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
-
-
 }
