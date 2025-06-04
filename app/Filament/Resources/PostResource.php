@@ -57,7 +57,7 @@ class PostResource extends Resource
             ->modifyQueryUsing(fn (Builder $query) => $query->orderByRaw('case when publish_date is null then 9999999999999999 else timestamp(publish_date) end desc'));
 
         return $table
-            ->defaultPaginationPageOption(100)
+            ->defaultPaginationPageOption(50)
             ->columns([
                 Tables\Columns\TextColumn::make('title')->limit(70)->sortable(),
 
