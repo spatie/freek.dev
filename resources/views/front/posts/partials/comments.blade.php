@@ -1,3 +1,4 @@
+{{--
 <div class="markup mb-8">
     <h2 id="comments">
         Comments
@@ -42,3 +43,4 @@
         </div>
     @endif
 @endauth
+--}}
