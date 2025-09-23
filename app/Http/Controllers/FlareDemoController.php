@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Faker\Factory as Faker;
 
-class FlareDemoController extends Controller
+class FlareDemoController
 {
     public function index()
     {
