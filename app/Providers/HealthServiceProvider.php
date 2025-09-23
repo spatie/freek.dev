@@ -23,7 +23,7 @@ class HealthServiceProvider extends ServiceProvider
             DatabaseCheck::new(),
             HorizonCheck::new(),
             OptimizedAppCheck::new(),
-            MeiliSearchCheck::new(),
+            //MeiliSearchCheck::new(),
             UsedDiskSpaceCheck::new()
                 ->warnWhenUsedSpaceIsAbovePercentage(90)
                 ->failWhenUsedSpaceIsAbovePercentage(95),
