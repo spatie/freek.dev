@@ -2,28 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Faker\Factory as Faker;
+use App\Models\Post;
+use Illuminate\Support\Str;
 
 class FlareDemoController
 {
     public function index()
     {
-        $faker = Faker::create();
-
-        $posts = collect(range(1, 12))->map(function ($i) use ($faker) {
-            return (object) [
-                'id' => $i,
-                'title' => $faker->sentence(rand(4, 8)),
-                'excerpt' => $faker->paragraph(rand(2, 4)),
-                'author' => $faker->name,
-                'date' => $faker->dateTimeBetween('-2 years', 'now')->format('M j, Y'),
-                'reading_time' => rand(3, 15).' min read',
-                'category' => $faker->randomElement(['Laravel', 'PHP', 'JavaScript', 'Vue.js', 'React', 'DevOps', 'Testing', 'Open Source']),
-                'tags' => $faker->randomElements(['tutorial', 'tips', 'best-practices', 'performance', 'security', 'debugging', 'tools', 'packages'], rand(2, 4)),
-                'views' => $faker->numberBetween(100, 10000),
-                'comments' => $faker->numberBetween(0, 50),
-            ];
-        });
+        $posts = Post::published()
+            ->limit(10)
+            ->get()
+            ->map(function ($post) {
+                return (object) [
+                    'id' => $post->id,
+                    'title' => $post->title,
+                    'excerpt' => $post->summary ?? Str::limit(strip_tags($post->text), 200),
+                    'author' => 'Freek Van der Herten',
+                    'date' => $post->publish_date->format('M j, Y'),
+                    'reading_time' => $post->minutes_to_read.' min read',
+                    'category' => $post->tags->first()?->name ?? 'General',
+                    'tags' => $post->tags->pluck('name')->toArray(),
+                    'views' => $post->views ?? 0,
+                    'comments' => $post->comments()->count(),
+                ];
+            });
 
         return view('flare-demo', compact('posts'));
     }
