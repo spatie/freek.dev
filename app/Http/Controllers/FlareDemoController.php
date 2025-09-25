@@ -27,6 +27,6 @@ class FlareDemoController
                 ];
             });
 
-        return viiew('flare-demo', compact('posts'));
+        return view('flare-demo', compact('posts'));
     }
 }
