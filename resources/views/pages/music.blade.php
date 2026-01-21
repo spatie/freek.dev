@@ -7,6 +7,8 @@ use App\Services\Music\Releases;
 render(function (View $view) {
     $releases = Releases::all();
 
+    ray('On the music page');
+
     $view->with(compact('releases'));
 }); ?>
 

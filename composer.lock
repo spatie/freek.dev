@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62a6af9c46d4dde49941dbefc497428f",
+    "content-hash": "d44dc33551079781b4c97c857f7ae1cf",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -11541,16 +11541,16 @@
         },
         {
             "name": "spatie/laravel-ray",
-            "version": "1.43.2",
+            "version": "1.43.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ray.git",
-                "reference": "6039c5e62118d7b8febc31546d14a5cf9bb63876"
+                "reference": "4912e37ebb38f40642b6710ba3f598852385e360"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/6039c5e62118d7b8febc31546d14a5cf9bb63876",
-                "reference": "6039c5e62118d7b8febc31546d14a5cf9bb63876",
+                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/4912e37ebb38f40642b6710ba3f598852385e360",
+                "reference": "4912e37ebb38f40642b6710ba3f598852385e360",
                 "shasum": ""
             },
             "require": {
@@ -11569,7 +11569,7 @@
             "require-dev": {
                 "guzzlehttp/guzzle": "^7.3",
                 "laravel/framework": "^7.20|^8.19|^9.0|^10.0|^11.0|^12.0",
-                "laravel/pint": "^1.26",
+                "laravel/pint": "^1.27",
                 "orchestra/testbench-core": "^5.0|^6.0|^7.0|^8.0|^9.0|^10.0",
                 "pestphp/pest": "^1.22|^2.0|^3.0|^4.0",
                 "phpstan/phpstan": "^1.10.57|^2.0.2",
@@ -11614,7 +11614,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-ray/issues",
-                "source": "https://github.com/spatie/laravel-ray/tree/1.43.2"
+                "source": "https://github.com/spatie/laravel-ray/tree/1.43.3"
             },
             "funding": [
                 {
@@ -11626,7 +11626,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2025-12-15T09:06:48+00:00"
+            "time": "2026-01-13T09:04:07+00:00"
         },
         {
             "name": "spatie/laravel-remote",
