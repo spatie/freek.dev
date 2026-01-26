@@ -9,12 +9,12 @@ class ResetPasswordController
 {
     use ResetsPasswords, ValidatesRequests;
 
-    public function redirectPath()
+    public function redirectPath(): string
     {
         if (auth()->user()->admin) {
             return '/admin';
         }
 
-        return redirect()->to('/community');
+        return '/community';
     }
 }

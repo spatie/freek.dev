@@ -57,7 +57,7 @@ class Ad extends Model
             ->first();
     }
 
-    public function scopeCurrent(Builder $query)
+    public function scopeCurrent(Builder $query): void
     {
         $now = now()->format('Y-m-d');
 
@@ -66,12 +66,12 @@ class Ad extends Model
             ->whereDate('ends_at', '>=', $now);
     }
 
-    public function getFormattedTextAttribute()
+    public function getFormattedTextAttribute(): string
     {
         return CommonMark::convertToHtml($this->text);
     }
 
-    public function getExcerptAttribute()
+    public function getExcerptAttribute(): string
     {
         return Str::limit($this->text);
     }

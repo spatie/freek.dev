@@ -9,7 +9,7 @@ class LoginController
 {
     use AuthenticatesUsers, ValidatesRequests;
 
-    public function redirectPath()
+    public function redirectPath(): string
     {
         if (auth()->user()->admin) {
             return '/admin';

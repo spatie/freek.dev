@@ -92,7 +92,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         return $this->belongsTo(User::class, 'submitted_by_user_id');
     }
 
-    public function scopePublished(Builder $query)
+    public function scopePublished(Builder $query): void
     {
         $query
             ->where('published', true)
@@ -100,12 +100,12 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
             ->orderBy('id', 'desc');
     }
 
-    public function scopeOriginalContent(Builder $query)
+    public function scopeOriginalContent(Builder $query): void
     {
         $query->where('original_content', true);
     }
 
-    public function scopeScheduled(Builder $query)
+    public function scopeScheduled(Builder $query): void
     {
         $query
             ->where('published', false)
