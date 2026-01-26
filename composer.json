@@ -80,6 +80,7 @@
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.0",
         "fakerphp/faker": "^1.23",
+        "laravel/boost": "^2.0",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0|^9.0",
         "pestphp/pest": "^3.0",

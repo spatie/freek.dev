@@ -1969,6 +1969,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     var alpineAttributeRegex = () => new RegExp(`^${prefixAsString}([^:^.]+)\\b`);
     function toParsedDirectives(transformedAttributeMap, originalAttributeOverride) {
       return ({ name, value }) => {
+        if (name === value)
+          value = "";
         let typeMatch = name.match(alpineAttributeRegex());
         let valueMatch = name.match(/:([a-zA-Z0-9\-_:]+)/);
         let modifiers = name.match(/\.[^.\]]+(?=[^\]]*$)/g) || [];
@@ -2921,7 +2923,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       get raw() {
         return raw;
       },
-      version: "3.15.3",
+      version: "3.15.4",
       flushAndStopDeferringMutations,
       dontAutoEvaluateFunctions,
       disableEffectScheduling,
@@ -9503,7 +9505,10 @@ function navigate_default(Alpine23) {
   function navigateTo(destination, { preserveScroll = false, shouldPushToHistoryState = true }) {
     showProgressBar && showAndStartProgressBar();
     fetchHtmlOrUsePrefetchedHtml(destination, (html, finalDestination) => {
-      fireEventForOtherLibrariesToHookInto("alpine:navigating");
+      let swapCallbacks = [];
+      fireEventForOtherLibrariesToHookInto("alpine:navigating", {
+        onSwap: (callback) => swapCallbacks.push(callback)
+      });
       restoreScroll && storeScrollInformationInHtmlBeforeNavigatingAway();
       cleanupAlpineElementsOnThePageThatArentInsideAPersistedElement();
       updateCurrentPageHtmlInHistoryStateForLaterBackButtonClicks();
@@ -9524,6 +9529,7 @@ function navigate_default(Alpine23) {
             unPackPersistedPopovers(persistedEl);
           });
           !preserveScroll && restoreScrollPositionOrScrollToTop();
+          swapCallbacks.forEach((callback) => callback());
           afterNewScriptsAreDoneLoading(() => {
             andAfterAllThis(() => {
               setTimeout(() => {
@@ -9560,7 +9566,10 @@ function navigate_default(Alpine23) {
     if (prevented)
       return;
     storeScrollInformationInHtmlBeforeNavigatingAway();
-    fireEventForOtherLibrariesToHookInto("alpine:navigating");
+    let swapCallbacks = [];
+    fireEventForOtherLibrariesToHookInto("alpine:navigating", {
+      onSwap: (callback) => swapCallbacks.push(callback)
+    });
     updateCurrentPageHtmlInSnapshotCacheForLaterBackButtonClicks(currentPageUrl, currentPageKey);
     preventAlpineFromPickingUpDomChanges(Alpine23, (andAfterAllThis) => {
       enablePersist && storePersistantElementsForLater((persistedEl) => {
@@ -9575,6 +9584,7 @@ function navigate_default(Alpine23) {
           unPackPersistedPopovers(persistedEl);
         });
         restoreScrollPositionOrScrollToTop();
+        swapCallbacks.forEach((callback) => callback());
         andAfterAllThis(() => {
           autofocus && autofocusElementsWithTheAutofocusAttribute();
           nowInitializeAlpineOnTheNewPage(Alpine23);
@@ -9677,7 +9687,7 @@ function track(name, initialSeedValue, alwaysShow = false, except = null) {
   let isInitiallyPresentInUrl = has(url, name);
   let initialValue = isInitiallyPresentInUrl ? get(url, name) : initialSeedValue;
   let initialValueMemo = JSON.stringify(initialValue);
-  let exceptValueMemo = [false, null, void 0].includes(except) ? initialSeedValue : JSON.stringify(except);
+  let exceptValueMemo = JSON.stringify(except);
   let hasReturnedToInitialValue = (newValue) => JSON.stringify(newValue) === initialValueMemo;
   let hasReturnedToExceptValue = (newValue) => JSON.stringify(newValue) === exceptValueMemo;
   if (alwaysShow)

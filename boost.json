@@ -1,0 +1,21 @@
+{
+    "agents": [
+        "claude_code"
+    ],
+    "guidelines": true,
+    "herd_mcp": false,
+    "mcp": true,
+    "packages": [
+        "filament/filament",
+        "spatie/laravel-ray"
+    ],
+    "sail": false,
+    "skills": [
+        "folio-routing",
+        "livewire-development",
+        "volt-development",
+        "pest-testing",
+        "tailwindcss-development",
+        "ray-skill"
+    ]
+}
