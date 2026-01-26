@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\LinkResource\Pages;
 
 use App\Filament\Resources\LinkResource;
-use Filament\Pages\Actions;
+use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListLinks extends ListRecords

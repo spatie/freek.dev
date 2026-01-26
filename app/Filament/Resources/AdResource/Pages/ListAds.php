@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\AdResource\Pages;
 
 use App\Filament\Resources\AdResource;
-use Filament\Pages\Actions;
+use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListAds extends ListRecords

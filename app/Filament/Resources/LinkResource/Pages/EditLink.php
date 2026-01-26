@@ -8,7 +8,7 @@ use App\Actions\RejectLinkAction;
 use App\Enums\LinkStatus;
 use App\Filament\Resources\LinkResource;
 use Filament\Notifications\Notification;
-use Filament\Pages\Actions;
+use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
 class EditLink extends EditRecord

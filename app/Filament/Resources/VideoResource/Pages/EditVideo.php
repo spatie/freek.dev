@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\VideoResource\Pages;
 
 use App\Filament\Resources\VideoResource;
-use Filament\Pages\Actions;
+use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
 class EditVideo extends EditRecord
