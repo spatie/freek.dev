@@ -5,8 +5,8 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\VideoResource\Pages;
 use App\Models\Video;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 
@@ -16,15 +16,15 @@ class VideoResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    protected static ?string $navigationGroup = 'Other';
+    protected static string | \UnitEnum | null $navigationGroup = 'Other';
 
-    protected static ?string $navigationIcon = 'heroicon-o-video-camera';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-video-camera';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->columns(1)
-            ->schema([
+            ->components([
                 Forms\Components\TextInput::make('title')->required(),
                 Forms\Components\MarkdownEditor::make('text')->required(),
                 Forms\Components\Textarea::make('embed')->required(),
