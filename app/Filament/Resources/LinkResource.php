@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Enums\LinkStatus;
 use App\Filament\Resources\LinkResource\Pages;
 use App\Models\Link;
+use Filament\Actions;
 use Filament\Forms;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -53,12 +54,12 @@ class LinkResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\Action::make('preview')
+                Actions\Action::make('preview')
                     ->url(fn (Link $record) => $record->url, shouldOpenInNewTab: true),
-                Tables\Actions\EditAction::make(),
+                Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Actions\DeleteBulkAction::make(),
             ])
             ->defaultSort('created_at', 'desc');
     }

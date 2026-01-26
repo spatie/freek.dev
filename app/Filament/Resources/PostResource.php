@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
+use Filament\Actions;
 use Filament\Forms;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\SpatieTagsInput;
@@ -71,9 +72,9 @@ class PostResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\Action::make('preview')
+                Actions\Action::make('preview')
                     ->url(fn (Post $record) => $record->adminPreviewUrl(), shouldOpenInNewTab: true),
-                Tables\Actions\Action::make('schedule')->action(function (Post $post) {
+                Actions\Action::make('schedule')->action(function (Post $post) {
                     if ($post->publish_date) {
                         return;
                     }
@@ -82,10 +83,10 @@ class PostResource extends Resource
                         'publish_date' => Post::nextFreePublishDate(),
                     ]);
                 }),
-                Tables\Actions\EditAction::make(),
+                Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Actions\DeleteBulkAction::make(),
             ]);
     }
 
