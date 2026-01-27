@@ -46,7 +46,10 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->append(RedirectsMissingPages::class);
 
-        $middleware->web(CacheControl::class);
+        $middleware->web([
+            CacheControl::class,
+            CacheResponse::class,
+        ]);
 
         $middleware->api('throttle:60,1');
 
