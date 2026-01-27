@@ -122,10 +122,8 @@ rm -rf {{ $newReleaseDir }}/public/og-images;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/storage/og-images {{ $newReleaseDir }}/public/og-images;
 
-# Symlink the persistent fonts to the public directory
-cd {{ $baseDir }}/persistent/fonts
-git pull origin {{ $branch }}
-ln -nfs {{ $baseDir }}/persistent/fonts {{ $newReleaseDir }}/public/fonts;
+# Symlink the persistent Typography.com fonts into public/fonts
+ln -nfs {{ $baseDir }}/persistent/fonts/884760 {{ $newReleaseDir }}/public/fonts/884760;
 @endtask
 
 @task('optimizeInstallation', ['on' => 'remote'])
