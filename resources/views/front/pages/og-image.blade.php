@@ -1,46 +1,35 @@
 <html>
 <head>
-    @vite(['resources/js/app.js'])
     <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Whitney SSm A', 'Whitney SSm B', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+    </style>
 </head>
 <body>
-<div class="min-h-screen bg-gray-900 py-6 flex flex-col justify-center sm:py-12 p-20">
-    <div class="relative py-3">
-        <div
-            class="absolute inset-0 bg-gradient-to-r {{ $post->gradient_colors }} shadow-lg transform skew-y-0 -rotate-5 sm:rounded-3xl"></div>
-        <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-10">
-            <div class="mx-auto">
-                <div class="divide-y divide-gray-200">
-                    <div class="pb-4 text-base space-y-4 leading-9">
-                        <p class="text-3xl font-bold">{{ $post->title }}</p>
-                    </div>
-                    <div class="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">
-                        <div class="md:flex items-end">
-                            <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
-                                <a href="/" title="Freek.dev">
-                                    <img src="/images/murzicoon.svg" class="w-full" alt="Freek.dev logotype">
-                                </a>
-                            </figure>
-                            <div>
-                                <h1 class="text-lg uppercase tracking-wider font-extrabold">
-                                    <a href="/">Freek.dev</a>
-                                </h1>
-                                <p class="text-sm font-bold text-gray-600">
-                                    <a href="/">
-                                        Laravel
-                                        <span class="text-gray-300">/</span>
-                                        PHP
-                                        <span class="text-gray-300">/</span>
-                                        JavaScript
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div style="width: 1200px; height: 630px; background: linear-gradient(145deg, #ffffff 0%, #fafaf9 50%, #f5f5f4 100%); position: relative; overflow: hidden;">
+    {{-- Black border --}}
+    <div style="position: absolute; inset: 0; border: 6px solid #000;"></div>
+
+    {{-- Top gradient bar - Laravel red --}}
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 20px; background: linear-gradient(90deg, #f87171 0%, #b91c1c 100%);"></div>
+
+    {{-- Content --}}
+    <div style="position: absolute; top: 88px; left: 104px; right: 104px;">
+        <p style="font-size: 36px; font-weight: 800; color: #000; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px;">FREEK.DEV</p>
+        <p style="font-size: 72px; font-weight: 800; color: #000; line-height: 1.08; letter-spacing: -0.02em;">{{ $post->title }}</p>
     </div>
+
+    {{-- Tags at bottom --}}
+    <p style="position: absolute; bottom: 80px; left: 104px; font-size: 28px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em;">
+        LARAVEL / PHP / JAVASCRIPT
+    </p>
 </div>
 </body>
 </html>
