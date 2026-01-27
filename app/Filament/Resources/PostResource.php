@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\SpatieTagsInput;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -29,7 +30,7 @@ class PostResource extends Resource
     {
         return $schema
             ->components([
-                Forms\Components\Section::make('Post')->schema([
+                Section::make('Post')->schema([
                     Forms\Components\TextInput::make('title')->required(),
                     MarkdownEditor::make('text')
                         ->fileAttachmentsDisk('admin-uploads')
@@ -40,7 +41,7 @@ class PostResource extends Resource
                         ->nullable(),
                     SpatieTagsInput::make('tags'),
                 ]),
-                Forms\Components\Section::make('Meta')->schema([
+                Section::make('Meta')->schema([
                     Forms\Components\TextInput::make('external_url'),
                     Forms\Components\Checkbox::make('published'),
                     Forms\Components\Checkbox::make('original_content'),
