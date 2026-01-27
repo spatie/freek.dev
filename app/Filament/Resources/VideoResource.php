@@ -17,9 +17,9 @@ class VideoResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Other';
+    protected static string|\UnitEnum|null $navigationGroup = 'Other';
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-video-camera';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-video-camera';
 
     public static function form(Schema $schema): Schema
     {
