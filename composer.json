@@ -66,6 +66,7 @@
         "spatie/laravel-tags": "^4.6",
         "spatie/laravel-tail": "^4.5",
         "spatie/pest-plugin-test-time": "^2.0|^3.0",
+        "spatie/security-advisories-health-check": "^1.0",
         "stripe/stripe-php": "^7.128",
         "symfony/http-client": "^7.0",
         "symfony/mailgun-mailer": "^7.0",
@@ -79,8 +80,7 @@
         "nunomaduro/collision": "^8.0|^9.0",
         "pestphp/pest": "^4.0",
         "pestphp/pest-plugin-laravel": "^4.0",
-        "spatie/pest-plugin-snapshots": "^2.0|^3.0",
-        "spatie/security-advisories-health-check": "^1.0"
+        "spatie/pest-plugin-snapshots": "^2.0|^3.0"
     },
     "config": {
         "platform": {
