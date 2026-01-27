@@ -11,11 +11,9 @@
     ],
     "sail": false,
     "skills": [
-        "folio-routing",
         "livewire-development",
-        "volt-development",
         "pest-testing",
         "tailwindcss-development",
-        "ray-skill"
+        "debugging-output-and-previewing-html-using-ray"
     ]
 }

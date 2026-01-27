@@ -1,5 +1,5 @@
 ---
-name: ray-skill
+name: debugging-output-and-previewing-html-using-ray
 description: Use when user says "send to Ray," "show in Ray," "debug in Ray," "log to Ray," "display in Ray," or wants to visualize data, debug output, or show diagrams in the Ray desktop application.
 metadata:
   author: Spatie

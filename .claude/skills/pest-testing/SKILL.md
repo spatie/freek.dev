@@ -1,26 +1,27 @@
 ---
 name: pest-testing
 description: >-
-  Tests applications using the Pest 3 PHP framework. Activates when writing tests, creating unit or feature
-  tests, adding assertions, testing Livewire components, architecture testing, debugging test failures,
+  Tests applications using the Pest 4 PHP framework. Activates when writing tests, creating unit or feature
+  tests, adding assertions, testing Livewire components, browser testing, debugging test failures,
   working with datasets or mocking; or when the user mentions test, spec, TDD, expects, assertion,
   coverage, or needs to verify functionality works.
 ---
 
-# Pest Testing 3
+# Pest Testing 4
 
 ## When to Apply
 
 Activate this skill when:
-- Creating new tests (unit or feature)
+
+- Creating new tests (unit, feature, or browser)
 - Modifying existing tests
 - Debugging test failures
-- Working with datasets, mocking, or test organization
-- Writing architecture tests
+- Working with browser testing or smoke testing
+- Writing architecture tests or visual regression tests
 
 ## Documentation
 
-Use `search-docs` for detailed Pest 3 patterns and documentation.
+Use `search-docs` for detailed Pest 4 patterns and documentation.
 
 ## Basic Usage
 
@@ -30,9 +31,9 @@ All tests must be written using Pest. Use `php artisan make:test --pest {name}`.
 
 ### Test Organization
 
-- Tests live in the `tests/Feature` and `tests/Unit` directories.
+- Unit/Feature tests: `tests/Feature` and `tests/Unit` directories.
+- Browser tests: `tests/Browser/` directory.
 - Do NOT remove tests without approval - these are core application code.
-- Test happy paths, failure paths, and edge cases.
 
 ### Basic Test Structure
 
@@ -87,11 +88,73 @@ it('has emails', function (string $email) {
 
 </code-snippet>
 
-## Pest 3 Features
+## Pest 4 Features
+
+| Feature | Purpose |
+|---------|---------|
+| Browser Testing | Full integration tests in real browsers |
+| Smoke Testing | Validate multiple pages quickly |
+| Visual Regression | Compare screenshots for visual changes |
+| Test Sharding | Parallel CI runs |
+| Architecture Testing | Enforce code conventions |
+
+### Browser Test Example
+
+Browser tests run in real browsers for full integration testing:
+
+- Browser tests live in `tests/Browser/`.
+- Use Laravel features like `Event::fake()`, `assertAuthenticated()`, and model factories.
+- Use `RefreshDatabase` for clean state per test.
+- Interact with page: click, type, scroll, select, submit, drag-and-drop, touch gestures.
+- Test on multiple browsers (Chrome, Firefox, Safari) if requested.
+- Test on different devices/viewports (iPhone 14 Pro, tablets) if requested.
+- Switch color schemes (light/dark mode) when appropriate.
+- Take screenshots or pause tests for debugging.
+
+<code-snippet name="Pest Browser Test Example" lang="php">
+
+it('may reset the password', function () {
+    Notification::fake();
+
+    $this->actingAs(User::factory()->create());
+
+    $page = visit('/sign-in');
+
+    $page->assertSee('Sign In')
+        ->assertNoJavascriptErrors()
+        ->click('Forgot Password?')
+        ->fill('email', 'nuno@laravel.com')
+        ->click('Send Reset Link')
+        ->assertSee('We have emailed your password reset link!');
+
+    Notification::assertSent(ResetPassword::class);
+});
+
+</code-snippet>
+
+### Smoke Testing
+
+Quickly validate multiple pages have no JavaScript errors:
+
+<code-snippet name="Pest Smoke Testing Example" lang="php">
+
+$pages = visit(['/', '/about', '/contact']);
+
+$pages->assertNoJavascriptErrors()->assertNoConsoleLogs();
+
+</code-snippet>
+
+### Visual Regression Testing
+
+Capture and compare screenshots to detect visual changes.
+
+### Test Sharding
+
+Split tests across parallel processes for faster CI runs.
 
 ### Architecture Testing
 
-Pest 3 includes architecture testing to enforce code conventions:
+Pest 4 includes architecture testing (from Pest 3):
 
 <code-snippet name="Architecture Test Example" lang="php">
 
@@ -100,19 +163,7 @@ arch('controllers')
     ->toExtendNothing()
     ->toHaveSuffix('Controller');
 
-arch('models')
-    ->expect('App\Models')
-    ->toExtend('Illuminate\Database\Eloquent\Model');
-
-arch('no debugging')
-    ->expect(['dd', 'dump', 'ray'])
-    ->not->toBeUsed();
-
 </code-snippet>
-
-### Type Coverage
-
-Pest 3 provides improved type coverage analysis. Run with `--type-coverage` flag.
 
 ## Common Pitfalls
 
@@ -120,3 +171,4 @@ Pest 3 provides improved type coverage analysis. Run with `--type-coverage` flag
 - Using `assertStatus(200)` instead of `assertSuccessful()`
 - Forgetting datasets for repetitive validation tests
 - Deleting tests without approval
+- Forgetting `assertNoJavascriptErrors()` in browser tests
