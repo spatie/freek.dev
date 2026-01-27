@@ -50,6 +50,7 @@ class PostFactory extends Factory
             'publish_date' => $this->faker->boolean(50) ? $this->faker->dateTimeBetween('-5 years') : null,
             'published' => true,
             'original_content' => $this->faker->boolean(10),
+            'send_automated_tweet' => false,
         ];
     }
 }
