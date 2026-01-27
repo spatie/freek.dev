@@ -1,19 +1,3 @@
-<?php
-
-use function Laravel\Folio\render;
-use Illuminate\View\View;
-use App\Models\Link;
-
-render(function(View $view) {
-    $links = Link::query()
-        ->latest()
-        ->approved()
-        ->simplePaginate(20);
-
-    $view->with(compact('links'));
-})
-?>
-
 <x-app-layout title="Links">
     <div
         class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-gray-200 text-sm text-gray-700">

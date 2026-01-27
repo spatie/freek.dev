@@ -72,8 +72,8 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
                 }
             });
 
-            // Don't dispatch jobs during database seeding or in test/local environments
-            if (app()->runningInConsole() && app()->environment(['local', 'testing'])) {
+            // Don't dispatch jobs during testing (PHPUnit/Pest runs)
+            if (app()->runningUnitTests()) {
                 return;
             }
 

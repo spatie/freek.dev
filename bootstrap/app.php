@@ -6,7 +6,6 @@ use App\Http\Middleware\VerifyCsrfToken;
 use App\Providers\BladeComponentServiceProvider;
 use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\FlashServiceProvider;
-use App\Providers\FolioServiceProvider;
 use App\Providers\HealthServiceProvider;
 use App\Providers\HorizonServiceProvider;
 use App\Providers\NavigationServiceProvider;
@@ -30,7 +29,6 @@ return Application::configure(basePath: dirname(__DIR__))
         HorizonServiceProvider::class,
         AdminPanelProvider::class,
         RouteServiceProvider::class,
-        FolioServiceProvider::class,
         NavigationServiceProvider::class,
         TwitterServiceProvider::class,
         ViewServiceProvider::class,

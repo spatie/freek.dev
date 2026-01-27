@@ -1,17 +1,3 @@
-<?php
-
-use function Laravel\Folio\render;
-use Illuminate\View\View;
-use App\Services\Music\Releases;
-
-render(function (View $view) {
-    $releases = Releases::all();
-
-    ray('On the music page');
-
-    $view->with(compact('releases'));
-}); ?>
-
 <x-app-layout title="Music">
     <div class="markup mb-8">
         <h1>Music</h1>

@@ -1,12 +1,3 @@
-<?php
-
-use function Laravel\Folio\{middleware, name};
-
-middleware(['auth', 'verified', 'doNotCacheResponse']);
-name('community.link.create');
-
-?>
-
 <x-app-layout title="Submit a link" xmlns="http://www.w3.org/1999/html">
 
     <div class="markup mb-8">

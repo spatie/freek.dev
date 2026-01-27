@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Foundation\Bootstrap\HandleExceptions;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -27,3 +28,5 @@ $console = tap($app->make(Kernel::class))->bootstrap();
 foreach ($commands as $command) {
     $console->call($command);
 }
+
+HandleExceptions::flushState();

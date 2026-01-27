@@ -18,7 +18,7 @@
     </div>
     <div class="markup">
         <p>
-            Every edition of the newsletter contains one or two sponsored links. Here’s <a href="/advertising">some more
+            Every edition of the newsletter contains one or two sponsored links. Here's <a href="/advertising">some more
                 info</a> on that.
         </p>
     </div>

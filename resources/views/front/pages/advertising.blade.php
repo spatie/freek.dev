@@ -16,8 +16,8 @@
             the most popular read <a href="https://freek.dev/four-years-of-murzebe">this blog post</a>.
         </p>
         <p>
-            An advertisement consists of text with two or three sentences that may contain links. I’ll tag on
-            ”(sponsored)” so it’s clear to the readers that it’s an advertisement. As the blog should come over as very
+            An advertisement consists of text with two or three sentences that may contain links. I'll tag on
+            "(sponsored)" so it's clear to the readers that it's an advertisement. As the blog should come over as very
             calm, images or logos are not allowed.
         </p>
         <p>
@@ -31,7 +31,7 @@
         </p>
         <p>
             An advertisement consists of a title, a link that goes behind it, and a short description of one or two
-            sentences. I’ll tag on ”(sponsored)” to the title so it’s clear to the readers that it’s an advertisement.
+            sentences. I'll tag on "(sponsored)" to the title so it's clear to the readers that it's an advertisement.
             As the newsletter should come over as very calm, images or logos are not allowed.
         </p>
         <p>

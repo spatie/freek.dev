@@ -125,12 +125,12 @@
         <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and
             all
             Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the
-            Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company.
+            Company's terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company.
             "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer,
             acceptance
             and consideration of payment necessary to undertake the process of our assistance to the Client in the most
-            appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the
-            Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the
+            appropriate manner for the express purpose of meeting the Client's needs in respect of provision of the
+            Company's stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the
             above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as
             interchangeable and therefore as referring to same.</p>
 
@@ -140,7 +140,7 @@
             freek.dev's
             Privacy Policy.</p>
 
-        <p>Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used
+        <p>Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used
             by
             our website to enable the functionality of certain areas to make it easier for people visiting our website.
             Some
@@ -220,7 +220,7 @@
         <p>These organizations may link to our home page, to publications or to other Website information so long as the
             link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of
             the
-            linking party and its products and/or services; and (c) fits within the context of the linking party’s
+            linking party and its products and/or services; and (c) fits within the context of the linking party's
             site.</p>
 
         <p>We may consider and approve other link requests from the following types of organizations:</p>
@@ -244,7 +244,7 @@
             not
             falsely imply sponsorship, endorsement or approval of the linking party and its products or services; and
             (c)
-            fits within the context of the linking party’s site.</p>
+            fits within the context of the linking party's site.</p>
 
         <p>If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website,
             you
@@ -259,7 +259,7 @@
             <li>By use of our corporate name; or</li>
             <li>By use of the uniform resource locator being linked to; or</li>
             <li>By use of any other description of our Website being linked to that makes sense within the context and
-                format of content on the linking party’s site.
+                format of content on the linking party's site.
             </li>
         </ul>
 
@@ -289,7 +289,7 @@
         <p>We reserve the right to request that you remove all links or any particular link to our Website. You approve
             to
             immediately remove all links to our Website upon request. We also reserve the right to amen these terms and
-            conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be
+            conditions and it's linking policy at any time. By continuously linking to our Website, you agree to be
             bound to
             and follow these linking terms and conditions.</p>
 

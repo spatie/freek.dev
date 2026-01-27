@@ -17,7 +17,7 @@
         </p>
         <p>
             Whenever my colleagues and I stumble upon a problem that we can solve in a clean way, we extract our solution so other
-            developers can use it. Together with my colleagues I regularly release <a
+            developers can use it. Together with my colleagues I regularly release <a
                 href="https://spatie.be/open-source">PHP, Laravel and JavaScript packages</a>. Those packages have been
             downloaded more than 500 million times.
         </p>
