@@ -158,8 +158,9 @@ php artisan config:cache
 php artisan route:clear
 php artisan route:cache
 php artisan event:cache
+php artisan responsecache:clear
 
-sudo service php8.2-fpm restart
+sudo service php8.3-fpm restart
 sudo supervisorctl restart all
 php artisan schedule:sync
 php artisan health:check
@@ -190,7 +191,7 @@ php artisan route:cache
 php artisan event:cache
 php artisan responsecache:clear
 php artisan horizon:terminate
-sudo service php8.2-fpm restart
+sudo service php8.3-fpm restart
 php artisan health:check
 php artisan schedule:sync
 @endtask
