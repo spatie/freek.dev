@@ -46,6 +46,7 @@
         "spatie/laravel-comments-livewire": "^2.0|^3.0|^4.0",
         "spatie/laravel-error-share": "^1.0",
         "spatie/laravel-feed": "^4.4",
+        "spatie/laravel-flare": "^2.7",
         "spatie/laravel-flash": "^1.10",
         "spatie/laravel-health": "^1.27",
         "spatie/laravel-honeypot": "^4.5",
@@ -78,7 +79,6 @@
         "nunomaduro/collision": "^8.0|^9.0",
         "pestphp/pest": "^4.0",
         "pestphp/pest-plugin-laravel": "^4.0",
-        "spatie/laravel-flare": "^2.0",
         "spatie/pest-plugin-snapshots": "^2.0|^3.0",
         "spatie/security-advisories-health-check": "^1.0"
     },
