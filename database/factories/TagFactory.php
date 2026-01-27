@@ -11,8 +11,31 @@ class TagFactory extends Factory
 
     public function definition(): array
     {
+        $tags = [
+            'laravel',
+            'php',
+            'javascript',
+            'testing',
+            'livewire',
+            'tailwindcss',
+            'eloquent',
+            'vue',
+            'react',
+            'pest',
+            'phpunit',
+            'api',
+            'security',
+            'performance',
+            'architecture',
+            'design-patterns',
+            'packages',
+            'tips',
+            'tutorial',
+            'best-practices',
+        ];
+
         return [
-            'name' => $this->faker->word(),
+            'name' => $this->faker->randomElement($tags),
         ];
     }
 }

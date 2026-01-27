@@ -1,5 +1,5 @@
 #carbonads {
-    @apply text-xxs text-gray-700 leading-tight;
+    @apply text-[0.65rem] text-gray-700 leading-tight;
 }
 
 .carbon-wrap {

@@ -7,7 +7,7 @@
 }
 
 .comment-text pre {
-    @apply -mx-4 p-4 mt-4 bg-gray-100 overflow-x-auto  !important;
+    @apply !-mx-4 !p-4 !mt-4 !bg-gray-100 !overflow-x-auto;
     font-size: 0.75em;
     line-height: 2.25;
 }

@@ -1,16 +1,15 @@
-@tailwind base;
 
 html {
     font-size: 17px;
 }
 
-@screen md {
+@media (min-width: 768px) {
     html {
         font-size: 18px;
     }
 }
 
-@screen lg {
+@media (min-width: 1024px) {
     html {
         font-size: 19px;
     }

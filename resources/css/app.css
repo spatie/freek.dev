@@ -1,7 +1,6 @@
 @charset 'UTF-8';
 
 @import './bootstrap.css';
-
 @import './components/comments.css';
 @import './components/shiki.css';
 @import './components/button.css';
@@ -13,6 +12,78 @@
 @import './components/forms.css';
 @import '../../vendor/tempest/highlight/src/Themes/Css/highlight-light-lite.css';
 
-@tailwind base
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@source '../../resources/**/*.blade.php';
+@source '../../app/**/*.php';
+@source '../../vendor/filament/**/*.blade.php';
+
+@theme {
+  --font-sans: 'Whitney SSm A', 'Whitney SSm B', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono: 'Operator Mono SSm A', 'Operator Mono SSm B', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  --color-danger-50: oklch(from theme(colors.rose.50) l c h);
+  --color-danger-100: oklch(from theme(colors.rose.100) l c h);
+  --color-danger-200: oklch(from theme(colors.rose.200) l c h);
+  --color-danger-300: oklch(from theme(colors.rose.300) l c h);
+  --color-danger-400: oklch(from theme(colors.rose.400) l c h);
+  --color-danger-500: oklch(from theme(colors.rose.500) l c h);
+  --color-danger-600: oklch(from theme(colors.rose.600) l c h);
+  --color-danger-700: oklch(from theme(colors.rose.700) l c h);
+  --color-danger-800: oklch(from theme(colors.rose.800) l c h);
+  --color-danger-900: oklch(from theme(colors.rose.900) l c h);
+  --color-danger-950: oklch(from theme(colors.rose.950) l c h);
+
+  --color-primary-50: oklch(from theme(colors.blue.50) l c h);
+  --color-primary-100: oklch(from theme(colors.blue.100) l c h);
+  --color-primary-200: oklch(from theme(colors.blue.200) l c h);
+  --color-primary-300: oklch(from theme(colors.blue.300) l c h);
+  --color-primary-400: oklch(from theme(colors.blue.400) l c h);
+  --color-primary-500: oklch(from theme(colors.blue.500) l c h);
+  --color-primary-600: oklch(from theme(colors.blue.600) l c h);
+  --color-primary-700: oklch(from theme(colors.blue.700) l c h);
+  --color-primary-800: oklch(from theme(colors.blue.800) l c h);
+  --color-primary-900: oklch(from theme(colors.blue.900) l c h);
+  --color-primary-950: oklch(from theme(colors.blue.950) l c h);
+
+  --color-success-50: oklch(from theme(colors.green.50) l c h);
+  --color-success-100: oklch(from theme(colors.green.100) l c h);
+  --color-success-200: oklch(from theme(colors.green.200) l c h);
+  --color-success-300: oklch(from theme(colors.green.300) l c h);
+  --color-success-400: oklch(from theme(colors.green.400) l c h);
+  --color-success-500: oklch(from theme(colors.green.500) l c h);
+  --color-success-600: oklch(from theme(colors.green.600) l c h);
+  --color-success-700: oklch(from theme(colors.green.700) l c h);
+  --color-success-800: oklch(from theme(colors.green.800) l c h);
+  --color-success-900: oklch(from theme(colors.green.900) l c h);
+  --color-success-950: oklch(from theme(colors.green.950) l c h);
+
+  --color-warning-50: oklch(from theme(colors.yellow.50) l c h);
+  --color-warning-100: oklch(from theme(colors.yellow.100) l c h);
+  --color-warning-200: oklch(from theme(colors.yellow.200) l c h);
+  --color-warning-300: oklch(from theme(colors.yellow.300) l c h);
+  --color-warning-400: oklch(from theme(colors.yellow.400) l c h);
+  --color-warning-500: oklch(from theme(colors.yellow.500) l c h);
+  --color-warning-600: oklch(from theme(colors.yellow.600) l c h);
+  --color-warning-700: oklch(from theme(colors.yellow.700) l c h);
+  --color-warning-800: oklch(from theme(colors.yellow.800) l c h);
+  --color-warning-900: oklch(from theme(colors.yellow.900) l c h);
+  --color-warning-950: oklch(from theme(colors.yellow.950) l c h);
+
+  --border-width-3: 3px;
+  --border-width-5: 5px;
+
+  --font-size-xxs: 0.65rem;
+
+  --line-height-relaxed: 1.75;
+
+  --spacing-7: 1.75rem;
+
+  --border-radius-xl: 12px;
+  --border-radius-2xl: 16px;
+  --border-radius-3xl: 24px;
+
+  --rotate--5: -5deg;
+}

@@ -50,13 +50,13 @@
     font-size: 0.925em;
 }
 
-@screen sm {
+@media (min-width: 640px) {
     .markup blockquote {
         @apply mx-0 p-6 border-b-5 border-indigo-200;
     }
 }
 
-@screen md {
+@media (min-width: 768px) {
     .markup blockquote {
         @apply p-8;
     }
@@ -85,13 +85,13 @@
     line-height: 2.25;
 }
 
-@screen sm {
+@media (min-width: 640px) {
     .markup pre {
-        @apply mx-0 p-6 border-b-5 border-gray-200 bg-gray-100 !important;
+        @apply !mx-0 !p-6 !border-b-5 !border-gray-200 !bg-gray-100;
     }
 }
 
-@screen md {
+@media (min-width: 768px) {
     .markup pre {
         @apply p-8;
     }

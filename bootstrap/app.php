@@ -12,7 +12,6 @@ use App\Providers\HorizonServiceProvider;
 use App\Providers\NavigationServiceProvider;
 use App\Providers\RouteServiceProvider;
 use App\Providers\ViewServiceProvider;
-use App\Providers\VoltServiceProvider;
 use App\Services\Twitter\TwitterServiceProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -31,7 +30,6 @@ return Application::configure(basePath: dirname(__DIR__))
         HorizonServiceProvider::class,
         AdminPanelProvider::class,
         RouteServiceProvider::class,
-        VoltServiceProvider::class,
         FolioServiceProvider::class,
         NavigationServiceProvider::class,
         TwitterServiceProvider::class,

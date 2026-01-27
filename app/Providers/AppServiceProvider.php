@@ -17,13 +17,6 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('viewHorizon', function (User $user) {
             return $user->admin;
         });
-        Gate::define('viewPulse', function (User $user) {
-            if (app()->environment('local')) {
-                return true;
-            }
-
-            return $user->admin;
-        });
 
         Carbon::setToStringFormat('jS F Y');
 

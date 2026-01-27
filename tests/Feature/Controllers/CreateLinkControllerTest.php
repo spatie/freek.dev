@@ -4,7 +4,7 @@ use App\Enums\LinkStatus;
 use App\Mail\LinkSubmittedMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
-use Livewire\Volt\Volt;
+use Livewire\Livewire;
 
 use function Pest\Laravel\assertDatabaseHas;
 
@@ -23,7 +23,7 @@ it('can create a link with all attributes', function () {
         'text' => 'my text',
     ];
 
-    Volt::test('linkForm')
+    Livewire::test('link-form')
         ->set('form.title', $attributes['title'])
         ->set('form.url', $attributes['url'])
         ->set('form.text', $attributes['text'])
@@ -47,14 +47,14 @@ it('will not accept a link that was already submitted', function () {
         'url' => 'https://freek.dev',
     ];
 
-    Volt::test('linkForm')
+    Livewire::test('link-form')
         ->set('form.title', $attributes['title'])
         ->set('form.url', $attributes['url'])
         ->set('form.text', $attributes['text'])
         ->call('save')
         ->assertRedirect('/community/thanks');
 
-    Volt::test('linkForm')
+    Livewire::test('link-form')
         ->set('form.title', $attributes['title'])
         ->set('form.url', $attributes['url'])
         ->set('form.text', $attributes['text'])
@@ -64,7 +64,7 @@ it('will not accept a link that was already submitted', function () {
 });
 
 it('can create a link without text', function () {
-    Volt::test('linkForm')
+    Livewire::test('link-form')
         ->set('form.title', 'my title')
         ->set('form.url', 'https://example.com')
         ->call('save')

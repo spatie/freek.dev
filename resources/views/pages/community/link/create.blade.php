@@ -1,21 +1,11 @@
 <?php
 
-use Livewire\Volt\Component;
-use App\Livewire\Forms\LinkForm;
-use function Livewire\Volt\{form};
 use function Laravel\Folio\{middleware, name};
 
 middleware(['auth', 'verified', 'doNotCacheResponse']);
 name('community.link.create');
 
-form(LinkForm::class);
-
-$save = function () {
-    $this->form->validate();
-    $this->form->store();
-
-    $this->redirect('/community/thanks', true);
-}; ?>
+?>
 
 <x-app-layout title="Submit a link" xmlns="http://www.w3.org/1999/html">
 
@@ -28,59 +18,6 @@ $save = function () {
             audience is interested in, I'll publish it, and you'll get notified via mail.
         </div>
 
-        @volt('linkForm')
-
-        <form wire:submit.prevent="save">
-            <div class="mt-4">
-                <label class="block">
-                    <span class="text-gray-700">Title</span>
-                    <input
-                        type="text"
-                        wire:model="form.title"
-                        class="form-input mt-1 block w-full"
-                    />
-                </label>
-                @error('form.title')
-                <div
-                    class="mt-2 py-2 px-2 flex-1 bg-red-500 focus:outline-none md:mb-0 text-white text-2xs">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mt-4">
-                <label class="block">
-                    <span class="text-gray-700">URL</span>
-                    <input
-                        type="text"
-                        wire:model="form.url"
-                        placeholder="https://"
-                        class="form-input mt-1 block w-full"
-                    />
-                </label>
-                @error('form.url')
-                <div
-                    class="mt-2 py-2 px-2 flex-1 bg-red-500 focus:outline-none md:mb-0 text-white text-2xs">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mt-4">
-                <label class="text-gray-700" for="Description">
-                    <span class="text-gray-700">Description</span>
-                    <textarea
-                        type="text"
-                        wire:model="form.text"
-                        placeholder="Describe the content in one or two sentences. You can use markdown."
-                    ></textarea>
-                </label>
-                @error('form.text')
-                <div
-                    class="mt-2 py-2 px-2 flex-1 bg-red-500 focus:outline-none md:mb-0 text-white text-2xs">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mt-4">
-                <x-submit-button label="Submit link"/>
-            </div>
-        </form>
-        @endvolt
+        <livewire:link-form />
     </div>
 </x-app-layout>
