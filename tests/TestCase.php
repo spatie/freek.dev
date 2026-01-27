@@ -16,25 +16,15 @@ abstract class TestCase extends BaseTestCase
         $this->globalErrorHandlers = $this->snapshotErrorHandlers();
         $this->globalExceptionHandlers = $this->snapshotExceptionHandlers();
 
-        ray('setUp: saved ' . count($this->globalErrorHandlers) . ' error handlers');
-
         parent::setUp();
-
-        ray('setUp after parent: ' . count($this->snapshotErrorHandlers()) . ' error handlers');
     }
 
     protected function tearDown(): void
     {
-        ray('tearDown before parent: ' . count($this->snapshotErrorHandlers()) . ' error handlers');
-
         parent::tearDown();
-
-        ray('tearDown after parent: ' . count($this->snapshotErrorHandlers()) . ' error handlers');
 
         $this->restoreErrorHandlers();
         $this->restoreExceptionHandlers();
-
-        ray('tearDown after restore: ' . count($this->snapshotErrorHandlers()) . ' error handlers');
 
         (fn () => self::$app = null)->bindTo(null, HandleExceptions::class)();
     }
