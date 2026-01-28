@@ -39,7 +39,7 @@ test('it generates a newsletter and returns the result', function () {
         })
         ->andReturn($this->newCampaign);
 
-    $action = new GenerateNewsletterAction();
+    $action = new GenerateNewsletterAction;
     $result = $action->execute();
 
     expect($result)->toBeInstanceOf(GenerateNewsletterResult::class);

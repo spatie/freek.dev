@@ -36,7 +36,7 @@ class GenerateNewsletter extends Page
                 ->modalSubmitActionLabel('Generate')
                 ->action(function (): void {
                     try {
-                        $result = (new GenerateNewsletterAction())->execute();
+                        $result = (new GenerateNewsletterAction)->execute();
 
                         $this->generatedEditionNumber = $result->editionNumber;
                         $this->generatedStartDate = $result->startDate->format('M j, Y');
