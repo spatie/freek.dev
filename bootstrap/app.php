@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Middleware\Admin;
-use App\Http\Middleware\CacheControl;
+use App\Http\Middleware\CacheForCloudflare;
 use App\Http\Middleware\VerifyCsrfToken;
 use App\Providers\BladeComponentServiceProvider;
 use App\Providers\Filament\AdminPanelProvider;
@@ -46,8 +46,11 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->append(RedirectsMissingPages::class);
 
+        // CacheForCloudflare runs first in stack = last on response
+        // This lets it remove cookies and set Cache-Control after session middleware
+        $middleware->prependToGroup('web', CacheForCloudflare::class);
+
         $middleware->web([
-            CacheControl::class,
             CacheResponse::class,
         ]);
 
