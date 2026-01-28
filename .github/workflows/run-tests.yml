@@ -36,6 +36,11 @@ jobs:
                     sudo /etc/init.d/mysql start
                     mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS freekdev_test;'
 
+            -   name: Run composer install
+                run: composer install -n --prefer-dist
+                env:
+                    COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
             -   name: Cache yarn dependencies
                 uses: actions/cache@v4
                 with:
@@ -44,11 +49,6 @@ jobs:
 
             -   name: Run yarn
                 run: yarn && yarn build
-
-            -   name: Run composer install
-                run: composer install -n --prefer-dist
-                env:
-                    COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
             -   name: Prepare Laravel Application
                 run: |
