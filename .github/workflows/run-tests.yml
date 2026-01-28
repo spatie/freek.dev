@@ -27,7 +27,7 @@ jobs:
             -   name: Setup PHP
                 uses: shivammathur/setup-php@v2
                 with:
-                    php-version: '8.1'
+                    php-version: '8.3'
                     extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
                     coverage: none
 
@@ -36,19 +36,19 @@ jobs:
                     sudo /etc/init.d/mysql start
                     mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS freekdev_test;'
 
+            -   name: Run composer install
+                run: composer install -n --prefer-dist
+                env:
+                    COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
             -   name: Cache yarn dependencies
-                uses: actions/cache@v2
+                uses: actions/cache@v4
                 with:
                     path: node_modules
                     key: yarn-${{ hashFiles('yarn.lock') }}
 
             -   name: Run yarn
                 run: yarn && yarn build
-
-            -   name: Run composer install
-                run: composer install -n --prefer-dist
-                env:
-                    COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
             -   name: Prepare Laravel Application
                 run: |

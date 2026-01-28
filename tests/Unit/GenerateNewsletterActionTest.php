@@ -7,6 +7,10 @@ use Spatie\MailcoachSdk\Resources\Campaign;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 
 beforeEach(function () {
+    if (! config('mailcoach-sdk.api_token')) {
+        $this->markTestSkipped('Mailcoach API token not configured');
+    }
+
     $this->existingCampaign = new Campaign([
         'uuid' => 'existing-campaign-uuid',
         'name' => 'freek.dev newsletter #100',
