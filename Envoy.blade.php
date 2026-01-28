@@ -31,6 +31,7 @@ backupDatabase
 migrateDatabase
 blessNewRelease
 cleanOldReleases
+purgeCloudflareCache
 finishDeploy
 @endmacro
 
@@ -172,6 +173,14 @@ ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" sudo chown -R forge .;
 ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" rm -rf;
 @endtask
 
+@task('purgeCloudflareCache', ['on' => 'local'])
+{{ logMessage("🌐  Purging Cloudflare cache…") }}
+curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+    -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+    -H "Content-Type: application/json" \
+    --data '{"purge_everything":true}'
+@endtask
+
 @task('finishDeploy', ['on' => 'local'])
 {{ logMessage("🚀  Application deployed!") }}
 @endtask
@@ -192,4 +201,10 @@ php artisan horizon:terminate
 sudo service php8.3-fpm restart
 php artisan health:check
 php artisan schedule:sync
+
+{{ logMessage("🌐  Purging Cloudflare cache…") }}
+curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+    -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+    -H "Content-Type: application/json" \
+    --data '{"purge_everything":true}'
 @endtask
