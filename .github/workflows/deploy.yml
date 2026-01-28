@@ -178,6 +178,13 @@ jobs:
                         sudo service php7.4-fpm restart
                         sudo supervisorctl restart all
 
+            -   name: 🌐 Purge Cloudflare cache
+                run: |
+                    curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+                        -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+                        -H "Content-Type: application/json" \
+                        --data '{"purge_everything":true}'
+
             -   name: 🚾 Clean up old releases
                 uses: appleboy/ssh-action@master
                 with:
