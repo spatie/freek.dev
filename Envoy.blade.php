@@ -37,6 +37,7 @@ finishDeploy
 
 @macro('deploy-code')
 deployOnlyCode
+purgeCloudflareCache
 @endmacro
 
 @task('startDeployment', ['on' => 'local'])
