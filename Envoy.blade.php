@@ -173,12 +173,10 @@ ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" sudo chown -R forge .;
 ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" rm -rf;
 @endtask
 
-@task('purgeCloudflareCache', ['on' => 'local'])
+@task('purgeCloudflareCache', ['on' => 'remote'])
 {{ logMessage("🌐  Purging Cloudflare cache…") }}
-curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
-    -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-    -H "Content-Type: application/json" \
-    --data '{"purge_everything":true}'
+cd {{ $currentDir }}
+php artisan cloudflare:purge-cache
 @endtask
 
 @task('finishDeploy', ['on' => 'local'])

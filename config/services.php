@@ -49,4 +49,9 @@ return [
         'username' => env('BLUESKY_USERNAME', ''),
         'password' => env('BLUESKY_PASSWORD', ''),
     ],
+
+    'cloudflare' => [
+        'zone_id' => env('CLOUDFLARE_ZONE_ID'),
+        'api_token' => env('CLOUDFLARE_API_TOKEN'),
+    ],
 ];
