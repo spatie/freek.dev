@@ -26,3 +26,5 @@ storage/og-images
 data.ms
 /storage/admin-uploads
 .phpunit.cache
+storage/app/analytics/
+.chief/
