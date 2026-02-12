@@ -35,6 +35,8 @@
 
     @include('front.posts.partials.related')
 
+    @include('front.posts.partials.popular-now')
+
     <x-slot name="seo">
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
         <meta property="og:description" content="{{ $post->plain_text_excerpt }}"/>
