@@ -10,6 +10,7 @@ use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
 use App\Http\Controllers\TaggedPostsController;
+use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\UsesController;
 use Illuminate\Support\Facades\Route;
 
@@ -54,5 +55,7 @@ Route::prefix('community')->name('community.')->group(function () {
 Route::get('ogImage/{post}', OgImageController::class)->name('post.ogImage');
 
 Route::get('tags/{tagSlug}', TaggedPostsController::class)->name('taggedPosts.index');
+
+Route::get('archive', ArchiveController::class)->name('archive');
 
 Route::get('{post}', PostController::class)->name('post');
