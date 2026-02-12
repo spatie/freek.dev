@@ -108,6 +108,89 @@ it('returns empty array when post has no embedding', function () {
     expect($relatedIds)->toBeEmpty();
 });
 
+it('retrieves related posts in order via getRelatedPosts', function () {
+    $postA = Post::factory()->create([
+        'title' => 'Related Post First',
+        'published' => true,
+        'publish_date' => now()->subDays(2),
+    ]);
+
+    $postB = Post::factory()->create([
+        'title' => 'Related Post Second',
+        'published' => true,
+        'publish_date' => now()->subDays(3),
+    ]);
+
+    $postC = Post::factory()->create([
+        'title' => 'Related Post Third',
+        'published' => true,
+        'publish_date' => now()->subDays(4),
+    ]);
+
+    $mainPost = Post::factory()->create([
+        'title' => 'Main Post With Related',
+        'published' => true,
+        'publish_date' => now()->subDay(),
+        'related_post_ids' => [$postB->id, $postA->id, $postC->id],
+    ]);
+
+    $relatedPosts = $mainPost->getRelatedPosts();
+
+    expect($relatedPosts)->toHaveCount(3);
+    expect($relatedPosts->pluck('id')->toArray())->toBe([$postB->id, $postA->id, $postC->id]);
+});
+
+it('returns empty collection when post has no related post ids', function () {
+    $post = Post::factory()->create([
+        'published' => true,
+        'publish_date' => now()->subDay(),
+        'related_post_ids' => null,
+    ]);
+
+    expect($post->getRelatedPosts())->toBeEmpty();
+});
+
+it('respects limit parameter on getRelatedPosts', function () {
+    $posts = Post::factory()->count(5)->create([
+        'published' => true,
+        'publish_date' => now()->subDay(),
+    ]);
+
+    $mainPost = Post::factory()->create([
+        'published' => true,
+        'publish_date' => now()->subDay(),
+        'related_post_ids' => $posts->pluck('id')->toArray(),
+    ]);
+
+    $relatedPosts = $mainPost->getRelatedPosts(2);
+
+    expect($relatedPosts)->toHaveCount(2);
+});
+
+it('excludes unpublished posts from getRelatedPosts', function () {
+    $publishedPost = Post::factory()->create([
+        'title' => 'Published Related Post',
+        'published' => true,
+        'publish_date' => now()->subDays(2),
+    ]);
+
+    $unpublishedPost = Post::factory()->create([
+        'title' => 'Unpublished Related Post',
+        'published' => false,
+    ]);
+
+    $mainPost = Post::factory()->create([
+        'published' => true,
+        'publish_date' => now()->subDay(),
+        'related_post_ids' => [$publishedPost->id, $unpublishedPost->id],
+    ]);
+
+    $relatedPosts = $mainPost->getRelatedPosts();
+
+    expect($relatedPosts)->toHaveCount(1);
+    expect($relatedPosts->first()->id)->toBe($publishedPost->id);
+});
+
 it('excludes unpublished posts from related post computation', function () {
     $embedding = array_fill(0, 10, 0.0);
     $embedding[0] = 1.0;

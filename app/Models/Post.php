@@ -361,6 +361,29 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         return null;
     }
 
+    public function getRelatedPosts(int $limit = 5): Collection
+    {
+        if (empty($this->related_post_ids)) {
+            return collect();
+        }
+
+        $ids = array_slice($this->related_post_ids, 0, $limit);
+
+        if (empty($ids)) {
+            return collect();
+        }
+
+        $posts = Post::query()
+            ->whereIn('id', $ids)
+            ->where('published', true)
+            ->get()
+            ->keyBy('id');
+
+        return collect($ids)
+            ->map(fn (int $id) => $posts->get($id))
+            ->filter();
+    }
+
     public function shouldShow(): bool
     {
         if (auth()->user()?->email === 'freek@spatie.be') {
