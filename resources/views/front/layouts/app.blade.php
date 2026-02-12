@@ -24,7 +24,7 @@
                             <span class="text-gray-300">/</span>
                             PHP
                             <span class="text-gray-300">/</span>
-                            JavaScript
+                            AI
                         </a>
                     </p>
                 </div>

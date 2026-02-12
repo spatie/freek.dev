@@ -40,4 +40,10 @@
             Outside of programming, I'm also very passionate about music. Every now and then I spend some time in <a href="https://www.ableton.com">Ableton</a> to record music of my own. I've released a couple of EPs. You can listen to them at <a href="https://open.spotify.com/artist/6m5chdjU0M8j8bMmckXRkc">Spotify</a> or <a href="https://music.apple.com/be/artist/kobus/1529028832">Apple Music</a>.
         </p>
     </div>
+
+    <div class="mt-8 mb-8">
+        @include('front.posts.partials.popular')
+    </div>
+
+    @include('front.newsletter.partials.block')
 </x-app-layout>
