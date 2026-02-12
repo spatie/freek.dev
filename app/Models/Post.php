@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Actions\ConvertPostTextToHtmlAction;
 use App\Actions\PublishPostAction;
 use App\Jobs\CreateOgImageJob;
+use App\Jobs\PurgeCloudflareCacheJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
@@ -88,6 +89,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
             Bus::chain([
                 new CreateOgImageJob($post),
                 fn () => ResponseCache::clear(),
+                new PurgeCloudflareCacheJob,
             ])->dispatch();
         });
     }
