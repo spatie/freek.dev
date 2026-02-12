@@ -51,6 +51,8 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
             'toot_sent' => 'boolean',
             'publish_date' => 'datetime',
             'posted_on_bluesky' => 'boolean',
+            'embedding' => 'array',
+            'related_post_ids' => 'array',
         ];
     }
 
