@@ -6,12 +6,14 @@ use function Pest\Laravel\get;
 
 it('can display posts for a given tag', function () {
     $post = Post::factory()->create([
+        'title' => 'Unique tagged laravel post for testing',
         'published' => true,
         'publish_date' => now()->subDay(),
     ]);
     $post->attachTag('laravel');
 
     $otherPost = Post::factory()->create([
+        'title' => 'Unique tagged php post for testing',
         'published' => true,
         'publish_date' => now()->subDays(2),
     ]);

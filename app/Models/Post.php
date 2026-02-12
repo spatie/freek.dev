@@ -4,7 +4,9 @@ namespace App\Models;
 
 use App\Actions\ConvertPostTextToHtmlAction;
 use App\Actions\PublishPostAction;
+use App\Jobs\ComputeRelatedPostsJob;
 use App\Jobs\CreateOgImageJob;
+use App\Jobs\GeneratePostEmbeddingJob;
 use App\Jobs\PurgeCloudflareCacheJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
@@ -82,6 +84,13 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
                 static::withoutEvents(function () use ($post) {
                     (new PublishPostAction)->execute($post);
                 });
+
+                if (config('openai.api_key')) {
+                    Bus::chain([
+                        new GeneratePostEmbeddingJob($post),
+                        new ComputeRelatedPostsJob($post),
+                    ])->dispatch();
+                }
 
                 return;
             }
