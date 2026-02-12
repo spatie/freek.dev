@@ -9,13 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Comments\Models\Concerns\InteractsWithComments;
-use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
-
-class User extends Authenticatable implements CanComment, FilamentUser, MustVerifyEmail
+class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 {
     use HasFactory;
-    use InteractsWithComments;
     use Notifiable;
 
     protected $hidden = [

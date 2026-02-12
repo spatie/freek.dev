@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
-use Spatie\Comments\Models\Concerns\HasComments;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\MediaLibrary\HasMedia;
@@ -35,8 +34,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
 
     public const TYPE_ORIGINAL = 'originalPost';
 
-    use HasComments,
-        HasFactory,
+    use HasFactory,
         HasSlug,
         HasTags,
         InteractsWithMedia,
@@ -350,16 +348,6 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         }
 
         return null;
-    }
-
-    public function commentableName(): string
-    {
-        return $this->title;
-    }
-
-    public function commentUrl(): string
-    {
-        return $this->url;
     }
 
     public function shouldShow(): bool
