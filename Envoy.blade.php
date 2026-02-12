@@ -31,13 +31,11 @@ backupDatabase
 migrateDatabase
 blessNewRelease
 cleanOldReleases
-purgeCloudflareCache
 finishDeploy
 @endmacro
 
 @macro('deploy-code')
 deployOnlyCode
-purgeCloudflareCache
 @endmacro
 
 @task('startDeployment', ['on' => 'local'])
@@ -159,6 +157,7 @@ php artisan route:clear
 php artisan route:cache
 php artisan event:cache
 php artisan responsecache:clear
+php artisan cloudflare:purge-cache
 
 sudo service php8.3-fpm restart
 sudo supervisorctl restart all
@@ -196,6 +195,7 @@ php artisan route:clear
 php artisan route:cache
 php artisan event:cache
 php artisan responsecache:clear
+php artisan cloudflare:purge-cache
 php artisan horizon:terminate
 sudo service php8.3-fpm restart
 php artisan health:check
