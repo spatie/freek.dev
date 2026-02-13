@@ -20,7 +20,7 @@ class HomeController
             return view('front.pages.home', compact('posts'));
         }
 
-        $priorityTags = ['Laravel', 'PHP', 'AI'];
+        $priorityTags = ['laravel', 'php', 'ai'];
 
         $topTags = Tag::query()
             ->select('tags.*')
