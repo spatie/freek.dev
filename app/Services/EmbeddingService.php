@@ -9,7 +9,7 @@ class EmbeddingService
 {
     public function generateEmbedding(Post $post): array
     {
-        $input = $post->title . "\n\n" . strip_tags($post->text);
+        $input = $post->title."\n\n".strip_tags($post->text);
         $input = mb_substr($input, 0, 32000);
 
         $response = OpenAI::embeddings()->create([

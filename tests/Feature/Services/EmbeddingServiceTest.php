@@ -86,7 +86,7 @@ it('computes related post ids ordered by similarity', function () {
         'embedding' => $differentEmbedding,
     ]);
 
-    $service = new EmbeddingService();
+    $service = new EmbeddingService;
     $relatedIds = $service->computeRelatedPostIds($mainPost, 3);
 
     expect($relatedIds)->toHaveCount(3);
@@ -102,7 +102,7 @@ it('returns empty array when post has no embedding', function () {
         'embedding' => null,
     ]);
 
-    $service = new EmbeddingService();
+    $service = new EmbeddingService;
     $relatedIds = $service->computeRelatedPostIds($post);
 
     expect($relatedIds)->toBeEmpty();
@@ -212,7 +212,7 @@ it('excludes unpublished posts from related post computation', function () {
         'embedding' => $embedding,
     ]);
 
-    $service = new EmbeddingService();
+    $service = new EmbeddingService;
     $relatedIds = $service->computeRelatedPostIds($mainPost);
 
     expect($relatedIds)->toContain($publishedPost->id);
