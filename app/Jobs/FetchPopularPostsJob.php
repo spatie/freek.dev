@@ -16,5 +16,7 @@ class FetchPopularPostsJob implements ShouldQueue
     public function handle(PopularPostsService $popularPostsService): void
     {
         $popularPostsService->refreshCache();
+
+        PurgeCloudflareCacheJob::dispatch();
     }
 }

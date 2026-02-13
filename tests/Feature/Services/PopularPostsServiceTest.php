@@ -143,6 +143,25 @@ it('extracts post ids from various url formats', function () {
     expect($cachedIds)->toBe([$post->id]);
 });
 
+it('handles schemeless urls from google analytics', function () {
+    $post = Post::factory()->create([
+        'title' => 'Schemeless URL Post',
+        'published' => true,
+        'publish_date' => now()->subDay(),
+    ]);
+
+    Analytics::swap(new FakeAnalytics(collect([
+        ['pageTitle' => 'Post', 'fullPageUrl' => "freek.dev/{$post->id}-schemeless-url-post", 'screenPageViews' => 100],
+    ])));
+
+    $service = new PopularPostsService;
+    $service->refreshCache();
+
+    $cachedIds = Cache::get('popular_posts');
+
+    expect($cachedIds)->toBe([$post->id]);
+});
+
 it('deduplicates post ids in cache', function () {
     $post = Post::factory()->create([
         'title' => 'Duplicate Test Post',

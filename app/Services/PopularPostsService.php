@@ -54,6 +54,10 @@ class PopularPostsService
 
     protected function extractPostId(string $url): ?int
     {
+        if (! str_contains($url, '://')) {
+            $url = 'https://'.$url;
+        }
+
         $path = parse_url($url, PHP_URL_PATH);
 
         if (! $path) {
