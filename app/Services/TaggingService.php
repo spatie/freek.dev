@@ -50,6 +50,7 @@ class TaggingService
                 - All tags must be lowercase.
                 - If content is laravel related, include the "laravel" tag.
                 - If content is php related, include the "php" tag.
+                - If content is about AI, LLMs, machine learning, or related topics, include the "ai" tag.
                 PROMPT)
             ->withPrompt($input)
             ->asStructured();

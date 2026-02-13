@@ -62,6 +62,19 @@
             @endif
         @endauth
     </p>
+    @if($post->tags->isNotEmpty())
+        <div class="flex flex-wrap gap-1.5 mt-2">
+            @foreach($post->tags->sortBy->name as $tag)
+                <a
+                    wire:navigate.hover
+                    href="{{ route('taggedPosts.index', $tag->slug) }}"
+                    class="bg-gray-50 rounded-md px-2.5 py-1 text-[13px] text-gray-500 hover:bg-gray-100 hover:text-black transition-colors"
+                >
+                    {{ $tag->name }}
+                </a>
+            @endforeach
+        </div>
+    @endif
     </header>
     <div class="markup leading-relaxed">
         {{ $slot }}

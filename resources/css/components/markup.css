@@ -8,7 +8,7 @@
 
 .link,
 .markup :not(.no-markup) a:not(.permalink) {
-    @apply text-blue-700 underline;
+    @apply text-gray-500 underline decoration-gray-300 hover:text-black hover:decoration-black transition-colors;
 }
 
 .markup .permalink {
