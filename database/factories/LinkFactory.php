@@ -18,44 +18,44 @@ class LinkFactory extends Factory
 
         $links = [
             [
-                'title' => 'Laravel 12 is now available',
-                'url' => 'https://laravel-news.com/laravel-12',
-                'text' => 'The latest version of Laravel brings exciting new features including improved performance and developer experience enhancements.',
+                'title' => 'Running PHP 8.5 with Laravel Octane and FrankenPHP',
+                'url' => 'https://danielpetrica.com/running-php-8-5-with-laravel-octane-and-frankenphp',
+                'text' => 'A quick but essential fix for anyone pushing the edges of the Laravel ecosystem. The default FrankenPHP binary is locked to PHP 8.4.',
             ],
             [
-                'title' => 'Building modern frontends with Inertia.js',
-                'url' => 'https://inertiajs.com',
-                'text' => 'Inertia allows you to build single-page applications using classic server-side routing and controllers.',
+                'title' => 'From dd() to Ray: A Debugging Workflow That Doesn\'t Break Your Flow',
+                'url' => 'https://tnakov.dev/from-dd-to-ray-debugging-workflow',
+                'text' => 'Evolving from dd() to Ray for a smoother workflow. Explore how Ray can boost your debugging game!',
             ],
             [
-                'title' => 'Pest 4.0 released with new testing features',
-                'url' => 'https://pestphp.com',
-                'text' => 'The latest version of Pest brings architectural testing, better mutation testing, and improved performance.',
+                'title' => 'New in Parental v1.5.0: Becoming, Integers, and Eager-Loading',
+                'url' => 'https://tighten.com/insights/new-parental-features-v1-5-0/',
+                'text' => 'Version v1.5.0 of Parental adds support for Single Table Inheritance type transformations and new helper methods.',
             ],
             [
-                'title' => 'Understanding PHP 8.4 asymmetric visibility',
-                'url' => 'https://stitcher.io/blog/php-84-asymmetric-visibility',
-                'text' => 'Property hooks and asymmetric visibility make PHP classes more expressive and safer.',
+                'title' => 'Laravel Herd for Linux is here',
+                'url' => 'https://herd.laravel.com',
+                'text' => 'Laravel Herd is now available for Linux. One click PHP development environments with zero configuration.',
             ],
             [
-                'title' => 'Deploying Laravel with FrankenPHP',
-                'url' => 'https://frankenphp.dev',
-                'text' => 'FrankenPHP provides a modern application server for PHP with support for HTTP/2, HTTP/3, and real-time features.',
+                'title' => 'Building a SaaS with Laravel and Stripe',
+                'url' => 'https://laravel-news.com/building-saas-stripe',
+                'text' => 'A comprehensive guide to integrating Stripe into your Laravel SaaS application.',
             ],
             [
-                'title' => 'Filament 5: Admin panels made easy',
-                'url' => 'https://filamentphp.com',
-                'text' => 'Build beautiful admin panels with minimal code using this powerful TALL stack framework.',
+                'title' => 'SQL performance: automatic detection & regression testing',
+                'url' => 'https://ohdear.app/news-and-updates/sql-performance-improvements',
+                'text' => 'Mattias introduces phpunit-query-count-assertions, a package that catches N+1 queries and missing indexes in your test suite.',
             ],
             [
-                'title' => 'Real-time Laravel applications with Reverb',
-                'url' => 'https://reverb.laravel.com',
-                'text' => 'Laravel Reverb is a blazing fast WebSocket server for Laravel applications.',
+                'title' => 'A practical guide to PHP generics with PHPStan',
+                'url' => 'https://phpstan.org/blog/generics-in-php-using-phpdocs',
+                'text' => 'Learn how to use PHPDoc generics with PHPStan for better type safety in your PHP applications.',
             ],
             [
-                'title' => 'Alpine.js v3 petite build',
-                'url' => 'https://alpinejs.dev',
-                'text' => 'The minimal version of Alpine.js provides reactive and declarative JavaScript for just 7kb.',
+                'title' => 'Deploying Laravel with Kamal and Docker',
+                'url' => 'https://laravel-news.com/deploying-laravel-kamal',
+                'text' => 'How to deploy your Laravel application using Kamal, a simple deployment tool from Basecamp.',
             ],
         ];
 

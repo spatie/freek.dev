@@ -60,16 +60,18 @@ class PostFactory
                     'https://laravel.com',
                     'https://ohdear.app',
                     'https://flareapp.io',
+                    'https://stitcher.io',
+                    'https://martinfowler.com',
                 ]);
                 $post->title = $this->faker()->randomElement([
-                    'How to use Laravel Folio for file-based routing',
-                    'Understanding Livewire 4 property binding',
-                    'Building real-time features with Laravel Broadcasting',
-                    'Advanced Eloquent tips for better performance',
-                    'Testing Laravel applications with Pest',
-                    'Deploying Laravel on modern infrastructure',
-                    'Working with Laravel queues and background jobs',
-                    'Creating beautiful UIs with Tailwind CSS',
+                    'Laravel Fuse: Circuit breaker for queue jobs',
+                    'Real-world examples of using Laravel AI SDK',
+                    'The Origin of Laravel - a look at v1 Beta 1',
+                    'Excessive Bold',
+                    'Partial function application in PHP 8.6',
+                    'Once again processing 11 million rows, now in seconds',
+                    'SQL performance improvements: automatic detection & regression testing',
+                    'Personal AI Assistants Changed Everything For Me',
                 ]);
             }
 
@@ -77,12 +79,12 @@ class PostFactory
                 $post->original_content = false;
                 $post->external_url = '';
                 $post->title = $this->faker()->randomElement([
-                    'Quick tip: Use Laravel collections for cleaner code',
-                    'TIL: Laravel has a built-in rate limiter',
-                    'Just shipped a new feature using Livewire',
-                    'Loving the new PHP 8.4 property hooks',
-                    'Hot take: Domain-driven design in Laravel',
-                    'Check out this elegant Eloquent pattern',
+                    'How to create an awesome product launch video',
+                    'TIL: Laravel has native eager loading limits now',
+                    'Just shipped Ray 3.0 with MCP support',
+                    'The new PHP 8.6 partial function application is neat',
+                    'Circuit breakers for queue jobs are a game changer',
+                    'Interesting thread on AI-assisted development workflows',
                 ]);
                 $post->attachTag('tweet');
                 $post->text = $this->getStub('tweet');
@@ -92,14 +94,14 @@ class PostFactory
                 $post->original_content = true;
                 $post->external_url = '';
                 $post->title = $this->faker()->randomElement([
-                    'A deep dive into PHP 8.4 property hooks',
-                    'Implementing event sourcing in Laravel',
-                    'Building a package development workflow',
-                    'Optimizing database queries in Laravel',
-                    'Creating reusable Livewire components',
-                    'Laravel best practices for 2025',
-                    'Understanding service containers and dependency injection',
-                    'Modern PHP: What changed in the last few years',
+                    'Another new Spatie package drops: spatie/laravel-screenshot',
+                    'Laravel Permission v7 has been launched',
+                    'Laravel PDF v2 has been released: adds support for Laravel Cloud',
+                    'Introducing Ray 3.0',
+                    'I built a native mobile word game in two weeks',
+                    'Introducing Spatie Guidelines for Laravel Boost',
+                    'How to automatically generate a commit message using Claude',
+                    'A practical guide to event sourcing in Laravel',
                 ]);
                 $post->text = $this->getStub('original');
                 $post->tweet_url = 'https://twitter.com/TwitterAPI/status/1150141056027103247';

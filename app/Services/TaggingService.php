@@ -3,7 +3,11 @@
 namespace App\Services;
 
 use App\Models\Post;
-use OpenAI\Laravel\Facades\OpenAI;
+use Prism\Prism\Enums\Provider;
+use Prism\Prism\Facades\Prism;
+use Prism\Prism\Schema\ArraySchema;
+use Prism\Prism\Schema\ObjectSchema;
+use Prism\Prism\Schema\StringSchema;
 use Spatie\Tags\Tag;
 
 class TaggingService
@@ -20,38 +24,37 @@ class TaggingService
         $input = $post->title . "\n\n" . strip_tags($post->text);
         $input = mb_substr($input, 0, 8000);
 
-        $response = OpenAI::chat()->create([
-            'model' => 'gpt-4o-mini',
-            'messages' => [
-                [
-                    'role' => 'system',
-                    'content' => <<<PROMPT
-                        You are a blog post tagger. Given a blog post, return 1 to 5 relevant tags as a JSON array of lowercase strings.
-
-                        Existing tags in the database: {$existingTags}
-
-                        Rules:
-                        - Strongly prefer tags from the existing list above.
-                        - Only suggest a new tag if none of the existing tags are a good fit.
-                        - Return only a JSON array of strings, nothing else. Example: ["php", "laravel", "testing"]
-                        - Do NOT include the tag "tweet" — that tag is reserved for a special post type.
-                        PROMPT,
+        $response = Prism::structured()
+            ->using(Provider::Anthropic, 'claude-haiku-4-5-20251001')
+            ->withSchema(new ObjectSchema(
+                name: 'tags',
+                description: 'Tags for the blog post',
+                properties: [
+                    new ArraySchema(
+                        name: 'tags',
+                        description: 'List of 1 to 5 relevant tags, lowercased',
+                        items: new StringSchema('tag', 'A single tag'),
+                    ),
                 ],
-                [
-                    'role' => 'user',
-                    'content' => $input,
-                ],
-            ],
-            'temperature' => 0.3,
-        ]);
+                requiredFields: ['tags'],
+            ))
+            ->withSystemPrompt(<<<PROMPT
+                You are a blog post tagger. Given a blog post, return 1 to 5 relevant tags.
 
-        $content = trim($response->choices[0]->message->content);
+                Existing tags in the database: {$existingTags}
 
-        $tags = json_decode($content, true);
+                Rules:
+                - Strongly prefer tags from the existing list above.
+                - Only suggest a new tag if none of the existing tags are a good fit.
+                - Do NOT include the tag "tweet" — that tag is reserved for a special post type.
+                - All tags must be lowercase.
+                - If content is laravel related, include the "laravel" tag.
+                - If content is php related, include the "php" tag.
+                PROMPT)
+            ->withPrompt($input)
+            ->asStructured();
 
-        if (! is_array($tags)) {
-            return [];
-        }
+        $tags = $response->structured['tags'] ?? [];
 
         return collect($tags)
             ->map(fn (string $tag) => strtolower(trim($tag)))

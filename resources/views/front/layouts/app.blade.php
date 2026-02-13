@@ -1,3 +1,5 @@
+@props(['wide' => false])
+
 @include('front.layouts.partials.head')
 
 <body>
@@ -6,7 +8,7 @@
     @include('front.layouts.partials.analytics')
     @include('front.layouts.partials.flash')
 
-    <div class="max-w-xl md:max-w-4xl mx-auto">
+    <div class="max-w-xl md:max-w-6xl mx-auto">
         <header class="mt-8 md:mt-12 mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 leading-tight">
             <div class="md:flex items-end">
                 <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
@@ -79,7 +81,23 @@
                 </div>
             </nav>
             <main class="flex-1 min-w-0 px-4 md:px-12 lg:pl-24 lg:pr-16">
-                {{ $slot }}
+                @if($wide)
+                    {{ $slot }}
+                @else
+                    <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+                        <div>
+                            {{ $slot }}
+                        </div>
+                        <aside class="hidden lg:block">
+                            <div class="lg:sticky lg:top-8 lg:self-start space-y-8">
+                                @if(isset($sidebarTop))
+                                    {{ $sidebarTop }}
+                                @endif
+                                <x-ad/>
+                            </div>
+                        </aside>
+                    </div>
+                @endif
             </main>
         </div>
     </div>
@@ -88,5 +106,4 @@
 @livewireScriptConfig
 
 </body>
-
 

@@ -1,13 +1,19 @@
-<x-app-layout>
-    <x-ad/>
-
+<x-app-layout :wide="true">
     @if($posts->onFirstPage())
-        <p class="text-sm text-gray-600 mb-8">
-            I'm Freek Van der Herten. I maintain 300+ open source packages downloaded over 500 million times. I write about Laravel, PHP, and AI.
-        </p>
+        <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+            <div>
+                @include('front.posts.partials.list')
+
+                {{ $posts->links() }}
+            </div>
+
+            <aside class="hidden lg:block">
+                @include('front.pages.partials.homepage-sidebar')
+            </aside>
+        </div>
+    @else
+        @include('front.posts.partials.list')
+
+        {{ $posts->links() }}
     @endif
-
-    @include('front.posts.partials.list')
-
-    {{ $posts->links() }}
 </x-app-layout>

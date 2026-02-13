@@ -1,5 +1,5 @@
 @if($ad)
-<div data-no-index class="-mx-4 sm:mx-0 px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-yellow-50 text-xs text-gray-900 mb-8 markup">
+<div data-no-index class="bg-gray-50 rounded-md px-4 py-3 text-[13px] leading-relaxed text-gray-400 markup [&_p+p]:mt-2">
     {!! $ad->html !!}
 </div>
 @endif

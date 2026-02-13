@@ -1,6 +1,4 @@
 <x-app-layout :title="$post->title" :canonical="$post->external_url">
-    <x-ad/>
-
     <x-post-header :post="$post" class="mb-8">
 
         {!! $post->html !!}
@@ -8,7 +6,7 @@
         @unless($post->isTweet())
             @if($post->external_url)
                 <p class="mt-6">
-                    <a href="{{ $post->external_url }}">
+                    <a href="{{ $post->external_url }}" target="_blank" rel="noopener noreferrer">
                         Read more</a>
                     <span class="text-xs text-gray-700">[{{ $post->external_url_host }}]</span>
                 </p>

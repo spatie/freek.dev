@@ -2,13 +2,38 @@
 
 namespace Database\Seeders;
 
-use Database\Factories\TagFactory;
 use Illuminate\Database\Seeder;
+use Spatie\Tags\Tag;
 
 class TagSeeder extends Seeder
 {
     public function run(): void
     {
-        TagFactory::times(20)->create();
+        $tags = [
+            'Laravel',
+            'PHP',
+            'JavaScript',
+            'AI',
+            'Open Source',
+            'Packages',
+            'Testing',
+            'Livewire',
+            'Tailwind CSS',
+            'Eloquent',
+            'Performance',
+            'Security',
+            'Event Sourcing',
+            'Media Library',
+            'Queues',
+            'Debugging',
+            'Ray',
+            'Flare',
+            'Oh Dear',
+            'Mailcoach',
+        ];
+
+        foreach ($tags as $tag) {
+            Tag::findOrCreate($tag);
+        }
     }
 }

@@ -15,7 +15,7 @@ new class extends Component {
     }
 }; ?>
 
-<form wire:submit.prevent="save">
+<form wire:submit.prevent="save" class="max-w-sm">
     <x-input-field
         label="Title"
         name="title"
@@ -29,18 +29,17 @@ new class extends Component {
         placeholder="https://"
     />
 
-    <div class="mt-4">
-        <label class="text-gray-700">
-            <span class="text-gray-700">Description</span>
-            <textarea
-                wire:model="form.text"
-                placeholder="Describe the content in one or two sentences. You can use markdown."
-            ></textarea>
-        </label>
+    <div class="mb-5">
+        <label for="text" class="block text-sm font-medium text-gray-700 mb-1.5">Description</label>
+        <textarea
+            id="text"
+            wire:model="form.text"
+            rows="3"
+            class="block w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition-colors focus:border-gray-400 focus:outline-none focus:ring-0"
+            placeholder="Describe the content in one or two sentences. You can use markdown."
+        ></textarea>
         <x-form-error name="form.text" />
     </div>
 
-    <div class="mt-4">
-        <x-submit-button label="Submit link"/>
-    </div>
+    <x-submit-button label="Submit link"/>
 </form>

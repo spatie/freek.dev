@@ -1,48 +1,39 @@
 <x-app-layout title="Links">
-    <div
-        class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-gray-200 text-sm text-gray-700">
-
-        <p class="mb-4">
-            In this section you'll find links submitted by others.
-        </p>
-
-        <p class="mb-4">
-            Did you write or stumbled across a blog post, tutorial or video that might be interesting for others?
-        </p>
-        @auth
-            <p class="mb-2">
-                Logged in as
-                @if(Auth::user()->twitter_handle)
-                    <a target="_blank" rel="noopener noreferrer"
-                       title="https://twitter.com/{{ Auth::user()->twitter_handle }}"
-                       href="https://twitter.com/{{ Auth::user()->twitter_handle }}">
+    <x-slot:sidebarTop>
+        <div class="text-[13px] leading-relaxed text-gray-400">
+            <p class="mb-3">
+                Did you write or stumble across a blog post, tutorial or video that might be interesting for others?
+            </p>
+            @auth
+                <p class="mb-2">
+                    Logged in as
+                    @if(Auth::user()->twitter_handle)
+                        <a target="_blank" rel="noopener noreferrer"
+                           class="underline hover:text-black"
+                           href="https://twitter.com/{{ Auth::user()->twitter_handle }}">
+                            {{ Auth::user()->name }}
+                        </a>
+                    @else
                         {{ Auth::user()->name }}
-                    </a>
-                @else
-                    {{ Auth::user()->name }}
-                @endif
-                ({{ Auth::user()->email }})
-            </p>
-            <div class="flex items-center">
-                <a wire:navigate.hover href="{{ route('community.link.create') }}" class="mr-4 button button-gray">Submit a link</a>
+                    @endif
+                </p>
+                <div class="flex items-center gap-3">
+                    <a wire:navigate.hover href="{{ route('community.link.create') }}" class="text-gray-500 underline hover:text-black">Submit a link</a>
+                    <form method="post" action="/logout">
+                        @csrf
+                        <button class="text-gray-400 hover:text-black" type="submit">Log out</button>
+                    </form>
+                </div>
+            @endauth
+            @guest
+                <p>
+                    <a wire:navigate.hover href="{{ route('community.link.create') }}" class="text-gray-500 underline hover:text-black">Log in to submit a link</a>
+                </p>
+            @endguest
+        </div>
+    </x-slot:sidebarTop>
 
-                <form method="post" action="/logout">
-                    @csrf
-                    <button class="text-xs text-gray-70" type="submit">log out</button>
-                </form>
-            </div>
-        @endauth
-
-        @guest
-            <p class="mb-4">
-                To be able to submit a link you need to log in first.
-            </p>
-
-            <a wire:navigate.hover href="{{ route('community.link.create') }}" class="button button-gray">Log in</a>
-        @endguest
-    </div>
-
-    <div class="mt-8">
+    <div>
         @foreach($links as $link)
             <article class="mb-12 md:mb-12">
                 <div class="mb-5" style="

@@ -1,21 +1,17 @@
 <x-app-layout title="Reset password">
-    <div class="markup mb-8">
-        <h1>Reset password</h1>
 
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
+    <h2 class="text-xl font-bold mb-6">Reset password</h2>
 
-            <input type="hidden" name="token" value="{{ $token }}">
+    <form method="POST" action="{{ route('password.update') }}" class="max-w-sm">
+        @csrf
 
-            <x-input-field label="E-mail" name="email" type="email"/>
+        <input type="hidden" name="token" value="{{ $token }}">
 
-            <x-input-field label="Password" name="password" type="password"/>
+        <x-input-field label="E-mail" name="email" type="email"/>
+        <x-input-field label="Password" name="password" type="password"/>
+        <x-input-field label="Confirm password" name="password_confirmation" type="password"/>
 
-            <x-input-field label="Password" name="password_confirmation" type="password"/>
+        <x-submit-button label="Reset password"/>
+    </form>
 
-            <div class="mt-4">
-                <x-submit-button label="Reset password"/>
-            </div>
-        </form>
-    </div>
 </x-app-layout>

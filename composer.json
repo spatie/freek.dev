@@ -40,6 +40,7 @@
         "meilisearch/meilisearch-php": "^1.0",
         "openai-php/laravel": "^0.18.0",
         "predis/predis": "^1.1.10",
+        "prism-php/prism": "^0.99.19",
         "spatie/browsershot": "^5.0",
         "spatie/commonmark-highlighter": "^3.0",
         "spatie/cpu-load-health-check": "^1.0.2",

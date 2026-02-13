@@ -12,6 +12,8 @@
                 href="{{ $url }}"
                 @if(\Illuminate\Support\Str::startsWith($url, ['/', url('/')]))
                     wire:navigate.hover
+                @else
+                    target="_blank" rel="noopener noreferrer"
                 @endif
             >{{ $post->title }}
             </a>
@@ -34,7 +36,7 @@
         </a>
         @if($post->external_url)
             –
-            <a href="{{ $post->external_url }}">
+            <a href="{{ $post->external_url }}" target="_blank" rel="noopener noreferrer">
                 {{ $post->external_url_host }}</a>
         @elseif($post->isOriginal())
             by {{ $post->author }}

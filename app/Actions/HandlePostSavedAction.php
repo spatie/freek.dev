@@ -36,13 +36,13 @@ class HandlePostSavedAction
 
             if (config('openai.api_key')) {
                 Bus::chain([
-                    new GeneratePostEmbeddingJob($post),
-                    new ComputeRelatedPostsJob($post),
+                    //new GeneratePostEmbeddingJob($post),
+                    //new ComputeRelatedPostsJob($post),
                 ])->dispatch();
+            }
 
-                if ($post->tags->isEmpty()) {
-                    GeneratePostTagsJob::dispatch($post);
-                }
+            if (config('prism.providers.anthropic.api_key') && $post->tags->isEmpty()) {
+                GeneratePostTagsJob::dispatch($post);
             }
 
             return;
