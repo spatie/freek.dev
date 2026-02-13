@@ -89,7 +89,7 @@
                             {{ $slot }}
                         </div>
                         <aside class="hidden min-[1140px]:block">
-                            <div class="lg:sticky lg:top-8 lg:self-start space-y-8">
+                            <div class="sticky top-8 self-start space-y-8">
                                 @if(isset($sidebarTop))
                                     {{ $sidebarTop }}
                                 @endif
