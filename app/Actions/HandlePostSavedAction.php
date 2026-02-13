@@ -36,8 +36,8 @@ class HandlePostSavedAction
 
             if (config('openai.api_key')) {
                 Bus::chain([
-                    //new GeneratePostEmbeddingJob($post),
-                    //new ComputeRelatedPostsJob($post),
+                    // new GeneratePostEmbeddingJob($post),
+                    // new ComputeRelatedPostsJob($post),
                 ])->dispatch();
             }
 

@@ -18,7 +18,7 @@ class VideoSeeder extends Seeder
         Video::create([
             'title' => 'Behind the scenes of Flare',
             'embed' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/06--kezKc0Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            'text' => "In this talk, recorded at Laracon Australia 2019, I explain a strategy to structure large Laravel applications, using Flare as an example.",
+            'text' => 'In this talk, recorded at Laracon Australia 2019, I explain a strategy to structure large Laravel applications, using Flare as an example.',
         ]);
 
         Video::create([
