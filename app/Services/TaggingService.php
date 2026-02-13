@@ -52,6 +52,7 @@ class TaggingService
                 - If content is laravel related, include the "laravel" tag.
                 - If content is php related, include the "php" tag.
                 - If content is about AI, LLMs, machine learning, or related topics, include the "ai" tag.
+                - If the post is about a Spatie package (e.g. spatie/laravel-*, spatie/*, or mentions Spatie as the author), include the "spatie" tag.
                 - Never use version numbers in tags. Use "php" not "php8", "laravel" not "laravel11", etc. If a post currently has a versioned tag like "php8", replace it with "php".
                 PROMPT)
             ->withPrompt($input)

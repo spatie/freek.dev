@@ -30,8 +30,6 @@ class GeneratePostTagsJob implements ShouldQueue
             return;
         }
 
-        Post::withoutEvents(function () use ($tags) {
-            $this->post->syncTags($tags);
-        });
+        $this->post->syncTags($tags);
     }
 }

@@ -85,7 +85,7 @@
                     {{ $slot }}
                 @else
                     <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
-                        <div>
+                        <div class="min-w-0">
                             {{ $slot }}
                         </div>
                         <aside class="hidden lg:block">
