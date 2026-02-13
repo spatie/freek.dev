@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Post;
 use App\Services\TaggingService;
 use Illuminate\Console\Command;
+use Throwable;
 
 class ReviewPostTagsCommand extends Command
 {
@@ -29,32 +30,36 @@ class ReviewPostTagsCommand extends Command
         $changed = 0;
 
         foreach ($posts as $post) {
-            $currentTags = $post->tags
-                ->pluck('name')
-                ->map(fn ($name) => is_array($name) ? ($name['en'] ?? reset($name)) : $name)
-                ->sort()
-                ->values()
-                ->all();
+            try {
+                $currentTags = $post->tags
+                    ->pluck('name')
+                    ->map(fn ($name) => is_array($name) ? ($name['en'] ?? reset($name)) : $name)
+                    ->sort()
+                    ->values()
+                    ->all();
 
-            $suggestedTags = $taggingService->generateTags($post);
-            sort($suggestedTags);
+                $suggestedTags = $taggingService->generateTags($post);
+                sort($suggestedTags);
 
-            if ($currentTags === $suggestedTags) {
-                continue;
+                if ($currentTags === $suggestedTags) {
+                    continue;
+                }
+
+                $changed++;
+
+                $this->warn("#{$post->id}: {$post->title}");
+                $this->line('  Current:   '.implode(', ', $currentTags));
+                $this->line('  Suggested: '.implode(', ', $suggestedTags));
+
+                if (! $this->option('dry-run')) {
+                    $post->syncTags($suggestedTags);
+                    $this->info('  -> Updated');
+                }
+
+                $this->newLine();
+            } catch (Throwable $e) {
+                $this->error("#{$post->id}: {$post->title} — skipped ({$e->getMessage()})");
             }
-
-            $changed++;
-
-            $this->warn("#{$post->id}: {$post->title}");
-            $this->line('  Current:   '.implode(', ', $currentTags));
-            $this->line('  Suggested: '.implode(', ', $suggestedTags));
-
-            if (! $this->option('dry-run')) {
-                $post->syncTags($suggestedTags);
-                $this->info('  -> Updated');
-            }
-
-            $this->newLine();
         }
 
         $this->info("Done. {$changed} post(s) ".($this->option('dry-run') ? 'would be updated.' : 'updated.'));

@@ -26,6 +26,7 @@ class TaggingService
 
         $response = Prism::structured()
             ->using(Provider::Anthropic, 'claude-haiku-4-5-20251001')
+            ->usingTemperature(0)
             ->withSchema(new ObjectSchema(
                 name: 'tags',
                 description: 'Tags for the blog post',
@@ -51,6 +52,7 @@ class TaggingService
                 - If content is laravel related, include the "laravel" tag.
                 - If content is php related, include the "php" tag.
                 - If content is about AI, LLMs, machine learning, or related topics, include the "ai" tag.
+                - Never use version numbers in tags. Use "php" not "php8", "laravel" not "laravel11", etc. If a post currently has a versioned tag like "php8", replace it with "php".
                 PROMPT)
             ->withPrompt($input)
             ->asStructured();
