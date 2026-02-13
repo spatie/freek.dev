@@ -27,7 +27,7 @@ it('returns popular posts from cache in order', function () {
 
     Cache::put('popular_posts', [$postB->id, $postC->id, $postA->id], 86400);
 
-    $service = new PopularPostsService();
+    $service = new PopularPostsService;
     $posts = $service->getPopularPosts();
 
     expect($posts)->toHaveCount(3);
@@ -35,7 +35,7 @@ it('returns popular posts from cache in order', function () {
 });
 
 it('returns empty collection when cache is empty', function () {
-    $service = new PopularPostsService();
+    $service = new PopularPostsService;
     $posts = $service->getPopularPosts();
 
     expect($posts)->toBeEmpty();
@@ -49,7 +49,7 @@ it('respects limit parameter', function () {
 
     Cache::put('popular_posts', $posts->pluck('id')->toArray(), 86400);
 
-    $service = new PopularPostsService();
+    $service = new PopularPostsService;
     $popularPosts = $service->getPopularPosts(3);
 
     expect($popularPosts)->toHaveCount(3);
@@ -69,7 +69,7 @@ it('excludes unpublished posts from results', function () {
 
     Cache::put('popular_posts', [$publishedPost->id, $unpublishedPost->id], 86400);
 
-    $service = new PopularPostsService();
+    $service = new PopularPostsService;
     $posts = $service->getPopularPosts();
 
     expect($posts)->toHaveCount(1);
@@ -95,7 +95,7 @@ it('refreshes cache from analytics data', function () {
         ['pageTitle' => 'Homepage', 'fullPageUrl' => 'https://freek.dev/', 'screenPageViews' => 1000],
     ])));
 
-    $service = new PopularPostsService();
+    $service = new PopularPostsService;
     $service->refreshCache();
 
     $cachedIds = Cache::get('popular_posts');
@@ -108,14 +108,15 @@ it('refreshes cache from analytics data', function () {
 it('handles analytics api errors gracefully', function () {
     Cache::forget('popular_posts');
 
-    Analytics::swap(new class {
+    Analytics::swap(new class
+    {
         public function __call($method, $args): never
         {
             throw new \RuntimeException('API error');
         }
     });
 
-    $service = new PopularPostsService();
+    $service = new PopularPostsService;
     $service->refreshCache();
 
     expect(Cache::get('popular_posts'))->toBeNull();
@@ -134,7 +135,7 @@ it('extracts post ids from various url formats', function () {
         ['pageTitle' => 'Another non-post', 'fullPageUrl' => 'https://freek.dev/originals', 'screenPageViews' => 40],
     ])));
 
-    $service = new PopularPostsService();
+    $service = new PopularPostsService;
     $service->refreshCache();
 
     $cachedIds = Cache::get('popular_posts');
@@ -154,7 +155,7 @@ it('deduplicates post ids in cache', function () {
         ['pageTitle' => 'Post Page 2', 'fullPageUrl' => "https://freek.dev/{$post->id}-my-slug?ref=twitter", 'screenPageViews' => 50],
     ])));
 
-    $service = new PopularPostsService();
+    $service = new PopularPostsService;
     $service->refreshCache();
 
     $cachedIds = Cache::get('popular_posts');
