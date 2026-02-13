@@ -11,6 +11,7 @@ class ArchiveController
     {
         $posts = Post::query()
             ->published()
+            ->whereNotNull('publish_date')
             ->get()
             ->groupBy([
                 fn (Post $post) => $post->publish_date->format('Y'),

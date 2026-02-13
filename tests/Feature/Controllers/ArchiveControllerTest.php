@@ -53,6 +53,25 @@ it('does not show unpublished posts on the archive page', function () {
         ->assertDontSee('An unpublished archive post');
 });
 
+it('does not crash when a published post has no publish date', function () {
+    Post::factory()->create([
+        'title' => 'Post with date',
+        'published' => true,
+        'publish_date' => now()->subDay(),
+    ]);
+
+    Post::factory()->create([
+        'title' => 'Post without date',
+        'published' => true,
+        'publish_date' => null,
+    ]);
+
+    get('/archive')
+        ->assertOk()
+        ->assertSee('Post with date')
+        ->assertDontSee('Post without date');
+});
+
 it('shows an empty archive page when there are no posts', function () {
     get('/archive')
         ->assertOk();

@@ -3,6 +3,18 @@ import { Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm';
 
 Livewire.start();
 
+document.addEventListener('livewire:navigated', () => {
+    const main = document.querySelector('main');
+    if (main) {
+        main.style.opacity = '0';
+        main.style.transition = 'none';
+        requestAnimationFrame(() => {
+            main.style.transition = 'opacity 150ms ease';
+            main.style.opacity = '1';
+        });
+    }
+});
+
 Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
 
 function lazy(element) {
