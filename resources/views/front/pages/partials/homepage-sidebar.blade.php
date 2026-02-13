@@ -1,6 +1,6 @@
 <div class="lg:sticky lg:top-8 lg:self-start space-y-8">
     <p class="text-[13px] leading-relaxed text-gray-400">
-        I'm Freek Van der Herten. I maintain 300+ open source packages downloaded over 500 million times. I write about Laravel, PHP, and AI.
+        I'm a passionate Laravel developer that works at <a href="https://spatie.be" target="_blank" class="text-gray-500 hover:text-black transition-colors underline decoration-gray-300 hover:decoration-black">Spatie</a> and <a href="https://ohdear.app" target="_blank" class="text-gray-500 hover:text-black transition-colors underline decoration-gray-300 hover:decoration-black">Oh Dear</a> and I've created a lot of <a href="https://spatie.be/open-source" target="_blank" class="text-gray-500 hover:text-black transition-colors underline decoration-gray-300 hover:decoration-black">packages</a> used in the Laravel community.
     </p>
 
     @if($topTags->isNotEmpty())
