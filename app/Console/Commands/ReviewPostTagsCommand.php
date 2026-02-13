@@ -46,19 +46,19 @@ class ReviewPostTagsCommand extends Command
             $changed++;
 
             $this->warn("#{$post->id}: {$post->title}");
-            $this->line("  Current:   " . implode(', ', $currentTags));
-            $this->line("  Suggested: " . implode(', ', $suggestedTags));
+            $this->line('  Current:   '.implode(', ', $currentTags));
+            $this->line('  Suggested: '.implode(', ', $suggestedTags));
 
             if (! $this->option('dry-run')) {
                 Post::withoutEvents(function () use ($post, $suggestedTags) {
                     $post->syncTags($suggestedTags);
                 });
-                $this->info("  -> Updated");
+                $this->info('  -> Updated');
             }
 
             $this->newLine();
         }
 
-        $this->info("Done. {$changed} post(s) " . ($this->option('dry-run') ? 'would be updated.' : 'updated.'));
+        $this->info("Done. {$changed} post(s) ".($this->option('dry-run') ? 'would be updated.' : 'updated.'));
     }
 }
