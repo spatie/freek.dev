@@ -33,9 +33,9 @@
         </p>
     </div>
 
-    <div class="mb-8">
-        @include('front.posts.partials.comments')
-    </div>
+    @include('front.posts.partials.related')
+
+    @include('front.posts.partials.popular-now')
 
     <x-slot name="seo">
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>

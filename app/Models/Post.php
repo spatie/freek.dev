@@ -4,7 +4,9 @@ namespace App\Models;
 
 use App\Actions\ConvertPostTextToHtmlAction;
 use App\Actions\PublishPostAction;
+use App\Jobs\ComputeRelatedPostsJob;
 use App\Jobs\CreateOgImageJob;
+use App\Jobs\GeneratePostEmbeddingJob;
 use App\Jobs\PurgeCloudflareCacheJob;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
@@ -18,7 +20,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Str;
-use Spatie\Comments\Models\Concerns\HasComments;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Spatie\MediaLibrary\HasMedia;
@@ -35,8 +36,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
 
     public const TYPE_ORIGINAL = 'originalPost';
 
-    use HasComments,
-        HasFactory,
+    use HasFactory,
         HasSlug,
         HasTags,
         InteractsWithMedia,
@@ -53,6 +53,8 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
             'toot_sent' => 'boolean',
             'publish_date' => 'datetime',
             'posted_on_bluesky' => 'boolean',
+            'embedding' => 'array',
+            'related_post_ids' => 'array',
         ];
     }
 
@@ -82,6 +84,13 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
                 static::withoutEvents(function () use ($post) {
                     (new PublishPostAction)->execute($post);
                 });
+
+                if (config('openai.api_key')) {
+                    Bus::chain([
+                        new GeneratePostEmbeddingJob($post),
+                        new ComputeRelatedPostsJob($post),
+                    ])->dispatch();
+                }
 
                 return;
             }
@@ -352,14 +361,27 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         return null;
     }
 
-    public function commentableName(): string
+    public function getRelatedPosts(int $limit = 5): Collection
     {
-        return $this->title;
-    }
+        if (empty($this->related_post_ids)) {
+            return collect();
+        }
 
-    public function commentUrl(): string
-    {
-        return $this->url;
+        $ids = array_slice($this->related_post_ids, 0, $limit);
+
+        if (empty($ids)) {
+            return collect();
+        }
+
+        $posts = Post::query()
+            ->whereIn('id', $ids)
+            ->where('published', true)
+            ->get()
+            ->keyBy('id');
+
+        return collect($ids)
+            ->map(fn (int $id) => $posts->get($id))
+            ->filter();
     }
 
     public function shouldShow(): bool

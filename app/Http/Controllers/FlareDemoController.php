@@ -23,7 +23,7 @@ class FlareDemoController
                     'category' => $post->tags->first()?->name ?? 'General',
                     'tags' => $post->tags->pluck('name')->toArray(),
                     'views' => $post->views ?? 0,
-                    'comments' => $post->comments()->count(),
+                    'comments' => 0,
                 ];
             });
 
