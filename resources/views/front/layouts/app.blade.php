@@ -84,8 +84,8 @@
                 @if($wide)
                     {{ $slot }}
                 @else
-                    <div class="min-[1140px]:grid min-[1140px]:grid-cols-[minmax(0,560px)_220px] min-[1140px]:justify-between">
-                        <div class="min-w-0 max-w-xl min-[1140px]:max-w-none">
+                    <div class="min-[1140px]:grid min-[1140px]:grid-cols-[minmax(0,560px)_220px] min-[1140px]:gap-12">
+                        <div class="min-w-0 max-w-[560px]">
                             {{ $slot }}
                         </div>
                         <aside class="hidden min-[1140px]:block">
