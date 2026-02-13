@@ -23,7 +23,6 @@
     </{{ $heading ?? 'h1' }}>
 
     <p class="text-sm text-gray-700">
-        {{ $post->formatted_type }} –
         <a href="{{ $post->url }}">
             @if ($post->publish_date)
                 <time datetime="{{ $post->publish_date?->format(DateTime::ATOM) }}">
@@ -62,8 +61,8 @@
             @endif
         @endauth
     </p>
-    @if($post->tags->isNotEmpty())
-        <div class="flex flex-wrap gap-1.5 mt-2">
+    @if(($showTags ?? false) && $post->tags->isNotEmpty())
+        <div class="flex flex-wrap gap-1.5 mt-2 max-w-lg">
             @foreach($post->tags->sortBy->name as $tag)
                 <a
                     wire:navigate.hover

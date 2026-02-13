@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Post;
 use App\Services\TaggingService;
 use Illuminate\Console\Command;
+use Prism\Prism\Exceptions\PrismRateLimitedException;
 use Throwable;
 
 class ReviewPostTagsCommand extends Command
@@ -38,7 +39,7 @@ class ReviewPostTagsCommand extends Command
                     ->values()
                     ->all();
 
-                $suggestedTags = $taggingService->generateTags($post);
+                $suggestedTags = $this->generateTagsWithRetry($taggingService, $post);
                 sort($suggestedTags);
 
                 if ($currentTags === $suggestedTags) {
@@ -63,5 +64,24 @@ class ReviewPostTagsCommand extends Command
         }
 
         $this->info("Done. {$changed} post(s) ".($this->option('dry-run') ? 'would be updated.' : 'updated.'));
+    }
+
+    private function generateTagsWithRetry(TaggingService $taggingService, Post $post, int $maxRetries = 3): array
+    {
+        for ($attempt = 1; $attempt <= $maxRetries; $attempt++) {
+            try {
+                return $taggingService->generateTags($post);
+            } catch (PrismRateLimitedException $e) {
+                if ($attempt === $maxRetries) {
+                    throw $e;
+                }
+
+                $retryAfter = $e->retryAfter ?? 60;
+                $this->warn("  Rate limited — waiting {$retryAfter}s...");
+                sleep($retryAfter);
+            }
+        }
+
+        return []; // unreachable
     }
 }
