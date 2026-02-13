@@ -11,6 +11,8 @@ class PageViewsChart extends ChartWidget
 
     protected ?string $pollingInterval = null;
 
+    protected ?string $maxHeight = '300px';
+
     public ?string $filter = '30';
 
     protected function getFilters(): ?array
