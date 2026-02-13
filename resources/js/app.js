@@ -5,14 +5,21 @@ Livewire.start();
 
 document.addEventListener('livewire:navigated', () => {
     const main = document.querySelector('main');
-    if (main) {
-        main.style.opacity = '0';
-        main.style.transition = 'none';
-        requestAnimationFrame(() => {
-            main.style.transition = 'opacity 150ms ease';
-            main.style.opacity = '1';
+    if (!main) return;
+
+    const children = Array.from(main.children);
+
+    children.forEach((child, i) => {
+        child.animate([
+            { opacity: 0, transform: 'translateY(6px)' },
+            { opacity: 1, transform: 'translateY(0)' },
+        ], {
+            duration: 400,
+            delay: i * 60,
+            easing: 'ease-out',
+            fill: 'both',
         });
-    }
+    });
 });
 
 Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);

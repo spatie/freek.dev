@@ -1,0 +1,42 @@
+.gameboy-screen {
+    animation: gameboy-pulse 8s ease-in-out infinite;
+}
+
+.gameboy-btn-a {
+    animation: gameboy-press 2.5s ease-in-out infinite;
+}
+
+.gameboy-btn-b {
+    animation: gameboy-press 2.5s ease-in-out 1s infinite;
+}
+
+.gameboy-dpad {
+    animation: gameboy-dpad 4s ease-in-out infinite;
+}
+
+@keyframes gameboy-pulse {
+    0%, 100% {
+        fill: #D8D8D8;
+    }
+    50% {
+        fill: #C8E6C9;
+    }
+}
+
+@keyframes gameboy-press {
+    0%, 100% {
+        fill: #000;
+    }
+    15%, 25% {
+        fill: #E03070;
+    }
+}
+
+@keyframes gameboy-dpad {
+    0%, 100% {
+        fill: #000;
+    }
+    40%, 50% {
+        fill: #777;
+    }
+}

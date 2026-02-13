@@ -11,7 +11,23 @@
             <div class="md:flex items-end">
                 <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
                     <a wire:navigate.hover href="/" title="Freek.dev">
-                        <img src="/images/murzicoon.svg" class="w-full" alt="Freek.dev logotype" />
+                        <svg class="w-full" viewBox="0 0 285 300" xmlns="http://www.w3.org/2000/svg" aria-label="Freek.dev logotype">
+                            <g fill="none" fill-rule="evenodd">
+                                <path fill="#FFF" d="M15 15h240v255H15z"/>
+                                <path d="M270 15h15v285H15v-15H0V0h270v15zM15 15v255h240V15H15z" fill="#000"/>
+                                <path class="gameboy-screen" fill="#D8D8D8" d="M60 60h150v90H60z"/>
+                                <defs>
+                                    <clipPath id="screen-clip"><rect x="60" y="60" width="150" height="90"/></clipPath>
+                                </defs>
+                                <rect clip-path="url(#screen-clip)" x="60" width="150" height="20" fill="rgba(255,255,255,0.3)">
+                                    <animate attributeName="y" values="40;150;40" dur="3s" repeatCount="indefinite"/>
+                                </rect>
+                                <path fill="#000" d="M45 45h183v120H45V45zm15 15v90h150V60H60z"/>
+                                <path class="gameboy-dpad" fill="#000" d="M57.5 207v-17.5h20V207H95v20H77.5v17.5h-20V227H40v-20z"/>
+                                <rect class="gameboy-btn-b" fill="#000" x="145" y="205" width="25" height="25"/>
+                                <rect class="gameboy-btn-a" fill="#000" x="190" y="205" width="25" height="25"/>
+                            </g>
+                        </svg>
                     </a>
                 </figure>
                 <div>

@@ -5,6 +5,7 @@
 @import './components/button.css';
 @import './components/carbon.css';
 @import './components/markup.css';
+@import './components/gameboy.css';
 @import './components/mobile-menu.css';
 @import './components/pagination.css';
 @import './utilties.css';
@@ -86,3 +87,5 @@
 
   --rotate--5: -5deg;
 }
+
+
