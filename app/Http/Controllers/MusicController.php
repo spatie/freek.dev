@@ -11,8 +11,6 @@ class MusicController
     {
         $releases = Releases::all();
 
-        ray('On the music page');
-
         return view('front.pages.music', compact('releases'));
     }
 }
