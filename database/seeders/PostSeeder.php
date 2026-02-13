@@ -123,7 +123,7 @@ class PostSeeder extends Seeder
             ],
             [
                 'title' => 'Laravel Fuse: Circuit breaker for queue jobs',
-                'text' => "Laravel Fuse is a circuit breaker package for Laravel queue jobs. When an external service goes down, instead of letting thousands of jobs timeout, the circuit opens after a configurable failure threshold and jobs fail instantly.",
+                'text' => 'Laravel Fuse is a circuit breaker package for Laravel queue jobs. When an external service goes down, instead of letting thousands of jobs timeout, the circuit opens after a configurable failure threshold and jobs fail instantly.',
                 'external_url' => 'https://github.com/harris21/laravel-fuse',
                 'tags' => ['Laravel', 'Queues', 'Packages'],
                 'publish_date' => now()->subDays(2),
@@ -137,21 +137,21 @@ class PostSeeder extends Seeder
             ],
             [
                 'title' => 'The Origin of Laravel - a look at v1 Beta 1',
-                'text' => "A fascinating deep dive into the very first commit of Laravel, made by Taylor Otwell on June 9, 2011. The article explores the original directory structure, the early Eloquent ORM, and the authentication basics that are still recognizable today.",
+                'text' => 'A fascinating deep dive into the very first commit of Laravel, made by Taylor Otwell on June 9, 2011. The article explores the original directory structure, the early Eloquent ORM, and the authentication basics that are still recognizable today.',
                 'external_url' => 'https://laravelnepal.com/post/origin-of-laravel-v1',
                 'tags' => ['Laravel'],
                 'publish_date' => now()->subDays(4),
             ],
             [
                 'title' => 'Excessive Bold',
-                'text' => "Martin Fowler on the overuse of bold in technical writing — and how LLMs have picked up and spread this practice. The more you emphasize, the less power it has.",
+                'text' => 'Martin Fowler on the overuse of bold in technical writing — and how LLMs have picked up and spread this practice. The more you emphasize, the less power it has.',
                 'external_url' => 'https://martinfowler.com/bliki/ExcessiveBold.html',
                 'tags' => [],
                 'publish_date' => now()->subDays(7),
             ],
             [
                 'title' => 'Personal AI Assistants Changed Everything For Me',
-                'text' => "Christoph reflects on how personal AI assistants have changed his daily workflow — from calendar updates to searching the web less. An interesting take on where this technology is heading.",
+                'text' => 'Christoph reflects on how personal AI assistants have changed his daily workflow — from calendar updates to searching the web less. An interesting take on where this technology is heading.',
                 'external_url' => 'https://christoph-rumpel.com/2026/2/personal-ai-assistants-changed-everything-for-me',
                 'tags' => ['AI'],
                 'publish_date' => now()->subDays(9),
@@ -165,7 +165,7 @@ class PostSeeder extends Seeder
             ],
             [
                 'title' => 'Once again processing 11 million rows, now in seconds',
-                'text' => "Brent continues his optimization journey processing 11 million database events. Starting from 50k events per second, he reaches 400k events per second. A great deep dive into PHP performance optimization.",
+                'text' => 'Brent continues his optimization journey processing 11 million database events. Starting from 50k events per second, he reaches 400k events per second. A great deep dive into PHP performance optimization.',
                 'external_url' => 'https://stitcher.io/blog/11-million-rows-in-seconds',
                 'tags' => ['PHP', 'Performance'],
                 'publish_date' => now()->subDays(14),
