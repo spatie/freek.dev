@@ -80,15 +80,15 @@
                     @include('front.layouts.partials.carbon')
                 </div>
             </nav>
-            <main class="flex-1 min-w-0 px-4 md:px-12 lg:pl-24 lg:pr-16">
+            <main class="flex-1 min-w-0 px-4 md:px-12 lg:pl-12 lg:pr-8">
                 @if($wide)
                     {{ $slot }}
                 @else
-                    <div class="xl:grid xl:grid-cols-[1fr_280px] xl:gap-12">
-                        <div class="min-w-0">
+                    <div class="min-[1140px]:grid min-[1140px]:grid-cols-[1fr_220px] min-[1140px]:gap-8">
+                        <div class="min-w-0 max-w-xl min-[1140px]:max-w-none">
                             {{ $slot }}
                         </div>
-                        <aside class="hidden xl:block">
+                        <aside class="hidden min-[1140px]:block">
                             <div class="lg:sticky lg:top-8 lg:self-start space-y-8">
                                 @if(isset($sidebarTop))
                                     {{ $sidebarTop }}
