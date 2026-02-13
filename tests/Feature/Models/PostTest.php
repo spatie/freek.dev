@@ -50,7 +50,17 @@ it('will display unpublished post using a preview secret', function () {
 it('can render a series toc and next link on post', function () {
     $posts = PostFactory::series(10);
 
-    expect($posts->first()->refresh()->html)->toMatchSnapshot();
+    $html = $posts->first()->refresh()->html;
+
+    expect($html)
+        ->toContain('This post is a part of a series')
+        ->toContain('Part 0: Lorem ipsum <span class="font-italic font-light">(you are here)')
+        ->toContain('This is the blog post This series is continued in');
+
+    foreach ($posts->skip(1)->values() as $index => $post) {
+        $partNumber = $index + 1;
+        expect($html)->toContain("/{$post->idSlug()}\">Part {$partNumber}: Lorem ipsum</a>");
+    }
 });
 
 it('can get the twitter handle of the author', function () {

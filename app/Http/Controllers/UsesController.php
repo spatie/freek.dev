@@ -11,6 +11,10 @@ class UsesController
     {
         $post = Post::find(2357);
 
+        if (! $post) {
+            return view('front.uses-not-found');
+        }
+
         return view('front.posts.show', compact('post'));
     }
 }

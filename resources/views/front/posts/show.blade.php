@@ -16,6 +16,8 @@
         @endunless
     </x-post-header>
 
+    @include('front.posts.partials.post-navigation')
+
     <div class="mb-8">
         @include('front.posts.partials.share')
     </div>
@@ -24,18 +26,11 @@
         'class' => 'mb-8',
     ])
 
-    <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-gray-200 text-sm text-gray-700 mb-8 markup">
-        <p class="font-extrabold text-lg leading-tight mb-2 text-black">
-            Found something interesting to share?
-        </p>
-        <p>
-            The <a href="{{ route('community.index') }}">community section</a> is a place where developers share links to articles, tutorials and videos. <a href="{{ route('community.link.create') }}">Submit a link</a> and help fellow developers discover great content. As a thank you, you'll receive a coupon for a discount on <a href="https://spatie.be/products">Spatie products</a>.
-        </p>
-    </div>
+    @include('front.posts.partials.keep-reading')
 
-    @include('front.posts.partials.related')
-
-    @include('front.posts.partials.popular-now')
+    <p class="text-sm text-gray-600 mb-8">
+        Found something interesting to share? <a href="{{ route('community.link.create') }}" class="underline hover:text-black">Submit a link</a> to the <a href="{{ route('community.index') }}" class="underline hover:text-black">community section</a>.
+    </p>
 
     <x-slot name="seo">
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
