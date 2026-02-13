@@ -20,6 +20,8 @@ document.addEventListener('livewire:navigated', () => {
             fill: 'both',
         });
     });
+
+    Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
 });
 
 Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
