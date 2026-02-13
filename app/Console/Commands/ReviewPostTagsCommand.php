@@ -50,9 +50,7 @@ class ReviewPostTagsCommand extends Command
             $this->line("  Suggested: " . implode(', ', $suggestedTags));
 
             if (! $this->option('dry-run')) {
-                Post::withoutEvents(function () use ($post, $suggestedTags) {
-                    $post->syncTags($suggestedTags);
-                });
+                $post->syncTags($suggestedTags);
                 $this->info("  -> Updated");
             }
 
