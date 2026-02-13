@@ -1,13 +1,13 @@
 <x-app-layout :wide="true">
     @if($posts->onFirstPage())
-        <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
-            <div>
+        <div class="xl:grid xl:grid-cols-[1fr_280px] xl:gap-12">
+            <div class="min-w-0">
                 @include('front.posts.partials.list')
 
                 {{ $posts->links() }}
             </div>
 
-            <aside class="hidden lg:block">
+            <aside class="hidden xl:block">
                 @include('front.pages.partials.homepage-sidebar')
             </aside>
         </div>

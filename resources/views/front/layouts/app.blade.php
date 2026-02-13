@@ -84,11 +84,11 @@
                 @if($wide)
                     {{ $slot }}
                 @else
-                    <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+                    <div class="xl:grid xl:grid-cols-[1fr_280px] xl:gap-12">
                         <div class="min-w-0">
                             {{ $slot }}
                         </div>
-                        <aside class="hidden lg:block">
+                        <aside class="hidden xl:block">
                             <div class="lg:sticky lg:top-8 lg:self-start space-y-8">
                                 @if(isset($sidebarTop))
                                     {{ $sidebarTop }}
