@@ -21,7 +21,7 @@ class TaggingService
             ->values()
             ->implode(', ');
 
-        $input = $post->title . "\n\n" . strip_tags($post->text);
+        $input = $post->title."\n\n".strip_tags($post->text);
         $input = mb_substr($input, 0, 8000);
 
         $response = Prism::structured()
