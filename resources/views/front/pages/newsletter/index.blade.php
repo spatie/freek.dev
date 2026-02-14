@@ -3,11 +3,10 @@
     <div class="markup mb-8">
         <h1>Newsletter</h1>
         <p>
-            Every month I send out a newsletter containing lots of interesting stuff for the modern PHP developer.
+            Every month I send a newsletter to 9,000+ PHP and Laravel developers. It contains practical tips, interesting tutorials, opinions and packages I've been working on.
         </p>
         <p>
-            Expect quick tips, links to interesting tutorials, opinions and packages. Because I work with Laravel every
-            day there is an emphasis on that framework.
+            Because I work with Laravel every day and maintain over 300 open source packages, there's an emphasis on real-world Laravel development.
         </p>
         <p>
             Want to know what you're getting yourself into? Take a look at <a href="https://freek-dev.mailcoach.app/archive">the newsletter archive</a>.

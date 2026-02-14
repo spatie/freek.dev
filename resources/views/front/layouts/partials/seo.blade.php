@@ -2,11 +2,11 @@
     {{ $seo }}
 @else
 
-    <meta name="description" content="Freek Van der Herten is a developer and partner at Spatie.">
+    <meta name="description" content="Freek Van der Herten writes about Laravel, PHP and AI. Co-owner of Spatie, maintainer of 300+ open source packages with over 2 billion downloads.">
 
     <meta property="og:site_name" content="freek.dev">
     <meta property="og:locale" content="en_US">
-    <meta property="og:description" content="Freek Van der Herten is a Laravel enthusiast and PHP developer at Spatie.">
+    <meta property="og:description" content="Freek Van der Herten writes about Laravel, PHP and AI. Co-owner of Spatie, maintainer of 300+ open source packages with over 2 billion downloads.">
     <meta property="og:url" content="{{ request()->fullUrl() }}">
     <meta property="og:image" content="https://freek.dev/images/avatar-boxed.jpg"/>
     {{--

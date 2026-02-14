@@ -8,9 +8,9 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link href="https://github.com/freekmurze" rel="me">
 @isset($title)
-<title>{{ $title }} - Freek Van der Herten's blog on PHP, Laravel and JavaScript</title>
+<title>{{ $title }} - Freek Van der Herten's blog on Laravel, PHP and AI</title>
 @else
-<title>Freek Van der Herten's blog on PHP, Laravel and JavaScript</title>
+<title>Freek Van der Herten's blog on Laravel, PHP and AI</title>
 @endisset
 @isset($canonical)
 <link rel="canonical" href="{{ $canonical }}" />

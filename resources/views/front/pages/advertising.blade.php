@@ -3,7 +3,7 @@
         <h1>Advertising</h1>
         <p>
             The freek.dev blog and newsletter are read by an audience of PHP developers with a heavy interest in
-            Laravel, JavaScript, devops and personal/professional growth. You can get your brand or product in front of
+            Laravel, AI and devops. You can get your brand or product in front of
             that audience by running an ad on the blog and/or newsletter.
         </p>
         <p>
@@ -12,8 +12,7 @@
         </p>
         <h2>The blog</h2>
         <p>
-            In 2020 the blog had about 930 000 page views. If you want to view some more statistics and learn which pages were
-            the most popular read <a href="https://freek.dev/four-years-of-murzebe">this blog post</a>.
+            The blog gets about 14 000 page views and 9 000 unique visitors per month. The audience consists primarily of PHP and Laravel developers from around the world.
         </p>
         <p>
             An advertisement consists of text with two or three sentences that may contain links. I'll tag on
@@ -27,7 +26,7 @@
         <h2>The newsletter</h2>
         <p>
             The freek.dev newsletter is sent out every month to an audience of PHP developers with a heavy interest
-            in Laravel, JavaScript and devops.
+            in Laravel, AI and devops.
         </p>
         <p>
             An advertisement consists of a title, a link that goes behind it, and a short description of one or two

@@ -2,7 +2,7 @@
     <div class="markup | mb-8">
         <h1>Speaking</h1>
         <p>
-            I love public speaking about programming, particulary PHP, Laravel and JavaScript. The past few years I had the honor of speaking at a lot of conferences across the globe.
+            I love public speaking about programming, particularly PHP, Laravel and JavaScript. The past few years I had the honor of speaking at a lot of conferences across the globe.
         </p>
         <p>
             Most of my talks are very practical. I like to make people <i>feel</i> how and why a particular solution works. Below you can view videos of my talks. Some are recorded at conferences, some are recorded in the comfort of my own home.
