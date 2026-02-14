@@ -21,9 +21,6 @@
             Together with my friend <a href="https://x.com/mattiasgeniar">Mattias</a>, I run <a href="https://ohdear.app">Oh Dear</a>, a website monitoring service. It can notify you when your site is down, when it contains broken links, when it finds mixed content, and much more. <a href="https://ohdear.app/register">Try it out!</a>
         </p>
         <p>
-            Together with <a href="https://x.com/driesvints">Dries</a> I organise the <a href="https://fullstackeurope.com">Full Stack Europe</a> conference.
-        </p>
-        <p>
             Outside of programming, I'm passionate about music. I record music in <a href="https://www.ableton.com">Ableton</a> and have released a couple of EPs. You can listen to them on <a href="https://open.spotify.com/artist/6m5chdjU0M8j8bMmckXRkc">Spotify</a> or <a href="https://music.apple.com/be/artist/kobus/1529028832">Apple Music</a>.
         </p>
     </div>
