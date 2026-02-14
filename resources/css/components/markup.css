@@ -98,5 +98,5 @@
 }
 
 .markup iframe {
-    @apply w-full;
+    @apply w-full aspect-video;
 }

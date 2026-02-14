@@ -24,8 +24,6 @@ document.addEventListener('livewire:navigated', () => {
     Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
 });
 
-Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
-
 function lazy(element) {
     function observerCallback(entries, observer) {
         entries.forEach((entry) => {
