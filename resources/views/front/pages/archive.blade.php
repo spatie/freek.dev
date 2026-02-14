@@ -13,6 +13,9 @@
                         <a wire:navigate.hover href="{{ $post->url }}" class="font-medium text-gray-900 group-hover:text-black transition-colors">
                             {{ $post->title }}
                         </a>
+                        @if($post->isOriginal())
+                            <span class="text-[10px] font-medium text-gray-400 border border-gray-200 rounded-full px-1.5 py-0.5 align-middle ml-0.5">original</span>
+                        @endif
                         <span class="text-xs text-gray-400 ml-1.5 tabular-nums whitespace-nowrap">{{ $post->publish_date->format('M j') }}</span>
                     </li>
                 @endforeach

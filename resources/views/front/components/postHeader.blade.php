@@ -20,6 +20,9 @@
         @else
             {{ $post->title }}
         @endisset
+        @if($post->isOriginal())
+            <span class="text-[10px] font-medium text-gray-400 border border-gray-200 rounded-full px-1.5 py-0.5 align-middle ml-1">original</span>
+        @endif
     </{{ $heading ?? 'h1' }}>
 
     <p class="text-sm text-gray-700">
