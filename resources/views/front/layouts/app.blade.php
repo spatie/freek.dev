@@ -94,14 +94,16 @@
                             {{ $slot }}
                         </div>
                         <aside class="hidden min-[1140px]:block">
-                            <div class="sticky top-8 space-y-8">
+                            <div class="space-y-8">
                                 @unless($hideBio)
                                     @include('front.layouts.partials.bio')
                                 @endunless
                                 @if(isset($sidebarTop))
                                     {{ $sidebarTop }}
                                 @endif
-                                <x-ad/>
+                                <div class="sticky top-8">
+                                    <x-ad/>
+                                </div>
                             </div>
                         </aside>
                     </div>
