@@ -88,10 +88,13 @@ class NewsletterGenerator
                 $startDate,
                 $endDate,
             ])
-            ->orderByDesc('original_content')
             ->get()
-            ->sortBy(fn (Post $post) => $post->hasTag('php'))
-            ->$method->hasTag('tweet');
+            ->$method->hasTag('tweet')
+            ->sort(function (Post $a, Post $b) {
+                return ($b->original_content <=> $a->original_content)
+                    ?: ($a->hasTag('php') <=> $b->hasTag('php'));
+            })
+            ->values();
     }
 
     protected function ordinal(int $number): string
