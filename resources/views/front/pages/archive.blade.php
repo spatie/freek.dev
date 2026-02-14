@@ -13,7 +13,7 @@
                         <a wire:navigate.hover href="{{ $post->url }}" class="font-medium text-gray-900 group-hover:text-black transition-colors">
                             {{ $post->title }}
                         </a>
-                        <span class="text-xs text-gray-400 ml-1.5 tabular-nums">{{ $post->publish_date->format('M j') }}</span>
+                        <span class="text-xs text-gray-400 ml-1.5 tabular-nums whitespace-nowrap">{{ $post->publish_date->format('M j') }}</span>
                     </li>
                 @endforeach
             </ul>
