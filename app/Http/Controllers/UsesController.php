@@ -9,7 +9,7 @@ class UsesController
 {
     public function __invoke(): View
     {
-        $post = Post::find(2357);
+        $post = Post::find(3006);
 
         if (! $post) {
             return view('front.uses-not-found');
