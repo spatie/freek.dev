@@ -31,7 +31,7 @@ new class extends Component {
     <input wire:model.live="query"
            type="text"
            autofocus
-           placeholder="Laravel, PHP, JavaScript,…"
+           placeholder="Search 2000+ posts…"
            class="form-input mt-1 block w-full mb-4"
     />
 

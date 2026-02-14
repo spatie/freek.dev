@@ -12,7 +12,7 @@
         </p>
         <h2>The blog</h2>
         <p>
-            The blog gets about 14 000 page views and 9 000 unique visitors per month. The audience consists primarily of PHP and Laravel developers from around the world.
+            The blog gets about 15 000 page views and 10 000 unique visitors per month. The audience consists primarily of PHP and Laravel developers from around the world.
         </p>
         <p>
             An advertisement consists of text with two or three sentences that may contain links. I'll tag on
@@ -34,8 +34,8 @@
             As the newsletter should come over as very calm, images or logos are not allowed.
         </p>
         <p>
-            Currently the subscriber list contains about 9 000 members.
-        <p>
+            Currently the subscriber list contains about 9 500 members.
+        </p>
         <p>
             I suspect that a large portion of the readers use software that blocks trackers, so the actual open and
             click rates will probably be a bit higher. Rest assured that, because your ad will be text based, ad
