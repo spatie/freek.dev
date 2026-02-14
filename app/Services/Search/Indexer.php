@@ -9,7 +9,10 @@ class Indexer extends DefaultIndexer
     public function pageTitle(): ?string
     {
         return str_replace(
-            " - Freek Van der Herten's blog on PHP, Laravel and JavaScript",
+            [
+                " - Freek Van der Herten's blog on Laravel, PHP and AI",
+                " - Freek Van der Herten's blog on PHP, Laravel and JavaScript",
+            ],
             '',
             parent::pageTitle()
         );

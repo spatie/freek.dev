@@ -1,23 +1,11 @@
 <x-app-layout title="Archive {{ $year }}">
 
-    <div class="flex items-center justify-between mb-8">
-        <div class="w-24">
-            @if($previousYear)
-                <a wire:navigate.hover href="{{ route('archive', $previousYear) }}" class="text-sm text-gray-400 hover:text-black transition-colors">&larr; {{ $previousYear }}</a>
-            @endif
-        </div>
-
-        <h2 class="font-extrabold text-4xl leading-tight text-black">{{ $year }}</h2>
-
-        <div class="w-24 text-right">
-            @if($nextYear)
-                <a wire:navigate.hover href="{{ route('archive', $nextYear) }}" class="text-sm text-gray-400 hover:text-black transition-colors">{{ $nextYear }} &rarr;</a>
-            @endif
-        </div>
+    <div class="sticky top-0 bg-white z-20 py-4 mb-4">
+        <h2 class="font-extrabold text-4xl leading-tight text-black text-center">{{ $year }}</h2>
     </div>
 
     @foreach($posts as $month => $monthPosts)
-        <h3 class="font-bold text-sm uppercase tracking-wider text-gray-400 sticky top-0 bg-white py-2 z-10">{{ $month }}</h3>
+        <h3 class="font-bold text-sm uppercase tracking-wider text-gray-400 sticky top-[60px] bg-white py-2 z-10">{{ $month }}</h3>
 
         <ul class="mb-8 ml-4 border-l border-gray-200">
             @foreach($monthPosts as $post)
@@ -37,13 +25,13 @@
 
     <div class="flex items-center justify-between mt-8 pt-8 border-t border-gray-100">
         <div>
-            @if($previousYear)
-                <a wire:navigate.hover href="{{ route('archive', $previousYear) }}" class="text-sm text-gray-400 hover:text-black transition-colors">&larr; {{ $previousYear }}</a>
+            @if($nextYear)
+                <a wire:navigate.hover href="{{ route('archive', $nextYear) }}" class="text-sm text-gray-400 hover:text-black transition-colors">&larr; {{ $nextYear }}</a>
             @endif
         </div>
         <div>
-            @if($nextYear)
-                <a wire:navigate.hover href="{{ route('archive', $nextYear) }}" class="text-sm text-gray-400 hover:text-black transition-colors">{{ $nextYear }} &rarr;</a>
+            @if($previousYear)
+                <a wire:navigate.hover href="{{ route('archive', $previousYear) }}" class="text-sm text-gray-400 hover:text-black transition-colors">{{ $previousYear }} &rarr;</a>
             @endif
         </div>
     </div>
