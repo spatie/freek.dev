@@ -19,13 +19,15 @@ new class extends Component {
             ->unique()
             ->values();
 
-        $postTitles = Post::query()
+        $posts = Post::query()
+            ->with('tags')
             ->whereIn('id', $postIds)
-            ->pluck('title', 'id');
+            ->get()
+            ->keyBy('id');
 
         return [
             'hits' => $hits,
-            'postTitles' => $postTitles,
+            'posts' => $posts,
         ];
     }
 
@@ -69,13 +71,29 @@ new class extends Component {
                     @php
                         $path = ltrim(parse_url($hit->url, PHP_URL_PATH) ?? '', '/');
                         $postId = preg_match('/^(\d+)-/', $path, $m) ? (int) $m[1] : null;
-                        $title = $postId ? ($postTitles[$postId] ?? null) : null;
-                        $title ??= $hit->entry ? \Illuminate\Support\Str::limit(strip_tags($hit->entry), 80) : $hit->url;
+                        $post = $postId ? ($posts[$postId] ?? null) : null;
+                        $title = $post?->title ?? ($hit->entry ? \Illuminate\Support\Str::limit(strip_tags($hit->entry), 80) : $hit->url);
                     @endphp
-                    <li wire:key="{{ $hit->id }}" class="mb-6">
-                        <a href="{{ $hit->url }}">
-                            <div class="font-bold leading-tight hover:underline">{{ $title }}</div>
+                    <li wire:key="{{ $hit->id }}" class="mb-5 pb-5 border-b border-gray-100 last:border-0">
+                        <a wire:navigate.hover href="{{ $hit->url }}" class="font-bold leading-tight hover:underline">
+                            {{ $title }}
                         </a>
+                        @if($post?->isOriginal())
+                            <span class="text-[10px] font-medium text-gray-400 border border-gray-200 rounded-full px-1.5 py-0.5 align-middle ml-0.5">original</span>
+                        @endif
+                        @if($post?->publish_date)
+                            <span class="text-xs text-gray-400 ml-1.5 tabular-nums whitespace-nowrap">{{ $post->publish_date->format('M j, Y') }}</span>
+                        @endif
+                        @if($post?->tags->isNotEmpty())
+                            <div class="flex flex-wrap gap-1.5 mt-2">
+                                @foreach($post->tags->sortBy->name as $tag)
+                                    <a wire:navigate.hover href="{{ route('taggedPosts.index', $tag->slug) }}"
+                                       class="bg-gray-50 rounded-md px-2 py-0.5 text-[12px] text-gray-500 hover:bg-gray-100 hover:text-black transition-colors">
+                                        {{ $tag->name }}
+                                    </a>
+                                @endforeach
+                            </div>
+                        @endif
                     </li>
                 @endforeach
             </ul>
