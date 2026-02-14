@@ -21,7 +21,7 @@
 @vite(['resources/js/app.js'])
 
 <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
-<link href="https://twitter.com/freekmurze" rel="me">
+<link href="https://x.com/freekmurze" rel="me">
 <link rel="webmention" href="https://webmention.io/freek.dev/webmention" />
 <link rel="pingback" href="https://webmention.io/freek.dev/xmlrpc" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">

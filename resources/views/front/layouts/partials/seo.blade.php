@@ -28,7 +28,7 @@
     {
         "@context":"http:\/\/schema.org",
         "@type":"Person",
-        "sameAs":["https:\/\/twitter.com\/freekmurze"],
+        "sameAs":["https:\/\/x.com\/freekmurze"],
         "@id":"#person",
         "name":"Freek Van der Herten"
     }

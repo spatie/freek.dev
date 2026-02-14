@@ -8,6 +8,6 @@
     @include('front.newsletter.partials.form', ['class' => 'mb-4'])
     <p class="text-xs text-gray-500">
         No spam. Unsubscribe anytime.
-        You can also follow me on <a href="https://x.com/freekmurze">X</a>.
+        You can also <a href="https://x.com/freekmurze" class="text-gray-600 underline decoration-gray-300 hover:text-black hover:decoration-black transition-colors">follow me on X</a>.
     </p>
 </div>
