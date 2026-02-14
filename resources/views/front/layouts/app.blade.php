@@ -94,7 +94,7 @@
                             {{ $slot }}
                         </div>
                         <aside class="hidden min-[1140px]:block">
-                            <div class="space-y-8">
+                            <div class="space-y-8 h-full">
                                 @unless($hideBio)
                                     @include('front.layouts.partials.bio')
                                 @endunless
