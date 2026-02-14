@@ -8,7 +8,7 @@
     @include('front.layouts.partials.analytics')
     @include('front.layouts.partials.flash')
 
-    <div class="max-w-xl md:max-w-6xl mx-auto overflow-x-hidden">
+    <div class="max-w-xl md:max-w-6xl mx-auto overflow-x-clip">
         <header class="mt-8 md:mt-12 mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 leading-tight">
             <div class="md:flex items-end">
                 <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
@@ -89,7 +89,7 @@
                             {{ $slot }}
                         </div>
                         <aside class="hidden min-[1140px]:block">
-                            <div class="sticky top-8 self-start space-y-8">
+                            <div class="sticky top-8 space-y-8">
                                 @if(isset($sidebarTop))
                                     {{ $sidebarTop }}
                                 @endif

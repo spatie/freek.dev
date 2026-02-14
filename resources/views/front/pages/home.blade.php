@@ -9,6 +9,9 @@
 
             <aside class="hidden min-[1140px]:block">
                 @include('front.pages.partials.homepage-sidebar')
+                <div class="sticky top-8 mt-8">
+                    <x-ad/>
+                </div>
             </aside>
         </div>
     @else
