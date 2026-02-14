@@ -20,7 +20,8 @@ new class extends Component {
             ->values();
 
         $posts = Post::query()
-            ->with('tags')
+            ->select('id', 'title', 'original_content', 'publish_date')
+            ->with('tags:id,name,slug')
             ->whereIn('id', $postIds)
             ->get()
             ->keyBy('id');
@@ -57,7 +58,7 @@ new class extends Component {
 }; ?>
 
 <div>
-    <input wire:model.live="query"
+    <input wire:model.live.debounce.300ms="query"
            type="text"
            autofocus
            placeholder="Search 2000+ posts…"
