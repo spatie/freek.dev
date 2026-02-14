@@ -27,7 +27,7 @@ Route::middleware('signed')->prefix('links/{link}')->group(function () {
 Route::view('about', 'front.pages.about')->name('about');
 Route::view('advertising', 'front.pages.advertising')->name('advertising');
 Route::view('legal', 'front.pages.legal')->name('legal');
-Route::view('search', 'front.pages.search')->name('search');
+Route::view('search', 'front.pages.search')->middleware('doNotCacheResponse')->name('search');
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('music', MusicController::class)->name('music');
