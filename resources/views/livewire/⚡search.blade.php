@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Livewire\Component;
 use Livewire\Attributes\Url;
 use Spatie\SiteSearch\Search;
@@ -10,7 +11,22 @@ new class extends Component {
 
     public function with(): array
     {
-        return ['hits' => $this->getResults()];
+        $hits = $this->getResults();
+
+        $postIds = collect($hits)
+            ->map(fn ($hit) => $this->extractPostId($hit->url))
+            ->filter()
+            ->unique()
+            ->values();
+
+        $postTitles = Post::query()
+            ->whereIn('id', $postIds)
+            ->pluck('title', 'id');
+
+        return [
+            'hits' => $hits,
+            'postTitles' => $postTitles,
+        ];
     }
 
     public function getResults()
@@ -24,6 +40,17 @@ new class extends Component {
             ->query($this->query)
             ->get()
             ->hits;
+    }
+
+    private function extractPostId(string $url): ?int
+    {
+        $path = ltrim(parse_url($url, PHP_URL_PATH) ?? '', '/');
+
+        if (preg_match('/^(\d+)-/', $path, $matches)) {
+            return (int) $matches[1];
+        }
+
+        return null;
     }
 }; ?>
 
@@ -39,17 +66,15 @@ new class extends Component {
         @if (count($hits))
             <ul>
                 @foreach($hits as $hit)
+                    @php
+                        $path = ltrim(parse_url($hit->url, PHP_URL_PATH) ?? '', '/');
+                        $postId = preg_match('/^(\d+)-/', $path, $m) ? (int) $m[1] : null;
+                        $title = $postId ? ($postTitles[$postId] ?? null) : null;
+                        $title ??= $hit->entry ? \Illuminate\Support\Str::limit(strip_tags($hit->entry), 80) : $hit->url;
+                    @endphp
                     <li wire:key="{{ $hit->id }}" class="mb-6">
                         <a href="{{ $hit->url }}">
-                            @php
-                            $title = str_replace([
-                                " - Freek Van der Herten's blog on Laravel, PHP and AI",
-                                " - Freek Van der Herten's blog on PHP, Laravel and JavaScript",
-                                "Freek Van der Herten's blog on Laravel, PHP and AI",
-                                "Freek Van der Herten's blog on PHP, Laravel and JavaScript",
-                            ], '', $hit->title());
-                        @endphp
-                        <div class="font-bold leading-tight hover:underline">{{ trim($title) ?: $hit->h1 ?: $hit->url }}</div>
+                            <div class="font-bold leading-tight hover:underline">{{ $title }}</div>
                         </a>
                     </li>
                 @endforeach
