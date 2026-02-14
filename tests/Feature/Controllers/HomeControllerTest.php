@@ -60,6 +60,27 @@ it('does not show the sidebar on page 2', function () {
         ->assertDontSee('Popular content');
 });
 
+it('always shows priority tags first even with fewer posts', function () {
+    $popularPost = Post::factory()->count(5)->create([
+        'published' => true,
+        'publish_date' => now()->subDay(),
+    ]);
+
+    foreach ($popularPost as $post) {
+        $post->attachTag('other-popular-tag');
+    }
+
+    $aiPost = Post::factory()->create([
+        'published' => true,
+        'publish_date' => now()->subDay(),
+    ]);
+    $aiPost->attachTag('ai');
+
+    get('/')
+        ->assertOk()
+        ->assertSeeInOrder(['ai', 'other-popular-tag']);
+});
+
 it('does not include tags from unpublished posts', function () {
     $publishedPost = Post::factory()->create([
         'published' => true,
