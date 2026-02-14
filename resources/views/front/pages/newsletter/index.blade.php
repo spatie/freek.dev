@@ -3,10 +3,10 @@
     <div class="markup mb-8">
         <h1>Newsletter</h1>
         <p>
-            Every month I send a newsletter to 9,500+ PHP and Laravel developers. It contains practical tips, interesting tutorials, opinions and packages I've been working on.
+            Every month I share what I learn from running Spatie, building Oh Dear, and maintaining over 300 open source packages. That means practical tips on Laravel, PHP, and AI that come from shipping real products every day.
         </p>
         <p>
-            Because I work with Laravel every day and maintain over 300 open source packages, there's an emphasis on real-world Laravel development.
+            Expect honest takes, useful tutorials, and the occasional behind-the-scenes look at how we build and maintain things at Spatie. Over 9,500 smart developers already get it in their inbox.
         </p>
         <p>
             Want to know what you're getting yourself into? Take a look at <a href="https://freek-dev.mailcoach.app/archive">the newsletter archive</a>.

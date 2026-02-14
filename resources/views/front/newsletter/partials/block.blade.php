@@ -1,9 +1,9 @@
 <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-yellow-50 border-b-5 border-yellow-200 text-sm text-gray-700 {{ $class ?? '' }} markup">
     <p class="font-extrabold text-2xl leading-tight mb-2 text-black">
-        Join 9,000+ developers
+        Join 9,500+ smart developers
     </p>
     <p class="mb-4 text-base text-gray-600 leading-relaxed">
-        Every month, I share practical tips, tutorials, and behind-the-scenes insights from maintaining 300+ open source packages.
+        Every month I share what I learn from running Spatie, building Oh Dear, and maintaining 300+ open source packages. Practical takes on Laravel, PHP, and AI that you can actually use.
     </p>
     @include('front.newsletter.partials.form', ['class' => 'mb-4'])
     <p class="text-xs text-gray-500">
