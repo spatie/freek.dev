@@ -1,4 +1,4 @@
-@if($previousPost || $nextPost)
+@if(($previousPost ?? null) || ($nextPost ?? null))
     <div class="flex justify-between items-baseline text-sm text-gray-600 border-b border-gray-200 pb-8 mb-8">
         <div>
             @if($previousPost)
