@@ -66,18 +66,18 @@ new class extends Component {
     />
 
     @if ($query !== '')
-        @if (count($hits))
+        @if ($posts->isNotEmpty())
             <ul>
                 @foreach($hits as $hit)
                     @php
                         $path = ltrim(parse_url($hit->url, PHP_URL_PATH) ?? '', '/');
                         $postId = preg_match('/^(\d+)-/', $path, $m) ? (int) $m[1] : null;
                         $post = $postId ? ($posts[$postId] ?? null) : null;
-                        $title = $post?->title ?? ($hit->entry ? \Illuminate\Support\Str::limit(strip_tags($hit->entry), 80) : $hit->url);
                     @endphp
+                    @continue(! $post)
                     <li wire:key="{{ $hit->id }}" class="mb-5 pb-5 border-b border-gray-100 last:border-0">
                         <a wire:navigate.hover href="{{ $hit->url }}" class="font-bold leading-tight hover:underline">
-                            {{ $title }}
+                            {{ $post->title }}
                         </a>
                         @if($post?->isOriginal())
                             <span class="text-[10px] font-medium text-gray-400 border border-gray-200 rounded-full px-1.5 py-0.5 align-middle ml-0.5">original</span>
