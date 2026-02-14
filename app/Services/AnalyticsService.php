@@ -17,7 +17,7 @@ class AnalyticsService
     {
         return Cache::remember("analytics.overview.{$days}", self::CACHE_TTL_SECONDS, function () use ($days) {
             try {
-                $dailyData = Analytics::fetchTotalVisitorsAndPageViews(Period::days($days));
+                $dailyData = Analytics::fetchTotalVisitorsAndPageViews(Period::days($days), maxResults: $days + 1);
 
                 $totalPageViews = $dailyData->sum('screenPageViews');
                 $totalVisitors = $dailyData->sum('activeUsers');
@@ -56,7 +56,7 @@ class AnalyticsService
     {
         return Cache::remember("analytics.daily.{$days}", self::CACHE_TTL_SECONDS, function () use ($days) {
             try {
-                return Analytics::fetchTotalVisitorsAndPageViews(Period::days($days));
+                return Analytics::fetchTotalVisitorsAndPageViews(Period::days($days), maxResults: $days + 1);
             } catch (\Throwable $e) {
                 Log::error('Failed to fetch daily visitors', ['error' => $e->getMessage()]);
 

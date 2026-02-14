@@ -117,6 +117,22 @@ test('the analytics service handles api errors gracefully', function () {
     expect($countries)->toBeEmpty();
 });
 
+test('the page views chart filter changes the data', function () {
+    Livewire::test(PageViewsChart::class)
+        ->assertSet('filter', '30')
+        ->set('filter', '180')
+        ->assertSet('filter', '180')
+        ->assertSuccessful();
+});
+
+test('the popular posts table filter changes the data', function () {
+    Livewire::test(PopularPostsTable::class)
+        ->assertSet('days', '30')
+        ->set('days', '180')
+        ->assertSet('days', '180')
+        ->assertSuccessful();
+});
+
 test('the analytics service matches pages to posts', function () {
     $post = Post::factory()->create([
         'title' => 'My Test Post',

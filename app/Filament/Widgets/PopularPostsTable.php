@@ -9,17 +9,20 @@ use Filament\Widgets\TableWidget as BaseWidget;
 
 class PopularPostsTable extends BaseWidget
 {
-    protected static ?string $heading = 'Most Popular Posts';
-
     protected ?string $pollingInterval = null;
 
     protected int|string|array $columnSpan = 'full';
 
+    protected string $view = 'filament.widgets.popular-posts-table';
+
+    public string $days = '30';
+
     public function table(Table $table): Table
     {
         return $table
+            ->heading(null)
             ->records(function (): array {
-                $pages = app(AnalyticsService::class)->getMostVisitedPages(30, 50);
+                $pages = app(AnalyticsService::class)->getMostVisitedPages((int) $this->days, 50);
 
                 return $pages
                     ->filter(fn (array $page) => $page['postId'] !== null)
@@ -56,5 +59,14 @@ class PopularPostsTable extends BaseWidget
                     }),
             ])
             ->paginated([10, 25, 50]);
+    }
+
+    public function getFilters(): array
+    {
+        return [
+            '30' => 'Last 30 days',
+            '180' => 'Last 6 months',
+            '365' => 'Last year',
+        ];
     }
 }
