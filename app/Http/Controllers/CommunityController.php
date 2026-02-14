@@ -10,6 +10,7 @@ class CommunityController
     public function index(): View
     {
         $links = Link::query()
+            ->with('user')
             ->latest()
             ->approved()
             ->simplePaginate(20);

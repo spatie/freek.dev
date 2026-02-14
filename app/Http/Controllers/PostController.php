@@ -14,6 +14,23 @@ class PostController
 
         $ad = Ad::getForCurrentPage();
 
-        return view('front.posts.show', compact('post', 'ad'));
+        $previousPost = null;
+        $nextPost = null;
+
+        if ($post->publish_date) {
+            $previousPost = Post::query()
+                ->where('published', true)
+                ->where('publish_date', '<', $post->publish_date)
+                ->orderBy('publish_date', 'desc')
+                ->first();
+
+            $nextPost = Post::query()
+                ->where('published', true)
+                ->where('publish_date', '>', $post->publish_date)
+                ->orderBy('publish_date', 'asc')
+                ->first();
+        }
+
+        return view('front.posts.show', compact('post', 'ad', 'previousPost', 'nextPost'));
     }
 }

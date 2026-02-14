@@ -1,22 +1,3 @@
-@php
-    $previousPost = null;
-    $nextPost = null;
-
-    if ($post->publish_date) {
-        $previousPost = \App\Models\Post::query()
-            ->where('published', true)
-            ->where('publish_date', '<', $post->publish_date)
-            ->orderBy('publish_date', 'desc')
-            ->first();
-
-        $nextPost = \App\Models\Post::query()
-            ->where('published', true)
-            ->where('publish_date', '>', $post->publish_date)
-            ->orderBy('publish_date', 'asc')
-            ->first();
-    }
-@endphp
-
 @if($previousPost || $nextPost)
     <div class="flex justify-between items-baseline text-sm text-gray-600 border-b border-gray-200 pb-8 mb-8">
         <div>

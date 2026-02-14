@@ -61,13 +61,21 @@ class NewsletterGenerator
 
     public function getRecentCommunityLinks(): Collection
     {
-        return Link::approved()
+        $links = Link::query()
+            ->with('user')
+            ->approved()
             ->whereBetween('publish_date', [
                 $this->startDate->startOfDay(),
                 $this->endDate->endOfDay(),
             ])
-            ->get()
-            ->reject(fn (Link $link) => Post::where('external_url', $link->url)->exists());
+            ->get();
+
+        $existingUrls = Post::query()
+            ->whereIn('external_url', $links->pluck('url')->filter())
+            ->pluck('external_url')
+            ->flip();
+
+        return $links->reject(fn (Link $link) => $existingUrls->has($link->url));
     }
 
     protected function getOldPosts(): Collection

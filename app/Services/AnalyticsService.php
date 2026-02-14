@@ -71,9 +71,19 @@ class AnalyticsService
             try {
                 $pages = Analytics::fetchMostVisitedPages(Period::days($days), $max);
 
-                return $pages->map(function (array $page) {
+                $postIds = $pages
+                    ->map(fn (array $page) => $this->extractPostId($page['fullPageUrl']))
+                    ->filter();
+
+                $posts = Post::query()
+                    ->whereIn('id', $postIds)
+                    ->where('published', true)
+                    ->get()
+                    ->keyBy('id');
+
+                return $pages->map(function (array $page) use ($posts) {
                     $postId = $this->extractPostId($page['fullPageUrl']);
-                    $post = $postId ? Post::query()->where('published', true)->find($postId) : null;
+                    $post = $postId ? $posts->get($postId) : null;
 
                     return [
                         'url' => $page['fullPageUrl'],

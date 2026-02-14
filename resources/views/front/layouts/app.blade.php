@@ -1,4 +1,4 @@
-@props(['wide' => false, 'title' => null, 'canonical' => null])
+@props(['wide' => false, 'title' => null, 'canonical' => null, 'hideBio' => false])
 
 @include('front.layouts.partials.head')
 
@@ -95,6 +95,9 @@
                         </div>
                         <aside class="hidden min-[1140px]:block">
                             <div class="sticky top-8 space-y-8">
+                                @unless($hideBio)
+                                    @include('front.layouts.partials.bio')
+                                @endunless
                                 @if(isset($sidebarTop))
                                     {{ $sidebarTop }}
                                 @endif

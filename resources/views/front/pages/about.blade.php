@@ -1,4 +1,4 @@
-<x-app-layout title="About">
+<x-app-layout title="About" :hide-bio="true">
     <div class="markup mb-6">
         <h1>About</h1>
     </div>

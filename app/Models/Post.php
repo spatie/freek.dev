@@ -35,7 +35,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         InteractsWithMedia,
         PostPresenter;
 
-    public $with = ['tags'];
+    public $with = ['tags', 'submittedByUser'];
 
     protected function casts(): array
     {
@@ -188,8 +188,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
 
     public function hasTag(string $tagName): bool
     {
-        return $this->refresh()
-            ->tags
+        return $this->tags
             ->contains(fn (Tag $tag) => $tag->name === $tagName);
     }
 
