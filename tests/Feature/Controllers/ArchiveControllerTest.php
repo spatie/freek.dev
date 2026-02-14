@@ -4,72 +4,106 @@ use App\Models\Post;
 
 use function Pest\Laravel\get;
 
-it('can display the archive page with posts grouped by year and month', function () {
+it('shows the most recent year by default', function () {
     Post::factory()->create([
-        'title' => 'Archive post from January 2024',
+        'title' => 'Post from 2024',
         'published' => true,
         'publish_date' => '2024-01-15',
     ]);
 
     Post::factory()->create([
-        'title' => 'Archive post from March 2024',
+        'title' => 'Post from 2025',
         'published' => true,
-        'publish_date' => '2024-03-10',
-    ]);
-
-    Post::factory()->create([
-        'title' => 'Archive post from January 2025',
-        'published' => true,
-        'publish_date' => '2025-01-05',
+        'publish_date' => '2025-03-10',
     ]);
 
     get('/archive')
         ->assertOk()
-        ->assertSee('Archive post from January 2024')
-        ->assertSee('Archive post from March 2024')
-        ->assertSee('Archive post from January 2025')
-        ->assertSee('2024')
         ->assertSee('2025')
-        ->assertSee('January')
-        ->assertSee('March');
+        ->assertSee('Post from 2025')
+        ->assertDontSee('Post from 2024');
 });
 
-it('does not show unpublished posts on the archive page', function () {
+it('can display a specific year', function () {
     Post::factory()->create([
-        'title' => 'A published archive post',
+        'title' => 'Post from 2024',
+        'published' => true,
+        'publish_date' => '2024-06-15',
+    ]);
+
+    Post::factory()->create([
+        'title' => 'Post from 2025',
+        'published' => true,
+        'publish_date' => '2025-01-05',
+    ]);
+
+    get('/archive/2024')
+        ->assertOk()
+        ->assertSee('2024')
+        ->assertSee('Post from 2024')
+        ->assertDontSee('Post from 2025');
+});
+
+it('shows navigation links to adjacent years', function () {
+    Post::factory()->create([
+        'published' => true,
+        'publish_date' => '2023-01-15',
+    ]);
+
+    Post::factory()->create([
+        'published' => true,
+        'publish_date' => '2024-06-15',
+    ]);
+
+    Post::factory()->create([
+        'published' => true,
+        'publish_date' => '2025-01-05',
+    ]);
+
+    get('/archive/2024')
+        ->assertOk()
+        ->assertSee('2023')
+        ->assertSee('2025');
+});
+
+it('groups posts by month within a year', function () {
+    Post::factory()->create([
+        'title' => 'January post',
+        'published' => true,
+        'publish_date' => '2024-01-15',
+    ]);
+
+    Post::factory()->create([
+        'title' => 'March post',
+        'published' => true,
+        'publish_date' => '2024-03-10',
+    ]);
+
+    get('/archive/2024')
+        ->assertOk()
+        ->assertSee('January')
+        ->assertSee('March')
+        ->assertSee('January post')
+        ->assertSee('March post');
+});
+
+it('does not show unpublished posts', function () {
+    Post::factory()->create([
+        'title' => 'A published post',
         'published' => true,
         'publish_date' => now()->subDay(),
     ]);
 
     Post::factory()->create([
-        'title' => 'An unpublished archive post',
+        'title' => 'An unpublished post',
         'published' => false,
         'publish_date' => null,
     ]);
 
     get('/archive')
         ->assertOk()
-        ->assertSee('A published archive post')
-        ->assertDontSee('An unpublished archive post');
-});
-
-it('does not crash when a published post has no publish date', function () {
-    Post::factory()->create([
-        'title' => 'Post with date',
-        'published' => true,
-        'publish_date' => now()->subDay(),
-    ]);
-
-    Post::factory()->create([
-        'title' => 'Post without date',
-        'published' => true,
-        'publish_date' => null,
-    ]);
-
-    get('/archive')
-        ->assertOk()
-        ->assertSee('Post with date')
-        ->assertDontSee('Post without date');
+        ->assertSee('A published post')
+        ->assertDontSee('An unpublished post');
 });
 
 it('shows an empty archive page when there are no posts', function () {
