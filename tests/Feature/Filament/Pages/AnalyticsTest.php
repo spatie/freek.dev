@@ -140,3 +140,27 @@ test('the analytics service matches pages to posts', function () {
         ->and($postPage['postTitle'])->toBe('My Test Post')
         ->and($postPage['pageViews'])->toBe(200);
 });
+
+test('the analytics service matches pages to posts when urls have no scheme', function () {
+    $post = Post::factory()->create([
+        'title' => 'My Test Post',
+        'published' => true,
+        'publish_date' => now()->subDay(),
+    ]);
+
+    AnalyticsFacade::swap(new FakeAnalytics(collect([
+        ['pageTitle' => 'My Test Post', 'fullPageUrl' => "freek.dev/{$post->id}-my-test-post", 'screenPageViews' => 200],
+        ['pageTitle' => 'Homepage', 'fullPageUrl' => 'freek.dev/', 'screenPageViews' => 500],
+    ])));
+
+    cache()->flush();
+
+    $service = new AnalyticsService;
+    $pages = $service->getMostVisitedPages(30);
+
+    $postPage = $pages->first(fn (array $page) => $page['postId'] === $post->id);
+
+    expect($postPage)->not->toBeNull()
+        ->and($postPage['postTitle'])->toBe('My Test Post')
+        ->and($postPage['pageViews'])->toBe(200);
+});
