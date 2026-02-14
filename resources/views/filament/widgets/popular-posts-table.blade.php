@@ -1,4 +1,4 @@
-<x-filament-widgets::widget class="fi-wi-table">
+<x-filament-widgets::widget class="fi-wi-table mb-6">
     <div class="flex items-center justify-between gap-x-3 px-4 pt-4 sm:px-6">
         <h3 class="fi-section-heading text-base font-semibold leading-6 text-gray-950 dark:text-white">
             Most Popular Posts

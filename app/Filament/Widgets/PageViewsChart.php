@@ -27,7 +27,7 @@ class PageViewsChart extends ChartWidget
     protected function getData(): array
     {
         $days = (int) $this->filter;
-        $dailyData = app(AnalyticsService::class)->getDailyVisitors($days);
+        $dailyData = app(AnalyticsService::class)->getDailyVisitors($days)->reverse()->values();
 
         return [
             'datasets' => [
