@@ -2,14 +2,14 @@
     <div class="flex justify-between items-baseline text-sm text-gray-600 border-b border-gray-200 pb-8 mb-8">
         <div>
             @if($previousPost)
-                <a wire:navigate.hover href="{{ $previousPost->url }}" class="hover:text-black transition-colors">
+                <a href="{{ $previousPost->url }}" class="hover:text-black transition-colors">
                     &larr; {{ $previousPost->title }}
                 </a>
             @endif
         </div>
         <div class="text-right">
             @if($nextPost)
-                <a wire:navigate.hover href="{{ $nextPost->url }}" class="hover:text-black transition-colors">
+                <a href="{{ $nextPost->url }}" class="hover:text-black transition-colors">
                     {{ $nextPost->title }} &rarr;
                 </a>
             @endif

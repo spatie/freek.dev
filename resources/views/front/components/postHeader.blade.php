@@ -10,11 +10,9 @@
         @isset($url)
             <a
                 href="{{ $url }}"
-                @if(\Illuminate\Support\Str::startsWith($url, ['/', url('/')]))
-                    wire:navigate.hover
-                @else
+                @unless(\Illuminate\Support\Str::startsWith($url, ['/', url('/')]))
                     target="_blank" rel="noopener noreferrer"
-                @endif
+                @endunless
             >{{ $post->title }}
             </a>
         @else
@@ -68,7 +66,6 @@
         <div class="flex flex-wrap gap-1.5 mt-2 max-w-lg">
             @foreach($post->tags->sortBy->name as $tag)
                 <a
-                    wire:navigate.hover
                     href="{{ route('taggedPosts.index', $tag->slug) }}"
                     class="bg-gray-50 rounded-md px-2.5 py-1 text-[13px] text-gray-500 hover:bg-gray-100 hover:text-black transition-colors"
                 >

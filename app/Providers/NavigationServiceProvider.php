@@ -20,7 +20,6 @@ class NavigationServiceProvider extends ServiceProvider
             ->url('music', 'Music')
             ->url('uses', 'Uses')
             ->url('about', 'About')
-            ->each(fn (Link $link) => $link->setAttribute('wire:navigate.hover'))
             ->setActiveFromRequest());
 
         Menu::macro('secondary', function () {
@@ -28,7 +27,6 @@ class NavigationServiceProvider extends ServiceProvider
                 ->addClass('space-y-2')
                 ->url('search', 'Search')
                 ->url('advertising', 'Advertising')
-                ->each(fn (Link $link) => $link->setAttribute('wire:navigate.hover'))
                 ->setActiveFromRequest();
         });
     }

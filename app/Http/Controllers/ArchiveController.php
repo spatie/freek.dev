@@ -19,18 +19,25 @@ class ArchiveController
 
         $year = $year ?? $availableYears->first();
 
-        $posts = Post::query()
-            ->published()
-            ->whereNotNull('publish_date')
-            ->whereYear('publish_date', $year)
-            ->get()
-            ->groupBy(fn (Post $post) => $post->publish_date->format('F'));
+        $yearIndex = $availableYears->search($year);
+        $years = $availableYears->slice($yearIndex, 3)->values();
 
-        $previousYear = $availableYears->first(fn (int $availableYear) => $availableYear < $year);
+        $postsByYear = $years->mapWithKeys(function (int $y) {
+            $posts = Post::query()
+                ->published()
+                ->whereNotNull('publish_date')
+                ->whereYear('publish_date', $y)
+                ->get()
+                ->groupBy(fn (Post $post) => $post->publish_date->format('F'));
+
+            return [$y => $posts];
+        });
+
+        $previousYear = $availableYears->first(fn (int $availableYear) => $availableYear < $years->last());
         $nextYear = $availableYears->first(fn (int $availableYear) => $availableYear > $year);
 
         return view('front.pages.archive', [
-            'posts' => $posts,
+            'postsByYear' => $postsByYear,
             'year' => $year,
             'previousYear' => $previousYear,
             'nextYear' => $nextYear,

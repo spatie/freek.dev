@@ -18,7 +18,7 @@
                     @endif
                 </p>
                 <div class="flex items-center gap-3">
-                    <a wire:navigate.hover href="{{ route('community.link.create') }}" class="text-gray-500 underline hover:text-black">Submit a link</a>
+                    <a href="{{ route('community.link.create') }}" class="text-gray-500 underline hover:text-black">Submit a link</a>
                     <form method="post" action="/logout">
                         @csrf
                         <button class="text-gray-400 hover:text-black" type="submit">Log out</button>
@@ -27,7 +27,7 @@
             @endauth
             @guest
                 <p>
-                    <a wire:navigate.hover href="{{ route('community.link.create') }}" class="text-gray-500 underline hover:text-black">Log in to submit a link</a>
+                    <a href="{{ route('community.link.create') }}" class="text-gray-500 underline hover:text-black">Log in to submit a link</a>
                 </p>
             @endguest
         </div>

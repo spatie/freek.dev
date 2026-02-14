@@ -20,7 +20,7 @@
                 <li class="flex items-baseline gap-2">
                     <span class="w-1.5 h-1.5 rounded-full shrink-0 mt-1.5" style="background-color: {{ $keepReadingPost->theme }}"></span>
                     <div>
-                        <a wire:navigate.hover href="{{ $keepReadingPost->url }}" class="font-semibold text-black hover:underline">
+                        <a href="{{ $keepReadingPost->url }}" class="font-semibold text-black hover:underline">
                             {{ $keepReadingPost->title }}
                         </a>
                         <span class="text-xs text-gray-500 ml-1">{{ $keepReadingPost->reading_time }} min read</span>

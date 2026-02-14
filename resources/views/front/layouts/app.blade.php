@@ -12,7 +12,7 @@
         <header class="mt-8 md:mt-12 mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 leading-tight">
             <div class="md:flex items-end">
                 <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
-                    <a wire:navigate.hover href="/" title="Freek.dev">
+                    <a href="/" title="Freek.dev">
                         <svg class="w-full" viewBox="0 0 285 300" xmlns="http://www.w3.org/2000/svg" aria-label="Freek.dev logotype">
                             <g fill="none" fill-rule="evenodd">
                                 <path fill="#FFF" d="M15 15h240v255H15z"/>
@@ -34,7 +34,7 @@
                 </figure>
                 <div>
                     <h1 class="text-lg uppercase tracking-wider font-extrabold">
-                        <a wire:navigate.hover href="/">Freek.dev</a>
+                        <a href="/">Freek.dev</a>
                     </h1>
                     <p class="text-sm font-bold text-gray-600">
                         <a href="/">

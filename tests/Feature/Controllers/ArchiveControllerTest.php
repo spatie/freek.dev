@@ -4,7 +4,19 @@ use App\Models\Post;
 
 use function Pest\Laravel\get;
 
-it('shows the most recent year by default', function () {
+it('shows the most recent three years by default', function () {
+    Post::factory()->create([
+        'title' => 'Post from 2022',
+        'published' => true,
+        'publish_date' => '2022-01-15',
+    ]);
+
+    Post::factory()->create([
+        'title' => 'Post from 2023',
+        'published' => true,
+        'publish_date' => '2023-06-10',
+    ]);
+
     Post::factory()->create([
         'title' => 'Post from 2024',
         'published' => true,
@@ -21,7 +33,11 @@ it('shows the most recent year by default', function () {
         ->assertOk()
         ->assertSee('2025')
         ->assertSee('Post from 2025')
-        ->assertDontSee('Post from 2024');
+        ->assertSee('2024')
+        ->assertSee('Post from 2024')
+        ->assertSee('2023')
+        ->assertSee('Post from 2023')
+        ->assertDontSee('Post from 2022');
 });
 
 it('can display a specific year', function () {

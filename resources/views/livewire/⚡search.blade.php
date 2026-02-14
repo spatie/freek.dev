@@ -76,7 +76,7 @@ new class extends Component {
                     @endphp
                     @continue(! $post)
                     <li wire:key="{{ $hit->id }}" class="mb-5 pb-5 border-b border-gray-100 last:border-0">
-                        <a wire:navigate.hover href="{{ $hit->url }}" class="font-bold leading-tight hover:underline">
+                        <a href="{{ $hit->url }}" class="font-bold leading-tight hover:underline">
                             {{ $post->title }}
                         </a>
                         @if($post?->isOriginal())
@@ -88,7 +88,7 @@ new class extends Component {
                         @if($post?->tags->isNotEmpty())
                             <div class="flex flex-wrap gap-1.5 mt-2">
                                 @foreach($post->tags->sortBy->name as $tag)
-                                    <a wire:navigate.hover href="{{ route('taggedPosts.index', $tag->slug) }}"
+                                    <a href="{{ route('taggedPosts.index', $tag->slug) }}"
                                        class="bg-gray-50 rounded-md px-2 py-0.5 text-[12px] text-gray-500 hover:bg-gray-100 hover:text-black transition-colors">
                                         {{ $tag->name }}
                                     </a>

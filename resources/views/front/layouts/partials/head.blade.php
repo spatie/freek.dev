@@ -7,12 +7,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link href="https://github.com/freekmurze" rel="me">
-@if($title)
+@if($title ?? null)
 <title>{{ $title }} - Freek Van der Herten's blog on Laravel, PHP and AI</title>
 @else
 <title>Freek Van der Herten's blog on Laravel, PHP and AI</title>
 @endif
-@if($canonical)
+@if($canonical ?? null)
 <link rel="canonical" href="{{ $canonical }}" />
 @endif
 @include('feed::links')

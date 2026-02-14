@@ -9,7 +9,6 @@
             <div class="flex flex-wrap gap-1.5">
                 @foreach($topTags as $tag)
                     <a
-                        wire:navigate.hover
                         href="{{ route('taggedPosts.index', $tag->slug) }}"
                         class="bg-gray-50 rounded-md px-2.5 py-1 text-[13px] text-gray-500 hover:bg-gray-100 hover:text-black transition-colors"
                     >
@@ -29,7 +28,6 @@
                 @foreach($popularPosts as $popularPost)
                     <li>
                         <a
-                            wire:navigate.hover
                             href="{{ $popularPost->url }}"
                             class="text-[13px] leading-snug text-gray-600 hover:text-black transition-colors"
                         >
@@ -39,7 +37,7 @@
                 @endforeach
             </ul>
             <p class="mt-4">
-                <a wire:navigate.hover href="{{ route('originals') }}" class="text-[12px] text-gray-400 hover:text-black transition-colors">
+                <a href="{{ route('originals') }}" class="text-[12px] text-gray-400 hover:text-black transition-colors">
                     Browse all originals &rarr;
                 </a>
             </p>
