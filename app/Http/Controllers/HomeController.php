@@ -20,31 +20,36 @@ class HomeController
             return view('front.pages.home', compact('posts'));
         }
 
-        $priorityTags = ['laravel', 'php', 'ai'];
+        $priorityTagNames = ['laravel', 'php', 'ai', 'spatie'];
 
-        $topTags = Tag::query()
+        $publishedPostCountSubquery = DB::table('taggables')
+            ->join('posts', function ($join) {
+                $join->on('taggables.taggable_id', '=', 'posts.id')
+                    ->where('taggables.taggable_type', (new Post)->getMorphClass());
+            })
+            ->whereNotNull('posts.publish_date')
+            ->where('posts.published', true)
+            ->whereColumn('taggables.tag_id', 'tags.id')
+            ->selectRaw('count(*)');
+
+        $priorityTags = Tag::query()
             ->select('tags.*')
-            ->selectSub(
-                DB::table('taggables')
-                    ->join('posts', function ($join) {
-                        $join->on('taggables.taggable_id', '=', 'posts.id')
-                            ->where('taggables.taggable_type', (new Post)->getMorphClass());
-                    })
-                    ->whereNotNull('posts.publish_date')
-                    ->where('posts.published', true)
-                    ->whereColumn('taggables.tag_id', 'tags.id')
-                    ->selectRaw('count(*)'),
-                'published_post_count'
-            )
+            ->selectSub($publishedPostCountSubquery, 'published_post_count')
+            ->whereIn('name->en', $priorityTagNames)
+            ->having('published_post_count', '>', 0)
+            ->get()
+            ->sortBy(fn (Tag $tag) => array_search($tag->name, $priorityTagNames));
+
+        $remainingTags = Tag::query()
+            ->select('tags.*')
+            ->selectSub(clone $publishedPostCountSubquery, 'published_post_count')
+            ->whereNotIn('name->en', $priorityTagNames)
             ->having('published_post_count', '>', 0)
             ->orderByDesc('published_post_count')
-            ->limit(10)
+            ->limit(10 - $priorityTags->count())
             ->get();
 
-        $topTags = $topTags->filter(fn (Tag $tag) => in_array($tag->name, $priorityTags))
-            ->sortBy(fn (Tag $tag) => array_search($tag->name, $priorityTags))
-            ->merge($topTags->reject(fn (Tag $tag) => in_array($tag->name, $priorityTags)))
-            ->values();
+        $topTags = $priorityTags->merge($remainingTags)->values();
 
         $popularPosts = $popularPostsService->getPopularPosts(8);
 
