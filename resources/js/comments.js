@@ -1,4 +1,4 @@
-const EMOJIS = ['👍', '👎', '😄', '🎉', '😕', '❤️', '🚀', '👀'];
+const EMOJIS = ['👍', '😄', '🎉', '❤️', '🚀', '👀'];
 const STORAGE_KEY = 'commenter';
 
 function getAuth() {
