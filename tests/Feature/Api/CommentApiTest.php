@@ -11,7 +11,7 @@ use function Pest\Laravel\postJson;
 
 function createCommenterWithToken(): array
 {
-    $plainToken = 'test-token-' . Str::random(32);
+    $plainToken = 'test-token-'.Str::random(32);
 
     $commenter = Commenter::factory()->create([
         'token' => hash('sha256', $plainToken),
