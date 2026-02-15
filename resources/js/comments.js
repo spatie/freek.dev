@@ -100,7 +100,7 @@ function renderPostReactionBar(reactions, onToggle, auth, onSignIn) {
             className: reactionBtnClass(isActive),
             onClick: () => auth ? onToggle(emoji) : onSignIn(),
         }, [
-            h('span', {}, emoji),
+            h('span', { className: 'leading-none' }, emoji),
             ...(count > 0 ? [h('span', {}, String(count))] : []),
         ]);
 
@@ -125,7 +125,7 @@ function renderCommentReactionBar(reactions, onToggle, auth, onSignIn) {
             className: reactionBtnClass(isActive),
             onClick: () => auth ? onToggle(emoji) : onSignIn(),
         }, [
-            h('span', {}, emoji),
+            h('span', { className: 'leading-none' }, emoji),
             h('span', {}, String(count)),
         ]));
     }
