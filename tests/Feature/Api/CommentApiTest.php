@@ -11,7 +11,6 @@ use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
 
-
 function createCommenterWithToken(): array
 {
     $plainToken = 'test-token-'.Str::random(32);
