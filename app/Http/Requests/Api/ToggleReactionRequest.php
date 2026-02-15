@@ -2,10 +2,12 @@
 
 namespace App\Http\Requests\Api;
 
+use App\Enums\Emoji;
 use App\Models\Commenter;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Enum;
 
-class StoreCommentRequest extends FormRequest
+class ToggleReactionRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -16,7 +18,7 @@ class StoreCommentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'body' => ['required', 'string', 'max:10000'],
+            'emoji' => ['required', 'string', new Enum(Emoji::class)],
         ];
     }
 

@@ -126,6 +126,7 @@ it('forbids non-owner non-admin from deleting comment', function () {
 
 it('sends a notification email when a comment is posted', function () {
     Mail::fake();
+    $this->withoutMiddleware(\Illuminate\Routing\Middleware\ThrottleRequests::class);
 
     [$commenter, $token] = createCommenterWithToken();
     $post = Post::factory()->create();
