@@ -12,7 +12,7 @@ class CommenterFactory extends Factory
             'github_id' => $this->faker->unique()->randomNumber(8),
             'username' => $this->faker->userName(),
             'name' => $this->faker->name(),
-            'avatar_url' => 'https://avatars.githubusercontent.com/u/' . $this->faker->randomNumber(8),
+            'avatar_url' => 'https://avatars.githubusercontent.com/u/'.$this->faker->randomNumber(8),
             'token' => hash('sha256', $this->faker->uuid()),
             'is_admin' => false,
         ];
