@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\Admin;
+use App\Http\Middleware\AuthenticateCommenter;
 use App\Http\Middleware\CacheForCloudflare;
 use App\Http\Middleware\VerifyCsrfToken;
 use App\Providers\BladeComponentServiceProvider;
@@ -62,6 +63,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => Admin::class,
             'cacheResponse' => CacheResponse::class,
+            'commenter' => AuthenticateCommenter::class,
             'doNotCacheResponse' => DoNotCacheResponse::class,
         ]);
     })
