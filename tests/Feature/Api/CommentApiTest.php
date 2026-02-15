@@ -1,13 +1,16 @@
 <?php
 
+use App\Mail\NewCommentMail;
 use App\Models\Comment;
 use App\Models\Commenter;
 use App\Models\Post;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
+
 
 function createCommenterWithToken(): array
 {
@@ -121,9 +124,26 @@ it('forbids non-owner non-admin from deleting comment', function () {
         ->assertForbidden();
 });
 
+it('sends a notification email when a comment is posted', function () {
+    Mail::fake();
+
+    [$commenter, $token] = createCommenterWithToken();
+    $post = Post::factory()->create();
+
+    postJson("/api/posts/{$post->id}/comments", ['body' => 'Great post!'], [
+        'Authorization' => "Bearer {$token}",
+    ])->assertCreated();
+
+    Mail::assertQueued(NewCommentMail::class, function (NewCommentMail $mail) {
+        return $mail->hasTo('freek@spatie.be');
+    });
+});
+
 it('strips html from markdown comment body', function () {
     [$commenter, $token] = createCommenterWithToken();
     $post = Post::factory()->create();
+
+    $this->withoutMiddleware(\Illuminate\Routing\Middleware\ThrottleRequests::class);
 
     postJson("/api/posts/{$post->id}/comments", ['body' => '<script>alert("xss")</script>Hello'], [
         'Authorization' => "Bearer {$token}",

@@ -20,22 +20,8 @@ class CommentReactionController
         /** @var Commenter $commenter */
         $commenter = $request->attributes->get('commenter');
 
-        $existing = $comment->reactions()
-            ->where('commenter_id', $commenter->id)
-            ->where('emoji', $request->input('emoji'))
-            ->first();
+        $toggled = $comment->toggleReaction($commenter->id, $request->input('emoji'));
 
-        if ($existing) {
-            $existing->delete();
-
-            return response()->json(['toggled' => false]);
-        }
-
-        $comment->reactions()->create([
-            'commenter_id' => $commenter->id,
-            'emoji' => $request->input('emoji'),
-        ]);
-
-        return response()->json(['toggled' => true]);
+        return response()->json(['toggled' => $toggled]);
     }
 }

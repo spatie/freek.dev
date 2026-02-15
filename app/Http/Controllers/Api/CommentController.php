@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Mail\NewCommentMail;
 use App\Models\Comment;
 use App\Models\Commenter;
 use App\Models\Post;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class CommentController
 {
     public function index(Post $post): JsonResponse
     {
+        $post->load('reactions');
+
         $comments = $post->comments()
             ->with('commenter', 'reactions')
             ->orderBy('created_at')
@@ -27,14 +31,12 @@ class CommentController
                     'name' => $comment->commenter->name,
                     'avatar_url' => $comment->commenter->avatar_url,
                 ],
-                'reactions' => $this->groupReactions($comment),
+                'reactions' => $comment->groupedReactions(),
             ]);
-
-        $postReactions = $this->groupReactions($post);
 
         return response()->json([
             'comments' => $comments,
-            'post_reactions' => $postReactions,
+            'post_reactions' => $post->groupedReactions(),
         ]);
     }
 
@@ -55,7 +57,7 @@ class CommentController
             'body_html' => Str::markdown($body, ['html_input' => 'strip']),
         ]);
 
-        $comment->load('commenter');
+        Mail::to('freek@spatie.be')->queue(new NewCommentMail($comment, $post));
 
         return response()->json([
             'id' => $comment->id,
@@ -83,22 +85,5 @@ class CommentController
         $comment->delete();
 
         return response()->json(null, 204);
-    }
-
-    /** @return array<string, array{count: int, commenter_ids: int[]}> */
-    private function groupReactions(Post|Comment $model): array
-    {
-        $grouped = [];
-
-        foreach ($model->reactions as $reaction) {
-            if (! isset($grouped[$reaction->emoji])) {
-                $grouped[$reaction->emoji] = ['count' => 0, 'commenter_ids' => []];
-            }
-
-            $grouped[$reaction->emoji]['count']++;
-            $grouped[$reaction->emoji]['commenter_ids'][] = $reaction->commenter_id;
-        }
-
-        return $grouped;
     }
 }

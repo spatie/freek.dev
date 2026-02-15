@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Concerns\HasReactions;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Spatie\Feed\Feedable;
@@ -32,6 +32,7 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     public const TYPE_ORIGINAL = 'originalPost';
 
     use HasFactory,
+        HasReactions,
         HasSlug,
         HasTags,
         InteractsWithMedia,
@@ -72,11 +73,6 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
-    }
-
-    public function reactions(): MorphMany
-    {
-        return $this->morphMany(Reaction::class, 'reactable');
     }
 
     public function scopePublished(Builder $query): void

@@ -80,8 +80,16 @@ function h(tag, attrs = {}, children = []) {
     return el;
 }
 
-function renderReactionBar(reactions, onToggle, auth, onSignIn) {
-    const bar = h('div', { className: 'flex flex-wrap gap-1.5 items-center' });
+function reactionBtnClass(isActive) {
+    if (isActive) {
+        return 'inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-xs border border-blue-300 bg-blue-50 text-blue-700 cursor-pointer transition-colors';
+    }
+    return 'inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-xs border border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50 cursor-pointer transition-colors';
+}
+
+// Full reaction bar — shows all 8 emojis (used for post-level reactions)
+function renderPostReactionBar(reactions, onToggle, auth, onSignIn) {
+    const bar = h('div', { className: 'flex flex-wrap gap-1 items-center' });
 
     for (const emoji of EMOJIS) {
         const data = reactions[emoji];
@@ -89,19 +97,73 @@ function renderReactionBar(reactions, onToggle, auth, onSignIn) {
         const isActive = auth && data?.commenter_ids?.includes(auth.commenter.id);
 
         const btn = h('button', {
-            className: `inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-sm border transition-colors ${
-                isActive
-                    ? 'border-blue-300 bg-blue-50 text-blue-700'
-                    : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50'
-            } cursor-pointer`,
+            className: reactionBtnClass(isActive),
             onClick: () => auth ? onToggle(emoji) : onSignIn(),
         }, [
             h('span', {}, emoji),
-            ...(count > 0 ? [h('span', { className: 'text-xs' }, String(count))] : []),
+            ...(count > 0 ? [h('span', {}, String(count))] : []),
         ]);
 
         bar.appendChild(btn);
     }
+
+    return bar;
+}
+
+// Compact reaction bar — only shows emojis with counts + a "+" picker (used for comments)
+function renderCommentReactionBar(reactions, onToggle, auth, onSignIn) {
+    const bar = h('div', { className: 'flex flex-wrap gap-1 items-center' });
+
+    for (const emoji of EMOJIS) {
+        const data = reactions[emoji];
+        const count = data?.count || 0;
+        if (count === 0 && !(auth && data?.commenter_ids?.includes(auth?.commenter?.id))) continue;
+
+        const isActive = auth && data?.commenter_ids?.includes(auth.commenter.id);
+
+        bar.appendChild(h('button', {
+            className: reactionBtnClass(isActive),
+            onClick: () => auth ? onToggle(emoji) : onSignIn(),
+        }, [
+            h('span', {}, emoji),
+            h('span', {}, String(count)),
+        ]));
+    }
+
+    // Add reaction "+" button with picker
+    const wrapper = h('div', { className: 'relative inline-block' });
+
+    const addBtn = h('button', {
+        className: 'inline-flex items-center justify-center w-6 h-6 rounded-full text-xs border border-gray-200 bg-white text-gray-400 hover:border-gray-300 hover:text-gray-600 cursor-pointer transition-colors',
+        onClick: (event) => {
+            event.stopPropagation();
+            if (!auth) { onSignIn(); return; }
+            const pickerEl = wrapper.querySelector('[data-picker]');
+            const isOpen = !pickerEl.classList.contains('hidden');
+            document.querySelectorAll('[data-picker]').forEach(p => p.classList.add('hidden'));
+            if (!isOpen) {
+                pickerEl.classList.remove('hidden');
+            }
+        },
+    }, '+');
+
+    const picker = h('div', {
+        className: 'hidden absolute bottom-full left-0 mb-1 flex gap-0.5 bg-white border border-gray-200 rounded-lg shadow-sm p-1 z-10',
+    });
+    picker.setAttribute('data-picker', '');
+
+    for (const emoji of EMOJIS) {
+        picker.appendChild(h('button', {
+            className: 'hover:bg-gray-100 rounded px-1 py-0.5 text-sm cursor-pointer transition-colors',
+            onClick: () => {
+                onToggle(emoji);
+                picker.classList.add('hidden');
+            },
+        }, emoji));
+    }
+
+    wrapper.append(addBtn, picker);
+    bar.appendChild(wrapper);
 
     return bar;
 }
@@ -113,7 +175,7 @@ function renderComment(comment, auth, onDelete, onReactionToggle, onSignIn) {
         h('img', {
             src: comment.commenter.avatar_url,
             alt: comment.commenter.name,
-            className: 'w-8 h-8 rounded-full',
+            className: 'w-7 h-7 rounded-full',
         }),
         h('a', {
             href: `https://github.com/${comment.commenter.username}`,
@@ -134,7 +196,12 @@ function renderComment(comment, auth, onDelete, onReactionToggle, onSignIn) {
     const body = h('div', { className: 'markup text-sm mt-1' });
     body.innerHTML = comment.body_html;
 
-    const reactionBar = renderReactionBar(comment.reactions, (emoji) => onReactionToggle(comment.id, emoji), auth, onSignIn);
+    const reactionBar = renderCommentReactionBar(
+        comment.reactions,
+        (emoji) => onReactionToggle(comment.id, emoji),
+        auth,
+        onSignIn,
+    );
 
     return h('div', { className: 'py-4 border-b border-gray-100 last:border-0' }, [
         header,
@@ -144,14 +211,13 @@ function renderComment(comment, auth, onDelete, onReactionToggle, onSignIn) {
 }
 
 function renderSignIn(onSignIn) {
-    return h('button', {
-        className: 'inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors',
-        onClick: onSignIn,
-    }, [
-        h('svg', { className: 'w-4 h-4', viewBox: '0 0 16 16', fill: 'currentColor' }, [
-            h('path', { d: 'M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z' }),
-        ]),
-        'Sign in with GitHub to comment and react',
+    return h('p', { className: 'text-sm text-gray-500' }, [
+        h('a', {
+            href: '#',
+            className: 'text-gray-700 underline decoration-gray-300 hover:text-black hover:decoration-black transition-colors cursor-pointer',
+            onClick: (e) => { e.preventDefault(); onSignIn(); },
+        }, 'Sign in with GitHub'),
+        ' to comment and react.',
     ]);
 }
 
@@ -159,7 +225,7 @@ function renderCommentForm(auth, onSubmit, onSignOut) {
     const container = h('div', { className: 'mt-4' });
 
     const userInfo = h('div', { className: 'flex items-center gap-2 mb-3' }, [
-        h('img', { src: auth.commenter.avatar_url, className: 'w-6 h-6 rounded-full' }),
+        h('img', { src: auth.commenter.avatar_url, className: 'w-5 h-5 rounded-full' }),
         h('span', { className: 'text-sm text-gray-600' }, `Commenting as ${auth.commenter.name}`),
         h('button', {
             className: 'text-xs text-gray-400 hover:text-gray-600 ml-auto',
@@ -204,20 +270,22 @@ function initCommentsWidget(el) {
         const section = h('div', {});
 
         // Post reactions
-        const reactionSection = h('div', { className: 'mb-6' });
-        reactionSection.appendChild(renderReactionBar(postReactions, togglePostReaction, auth, signIn));
+        const reactionSection = h('div', { className: 'mb-4' });
+        reactionSection.appendChild(renderPostReactionBar(postReactions, togglePostReaction, auth, signIn));
         section.appendChild(reactionSection);
 
         // Comments header
         const headerText = comments.length === 1 ? '1 comment' : `${comments.length} comments`;
-        section.appendChild(h('h3', { className: 'text-lg font-semibold mb-2' }, headerText));
+        section.appendChild(h('h4', { className: 'text-sm font-semibold text-gray-700 mb-3' }, headerText));
 
         // Comment list
-        const list = h('div', { className: 'mb-4' });
-        for (const comment of comments) {
-            list.appendChild(renderComment(comment, auth, deleteComment, toggleCommentReaction, signIn));
+        if (comments.length > 0) {
+            const list = h('div', { className: 'mb-4' });
+            for (const comment of comments) {
+                list.appendChild(renderComment(comment, auth, deleteComment, toggleCommentReaction, signIn));
+            }
+            section.appendChild(list);
         }
-        section.appendChild(list);
 
         // Auth / Comment form
         if (auth) {
@@ -340,6 +408,10 @@ function initCommentsWidget(el) {
     }, { rootMargin: '500px' });
 
     observer.observe(el);
+
+    document.addEventListener('click', () => {
+        el.querySelectorAll('[data-picker]').forEach(p => p.classList.add('hidden'));
+    });
 }
 
 document.querySelectorAll('[data-comments-widget]').forEach(initCommentsWidget);

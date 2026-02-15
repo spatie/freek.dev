@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\Commenter;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class GitHubAuthController
 {
-    public function redirect(Request $request): \Illuminate\Http\RedirectResponse
+    public function redirect(Request $request): RedirectResponse
     {
         $state = Str::random(40);
         $request->session()->put('github_oauth_state', $state);
@@ -24,7 +26,7 @@ class GitHubAuthController
         return redirect("https://github.com/login/oauth/authorize?{$query}");
     }
 
-    public function callback(Request $request): \Illuminate\Contracts\View\View
+    public function callback(Request $request): View
     {
         if ($request->input('state') !== $request->session()->pull('github_oauth_state')) {
             abort(403, 'Invalid state');
