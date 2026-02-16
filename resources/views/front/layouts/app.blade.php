@@ -95,12 +95,12 @@
                         </div>
                         <aside class="hidden min-[1140px]:block">
                             <div class="space-y-8 h-full">
-                                @unless($hideBio)
-                                    @include('front.layouts.partials.bio')
-                                @endunless
                                 @if(isset($sidebarTop))
                                     {{ $sidebarTop }}
                                 @endif
+                                @unless($hideBio)
+                                    @include('front.layouts.partials.bio')
+                                @endunless
                                 <div class="sticky top-8">
                                     <x-ad/>
                                 </div>
