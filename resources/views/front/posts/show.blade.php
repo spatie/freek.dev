@@ -49,10 +49,19 @@
         Found something interesting to share? <a href="{{ route('community.link.create') }}" class="underline hover:text-black">Submit a link</a> to the <a href="{{ route('community.index') }}" class="underline hover:text-black">community section</a>.
     </p>
 
+    @php
+        $ogImage = $post->getFirstMediaUrl('ogImage');
+        $ogImageUrl = $ogImage ? url($ogImage) : 'https://freek.dev/images/avatar-boxed.jpg';
+    @endphp
+
     <x-slot name="seo">
+        <meta property="og:site_name" content="freek.dev"/>
+        <meta property="og:locale" content="en_US"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:url" content="{{ request()->fullUrl() }}"/>
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
         <meta property="og:description" content="{{ $post->plain_text_excerpt }}"/>
-        <meta name="og:image" content="{{ url($post->getFirstMediaUrl('ogImage')) }}"/>
+        <meta property="og:image" content="{{ $ogImageUrl }}"/>
 
         @foreach($post->tags as $tag)
             <meta property="article:tag" content="{{ $tag->name }}"/>
@@ -64,7 +73,7 @@
         <meta name="twitter:description" content="{{ $post->plain_text_excerpt }}"/>
         <meta name="twitter:title" content="{{ $post->title }} | freek.dev"/>
         <meta name="twitter:site" content="@freekmurze"/>
-        <meta name="twitter:image" content=""/>
+        <meta name="twitter:image" content="{{ $ogImageUrl }}"/>
         <meta name="twitter:creator" content="@freekmurze"/>
     </x-slot>
 </x-app-layout>
