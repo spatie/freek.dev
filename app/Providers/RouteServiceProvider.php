@@ -19,7 +19,6 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this
             ->mapAuthRoutes()
-            ->mapApiRoutes()
             ->mapRedirects()
             ->mapPackageRoutes()
             ->mapFrontRoutes();
@@ -28,13 +27,6 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapAuthRoutes()
     {
         Route::middleware('web')->group(base_path('routes/auth.php'));
-
-        return $this;
-    }
-
-    protected function mapApiRoutes(): self
-    {
-        Route::prefix('api')->middleware('api')->group(base_path('routes/api.php'));
 
         return $this;
     }

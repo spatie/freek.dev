@@ -158,4 +158,4 @@ At [Spatie](https://spatie.be), we use [Google Workspace](https://workspace.goog
 
 ## In closing
 
-Every few years, I write a new version of this post. Here's [the 2022 version](https://freek.dev/2357-my-current-setup-end-2022-edition). If you have any questions on any of these apps and services, feel free to contact me [on X](https://x.com/freekmurze) or [on Bluesky](https://bsky.app/profile/freekmurze.bsky.social).
+Every few years, I write a new version of this post. Here's [the 2022 version](https://freek.dev/2387-my-current-setup-2022-edition). If you have any questions on any of these apps and services, feel free to contact me [on X](https://x.com/freekmurze) or [on Bluesky](https://bsky.app/profile/freekmurze.bsky.social).

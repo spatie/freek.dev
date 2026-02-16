@@ -20,12 +20,6 @@
         @include('front.posts.partials.share')
     </div>
 
-    @if($post->isOriginal())
-        <div class="mb-8">
-            @include('front.posts.partials.comments')
-        </div>
-    @endif
-
     @include('front.newsletter.partials.block', [
         'class' => 'mb-8',
     ])

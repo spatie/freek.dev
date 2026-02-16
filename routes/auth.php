@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\GitHubAuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResendVerificationMailController;
@@ -37,11 +36,6 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::middleware('doNotCacheResponse')->group(function () {
-    Route::get('auth/github', [GitHubAuthController::class, 'redirect'])->name('auth.github');
-    Route::get('auth/github/callback', [GitHubAuthController::class, 'callback'])->name('auth.github.callback');
-});
 
 Route::middleware('admin')->group(function () {
     Route::get('health', HealthCheckResultsController::class)->middleware('auth');

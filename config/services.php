@@ -58,9 +58,4 @@ return [
     'google' => [
         'analytics_id' => env('GOOGLE_ANALYTICS_ID'),
     ],
-
-    'github' => [
-        'client_id' => env('GITHUB_CLIENT_ID'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET'),
-    ],
 ];
