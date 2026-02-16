@@ -20,16 +20,6 @@
         @include('front.posts.partials.share')
     </div>
 
-    @include('front.newsletter.partials.block', [
-        'class' => 'mb-8',
-    ])
-
-    @include('front.posts.partials.keep-reading')
-
-    <p class="text-sm text-gray-600 mb-8">
-        Found something interesting to share? <a href="{{ route('community.link.create') }}" class="underline hover:text-black">Submit a link</a> to the <a href="{{ route('community.index') }}" class="underline hover:text-black">community section</a>.
-    </p>
-
     <div class="mb-8 giscus">
         <script src="https://giscus.app/client.js"
                 data-repo="spatie/freek-dev-comments"
@@ -48,6 +38,16 @@
                 async>
         </script>
     </div>
+
+    @include('front.newsletter.partials.block', [
+        'class' => 'mb-8',
+    ])
+
+    @include('front.posts.partials.keep-reading')
+
+    <p class="text-sm text-gray-600 mb-8">
+        Found something interesting to share? <a href="{{ route('community.link.create') }}" class="underline hover:text-black">Submit a link</a> to the <a href="{{ route('community.index') }}" class="underline hover:text-black">community section</a>.
+    </p>
 
     <x-slot name="seo">
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
