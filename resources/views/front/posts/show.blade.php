@@ -30,6 +30,25 @@
         Found something interesting to share? <a href="{{ route('community.link.create') }}" class="underline hover:text-black">Submit a link</a> to the <a href="{{ route('community.index') }}" class="underline hover:text-black">community section</a>.
     </p>
 
+    <div class="mb-8 giscus">
+        <script src="https://giscus.app/client.js"
+                data-repo="spatie/freek-dev-comments"
+                data-repo-id="R_kgDORRFS6Q"
+                data-category="Announcements"
+                data-category-id="DIC_kwDORRFS6c4C2gru"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+
     <x-slot name="seo">
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
         <meta property="og:description" content="{{ $post->plain_text_excerpt }}"/>
