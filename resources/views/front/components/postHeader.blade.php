@@ -19,7 +19,7 @@
             {{ $post->title }}
         @endisset
         @if($post->isOriginal())
-            <span class="text-[10px] font-medium text-gray-400 border border-gray-200 rounded-full px-1.5 py-0.5 align-middle ml-1">original</span>
+            <span class="text-[13px] font-medium text-gray-400 border border-gray-200 rounded-full px-2.5 py-1 align-middle ml-1">original</span>
         @endif
     </{{ $heading ?? 'h1' }}>
 
