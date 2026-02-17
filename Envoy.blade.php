@@ -98,6 +98,9 @@ cd {{ $newReleaseDir }};
 npm ci --audit false
 npm run build
 rm -rf node_modules
+
+# Ensure puppeteer is globally available for Browsershot OG image generation
+npm ls -g puppeteer > /dev/null 2>&1 || npm install -g puppeteer
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
