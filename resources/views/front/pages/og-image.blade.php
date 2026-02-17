@@ -28,7 +28,7 @@
 
     {{-- Tags at bottom --}}
     <p style="position: absolute; bottom: 80px; left: 104px; font-size: 28px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em;">
-        LARAVEL / PHP / JAVASCRIPT
+        LARAVEL / PHP / AI
     </p>
 </div>
 </body>
