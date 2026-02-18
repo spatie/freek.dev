@@ -15,6 +15,6 @@ class UsesController
             return view('front.uses-not-found');
         }
 
-        return view('front.posts.show', compact('post'));
+        return redirect()->to($post->url, 301);
     }
 }
