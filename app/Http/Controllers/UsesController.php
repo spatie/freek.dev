@@ -7,7 +7,7 @@ use Illuminate\View\View;
 
 class UsesController
 {
-    public function __invoke(): View
+    public function __invoke()
     {
         $post = Post::find(3006);
 
