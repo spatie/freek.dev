@@ -15,6 +15,6 @@ class UsesController
             return view('front.uses-not-found');
         }
 
-        return redirect()->to($post->url, 301);
+        return redirect(route('post', ['post' => $post->idSlug()]), 301);
     }
 }
