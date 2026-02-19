@@ -1,4 +1,4 @@
-<x-app-layout :title="$post->title" :canonical="$post->external_url">
+<x-app-layout :title="$post->title" :canonical="$canonical ?? $post->external_url">
     <x-post-header :post="$post" class="mb-8" :showTags="true">
 
         {!! $post->html !!}

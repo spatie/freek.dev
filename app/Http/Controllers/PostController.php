@@ -31,6 +31,8 @@ class PostController
                 ->first();
         }
 
-        return view('front.posts.show', compact('post', 'ad', 'previousPost', 'nextPost'));
+        $canonical = $post->id === 3006 ? route('uses') : null;
+
+        return view('front.posts.show', compact('post', 'ad', 'previousPost', 'nextPost', 'canonical'));
     }
 }
