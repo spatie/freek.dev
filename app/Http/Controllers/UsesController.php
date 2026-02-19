@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ad;
 use App\Models\Post;
+use Illuminate\View\View;
 
 class UsesController
 {
