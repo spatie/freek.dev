@@ -5,13 +5,13 @@ use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\FlareDemoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LinkApprovalController;
-use App\Http\Controllers\TestimonialApprovalController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\OgImageController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
 use App\Http\Controllers\TaggedPostsController;
+use App\Http\Controllers\TestimonialApprovalController;
 use App\Http\Controllers\UsesController;
 use Illuminate\Support\Facades\Route;
 
