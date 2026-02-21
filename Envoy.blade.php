@@ -50,8 +50,8 @@ git pull origin {{ $branch }}
 [ -d {{ $persistentDir }} ] || mkdir {{ $persistentDir }};
 [ -d {{ $persistentDir }}/uploads ] || mkdir {{ $persistentDir }}/uploads;
 [ -d {{ $persistentDir }}/admin-uploads ] || mkdir {{ $persistentDir }}/admin-uploads;
-[ -d {{ $persistentDir }}/avatars ] || mkdir {{ $persistentDir }}/avatars;
 [ -d {{ $persistentDir }}/storage ] || mkdir {{ $persistentDir }}/storage;
+[ -d {{ $persistentDir }}/storage/avatars ] || mkdir {{ $persistentDir }}/storage/avatars;
 
 cd {{ $releasesDir }};
 
@@ -124,7 +124,7 @@ ln -nfs {{ $baseDir }}/persistent/storage/admin-uploads public/admin-uploads;
 # Symlink the avatars to the public directory
 rm -rf {{ $newReleaseDir }}/public/avatars;
 cd {{ $newReleaseDir }};
-ln -nfs {{ $baseDir }}/persistent/avatars public/avatars;
+ln -nfs {{ $baseDir }}/persistent/storage/avatars public/avatars;
 
 # Symlink the og images to the public directory
 rm -rf {{ $newReleaseDir }}/public/og-images;
