@@ -48,8 +48,8 @@ Route::prefix('newsletter')->name('newsletter.')->group(function () {
     Route::view('already-subscribed', 'front.pages.newsletter.already-subscribed')->name('already-subscribed');
     Route::view('dislike', 'front.pages.newsletter.dislike')->name('dislike');
     Route::view('like', 'front.pages.newsletter.like')->name('like');
-    Route::view('testimonial', 'front.pages.newsletter.testimonial')->name('testimonial');
-    Route::view('testimonial/thanks', 'front.pages.newsletter.testimonial-thanks')->name('testimonial.thanks');
+    Route::view('recommend', 'front.pages.newsletter.testimonial')->name('testimonial');
+    Route::view('recommend/thanks', 'front.pages.newsletter.testimonial-thanks')->name('testimonial.thanks');
 });
 
 Route::prefix('community')->name('community.')->group(function () {

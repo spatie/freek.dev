@@ -25,6 +25,8 @@ storage/og-images
 /public/build
 data.ms
 /storage/admin-uploads
+/storage/avatars
+/public/avatars
 .phpunit.cache
 storage/app/analytics/
 .chief/

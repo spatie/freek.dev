@@ -17,6 +17,13 @@ return [
             'url' => env('APP_URL').'/admin-uploads',
             'visibility' => 'public',
         ],
+
+        'avatars' => [
+            'driver' => 'local',
+            'root' => storage_path('avatars'),
+            'url' => env('APP_URL').'/avatars',
+            'visibility' => 'public',
+        ],
     ],
 
 ];

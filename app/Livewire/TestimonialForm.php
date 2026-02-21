@@ -29,7 +29,7 @@ class TestimonialForm extends Component
 
         RateLimiter::hit($key, 3600);
 
-        $this->redirect('/newsletter/testimonial/thanks', true);
+        $this->redirect('/newsletter/recommend/thanks', true);
     }
 
     public function render()

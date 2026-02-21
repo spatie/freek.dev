@@ -66,7 +66,7 @@ it('does not show the newsletter form in the homepage sidebar', function () {
 });
 
 it('can view the testimonial submission form', function () {
-    $this->get('/newsletter/testimonial')
+    $this->get('/newsletter/recommend')
         ->assertOk()
         ->assertSee('Recommend this newsletter');
 });
@@ -81,7 +81,7 @@ it('can submit a testimonial', function () {
         ->set('form.author_title', 'Developer')
         ->set('form.author_url', 'https://example.com')
         ->call('save')
-        ->assertRedirect('/newsletter/testimonial/thanks');
+        ->assertRedirect('/newsletter/recommend/thanks');
 
     $testimonial = NewsletterTestimonial::latest()->first();
 
@@ -104,7 +104,7 @@ it('can submit a testimonial with an avatar', function () {
         ->set('form.author_name', 'Jane Doe')
         ->set('form.avatar', UploadedFile::fake()->image('avatar.jpg'))
         ->call('save')
-        ->assertRedirect('/newsletter/testimonial/thanks');
+        ->assertRedirect('/newsletter/recommend/thanks');
 
     $testimonial = NewsletterTestimonial::latest()->first();
 
