@@ -15,7 +15,7 @@ Here are a couple of links I hope you'll enjoy as much as I did.
 @if(count($communityLinks))
 # Community links
 
-In this section you'll find links submitted by others. [Let me know](https://freek.dev/community) if you did write or stumbled across a blog post, tutorial or video that might be interesting to appear in this section
+In this section you'll find links submitted by others. [Let me know](https://freek.dev/community) if you wrote or stumbled across a blog post, tutorial or video that might be interesting to appear in this section.
 
 @foreach($communityLinks as $link)
 [{!! html_entity_decode($link->title) !!}]({{ $link->url }}) (submitted by {{ $link->user->name }})
@@ -38,13 +38,21 @@ Here are a couple of links from a while ago!
 
 <br />
 
-# Did you like this newsletter?
+---
 
-I take a lot of time curating the right links for you. You could do me a favor by either [spreading the word]({{ url('/newsletter/like') }}) and letting others know about my newsletter.
+# Enjoy this newsletter? Help it grow!
+
+If you found this edition useful, here are two quick ways to support the newsletter:
+
+👉 [Write a short recommendation]({{ url('/newsletter/recommend') }}). Approved recommendations appear on the newsletter page for others to see.
+
+👉 Forward this email to a colleague or friend who might be interested.
+
+---
 
 Alternatively, you could consider picking up one of the paid products my team and I have worked on:
 
-- [All spatie products](https://spatie.be/products)
+- [All Spatie products](https://spatie.be/products)
 - [Oh Dear](https://ohdear.app)
 - [Mailcoach](https://mailcoach.app)
 - [Flare](https://flareapp.io)
@@ -53,9 +61,11 @@ If you have any questions, remarks or thoughts about this newsletter, simply hit
 
 Thank you so much for reading!
 <br />
-<br />
-<br />
 Freek
+
+P.S. Know someone who'd enjoy this newsletter? [Send them here to subscribe]({{ url('/newsletter') }}).
+
+---
 
 You are receiving this newsletter because you subscribed at [freek.dev](https://freek.dev)
 [Unsubscribe from this newsletter](::unsubscribeUrl::)
