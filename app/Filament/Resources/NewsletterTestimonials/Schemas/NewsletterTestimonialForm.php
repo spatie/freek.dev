@@ -22,9 +22,15 @@ class NewsletterTestimonialForm
                 Forms\Components\TextInput::make('author_url')
                     ->url()
                     ->placeholder('https://...'),
+                Forms\Components\SpatieMediaLibraryFileUpload::make('avatar')
+                    ->collection('avatar')
+                    ->image()
+                    ->imagePreviewHeight('100')
+                    ->label('Avatar'),
                 Forms\Components\TextInput::make('avatar_url')
                     ->url()
-                    ->placeholder('https://github.com/username.png'),
+                    ->placeholder('https://github.com/username.png')
+                    ->helperText('Fallback if no uploaded avatar'),
                 Forms\Components\Toggle::make('is_active')
                     ->default(true),
                 Forms\Components\TextInput::make('sort_order')
