@@ -6,6 +6,7 @@
         Every month I share what I learn from running Spatie, building Oh Dear, and maintaining 300+ open source packages. Practical takes on Laravel, PHP, and AI that you can actually use.
     </p>
     @include('front.newsletter.partials.form', ['class' => 'mb-4'])
+    @include('front.newsletter.partials.testimonial')
     <p class="text-xs text-gray-500">
         No spam. Unsubscribe anytime.
         You can also <a href="https://x.com/freekmurze" class="text-gray-600 underline decoration-gray-300 hover:text-black hover:decoration-black transition-colors">follow me on X</a>.

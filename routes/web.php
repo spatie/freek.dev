@@ -5,6 +5,7 @@ use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\FlareDemoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LinkApprovalController;
+use App\Http\Controllers\TestimonialApprovalController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\OgImageController;
 use App\Http\Controllers\OriginalsController;
@@ -22,6 +23,11 @@ Route::middleware('signed')->prefix('links/{link}')->group(function () {
     Route::get('approve', [LinkApprovalController::class, 'approve'])->name('link.approve');
     Route::get('approve-and-create-post', [LinkApprovalController::class, 'approveAndCreatePost'])->name('link.approve-and-create-post');
     Route::get('reject', [LinkApprovalController::class, 'reject'])->name('link.reject');
+});
+
+Route::middleware('signed')->prefix('testimonials/{testimonial}')->group(function () {
+    Route::get('approve', [TestimonialApprovalController::class, 'approve'])->name('testimonial.approve');
+    Route::get('reject', [TestimonialApprovalController::class, 'reject'])->name('testimonial.reject');
 });
 
 Route::view('about', 'front.pages.about')->name('about');
@@ -42,6 +48,8 @@ Route::prefix('newsletter')->name('newsletter.')->group(function () {
     Route::view('already-subscribed', 'front.pages.newsletter.already-subscribed')->name('already-subscribed');
     Route::view('dislike', 'front.pages.newsletter.dislike')->name('dislike');
     Route::view('like', 'front.pages.newsletter.like')->name('like');
+    Route::view('testimonial', 'front.pages.newsletter.testimonial')->name('testimonial');
+    Route::view('testimonial/thanks', 'front.pages.newsletter.testimonial-thanks')->name('testimonial.thanks');
 });
 
 Route::prefix('community')->name('community.')->group(function () {

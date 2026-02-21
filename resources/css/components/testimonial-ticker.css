@@ -1,0 +1,45 @@
+.testimonial-ticker {
+    --ticker-gap: 1rem;
+    --ticker-duration: 120s;
+
+    display: flex;
+    gap: var(--ticker-gap);
+    overflow: hidden;
+    user-select: none;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.testimonial-ticker:hover .testimonial-ticker-track {
+    animation-play-state: paused;
+}
+
+.testimonial-ticker-track {
+    display: flex;
+    gap: var(--ticker-gap);
+    flex-shrink: 0;
+    min-width: 100%;
+    animation: ticker-scroll var(--ticker-duration) linear infinite;
+}
+
+.testimonial-ticker--reverse .testimonial-ticker-track {
+    animation-name: ticker-scroll-reverse;
+}
+
+@keyframes ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - var(--ticker-gap)));
+    }
+}
+
+@keyframes ticker-scroll-reverse {
+    0% {
+        transform: translateX(calc(-100% - var(--ticker-gap)));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

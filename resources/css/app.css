@@ -10,6 +10,7 @@
 @import './components/pagination.css';
 @import './utilties.css';
 @import './components/forms.css';
+@import './components/testimonial-ticker.css';
 @import '../../vendor/tempest/highlight/src/Themes/Css/highlight-light-lite.css';
 
 @import 'tailwindcss';
