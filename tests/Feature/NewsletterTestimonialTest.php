@@ -71,6 +71,22 @@ it('can view the testimonial submission form', function () {
         ->assertSee('Recommend this newsletter');
 });
 
+it('does not cache the testimonial submission form', function () {
+    $route = app('router')->getRoutes()->match(
+        app('request')->create('/newsletter/recommend')
+    );
+
+    expect($route->gatherMiddleware())->toContain('doNotCacheResponse');
+});
+
+it('does not set cloudflare cache headers on the testimonial form', function () {
+    config()->set('cache.cloudflare_enabled', true);
+
+    $response = $this->get('/newsletter/recommend')->assertOk();
+
+    expect($response->headers->get('Cache-Control'))->not->toContain('max-age=600');
+});
+
 it('can submit a testimonial', function () {
     Mail::fake();
     RateLimiter::clear('testimonial-submission:127.0.0.1');

@@ -36,7 +36,7 @@ class CacheForCloudflare
         }
 
         // Don't cache auth pages (need CSRF tokens)
-        return ! $request->routeIs('login', 'register', 'password.*', 'search');
+        return ! $request->routeIs('login', 'register', 'password.*', 'search', 'newsletter.testimonial');
     }
 
     protected function isEnabled(): bool
