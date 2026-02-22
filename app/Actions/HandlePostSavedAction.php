@@ -2,9 +2,6 @@
 
 namespace App\Actions;
 
-use App\Jobs\ComputeRelatedPostsJob;
-use App\Jobs\CreateOgImageJob;
-use App\Jobs\GeneratePostEmbeddingJob;
 use App\Jobs\GeneratePostTagsJob;
 use App\Jobs\PurgeCloudflareCacheJob;
 use App\Models\Post;
@@ -49,7 +46,6 @@ class HandlePostSavedAction
         }
 
         Bus::chain([
-            new CreateOgImageJob($post),
             fn () => ResponseCache::clear(),
             new PurgeCloudflareCacheJob,
         ])->dispatch();

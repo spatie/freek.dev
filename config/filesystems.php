@@ -5,12 +5,6 @@ return [
     'cloud' => env('FILESYSTEM_CLOUD', 's3'),
 
     'disks' => [
-        'og-images' => [
-            'driver' => 'local',
-            'root' => storage_path('og-images'),
-            'url' => '/og-images',
-        ],
-
         'admin-uploads' => [
             'driver' => 'local',
             'root' => storage_path('admin-uploads'),

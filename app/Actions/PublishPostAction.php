@@ -2,7 +2,6 @@
 
 namespace App\Actions;
 
-use App\Jobs\CreateOgImageJob;
 use App\Jobs\PostOnBlueskyJob;
 use App\Jobs\PurgeCloudflareCacheJob;
 use App\Jobs\TootPostJob;
@@ -25,7 +24,6 @@ class PublishPostAction
         ResponseCache::clear();
 
         dispatch(new PurgeCloudflareCacheJob);
-        dispatch(new CreateOgImageJob($post));
         dispatch(new TweetPostJob($post))->delay(now()->addSeconds(20));
         dispatch(new TootPostJob($post))->delay(now()->addSeconds(20));
         dispatch(new PostOnBlueskyJob($post))->delay(now()->addSeconds(20));

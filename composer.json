@@ -8,6 +8,10 @@
     ],
     "repositories": [
         {
+            "type": "path",
+            "url": "../laravel-og-image"
+        },
+        {
             "type": "composer",
             "url": "https://satis.spatie.be"
         }
@@ -59,6 +63,7 @@
         "spatie/laravel-menu": "^4.2",
         "spatie/laravel-missing-page-redirector": "^2.10",
         "spatie/laravel-model-info": "^2.0",
+        "spatie/laravel-og-image": "@dev",
         "spatie/laravel-ray": "^1.43",
         "spatie/laravel-remote": "^1.4",
         "spatie/laravel-responsecache": "^7.5",

@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Spatie\OgImage\Facades\OgImage;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,5 +21,15 @@ class AppServiceProvider extends ServiceProvider
         Carbon::setToStringFormat('jS F Y');
 
         Model::unguard();
+
+        OgImage::configureScreenshot(function ($screenshot) {
+            $screenshot->deviceScaleFactor(2);
+        });
+
+        OgImage::fallbackUsing(function (Request $request) {
+            return view('og-image.fallback', [
+                'title' => config('app.name'),
+            ]);
+        });
     }
 }
