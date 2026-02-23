@@ -3,7 +3,7 @@
         Join 9,500+ smart developers
     </p>
     <p class="mb-4 text-base text-gray-600 leading-relaxed">
-        Every month I share what I learn from running Spatie, building Oh Dear, and maintaining 300+ open source packages. Practical takes on Laravel, PHP, and AI that you can actually use.
+        Get my monthly newsletter with what I learn from running Spatie, building Oh Dear, and maintaining 300+ open source packages. Practical takes on Laravel, PHP, and AI that you can actually use.
     </p>
     @include('front.newsletter.partials.form', ['class' => 'mb-4'])
     @include('front.newsletter.partials.testimonial')
