@@ -126,3 +126,8 @@ it('shows an empty archive page when there are no posts', function () {
     get('/archive')
         ->assertOk();
 });
+
+it('returns 404 for non-numeric year values', function () {
+    get('/archive/favicon.ico')
+        ->assertNotFound();
+});
