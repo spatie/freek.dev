@@ -59,6 +59,7 @@
         "spatie/laravel-menu": "^4.2",
         "spatie/laravel-missing-page-redirector": "^2.10",
         "spatie/laravel-model-info": "^2.0",
+        "spatie/laravel-og-image": "^1.1",
         "spatie/laravel-ray": "^1.43",
         "spatie/laravel-remote": "^1.4",
         "spatie/laravel-responsecache": "^7.5",

@@ -2,12 +2,12 @@
 
 namespace App\Actions;
 
-use App\Jobs\CreateOgImageJob;
 use App\Jobs\PostOnBlueskyJob;
 use App\Jobs\PurgeCloudflareCacheJob;
 use App\Jobs\TootPostJob;
 use App\Jobs\TweetPostJob;
 use App\Models\Post;
+use Spatie\OgImage\Facades\OgImage;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class PublishPostAction
@@ -25,7 +25,9 @@ class PublishPostAction
         ResponseCache::clear();
 
         dispatch(new PurgeCloudflareCacheJob);
-        dispatch(new CreateOgImageJob($post));
+        dispatch(function () use ($post) {
+            OgImage::generateForUrl($post->url);
+        });
         dispatch(new TweetPostJob($post))->delay(now()->addSeconds(20));
         dispatch(new TootPostJob($post))->delay(now()->addSeconds(20));
         dispatch(new PostOnBlueskyJob($post))->delay(now()->addSeconds(20));

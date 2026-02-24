@@ -16,12 +16,10 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Tags\HasTags;
 use Spatie\Tags\Tag;
 
-class Post extends Model implements Feedable, HasMedia, Sluggable
+class Post extends Model implements Feedable, Sluggable
 {
     public const TYPE_LINK = 'link';
 
@@ -32,7 +30,6 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
     use HasFactory,
         HasSlug,
         HasTags,
-        InteractsWithMedia,
         PostPresenter;
 
     public $with = ['tags', 'submittedByUser'];
@@ -220,14 +217,6 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         return static::TYPE_LINK;
     }
 
-    public function registerMediaCollections(): void
-    {
-        $this
-            ->addMediaCollection('ogImage')
-            ->useDisk('og-images')
-            ->singleFile();
-    }
-
     public function getSluggableValue(): string
     {
         return $this->title;
@@ -278,15 +267,6 @@ class Post extends Model implements Feedable, HasMedia, Sluggable
         $this->tweet_url = $tweetUrl;
 
         $this->save();
-    }
-
-    public function ogImageBaseUrl(): string
-    {
-        if ($this->external_url) {
-            return $this->external_url;
-        }
-
-        return route('post.ogImage', ['post' => $this])."?preview_secret={$this->preview_secret}";
     }
 
     public function isPartOfSeries()

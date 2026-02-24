@@ -100,8 +100,6 @@ npm ci --audit false
 npm run build
 rm -rf node_modules
 
-# Ensure puppeteer is globally available for Browsershot OG image generation
-npm ls -g puppeteer > /dev/null 2>&1 || npm install -g puppeteer
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
@@ -125,11 +123,6 @@ ln -nfs {{ $baseDir }}/persistent/storage/admin-uploads public/admin-uploads;
 rm -rf {{ $newReleaseDir }}/public/avatars;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/storage/avatars public/avatars;
-
-# Symlink the og images to the public directory
-rm -rf {{ $newReleaseDir }}/public/og-images;
-cd {{ $newReleaseDir }};
-ln -nfs {{ $baseDir }}/persistent/storage/og-images {{ $newReleaseDir }}/public/og-images;
 
 # Symlink the persistent Typography.com fonts into public/fonts
 ln -nfs {{ $baseDir }}/persistent/fonts/884760 {{ $newReleaseDir }}/public/fonts/884760;

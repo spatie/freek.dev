@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Spatie\OgImage\Facades\OgImage;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,5 +20,7 @@ class AppServiceProvider extends ServiceProvider
         Carbon::setToStringFormat('jS F Y');
 
         Model::unguard();
+
+        OgImage::fallbackUsing(fn () => view('og-images.default'));
     }
 }

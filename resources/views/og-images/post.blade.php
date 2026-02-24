@@ -1,18 +1,3 @@
-<html>
-<head>
-    <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Whitney SSm A', 'Whitney SSm B', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-    </style>
-</head>
-<body>
 <div style="width: 1200px; height: 630px; background: linear-gradient(145deg, #ffffff 0%, #fafaf9 50%, #f5f5f4 100%); position: relative; overflow: hidden;">
     {{-- Black border --}}
     <div style="position: absolute; inset: 0; border: 6px solid #000;"></div>
@@ -31,5 +16,3 @@
         LARAVEL / PHP / AI
     </p>
 </div>
-</body>
-</html>

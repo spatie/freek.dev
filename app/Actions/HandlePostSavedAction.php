@@ -3,12 +3,12 @@
 namespace App\Actions;
 
 use App\Jobs\ComputeRelatedPostsJob;
-use App\Jobs\CreateOgImageJob;
 use App\Jobs\GeneratePostEmbeddingJob;
 use App\Jobs\GeneratePostTagsJob;
 use App\Jobs\PurgeCloudflareCacheJob;
 use App\Models\Post;
 use Illuminate\Support\Facades\Bus;
+use Spatie\OgImage\Facades\OgImage;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
 class HandlePostSavedAction
@@ -49,7 +49,7 @@ class HandlePostSavedAction
         }
 
         Bus::chain([
-            new CreateOgImageJob($post),
+            fn () => OgImage::generateForUrl($post->preview_url),
             fn () => ResponseCache::clear(),
             new PurgeCloudflareCacheJob,
         ])->dispatch();

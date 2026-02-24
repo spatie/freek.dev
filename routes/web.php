@@ -6,7 +6,6 @@ use App\Http\Controllers\FlareDemoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LinkApprovalController;
 use App\Http\Controllers\MusicController;
-use App\Http\Controllers\OgImageController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
@@ -59,8 +58,6 @@ Route::prefix('community')->name('community.')->group(function () {
         ->middleware(['auth', 'verified', 'doNotCacheResponse'])
         ->name('link.create');
 });
-
-Route::get('ogImage/{post}', OgImageController::class)->name('post.ogImage');
 
 Route::get('tags/{tagSlug}', TaggedPostsController::class)->name('taggedPosts.index');
 

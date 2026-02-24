@@ -63,6 +63,30 @@ it('can render a series toc and next link on post', function () {
     }
 });
 
+it('renders og image template on post page', function () {
+    get('/'.$this->post->idSlug())
+        ->assertSuccessful()
+        ->assertSee('data-og-image', false);
+});
+
+it('does not render post og image template for tweet posts', function () {
+    $tweet = Post::factory()->create([
+        'published' => true,
+        'title' => 'A unique tweet title for testing',
+    ]);
+    $tweet->attachTag('tweet');
+
+    $response = get('/'.$tweet->idSlug())->assertSuccessful();
+
+    $content = $response->getContent();
+    $templateMatches = [];
+    preg_match_all('/<template[^>]*data-og-image[^>]*>(.*?)<\/template>/s', $content, $templateMatches);
+
+    foreach ($templateMatches[1] as $templateContent) {
+        expect($templateContent)->not->toContain('A unique tweet title for testing');
+    }
+});
+
 it('can get the twitter handle of the author', function () {
     /** @var Post $post */
     $post = Post::factory()->create(['author_twitter_handle' => null]);
