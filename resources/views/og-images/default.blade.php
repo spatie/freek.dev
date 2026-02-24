@@ -11,9 +11,9 @@
     </div>
 
     {{-- Content --}}
-    <div style="position: absolute; top: 170px; left: 104px; width: 580px;">
+    <div style="position: absolute; top: 120px; left: 104px; width: 580px;">
         <p style="font-size: 80px; font-weight: 800; color: #000; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.1;">FREEK.DEV</p>
-        <p style="font-size: 30px; font-weight: 500; color: #525252; margin-top: 24px; line-height: 1.5;">Freek Van der Herten's blog on Laravel, PHP and AI</p>
-        <p style="font-size: 24px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 32px;">LARAVEL / PHP / AI</p>
+        <p style="font-size: 42px; font-weight: 500; color: #525252; margin-top: 24px; line-height: 1.4;">Freek Van der Herten's blog on Laravel, PHP and AI</p>
+        <p style="font-size: 32px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 32px;">LARAVEL / PHP / AI</p>
     </div>
 </div>
