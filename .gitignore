@@ -29,3 +29,4 @@ data.ms
 .phpunit.cache
 storage/app/analytics/
 .chief/
+/storage/og-images
