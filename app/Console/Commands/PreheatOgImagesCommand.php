@@ -47,6 +47,7 @@ class PreheatOgImagesCommand extends Command
     {
         $postUrls = Post::query()
             ->published()
+            ->latest('publish_date')
             ->get()
             ->reject(fn (Post $post) => $post->isTweet())
             ->map(fn (Post $post) => $post->url);
@@ -65,6 +66,6 @@ class PreheatOgImagesCommand extends Command
             url('/community'),
         ]);
 
-        return $staticUrls->merge($postUrls)->values();
+        return $postUrls->merge($staticUrls)->values();
     }
 }
