@@ -64,6 +64,6 @@ Route::get('ogImage/{post}', OgImageController::class)->name('post.ogImage');
 
 Route::get('tags/{tagSlug}', TaggedPostsController::class)->name('taggedPosts.index');
 
-Route::get('archive/{year?}', ArchiveController::class)->name('archive');
+Route::get('archive/{year?}', ArchiveController::class)->name('archive')->whereNumber('year');
 
 Route::get('{post}', PostController::class)->name('post');
