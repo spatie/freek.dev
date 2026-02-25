@@ -18,6 +18,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Foundation\Http\Middleware\TrimStrings;
 use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Validation\ValidationException;
+use Livewire\Exceptions\PublicPropertyNotFoundException;
 use Spatie\LaravelFlare\Facades\Flare;
 use Spatie\MissingPageRedirector\RedirectsMissingPages;
 use Spatie\ResponseCache\Middlewares\CacheResponse;
@@ -67,6 +68,10 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         Flare::handles($exceptions);
+
+        $exceptions->dontReport([
+            PublicPropertyNotFoundException::class,
+        ]);
 
         $exceptions->reportable(function (ValidationException $exception) {
             flash()->error('Please correct the errors in the form');
