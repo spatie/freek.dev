@@ -13,6 +13,10 @@ class CacheAllGuestRequests extends CacheAllSuccessfulGetRequests
             return false;
         }
 
+        if ($request->has(config('og-image.preview_parameter', 'ogimage'))) {
+            return false;
+        }
+
         return parent::shouldCacheRequest($request);
     }
 }
