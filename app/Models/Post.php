@@ -328,6 +328,10 @@ class Post extends Model implements Feedable, Sluggable
             return true;
         }
 
+        if (str_contains(request()->server('QUERY_STRING', ''), config('og-image.preview_parameter', 'ogimage'))) {
+            return true;
+        }
+
         if ($this->preview_secret === request()->get('preview_secret')) {
             return true;
         }

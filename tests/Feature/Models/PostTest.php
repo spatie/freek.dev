@@ -47,6 +47,22 @@ it('will display unpublished post using a preview secret', function () {
         ->assertNotFound();
 });
 
+it('will display unpublished post when ogimage parameter is present', function () {
+    $post = Post::factory()->create([
+        'published' => false,
+    ]);
+
+    get('/'.$post->idSlug())
+        ->assertNotFound();
+
+    get('/'.$post->idSlug().'?ogimage')
+        ->assertSuccessful();
+
+    // Also works with malformed URLs where ?ogimage is appended to a URL with existing query params
+    get('/'.$post->idSlug().'?preview_secret='.$post->preview_secret.'?ogimage')
+        ->assertSuccessful();
+});
+
 it('can render a series toc and next link on post', function () {
     $posts = PostFactory::series(10);
 
