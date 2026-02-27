@@ -6,6 +6,7 @@ use App\Http\Controllers\FlareDemoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LinkApprovalController;
 use App\Http\Controllers\MusicController;
+use App\Http\Controllers\NewsletterArchiveController;
 use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
@@ -41,7 +42,7 @@ Route::get('speaking', SpeakingController::class)->name('speaking');
 Route::get('uses', UsesController::class)->name('uses');
 
 Route::prefix('newsletter')->name('newsletter.')->group(function () {
-    Route::view('/', 'front.pages.newsletter.index')->name('index');
+    Route::get('/', [NewsletterArchiveController::class, 'newsletter'])->name('index');
     Route::view('confirm', 'front.pages.newsletter.confirm')->name('confirm');
     Route::view('confirmed', 'front.pages.newsletter.confirmed')->name('confirmed');
     Route::view('already-subscribed', 'front.pages.newsletter.already-subscribed')->name('already-subscribed');
@@ -49,6 +50,8 @@ Route::prefix('newsletter')->name('newsletter.')->group(function () {
     Route::view('like', 'front.pages.newsletter.like')->name('like');
     Route::view('recommend', 'front.pages.newsletter.testimonial')->middleware('doNotCacheResponse')->name('testimonial');
     Route::view('recommend/thanks', 'front.pages.newsletter.testimonial-thanks')->name('testimonial.thanks');
+    Route::get('archive', [NewsletterArchiveController::class, 'index'])->name('archive.index');
+    Route::get('archive/{newsletterCampaign}', [NewsletterArchiveController::class, 'show'])->name('archive.show');
 });
 
 Route::prefix('community')->name('community.')->group(function () {

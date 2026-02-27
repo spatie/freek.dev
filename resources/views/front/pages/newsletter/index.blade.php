@@ -9,7 +9,7 @@
             Expect honest takes, useful tutorials, and the occasional behind-the-scenes look at how we build and maintain things at Spatie. Over 9,500 smart developers already get it in their inbox.
         </p>
         <p>
-            Want to know what you're getting yourself into? Take a look at <a href="https://freek-dev.mailcoach.app/archive">the newsletter archive</a>.
+            Want to know what you're getting yourself into? Take a look at <a href="{{ route('newsletter.archive.index') }}">the newsletter archive</a>.
         </p>
     </div>
     <div class="mb-8 -mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-yellow-50 border-b-5 border-yellow-500 text-sm text-gray-700">
@@ -67,6 +67,13 @@
         </div>
     @endif
     --}}
+
+    @if($latestCampaign)
+        <div class="mb-8">
+            <h2 class="font-extrabold text-xl text-black mb-4">Latest edition</h2>
+            @include('front.newsletter.partials.email-card', ['campaign' => $latestCampaign])
+        </div>
+    @endif
 
     <div class="markup">
         <p>
