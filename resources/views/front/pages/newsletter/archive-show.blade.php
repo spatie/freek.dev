@@ -29,4 +29,6 @@
     <div class="mt-12">
         @include('front.newsletter.partials.block')
     </div>
+
+    <x-og-image view="og-images.newsletter" :data="['campaign' => $newsletterCampaign]" />
 </x-app-layout>
