@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\PurgeCloudflareCacheJob;
 use App\Models\NewsletterCampaign;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -62,6 +63,7 @@ class SyncNewsletterCampaignsCommand extends Command
 
         if ($imported > 0) {
             ResponseCache::clear();
+            dispatch(new PurgeCloudflareCacheJob);
         }
 
         $this->comment("Done! Imported {$imported} campaigns, skipped {$skipped} already existing.");
