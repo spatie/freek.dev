@@ -17,6 +17,9 @@
             You're reading edition #{{ $newsletterCampaign->edition_number }} from {{ $newsletterCampaign->sent_at->format('F Y') }}. Want the next one in your inbox?
         </p>
         @include('front.newsletter.partials.form')
+        <p class="mt-3 text-xs text-gray-400">
+            Your email will only be used for this newsletter. No spam, no sharing. Unsubscribe at any time.
+        </p>
     </div>
 
     <div class="mb-8">
