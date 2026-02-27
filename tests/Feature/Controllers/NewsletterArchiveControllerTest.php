@@ -85,7 +85,7 @@ it('shows the latest campaign on the newsletter page', function () {
 
     get('/newsletter')
         ->assertOk()
-        ->assertSee('Latest edition')
+        ->assertSee('latest edition')
         ->assertSee('freek.dev newsletter #100')
         ->assertSee('Latest newsletter')
         ->assertDontSee('Old newsletter');
@@ -94,7 +94,7 @@ it('shows the latest campaign on the newsletter page', function () {
 it('shows the newsletter page without campaigns', function () {
     get('/newsletter')
         ->assertOk()
-        ->assertDontSee('Latest edition');
+        ->assertDontSee('latest edition');
 });
 
 it('orders campaigns by sent_at descending', function () {
