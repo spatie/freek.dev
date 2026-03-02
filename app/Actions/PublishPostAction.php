@@ -15,10 +15,7 @@ class PublishPostAction
     public function execute(Post $post)
     {
         $post->published = true;
-
-        if (! $post->publish_date) {
-            $post->publish_date = now();
-        }
+        $post->publish_date = now();
 
         $post->save();
 
