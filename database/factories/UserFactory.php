@@ -20,14 +20,20 @@ class UserFactory extends Factory
         ];
     }
 
-    /**
-     * Define the model's unverified state.
-     */
     public function unverified(): Factory
     {
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    public function admin(): Factory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'admin' => true,
             ];
         });
     }
