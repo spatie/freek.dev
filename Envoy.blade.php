@@ -1,6 +1,6 @@
 @setup
 $branch = 'main';
-$server = "freek.dev";
+$server = "161.35.192.60";
 $server = "161.35.192.60";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/freek.dev";
