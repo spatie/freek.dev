@@ -21,7 +21,7 @@
         </x-filament::input.wrapper>
     </div>
 
-    <div class="mt-3">
+    <div class="mt-6">
         {{ $this->table }}
     </div>
 </x-filament-widgets::widget>
