@@ -69,7 +69,7 @@ return [
      * A driver is responsible for writing all scraped content
      * to a search index.
      */
-    'default_driver' => Spatie\SiteSearch\Drivers\MeiliSearchDriver::class,
+    'default_driver' => Spatie\SiteSearch\Drivers\DatabaseDriver::class,
 
     /*
      * This job is responsible for crawling your site. To customize this job,

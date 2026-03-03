@@ -1,7 +1,7 @@
 @setup
 $branch = 'main';
 $server = "freek.dev";
-$server = "138.68.76.137";
+$server = "161.35.192.60";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/freek.dev";
 $baseDir = "/home/forge/freek.dev";
@@ -23,7 +23,6 @@ return "echo '\033[32m" .$message. "\033[0m';\n";
 startDeployment
 cloneRepository
 runComposer
-runYarn
 generateAssets
 updateSymlinks
 optimizeInstallation
@@ -84,13 +83,6 @@ cd {{ $newReleaseDir }};
 {{ logMessage("🚚  Running Composer…") }}
 ln -nfs {{ $baseDir }}/auth.json auth.json;
 composer install --prefer-dist --no-scripts --no-dev -q -o;
-@endtask
-
-@task('runYarn', ['on' => 'remote'])
-{{ logMessage("📦  Running Yarn…") }}
-cd {{ $newReleaseDir }};
-yarn config set ignore-engines true
-yarn
 @endtask
 
 @task('generateAssets', ['on' => 'remote'])

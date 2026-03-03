@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d180f8c3c95b513c68a02f18a7710873",
+    "content-hash": "376981114224a6287d70e51827c5e429",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -5818,60 +5818,6 @@
             "time": "2026-02-13T03:05:33+00:00"
         },
         {
-            "name": "nicmart/tree",
-            "version": "0.10.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nicmart/Tree.git",
-                "reference": "2ef11e329d26005ef49dbacd0223bcfd2515b6cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nicmart/Tree/zipball/2ef11e329d26005ef49dbacd0223bcfd2515b6cc",
-                "reference": "2ef11e329d26005ef49dbacd0223bcfd2515b6cc",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
-            },
-            "require-dev": {
-                "ergebnis/composer-normalize": "^2.48.2",
-                "ergebnis/license": "^2.7.0",
-                "ergebnis/php-cs-fixer-config": "^6.28.1",
-                "fakerphp/faker": "^1.24.1",
-                "infection/infection": "~0.26.19",
-                "phpunit/phpunit": "^9.6.19",
-                "psalm/plugin-phpunit": "~0.19.0",
-                "vimeo/psalm": "^5.26.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Tree\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolò Martini",
-                    "email": "nicmartnic@gmail.com"
-                },
-                {
-                    "name": "Andreas Möller",
-                    "email": "am@localheinz.com"
-                }
-            ],
-            "description": "A basic but flexible php tree data structure and a fluent tree builder implementation.",
-            "support": {
-                "issues": "https://github.com/nicmart/Tree/issues",
-                "source": "https://github.com/nicmart/Tree/tree/0.10.1"
-            },
-            "time": "2025-11-25T08:51:01+00:00"
-        },
-        {
             "name": "nikic/php-parser",
             "version": "v5.7.0",
             "source": {
@@ -10338,33 +10284,44 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "8.5.0",
+            "version": "9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "18198a2198adff1637c0028cb60d2c9559721556"
+                "reference": "6692d6e04e002e96c02ff0ba9e1aa20eb4ac7ed9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/18198a2198adff1637c0028cb60d2c9559721556",
-                "reference": "18198a2198adff1637c0028cb60d2c9559721556",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/6692d6e04e002e96c02ff0ba9e1aa20eb4ac7ed9",
+                "reference": "6692d6e04e002e96c02ff0ba9e1aa20eb4ac7ed9",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.3",
                 "guzzlehttp/psr7": "^2.0",
-                "illuminate/collections": "^10.0|^11.0|^12.0|^13.0",
-                "nicmart/tree": "^0.10",
-                "php": "^8.2",
-                "spatie/browsershot": "^5.0.5",
+                "php": "^8.4",
                 "spatie/robots-txt": "^2.0",
-                "symfony/dom-crawler": "^6.0|^7.0|^8.0"
+                "symfony/css-selector": "^7.0|^8.0",
+                "symfony/dom-crawler": "^7.0|^8.0"
             },
             "require-dev": {
-                "pestphp/pest": "^2.0|^3.0|^4.0",
+                "pestphp/pest": "^4.0",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "spatie/invade": "^2.1",
                 "spatie/ray": "^1.37"
             },
+            "suggest": {
+                "spatie/browsershot": "Required for JavaScript rendering with BrowsershotRenderer (^5.0.5)"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-v9": "9.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Spatie\\Crawler\\": "src"
@@ -10390,7 +10347,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/8.5.0"
+                "source": "https://github.com/spatie/crawler/tree/9.0.0"
             },
             "funding": [
                 {
@@ -10402,7 +10359,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-21T22:52:37+00:00"
+            "time": "2026-03-02T08:25:19+00:00"
         },
         {
             "name": "spatie/db-dumper",
@@ -12771,35 +12728,35 @@
         },
         {
             "name": "spatie/laravel-site-search",
-            "version": "2.7.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-site-search.git",
-                "reference": "4af56299155c5f089ba567a1cf42a2b4eda920a9"
+                "reference": "9ff4aa202e85b80ea38fb02e543ce7453eb6118b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-site-search/zipball/4af56299155c5f089ba567a1cf42a2b4eda920a9",
-                "reference": "4af56299155c5f089ba567a1cf42a2b4eda920a9",
+                "url": "https://api.github.com/repos/spatie/laravel-site-search/zipball/9ff4aa202e85b80ea38fb02e543ce7453eb6118b",
+                "reference": "9ff4aa202e85b80ea38fb02e543ce7453eb6118b",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/psr7": "^2.5",
-                "illuminate/contracts": "^11.0|^12.0|^13.0",
-                "illuminate/http": "^11.0|^12.0|^13.0",
-                "laravel/prompts": "^0.1.23|^0.3",
-                "php": "^8.3",
-                "spatie/crawler": "^8.0",
-                "spatie/laravel-package-tools": "^1.15"
+                "illuminate/contracts": "^12.0|^13.0",
+                "illuminate/http": "^12.0|^13.0",
+                "laravel/prompts": "^0.1.23|^0.3.13",
+                "php": "^8.4",
+                "spatie/crawler": "^9.0",
+                "spatie/laravel-package-tools": "^1.93"
             },
             "require-dev": {
-                "guzzlehttp/guzzle": "^7.7",
-                "meilisearch/meilisearch-php": "^1.1.1",
-                "nunomaduro/collision": "^8.0",
-                "orchestra/testbench": "^9.0|^10.0|^11.0",
-                "pestphp/pest": "^3.7|^4.0",
-                "pestphp/pest-plugin-laravel": "^3.1|^4.0",
-                "spatie/laravel-ray": "^1.32.4"
+                "guzzlehttp/guzzle": "^7.10",
+                "larastan/larastan": "^3.0",
+                "meilisearch/meilisearch-php": "^1.16.1",
+                "nunomaduro/collision": "^8.9.1",
+                "orchestra/testbench": "^10.9|^11.0",
+                "pestphp/pest": "^4.4.1",
+                "pestphp/pest-plugin-laravel": "^4.1",
+                "spatie/laravel-ray": "^1.43.6"
             },
             "suggest": {
                 "meilisearch/meilisearch-php": "Required to use the MeiliSearch engine."
@@ -12807,12 +12764,12 @@
             "type": "library",
             "extra": {
                 "laravel": {
-                    "aliases": {
-                        "SiteSearch": "Spatie\\SiteSearch\\SiteSearchFacade"
-                    },
                     "providers": [
                         "Spatie\\SiteSearch\\SiteSearchServiceProvider"
                     ]
+                },
+                "branch-alias": {
+                    "dev-sqlite": "3.0-dev"
                 }
             },
             "autoload": {
@@ -12846,7 +12803,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-site-search/issues",
-                "source": "https://github.com/spatie/laravel-site-search/tree/2.7.0"
+                "source": "https://github.com/spatie/laravel-site-search/tree/3.0.0"
             },
             "funding": [
                 {
@@ -12854,7 +12811,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-22T08:57:00+00:00"
+            "time": "2026-03-02T13:58:13+00:00"
         },
         {
             "name": "spatie/laravel-stubs",

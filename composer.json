@@ -65,7 +65,7 @@
         "spatie/laravel-remote": "^1.4",
         "spatie/laravel-responsecache": "^8.0",
         "spatie/laravel-schedule-monitor": "^4.0",
-        "spatie/laravel-site-search": "^2.2",
+        "spatie/laravel-site-search": "^3.0",
         "spatie/laravel-stubs": "^3.0",
         "spatie/laravel-tags": "^4.6",
         "spatie/laravel-tail": "^4.5",
