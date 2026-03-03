@@ -9,7 +9,7 @@
     @include('front.layouts.partials.flash')
 
     <div class="max-w-xl md:max-w-6xl mx-auto overflow-x-clip">
-        <header class="mt-8 md:mt-12 mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 leading-tight">
+        <header data-no-index class="mt-8 md:mt-12 mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 leading-tight">
             <div class="md:flex items-end">
                 <figure class="w-12 inline-block mb-1 md:mb-0 md:mr-3">
                     <a href="/" title="Freek.dev">
@@ -93,7 +93,7 @@
                         <div class="min-w-0 max-w-[560px]">
                             {{ $slot }}
                         </div>
-                        <aside class="hidden min-[1140px]:block">
+                        <aside data-no-index class="hidden min-[1140px]:block">
                             <div class="space-y-8 h-full">
                                 @if(isset($sidebarTop))
                                     {{ $sidebarTop }}

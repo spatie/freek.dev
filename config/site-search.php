@@ -27,6 +27,9 @@ return [
     'ignore_content_by_css_selector' => [
         '[data-no-index]',
         'nav',
+        'script',
+        'footer',
+        '.giscus',
     ],
 
     /*

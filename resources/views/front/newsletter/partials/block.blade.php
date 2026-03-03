@@ -1,4 +1,4 @@
-<div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-yellow-50 border-b-5 border-yellow-200 text-sm text-gray-700 {{ $class ?? '' }} markup">
+<div data-no-index class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-yellow-50 border-b-5 border-yellow-200 text-sm text-gray-700 {{ $class ?? '' }} markup">
     <p class="font-extrabold text-2xl leading-tight mb-2 text-black">
         Join 9,500+ smart developers
     </p>

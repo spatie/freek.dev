@@ -1,5 +1,5 @@
 @if(($previousPost ?? null) || ($nextPost ?? null))
-    <div class="flex justify-between items-baseline text-sm text-gray-600 border-b border-gray-200 pb-8 mb-8">
+    <div data-no-index class="flex justify-between items-baseline text-sm text-gray-600 border-b border-gray-200 pb-8 mb-8">
         <div>
             @if($previousPost)
                 <a href="{{ $previousPost->url }}" class="hover:text-black transition-colors">

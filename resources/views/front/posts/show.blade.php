@@ -45,7 +45,7 @@
 
     @include('front.posts.partials.keep-reading')
 
-    <p class="text-sm text-gray-600 mb-8">
+    <p data-no-index class="text-sm text-gray-600 mb-8">
         Found something interesting to share? <a href="{{ route('community.link.create') }}" class="underline hover:text-black">Submit a link</a> to the <a href="{{ route('community.index') }}" class="underline hover:text-black">community section</a>.
     </p>
 

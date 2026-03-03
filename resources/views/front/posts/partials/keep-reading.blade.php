@@ -11,7 +11,7 @@
 @endphp
 
 @if($keepReading->isNotEmpty())
-    <div class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-gray-200 text-sm text-gray-700 mb-8">
+    <div data-no-index class="-mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-gray-100 border-b-5 border-gray-200 text-sm text-gray-700 mb-8">
         <p class="font-extrabold text-2xl leading-tight mb-4 text-black">
             Keep reading
         </p>

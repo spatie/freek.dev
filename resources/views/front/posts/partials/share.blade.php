@@ -1,4 +1,4 @@
-<div class="flex items-center gap-4 text-sm text-gray-500">
+<div data-no-index class="flex items-center gap-4 text-sm text-gray-500">
     <span class="font-semibold text-gray-700">Share</span>
 
     <a
