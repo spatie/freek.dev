@@ -31,6 +31,7 @@ return [
         'script',
         'footer',
         '.giscus',
+        'template',
     ],
 
     /*
