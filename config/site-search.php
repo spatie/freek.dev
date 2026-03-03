@@ -15,6 +15,7 @@ return [
         '/originals*',
         '/community*',
         '/newsletter',
+        '/archive*',
     ],
 
     /*
