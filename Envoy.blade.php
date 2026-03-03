@@ -153,7 +153,7 @@ php artisan event:cache
 php artisan responsecache:clear
 php artisan cloudflare:purge-cache
 
-sudo service php8.3-fpm restart
+sudo service php8.5-fpm restart
 sudo supervisorctl restart all
 php artisan schedule:sync
 php artisan health:check
@@ -191,7 +191,7 @@ php artisan event:cache
 php artisan responsecache:clear
 php artisan cloudflare:purge-cache
 php artisan horizon:terminate
-sudo service php8.3-fpm restart
+sudo service php8.5-fpm restart
 php artisan health:check
 php artisan schedule:sync
 @endtask
