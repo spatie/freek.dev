@@ -16,6 +16,7 @@ return [
         '/community*',
         '/newsletter',
         '/archive*',
+        '/tags*',
     ],
 
     /*
