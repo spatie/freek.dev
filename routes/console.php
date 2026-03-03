@@ -11,7 +11,7 @@ Schedule::command(PublishScheduledPostsCommand::class)->everyMinute()->graceTime
 Schedule::command('responsecache:clear')->daily();
 Schedule::command('backup:clean')->daily()->at('01:00');
 Schedule::command('backup:run')->dailyAt('3:00');
-Schedule::command('site-search:crawl')->daily()->graceTimeInMinutes(10);
+Schedule::command('site-search:crawl')->daily()->withoutOverlapping()->graceTimeInMinutes(10);
 Schedule::command('model:prune', ['--model' => MonitoredScheduledTaskLogItem::class])->daily()->graceTimeInMinutes(10);
 Schedule::job(new FetchPopularPostsJob)->twiceDaily(4, 16);
 Schedule::command('newsletter:sync-campaigns')->hourly()->graceTimeInMinutes(10);
