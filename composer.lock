@@ -12728,16 +12728,16 @@
         },
         {
             "name": "spatie/laravel-site-search",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-site-search.git",
-                "reference": "9ff4aa202e85b80ea38fb02e543ce7453eb6118b"
+                "reference": "4eff5c607e79029f9dd6c4d5505a1f8b3e916677"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-site-search/zipball/9ff4aa202e85b80ea38fb02e543ce7453eb6118b",
-                "reference": "9ff4aa202e85b80ea38fb02e543ce7453eb6118b",
+                "url": "https://api.github.com/repos/spatie/laravel-site-search/zipball/4eff5c607e79029f9dd6c4d5505a1f8b3e916677",
+                "reference": "4eff5c607e79029f9dd6c4d5505a1f8b3e916677",
                 "shasum": ""
             },
             "require": {
@@ -12803,7 +12803,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-site-search/issues",
-                "source": "https://github.com/spatie/laravel-site-search/tree/3.0.0"
+                "source": "https://github.com/spatie/laravel-site-search/tree/3.0.1"
             },
             "funding": [
                 {
@@ -12811,7 +12811,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-02T13:58:13+00:00"
+            "time": "2026-03-03T23:28:09+00:00"
         },
         {
             "name": "spatie/laravel-stubs",
