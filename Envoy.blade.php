@@ -11,7 +11,7 @@ $currentDir = "{$baseDir}/current";
 $newReleaseName = date('Ymd-His');
 $newReleaseDir = "{$releasesDir}/{$newReleaseName}";
 $user = get_current_user();
-
+echo $userAndServer;
 function logMessage($message) {
 return "echo '\033[32m" .$message. "\033[0m';\n";
 }
