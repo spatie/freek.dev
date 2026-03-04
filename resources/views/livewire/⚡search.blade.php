@@ -11,13 +11,21 @@ new class extends Component {
 
     public function with(): array
     {
-        $hits = $this->getResults();
+        $seen = [];
 
-        $postIds = collect($hits)
-            ->map(fn ($hit) => $this->extractPostId($hit->url))
-            ->filter()
-            ->unique()
-            ->values();
+        $hits = $this->getResults()->filter(function ($hit) use (&$seen) {
+            $postId = $this->extractPostId($hit->url);
+
+            if ($postId === null || in_array($postId, $seen)) {
+                return false;
+            }
+
+            $seen[] = $postId;
+
+            return true;
+        })->values();
+
+        $postIds = $hits->map(fn ($hit) => $this->extractPostId($hit->url));
 
         $posts = Post::query()
             ->select('id', 'title', 'original_content', 'publish_date')

@@ -21,7 +21,7 @@ class SearchProfile extends DefaultSearchProfile
             return false;
         }
 
-        if (str_contains($url, '?page=')) {
+        if (str_contains($url, '?page=') || str_contains($url, 'utm_')) {
             return false;
         }
 
