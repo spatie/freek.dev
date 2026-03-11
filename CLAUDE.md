@@ -1,3 +1,9 @@
+When i ask you to deploy, you should execute
+
+- commit: to commit stuff
+- push: to push the github
+- deploy-code: to deploy the current main branch to production
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
