@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('admin', 'admin/posts');
 
-Route::get('demo', [FlareDemoController::class, 'index'])->name('demo');
+Route::get('demo', [DemoController::class, 'index'])->name('demo');
 
 Route::middleware('signed')->prefix('links/{link}')->group(function () {
     Route::get('approve', [LinkApprovalController::class, 'approve'])->name('link.approve');
