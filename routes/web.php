@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\CommunityController;
-use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LinkApprovalController;
 use App\Http\Controllers\MusicController;
