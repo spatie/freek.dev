@@ -1,5 +1,7 @@
 <?php
 
+use Spatie\LaravelMarkdown\MarkdownRenderer;
+
 return [
     'code_highlighting' => [
         /*
@@ -48,7 +50,7 @@ return [
      *
      * More info: https://github.com/spatie/laravel-markdown#customizing-the-rendering-process
      */
-    'renderer_class' => Spatie\LaravelMarkdown\MarkdownRenderer::class,
+    'renderer_class' => MarkdownRenderer::class,
 
     /*
      * These extensions should be added to the markdown environment. An valid

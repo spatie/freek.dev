@@ -83,14 +83,14 @@ it('can determine the excerpt', function () {
 });
 
 test('a post is tweetable', function () {
-    /** @var \App\Models\Post $post */
+    /** @var Post $post */
     $post = Post::factory()->create();
 
     expect(is_string($post->toTweet()))->toBeTrue();
 });
 
 it('can save the tweeted url', function () {
-    /** @var \App\Models\Post $post */
+    /** @var Post $post */
     $post = Post::factory()->create();
 
     $url = 'https://twitter.com/freekmurze/status/123';

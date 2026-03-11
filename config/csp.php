@@ -1,5 +1,8 @@
 <?php
 
+use App\Services\Csp\Policy;
+use Spatie\Csp\Nonce\RandomString;
+
 return [
 
     /*
@@ -12,7 +15,7 @@ return [
      * This policy which will be put in report only mode. This is great for testing out
      * a new policy or changes to existing csp policy without breaking anyting.
      */
-    'report_only_policy' => App\Services\Csp\Policy::class,
+    'report_only_policy' => Policy::class,
 
     /*
      * All violations against the policy will be reported to this url.
@@ -30,5 +33,5 @@ return [
     /*
      * The class responsible for generating the nonces used in inline tags and headers.
      */
-    'nonce_generator' => Spatie\Csp\Nonce\RandomString::class,
+    'nonce_generator' => RandomString::class,
 ];

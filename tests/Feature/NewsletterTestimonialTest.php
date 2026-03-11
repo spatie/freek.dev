@@ -3,6 +3,7 @@
 use App\Livewire\TestimonialForm;
 use App\Mail\TestimonialSubmittedMail;
 use App\Models\NewsletterTestimonial;
+use App\Models\Post;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
@@ -15,7 +16,7 @@ it('shows a testimonial in the newsletter block on a blog post', function () {
         'is_active' => true,
     ]);
 
-    $post = \App\Models\Post::factory()->create([
+    $post = Post::factory()->create([
         'published' => true,
         'publish_date' => now()->subDay(),
     ]);
@@ -32,7 +33,7 @@ it('does not show inactive testimonials', function () {
         'is_active' => false,
     ]);
 
-    $post = \App\Models\Post::factory()->create([
+    $post = Post::factory()->create([
         'published' => true,
         'publish_date' => now()->subDay(),
     ]);

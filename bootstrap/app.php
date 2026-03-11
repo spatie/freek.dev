@@ -56,7 +56,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->api('throttle:60,1');
 
-        $middleware->replace(TrimStrings::class, \App\Http\Middleware\TrimStrings::class);
+        $middleware->replace(TrimStrings::class, App\Http\Middleware\TrimStrings::class);
 
         $middleware->replaceInGroup('web', ValidateCsrfToken::class, VerifyCsrfToken::class);
 

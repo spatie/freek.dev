@@ -10,7 +10,7 @@ use function Pest\Laravel\get;
 it('can approve a link and create a post using a signed url', function () {
     Mail::fake();
 
-    /** @var \App\Models\Link $link */
+    /** @var Link $link */
     $link = Link::factory()->create([
         'status' => LinkStatus::Submitted->value,
     ]);
