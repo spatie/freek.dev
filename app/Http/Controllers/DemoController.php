@@ -11,7 +11,7 @@ class DemoController
     {
         $posts = Post::query()
             ->published()
-            ->simplePage(10);
+            ->simplePaginate(10);
 
         return view('front.pages.demo', compact('posts'));
     }

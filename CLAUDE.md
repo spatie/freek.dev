@@ -4,6 +4,8 @@ When i ask you to deploy, you should execute
 - push: to push the github
 - deploy-code: to deploy the current main branch to production
 
+When I ask for a performance report, use the Flare skill
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
