@@ -1,12 +1,15 @@
 <?php
 
+use App\Services\MissingPageRedirector\LegacyUrlsRedirector;
+use Symfony\Component\HttpFoundation\Response;
+
 return [
     /*
      * This is the class responsible for providing the URLs which must be redirected.
      * The only requirement for the redirector is that it needs to implement the
      * `Spatie\MissingPageRedirector\Redirector\Redirector`-interface
      */
-    'redirector' => \App\Services\MissingPageRedirector\LegacyUrlsRedirector::class,
+    'redirector' => LegacyUrlsRedirector::class,
 
     /*
      * By default the package will only redirect 404s. If you want to redirect on other
@@ -14,6 +17,6 @@ return [
      * always no matter what the response code.
      */
     'redirect_status_codes' => [
-        \Symfony\Component\HttpFoundation\Response::HTTP_NOT_FOUND,
+        Response::HTTP_NOT_FOUND,
     ],
 ];

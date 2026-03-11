@@ -4,6 +4,7 @@ namespace App\Filament\Resources\NewsletterTestimonials\Schemas;
 
 use Filament\Forms;
 use Filament\Schemas\Schema;
+use Illuminate\Support\HtmlString;
 
 class NewsletterTestimonialForm
 {
@@ -25,7 +26,7 @@ class NewsletterTestimonialForm
                 Forms\Components\Placeholder::make('avatar_preview')
                     ->label('Avatar')
                     ->content(fn ($record) => $record?->avatar_url
-                        ? new \Illuminate\Support\HtmlString('<img src="'.e($record->avatar_url).'" class="w-16 h-16 rounded-full object-cover">')
+                        ? new HtmlString('<img src="'.e($record->avatar_url).'" class="w-16 h-16 rounded-full object-cover">')
                         : 'No avatar')
                     ->visibleOn('edit'),
                 Forms\Components\TextInput::make('avatar_url')

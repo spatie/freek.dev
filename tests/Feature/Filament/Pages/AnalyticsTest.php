@@ -93,7 +93,7 @@ test('the analytics service handles api errors gracefully', function () {
     {
         public function __call($method, $args): never
         {
-            throw new \RuntimeException('API error');
+            throw new RuntimeException('API error');
         }
     });
 

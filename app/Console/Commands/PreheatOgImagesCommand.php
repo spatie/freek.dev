@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Post;
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Spatie\OgImage\Facades\OgImage;
 use Throwable;
 
@@ -43,7 +44,7 @@ class PreheatOgImagesCommand extends Command
         $this->info("Done! {$successes} succeeded, {$failures} failed.");
     }
 
-    protected function collectUrls(): \Illuminate\Support\Collection
+    protected function collectUrls(): Collection
     {
         $postUrls = Post::query()
             ->published()

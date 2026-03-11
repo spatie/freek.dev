@@ -1,5 +1,10 @@
 <?php
 
+use App\Jobs\CrawlSiteJob;
+use App\Services\Search\Indexer;
+use App\Services\Search\SearchProfile;
+use Spatie\SiteSearch\Drivers\DatabaseDriver;
+
 return [
     /*
      * When crawling your site, we will ignore content that is on these URLs.
@@ -60,7 +65,7 @@ return [
      * This profile will be used when none is specified in the `profile_class` attribute
      * of a `SiteSearchIndex` model.
      */
-    'default_profile' => App\Services\Search\SearchProfile::class,
+    'default_profile' => SearchProfile::class,
 
     /*
      * An indexer is a class that is responsible for converting the content of a page
@@ -69,18 +74,18 @@ return [
      * This indexer will be used when none is specified in the `profile_class` attribute
      * of a `SiteSearchIndex` model.
      */
-    'default_indexer' => App\Services\Search\Indexer::class,
+    'default_indexer' => Indexer::class,
 
     /*
      * A driver is responsible for writing all scraped content
      * to a search index.
      */
-    'default_driver' => Spatie\SiteSearch\Drivers\DatabaseDriver::class,
+    'default_driver' => DatabaseDriver::class,
 
     /*
      * This job is responsible for crawling your site. To customize this job,
      * you can extend the default one, and specify the class name of
      * your customized job here.
      */
-    'crawl_site_job' => \App\Jobs\CrawlSiteJob::class,
+    'crawl_site_job' => CrawlSiteJob::class,
 ];
