@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ArchiveController;
 use App\Http\Controllers\CommunityController;
-use App\Http\Controllers\FlareDemoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LinkApprovalController;
 use App\Http\Controllers\MusicController;
@@ -16,8 +15,6 @@ use App\Http\Controllers\UsesController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('admin', 'admin/posts');
-
-Route::get('demo', [FlareDemoController::class, 'index'])->name('demo');
 
 Route::middleware('signed')->prefix('links/{link}')->group(function () {
     Route::get('approve', [LinkApprovalController::class, 'approve'])->name('link.approve');
