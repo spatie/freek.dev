@@ -34,9 +34,17 @@ new class extends Component {
             ->get()
             ->keyBy('id');
 
+        $results = $hits
+            ->map(fn ($hit) => [
+                'url' => $hit->url,
+                'id' => $hit->id,
+                'post' => $posts[$this->extractPostId($hit->url)] ?? null,
+            ])
+            ->filter(fn ($result) => $result['post'] !== null)
+            ->values();
+
         return [
-            'hits' => $hits,
-            'posts' => $posts,
+            'results' => $results,
         ];
     }
 
@@ -74,28 +82,22 @@ new class extends Component {
     />
 
     @if ($query !== '')
-        @if ($posts->isNotEmpty())
+        @if ($results->isNotEmpty())
             <ul>
-                @foreach($hits as $hit)
-                    @php
-                        $path = ltrim(parse_url($hit->url, PHP_URL_PATH) ?? '', '/');
-                        $postId = preg_match('/^(\d+)-/', $path, $m) ? (int) $m[1] : null;
-                        $post = $postId ? ($posts[$postId] ?? null) : null;
-                    @endphp
-                    @continue(! $post)
-                    <li wire:key="{{ $hit->id }}" class="mb-5 pb-5 border-b border-gray-100 last:border-0">
-                        <a href="{{ $hit->url }}" class="font-bold leading-tight hover:underline">
-                            {{ $post->title }}
+                @foreach($results as $result)
+                    <li wire:key="{{ $result['id'] }}" class="mb-5 pb-5 border-b border-gray-100 last:border-0">
+                        <a href="{{ $result['url'] }}" class="font-bold leading-tight hover:underline">
+                            {{ $result['post']->title }}
                         </a>
-                        @if($post?->isOriginal())
+                        @if($result['post']->isOriginal())
                             <span class="text-[10px] font-medium text-gray-400 border border-gray-200 rounded-full px-1.5 py-0.5 align-middle ml-0.5">original</span>
                         @endif
-                        @if($post?->publish_date)
-                            <span class="text-xs text-gray-400 ml-1.5 tabular-nums whitespace-nowrap">{{ $post->publish_date->format('M j, Y') }}</span>
+                        @if($result['post']->publish_date)
+                            <span class="text-xs text-gray-400 ml-1.5 tabular-nums whitespace-nowrap">{{ $result['post']->publish_date->format('M j, Y') }}</span>
                         @endif
-                        @if($post?->tags->isNotEmpty())
+                        @if($result['post']->tags->isNotEmpty())
                             <div class="flex flex-wrap gap-1.5 mt-2">
-                                @foreach($post->tags->sortBy->name as $tag)
+                                @foreach($result['post']->tags->sortBy->name as $tag)
                                     <a href="{{ route('taggedPosts.index', $tag->slug) }}"
                                        class="bg-gray-50 rounded-md px-2 py-0.5 text-[12px] text-gray-500 hover:bg-gray-100 hover:text-black transition-colors">
                                         {{ $tag->name }}
