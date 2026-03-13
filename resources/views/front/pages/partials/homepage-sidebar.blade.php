@@ -4,25 +4,30 @@
     @if($topTags->isNotEmpty())
         <div>
             <h2 class="text-[11px] font-medium uppercase tracking-widest text-gray-400 mb-4">
-                Browse by category
+                Browse by topic
             </h2>
             <div class="flex flex-wrap gap-1.5">
                 @foreach($topTags as $tag)
                     <a
-                        href="{{ route('taggedPosts.index', $tag->slug) }}"
+                        href="{{ route('topics.show', $tag->slug) }}"
                         class="bg-gray-50 rounded-md px-2.5 py-1 text-[13px] text-gray-500 hover:bg-gray-100 hover:text-black transition-colors"
                     >
                         {{ $tag->name }}
                     </a>
                 @endforeach
             </div>
+            <p class="mt-3">
+                <a href="{{ route('topics.index') }}" class="text-[12px] text-gray-400 hover:text-black transition-colors">
+                    All topics &rarr;
+                </a>
+            </p>
         </div>
     @endif
 
     @if($popularPosts->isNotEmpty())
         <div>
             <h2 class="text-[11px] font-medium uppercase tracking-widest text-gray-400 mb-4">
-                Popular content
+                Popular articles
             </h2>
             <ul class="space-y-2.5">
                 @foreach($popularPosts as $popularPost)

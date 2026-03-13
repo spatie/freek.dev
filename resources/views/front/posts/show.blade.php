@@ -71,5 +71,14 @@
         <meta name="twitter:title" content="{{ $post->title }} | freek.dev"/>
         <meta name="twitter:site" content="@freekmurze"/>
         <meta name="twitter:creator" content="@freekmurze"/>
+
+        <x-schema-markup
+            :post="$post"
+            :breadcrumbs="[
+                ['name' => 'Home', 'url' => route('home')],
+                ['name' => $post->isOriginal() ? 'Originals' : 'Home', 'url' => $post->isOriginal() ? route('originals') : route('home')],
+                ['name' => $post->title, 'url' => $post->url],
+            ]"
+        />
     </x-slot>
 </x-app-layout>
