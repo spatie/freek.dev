@@ -47,12 +47,6 @@ class TopicsController
             ->where('slug->en', $tagSlug)
             ->firstOrFail();
 
-        $featuredPosts = Post::withAnyTags([$tag])
-            ->published()
-            ->originalContent()
-            ->limit(3)
-            ->get();
-
         $posts = Post::withAnyTags([$tag])
             ->published()
             ->simplePaginate(20);
@@ -82,7 +76,6 @@ class TopicsController
 
         return view('front.pages.topics.show', compact(
             'tag',
-            'featuredPosts',
             'posts',
             'totalCount',
             'originalCount',

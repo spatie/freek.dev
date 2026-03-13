@@ -20,12 +20,6 @@ class HomeController
             return view('front.pages.home', compact('posts'));
         }
 
-        $featuredPosts = Post::query()
-            ->published()
-            ->originalContent()
-            ->limit(3)
-            ->get();
-
         $priorityTagNames = ['laravel', 'php', 'ai', 'testing', 'performance', 'architecture'];
 
         $publishedPostCountSubquery = DB::table('taggables')
@@ -59,6 +53,6 @@ class HomeController
 
         $popularPosts = $popularPostsService->getPopularPosts(8);
 
-        return view('front.pages.home', compact('posts', 'topTags', 'popularPosts', 'featuredPosts'));
+        return view('front.pages.home', compact('posts', 'topTags', 'popularPosts'));
     }
 }
