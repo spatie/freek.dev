@@ -20,7 +20,7 @@ class HomeController
             return view('front.pages.home', compact('posts'));
         }
 
-        $priorityTagNames = ['laravel', 'php', 'ai', 'spatie'];
+        $priorityTagNames = ['laravel', 'php', 'ai', 'testing', 'performance', 'architecture'];
 
         $publishedPostCountSubquery = DB::table('taggables')
             ->join('posts', function ($join) {

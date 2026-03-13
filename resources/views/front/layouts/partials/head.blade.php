@@ -22,4 +22,27 @@
 
 <link rel="stylesheet" href="https://cloud.typography.com/6194432/6581412/css/fonts.css"/>
 <link href="https://x.com/freekmurze" rel="me">
+
+@php
+echo '<script type="application/ld+json">' . json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'WebSite',
+    'name' => 'freek.dev',
+    'url' => 'https://freek.dev',
+    'description' => "Freek Van der Herten's blog on Laravel, PHP and AI",
+    'author' => [
+        '@type' => 'Person',
+        'name' => 'Freek Van der Herten',
+        'url' => 'https://freek.dev/about',
+    ],
+    'potentialAction' => [
+        '@type' => 'SearchAction',
+        'target' => [
+            '@type' => 'EntryPoint',
+            'urlTemplate' => 'https://freek.dev/search?query={search_term_string}',
+        ],
+        'query-input' => 'required name=search_term_string',
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+@endphp
 </head>

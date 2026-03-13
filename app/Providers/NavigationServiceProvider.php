@@ -13,6 +13,7 @@ class NavigationServiceProvider extends ServiceProvider
         Menu::macro('primary', fn () => Menu::new()
             ->url('/', 'Home')
             ->url('originals', 'Originals')
+            ->url('topics', 'Topics')
             ->url('community', 'Community')
             ->url('archive', 'Archive')
             ->add(Link::to(url('/newsletter'), 'Newsletter')->addParentClass('mt-4'))
