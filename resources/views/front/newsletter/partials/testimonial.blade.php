@@ -3,8 +3,8 @@
 @endphp
 
 @if($testimonial)
-    <blockquote class="mb-4 border-l-3 border-yellow-300 pl-4 py-1">
-        <p class="text-sm text-gray-600 italic leading-relaxed">
+    <blockquote class="newsletter-testimonial relative -mx-4 p-4 sm:mx-0 sm:p-6 sm:border-b-5 sm:border-indigo-200 md:p-8 bg-indigo-100 mb-4 text-[0.925em]">
+        <p class="text-gray-600 italic leading-relaxed">
             "{{ $testimonial->text }}"
         </p>
         <footer class="mt-2 flex items-center gap-2">

@@ -4,7 +4,6 @@
         <p class="text-gray-600 leading-relaxed mb-4">
             Over a decade of writing about Laravel, PHP, and modern web development. Browse by topic to find what you need.
         </p>
-        @include('front.newsletter.partials.testimonial')
     </div>
 
     <div class="space-y-3">

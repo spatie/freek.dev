@@ -10,11 +10,8 @@
         </p>
     </div>
 
-    <div class="mb-8 -mx-4 sm:mx-0 p-4 sm:p-6 md:p-8 bg-yellow-50 border-b-5 border-yellow-500 text-sm text-gray-700">
-        @include('front.newsletter.partials.form')
-        <p class="mt-3 text-xs text-gray-400">
-            Your email will only be used for this newsletter. No spam, no sharing. Unsubscribe at any time.
-        </p>
+    <div class="mb-8">
+        @include('front.newsletter.partials.block', ['hideIntro' => true])
     </div>
 
     @if($latestCampaign)

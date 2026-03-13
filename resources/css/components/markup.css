@@ -45,28 +45,36 @@
     @apply block;
 }
 
-.markup blockquote {
+.markup blockquote:not(.newsletter-testimonial) {
     @apply -mx-4 p-4 bg-indigo-100 relative;
     font-size: 0.925em;
 }
 
 @media (min-width: 640px) {
-    .markup blockquote {
+    .markup blockquote:not(.newsletter-testimonial) {
         @apply mx-0 p-6 border-b-5 border-indigo-200;
     }
 }
 
 @media (min-width: 768px) {
-    .markup blockquote {
+    .markup blockquote:not(.newsletter-testimonial) {
         @apply p-8;
     }
 }
 
-.markup blockquote:after {
+.markup blockquote:not(.newsletter-testimonial):after {
     position: absolute;
     left: -12px;
     top: -50px;
-    content: '“';
+    content: '”';
+    font-size: 100px;
+}
+
+.newsletter-testimonial:after {
+    position: absolute;
+    left: -12px;
+    top: -50px;
+    content: '”';
     font-size: 100px;
 }
 
