@@ -11,8 +11,8 @@ use App\Http\Controllers\OriginalsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SpeakingController;
 use App\Http\Controllers\TaggedPostsController;
-use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\TestimonialApprovalController;
+use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\UsesController;
 use Illuminate\Support\Facades\Route;
 
