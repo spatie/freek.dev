@@ -3,14 +3,14 @@
 namespace App\Console\Commands;
 
 use App\Models\Post;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
+#[Signature('blog:remove-external-url-from-text')]
+#[Description('Remove the external url from the text field')]
 class RemoveExternalUrlFromTextCommand extends Command
 {
-    protected $signature = 'blog:remove-external-url-from-text';
-
-    protected $description = 'Remove the external url from the text field';
-
     public function handle(): void
     {
         Post::query()->whereNotNull('external_url')->each(

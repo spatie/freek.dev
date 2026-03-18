@@ -22,31 +22,31 @@ it('can determine the promotional url', function () {
 });
 
 it('can get scheduled posts', function () {
-    expect(Post::scheduled()->get())->toHaveCount(0);
+    expect(Post::query()->scheduled()->get())->toHaveCount(0);
 
     Post::factory()->create([
         'publish_date' => now()->subMinute(),
         'published' => false,
     ]);
-    expect(Post::scheduled()->get())->toHaveCount(1);
+    expect(Post::query()->scheduled()->get())->toHaveCount(1);
 
     Post::factory()->create([
         'publish_date' => now()->subMinute(),
         'published' => true,
     ]);
-    expect(Post::scheduled()->get())->toHaveCount(1);
+    expect(Post::query()->scheduled()->get())->toHaveCount(1);
 
     Post::factory()->create([
         'publish_date' => now()->addMinute(),
         'published' => false,
     ]);
-    expect(Post::scheduled()->get())->toHaveCount(2);
+    expect(Post::query()->scheduled()->get())->toHaveCount(2);
 
     Post::factory()->create([
         'publish_date' => null,
         'published' => false,
     ]);
-    expect(Post::scheduled()->get())->toHaveCount(2);
+    expect(Post::query()->scheduled()->get())->toHaveCount(2);
 });
 
 it('can determine if the post concerns a tweet', function () {

@@ -4,18 +4,18 @@ namespace App\Console\Commands;
 
 use App\Models\Post;
 use App\Services\TaggingService;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
-use Prism\Prism\Exceptions\PrismRateLimitedException;
+use Illuminate\Http\Client\RequestException;
 use Throwable;
 
+#[Signature('app:review-post-tags
+        {--dry-run : Show suggested changes without applying them}
+        {--post= : Review a specific post by ID}')]
+#[Description('Review and update tags for all published posts using AI')]
 class ReviewPostTagsCommand extends Command
 {
-    protected $signature = 'app:review-post-tags
-        {--dry-run : Show suggested changes without applying them}
-        {--post= : Review a specific post by ID}';
-
-    protected $description = 'Review and update tags for all published posts using AI';
-
     public function handle(TaggingService $taggingService): void
     {
         $query = Post::query()->published();
@@ -71,12 +71,12 @@ class ReviewPostTagsCommand extends Command
         for ($attempt = 1; $attempt <= $maxRetries; $attempt++) {
             try {
                 return $taggingService->generateTags($post);
-            } catch (PrismRateLimitedException $e) {
-                if ($attempt === $maxRetries) {
+            } catch (RequestException $e) {
+                if ($attempt === $maxRetries || $e->response->status() !== 429) {
                     throw $e;
                 }
 
-                $retryAfter = $e->retryAfter ?? 60;
+                $retryAfter = (int) ($e->response->header('Retry-After') ?? 60);
                 $this->warn("  Rate limited — waiting {$retryAfter}s...");
                 sleep($retryAfter);
             }

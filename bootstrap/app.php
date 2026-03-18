@@ -2,7 +2,7 @@
 
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\CacheForCloudflare;
-use App\Http\Middleware\VerifyCsrfToken;
+use App\Http\Middleware\PreventRequestForgery;
 use App\Providers\BladeComponentServiceProvider;
 use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\FlashServiceProvider;
@@ -16,7 +16,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Foundation\Http\Middleware\TrimStrings;
-use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
+use Illuminate\Foundation\Http\Middleware\PreventRequestForgery as BasePreventRequestForgery;
 use Illuminate\Validation\ValidationException;
 use Livewire\Exceptions\PublicPropertyNotFoundException;
 use Spatie\LaravelFlare\Facades\Flare;
@@ -58,7 +58,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->replace(TrimStrings::class, App\Http\Middleware\TrimStrings::class);
 
-        $middleware->replaceInGroup('web', ValidateCsrfToken::class, VerifyCsrfToken::class);
+        $middleware->replaceInGroup('web', BasePreventRequestForgery::class, PreventRequestForgery::class);
 
         $middleware->alias([
             'admin' => Admin::class,

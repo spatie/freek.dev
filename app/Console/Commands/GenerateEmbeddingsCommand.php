@@ -4,12 +4,12 @@ namespace App\Console\Commands;
 
 use App\Jobs\GeneratePostEmbeddingJob;
 use App\Models\Post;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
+#[Signature('app:generate-embeddings {--force : Regenerate embeddings for all posts}')]
 class GenerateEmbeddingsCommand extends Command
 {
-    protected $signature = 'app:generate-embeddings {--force : Regenerate embeddings for all posts}';
-
     public function handle(): void
     {
         $query = Post::query()->published();

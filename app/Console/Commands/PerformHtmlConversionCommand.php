@@ -6,14 +6,14 @@ use App\Actions\ConvertPostTextToHtmlAction;
 use App\Models\Ad;
 use App\Models\Post;
 use App\Models\Video;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
+#[Signature('blog:perform-html-conversion')]
+#[Description('Convert post text to HTML')]
 class PerformHtmlConversionCommand extends Command
 {
-    protected $signature = 'blog:perform-html-conversion';
-
-    protected $description = 'Command description';
-
     public function handle(): void
     {
         $this->info('Performing HTML conversions...');

@@ -25,7 +25,7 @@ it('shows tag pills on the first page', function () {
 
     get('/')
         ->assertOk()
-        ->assertSee('Browse by category')
+        ->assertSee('Browse by topic')
         ->assertSee('laravel')
         ->assertSee('php');
 });
@@ -44,7 +44,7 @@ it('shows popular posts on the first page', function () {
 
     get('/')
         ->assertOk()
-        ->assertSee('Popular content')
+        ->assertSee('Popular articles')
         ->assertSee('A very popular post');
 });
 
@@ -56,8 +56,8 @@ it('does not show the sidebar on page 2', function () {
 
     get('/?page=2')
         ->assertOk()
-        ->assertDontSee('Browse by category')
-        ->assertDontSee('Popular content');
+        ->assertDontSee('Browse by topic')
+        ->assertDontSee('Popular articles');
 });
 
 it('always shows priority tags first even with fewer posts', function () {

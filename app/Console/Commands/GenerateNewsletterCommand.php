@@ -3,12 +3,12 @@
 namespace App\Console\Commands;
 
 use App\Actions\GenerateNewsletterAction;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
+#[Signature('newsletter:generate')]
 class GenerateNewsletterCommand extends Command
 {
-    protected $signature = 'newsletter:generate';
-
     public function handle(GenerateNewsletterAction $action): int
     {
         $result = $action->execute();

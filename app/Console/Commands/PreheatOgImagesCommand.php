@@ -3,17 +3,17 @@
 namespace App\Console\Commands;
 
 use App\Models\Post;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Spatie\OgImage\Facades\OgImage;
 use Throwable;
 
+#[Signature('app:preheat-og-images')]
+#[Description('Pre-generate OG images for all public pages')]
 class PreheatOgImagesCommand extends Command
 {
-    protected $signature = 'app:preheat-og-images';
-
-    protected $description = 'Pre-generate OG images for all public pages';
-
     public function handle(): void
     {
         $urls = $this->collectUrls();
