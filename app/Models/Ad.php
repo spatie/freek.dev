@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Services\CommonMark\CommonMark;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -41,14 +42,14 @@ class Ad extends Model
 
     public static function getPageSpecificAd(string $url): ?self
     {
-        return static::current()
+        return static::query()->current()
             ->where('display_on_url', $url)
             ->first();
     }
 
     public static function getSiteWideAd(): ?self
     {
-        return static::current()
+        return static::query()->current()
             ->where(function (Builder $query) {
                 $query
                     ->where('display_on_url', '')
@@ -57,7 +58,8 @@ class Ad extends Model
             ->first();
     }
 
-    public function scopeCurrent(Builder $query): void
+    #[Scope]
+    public function current(Builder $query): void
     {
         $now = now()->format('Y-m-d');
 

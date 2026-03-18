@@ -2,7 +2,6 @@
 
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\CacheForCloudflare;
-use App\Http\Middleware\VerifyCsrfToken;
 use App\Providers\BladeComponentServiceProvider;
 use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\FlashServiceProvider;
@@ -15,8 +14,6 @@ use App\Services\Twitter\TwitterServiceProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Foundation\Http\Middleware\TrimStrings;
-use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Validation\ValidationException;
 use Livewire\Exceptions\PublicPropertyNotFoundException;
 use Spatie\LaravelFlare\Facades\Flare;
@@ -55,10 +52,6 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         $middleware->api('throttle:60,1');
-
-        $middleware->replace(TrimStrings::class, App\Http\Middleware\TrimStrings::class);
-
-        $middleware->replaceInGroup('web', ValidateCsrfToken::class, VerifyCsrfToken::class);
 
         $middleware->alias([
             'admin' => Admin::class,

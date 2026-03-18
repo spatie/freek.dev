@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\LinkStatus;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -28,7 +29,8 @@ class Link extends Model implements Sluggable
         return $this->belongsTo(User::class);
     }
 
-    public function scopeApproved(Builder $query): void
+    #[Scope]
+    public function approved(Builder $query): void
     {
         $query->where('status', LinkStatus::Approved->value);
     }

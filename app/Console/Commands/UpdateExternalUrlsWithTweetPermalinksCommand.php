@@ -3,14 +3,14 @@
 namespace App\Console\Commands;
 
 use App\Models\Post;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
+#[Signature('blog:update-external-urls-with-tweet-permalinks')]
+#[Description('Update external links with tweet permalinks')]
 class UpdateExternalUrlsWithTweetPermalinksCommand extends Command
 {
-    protected $signature = 'blog:update-external-urls-with-tweet-permalinks';
-
-    protected $description = 'Update external links with tweet permalinks';
-
     public function handle(): void
     {
         Post::all()

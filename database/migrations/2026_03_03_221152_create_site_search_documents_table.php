@@ -8,6 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasTable('site_search_documents')) {
+            return;
+        }
+
         Schema::create('site_search_documents', function (Blueprint $table) {
             $table->id();
             $table->string('index_name')->index();

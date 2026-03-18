@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\Attributes\WithoutRelations;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
@@ -14,12 +15,10 @@ class TootPostJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public object $post;
-
-    public function __construct(Post $post)
-    {
-        $this->post = $post;
-    }
+    public function __construct(
+        #[WithoutRelations]
+        public Post $post,
+    ) {}
 
     public function handle(): void
     {

@@ -2,15 +2,15 @@
 
 namespace App\Console\Commands;
 
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
+#[Signature('cloudflare:purge-cache')]
+#[Description('Purge the entire Cloudflare cache')]
 class PurgeCloudflareCache extends Command
 {
-    protected $signature = 'cloudflare:purge-cache';
-
-    protected $description = 'Purge the entire Cloudflare cache';
-
     public function handle(): int
     {
         $zoneId = config('services.cloudflare.zone_id');

@@ -4,17 +4,17 @@ namespace App\Console\Commands;
 
 use App\Jobs\PurgeCloudflareCacheJob;
 use App\Models\NewsletterCampaign;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Spatie\MailcoachSdk\Facades\Mailcoach;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
+#[Signature('newsletter:sync-campaigns')]
+#[Description('Sync sent newsletter campaigns from Mailcoach')]
 class SyncNewsletterCampaignsCommand extends Command
 {
-    protected $signature = 'newsletter:sync-campaigns';
-
-    protected $description = 'Sync sent newsletter campaigns from Mailcoach';
-
     public function handle(): void
     {
         $this->info('Syncing newsletter campaigns from Mailcoach...');

@@ -7,6 +7,7 @@ use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -64,7 +65,8 @@ class Post extends Model implements Feedable, Sluggable
         return $this->belongsTo(User::class, 'submitted_by_user_id');
     }
 
-    public function scopePublished(Builder $query): void
+    #[Scope]
+    public function published(Builder $query): void
     {
         $query
             ->where('published', true)
@@ -72,12 +74,14 @@ class Post extends Model implements Feedable, Sluggable
             ->orderBy('id', 'desc');
     }
 
-    public function scopeOriginalContent(Builder $query): void
+    #[Scope]
+    public function originalContent(Builder $query): void
     {
         $query->where('original_content', true);
     }
 
-    public function scopeScheduled(Builder $query): void
+    #[Scope]
+    public function scheduled(Builder $query): void
     {
         $query
             ->where('published', false)
@@ -117,7 +121,7 @@ class Post extends Model implements Feedable, Sluggable
 
     public static function getFeedItems()
     {
-        return static::published()
+        return static::query()->published()
             ->orderBy('publish_date', 'desc')
             ->limit(20)
             ->get();
@@ -134,7 +138,7 @@ class Post extends Model implements Feedable, Sluggable
 
     public static function getOriginalContentFeedItems()
     {
-        return static::published()
+        return static::query()->published()
             ->where('original_content', true)
             ->orderBy('publish_date', 'desc')
             ->limit(20)

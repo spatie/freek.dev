@@ -3,7 +3,8 @@
 namespace App\Services;
 
 use App\Models\Post;
-use OpenAI\Laravel\Facades\OpenAI;
+use Laravel\Ai\Embeddings;
+use Laravel\Ai\Enums\Lab;
 
 class EmbeddingService
 {
@@ -12,12 +13,11 @@ class EmbeddingService
         $input = $post->title."\n\n".strip_tags($post->text);
         $input = mb_substr($input, 0, 32000);
 
-        $response = OpenAI::embeddings()->create([
-            'model' => 'text-embedding-3-small',
-            'input' => $input,
-        ]);
+        $response = Embeddings::for([$input])
+            ->dimensions(1536)
+            ->generate(Lab::OpenAI, 'text-embedding-3-small');
 
-        return $response->embeddings[0]->embedding;
+        return $response->embeddings[0];
     }
 
     public static function cosineSimilarity(array $a, array $b): float

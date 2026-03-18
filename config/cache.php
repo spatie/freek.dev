@@ -1,7 +1,9 @@
 <?php
 
 return [
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => env('CACHE_STORE', 'file'),
+
+    'serializable_classes' => false,
 
     'stores' => [
         'markdown' => [

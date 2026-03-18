@@ -4,12 +4,12 @@ namespace App\Console\Commands;
 
 use App\Jobs\ComputeRelatedPostsJob;
 use App\Models\Post;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
+#[Signature('app:compute-related-posts')]
 class ComputeRelatedPostsCommand extends Command
 {
-    protected $signature = 'app:compute-related-posts';
-
     public function handle(): void
     {
         $count = 0;

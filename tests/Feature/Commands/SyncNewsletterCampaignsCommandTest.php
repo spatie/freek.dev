@@ -7,6 +7,11 @@ use Spatie\MailcoachSdk\Support\PaginatedResults;
 
 use function Pest\Laravel\artisan;
 
+beforeEach(function () {
+    config()->set('mailcoach-sdk.api_token', 'test-token');
+    config()->set('mailcoach-sdk.endpoint', 'https://example.com/api');
+});
+
 function makeCampaignResource(array $attributes): Campaign
 {
     $defaults = [
