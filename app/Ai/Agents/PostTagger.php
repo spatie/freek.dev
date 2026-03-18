@@ -14,8 +14,7 @@ class PostTagger implements Agent, HasStructuredOutput
 
     public function __construct(
         private readonly string $existingTags,
-    ) {
-    }
+    ) {}
 
     public function instructions(): Stringable|string
     {

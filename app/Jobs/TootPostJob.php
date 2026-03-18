@@ -18,8 +18,7 @@ class TootPostJob implements ShouldQueue
     public function __construct(
         #[WithoutRelations]
         public Post $post,
-    ) {
-    }
+    ) {}
 
     public function handle(): void
     {
