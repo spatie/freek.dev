@@ -18,8 +18,7 @@ class TweetPostJob implements ShouldQueue
     public function __construct(
         #[WithoutRelations]
         public Post $post,
-    ) {
-    }
+    ) {}
 
     public function handle(Twitter $twitter): void
     {
