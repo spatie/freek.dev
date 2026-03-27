@@ -2,6 +2,7 @@
 
 namespace App\Services\CommonMark;
 
+use App\Services\CommonMark\Languages\Bash\BashLanguage;
 use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Tempest\Highlight\CommonMark\HighlightExtension;
 use Tempest\Highlight\Highlighter;
@@ -16,6 +17,7 @@ class CommonMark
 
         if ($highlightCode) {
             $highlighter = new Highlighter;
+            $highlighter->addLanguage(new BashLanguage());
             $renderer->addExtension(new HighlightExtension($highlighter));
         }
 
