@@ -30,11 +30,11 @@ class BashLanguage extends BaseLanguage
     {
         return [
             ...parent::getPatterns(),
-            new BashKeywordPattern(),
-            new BashCommentPattern(),
-            new BashVariablePattern(),
-            new SingleQuoteValuePattern(),
-            new DoubleQuoteValuePattern(),
+            new BashKeywordPattern,
+            new BashCommentPattern,
+            new BashVariablePattern,
+            new SingleQuoteValuePattern,
+            new DoubleQuoteValuePattern,
         ];
     }
 }

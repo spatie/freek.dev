@@ -17,7 +17,7 @@ class CommonMark
 
         if ($highlightCode) {
             $highlighter = new Highlighter;
-            $highlighter->addLanguage(new BashLanguage());
+            $highlighter->addLanguage(new BashLanguage);
             $renderer->addExtension(new HighlightExtension($highlighter));
         }
 
