@@ -1,7 +1,6 @@
 @setup
 $branch = 'main';
 $server = "161.35.192.60";
-$server = "161.35.192.60";
 $userAndServer = 'forge@'. $server;
 $repository = "spatie/freek.dev";
 $baseDir = "/home/forge/freek.dev";
@@ -12,9 +11,6 @@ $newReleaseName = date('Ymd-His');
 $newReleaseDir = "{$releasesDir}/{$newReleaseName}";
 $user = get_current_user();
 echo $userAndServer;
-function logMessage($message) {
-return "echo '\033[32m" .$message. "\033[0m';\n";
-}
 @endsetup
 
 @servers(['local' => '127.0.0.1', 'remote' => $userAndServer])
@@ -37,14 +33,12 @@ finishDeploy
 deployOnlyCode
 @endmacro
 
-@task('startDeployment', ['on' => 'local'])
-{{ logMessage("🏃  Starting deployment…") }}
+@task('startDeployment', ['on' => 'local', 'emoji' => '🏃'])
 git checkout {{ $branch }}
 git pull origin {{ $branch }}
 @endtask
 
-@task('cloneRepository', ['on' => 'remote'])
-{{ logMessage("🌀  Cloning repository…") }}
+@task('cloneRepository', ['on' => 'remote', 'emoji' => '🌀'])
 [ -d {{ $releasesDir }} ] || mkdir {{ $releasesDir }};
 [ -d {{ $persistentDir }} ] || mkdir {{ $persistentDir }};
 [ -d {{ $persistentDir }}/uploads ] || mkdir {{ $persistentDir }}/uploads;
@@ -54,13 +48,10 @@ git pull origin {{ $branch }}
 
 cd {{ $releasesDir }};
 
-# Create the release dir
 mkdir {{ $newReleaseDir }};
 
-# Clone the repo
 git clone --depth 1 git@github.com:{{ $repository }} --branch {{ $branch }} {{ $newReleaseName }}
 
-# Configure sparse checkout
 cd {{ $newReleaseDir }}
 git config core.sparsecheckout true
 echo "*" > .git/info/sparse-checkout
@@ -68,78 +59,62 @@ echo "!storage" >> .git/info/sparse-checkout
 echo "!public/build" >> .git/info/sparse-checkout
 git read-tree -mu HEAD
 
-# Mark release
 cd {{ $newReleaseDir }}
 echo "{{ $newReleaseName }}" > public/release-name.txt
 @endtask
 
-@task('runComposer', ['on' => 'remote'])
-
-# Import the environment config
+@task('runComposer', ['on' => 'remote', 'emoji' => '🚚'])
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/.env .env;
 
 cd {{ $newReleaseDir }};
-{{ logMessage("🚚  Running Composer…") }}
 ln -nfs {{ $baseDir }}/auth.json auth.json;
 composer install --prefer-dist --no-scripts --no-dev -q -o;
 @endtask
 
-@task('generateAssets', ['on' => 'remote'])
-{{ logMessage("🌅  Generating assets…") }}
+@task('generateAssets', ['on' => 'remote', 'emoji' => '🌅'])
 cd {{ $newReleaseDir }};
 npm ci --audit false
 npm run build
 rm -rf node_modules
-
 @endtask
 
-@task('updateSymlinks', ['on' => 'remote'])
-{{ logMessage("🔗  Updating symlinks to persistent data…") }}
-# Remove the storage directory and replace with persistent data
+@task('updateSymlinks', ['on' => 'remote', 'emoji' => '🔗'])
 rm -rf {{ $newReleaseDir }}/storage;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/storage storage;
 
-# Remove the public/uploads directory and replace with persistent data
 rm -rf {{ $newReleaseDir }}/public/uploads;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/uploads public/uploads;
 
-# Remove the public/admin-uploads directory and replace with persistent data
 rm -rf {{ $newReleaseDir }}/public/admin-uploads;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/storage/admin-uploads public/admin-uploads;
 
-# Symlink the avatars to the public directory
 rm -rf {{ $newReleaseDir }}/public/avatars;
 cd {{ $newReleaseDir }};
 ln -nfs {{ $baseDir }}/persistent/storage/avatars public/avatars;
 
-# Symlink the persistent Typography.com fonts into public/fonts
 ln -nfs {{ $baseDir }}/persistent/fonts/884760 {{ $newReleaseDir }}/public/fonts/884760;
 @endtask
 
-@task('optimizeInstallation', ['on' => 'remote'])
-{{ logMessage("✨  Optimizing installation…") }}
+@task('optimizeInstallation', ['on' => 'remote', 'emoji' => '✨'])
 cd {{ $newReleaseDir }};
 php artisan clear-compiled;
 @endtask
 
-@task('backupDatabase', ['on' => 'remote'])
-{{ logMessage("📀  Backing up database…") }}
+@task('backupDatabase', ['on' => 'remote', 'emoji' => '📀'])
 cd {{ $newReleaseDir }}
 php artisan backup:run
 @endtask
 
-@task('migrateDatabase', ['on' => 'remote'])
-{{ logMessage("🙈  Migrating database…") }}
+@task('migrateDatabase', ['on' => 'remote', 'emoji' => '🙈'])
 cd {{ $newReleaseDir }};
 php artisan migrate --force;
 @endtask
 
-@task('blessNewRelease', ['on' => 'remote'])
-{{ logMessage("🙏  Blessing new release…") }}
+@task('blessNewRelease', ['on' => 'remote', 'emoji' => '🙏'])
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
 php artisan horizon:terminate
@@ -159,26 +134,22 @@ php artisan schedule:sync
 php artisan health:check
 @endtask
 
-@task('cleanOldReleases', ['on' => 'remote'])
-{{ logMessage("🚾  Cleaning up old releases…") }}
-# Delete all but the 3 most recent.
+@task('cleanOldReleases', ['on' => 'remote', 'emoji' => '🚾'])
 cd {{ $releasesDir }}
 ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" sudo chown -R forge .;
 ls -dt {{ $releasesDir }}/* | tail -n +4 | xargs -d "\n" rm -rf;
 @endtask
 
-@task('purgeCloudflareCache', ['on' => 'remote'])
-{{ logMessage("🌐  Purging Cloudflare cache…") }}
+@task('purgeCloudflareCache', ['on' => 'remote', 'emoji' => '🌐'])
 cd {{ $currentDir }}
 php artisan cloudflare:purge-cache
 @endtask
 
-@task('finishDeploy', ['on' => 'local'])
-{{ logMessage("🚀  Application deployed!") }}
+@task('finishDeploy', ['on' => 'local', 'emoji' => '🚀'])
+echo "Application deployed!"
 @endtask
 
-@task('deployOnlyCode',['on' => 'remote'])
-{{ logMessage("💻  Deploying code changes…") }}
+@task('deployOnlyCode', ['on' => 'remote', 'emoji' => '💻'])
 cd {{ $currentDir }}
 git pull origin {{ $branch }}
 php artisan config:clear
