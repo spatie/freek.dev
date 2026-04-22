@@ -38,6 +38,7 @@ class SyncProdAssets extends Command
 
             if ($disk->exists($path)) {
                 $skipped++;
+
                 continue;
             }
 
@@ -48,6 +49,7 @@ class SyncProdAssets extends Command
             } catch (\Throwable $e) {
                 $failed++;
                 $this->warn("FAIL [{$i}] {$path}: {$e->getMessage()}");
+
                 continue;
             }
 
