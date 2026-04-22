@@ -44,7 +44,6 @@
         "spatie/commonmark-highlighter": "^3.0",
         "spatie/cpu-load-health-check": "^1.0.2",
         "spatie/laravel-analytics": "^5.6",
-        "spatie/laravel-backup": "^10.0",
         "spatie/laravel-error-share": "^1.0",
         "spatie/laravel-feed": "^4.4",
         "spatie/laravel-flare": "^2.7",
