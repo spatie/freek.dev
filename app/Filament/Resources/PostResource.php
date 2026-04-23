@@ -55,7 +55,9 @@ class PostResource extends Resource
     public static function table(Table $table): Table
     {
         $table
-            ->modifyQueryUsing(fn (Builder $query) => $query->orderByRaw('case when publish_date is null then 9999999999999999 else timestamp(publish_date) end desc'));
+            ->modifyQueryUsing(fn (Builder $query) => $query
+                ->orderByRaw('publish_date is null desc')
+                ->orderByDesc('publish_date'));
 
         return $table
             ->defaultPaginationPageOption(50)
