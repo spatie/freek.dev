@@ -46,7 +46,6 @@ return [
                 ? 'admin-uploads'
                 : storage_path('admin-uploads'),
             'url' => env('ADMIN_UPLOADS_URL', env('APP_URL').'/admin-uploads'),
-            'visibility' => 'public',
             'throw' => false,
             'key' => env('AWS_ACCESS_KEY_ID'),
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
@@ -62,7 +61,6 @@ return [
                 ? 'avatars'
                 : storage_path('avatars'),
             'url' => env('AVATARS_URL', env('APP_URL').'/avatars'),
-            'visibility' => 'public',
             'throw' => false,
             'key' => env('AWS_ACCESS_KEY_ID'),
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
