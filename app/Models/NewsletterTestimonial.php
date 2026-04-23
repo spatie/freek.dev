@@ -28,7 +28,7 @@ class NewsletterTestimonial extends Model implements HasMedia
     {
         $this
             ->addMediaCollection('avatar')
-            ->useDisk('avatars')
+            ->useDisk('public')
             ->singleFile();
     }
 

@@ -33,7 +33,9 @@ class PostResource extends Resource
                 Section::make('Post')->schema([
                     Forms\Components\TextInput::make('title')->required(),
                     MarkdownEditor::make('text')
-                        ->fileAttachmentsDisk('admin-uploads')
+                        ->fileAttachmentsDisk('public')
+                        ->fileAttachmentsDirectory('admin-uploads')
+                        ->fileAttachmentsVisibility('public')
                         ->required(),
 
                     Forms\Components\DateTimePicker::make('publish_date')
