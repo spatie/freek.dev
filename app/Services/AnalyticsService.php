@@ -103,6 +103,59 @@ class AnalyticsService
         });
     }
 
+    public function getMostVisitedPosts(int $days = 30, int $max = 50): Collection
+    {
+        return Cache::remember("analytics.posts.{$days}.{$max}", self::CACHE_TTL_SECONDS, function () use ($days, $max) {
+            try {
+                // A single post can have several GA URL rows: slug renames produce a new
+                // canonical URL while the old one keeps accumulating views, and referrer
+                // query strings (?ref=dailydev, ?referrer=...) become distinct rows. Fetch
+                // a wider window so we can aggregate them back together per post.
+                $pages = Analytics::fetchMostVisitedPages(Period::days($days), max($max * 4, 200));
+
+                $postIds = $pages
+                    ->map(fn (array $page) => $this->extractPostId($page['fullPageUrl']))
+                    ->filter()
+                    ->unique();
+
+                $posts = Post::query()
+                    ->whereIn('id', $postIds)
+                    ->where('published', true)
+                    ->get()
+                    ->keyBy('id');
+
+                return $pages
+                    ->map(fn (array $page) => [
+                        'page' => $page,
+                        'postId' => $this->extractPostId($page['fullPageUrl']),
+                    ])
+                    ->filter(fn (array $row) => $row['postId'] !== null && $posts->has($row['postId']))
+                    ->groupBy('postId')
+                    ->map(function (Collection $variants, int $postId) use ($posts) {
+                        $post = $posts->get($postId);
+                        $first = $variants->first()['page'];
+
+                        return [
+                            'postId' => $postId,
+                            'pageViews' => $variants->sum(fn (array $row) => $row['page']['screenPageViews']),
+                            'pageTitle' => $first['pageTitle'],
+                            'url' => $first['fullPageUrl'],
+                            'postTitle' => $post->title,
+                            'postUrl' => $post->url,
+                            'postType' => $post->getType(),
+                        ];
+                    })
+                    ->sortByDesc('pageViews')
+                    ->take($max)
+                    ->values();
+            } catch (\Throwable $e) {
+                Log::error('Failed to fetch most visited posts', ['error' => $e->getMessage()]);
+
+                return collect();
+            }
+        });
+    }
+
     public function getTopReferrers(int $days = 30, int $max = 20): Collection
     {
         return Cache::remember("analytics.referrers.{$days}.{$max}", self::CACHE_TTL_SECONDS, function () use ($days, $max) {

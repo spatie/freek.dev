@@ -22,18 +22,17 @@ class PopularPostsTable extends BaseWidget
         return $table
             ->heading(null)
             ->records(function (): array {
-                $pages = app(AnalyticsService::class)->getMostVisitedPages((int) $this->days, 50);
+                $posts = app(AnalyticsService::class)->getMostVisitedPosts((int) $this->days, 50);
 
-                return $pages
-                    ->filter(fn (array $page) => $page['postId'] !== null)
+                return $posts
                     ->values()
-                    ->map(fn (array $page, int $index) => [
+                    ->map(fn (array $post, int $index) => [
                         'id' => $index + 1,
                         'rank' => $index + 1,
-                        'title' => $page['postTitle'] ?? $page['pageTitle'],
-                        'url' => $page['postUrl'] ?? $page['url'],
-                        'pageViews' => $page['pageViews'],
-                        'type' => $page['postType'] ?? 'unknown',
+                        'title' => $post['postTitle'],
+                        'url' => $post['postUrl'],
+                        'pageViews' => $post['pageViews'],
+                        'type' => $post['postType'],
                     ])
                     ->toArray();
             })
