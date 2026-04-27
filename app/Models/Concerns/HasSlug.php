@@ -23,10 +23,6 @@ trait HasSlug
     {
         [$id] = explode('-', $idSlug);
 
-        if (! ctype_digit($id)) {
-            return null;
-        }
-
         return static::find($id);
     }
 }

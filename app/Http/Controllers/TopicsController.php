@@ -30,21 +30,11 @@ class TopicsController
             ->whereColumn('taggables.tag_id', 'tags.id')
             ->selectRaw('count(*)');
 
-        $tagIdsWithMoreThan20Posts = DB::table('taggables')
-            ->join('posts', function ($join) {
-                $join->on('taggables.taggable_id', '=', 'posts.id')
-                    ->where('taggables.taggable_type', (new Post)->getMorphClass());
-            })
-            ->where('posts.published', true)
-            ->groupBy('taggables.tag_id')
-            ->havingRaw('count(*) > 20')
-            ->pluck('taggables.tag_id');
-
         $topics = Tag::query()
             ->select('tags.*')
             ->selectSub($publishedPostCountSubquery, 'published_post_count')
             ->selectSub($originalCountSubquery, 'original_count')
-            ->whereIn('id', $tagIdsWithMoreThan20Posts)
+            ->having('published_post_count', '>', 20)
             ->orderByDesc('published_post_count')
             ->get();
 

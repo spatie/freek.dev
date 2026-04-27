@@ -12,7 +12,7 @@ class ArchiveController
         $availableYears = Post::query()
             ->where('published', true)
             ->whereNotNull('publish_date')
-            ->selectRaw('extract(year from publish_date)::int as year')
+            ->selectRaw('YEAR(publish_date) as year')
             ->distinct()
             ->orderByDesc('year')
             ->pluck('year');

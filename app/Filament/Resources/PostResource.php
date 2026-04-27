@@ -33,8 +33,7 @@ class PostResource extends Resource
                 Section::make('Post')->schema([
                     Forms\Components\TextInput::make('title')->required(),
                     MarkdownEditor::make('text')
-                        ->fileAttachmentsDisk('public')
-                        ->fileAttachmentsDirectory('admin-uploads')
+                        ->fileAttachmentsDisk('admin-uploads')
                         ->required(),
 
                     Forms\Components\DateTimePicker::make('publish_date')
@@ -56,9 +55,7 @@ class PostResource extends Resource
     public static function table(Table $table): Table
     {
         $table
-            ->modifyQueryUsing(fn (Builder $query) => $query
-                ->orderByRaw('publish_date is null desc')
-                ->orderByDesc('publish_date'));
+            ->modifyQueryUsing(fn (Builder $query) => $query->orderByRaw('case when publish_date is null then 9999999999999999 else timestamp(publish_date) end desc'));
 
         return $table
             ->defaultPaginationPageOption(50)

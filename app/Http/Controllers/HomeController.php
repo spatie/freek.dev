@@ -32,23 +32,11 @@ class HomeController
             ->whereColumn('taggables.tag_id', 'tags.id')
             ->selectRaw('count(*)');
 
-        $hasPublishedPost = function ($query) {
-            $query->select(DB::raw(1))
-                ->from('taggables')
-                ->join('posts', function ($join) {
-                    $join->on('taggables.taggable_id', '=', 'posts.id')
-                        ->where('taggables.taggable_type', (new Post)->getMorphClass());
-                })
-                ->whereNotNull('posts.publish_date')
-                ->where('posts.published', true)
-                ->whereColumn('taggables.tag_id', 'tags.id');
-        };
-
         $priorityTags = Tag::query()
             ->select('tags.*')
             ->selectSub($publishedPostCountSubquery, 'published_post_count')
             ->whereIn('name->en', $priorityTagNames)
-            ->whereExists($hasPublishedPost)
+            ->having('published_post_count', '>', 0)
             ->get()
             ->sortBy(fn (Tag $tag) => array_search($tag->name, $priorityTagNames));
 
@@ -56,7 +44,7 @@ class HomeController
             ->select('tags.*')
             ->selectSub(clone $publishedPostCountSubquery, 'published_post_count')
             ->whereNotIn('name->en', $priorityTagNames)
-            ->whereExists($hasPublishedPost)
+            ->having('published_post_count', '>', 0)
             ->orderByDesc('published_post_count')
             ->limit(10 - $priorityTags->count())
             ->get();
