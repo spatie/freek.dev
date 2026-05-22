@@ -86,7 +86,7 @@
     "config": {
         "platform": {
             "php": "8.5",
-            "ext-redis": "6.0.2"
+            "ext-redis": "6.3.0"
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
