@@ -23,7 +23,7 @@
 
     <button
         type="button"
-        class="inline-flex items-center gap-1 text-gray-500 hover:text-black transition-colors cursor-pointer"
+        class="inline-flex items-center gap-1 text-gray-500 hover:text-black transition active:scale-[0.96] cursor-pointer"
         onclick="navigator.clipboard.writeText('{{ $post->url }}'); this.querySelector('span').textContent = 'Copied!'; setTimeout(() => this.querySelector('span').textContent = 'Copy link', 2000)"
     >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>

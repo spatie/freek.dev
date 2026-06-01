@@ -6,7 +6,7 @@
         "></div>
     <header class="mb-6">
         <{{ $heading ?? 'h1' }} class
-        ="max-w-lg text-2xl md:text-3xl font-extrabold leading-tight mb-1">
+        ="max-w-lg text-2xl md:text-3xl font-extrabold leading-tight text-balance mb-1">
         @isset($url)
             <a
                 href="{{ $url }}"
@@ -75,7 +75,7 @@
         </div>
     @endif
     </header>
-    <div class="markup leading-relaxed">
+    <div class="markup leading-relaxed text-pretty">
         {{ $slot }}
     </div>
 </article>

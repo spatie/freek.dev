@@ -1,5 +1,5 @@
 <div>
-    <img src="{{ url('images/avatar.jpg') }}" alt="Freek Van der Herten" class="w-32 h-32 rounded-full object-cover mb-3">
+    <img src="{{ url('images/avatar.jpg') }}" alt="Freek Van der Herten" class="w-32 h-32 rounded-full object-cover mb-3 ring-1 ring-black/10">
     <p class="text-[13px] leading-relaxed text-gray-400">
         I'm a Laravel developer at <a href="https://spatie.be" target="_blank" class="text-gray-500 hover:text-black transition-colors underline decoration-gray-300 hover:decoration-black">Spatie</a> and <a href="https://ohdear.app" target="_blank" class="text-gray-500 hover:text-black transition-colors underline decoration-gray-300 hover:decoration-black">Oh Dear</a>. I maintain <a href="https://spatie.be/open-source" target="_blank" class="text-gray-500 hover:text-black transition-colors underline decoration-gray-300 hover:decoration-black">300+ open source packages</a> for the Laravel community.
     </p>
