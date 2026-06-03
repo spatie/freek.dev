@@ -34,6 +34,24 @@ echo '<script type="application/ld+json">' . json_encode([
         '@type' => 'Person',
         'name' => 'Freek Van der Herten',
         'url' => 'https://freek.dev/about',
+        'sameAs' => [
+            'https://x.com/freekmurze',
+            'https://github.com/freekmurze',
+            'https://www.linkedin.com/in/freek-van-der-herten-3487a7181',
+            'https://www.instagram.com/freek',
+        ],
+        'worksFor' => [
+            [
+                '@type' => 'Organization',
+                'name' => 'Spatie',
+                'url' => 'https://spatie.be',
+            ],
+            [
+                '@type' => 'Organization',
+                'name' => 'Oh Dear',
+                'url' => 'https://ohdear.app',
+            ],
+        ],
     ],
     'potentialAction' => [
         '@type' => 'SearchAction',
