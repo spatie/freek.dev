@@ -1,14 +1,11 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Jobs\ComputeRelatedPostsJob;
 use App\Models\Post;
 use App\Services\EmbeddingService;
+
+use function Pure\expect;
+use function Pure\it;
 
 it('computes and saves related post ids', function () {
     $post = Post::factory()->create([

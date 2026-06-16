@@ -1,11 +1,9 @@
 <?php
 
-
+use function Pure\beforeEach;
 use function Pure\expect;
 use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
+
 beforeEach(function () {
     config(['cache.cloudflare_enabled' => true]);
 });

@@ -1,16 +1,13 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Models\NewsletterCampaign;
 use Spatie\MailcoachSdk\Facades\Mailcoach;
 use Spatie\MailcoachSdk\Resources\Campaign;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 
+use function Pure\beforeEach;
+use function Pure\expect;
+use function Pure\it;
 use function Pure\Laravel\artisan;
 
 beforeEach(function () {

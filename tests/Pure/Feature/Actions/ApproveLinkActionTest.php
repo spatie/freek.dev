@@ -1,16 +1,15 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Actions\ApproveLinkAction;
 use App\Enums\LinkStatus;
 use App\Mail\LinkApprovedMail;
 use App\Models\Link;
 use Illuminate\Support\Facades\Mail;
+
+use function Pure\beforeEach;
+use function Pure\expect;
+use function Pure\it;
+use function Pure\test;
 
 beforeEach(function () {
     Mail::fake();

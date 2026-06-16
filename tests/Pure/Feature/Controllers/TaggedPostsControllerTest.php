@@ -1,13 +1,8 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Models\Post;
 
+use function Pure\it;
 use function Pure\Laravel\get;
 
 it('can display posts for a given tag', function () {

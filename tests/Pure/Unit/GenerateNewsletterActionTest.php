@@ -1,16 +1,14 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Actions\GenerateNewsletterAction;
 use App\Actions\GenerateNewsletterResult;
 use Spatie\MailcoachSdk\Facades\Mailcoach;
 use Spatie\MailcoachSdk\Resources\Campaign;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
+
+use function Pure\beforeEach;
+use function Pure\expect;
+use function Pure\test;
 
 beforeEach(function () {
     if (! config('mailcoach-sdk.api_token')) {

@@ -1,14 +1,10 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Jobs\GeneratePostEmbeddingJob;
 use App\Models\Post;
 use Illuminate\Support\Facades\Bus;
+
+use function Pure\it;
 
 it('dispatches embedding jobs for published posts without embeddings', function () {
     $postWithoutEmbedding = Post::factory()->create([

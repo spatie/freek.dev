@@ -1,17 +1,14 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Filament\Pages\GenerateNewsletter;
 use App\Models\User;
 use Livewire\Livewire;
 use Spatie\MailcoachSdk\Facades\Mailcoach;
 use Spatie\MailcoachSdk\Resources\Campaign;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
+
+use function Pure\beforeEach;
+use function Pure\test;
 
 beforeEach(function () {
     if (! config('mailcoach-sdk.api_token')) {

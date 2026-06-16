@@ -1,13 +1,9 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Models\Post;
 use Spatie\OgImage\Facades\OgImage;
+
+use function Pure\it;
 
 it('generates OG images for published non-tweet posts and static pages', function () {
     OgImage::shouldReceive('generateForUrl')

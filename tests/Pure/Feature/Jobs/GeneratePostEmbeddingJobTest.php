@@ -1,14 +1,11 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Jobs\GeneratePostEmbeddingJob;
 use App\Models\Post;
 use App\Services\EmbeddingService;
+
+use function Pure\expect;
+use function Pure\it;
 
 it('generates and saves an embedding for a post', function () {
     $post = Post::factory()->create([

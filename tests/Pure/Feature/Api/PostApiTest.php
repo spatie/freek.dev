@@ -1,14 +1,11 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Models\Post;
 use App\Models\User;
 use Laravel\Sanctum\Sanctum;
+
+use function Pure\beforeEach;
+use function Pure\it;
 
 beforeEach(function () {
     $this->admin = User::factory()->admin()->create();

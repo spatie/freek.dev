@@ -1,14 +1,9 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Models\Post;
 use App\Services\PopularPostsService;
 
+use function Pure\it;
 use function Pure\Laravel\get;
 
 it('displays the homepage', function () {

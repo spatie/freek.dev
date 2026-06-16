@@ -1,13 +1,8 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Models\NewsletterCampaign;
 
+use function Pure\it;
 use function Pure\Laravel\get;
 
 it('displays the newsletter archive listing', function () {

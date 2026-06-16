@@ -1,13 +1,10 @@
 <?php
 
+use App\Models\Post;
+use App\Services\TaggingService;
 
 use function Pure\expect;
 use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
-use App\Models\Post;
-use App\Services\TaggingService;
 
 it('reviews and updates tags for published posts', function () {
     $post = Post::factory()->create([

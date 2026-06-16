@@ -1,12 +1,9 @@
 <?php
 
+use Tests\Factories\PostFactory;
 
 use function Pure\expect;
 use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
-use Tests\Factories\PostFactory;
 
 it('can save the permalink of a tweet as the external url', function () {
     $tweetPost = (new PostFactory)->tweet()->create([

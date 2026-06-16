@@ -1,14 +1,11 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Jobs\GeneratePostTagsJob;
 use App\Models\Post;
 use App\Services\TaggingService;
+
+use function Pure\expect;
+use function Pure\it;
 
 it('generates and syncs tags for a post without tags', function () {
     $post = Post::factory()->create([

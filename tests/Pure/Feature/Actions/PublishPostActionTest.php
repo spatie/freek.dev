@@ -1,14 +1,12 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Actions\PublishPostAction;
 use App\Models\Post;
 use Illuminate\Support\Facades\Queue;
+
+use function Pure\beforeEach;
+use function Pure\expect;
+use function Pure\it;
 
 beforeEach(function () {
     Queue::fake();

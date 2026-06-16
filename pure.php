@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Bus;
  * Pure configuration for freek.dev. Auto-loaded by Pure before discovery, so
  * `pure` runs with no flags. The host autoloader is already loaded by Pure.
  */
-
 Pure\testsIn('tests/Pure');
 
 // Boot the real Laravel app and isolate every test in a rolled-back

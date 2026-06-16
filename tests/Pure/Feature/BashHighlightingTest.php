@@ -1,12 +1,9 @@
 <?php
 
+use App\Services\CommonMark\CommonMark;
 
 use function Pure\expect;
 use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
-use App\Services\CommonMark\CommonMark;
 
 it('highlights bash code blocks', function () {
     $markdown = <<<'MD'

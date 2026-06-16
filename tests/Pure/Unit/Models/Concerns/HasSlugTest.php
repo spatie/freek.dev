@@ -1,12 +1,9 @@
 <?php
 
+use App\Models\Post;
 
 use function Pure\expect;
-use function Pure\it;
 use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
-use App\Models\Post;
 
 test('a model can have a slug', function () {
     $post = Post::factory()->create();

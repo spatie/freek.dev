@@ -1,14 +1,11 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Actions\CreatePostFromLinkAction;
 use App\Models\Link;
 use Spatie\TestTime\TestTime;
+
+use function Pure\beforeEach;
+use function Pure\it;
 
 beforeEach(function () {
     TestTime::freeze('Y-m-d H:i:s', '2024-01-01 00:00:00');

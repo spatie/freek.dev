@@ -1,13 +1,10 @@
 <?php
 
+use App\Models\Post;
+use App\Services\EmbeddingService;
 
 use function Pure\expect;
 use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
-use App\Models\Post;
-use App\Services\EmbeddingService;
 
 it('calculates cosine similarity correctly for identical vectors', function () {
     $vector = [1.0, 0.0, 0.0];

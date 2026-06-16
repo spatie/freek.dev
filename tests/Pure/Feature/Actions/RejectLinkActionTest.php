@@ -1,14 +1,11 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Actions\RejectLinkAction;
 use App\Enums\LinkStatus;
 use App\Models\Link;
+
+use function Pure\expect;
+use function Pure\it;
 
 it('can reject a link', function () {
     /** @var Link $submittedLink */

@@ -1,15 +1,12 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Models\Post;
 use App\Models\User;
 use Tests\Factories\PostFactory;
 
+use function Pure\beforeEach;
+use function Pure\expect;
+use function Pure\it;
 use function Pure\Laravel\get;
 
 beforeEach(function () {

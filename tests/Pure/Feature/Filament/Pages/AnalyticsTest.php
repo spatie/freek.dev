@@ -1,11 +1,5 @@
 <?php
 
-
-use function Pure\expect;
-use function Pure\it;
-use function Pure\test;
-use function Pure\beforeEach;
-use function Pure\afterEach;
 use App\Filament\Pages\Analytics;
 use App\Filament\Widgets\AnalyticsOverviewStats;
 use App\Filament\Widgets\PageViewsChart;
@@ -18,6 +12,10 @@ use App\Services\AnalyticsService;
 use Livewire\Livewire;
 use Spatie\Analytics\Facades\Analytics as AnalyticsFacade;
 use Spatie\Analytics\Fakes\Analytics as FakeAnalytics;
+
+use function Pure\beforeEach;
+use function Pure\expect;
+use function Pure\test;
 
 beforeEach(function () {
     $this->user = User::factory()->create();
