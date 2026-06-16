@@ -1,16 +1,16 @@
 <?php
 
+
 use function Pure\expect;
 use function Pure\it;
 use function Pure\test;
-
+use function Pure\beforeEach;
+use function Pure\afterEach;
 use App\Models\Post;
 use App\Services\PopularPostsService;
 use Illuminate\Support\Facades\Cache;
 use Spatie\Analytics\Facades\Analytics;
 use Spatie\Analytics\Fakes\Analytics as FakeAnalytics;
-
-freekDevLaravel();
 
 it('returns popular posts from cache in order', function () {
     $postA = Post::factory()->create([

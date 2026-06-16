@@ -1,15 +1,15 @@
 <?php
 
+
 use function Pure\expect;
 use function Pure\it;
 use function Pure\test;
-
+use function Pure\beforeEach;
+use function Pure\afterEach;
 use App\Models\Ad;
 use Carbon\Carbon;
 
 use function Spatie\PestPluginTestTime\testTime;
-
-freekDevLaravel();
 
 it('can get an ad for the current date', function () {
     $januaryAd = createAdForYearMonth(2018, 1);

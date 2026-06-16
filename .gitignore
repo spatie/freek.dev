@@ -30,3 +30,4 @@ data.ms
 storage/app/analytics/
 .chief/
 /storage/og-images
+.pure/

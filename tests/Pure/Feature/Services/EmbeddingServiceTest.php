@@ -1,13 +1,13 @@
 <?php
 
+
 use function Pure\expect;
 use function Pure\it;
 use function Pure\test;
-
+use function Pure\beforeEach;
+use function Pure\afterEach;
 use App\Models\Post;
 use App\Services\EmbeddingService;
-
-freekDevLaravel();
 
 it('calculates cosine similarity correctly for identical vectors', function () {
     $vector = [1.0, 0.0, 0.0];
