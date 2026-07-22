@@ -14,6 +14,8 @@
 @endif
 @if($canonical ?? null)
 <link rel="canonical" href="{{ $canonical }}" />
+@else
+<link rel="canonical" href="{{ url()->current() }}" />
 @endif
 @include('feed::links')
 @include('front.layouts.partials.seo')
