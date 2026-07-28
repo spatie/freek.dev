@@ -4,6 +4,8 @@ namespace App\Models\Presenters;
 
 use App\Models\Post;
 use App\Services\CommonMark\CommonMark;
+use App\Services\Utm\UtmParameters;
+use App\Services\Utm\UtmTagger;
 use Illuminate\Support\Str;
 
 /** @mixin Post */
@@ -20,6 +22,8 @@ trait PostPresenter
         );
 
         $excerpt = CommonMark::convertToHtml($excerpt, highlightCode: true);
+
+        $excerpt = UtmTagger::tagHtml($excerpt, UtmParameters::forPost($this));
 
         return trim($excerpt);
     }

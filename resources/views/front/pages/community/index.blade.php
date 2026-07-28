@@ -43,17 +43,17 @@
         "></div>
                 <header class="mb-6">
                     <h2 class="max-w-lg text-2xl md:text-3xl font-extrabold leading-tight mb-1">
-                        <a href="{{ $link->url }}">{{ $link->title }}</a>
+                        <a href="{{ $link->url_with_utm }}">{{ $link->title }}</a>
                     </h2>
 
                     <p class="text-sm text-gray-700">
-                        <a href="{{ $link->url }}">
+                        <a href="{{ $link->url_with_utm }}">
                             <time datetime="{{ $link->created_at?->format(DateTime::ATOM) }}">
                                 {{ $link->created_at->format('M jS Y') }}
                             </time>
                         </a>
                         –
-                        <a href="{{ $link->url }}">
+                        <a href="{{ $link->url_with_utm }}">
                             {{ $link->host_url }}</a>
                         -
                         submitted by
@@ -73,7 +73,7 @@
                 </div>
                 <div class="markup">
                     <p class="mt-6">
-                        <a href="{{ $link->url }}">Read more</a>
+                        <a href="{{ $link->url_with_utm }}">Read more</a>
                         <span class="text-xs text-gray-700">[{{ $link->host_url }}]</span>
                     </p>
                 </div>

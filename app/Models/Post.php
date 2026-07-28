@@ -6,6 +6,8 @@ use App\Actions\HandlePostSavedAction;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
 use App\Models\Presenters\PostPresenter;
+use App\Services\Utm\UtmParameters;
+use App\Services\Utm\UtmTagger;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
@@ -88,12 +90,26 @@ class Post extends Model implements Feedable, Sluggable
             ->whereNotNull('publish_date');
     }
 
+    public function htmlWithUtm(): Attribute
+    {
+        return new Attribute(function () {
+            return UtmTagger::tagHtml($this->html ?? '', UtmParameters::forPost($this));
+        });
+    }
+
+    public function externalUrlWithUtm(): Attribute
+    {
+        return new Attribute(function () {
+            return UtmTagger::tagUrl($this->external_url ?? '', UtmParameters::forPost($this));
+        });
+    }
+
     public function getHtmlWithExternalUrlAttribute()
     {
-        $html = $this->html;
+        $html = $this->html_with_utm;
 
         if (! $this->isTweet() && $this->external_url) {
-            $html .= PHP_EOL.PHP_EOL."<a href='{$this->external_url}'>Read more</a>";
+            $html .= PHP_EOL.PHP_EOL."<a href='{$this->external_url_with_utm}'>Read more</a>";
         }
 
         return $html;
@@ -238,8 +254,10 @@ class Post extends Model implements Feedable, Sluggable
             $twitterAuthorString = " (by @{$twitterHandle})";
         }
 
+        $promotionalUrl = UtmTagger::tagUrl($this->promotional_url, UtmParameters::forTwitter($this));
+
         return $this->emoji.' '.$this->title.$twitterAuthorString
-            .PHP_EOL.$this->promotional_url
+            .PHP_EOL.$promotionalUrl
             .PHP_EOL.$tags;
     }
 
@@ -261,8 +279,10 @@ class Post extends Model implements Feedable, Sluggable
             ->map(fn (string $tagName) => '#'.str_replace(' ', '', $tagName))
             ->implode(' ');
 
+        $promotionalUrl = UtmTagger::tagUrl($this->promotional_url, UtmParameters::forMastodon($this));
+
         return $this->emoji.' '.$this->title
-            .PHP_EOL.$this->promotional_url
+            .PHP_EOL.$promotionalUrl
             .PHP_EOL.$tags;
     }
 

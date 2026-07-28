@@ -9,7 +9,7 @@
         <x-post-header
             :post="$post"
             class="mb-12 md:mb-24'"
-            :url="$post->external_url ?: $post->url"
+            :url="$post->external_url_with_utm ?: $post->url"
             heading="h2"
         >
 
@@ -18,7 +18,7 @@
             @unless($post->isTweet())
                 <p class="mt-6">
                     @if($post->external_url)
-                        <a href="{{ $post->external_url }}" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ $post->external_url_with_utm }}" target="_blank" rel="noopener noreferrer">
                             Read more</a>
                         <span class="text-xs text-gray-700">[{{ $post->external_url_host }}]</span>
                     @else
