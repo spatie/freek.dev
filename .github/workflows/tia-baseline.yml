@@ -1,23 +1,15 @@
-name: Run tests
+name: Record TIA baseline
 
 on:
     push:
-        paths:
-            - '**.php'
-            - '.github/workflows/run-tests.yml'
-            - 'phpunit.xml.dist'
-            - 'composer.json'
-            - 'composer.lock'
-
+        branches:
+            - main
 
 jobs:
-    run-tests:
-        name: Run tests
+    record-tia-baseline:
+        name: Record TIA baseline
         runs-on: ubuntu-latest
-        timeout-minutes: 10
-        permissions:
-            contents: read
-            actions: read
+        timeout-minutes: 15
         services:
             redis:
                 image: redis
@@ -58,9 +50,17 @@ jobs:
                     cp .env.example .env
                     php artisan key:generate
 
-            -   name: Run tests
-                run: ./vendor/bin/pest --tia
+            -   name: Record baseline
+                run: |
+                    ./vendor/bin/pest --tia --fresh
+                    echo "TIA_DIR=$(./vendor/bin/pest --tia --baseline)" >> "$GITHUB_ENV"
                 env:
                     DB_PASSWORD: root
                     REDIS_PORT: ${{ job.services.redis.ports[6379] }}
-                    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            -   name: Publish baseline
+                uses: actions/upload-artifact@v4
+                with:
+                    name: pest-tia-baseline
+                    path: ${{ env.TIA_DIR }}
+                    retention-days: 30
