@@ -45,7 +45,7 @@ jobs:
                     COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
             -   name: Cache yarn dependencies
-                uses: actions/cache@v4
+                uses: actions/cache@v6
                 with:
                     path: node_modules
                     key: yarn-${{ hashFiles('yarn.lock') }}
