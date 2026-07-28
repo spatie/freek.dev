@@ -4,42 +4,37 @@ namespace App\Services;
 
 use App\Models\Link;
 use App\Models\Post;
+use App\Services\Utm\UtmParameters;
+use App\Services\Utm\UtmTagger;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use NumberFormatter;
 
 class NewsletterGenerator
 {
-    protected Carbon $startDate;
+    public function __construct(
+        protected Carbon $startDate,
+        protected Carbon $endDate,
+        protected int $editionNumber,
+    ) {}
 
-    protected Carbon $endDate;
-
-    protected string $editionNumber;
-
-    public function __construct(Carbon $startDate, Carbon $endDate, int $editionNumber)
-    {
-        $this->startDate = $startDate;
-
-        $this->endDate = $endDate;
-
-        $this->editionNumber = $this->ordinal($editionNumber);
-    }
-
-    public function getMarkdown()
+    public function getMarkdown(): string
     {
         $recentPosts = $this->getRecentPosts();
         $recentTweets = $this->getRecentTweets();
         $communityLinks = $this->getRecentCommunityLinks();
         $oldPosts = $this->getOldPosts();
-        $editionNumber = $this->editionNumber;
+        $editionNumber = $this->ordinal($this->editionNumber);
 
-        return view('newsletter.template', compact(
+        $markdown = view('newsletter.template', compact(
             'recentPosts',
             'recentTweets',
             'communityLinks',
             'oldPosts',
             'editionNumber',
         ))->render();
+
+        return UtmTagger::tagMarkdown($markdown, UtmParameters::forNewsletter($this->editionNumber));
     }
 
     protected function getRecentPosts(): Collection

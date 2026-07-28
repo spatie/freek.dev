@@ -18,7 +18,7 @@
             Side projects
         </h2>
         <p>
-            Together with my friend <a href="https://x.com/mattiasgeniar">Mattias</a>, I run <a href="https://ohdear.app">Oh Dear</a>, a website monitoring service. It can notify you when your site is down, when it contains broken links, when it finds mixed content, and much more. <a href="https://ohdear.app/register">Try it out!</a>
+            Together with my friend <a href="https://x.com/mattiasgeniar">Mattias</a>, I run <a href="https://ohdear.app?utm_source=freek.dev&amp;utm_medium=referral&amp;utm_campaign=about">Oh Dear</a>, a website monitoring service. It can notify you when your site is down, when it contains broken links, when it finds mixed content, and much more. <a href="https://ohdear.app/register?utm_source=freek.dev&amp;utm_medium=referral&amp;utm_campaign=about">Try it out!</a>
         </p>
         <p>
             Outside of programming, I'm passionate about music. I record music in <a href="https://www.ableton.com">Ableton</a> and have released a couple of EPs. You can listen to them on <a href="https://open.spotify.com/artist/6m5chdjU0M8j8bMmckXRkc">Spotify</a> or <a href="https://music.apple.com/be/artist/kobus/1529028832">Apple Music</a>.

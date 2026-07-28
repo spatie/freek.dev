@@ -3,6 +3,8 @@
 namespace App\Jobs;
 
 use App\Models\Post;
+use App\Services\Utm\UtmParameters;
+use App\Services\Utm\UtmTagger;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -41,7 +43,7 @@ class PostOnBlueskyJob implements ShouldQueue
             ->withoutAutomaticEmbeds()
             ->language(['en-US'])
             ->embed(new External(
-                uri: $this->post->promotional_url,
+                uri: UtmTagger::tagUrl($this->post->promotional_url, UtmParameters::forBluesky($this->post)),
                 title: $this->post->title,
                 description: $this->post->text,
             ));

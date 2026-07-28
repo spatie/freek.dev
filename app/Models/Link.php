@@ -5,8 +5,11 @@ namespace App\Models;
 use App\Enums\LinkStatus;
 use App\Models\Concerns\HasSlug;
 use App\Models\Concerns\Sluggable;
+use App\Services\Utm\UtmParameters;
+use App\Services\Utm\UtmTagger;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -48,6 +51,13 @@ class Link extends Model implements Sluggable
     public function isRejected(): bool
     {
         return $this->status === LinkStatus::Rejected->value;
+    }
+
+    public function urlWithUtm(): Attribute
+    {
+        return new Attribute(function () {
+            return UtmTagger::tagUrl($this->url ?? '', UtmParameters::forLink($this));
+        });
     }
 
     public function getHostUrlAttribute(): string

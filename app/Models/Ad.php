@@ -3,8 +3,11 @@
 namespace App\Models;
 
 use App\Services\CommonMark\CommonMark;
+use App\Services\Utm\UtmParameters;
+use App\Services\Utm\UtmTagger;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -66,6 +69,13 @@ class Ad extends Model
         $query
             ->whereDate('starts_at', '<=', $now)
             ->whereDate('ends_at', '>=', $now);
+    }
+
+    public function htmlWithUtm(): Attribute
+    {
+        return new Attribute(function () {
+            return UtmTagger::tagHtml($this->html ?? '', UtmParameters::forAd($this));
+        });
     }
 
     public function getFormattedTextAttribute(): string
