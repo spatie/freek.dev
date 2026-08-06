@@ -5455,7 +5455,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       }
     };
     el.addEventListener("change", eventHandler);
-    component.$wire.$watch(property, (value) => {
+    let unwatch = component.$wire.$watch(property, (value) => {
       if (!el.isConnected)
         return;
       if (value === null || value === "") {
@@ -5473,6 +5473,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     cleanup(() => {
       el.removeEventListener("change", eventHandler);
       el.removeEventListener("click", clearFileInputValue);
+      el.removeEventListener("livewire-upload-cancel", clearFileInputValue);
+      unwatch();
     });
   }
   var UploadManager = class {
@@ -5840,10 +5842,12 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         if (Array.from(message.actions).every((action2) => action2.metadata.type === "poll")) {
           return message.cancel();
         }
-        if (Array.from(message.actions).every((action2) => action2.metadata.type === "model.live")) {
-          if (action.metadata.type === "model.live") {
+        let bothAreModelLive = action.metadata.type === "model.live" && Array.from(message.actions).every((action2) => action2.metadata.type === "model.live");
+        if (bothAreModelLive) {
+          let incomingHasBoundChildren = componentHasBoundChildren(action.component);
+          let outgoingHasBoundChildren = Array.from(message.actions).some((activeAction) => componentHasBoundChildren(activeAction.component));
+          if (!incomingHasBoundChildren && !outgoingHasBoundChildren)
             return;
-          }
         }
         action.defer();
         message.addInterceptor(({ onFinish }) => {
@@ -5851,6 +5855,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         });
       }
     });
+  }
+  function componentHasBoundChildren(component) {
+    let hasBoundChildren = false;
+    component.getDeepChildrenWithBindings(() => {
+      hasBoundChildren = true;
+    });
+    return hasBoundChildren;
   }
 
   // js/request/request.js
@@ -6371,8 +6382,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           onRender: (callback) => interceptor.onRender = callback
         });
       });
-      this.pendingReturns = this.responsePayload.effects["returns"] || [];
-      this.pendingReturnsMeta = this.responsePayload.effects["returnsMeta"] || {};
+      this.pendingReturns = [];
+      this.pendingReturnsMeta = {};
+      if (Object.prototype.hasOwnProperty.call(this.responsePayload.effects, "returns") && this.responsePayload.effects["returns"]) {
+        this.pendingReturns = this.responsePayload.effects["returns"];
+      }
+      if (Object.prototype.hasOwnProperty.call(this.responsePayload.effects, "returnsMeta") && this.responsePayload.effects["returnsMeta"]) {
+        this.pendingReturnsMeta = this.responsePayload.effects["returnsMeta"];
+      }
     }
     invokeOnSync() {
       this.interceptors.forEach((interceptor) => interceptor.onSync());
@@ -7043,6 +7060,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
     if (response.redirected) {
       handlers.redirect(response.url);
+      handlers.finish();
+      return;
     }
     if (contentIsFromDump(responseBody)) {
       let dump;
@@ -7475,7 +7494,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   // js/features/supportJsModules.js
   var pendingComponentAssets = /* @__PURE__ */ new WeakMap();
   on("effect", ({ component, effects }) => {
-    let scriptModuleHash = effects.scriptModule;
+    let scriptModuleHash;
+    if (Object.prototype.hasOwnProperty.call(effects, "scriptModule")) {
+      scriptModuleHash = effects.scriptModule;
+    }
     if (scriptModuleHash) {
       let encodedName = component.name.replace(/\./g, "--").replace(/::/g, "---").replace(/:/g, "----");
       let path = `${getModuleUrl()}/js/${encodedName}.js?v=${scriptModuleHash}`;
@@ -7707,8 +7729,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       return dataGet(component.reactive, path);
     };
     let unwatch = import_alpinejs3.default.watch(getter, callback);
-    component.addCleanup(unwatch);
-    return unwatch;
+    let removeCleanup = component.addCleanup(unwatch);
+    return () => {
+      removeCleanup();
+      unwatch();
+    };
   });
   wireProperty("$effect", (component) => (callback) => {
     let effect = import_alpinejs3.default.effect(callback);
@@ -7937,11 +7962,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     inscribeSnapshotAndEffectsOnElement() {
       let el = this.el;
       el.setAttribute("wire:snapshot", this.snapshotEncoded);
-      let effects = this.originalEffects.listeners ? { listeners: this.originalEffects.listeners } : {};
-      if (this.originalEffects.url) {
+      let effects = {};
+      if (Object.prototype.hasOwnProperty.call(this.originalEffects, "listeners") && this.originalEffects.listeners) {
+        effects.listeners = this.originalEffects.listeners;
+      }
+      if (Object.prototype.hasOwnProperty.call(this.originalEffects, "url") && this.originalEffects.url) {
         effects.url = this.originalEffects.url;
       }
-      if (this.originalEffects.scripts) {
+      if (Object.prototype.hasOwnProperty.call(this.originalEffects, "scripts") && this.originalEffects.scripts) {
         effects.scripts = this.originalEffects.scripts;
       }
       el.setAttribute("wire:effects", JSON.stringify(effects));
@@ -7973,6 +8001,12 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
     addCleanup(cleanup) {
       this.cleanups.push(cleanup);
+      return () => {
+        let index2 = this.cleanups.indexOf(cleanup);
+        if (index2 === -1)
+          return;
+        this.cleanups.splice(index2, 1);
+      };
     }
     cleanup() {
       delete this.el.__livewire;
@@ -13740,7 +13774,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       });
     }
     writeToHistory(method, url, callback) {
-      let state = window.history.state || {};
+      let state = window.history.state ? { ...window.history.state } : {};
       if (!state.alpine)
         state.alpine = {};
       state = callback(state);
@@ -14757,10 +14791,12 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       return {};
     let insertDotNotatedValueIntoData = (key, value, data2) => {
       let [first2, second, ...rest] = key.split(".");
+      if (first2 === "__proto__" || first2 === "constructor" || first2 === "prototype")
+        return;
       if (!second)
         return data2[key] = value;
-      if (data2[first2] === void 0) {
-        data2[first2] = isNaN(second) ? {} : [];
+      if (!Object.prototype.hasOwnProperty.call(data2, first2)) {
+        data2[first2] = isNaN(second) ? /* @__PURE__ */ Object.create(null) : [];
       }
       insertDotNotatedValueIntoData([second, ...rest].join("."), value, data2[first2]);
     };
@@ -15413,7 +15449,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
 
   // js/features/supportListeners.js
   on("effect", ({ component, effects }) => {
-    registerListeners(component, effects.listeners || []);
+    let listeners2 = [];
+    if (Object.prototype.hasOwnProperty.call(effects, "listeners") && effects.listeners) {
+      listeners2 = effects.listeners;
+    }
+    registerListeners(component, listeners2);
   });
   function registerListeners(component, listeners2) {
     listeners2.forEach((name) => {
@@ -15533,7 +15573,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
   });
   on("effect", ({ component, effects }) => {
-    let scripts = effects.scripts;
+    let scripts;
+    if (Object.prototype.hasOwnProperty.call(effects, "scripts")) {
+      scripts = effects.scripts;
+    }
     if (scripts) {
       Object.entries(scripts).forEach(([key, content]) => {
         onlyIfScriptHasntBeenRunAlreadyForThisComponent(component, key, () => {
@@ -15616,8 +15659,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     return component.$wire.js;
   });
   on("effect", ({ component, effects }) => {
-    let js = effects.js;
-    let xjs = effects.xjs;
+    let js;
+    let xjs;
+    if (Object.prototype.hasOwnProperty.call(effects, "js")) {
+      js = effects.js;
+    }
+    if (Object.prototype.hasOwnProperty.call(effects, "xjs")) {
+      xjs = effects.xjs;
+    }
     if (js) {
       Object.entries(js).forEach(([method, body]) => {
         overrideMethod(component, method, () => {
@@ -15755,7 +15804,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         child.replaceWith(existingComponent.cloneNode(true));
       }
     });
-    let transitionOptions = component.effects.transition || {};
+    let transitionOptions = {};
+    if (Object.prototype.hasOwnProperty.call(component.effects, "transition") && component.effects.transition) {
+      transitionOptions = component.effects.transition;
+    }
     await transitionDomMutation(el, to, () => {
       import_alpinejs10.default.morph(el, to, getMorphConfig(component));
     }, transitionOptions);
@@ -15780,7 +15832,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       parentProviderWrapper.__livewire = parentComponent;
     }
     trigger("island.morph", { startNode, endNode, component });
-    let transitionOptions = component.effects.transition || {};
+    let transitionOptions = {};
+    if (Object.prototype.hasOwnProperty.call(component.effects, "transition") && component.effects.transition) {
+      transitionOptions = component.effects.transition;
+    }
     let islandHasTransition = false;
     let node = startNode.nextSibling;
     while (node && node !== endNode) {
@@ -15878,7 +15933,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   interceptMessage(({ message, onSuccess }) => {
     onSuccess(({ payload, onMorph }) => {
       onMorph(async () => {
-        let html = payload.effects.html;
+        let html;
+        if (Object.prototype.hasOwnProperty.call(payload.effects, "html")) {
+          html = payload.effects.html;
+        }
         if (!html)
           return;
         await morph2(message.component, message.component.el, html);
@@ -15891,7 +15949,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     queueMicrotask(() => {
       queueMicrotask(() => {
         queueMicrotask(() => {
-          dispatchEvents(component, effects.dispatches || []);
+          let dispatches = [];
+          if (Object.prototype.hasOwnProperty.call(effects, "dispatches") && effects.dispatches) {
+            dispatches = effects.dispatches;
+          }
+          dispatchEvents(component, dispatches);
         });
       });
     });
@@ -15988,7 +16050,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   // js/features/supportFileDownloads.js
   on("commit", ({ succeed }) => {
     succeed(({ effects }) => {
-      let download = effects.download;
+      let download;
+      if (Object.prototype.hasOwnProperty.call(effects, "download")) {
+        download = effects.download;
+      }
       if (!download)
         return;
       let urlObject = window.webkitURL || window.URL;
@@ -16026,7 +16091,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   // js/features/supportQueryString.js
   var import_alpinejs12 = __toESM(require_module_cjs());
   on("effect", ({ component, effects, cleanup }) => {
-    let queryString = effects["url"];
+    let queryString;
+    if (Object.prototype.hasOwnProperty.call(effects, "url")) {
+      queryString = effects["url"];
+    }
     if (!queryString)
       return;
     Object.entries(queryString).forEach(([key, value]) => {
@@ -16093,7 +16161,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
   });
   on("effect", ({ component, effects }) => {
-    let listeners2 = effects.listeners || [];
+    let listeners2 = [];
+    if (Object.prototype.hasOwnProperty.call(effects, "listeners") && effects.listeners) {
+      listeners2 = effects.listeners;
+    }
     listeners2.forEach((event) => {
       if (event.startsWith("echo")) {
         if (typeof window.Echo === "undefined") {
@@ -16197,7 +16268,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
   }
   function shouldRedirectUsingNavigateOr(effects, url, or) {
-    let forceNavigate = effects.redirectUsingNavigate;
+    let forceNavigate;
+    if (Object.prototype.hasOwnProperty.call(effects, "redirectUsingNavigate")) {
+      forceNavigate = effects.redirectUsingNavigate;
+    }
     if (forceNavigate) {
       Alpine.navigate(url);
     } else {
@@ -16214,7 +16288,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
 
   // js/features/supportRedirects.js
   on("effect", ({ effects, request }) => {
-    if (!effects["redirect"])
+    if (!Object.prototype.hasOwnProperty.call(effects, "redirect") || !effects["redirect"])
       return;
     let preventDefault = false;
     request.invokeOnRedirect({ url: effects["redirect"], preventDefault: () => preventDefault = true });
@@ -16266,7 +16340,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
     onSuccess(({ payload, onMorph }) => {
       onMorph(async () => {
-        let fragments = payload.effects.islandFragments || [];
+        let fragments = [];
+        if (Object.prototype.hasOwnProperty.call(payload.effects, "islandFragments") && payload.effects.islandFragments) {
+          fragments = payload.effects.islandFragments;
+        }
         fragments.forEach(async (fragmentHtml) => {
           await renderIsland(message.component, fragmentHtml);
         });
@@ -16306,7 +16383,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   interceptMessage(({ message, onSuccess, onStream }) => {
     onSuccess(({ payload, onMorph }) => {
       onMorph(async () => {
-        let fragments = payload.effects.slotFragments || [];
+        let fragments = [];
+        if (Object.prototype.hasOwnProperty.call(payload.effects, "slotFragments") && payload.effects.slotFragments) {
+          fragments = payload.effects.slotFragments;
+        }
         fragments.forEach(async (fragmentHtml) => {
           await renderSlot(message.component, fragmentHtml);
         });
@@ -16576,7 +16656,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   // js/features/supportCssModules.js
   var loadedStyles = /* @__PURE__ */ new Set();
   on("effect", ({ component, effects }) => {
-    if (effects.styleModule) {
+    if (Object.prototype.hasOwnProperty.call(effects, "styleModule") && effects.styleModule) {
       let encodedName = component.name.replace(/\./g, "--").replace(/::/g, "---").replace(/:/g, "----");
       let path = `${getModuleUrl()}/css/${encodedName}.css?v=${effects.styleModule}`;
       if (!loadedStyles.has(path)) {
@@ -16584,7 +16664,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         injectStylesheet(path);
       }
     }
-    if (effects.globalStyleModule) {
+    if (Object.prototype.hasOwnProperty.call(effects, "globalStyleModule") && effects.globalStyleModule) {
       let encodedName = component.name.replace(/\./g, "--").replace(/::/g, "---").replace(/:/g, "----");
       let path = `${getModuleUrl()}/css/${encodedName}.global.css?v=${effects.globalStyleModule}`;
       if (!loadedStyles.has(path)) {
@@ -16921,6 +17001,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   directive("model", ({ el, directive: directive2, component, cleanup }) => {
     component = findComponentByEl(el);
     let { expression, modifiers } = directive2;
+    modifiers = modifiers.filter((m) => m !== "renderless");
     if (!expression) {
       return console.warn("Livewire: [wire:model] is missing a value.", el);
     }
@@ -16971,7 +17052,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
     let bindings = {};
     if (shouldSendNetwork && networkOnBlur) {
-      bindings["@blur"] = () => update();
+      bindings["@blur"] = () => {
+        queueMicrotask(() => {
+          let target = expression.startsWith("$parent") ? component.parent : component;
+          if (target && !checkDirty(target))
+            return;
+          update();
+        });
+      };
     }
     if (shouldSendNetwork && networkOnChange) {
       bindings["@change"] = () => update();
