@@ -4,7 +4,6 @@
         <meta property="og:type" content="article">
         <meta property="og:title" content="{{ $newsletterCampaign->name }}">
         <meta property="article:published_time" content="{{ $newsletterCampaign->sent_at->toIso8601String() }}">
-        <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="{{ $newsletterCampaign->name }}">
     </x-slot>
 

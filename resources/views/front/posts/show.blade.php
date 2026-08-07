@@ -1,4 +1,4 @@
-<x-app-layout :title="$post->title" :canonical="$canonical ?? $post->external_url">
+<x-app-layout :title="$post->title" :description="$post->plain_text_excerpt" :canonical="$canonical ?? $post->external_url">
     <x-post-header :post="$post" class="mb-8" :showTags="true">
 
         {!! $post->html_with_utm !!}
@@ -54,12 +54,8 @@
     @endunless
 
     <x-slot name="seo">
-        <meta property="og:site_name" content="freek.dev"/>
-        <meta property="og:locale" content="en_US"/>
         <meta property="og:type" content="article"/>
-        <meta property="og:url" content="{{ request()->fullUrl() }}"/>
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
-        <meta property="og:description" content="{{ $post->plain_text_excerpt }}"/>
 
         @foreach($post->tags as $tag)
             <meta property="article:tag" content="{{ $tag->name }}"/>
@@ -67,7 +63,6 @@
 
         <meta property="article:published_time" content="{{ $post->publish_date?->toIso8601String() }}"/>
         <meta property="og:updated_time" content="{{ $post->updated_at->toIso8601String() }}"/>
-        <meta name="twitter:description" content="{{ $post->plain_text_excerpt }}"/>
         <meta name="twitter:title" content="{{ $post->title }} | freek.dev"/>
         <meta name="twitter:site" content="@freekmurze"/>
         <meta name="twitter:creator" content="@freekmurze"/>
