@@ -1,4 +1,4 @@
-@props(['wide' => false, 'title' => null, 'canonical' => null, 'hideBio' => false])
+@props(['wide' => false, 'title' => null, 'description' => null, 'canonical' => null, 'hideBio' => false])
 
 @include('front.layouts.partials.head')
 

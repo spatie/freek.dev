@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link href="https://github.com/freekmurze" rel="me">
 @if($title ?? null)
 <title>{{ $title }} - Freek Van der Herten's blog on Laravel, PHP and AI</title>
