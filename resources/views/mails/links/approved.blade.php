@@ -3,16 +3,14 @@ Hi,
 
 Your link [{{ $link->title }}]({{ $link->url }}) was approved. You can now view it on [the links page at freek.dev]({{ url('community') }}).
 
-To thank you for this link, I'd like to offer you a coupon which grants you a discount when purchasing one of these products of mine:
+Thanks for sharing it! If you'd like to return the favour, here are the products my team and I build:
 
-- [Oh Dear](https://ohdear.app?utm_source=freek.dev&utm_medium=email&utm_campaign=link-approved) will notify you whenever your website goes down. Unlike most other services, Oh Dear does not only monitor your homepage, but your entire website. It can notify you when you have broken links or mixed content. It will also monitor the performance of your site, your SSL certificates, provides public status page like [this one](https://status.laravel.com), and much more. The coupon offers you a discount of 5 EUR on your first bill.
-- [Laravel Beyond CRUD](https://laravel-beyond-crud.com) is both a book and a video course that teaches you how my team at [Spatie](https://spatie.be) builds larger-than-average Laravel apps. Many things apply to smaller projects too. The coupon grants you a 10% discount.
-- In the [Laravel Package Training video course](https://laravelpackage.training) you'll learn how to create quality framework agnostic PHP and Laravel packages. We'll also source dive a couple of my packages together. I'm sure you will pick up some coding tricks! The coupon grants you a 10% discount.
-- [Mailcoach](https://mailcoach.app) is a premium Laravel package that can help sending email campaigns of any size in an affordable way. The coupon grants you a 10% discount.
+- [Oh Dear](https://ohdear.app?utm_source=freek.dev&utm_medium=email&utm_campaign=link-approved) monitors your entire website, not just your homepage. It keeps an eye on uptime, broken links, mixed content, performance and SSL certificates, and gives you a public status page like [this one](https://status.laravel.com).
+- [Flare](https://flareapp.io?utm_source=freek.dev&utm_medium=email&utm_campaign=link-approved) is error tracking built for Laravel. It groups your exceptions and shows you exactly what happened. It also does performance monitoring, so you can see which requests, queries, jobs and commands are slowing you down, and it collects your logs so you have all the context around a problem in one place.
+- [There There](https://there-there.app?utm_source=freek.dev&utm_medium=email&utm_campaign=link-approved) is an AI-assisted, human-led helpdesk. It puts your own docs and past resolved tickets to work on every email and chat, summarising what's being asked and drafting a reply, so nobody starts from a blank page.
+- [Mailcoach](https://mailcoach.app?utm_source=freek.dev&utm_medium=email&utm_campaign=link-approved) sends your newsletters and transactional mails at any scale. You can also set up automations, so your mails go out when someone subscribes, buys something, or hits any other trigger you pick.
 
-Here is the coupon code:
-
-{{ config('coupons.submittedLink') }}
+We use every one of these ourselves at Spatie, every day. They all started as something we needed for our own work, and we're still their heaviest users, so anything that annoys us gets fixed.
 
 Thanks,
 
