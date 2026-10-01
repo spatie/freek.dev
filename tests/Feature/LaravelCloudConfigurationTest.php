@@ -40,7 +40,8 @@ it('crawls the site on a queue when not running on laravel cloud', function () {
     $crawlEvent = scheduledEvent('site-search:crawl');
 
     expect($crawlEvent->command)->not->toContain('--sync')
-        ->and($crawlEvent->runInBackground)->toBeFalse();
+        ->and($crawlEvent->runInBackground)->toBeFalse()
+        ->and($crawlEvent->expression)->toBe('0 2 * * *');
 });
 
 it('crawls the site inside the scheduler on laravel cloud', function () {

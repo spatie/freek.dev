@@ -18,9 +18,10 @@ if (! laravel_cloud()) {
 /*
  * The crawl takes about 25 minutes, longer than Laravel Cloud's managed queues allow,
  * so on Laravel Cloud it runs inside the scheduler instead of on a queue.
+ * It runs at 2:00, the hour with the least traffic.
  */
 $crawlSiteSearch = Schedule::command('site-search:crawl', laravel_cloud() ? ['--sync'] : [])
-    ->daily()
+    ->dailyAt('2:00')
     ->withoutOverlapping()
     ->graceTimeInMinutes(10);
 
