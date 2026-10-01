@@ -15,7 +15,19 @@ if (! laravel_cloud()) {
     Schedule::command('backup:run')->dailyAt('3:00');
 }
 
-Schedule::command('site-search:crawl')->daily()->withoutOverlapping()->graceTimeInMinutes(10);
+/*
+ * The crawl takes about 25 minutes, longer than Laravel Cloud's managed queues allow,
+ * so on Laravel Cloud it runs inside the scheduler instead of on a queue.
+ */
+$crawlSiteSearch = Schedule::command('site-search:crawl', laravel_cloud() ? ['--sync'] : [])
+    ->daily()
+    ->withoutOverlapping()
+    ->graceTimeInMinutes(10);
+
+if (laravel_cloud()) {
+    $crawlSiteSearch->runInBackground()->graceTimeInMinutes(45);
+}
+
 Schedule::command('model:prune', ['--model' => MonitoredScheduledTaskLogItem::class])->daily()->graceTimeInMinutes(10);
 Schedule::job(new FetchPopularPostsJob)->twiceDaily(4, 16);
 Schedule::command('newsletter:sync-campaigns')->hourly()->graceTimeInMinutes(10);

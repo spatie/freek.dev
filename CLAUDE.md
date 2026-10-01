@@ -4,6 +4,14 @@ When i ask you to deploy, you should execute
 - push: to push the github
 - deploy-code: to deploy the current main branch to production
 
+freek.dev is being moved from Forge to Laravel Cloud. Until that move is finished:
+
+- Production still runs on Forge, `deploy-code` is still how production gets deployed.
+- The "freek.dev" app in the Spatie organization on Laravel Cloud is a test environment running main at https://freekdev-production-la1to3.laravel.cloud. Pushing to main deploys it. Use the `cloud` CLI to inspect it.
+- The test environment has the scheduler off, sends mail to the log, and has no Twitter, Mastodon, Bluesky, Mailcoach, Cloudflare zone, Flare or Oh Dear credentials, so it can't touch live services. Keep it that way.
+- Code must keep working on both. Cloud specific behavior goes behind `laravel_cloud()` or the `ASSETS_ON_OBJECT_STORAGE` env variable.
+- Never change anything on the Forge server as part of the move.
+
 When I ask for a performance report, use the Flare skill
 
 <laravel-boost-guidelines>

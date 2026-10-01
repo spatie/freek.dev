@@ -16,6 +16,16 @@ function scheduledCommands(): array
         ->all();
 }
 
+function scheduledEvent(string $command): Event
+{
+    ScheduleFacade::swap(new Schedule);
+
+    require base_path('routes/console.php');
+
+    return collect(ScheduleFacade::events())
+        ->first(fn (Event $event) => str_contains((string) $event->command, $command));
+}
+
 afterEach(function () {
     unset($_ENV['LARAVEL_CLOUD'], $_ENV['ANALYTICS_SERVICE_ACCOUNT_CREDENTIALS']);
 });
@@ -24,6 +34,22 @@ it('schedules backups when not running on laravel cloud', function () {
     expect(implode("\n", scheduledCommands()))
         ->toContain('backup:run')
         ->toContain('backup:clean');
+});
+
+it('crawls the site on a queue when not running on laravel cloud', function () {
+    $crawlEvent = scheduledEvent('site-search:crawl');
+
+    expect($crawlEvent->command)->not->toContain('--sync')
+        ->and($crawlEvent->runInBackground)->toBeFalse();
+});
+
+it('crawls the site inside the scheduler on laravel cloud', function () {
+    $_ENV['LARAVEL_CLOUD'] = '1';
+
+    $crawlEvent = scheduledEvent('site-search:crawl');
+
+    expect($crawlEvent->command)->toContain('--sync')
+        ->and($crawlEvent->runInBackground)->toBeTrue();
 });
 
 it('does not schedule backups on laravel cloud', function () {
