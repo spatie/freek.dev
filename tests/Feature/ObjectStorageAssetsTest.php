@@ -6,14 +6,14 @@ use Illuminate\Support\Facades\Storage;
 function bootWithAssetsOnObjectStorage(): void
 {
     putenv('ASSETS_ON_OBJECT_STORAGE=true');
-    putenv('AWS_BUCKET=freek-dev-assets');
+    putenv('OBJECT_STORAGE_BUCKET=freek-dev-assets');
 
     test()->refreshApplication();
 }
 
 afterEach(function () {
     putenv('ASSETS_ON_OBJECT_STORAGE');
-    putenv('AWS_BUCKET');
+    putenv('OBJECT_STORAGE_BUCKET');
 });
 
 it('keeps assets on local disks by default', function () {

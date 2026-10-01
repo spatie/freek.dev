@@ -4,15 +4,18 @@
  * When assets live on object storage, every disk is scoped to the directory matching its public URL
  * segment and generates freek.dev URLs. Those URLs are served by ServeObjectStorageAssetController,
  * so content never contains URLs that point to the storage backend.
+ *
+ * The credentials don't use the AWS_* variables, because the AWS SDK picks those up globally,
+ * which would also apply them to Laravel Cloud's managed queues.
  */
 $objectStorageDisk = fn (string $directory): array => [
     'driver' => 's3',
-    'key' => env('AWS_ACCESS_KEY_ID'),
-    'secret' => env('AWS_SECRET_ACCESS_KEY'),
-    'region' => env('AWS_DEFAULT_REGION', 'auto'),
-    'bucket' => env('AWS_BUCKET'),
-    'endpoint' => env('AWS_ENDPOINT'),
-    'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+    'key' => env('OBJECT_STORAGE_ACCESS_KEY_ID'),
+    'secret' => env('OBJECT_STORAGE_SECRET_ACCESS_KEY'),
+    'region' => env('OBJECT_STORAGE_REGION', 'auto'),
+    'bucket' => env('OBJECT_STORAGE_BUCKET'),
+    'endpoint' => env('OBJECT_STORAGE_ENDPOINT'),
+    'use_path_style_endpoint' => false,
     'root' => $directory,
     'url' => env('APP_URL'),
     'throw' => false,
