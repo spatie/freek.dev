@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\ServeObjectStorageAssetController;
 use App\Models\Post;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ class RouteServiceProvider extends ServiceProvider
             ->mapAuthRoutes()
             ->mapRedirects()
             ->mapPackageRoutes()
+            ->mapObjectStorageAssetRoutes()
             ->mapFrontRoutes();
     }
 
@@ -64,6 +66,22 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['web', 'cacheResponse'])->group(function () {
             Route::feeds('feed');
         });
+
+        return $this;
+    }
+
+    protected function mapObjectStorageAssetRoutes(): self
+    {
+        if (! config('filesystems.assets_on_object_storage')) {
+            return $this;
+        }
+
+        $segments = implode('|', array_keys(config('filesystems.asset_url_segments')));
+
+        Route::get('{segment}/{path}', ServeObjectStorageAssetController::class)
+            ->where('segment', $segments)
+            ->where('path', '.*')
+            ->name('objectStorageAsset');
 
         return $this;
     }

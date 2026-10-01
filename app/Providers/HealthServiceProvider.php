@@ -17,17 +17,25 @@ class HealthServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        Health::checks([
+        $checks = [
             DebugModeCheck::new(),
             EnvironmentCheck::new(),
             DatabaseCheck::new(),
-            HorizonCheck::new(),
             OptimizedAppCheck::new(),
             // MeiliSearchCheck::new(),
-            UsedDiskSpaceCheck::new()
-                ->warnWhenUsedSpaceIsAbovePercentage(90)
-                ->failWhenUsedSpaceIsAbovePercentage(95),
             SecurityAdvisoriesCheck::new(),
-        ]);
+        ];
+
+        if (config('queue.default') === 'redis') {
+            $checks[] = HorizonCheck::new();
+        }
+
+        if (! laravel_cloud()) {
+            $checks[] = UsedDiskSpaceCheck::new()
+                ->warnWhenUsedSpaceIsAbovePercentage(90)
+                ->failWhenUsedSpaceIsAbovePercentage(95);
+        }
+
+        Health::checks($checks);
     }
 }

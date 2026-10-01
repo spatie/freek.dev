@@ -5,9 +5,18 @@ namespace App\Actions;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Spatie\OgImage\Actions\GenerateOgImageAction as BaseGenerateOgImageAction;
+use Symfony\Component\HttpFoundation\Response;
 
 class GenerateOgImageAction extends BaseGenerateOgImageAction
 {
+    /*
+     * Always stream the image, also from object storage, so og:image URLs never point to the storage backend.
+     */
+    protected function serveImage($disk, string $path, string $format): Response
+    {
+        return $this->respondWithImage($disk, $path, $format, config('og-image.redirect_cache_max_age', 60 * 60 * 24));
+    }
+
     protected function generateImage(array $cached, string $path, $disk): void
     {
         $pageUrl = $cached['url'];
