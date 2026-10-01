@@ -1,5 +1,6 @@
 <?php
 
+use App\Console\Commands\BackupAssetsCommand;
 use App\Console\Commands\PublishScheduledPostsCommand;
 use App\Jobs\FetchPopularPostsJob;
 use Illuminate\Support\Facades\Schedule;
@@ -10,9 +11,11 @@ Schedule::command(RunHealthChecksCommand::class)->everyMinute()->graceTimeInMinu
 Schedule::command(PublishScheduledPostsCommand::class)->everyMinute()->graceTimeInMinutes(3);
 Schedule::command('responsecache:clear')->daily();
 
-if (! laravel_cloud()) {
-    Schedule::command('backup:clean')->daily()->at('01:00');
-    Schedule::command('backup:run')->dailyAt('3:00');
+Schedule::command('backup:clean')->daily()->at('01:00');
+Schedule::command('backup:run', laravel_cloud() ? ['--only-db'] : [])->dailyAt('3:00');
+
+if (config('filesystems.assets_on_object_storage')) {
+    Schedule::command(BackupAssetsCommand::class)->dailyAt('3:30')->runInBackground()->graceTimeInMinutes(30);
 }
 
 /*

@@ -30,10 +30,9 @@ afterEach(function () {
     unset($_ENV['LARAVEL_CLOUD'], $_ENV['ANALYTICS_SERVICE_ACCOUNT_CREDENTIALS']);
 });
 
-it('schedules backups when not running on laravel cloud', function () {
-    expect(implode("\n", scheduledCommands()))
-        ->toContain('backup:run')
-        ->toContain('backup:clean');
+it('backs up files and the database when not running on laravel cloud', function () {
+    expect(scheduledEvent('backup:run')->command)->not->toContain('--only-db')
+        ->and(implode("\n", scheduledCommands()))->not->toContain('app:backup-assets');
 });
 
 it('crawls the site on a queue when not running on laravel cloud', function () {
@@ -53,13 +52,17 @@ it('crawls the site inside the scheduler on laravel cloud', function () {
         ->and($crawlEvent->runInBackground)->toBeTrue();
 });
 
-it('does not schedule backups on laravel cloud', function () {
+it('only backs up the database with laravel-backup on laravel cloud', function () {
     $_ENV['LARAVEL_CLOUD'] = '1';
 
-    expect(implode("\n", scheduledCommands()))
-        ->not->toContain('backup:run')
-        ->not->toContain('backup:clean')
-        ->toContain('site-search:crawl');
+    expect(scheduledEvent('backup:run')->command)->toContain('--only-db')
+        ->and(implode("\n", scheduledCommands()))->toContain('backup:clean');
+});
+
+it('backs up assets when they are on object storage', function () {
+    config()->set('filesystems.assets_on_object_storage', true);
+
+    expect(implode("\n", scheduledCommands()))->toContain('app:backup-assets');
 });
 
 it('reads the analytics credentials from a file by default', function () {

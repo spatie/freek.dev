@@ -80,6 +80,19 @@ return [
                 'visibility' => 'public',
             ],
 
+        'object-storage' => $objectStorageDisk(''),
+
+        'backups' => [
+            'driver' => 's3',
+            'key' => env('BACKUP_STORAGE_ACCESS_KEY_ID'),
+            'secret' => env('BACKUP_STORAGE_SECRET_ACCESS_KEY'),
+            'region' => env('BACKUP_STORAGE_REGION', 'auto'),
+            'bucket' => env('BACKUP_STORAGE_BUCKET'),
+            'endpoint' => env('BACKUP_STORAGE_ENDPOINT'),
+            'use_path_style_endpoint' => false,
+            'throw' => true,
+        ],
+
         'fonts' => $assetsOnObjectStorage
             ? $objectStorageDisk('fonts')
             : [
