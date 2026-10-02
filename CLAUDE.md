@@ -1,16 +1,10 @@
-When i ask you to deploy, you should execute
+When i ask you to deploy, commit and push to main. Pushing to main deploys production.
 
-- commit: to commit stuff
-- push: to push the github
-- deploy-code: to deploy the current main branch to production
+freek.dev runs on Laravel Cloud (the "freek.dev" app in the Spatie organization, environment `production`). Use the `cloud` CLI to inspect it. `deploy-code` and Envoy no longer apply.
 
-freek.dev is being moved from Forge to Laravel Cloud. Until that move is finished:
-
-- Production still runs on Forge, `deploy-code` is still how production gets deployed.
-- The "freek.dev" app in the Spatie organization on Laravel Cloud is a test environment running main at https://freekdev-production-la1to3.laravel.cloud. Pushing to main deploys it. Use the `cloud` CLI to inspect it.
-- The test environment has the scheduler off, sends mail to the log, and has no Twitter, Mastodon, Bluesky, Mailcoach, Cloudflare zone, Flare or Oh Dear credentials, so it can't touch live services. Keep it that way.
-- Code must keep working on both. Cloud specific behavior goes behind `laravel_cloud()` or the `ASSETS_ON_OBJECT_STORAGE` env variable.
-- Never change anything on the Forge server as part of the move.
+- The old Forge server is kept idle as a rollback until about 16 Oct 2026. Never change anything on it.
+- Cloud's edge caches guest HTML. `PurgeCloudflareCacheJob` purges it after content changes, using a scoped Cloud API token (`LARAVEL_CLOUD_PURGE_TOKEN`) that expires around 2 Oct 2027.
+- Cloud specific behavior goes behind `laravel_cloud()` or the `ASSETS_ON_OBJECT_STORAGE` env variable.
 
 When I ask for a performance report, use the Flare skill
 
