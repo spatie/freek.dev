@@ -3,10 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
-function bootWithAssetsOnObjectStorage(): void
+function bootWithAssetsOnObjectStorage(?string $objectStorageUrl = null): void
 {
     putenv('ASSETS_ON_OBJECT_STORAGE=true');
     putenv('OBJECT_STORAGE_BUCKET=freek-dev-assets');
+
+    if ($objectStorageUrl) {
+        putenv("OBJECT_STORAGE_URL={$objectStorageUrl}");
+    }
 
     test()->refreshApplication();
 }
@@ -14,6 +18,7 @@ function bootWithAssetsOnObjectStorage(): void
 afterEach(function () {
     putenv('ASSETS_ON_OBJECT_STORAGE');
     putenv('OBJECT_STORAGE_BUCKET');
+    putenv('OBJECT_STORAGE_URL');
 });
 
 it('keeps assets on local disks by default', function () {
@@ -24,6 +29,15 @@ it('keeps assets on local disks by default', function () {
         ->and(config('filesystems.disks.avatars.driver'))->toBe('local')
         ->and(config('filesystems.disks.avatars.root'))->toBe(storage_path('avatars'))
         ->and(Route::has('objectStorageAsset'))->toBeFalse();
+});
+
+it('ignores the object storage url when assets are not on object storage', function () {
+    putenv('OBJECT_STORAGE_URL=https://bucket.test');
+
+    $this->refreshApplication();
+
+    expect(config('filesystems.object_storage_url'))->toBeNull()
+        ->and(Storage::disk('admin-uploads')->url('file.png'))->toBe(config('app.url').'/admin-uploads/file.png');
 });
 
 it('stores assets on object storage in a directory matching their url segment', function (string $diskName, string $directory) {
@@ -39,6 +53,62 @@ it('stores assets on object storage in a directory matching their url segment', 
     ['fonts', 'fonts'],
     ['public', 'storage'],
 ]);
+
+it('generates urls on the public bucket when an object storage url is set', function (string $diskName, string $directory) {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    expect(Storage::disk($diskName)->url('file.png'))->toBe("https://bucket.test/{$directory}/file.png");
+})->with([
+    ['uploads', 'uploads'],
+    ['admin-uploads', 'admin-uploads'],
+    ['avatars', 'avatars'],
+    ['public', 'storage'],
+]);
+
+it('keeps generating freek.dev urls for fonts when an object storage url is set', function () {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    expect(Storage::disk('fonts')->url('font.woff2'))->toBe(config('app.url').'/fonts/font.woff2');
+});
+
+it('stores new assets on object storage with a long cache lifetime', function (string $diskName) {
+    bootWithAssetsOnObjectStorage();
+
+    expect(config("filesystems.disks.{$diskName}.options.CacheControl"))->toBe('public, max-age=31536000, immutable');
+})->with(['uploads', 'admin-uploads', 'avatars', 'fonts', 'public']);
+
+it('redirects old asset urls to the public bucket', function (string $segment) {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    $this->get("{$segment}/2024/01/image.png")
+        ->assertStatus(301)
+        ->assertRedirect("https://bucket.test/{$segment}/2024/01/image.png")
+        ->assertHeader('Cache-Control', 'max-age=2592000, public');
+})->with(['uploads', 'admin-uploads', 'avatars', 'storage']);
+
+it('encodes the path when redirecting to the public bucket', function () {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    $this->get('uploads/2024/my%20image.png')
+        ->assertRedirect('https://bucket.test/uploads/2024/my%20image.png');
+});
+
+it('keeps streaming fonts when an object storage url is set', function () {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    Storage::fake('fonts');
+    Storage::disk('fonts')->put('884760/font.woff2', 'font-contents');
+
+    $response = $this->get('fonts/884760/font.woff2')->assertOk();
+
+    expect($response->streamedContent())->toBe('font-contents');
+});
+
+it('does not redirect paths that try to leave the disk', function () {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    $this->get('uploads/../.env')->assertNotFound();
+});
 
 it('serves assets from object storage under their public url', function (string $segment, string $diskName) {
     bootWithAssetsOnObjectStorage();
@@ -76,7 +146,7 @@ it('does not serve paths that try to leave the disk', function () {
 });
 
 it('streams og images from object storage instead of redirecting to the bucket', function () {
-    bootWithAssetsOnObjectStorage();
+    bootWithAssetsOnObjectStorage('https://bucket.test');
 
     Storage::fake('public');
     Storage::disk('public')->put('og-images/abc123.jpeg', 'og-image-contents');
