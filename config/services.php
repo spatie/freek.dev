@@ -49,6 +49,11 @@ return [
         'api_token' => env('CLOUDFLARE_API_TOKEN'),
     ],
 
+    'laravel_cloud' => [
+        'purge_token' => env('LARAVEL_CLOUD_PURGE_TOKEN'),
+        'environment_id' => env('LARAVEL_CLOUD_ENVIRONMENT_ID', env('LARAVEL_CLOUD_ENV_UUID')),
+    ],
+
     'google' => [
         'analytics_id' => env('GOOGLE_ANALYTICS_ID'),
     ],
