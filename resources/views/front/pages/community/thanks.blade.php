@@ -7,7 +7,6 @@
 
             Here are a few other places where you could submit your link:</p>
         <ul>
-            <li><a href="https://aggregate.stitcher.io">Aggregate: community driven content</a></li>
             <li><a href="https://laravel-news.com/links">Laravel news</a></li>
             <li><a href="https://news.ycombinator.com">Hacker news</a></li>
             <li><a href="https://reddit.com">Reddit</a></li>
