@@ -14,7 +14,7 @@ class CacheForCloudflare
 
         if ($this->shouldCache($request, $response)) {
             $response->headers->remove('Set-Cookie');
-            $response->headers->set('Cache-Control', 'max-age=600, public');
+            $response->headers->set('Cache-Control', 'max-age=60, public, s-maxage=600');
         }
 
         return $response;

@@ -28,3 +28,9 @@ it('keeps cookies on auth-protected routes', function () {
     // Should have cookies for the redirect/auth flow
     expect($response->headers->getCookies())->not->toBeEmpty();
 });
+
+it('lets the edge cache guest pages longer than browsers', function () {
+    $this->get('/')
+        ->assertOk()
+        ->assertHeader('Cache-Control', 'max-age=60, public, s-maxage=600');
+});
