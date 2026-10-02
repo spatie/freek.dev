@@ -41,7 +41,7 @@ it('crawls the site on a queue when not running on laravel cloud', function () {
 
     expect($crawlEvent->command)->not->toContain('--sync')
         ->and($crawlEvent->runInBackground)->toBeFalse()
-        ->and($crawlEvent->expression)->toBe('0 2 * * *');
+        ->and($crawlEvent->expression)->toBe('0 2 * * 1');
 });
 
 it('crawls the site inside the scheduler on laravel cloud', function () {
@@ -50,7 +50,14 @@ it('crawls the site inside the scheduler on laravel cloud', function () {
     $crawlEvent = scheduledEvent('site-search:crawl');
 
     expect($crawlEvent->command)->toContain('--sync')
-        ->and($crawlEvent->runInBackground)->toBeTrue();
+        ->and($crawlEvent->runInBackground)->toBeTrue()
+        ->and($crawlEvent->expression)->toBe('0 2 * * 1');
+});
+
+it('crawls the site weekly on monday at 2:00', function () {
+    Artisan::call('schedule:list');
+
+    expect(Artisan::output())->toMatch('/0\s+2\s+\*\s+\*\s+1\s+php artisan site-search:crawl/');
 });
 
 it('only backs up the database with laravel-backup on laravel cloud', function () {
