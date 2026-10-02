@@ -64,8 +64,8 @@ class RewriteAssetUrlsCommand extends Command
     }
 
     /**
-     * @param class-string<Model> $modelClass
-     * @param array<int, string> $columns
+     * @param  class-string<Model>  $modelClass
+     * @param  array<int, string>  $columns
      */
     protected function rewrite(string $modelClass, array $columns, ?callable $scope = null): void
     {
