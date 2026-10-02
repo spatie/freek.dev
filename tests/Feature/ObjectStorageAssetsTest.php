@@ -104,6 +104,15 @@ it('keeps streaming fonts when an object storage url is set', function () {
     expect($response->streamedContent())->toBe('font-contents');
 });
 
+it('returns a 404 for a font directory instead of a file', function () {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    Storage::fake('fonts');
+    Storage::disk('fonts')->put('884760/font.woff2', 'font-contents');
+
+    $this->get('fonts/884760')->assertNotFound();
+});
+
 it('does not redirect paths that try to leave the disk', function () {
     bootWithAssetsOnObjectStorage('https://bucket.test');
 

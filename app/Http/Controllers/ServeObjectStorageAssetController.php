@@ -38,7 +38,7 @@ class ServeObjectStorageAssetController
             ]);
         }
 
-        if (! $disk->exists($path)) {
+        if (! $disk->fileExists($path)) {
             abort(404);
         }
 
