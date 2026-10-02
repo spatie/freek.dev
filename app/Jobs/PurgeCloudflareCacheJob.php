@@ -13,8 +13,6 @@ class PurgeCloudflareCacheJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public int $timeout = 80;
-
     public function handle(PurgeEdgeCacheAction $purgeEdgeCache): void
     {
         $purgeEdgeCache->execute();

@@ -110,7 +110,7 @@ it('does not fail the job when the purge fails', function () {
 
     (new PurgeCloudflareCacheJob)->handle(new PurgeEdgeCacheAction);
 
-    Http::assertSentCount(3);
+    Http::assertSentCount(2);
 
     Exceptions::assertReported(ConnectionException::class);
 });

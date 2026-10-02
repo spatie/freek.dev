@@ -71,7 +71,7 @@ class PurgeEdgeCacheAction
         return Http::withToken($token)
             ->acceptJson()
             ->timeout(10)
-            ->retry(3, 1000, fn (Throwable $exception) => $this->isTransient($exception), throw: false);
+            ->retry(2, 1000, fn (Throwable $exception) => $this->isTransient($exception), throw: false);
     }
 
     protected function isTransient(Throwable $exception): bool
