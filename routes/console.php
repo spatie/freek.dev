@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\Schedule;
 use Spatie\Health\Commands\RunHealthChecksCommand;
 use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
 
-Schedule::command(RunHealthChecksCommand::class)->everyMinute()->graceTimeInMinutes(3);
-Schedule::command(PublishScheduledPostsCommand::class)->everyMinute()->graceTimeInMinutes(3);
+/*
+ * Laravel Cloud wakes a hibernating app for every scheduled task, so nothing runs every minute.
+ * Scheduled posts can be published up to 10 minutes after their publish date.
+ */
+Schedule::command(RunHealthChecksCommand::class)->everyTenMinutes()->graceTimeInMinutes(5);
+Schedule::command(PublishScheduledPostsCommand::class)->everyTenMinutes()->graceTimeInMinutes(5);
 Schedule::command('responsecache:clear')->daily();
 
 Schedule::command('backup:clean')->daily()->at('01:00');

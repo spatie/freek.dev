@@ -2,6 +2,7 @@
 
 use Illuminate\Console\Scheduling\Event;
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule as ScheduleFacade;
 
 /** @return array<int, string> */
@@ -78,4 +79,12 @@ it('can read the analytics credentials from an environment variable', function (
     $config = require config_path('analytics.php');
 
     expect($config['service_account_credentials_json'])->toBe(['type' => 'service_account']);
+});
+
+it('does not schedule anything every minute so laravel cloud can hibernate the app', function () {
+    Artisan::call('schedule:list');
+
+    expect(Artisan::output())->not->toMatch('/^\s*\*\s+\*\s+\*\s+\*\s+\*\s/m')
+        ->and(scheduledEvent('health:check')->expression)->toBe('*/10 * * * *')
+        ->and(scheduledEvent('blog:publish-scheduled-posts')->expression)->toBe('*/10 * * * *');
 });
