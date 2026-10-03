@@ -3,6 +3,10 @@ import { Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm';
 
 Livewire.start();
 
+if (document.cookie.split('; ').some((cookie) => cookie.startsWith('admin='))) {
+    document.querySelectorAll('[data-admin-only]').forEach((element) => (element.hidden = false));
+}
+
 Array.from(document.querySelectorAll('[data-lazy]')).forEach(lazy);
 
 function lazy(element) {
