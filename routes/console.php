@@ -3,6 +3,7 @@
 use App\Console\Commands\BackupAssetsCommand;
 use App\Console\Commands\PublishScheduledPostsCommand;
 use App\Jobs\FetchPopularPostsJob;
+use App\Jobs\PurgeCloudflareCacheJob;
 use Illuminate\Support\Facades\Schedule;
 use Spatie\Health\Commands\RunHealthChecksCommand;
 use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
@@ -13,7 +14,11 @@ use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
  */
 Schedule::command(RunHealthChecksCommand::class)->everyTenMinutes()->graceTimeInMinutes(5);
 Schedule::command(PublishScheduledPostsCommand::class)->everyTenMinutes()->graceTimeInMinutes(5);
-Schedule::command('responsecache:clear')->daily();
+
+/*
+ * Ads start and end on a given day, so the cached pages are refreshed every day.
+ */
+Schedule::command('responsecache:clear')->daily()->then(fn () => dispatch(new PurgeCloudflareCacheJob));
 
 Schedule::command('backup:clean')->daily()->at('01:00');
 Schedule::command('backup:run', laravel_cloud() ? ['--only-db'] : [])->dailyAt('3:00');
