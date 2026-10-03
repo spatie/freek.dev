@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Jobs\Middleware\ThrottleScreenshots;
-use App\Models\User;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -11,7 +10,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Spatie\OgImage\Facades\OgImage;
@@ -20,10 +18,6 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Gate::define('viewHorizon', function (User $user) {
-            return $user->admin;
-        });
-
         Carbon::setToStringFormat('jS F Y');
 
         Model::unguard();

@@ -22,7 +22,6 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - php - 8.5.2
 - filament/filament (FILAMENT) - v5
 - laravel/framework (LARAVEL) - v12
-- laravel/horizon (HORIZON) - v5
 - laravel/mcp (MCP) - v0
 - laravel/prompts (PROMPTS) - v0
 - laravel/sanctum (SANCTUM) - v4
