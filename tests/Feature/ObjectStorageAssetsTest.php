@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use Illuminate\Foundation\CloudBootstrapper;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,7 +17,35 @@ function bootWithAssetsOnObjectStorage(?string $objectStorageUrl = null): void
     test()->refreshApplication();
 }
 
+function attachBucketsLikeLaravelCloud(): void
+{
+    $_SERVER['LARAVEL_CLOUD_DISK_CONFIG'] = json_encode([
+        [
+            'disk' => 'object-storage',
+            'access_key_id' => 'assets-key',
+            'access_key_secret' => 'assets-secret',
+            'bucket' => 'attached-assets-bucket',
+            'url' => 'https://bucket.test',
+            'endpoint' => 'https://r2.test',
+        ],
+        [
+            'disk' => 'backups',
+            'access_key_id' => 'backups-key',
+            'access_key_secret' => 'backups-secret',
+            'bucket' => 'attached-backups-bucket',
+            'url' => null,
+            'endpoint' => 'https://r2.test',
+        ],
+    ]);
+
+    CloudBootstrapper::configureDisks(app());
+
+    (new AppServiceProvider(app()))->register();
+}
+
 afterEach(function () {
+    unset($_SERVER['LARAVEL_CLOUD_DISK_CONFIG']);
+
     putenv('ASSETS_ON_OBJECT_STORAGE');
     putenv('OBJECT_STORAGE_BUCKET');
     putenv('OBJECT_STORAGE_URL');
@@ -164,4 +194,42 @@ it('streams og images from object storage instead of redirecting to the bucket',
         ->assertOk()
         ->assertHeader('Content-Type', 'image/jpeg')
         ->assertContent('og-image-contents');
+});
+
+it('stores assets in the assets bucket attached on laravel cloud', function (string $diskName, string $directory) {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    attachBucketsLikeLaravelCloud();
+
+    expect(config("filesystems.disks.{$diskName}"))
+        ->bucket->toBe('attached-assets-bucket')
+        ->key->toBe('assets-key')
+        ->secret->toBe('assets-secret')
+        ->endpoint->toBe('https://r2.test')
+        ->root->toBe($directory)
+        ->options->toBe(['CacheControl' => 'public, max-age=31536000, immutable'])
+        ->and(Storage::disk($diskName)->url('file.png'))->toBe("https://bucket.test/{$directory}/file.png");
+})->with([
+    ['uploads', 'uploads'],
+    ['admin-uploads', 'admin-uploads'],
+    ['avatars', 'avatars'],
+    ['public', 'storage'],
+]);
+
+it('keeps generating freek.dev urls for fonts in the attached assets bucket', function () {
+    bootWithAssetsOnObjectStorage('https://bucket.test');
+
+    attachBucketsLikeLaravelCloud();
+
+    expect(config('filesystems.disks.fonts.bucket'))->toBe('attached-assets-bucket')
+        ->and(Storage::disk('fonts')->url('font.woff2'))->toBe(config('app.url').'/fonts/font.woff2');
+});
+
+it('writes backups to the backups bucket attached on laravel cloud and fails loudly', function () {
+    attachBucketsLikeLaravelCloud();
+
+    expect(config('filesystems.disks.backups'))
+        ->bucket->toBe('attached-backups-bucket')
+        ->key->toBe('backups-key')
+        ->throw->toBeTrue();
 });
