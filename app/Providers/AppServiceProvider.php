@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Event;
@@ -16,6 +17,11 @@ use Spatie\OgImage\Facades\OgImage;
 
 class AppServiceProvider extends ServiceProvider
 {
+    public function register(): void
+    {
+        $this->useTheAttachedBuckets();
+    }
+
     public function boot(): void
     {
         Carbon::setToStringFormat('jS F Y');
@@ -27,6 +33,32 @@ class AppServiceProvider extends ServiceProvider
         $this->registerScreenshotRateLimiter();
 
         $this->rememberAdminsInTheirBrowser();
+    }
+
+    /*
+     * On Laravel Cloud the assets and backups buckets are attached to the environment as the
+     * `object-storage` and `backups` disks, which replaces their configuration. The asset disks
+     * store their files in a directory of the assets bucket, so they take over its connection.
+     */
+    protected function useTheAttachedBuckets(): void
+    {
+        config()->set('filesystems.disks.backups.throw', true);
+
+        if (! config('filesystems.assets_on_object_storage')) {
+            return;
+        }
+
+        $assetsBucketConnection = Arr::only(
+            config('filesystems.disks.object-storage'),
+            ['key', 'secret', 'region', 'bucket', 'endpoint', 'credentials'],
+        );
+
+        foreach (config('filesystems.asset_url_segments') as $diskName) {
+            config()->set("filesystems.disks.{$diskName}", [
+                ...config("filesystems.disks.{$diskName}"),
+                ...$assetsBucketConnection,
+            ]);
+        }
     }
 
     /*
