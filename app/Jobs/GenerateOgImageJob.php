@@ -2,8 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Jobs\Middleware\ThrottleScreenshots;
-use DateTimeInterface;
+use App\Jobs\Concerns\TakesScreenshots;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
@@ -17,8 +16,7 @@ use Spatie\OgImage\OgImageGenerator;
 class GenerateOgImageJob implements ShouldBeUnique, ShouldQueue
 {
     use Queueable;
-
-    public int $maxExceptions = 3;
+    use TakesScreenshots;
 
     public int $uniqueFor = 60 * 60 * 24;
 
@@ -30,23 +28,6 @@ class GenerateOgImageJob implements ShouldBeUnique, ShouldQueue
     public function uniqueId(): string
     {
         return "{$this->hash}.{$this->format}";
-    }
-
-    /** @return array<int, object> */
-    public function middleware(): array
-    {
-        return [new ThrottleScreenshots];
-    }
-
-    public function retryUntil(): DateTimeInterface
-    {
-        return now()->addDay();
-    }
-
-    /** @return array<int, int> */
-    public function backoff(): array
-    {
-        return [60, 60 * 10, 60 * 60];
     }
 
     public function handle(OgImage $ogImage, OgImageGenerator $ogImageGenerator): void

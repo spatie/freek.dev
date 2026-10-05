@@ -41,13 +41,15 @@ class RewriteAssetUrlsCommand extends Command
             $this->warn('Dry run, nothing will be saved.');
         }
 
-        $this->rewrite(Post::class, ['text', 'html'], function (Builder $query) {
-            if ($this->option('post')) {
-                $query->whereKey($this->option('post'));
+        $postId = $this->option('post');
+
+        $this->rewrite(Post::class, ['text', 'html'], function (Builder $query) use ($postId) {
+            if ($postId) {
+                $query->whereKey($postId);
             }
         });
 
-        if (! $this->option('post')) {
+        if (! $postId) {
             $this->rewrite(Ad::class, ['text', 'html']);
             $this->rewrite(Video::class, ['text', 'html']);
             $this->rewrite(NewsletterTestimonial::class, ['avatar_url']);
@@ -103,7 +105,9 @@ class RewriteAssetUrlsCommand extends Command
 
             $this->summary[$table]['rows']++;
 
-            $this->info("Rewriting `{$table}` #{$row->getKey()} (".implode(', ', array_keys($changedValues)).')...');
+            $changedColumns = implode(', ', array_keys($changedValues));
+
+            $this->info("Rewriting `{$table}` #{$row->getKey()} ({$changedColumns})...");
 
             if ($this->option('dry-run')) {
                 return;
@@ -156,11 +160,7 @@ class RewriteAssetUrlsCommand extends Command
 
     protected function existsInBucket(string $segment, string $path): bool
     {
-        $diskName = $this->rewritableSegments()[$segment] ?? null;
-
-        if (! $diskName) {
-            return false;
-        }
+        $diskName = $this->rewritableSegments()[$segment];
 
         $this->filesPerDisk[$diskName] ??= array_fill_keys(Storage::disk($diskName)->allFiles(), true);
 

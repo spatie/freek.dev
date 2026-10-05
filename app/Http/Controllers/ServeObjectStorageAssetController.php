@@ -53,6 +53,6 @@ class ServeObjectStorageAssetController
             return false;
         }
 
-        return ! in_array($segment, $this->alwaysStreamedSegments);
+        return ! in_array($segment, $this->alwaysStreamedSegments, true);
     }
 }

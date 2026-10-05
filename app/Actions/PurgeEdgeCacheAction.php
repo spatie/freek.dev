@@ -90,7 +90,7 @@ class PurgeEdgeCacheAction
     /** @param Closure(): Response $purge */
     protected function attempt(Closure $purge): bool
     {
-        return rescue(function () use ($purge) {
+        return rescue(function () use ($purge): bool {
             $purge()->throw();
 
             return true;
