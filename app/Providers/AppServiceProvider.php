@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function rememberAdminsInTheirBrowser(): void
     {
-        Event::listen(function (Login $event) {
+        Event::listen(function (Login $event): void {
             if (! $event->user->admin) {
                 return;
             }
@@ -75,7 +75,7 @@ class AppServiceProvider extends ServiceProvider
             Cookie::queue(Cookie::forever('admin', '1', httpOnly: false));
         });
 
-        Event::listen(function (Logout $event) {
+        Event::listen(function (Logout $event): void {
             Cookie::queue(Cookie::forget('admin'));
         });
     }
@@ -86,7 +86,7 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function registerScreenshotRateLimiter(): void
     {
-        RateLimiter::for(ThrottleScreenshots::$rateLimiter, function () {
+        RateLimiter::for(ThrottleScreenshots::$rateLimiter, function (): Limit {
             if (config('laravel-screenshot.driver') !== 'cloudflare') {
                 return Limit::none();
             }

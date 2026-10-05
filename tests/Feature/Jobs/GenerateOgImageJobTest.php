@@ -3,6 +3,7 @@
 use App\Jobs\GenerateOgImageForUrlJob;
 use App\Jobs\GenerateOgImageJob;
 use App\Jobs\Middleware\ThrottleScreenshots;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
@@ -75,7 +76,7 @@ it('generates the og image on the queue', function () {
 
     app()->call([new GenerateOgImageJob('abc123', 'jpeg'), 'handle']);
 
-    Http::assertSent(fn ($request) => $request->url() === 'https://api.cloudflare.com/client/v4/accounts/account/browser-rendering/screenshot'
+    Http::assertSent(fn (Request $request) => $request->url() === 'https://api.cloudflare.com/client/v4/accounts/account/browser-rendering/screenshot'
         && $request['url'] === 'https://freek.dev/1234-my-post?ogimage=');
     Storage::disk('public')->assertExists('og-images/abc123.jpeg');
 
@@ -96,7 +97,7 @@ it('does not take a screenshot of a page that does not respond successfully', fu
 
     app()->call([new GenerateOgImageJob('abc123', 'jpeg'), 'handle']);
 
-    Http::assertNotSent(fn ($request) => str_contains($request->url(), 'api.cloudflare.com'));
+    Http::assertNotSent(fn (Request $request) => str_contains($request->url(), 'api.cloudflare.com'));
     Storage::disk('public')->assertMissing('og-images/abc123.jpeg');
 });
 

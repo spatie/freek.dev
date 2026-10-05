@@ -5,10 +5,11 @@ namespace App\Console\Commands;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use League\Flysystem\FileAttributes;
+use League\Flysystem\StorageAttributes;
 use Throwable;
 
 #[Signature('app:backup-assets')]
@@ -41,16 +42,18 @@ class BackupAssetsCommand extends Command
             }
         }
 
-        $this->info("Copied {$filesToCopy->count()} files, {$failures} failed.");
+        $copied = $filesToCopy->count() - $failures;
+
+        $this->info("Copied {$copied} files, {$failures} failed.");
 
         return $failures === 0 ? self::SUCCESS : self::FAILURE;
     }
 
     /** @return Collection<string, int> */
-    protected function fileSizes(Filesystem $disk, string $directory = ''): Collection
+    protected function fileSizes(FilesystemAdapter $disk, string $directory = ''): Collection
     {
         return collect($disk->getDriver()->listContents($directory, deep: true))
-            ->filter(fn ($item) => $item instanceof FileAttributes)
+            ->filter(fn (StorageAttributes $item) => $item instanceof FileAttributes)
             ->mapWithKeys(fn (FileAttributes $file) => [$file->path() => (int) $file->fileSize()]);
     }
 }

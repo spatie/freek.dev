@@ -15,8 +15,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class GenerateOgImageAction extends BaseGenerateOgImageAction
 {
-    public static string $fallbackImage = 'images/og-image.jpg';
-
     public function execute(string $filename): Response
     {
         $hash = pathinfo($filename, PATHINFO_FILENAME);
@@ -40,7 +38,7 @@ class GenerateOgImageAction extends BaseGenerateOgImageAction
 
         dispatch(new GenerateOgImageJob($hash, $format));
 
-        return redirect(url(self::$fallbackImage))->header('Cache-Control', 'no-store');
+        return redirect(url('images/og-image.jpg'))->header('Cache-Control', 'no-store');
     }
 
     /*
