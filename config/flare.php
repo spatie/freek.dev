@@ -1,10 +1,8 @@
 <?php
 
+use Monolog\Level;
 use Spatie\FlareClient\Api;
-use Spatie\FlareClient\AttributesProviders\ConsoleAttributesProvider;
 use Spatie\FlareClient\Sampling\RateSampler;
-use Spatie\LaravelFlare\AttributesProviders\LaravelRequestAttributesProvider;
-use Spatie\LaravelFlare\AttributesProviders\LaravelUserAttributesProvider;
 use Spatie\LaravelFlare\FlareConfig;
 use Spatie\LaravelFlare\Senders\LaravelHttpSender;
 
@@ -51,24 +49,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Attribute providers
-    |--------------------------------------------------------------------------
-    |
-    | When sending an error report or trace to Flare attributes can be added to
-    | the report or trace for common entries. An example of such an entry is
-    | the currently authenticated user. In an attribute provider you can
-    | specify which attributes should be sent.
-    |
-    */
-
-    'attribute_providers' => [
-        'user' => LaravelUserAttributesProvider::class,
-        'console' => ConsoleAttributesProvider::class,
-        'request' => LaravelRequestAttributesProvider::class,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | Censor data
     |--------------------------------------------------------------------------
     |
@@ -98,15 +78,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Reporting log statements
+    | Report
     |--------------------------------------------------------------------------
     |
-    | If this setting is `false` log statements won't be sent as events to Flare,
-    | no matter which error level you specified in the Flare log channel.
+    | Flare reports errors and exceptions happening within your application.
     |
     */
 
-    'send_logs_as_events' => true,
+    'report' => env('FLARE_REPORT', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -211,4 +190,31 @@ return [
         'max_span_events_per_span' => 128,
         'max_attributes_per_span_event' => 128,
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Log
+    |--------------------------------------------------------------------------
+    |
+    | Logging show you an overview of log entries within your application.
+    | Logs are only sent when a channel using the `flare` driver is part of
+    | your logging stack in `config/logging.php`. You can disable the
+    | collection of logs by setting `FLARE_LOG=false`.
+    |
+    */
+
+    'log' => env('FLARE_LOG', true),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Minimal log level
+    |--------------------------------------------------------------------------
+    |
+    | You can specify the minimal (Monolog) log level that should be sent to Flare.
+    | Log levels lower than the specified level will be ignored.
+    | If null all log levels will be sent to Flare.
+    |
+    */
+
+    'minimal_log_level' => Level::Info,
 ];
