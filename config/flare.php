@@ -1,5 +1,6 @@
 <?php
 
+use App\Flare\CloudFlareSender;
 use Monolog\Level;
 use Spatie\FlareClient\Api;
 use Spatie\FlareClient\Sampling\RateSampler;
@@ -138,12 +139,19 @@ return [
     |
     */
 
-    'sender' => [
-        'class' => LaravelHttpSender::class,
-        'config' => [
-            'timeout' => 10,
+    'sender' => env('FLARE_DAEMON_URL')
+        ? [
+            'class' => CloudFlareSender::class,
+            'config' => [
+                'daemon_url' => env('FLARE_DAEMON_URL'),
+            ],
+        ]
+        : [
+            'class' => LaravelHttpSender::class,
+            'config' => [
+                'timeout' => 10,
+            ],
         ],
-    ],
 
     /*
     |--------------------------------------------------------------------------
