@@ -68,5 +68,5 @@ jobs:
                 run: ./vendor/bin/pest ${{ github.event_name == 'pull_request' && '--compact' || '--tia' }}
                 env:
                     DB_PASSWORD: root
-                    REDIS_PORT: ${{ job.services.redis.ports[6379] }}
+                    REDIS_PORT: ${{ job.services.redis.ports['6379'] }}
                     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
