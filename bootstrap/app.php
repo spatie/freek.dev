@@ -6,7 +6,6 @@ use App\Providers\BladeComponentServiceProvider;
 use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\FlashServiceProvider;
 use App\Providers\HealthServiceProvider;
-use App\Providers\HorizonServiceProvider;
 use App\Providers\NavigationServiceProvider;
 use App\Providers\RouteServiceProvider;
 use App\Providers\ViewServiceProvider;
@@ -24,7 +23,6 @@ use Spatie\ResponseCache\Middlewares\DoNotCacheResponse;
 return Application::configure(basePath: dirname(__DIR__))
     ->withProviders([
         FlashServiceProvider::class,
-        HorizonServiceProvider::class,
         AdminPanelProvider::class,
         RouteServiceProvider::class,
         NavigationServiceProvider::class,

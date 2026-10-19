@@ -9,7 +9,8 @@
  * Asset filenames are unique, so browsers and CDNs may cache them forever.
  *
  * The credentials don't use the AWS_* variables, because the AWS SDK picks those up globally,
- * which would also apply them to Laravel Cloud's managed queues.
+ * which would also apply them to Laravel Cloud's managed queues. On Laravel Cloud the buckets are
+ * attached to the environment instead, see AppServiceProvider.
  */
 $objectStorageUrl = env('OBJECT_STORAGE_URL');
 

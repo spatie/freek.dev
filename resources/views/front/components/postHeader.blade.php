@@ -54,13 +54,11 @@
                 {{ $post->submittedByUser->name }}
             @endif
         @endif
-        @auth
-            @if(Auth::user()->admin)
-                –
-                <a target="_blank" href="/admin/posts/{{ $post->id }}/edit">
-                    Edit</a>
-            @endif
-        @endauth
+        <span data-admin-only {{ auth()->user()?->admin ? '' : 'hidden' }}>
+            –
+            <a target="_blank" href="/admin/posts/{{ $post->id }}/edit">
+                Edit</a>
+        </span>
     </p>
     @if(($showTags ?? false) && $post->tags->isNotEmpty())
         <div class="flex flex-wrap gap-1.5 mt-2 max-w-lg">

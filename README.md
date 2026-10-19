@@ -112,6 +112,10 @@ All responses are wrapped in a `data` key:
 }
 ```
 
+## Deployment
+
+The site runs on [Laravel Cloud](https://cloud.laravel.com) and deploys automatically when pushing to `main`.
+
 ## Contributing
 
 Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.

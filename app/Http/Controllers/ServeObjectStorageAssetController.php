@@ -38,7 +38,7 @@ class ServeObjectStorageAssetController
             ]);
         }
 
-        if (! $disk->exists($path)) {
+        if (! $disk->fileExists($path)) {
             abort(404);
         }
 
@@ -53,6 +53,6 @@ class ServeObjectStorageAssetController
             return false;
         }
 
-        return ! in_array($segment, $this->alwaysStreamedSegments);
+        return ! in_array($segment, $this->alwaysStreamedSegments, true);
     }
 }

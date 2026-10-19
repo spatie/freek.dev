@@ -14,7 +14,7 @@ class CacheForCloudflare
 
         if ($this->shouldCache($request, $response)) {
             $response->headers->remove('Set-Cookie');
-            $response->headers->set('Cache-Control', 'max-age=60, public, s-maxage=600');
+            $response->headers->set('Cache-Control', 'max-age=60, public, s-maxage=86400');
         }
 
         return $response;
@@ -35,8 +35,11 @@ class CacheForCloudflare
             return false;
         }
 
-        // Don't cache auth pages (need CSRF tokens)
-        return ! $request->routeIs('login', 'register', 'password.*', 'search', 'newsletter.testimonial');
+        /*
+         * The edge caches by URL and ignores cookies, so pages with forms (CSRF tokens)
+         * or with content for logged-in users should never be cached there.
+         */
+        return ! $request->routeIs('login', 'register', 'password.*', 'search', 'newsletter.testimonial', 'community.index');
     }
 
     protected function isEnabled(): bool

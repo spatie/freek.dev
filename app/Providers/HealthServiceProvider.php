@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use Spatie\Health\Checks\Checks\DatabaseCheck;
 use Spatie\Health\Checks\Checks\DebugModeCheck;
 use Spatie\Health\Checks\Checks\EnvironmentCheck;
-use Spatie\Health\Checks\Checks\HorizonCheck;
 use Spatie\Health\Checks\Checks\MeiliSearchCheck;
 use Spatie\Health\Checks\Checks\OptimizedAppCheck;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
@@ -25,10 +24,6 @@ class HealthServiceProvider extends ServiceProvider
             // MeiliSearchCheck::new(),
             SecurityAdvisoriesCheck::new(),
         ];
-
-        if (config('queue.default') === 'redis') {
-            $checks[] = HorizonCheck::new();
-        }
 
         if (! laravel_cloud()) {
             $checks[] = UsedDiskSpaceCheck::new()

@@ -3,7 +3,7 @@
         <h1>About</h1>
     </div>
     <img
-        src="{{ url('images/avatar-boxed.jpg') }}"
+        src="{{ url('images/avatar-boxed.webp') }}"
         alt="Freek Van der Herten speaking at Laracon EU 2018"
         class="sm:w-48 sm:ml-3 mb-6 sm:mb-0 sm:rounded-full sm:float-right"
     >

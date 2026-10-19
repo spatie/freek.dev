@@ -11,7 +11,9 @@ it('copies assets that are not backed up yet', function () {
     Storage::disk('object-storage')->put('uploads/2024/image.png', 'image');
     Storage::disk('object-storage')->put('avatars/1/avatar.jpg', 'avatar');
 
-    $this->artisan('app:backup-assets')->assertSuccessful();
+    $this->artisan('app:backup-assets')
+        ->expectsOutput('Copied 2 files, 0 failed.')
+        ->assertSuccessful();
 
     expect(Storage::disk('backups')->get('assets/uploads/2024/image.png'))->toBe('image')
         ->and(Storage::disk('backups')->get('assets/avatars/1/avatar.jpg'))->toBe('avatar');
