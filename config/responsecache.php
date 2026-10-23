@@ -17,7 +17,7 @@ return [
          * to store requests. This can be the name of any store
          * that is configured in your app's cache.php config
          */
-        'store' => env('RESPONSE_CACHE_DRIVER', 'file'),
+        'store' => laravel_cloud() ? 'responsecache' : env('RESPONSE_CACHE_DRIVER', 'file'),
 
         /*
          * The default number of seconds responses will be cached
