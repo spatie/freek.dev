@@ -42,7 +42,7 @@ jobs:
 
             -   name: create db
                 run: |
-                    sudo /etc/init.d/mysql start
+                    sudo systemctl start mysql.service
                     mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS freekdev_test;'
 
             -   name: Run composer install
