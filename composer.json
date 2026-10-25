@@ -38,7 +38,7 @@
         "laravel/tinker": "^3.0",
         "laravel/ui": "^4.4",
         "league/flysystem-aws-s3-v3": "^3.0",
-        "livewire/livewire": "^4.0",
+        "livewire/livewire": "^4.4.8",
         "predis/predis": "^3.4",
         "spatie/browsershot": "^5.0",
         "spatie/commonmark-highlighter": "^3.0",
