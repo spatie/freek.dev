@@ -1,6 +1,6 @@
 <x-app-layout title="Submit a link" xmlns="http://www.w3.org/1999/html">
     <x-slot:sidebarTop>
-        <p class="text-[13px] leading-relaxed text-gray-400">
+        <p class="text-[13px] leading-relaxed text-gray-500">
             After submitting, I'll review the link. If it's a good fit for the community, I'll publish it and you'll get notified by email.
         </p>
     </x-slot:sidebarTop>

@@ -5,3 +5,7 @@
 #mobile-menu-toggle:checked ~ .mobile-menu {
     @apply block;
 }
+
+#mobile-menu-toggle:focus-visible + label {
+    @apply outline-2 outline-offset-2 outline-black;
+}

@@ -5,7 +5,7 @@
             <h2 class="font-extrabold text-4xl leading-tight text-black text-center sticky top-0 bg-white z-20 py-4 mb-4">{{ $currentYear }}</h2>
 
             @foreach($posts as $month => $monthPosts)
-                <h3 class="font-bold text-sm uppercase tracking-wider text-gray-400 py-2">{{ $month }}</h3>
+                <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 py-2">{{ $month }}</h3>
 
                 <ul class="mb-8 ml-4 border-l border-gray-200">
                     @foreach($monthPosts as $post)
@@ -15,9 +15,9 @@
                                 {{ $post->title }}
                             </a>
                             @if($post->isOriginal())
-                                <span class="text-xs font-medium text-gray-400 border border-gray-200 rounded-full px-2 py-0.5 align-middle ml-1">original</span>
+                                <span class="text-xs font-medium text-gray-500 border border-gray-200 rounded-full px-2 py-0.5 align-middle ml-1">original</span>
                             @endif
-                            <span class="text-xs text-gray-400 ml-1.5 tabular-nums whitespace-nowrap">{{ $post->publish_date->format('M j') }}</span>
+                            <span class="text-xs text-gray-500 ml-1.5 tabular-nums whitespace-nowrap">{{ $post->publish_date->format('M j') }}</span>
                         </li>
                     @endforeach
                 </ul>
@@ -28,12 +28,12 @@
     <div class="flex items-center justify-between mt-8 pt-8 border-t border-gray-100">
         <div>
             @if($nextYear)
-                <a href="{{ route('archive', $nextYear) }}" class="text-sm text-gray-400 hover:text-black transition-colors">&larr; {{ $nextYear }}</a>
+                <a href="{{ route('archive', $nextYear) }}" class="text-sm text-gray-500 hover:text-black transition-colors">&larr; {{ $nextYear }}</a>
             @endif
         </div>
         <div>
             @if($previousYear)
-                <a href="{{ route('archive', $previousYear) }}" class="text-sm text-gray-400 hover:text-black transition-colors">{{ $previousYear }} &rarr;</a>
+                <a href="{{ route('archive', $previousYear) }}" class="text-sm text-gray-500 hover:text-black transition-colors">{{ $previousYear }} &rarr;</a>
             @endif
         </div>
     </div>

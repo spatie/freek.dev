@@ -5,7 +5,7 @@
             id="text"
             wire:model="form.text"
             rows="3"
-            class="block w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition-colors focus:border-gray-400 focus:outline-none focus:ring-0"
+            class="block w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-base md:text-sm text-gray-900 placeholder-gray-400 transition-colors focus:border-gray-400 focus:outline-none focus:ring-0"
             placeholder="e.g. Practical Laravel tips I actually use in my day-to-day work. No fluff."
         ></textarea>
         <x-form-error name="form.text" />
@@ -36,9 +36,16 @@
 
     <div class="mb-5">
         <label for="avatar" class="block text-sm font-medium text-gray-700 mb-1.5">Photo</label>
+        <input
+            id="avatar"
+            type="file"
+            wire:model="form.avatar"
+            accept="image/*"
+            class="peer sr-only"
+        >
         <label
             for="avatar"
-            class="flex items-center gap-3 w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm transition-colors cursor-pointer hover:border-gray-400"
+            class="flex items-center gap-3 w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm transition-colors cursor-pointer hover:border-gray-400 peer-focus-visible:border-gray-900 peer-focus-visible:ring-1 peer-focus-visible:ring-gray-900"
         >
             @if($form->avatar && $form->avatar->isPreviewable())
                 <img src="{{ $form->avatar->temporaryUrl() }}" alt="Preview" class="w-8 h-8 rounded-full object-cover">
@@ -47,15 +54,8 @@
                 <span class="text-gray-400">Choose a photo&hellip;</span>
             @endif
         </label>
-        <input
-            id="avatar"
-            type="file"
-            wire:model="form.avatar"
-            accept="image/*"
-            class="hidden"
-        >
         <x-form-error name="form.avatar" />
     </div>
 
-    <x-submit-button label="Submit recommendation"/>
+    <x-submit-button label="Submit recommendation" wire:loading.attr="disabled"/>
 </form>

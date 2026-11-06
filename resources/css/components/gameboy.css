@@ -40,3 +40,26 @@
         fill: #777;
     }
 }
+
+.gameboy-scanline {
+    animation: gameboy-scanline 3s ease-in-out infinite;
+}
+
+@keyframes gameboy-scanline {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(110px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gameboy-screen,
+    .gameboy-btn-a,
+    .gameboy-btn-b,
+    .gameboy-dpad,
+    .gameboy-scanline {
+        animation: none;
+    }
+}

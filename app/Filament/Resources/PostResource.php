@@ -60,10 +60,14 @@ class PostResource extends Resource
         return $table
             ->defaultPaginationPageOption(50)
             ->columns([
-                Tables\Columns\TextColumn::make('title')->limit(70)->sortable(),
+                Tables\Columns\TextColumn::make('title')
+                    ->limit(60)
+                    ->tooltip(fn (Post $record): string => $record->title)
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('publish_date')
-                    ->dateTime(),
+                    ->dateTime('M j, Y H:i')
+                    ->placeholder('Not scheduled'),
                 Tables\Columns\IconColumn::make('published')->boolean(),
                 Tables\Columns\IconColumn::make('external_url')->label('URL')->boolean(),
                 Tables\Columns\IconColumn::make('original_content')->label('Original')->boolean(),

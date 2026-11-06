@@ -18,7 +18,7 @@
                     <span class="font-semibold text-gray-600">{{ $testimonial->author_name }}</span>
                 @endif
                 @if($testimonial->author_title)
-                    <span class="text-gray-400">&mdash; {{ $testimonial->author_title }}</span>
+                    <span class="text-gray-500">&mdash; {{ $testimonial->author_title }}</span>
                 @endif
             </div>
         </footer>

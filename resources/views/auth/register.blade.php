@@ -1,6 +1,6 @@
 <x-app-layout title="Register">
     <x-slot:sidebarTop>
-        <div class="text-[13px] leading-relaxed text-gray-400 space-y-3">
+        <div class="text-[13px] leading-relaxed text-gray-500 space-y-3">
             <p>Create an account to share interesting blog posts, tutorials, and videos with the Laravel and PHP community.</p>
             <p>After submitting a link, it will be reviewed and published to the <a href="{{ route('community.index') }}" class="underline hover:text-black">community section</a>.</p>
         </div>

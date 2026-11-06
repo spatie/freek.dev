@@ -8,7 +8,7 @@
     <div class="{{ $post->isOriginal() ? '' : 'opacity-80' }}">
         <x-post-header
             :post="$post"
-            class="mb-12 md:mb-24'"
+            class="mb-12 md:mb-24"
             :url="$post->external_url_with_utm ?: $post->url"
             heading="h2"
         >

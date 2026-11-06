@@ -8,7 +8,7 @@
     </x-slot>
 
     <div class="mb-6">
-        <a href="{{ route('newsletter.archive.index') }}" class="text-sm text-gray-400 hover:text-black transition-colors">&larr; Newsletter Archive</a>
+        <a href="{{ route('newsletter.archive.index') }}" class="text-sm text-gray-500 hover:text-black transition-colors">&larr; Newsletter Archive</a>
     </div>
 
     <div class="mb-8 -mx-4 sm:mx-0 p-4 sm:p-6 bg-yellow-50 border-b-5 border-yellow-200 text-sm text-gray-700">
@@ -16,7 +16,7 @@
             You're reading edition #{{ $newsletterCampaign->edition_number }} from {{ $newsletterCampaign->sent_at->format('F Y') }}. Want the next one in your inbox?
         </p>
         @include('front.newsletter.partials.form')
-        <p class="mt-3 text-xs text-gray-400">
+        <p class="mt-3 text-xs text-gray-500">
             Your email will only be used for this newsletter. No spam, no sharing. Unsubscribe at any time.
         </p>
     </div>

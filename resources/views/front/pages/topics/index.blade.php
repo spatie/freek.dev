@@ -11,7 +11,7 @@
             <a href="{{ route('topics.show', $topic->slug) }}" class="block group">
                 <div class="flex items-baseline justify-between gap-4 py-3 border-b border-gray-100 transition-colors">
                     <span class="font-semibold text-lg group-hover:text-black transition-colors">{{ $topic->name }}</span>
-                    <span class="text-sm text-gray-400 shrink-0">{{ number_format($topic->published_post_count, 0, '.', ' ') }} {{ Str::plural('post', $topic->published_post_count) }}</span>
+                    <span class="text-sm text-gray-500 shrink-0 tabular-nums">{{ number_format($topic->published_post_count, 0, '.', ' ') }} {{ Str::plural('post', $topic->published_post_count) }}</span>
                 </div>
             </a>
         @endforeach
