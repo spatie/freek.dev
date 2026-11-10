@@ -27,11 +27,11 @@ it('accepts an existing admin bearer token and advertises its tools and instruct
     ])->assertSuccessful()->assertJsonPath('result.serverInfo.name', 'freek.dev posts');
 
     $response = $this->postJson('/mcp/posts', ['jsonrpc' => '2.0', 'id' => 2, 'method' => 'tools/list'])
-        ->assertSuccessful()->assertJsonCount(5, 'result.tools');
+        ->assertSuccessful()->assertJsonCount(9, 'result.tools');
 
     $tools = collect($response->json('result.tools'))->keyBy('name');
 
-    expect($tools->keys()->all())->toBe(['list-posts', 'get-post', 'create-post', 'update-post', 'delete-post']);
+    expect($tools->keys()->all())->toBe(['list-posts', 'get-post', 'create-post', 'update-post', 'delete-post', 'list-monitored-feeds', 'save-monitored-feed', 'list-seen-feed-items', 'record-feed-check']);
     expect($tools['create-post']['inputSchema']['required'])->toBe(['title']);
     expect($tools['update-post']['inputSchema']['required'])->toBe(['id']);
     expect($tools['create-post']['inputSchema']['properties'])->toHaveKeys(['shared_tweet_url', 'shared_tweet_text', 'text']);
