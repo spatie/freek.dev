@@ -36,7 +36,6 @@ return [
         'nav',
         'script',
         'footer',
-        '.giscus',
         'template',
     ],
 
