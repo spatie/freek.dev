@@ -12,6 +12,23 @@ Here are a couple of links I hope you'll enjoy as much as I did.
 
 <br />
 
+@if(count($recentTweets))
+# Noteworthy tweets
+
+@foreach($recentTweets as $post)
+@if($post->shared_tweet_url)
+@include('newsletter.tweet', ['post' => $post])
+@else
+[{!! html_entity_decode($post->title) !!}]({{ $post->promotional_url }})
+
+{!! $post->newsletter_excerpt !!}
+@endif
+
+@endforeach
+
+<br />
+@endif
+
 @if(count($communityLinks))
 # Community links
 

@@ -3,6 +3,10 @@
 
         {!! $post->html_with_utm !!}
 
+        @if($post->shared_tweet_url)
+            @include('front.posts.partials.tweet')
+        @endif
+
         @unless($post->isTweet())
             @if($post->external_url)
                 <p class="mt-6">

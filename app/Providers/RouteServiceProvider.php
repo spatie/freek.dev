@@ -19,7 +19,6 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this
-            ->mapApiRoutes()
             ->mapAuthRoutes()
             ->mapRedirects()
             ->mapPackageRoutes()
@@ -50,15 +49,6 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('postSlug', function ($slugId) {
             return Post::findByIdSlug($slugId);
         });
-    }
-
-    protected function mapApiRoutes(): self
-    {
-        Route::prefix('api')
-            ->middleware('api')
-            ->group(base_path('routes/api.php'));
-
-        return $this;
     }
 
     protected function mapPackageRoutes(): self

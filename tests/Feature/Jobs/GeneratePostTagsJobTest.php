@@ -1,8 +1,18 @@
 <?php
 
+use App\Ai\Agents\PostTagger;
 use App\Jobs\GeneratePostTagsJob;
 use App\Models\Post;
 use App\Services\TaggingService;
+
+it('generates and saves tags through the AI SDK', function () {
+    PostTagger::fake([['tags' => [' Laravel ', 'PHP']]])->preventStrayPrompts();
+    $post = Post::factory()->create(['title' => 'Testing the SDK upgrade', 'text' => 'Laravel and PHP.']);
+
+    (new GeneratePostTagsJob($post))->handle(new TaggingService);
+
+    expect($post->refresh()->tags->pluck('name')->sort()->values()->all())->toBe(['laravel', 'php']);
+});
 
 it('generates and syncs tags for a post without tags', function () {
     $post = Post::factory()->create([
