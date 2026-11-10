@@ -18,6 +18,13 @@ it('can find a post by its id slug', function () {
         ->assertSee($this->post->title);
 });
 
+it('does not load the GitHub comments and reactions widget on post pages', function () {
+    get('/'.$this->post->idSlug())
+        ->assertSuccessful()
+        ->assertSee($this->post->title)
+        ->assertDontSee('giscus');
+});
+
 it('will return a 404 for an invalid slug', function () {
     get('/this-post-does-not-exist')
         ->assertNotFound();
