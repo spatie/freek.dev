@@ -3,7 +3,7 @@
 
     @if($topTags->isNotEmpty())
         <div>
-            <h2 class="text-[11px] font-medium uppercase tracking-widest text-gray-400 mb-4">
+            <h2 class="text-[12px] font-medium uppercase tracking-widest text-gray-500 mb-4">
                 Browse by topic
             </h2>
             <div class="flex flex-wrap gap-1.5">
@@ -17,7 +17,7 @@
                 @endforeach
             </div>
             <p class="mt-3">
-                <a href="{{ route('topics.index') }}" class="text-[12px] text-gray-400 hover:text-black transition-colors">
+                <a href="{{ route('topics.index') }}" class="text-[12px] text-gray-500 hover:text-black transition-colors">
                     All topics &rarr;
                 </a>
             </p>
@@ -26,7 +26,7 @@
 
     @if($popularPosts->isNotEmpty())
         <div>
-            <h2 class="text-[11px] font-medium uppercase tracking-widest text-gray-400 mb-4">
+            <h2 class="text-[12px] font-medium uppercase tracking-widest text-gray-500 mb-4">
                 Popular articles
             </h2>
             <ul class="space-y-2.5">
@@ -42,7 +42,7 @@
                 @endforeach
             </ul>
             <p class="mt-4">
-                <a href="{{ route('originals') }}" class="text-[12px] text-gray-400 hover:text-black transition-colors">
+                <a href="{{ route('originals') }}" class="text-[12px] text-gray-500 hover:text-black transition-colors">
                     Browse all originals &rarr;
                 </a>
             </p>

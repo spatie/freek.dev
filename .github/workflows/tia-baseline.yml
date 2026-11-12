@@ -28,7 +28,7 @@ jobs:
 
             -   name: create db
                 run: |
-                    sudo /etc/init.d/mysql start
+                    sudo systemctl start mysql.service
                     mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS freekdev_test;'
 
             -   name: Run composer install
@@ -56,7 +56,7 @@ jobs:
                     echo "TIA_DIR=$(./vendor/bin/pest --tia --baseline)" >> "$GITHUB_ENV"
                 env:
                     DB_PASSWORD: root
-                    REDIS_PORT: ${{ job.services.redis.ports[6379] }}
+                    REDIS_PORT: ${{ job.services.redis.ports['6379'] }}
 
             -   name: Publish baseline
                 uses: actions/upload-artifact@v7

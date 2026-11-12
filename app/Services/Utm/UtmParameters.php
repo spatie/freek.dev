@@ -51,11 +51,6 @@ readonly class UtmParameters
         return self::forSocialNetwork('mastodon', $post);
     }
 
-    public static function forBluesky(Post $post): self
-    {
-        return self::forSocialNetwork('bluesky', $post);
-    }
-
     protected static function forSocialNetwork(string $network, Post $post): self
     {
         return new self($network, 'social', "blogpost-{$post->idSlug()}");

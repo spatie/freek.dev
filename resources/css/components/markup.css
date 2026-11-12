@@ -16,16 +16,16 @@
 }
 
 .markup h1 {
-    @apply text-3xl font-extrabold leading-tight;
+    @apply text-3xl font-extrabold leading-tight text-balance;
 }
 
 .markup h2 {
-    @apply text-2xl font-bold leading-tight mt-12;
+    @apply text-2xl font-bold leading-tight mt-12 text-balance;
 }
 
 .h3,
 .markup h3 {
-    @apply font-semibold leading-tight mt-12;
+    @apply font-semibold leading-tight mt-12 text-balance;
 }
 
 .markup ul,

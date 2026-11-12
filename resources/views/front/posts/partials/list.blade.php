@@ -5,15 +5,19 @@
         </div>
     @endif
 
-    <div class="{{ $post->isOriginal() ? '' : 'opacity-80' }}">
+    <div class="{{ $post->isOriginal() || $post->shared_tweet_url ? '' : 'opacity-80' }}">
         <x-post-header
             :post="$post"
-            class="mb-12 md:mb-24'"
-            :url="$post->external_url_with_utm ?: $post->url"
+            class="mb-12 md:mb-24"
+            :url="$post->shared_tweet_url ? $post->url : ($post->external_url_with_utm ?: $post->url)"
             heading="h2"
         >
 
             {!! $post->excerpt !!}
+
+            @if($post->shared_tweet_url)
+                @include('front.posts.partials.tweet')
+            @endif
 
             @unless($post->isTweet())
                 <p class="mt-6">

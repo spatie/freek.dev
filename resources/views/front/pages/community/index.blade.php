@@ -1,6 +1,6 @@
 <x-app-layout title="Links">
     <x-slot:sidebarTop>
-        <div class="text-[13px] leading-relaxed text-gray-400">
+        <div class="text-[13px] leading-relaxed text-gray-500">
             <p class="mb-3">
                 Did you write or stumble across a blog post, tutorial or video that might be interesting for others?
             </p>
@@ -18,16 +18,16 @@
                     @endif
                 </p>
                 <div class="flex items-center gap-3">
-                    <a href="{{ route('community.link.create') }}" class="text-gray-500 underline hover:text-black">Submit a link</a>
+                    <a href="{{ route('community.link.create') }}" class="text-gray-700 underline hover:text-black">Submit a link</a>
                     <form method="post" action="/logout">
                         @csrf
-                        <button class="text-gray-400 hover:text-black" type="submit">Log out</button>
+                        <button class="text-gray-500 hover:text-black" type="submit">Log out</button>
                     </form>
                 </div>
             @endauth
             @guest
                 <p>
-                    <a href="{{ route('community.link.create') }}" class="text-gray-500 underline hover:text-black">Log in to submit a link</a>
+                    <a href="{{ route('community.link.create') }}" class="text-gray-700 underline hover:text-black">Log in to submit a link</a>
                 </p>
             @endguest
         </div>

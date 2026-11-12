@@ -3,6 +3,10 @@
 
         {!! $post->html_with_utm !!}
 
+        @if($post->shared_tweet_url)
+            @include('front.posts.partials.tweet')
+        @endif
+
         @unless($post->isTweet())
             @if($post->external_url)
                 <p class="mt-6">
@@ -18,25 +22,6 @@
 
     <div class="mb-8">
         @include('front.posts.partials.share')
-    </div>
-
-    <div class="mb-8 giscus">
-        <script src="https://giscus.app/client.js"
-                data-repo="spatie/freek-dev-comments"
-                data-repo-id="R_kgDORRFS6Q"
-                data-category="Announcements"
-                data-category-id="DIC_kwDORRFS6c4C2gru"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="top"
-                data-theme="light"
-                data-lang="en"
-                data-loading="lazy"
-                crossorigin="anonymous"
-                async>
-        </script>
     </div>
 
     @include('front.newsletter.partials.block', [

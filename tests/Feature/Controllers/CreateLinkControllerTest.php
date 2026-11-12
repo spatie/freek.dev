@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use Livewire\Livewire;
 
 use function Pest\Laravel\assertDatabaseHas;
+use function Pest\Laravel\get;
 
 beforeEach(function () {
     $this->user = User::factory()->create();
@@ -14,6 +15,16 @@ beforeEach(function () {
     $this->actingAs($this->user);
 
     Mail::fake();
+});
+
+it('confirms link submission and only recommends active communities', function (): void {
+    get(route('community.thanks'))
+        ->assertOk()
+        ->assertSeeText('Link submitted!')
+        ->assertSee('href="https://laravel-news.com/links"', false)
+        ->assertSee('href="https://news.ycombinator.com"', false)
+        ->assertSee('href="https://reddit.com"', false)
+        ->assertDontSee('aggregate.stitcher.io');
 });
 
 it('can create a link with all attributes', function () {

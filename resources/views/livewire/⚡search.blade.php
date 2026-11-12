@@ -75,8 +75,9 @@ new class extends Component {
 
 <div>
     <input wire:model.live.debounce.300ms="query"
-           type="text"
+           type="search"
            autofocus
+           aria-label="Search posts"
            placeholder="Search 2000+ posts…"
            class="form-input mt-1 block w-full mb-4"
     />
@@ -90,10 +91,10 @@ new class extends Component {
                             {{ $result['post']->title }}
                         </a>
                         @if($result['post']->isOriginal())
-                            <span class="text-[10px] font-medium text-gray-400 border border-gray-200 rounded-full px-1.5 py-0.5 align-middle ml-0.5">original</span>
+                            <span class="text-xs font-medium text-gray-500 border border-gray-200 rounded-full px-1.5 py-0.5 align-middle ml-0.5">original</span>
                         @endif
                         @if($result['post']->publish_date)
-                            <span class="text-xs text-gray-400 ml-1.5 tabular-nums whitespace-nowrap">{{ $result['post']->publish_date->format('M j, Y') }}</span>
+                            <span class="text-xs text-gray-500 ml-1.5 tabular-nums whitespace-nowrap">{{ $result['post']->publish_date->format('M j, Y') }}</span>
                         @endif
                         @if($result['post']->tags->isNotEmpty())
                             <div class="flex flex-wrap gap-1.5 mt-2">
@@ -109,7 +110,10 @@ new class extends Component {
                 @endforeach
             </ul>
         @else
-            <p class="mt-2 text-gray-700">Nothing here…</p>
+            <div class="mt-2 text-gray-700">
+                <p class="font-semibold text-black">No posts match “{{ $query }}”</p>
+                <p class="mt-1 text-sm">Try a shorter or different keyword, or <a href="{{ route('topics.index') }}" class="link">browse by topic</a>.</p>
+            </div>
         @endif
     @endif
 </div>

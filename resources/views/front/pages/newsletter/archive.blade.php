@@ -18,7 +18,7 @@
                         <a href="{{ $campaign->url }}" class="font-medium text-gray-900 group-hover:text-black transition-colors">
                             {{ $campaign->name }}
                         </a>
-                        <span class="text-xs text-gray-400 ml-1.5 tabular-nums whitespace-nowrap">{{ $campaign->sent_at->format('M j') }}</span>
+                        <span class="text-xs text-gray-500 ml-1.5 tabular-nums whitespace-nowrap">{{ $campaign->sent_at->format('M j') }}</span>
                     </li>
                 @endforeach
             </ul>

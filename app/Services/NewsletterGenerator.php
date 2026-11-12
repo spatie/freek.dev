@@ -77,7 +77,7 @@ class NewsletterGenerator
     {
         return $this->getPosts(
             $this->endDate->copy()->subYear()->subWeeks(2)->startOfDay(),
-            $this->endDate->subYear()->endOfDay()
+            $this->endDate->copy()->subYear()->endOfDay()
         );
     }
 
@@ -92,7 +92,7 @@ class NewsletterGenerator
                 $endDate,
             ])
             ->get()
-            ->$method->hasTag('tweet')
+            ->$method(fn (Post $post): bool => $post->isTweet())
             ->sort(function (Post $a, Post $b) {
                 return ($b->original_content <=> $a->original_content)
                     ?: ($a->hasTag('php') <=> $b->hasTag('php'));

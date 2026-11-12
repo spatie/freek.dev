@@ -45,7 +45,6 @@ class Post extends Model implements Feedable, Sluggable
             'send_automated_tweet' => 'boolean',
             'toot_sent' => 'boolean',
             'publish_date' => 'datetime',
-            'posted_on_bluesky' => 'boolean',
             'embedding' => 'array',
             'related_post_ids' => 'array',
         ];
@@ -53,6 +52,13 @@ class Post extends Model implements Feedable, Sluggable
 
     public static function booted()
     {
+        static::saving(function (Post $post): void {
+            if ($post->shared_tweet_url) {
+                $post->text ??= '';
+                $post->original_content = false;
+            }
+        });
+
         static::creating(function (Post $post) {
             $post->preview_secret = Str::random(10);
         });
@@ -107,6 +113,10 @@ class Post extends Model implements Feedable, Sluggable
     public function getHtmlWithExternalUrlAttribute()
     {
         $html = $this->html_with_utm;
+
+        if ($this->shared_tweet_url) {
+            $html .= view('front.posts.partials.tweet-card', ['post' => $this])->render();
+        }
 
         if (! $this->isTweet() && $this->external_url) {
             $html .= PHP_EOL.PHP_EOL."<a href='{$this->external_url_with_utm}'>Read more</a>";
@@ -195,6 +205,10 @@ class Post extends Model implements Feedable, Sluggable
     public function promotionalUrl(): Attribute
     {
         return new Attribute(function () {
+            if ($this->shared_tweet_url) {
+                return $this->shared_tweet_url;
+            }
+
             if (! empty($this->external_url)) {
                 return $this->external_url;
             }
@@ -226,6 +240,10 @@ class Post extends Model implements Feedable, Sluggable
 
     public function getType(): string
     {
+        if ($this->shared_tweet_url) {
+            return static::TYPE_TWEET;
+        }
+
         if ($this->hasTag('tweet')) {
             return static::TYPE_TWEET;
         }
@@ -235,6 +253,11 @@ class Post extends Model implements Feedable, Sluggable
         }
 
         return static::TYPE_LINK;
+    }
+
+    public function sharedTweetHandle(): string
+    {
+        return explode('/', parse_url($this->shared_tweet_url, PHP_URL_PATH))[1];
     }
 
     public function getSluggableValue(): string
@@ -258,17 +281,6 @@ class Post extends Model implements Feedable, Sluggable
 
         return $this->emoji.' '.$this->title.$twitterAuthorString
             .PHP_EOL.$promotionalUrl
-            .PHP_EOL.$tags;
-    }
-
-    public function toBlueskyText(): string
-    {
-        $tags = $this->tags
-            ->map(fn (Tag $tag) => $tag->name)
-            ->map(fn (string $tagName) => '#'.str_replace(' ', '', $tagName))
-            ->implode(' ');
-
-        return $this->emoji.' '.$this->title
             .PHP_EOL.$tags;
     }
 

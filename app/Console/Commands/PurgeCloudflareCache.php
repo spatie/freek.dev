@@ -2,34 +2,31 @@
 
 namespace App\Console\Commands;
 
+use App\Actions\PurgeEdgeCacheAction;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Http;
 
 #[Signature('cloudflare:purge-cache')]
-#[Description('Purge the entire Cloudflare cache')]
+#[Description('Purge the entire edge cache (Laravel Cloud and, if configured, the Cloudflare zone)')]
 class PurgeCloudflareCache extends Command
 {
-    public function handle(): int
+    public function handle(PurgeEdgeCacheAction $purgeEdgeCache): int
     {
-        $zoneId = config('services.cloudflare.zone_id');
-        $apiToken = config('services.cloudflare.api_token');
-
-        $response = Http::withToken($apiToken)
-            ->post("https://api.cloudflare.com/client/v4/zones/{$zoneId}/purge_cache", [
-                'purge_everything' => true,
-            ]);
-
-        if ($response->successful()) {
-            $this->info('Cloudflare cache purged.');
+        if (! $purgeEdgeCache->isConfigured()) {
+            $this->warn('No edge cache is configured, nothing to purge.');
 
             return self::SUCCESS;
         }
 
-        $this->error('Failed to purge Cloudflare cache:');
-        $this->error($response->body());
+        if (! $purgeEdgeCache->execute()) {
+            $this->error('Failed to purge the edge cache. The error has been reported.');
 
-        return self::FAILURE;
+            return self::FAILURE;
+        }
+
+        $this->info('Edge cache purged.');
+
+        return self::SUCCESS;
     }
 }

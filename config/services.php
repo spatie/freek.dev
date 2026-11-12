@@ -39,14 +39,14 @@ return [
         'email_list_uuid' => env('MAILCOACH_EMAIL_LIST_UUID'),
     ],
 
-    'bluesky' => [
-        'username' => env('BLUESKY_USERNAME', ''),
-        'password' => env('BLUESKY_PASSWORD', ''),
-    ],
-
     'cloudflare' => [
         'zone_id' => env('CLOUDFLARE_ZONE_ID'),
         'api_token' => env('CLOUDFLARE_API_TOKEN'),
+    ],
+
+    'laravel_cloud' => [
+        'purge_token' => env('LARAVEL_CLOUD_PURGE_TOKEN'),
+        'environment_id' => env('LARAVEL_CLOUD_ENVIRONMENT_ID', env('LARAVEL_CLOUD_ENV_UUID')),
     ],
 
     'google' => [

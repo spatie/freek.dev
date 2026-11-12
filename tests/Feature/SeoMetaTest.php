@@ -69,3 +69,11 @@ it('strips the query string from og url', function () {
         ->assertOk()
         ->assertSee('<meta property="og:url" content="'.url('/').'">', false);
 });
+
+it('renders a post whose title contains blade syntax', function () {
+    $post = postWithKnownExcerpt(['title' => 'Using @each and {{ $variable }} in Blade']);
+
+    get($post->url)
+        ->assertOk()
+        ->assertSee('Using @each and {{ $variable }} in Blade', false);
+});

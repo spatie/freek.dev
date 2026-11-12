@@ -1,6 +1,6 @@
 <li class="list-none border-gray-200">
     <div class="flex space-x-4 space-x-4 items-center">
-        <img class="h-28 w-28" src="https://freek.dev/uploads/media/music/{{ $release['artwork'] }}" alt="Artwork">
+        <img class="h-28 w-28" src="{{ Storage::disk('uploads')->url('media/music/'.$release['artwork']) }}" alt="Artwork">
         <div>
            <div class="font-bold">{{ $release['title'] }}</div>
 

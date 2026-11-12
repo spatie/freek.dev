@@ -12,7 +12,7 @@
     <input
         id="{{ $name }}"
         type="{{ $type }}"
-        class="block w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition-colors focus:border-gray-400 focus:outline-none focus:ring-0"
+        class="block w-full rounded-md border border-gray-200 bg-white px-3 py-2.5 text-base md:text-sm text-gray-900 placeholder-gray-400 transition-colors focus:border-gray-400 focus:outline-none focus:ring-0"
         name="{{ $name }}"
         @if($wireModel)
             wire:model="{{ $wireModel }}"

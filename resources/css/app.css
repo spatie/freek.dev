@@ -11,6 +11,7 @@
 @import './utilties.css';
 @import './components/forms.css';
 @import './components/testimonial-ticker.css';
+@import './components/tweet.css';
 @import '../../vendor/tempest/highlight/src/Themes/Css/highlight-light-lite.css';
 
 @import 'tailwindcss';
@@ -88,5 +89,4 @@
 
   --rotate--5: -5deg;
 }
-
 

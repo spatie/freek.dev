@@ -1,8 +1,10 @@
-When i ask you to deploy, you should execute
+When i ask you to deploy, commit and push to main. Pushing to main deploys production.
 
-- commit: to commit stuff
-- push: to push the github
-- deploy-code: to deploy the current main branch to production
+freek.dev runs on Laravel Cloud (the "freek.dev" app in the Spatie organization, environment `production`). Use the `cloud` CLI to inspect it.
+
+- The old Forge server was deleted on 2 Oct 2026. There is no rollback target anymore; the final Forge DB dump is on Freek's Desktop.
+- Cloud's edge caches guest HTML. `PurgeCloudflareCacheJob` purges it after content changes, using a scoped Cloud API token (`LARAVEL_CLOUD_PURGE_TOKEN`) that expires around 2 Oct 2027.
+- Cloud specific behavior goes behind `laravel_cloud()` or the `ASSETS_ON_OBJECT_STORAGE` env variable.
 
 When I ask for a performance report, use the Flare skill
 
@@ -20,7 +22,6 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - php - 8.5.2
 - filament/filament (FILAMENT) - v5
 - laravel/framework (LARAVEL) - v12
-- laravel/horizon (HORIZON) - v5
 - laravel/mcp (MCP) - v0
 - laravel/prompts (PROMPTS) - v0
 - laravel/sanctum (SANCTUM) - v4

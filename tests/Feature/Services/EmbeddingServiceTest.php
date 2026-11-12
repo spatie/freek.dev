@@ -2,6 +2,14 @@
 
 use App\Models\Post;
 use App\Services\EmbeddingService;
+use Laravel\Ai\Embeddings;
+
+it('generates a post embedding through the AI SDK', function () {
+    Embeddings::fake([[[0.25, -0.5, 0.75]]])->preventStrayEmbeddings();
+    $post = Post::factory()->create(['title' => 'Embedding upgrade', 'text' => 'Article body.']);
+
+    expect((new EmbeddingService)->generateEmbedding($post))->toBe([0.25, -0.5, 0.75]);
+});
 
 it('calculates cosine similarity correctly for identical vectors', function () {
     $vector = [1.0, 0.0, 0.0];

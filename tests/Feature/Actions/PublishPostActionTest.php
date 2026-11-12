@@ -1,7 +1,9 @@
 <?php
 
 use App\Actions\PublishPostAction;
+use App\Jobs\GenerateOgImageForUrlJob;
 use App\Models\Post;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Queue;
 
 beforeEach(function () {
@@ -38,4 +40,14 @@ it('overrides a future publish_date with now when publishing', function () {
     expect($post->refresh())
         ->published->toBeTrue()
         ->publish_date->toEqual(now());
+});
+
+it('generates the og image of a published post on the throttled queue', function () {
+    Bus::fake();
+
+    $post = Post::factory()->create(['published' => false]);
+
+    (new PublishPostAction)->execute($post);
+
+    Bus::assertDispatched(GenerateOgImageForUrlJob::class, fn (GenerateOgImageForUrlJob $job) => $job->url === $post->url);
 });
