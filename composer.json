@@ -66,6 +66,7 @@
         "spatie/laravel-schedule-monitor": "^4.0",
         "spatie/laravel-site-search": "^3.0",
         "spatie/laravel-stubs": "^3.0",
+        "spatie/laravel-suspicious-login": "^1.0",
         "spatie/laravel-tags": "^4.6",
         "spatie/laravel-tail": "^4.5",
         "spatie/security-advisories-health-check": "^1.0",

@@ -7,6 +7,7 @@ use App\Jobs\PurgeCloudflareCacheJob;
 use Illuminate\Support\Facades\Schedule;
 use Spatie\Health\Commands\RunHealthChecksCommand;
 use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
+use Spatie\SuspiciousLogin\Models\LoginAttempt;
 
 /*
  * Laravel Cloud wakes a hibernating app for every scheduled task, so nothing runs every minute.
@@ -41,6 +42,6 @@ if (laravel_cloud()) {
     $crawlSiteSearch->runInBackground()->graceTimeInMinutes(45);
 }
 
-Schedule::command('model:prune', ['--model' => MonitoredScheduledTaskLogItem::class])->daily()->graceTimeInMinutes(10);
+Schedule::command('model:prune', ['--model' => [MonitoredScheduledTaskLogItem::class, LoginAttempt::class]])->daily()->graceTimeInMinutes(10);
 Schedule::job(new FetchPopularPostsJob)->twiceDaily(4, 16);
 Schedule::command('newsletter:sync-campaigns')->hourly()->graceTimeInMinutes(10);

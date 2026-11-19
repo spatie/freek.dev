@@ -4,6 +4,8 @@ use Illuminate\Console\Scheduling\Event;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule as ScheduleFacade;
+use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
+use Spatie\SuspiciousLogin\Models\LoginAttempt;
 
 /** @return array<int, string> */
 function scheduledCommands(): array
@@ -94,4 +96,11 @@ it('does not schedule anything every minute so laravel cloud can hibernate the a
     expect(Artisan::output())->not->toMatch('/^\s*\*\s+\*\s+\*\s+\*\s+\*\s/m')
         ->and(scheduledEvent('health:check')->expression)->toBe('*/10 * * * *')
         ->and(scheduledEvent('blog:publish-scheduled-posts')->expression)->toBe('*/10 * * * *');
+});
+
+it('prunes login attempts and schedule monitor logs daily', function () {
+    $event = scheduledEvent('model:prune');
+
+    expect($event->expression)->toBe('0 0 * * *')
+        ->and($event->command)->toContain(MonitoredScheduledTaskLogItem::class, LoginAttempt::class);
 });
