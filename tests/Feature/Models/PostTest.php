@@ -122,3 +122,47 @@ it('can get the twitter handle of the author', function () {
     $post->update(['author_twitter_handle' => 'freekmurze']);
     expect($post->authorTwitterHandle())->toEqual('freekmurze');
 });
+
+it('preserves archived posts at their url without indexing or linking to a dead source', function () {
+    $post = Post::factory()->create([
+        'archived' => true,
+        'text' => 'An archived excerpt worth preserving.',
+        'external_url' => 'https://example.com/dead-article',
+    ]);
+
+    get($post->url)
+        ->assertOk()
+        ->assertHeader('site-search-do-not-index', 'true')
+        ->assertSee('An archived excerpt worth preserving.')
+        ->assertSee('<meta name="robots" content="noindex, follow">', false)
+        ->assertSee('<link rel="canonical" href="'.$post->url.'" />', false)
+        ->assertDontSee('https://example.com/dead-article');
+
+    expect($post->fresh()->text)->toBe('An archived excerpt worth preserving.')
+        ->and($post->fresh()->external_url)->toBe('https://example.com/dead-article');
+});
+
+it('does not list archived posts', function (string $path) {
+    $visible = Post::factory()->create([
+        'title' => 'Visible article about monitoring',
+        'publish_date' => now()->subDay(),
+        'original_content' => true,
+    ]);
+    $archived = Post::factory()->create([
+        'title' => 'Archived article about monitoring',
+        'publish_date' => now()->subDays(2),
+        'original_content' => true,
+        'archived' => true,
+    ]);
+    $visible->attachTag('ohdear');
+    $archived->attachTag('ohdear');
+    $this->post->update(['related_post_ids' => [$archived->id, $visible->id]]);
+
+    get($path)
+        ->assertOk()
+        ->assertSee($visible->title)
+        ->assertDontSee($archived->title);
+
+    expect($this->post->getRelatedPosts()->pluck('id')->all())->toBe([$visible->id])
+        ->and(Post::getFeedItems()->modelKeys())->toContain($visible->id)->not->toContain($archived->id);
+})->with(['/', '/tags/ohdear', '/topics/ohdear', '/originals', '/archive']);

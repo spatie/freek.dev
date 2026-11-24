@@ -41,6 +41,7 @@ class Post extends Model implements Feedable, Sluggable
     {
         return [
             'published' => 'boolean',
+            'archived' => 'boolean',
             'original_content' => 'boolean',
             'send_automated_tweet' => 'boolean',
             'toot_sent' => 'boolean',
@@ -78,6 +79,7 @@ class Post extends Model implements Feedable, Sluggable
     {
         $query
             ->where('published', true)
+            ->where('archived', false)
             ->orderBy('publish_date', 'desc')
             ->orderBy('id', 'desc');
     }
@@ -118,7 +120,7 @@ class Post extends Model implements Feedable, Sluggable
             $html .= view('front.posts.partials.tweet-card', ['post' => $this])->render();
         }
 
-        if (! $this->isTweet() && $this->external_url) {
+        if (! $this->archived && ! $this->isTweet() && $this->external_url) {
             $html .= PHP_EOL.PHP_EOL."<a href='{$this->external_url_with_utm}'>Read more</a>";
         }
 
@@ -318,6 +320,7 @@ class Post extends Model implements Feedable, Sluggable
 
         return Post::query()
             ->where('series_slug', $this->series_slug)
+            ->where('archived', false)
             ->orderBy('id')
             ->get();
     }
@@ -350,6 +353,7 @@ class Post extends Model implements Feedable, Sluggable
         $posts = Post::query()
             ->whereIn('id', $ids)
             ->where('published', true)
+            ->where('archived', false)
             ->get()
             ->keyBy('id');
 

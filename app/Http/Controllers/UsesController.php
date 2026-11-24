@@ -24,12 +24,14 @@ class UsesController
         if ($post->publish_date) {
             $previousPost = Post::query()
                 ->where('published', true)
+                ->where('archived', false)
                 ->where('publish_date', '<', $post->publish_date)
                 ->orderBy('publish_date', 'desc')
                 ->first();
 
             $nextPost = Post::query()
                 ->where('published', true)
+                ->where('archived', false)
                 ->where('publish_date', '>', $post->publish_date)
                 ->orderBy('publish_date', 'asc')
                 ->first();

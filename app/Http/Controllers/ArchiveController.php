@@ -11,6 +11,7 @@ class ArchiveController
     {
         $availableYears = Post::query()
             ->where('published', true)
+            ->where('archived', false)
             ->whereNotNull('publish_date')
             ->selectRaw('YEAR(publish_date) as year')
             ->distinct()

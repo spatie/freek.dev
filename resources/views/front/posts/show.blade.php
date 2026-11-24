@@ -8,7 +8,7 @@
         @endif
 
         @unless($post->isTweet())
-            @if($post->external_url)
+            @if($post->external_url && ! $post->archived)
                 <p class="mt-6">
                     <a href="{{ $post->external_url_with_utm }}" target="_blank" rel="noopener noreferrer">
                         Read more</a>
@@ -39,6 +39,10 @@
     @endunless
 
     <x-slot name="seo">
+        @if($post->archived)
+            <meta name="robots" content="noindex, follow">
+        @endif
+
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="{{ $post->title }} | freek.dev"/>
 

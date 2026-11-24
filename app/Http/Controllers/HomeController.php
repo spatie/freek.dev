@@ -29,6 +29,7 @@ class HomeController
             })
             ->whereNotNull('posts.publish_date')
             ->where('posts.published', true)
+            ->where('posts.archived', false)
             ->whereColumn('taggables.tag_id', 'tags.id')
             ->selectRaw('count(*)');
 

@@ -18,6 +18,7 @@ class SeriesNextPostComponent extends Component
     {
         $nextPost = Post::query()
             ->where('series_slug', $this->post->series_slug)
+            ->where('archived', false)
             ->where('id', '>', $this->post->id)
             ->orderBy('id')
             ->first();

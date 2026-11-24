@@ -34,7 +34,7 @@
                 This post has not been published yet
             @endif
         </a>
-        @if($post->external_url)
+        @if($post->external_url && ! $post->archived)
             –
             <a href="{{ $post->external_url_with_utm }}" target="_blank" rel="noopener noreferrer">
                 {{ $post->external_url_host }}</a>

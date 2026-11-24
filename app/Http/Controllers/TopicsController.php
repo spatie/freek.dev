@@ -17,6 +17,7 @@ class TopicsController
                     ->where('taggables.taggable_type', (new Post)->getMorphClass());
             })
             ->where('posts.published', true)
+            ->where('posts.archived', false)
             ->whereColumn('taggables.tag_id', 'tags.id')
             ->selectRaw('count(*)');
 
@@ -26,6 +27,7 @@ class TopicsController
                     ->where('taggables.taggable_type', (new Post)->getMorphClass());
             })
             ->where('posts.published', true)
+            ->where('posts.archived', false)
             ->where('posts.original_content', true)
             ->whereColumn('taggables.tag_id', 'tags.id')
             ->selectRaw('count(*)');
@@ -53,10 +55,12 @@ class TopicsController
 
         $totalCount = Post::withAnyTags([$tag])
             ->where('published', true)
+            ->where('archived', false)
             ->count();
 
         $originalCount = Post::withAnyTags([$tag])
             ->where('published', true)
+            ->where('archived', false)
             ->where('original_content', true)
             ->count();
 
