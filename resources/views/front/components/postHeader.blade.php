@@ -6,7 +6,7 @@
         "></div>
     <header class="mb-6">
         <{{ $heading ?? 'h1' }} class
-        ="max-w-lg text-2xl md:text-3xl font-extrabold leading-tight text-balance mb-1">
+        ="max-w-lg text-2xl md:text-3xl font-extrabold leading-tight text-balance {{ ($showOriginalContext ?? true) ? 'mb-1' : 'mb-2' }}">
         @isset($url)
             <a
                 href="{{ $url }}"
@@ -18,7 +18,7 @@
         @else
             {{ $post->title }}
         @endisset
-        @if($post->isOriginal())
+        @if($post->isOriginal() && ($showOriginalContext ?? true))
             <span class="text-[13px] font-medium text-gray-500 border border-gray-200 rounded-full px-2.5 py-1 align-middle ml-1">original</span>
         @endif
     </{{ $heading ?? 'h1' }}>
@@ -39,7 +39,9 @@
             <a href="{{ $post->external_url_with_utm }}" target="_blank" rel="noopener noreferrer">
                 {{ $post->external_url_host }}</a>
         @elseif($post->isOriginal())
-            by {{ $post->author }}
+            @if($showOriginalContext ?? true)
+                by {{ $post->author }}
+            @endif
             – {{ $post->reading_time }} minute read
         @endif
         @if ($post->submittedByUser)

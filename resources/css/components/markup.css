@@ -11,6 +11,18 @@
     @apply text-gray-500 underline decoration-gray-300 hover:text-black hover:decoration-black transition-colors;
 }
 
+.originals article .markup :not(.no-markup) a:not(.permalink) {
+    @apply text-inherit decoration-gray-500 underline-offset-2 hover:decoration-black;
+}
+
+.originals article .markup .post-read-more a:not(.permalink) {
+    @apply text-gray-700 font-medium no-underline hover:text-black;
+}
+
+.originals .post-read-more a::after {
+    content: ' →';
+}
+
 .markup .permalink {
     @apply inline-block ml-1 text-gray-400;
 }

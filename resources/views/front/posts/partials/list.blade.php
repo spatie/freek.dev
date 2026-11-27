@@ -11,6 +11,7 @@
             class="mb-12 md:mb-24"
             :url="$post->shared_tweet_url ? $post->url : ($post->external_url_with_utm ?: $post->url)"
             heading="h2"
+            :show-original-context="!($originals ?? false)"
         >
 
             {!! $post->excerpt !!}
@@ -20,7 +21,7 @@
             @endif
 
             @unless($post->isTweet())
-                <p class="mt-6">
+                <p class="mt-6 post-read-more">
                     @if($post->external_url)
                         <a href="{{ $post->external_url_with_utm }}" target="_blank" rel="noopener noreferrer">
                             Read more</a>
