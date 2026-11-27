@@ -1,73 +1,71 @@
 <x-app-layout title="Music">
-    <div class="markup mb-8">
-        <h1>Music</h1>
-        <p>
-            I love both listening to and creating music. On this page you'll find some music that I made.
+    <div class="mb-8">
+        <div class="markup">
+            <h1>Music</h1>
+        </div>
+        <p class="mt-3 mb-8 text-sm leading-relaxed text-gray-700">
+            I love both listening to and creating music. Here's everything I've released, across four projects:
+            from my current band to the krautrock I played in Antwerp.
         </p>
 
-        <h2 id="tax-shelter">
-            Tax Shelter
-            <a href="#tax-shelter" class="permalink">#</a>
-        </h2>
+        <section aria-labelledby="kobus">
+            <div class="markup mb-2">
+                <h2 id="kobus" class="!mt-0">Kobus</h2>
+            </div>
+            <p class="mb-5 max-w-[520px] text-xs leading-relaxed text-gray-600">
+                Every now and then I take some time to record music of my own under the name Kobus.
+                If you like indietronica, you'll probably like this.
+            </p>
+            <ul class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-6">
+                @foreach($releases['kobus'] as $release)
+                    @include('front.music.partials.release')
+                @endforeach
+            </ul>
+        </section>
 
-        <p>
-            Together with my buddy Thomas, we make music using analog synths. We've already finished a load of tracks
-            and are slowly putting them out. They're mostly instrumental, made for adventurous listeners who love
-            exploring new sounds.
-        </p>
+        <section class="mt-12" aria-labelledby="topologies">
+            <div class="markup mb-2">
+                <h2 id="topologies" class="!mt-0">Topologies</h2>
+            </div>
+            <p class="mb-5 max-w-[520px] text-xs leading-relaxed text-gray-600">
+                We converted our rehearsal room to a recording space, crafting songs without the aim of ever
+                performing them live. Expect wild structures and a wide range of instruments and electronics.
+            </p>
+            <ul class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-6">
+                @foreach($releases['topologies'] as $release)
+                    @include('front.music.partials.release')
+                @endforeach
+            </ul>
+        </section>
 
-        <ul class="list-none text-gray-700 space-y-4">
-            @foreach($releases['taxShelter'] as $release)
-                @include('front.music.partials.release')
-            @endforeach
-        </ul>
+        <section class="mt-12" aria-labelledby="tax-shelter">
+            <div class="markup mb-2">
+                <h2 id="tax-shelter" class="!mt-0">Tax Shelter</h2>
+            </div>
+            <p class="mb-5 max-w-[520px] text-xs leading-relaxed text-gray-600">
+                With my buddy Thomas, I make mostly instrumental music on analog synths, for adventurous
+                listeners who love exploring new sounds. Lots more is finished and slowly coming out.
+            </p>
+            <ul class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-6">
+                @foreach($releases['taxShelter'] as $release)
+                    @include('front.music.partials.release')
+                @endforeach
+            </ul>
+        </section>
 
-        <h2 id="kobus">
-            Kobus
-            <a href="#kobus" class="permalink">#</a>
-        </h2>
-
-        <p>
-            Every now and then I take some time to record some
-            music of my own under my artist name Kobus. If you like indietronica, you'll probably like this.
-        </p>
-
-        <ul class="list-none text-gray-700 space-y-4">
-            @foreach($releases['kobus'] as $release)
-                @include('front.music.partials.release')
-            @endforeach
-        </ul>
-
-        <h2 id="topologies">
-            Topologies
-            <a href="#topologies" class="permalink">#</a>
-        </h2>
-
-        <p>
-            Topologies is my currently active band. We converted our rehearsal room to a recording space, and are
-            usually crafting songs without the aim of ever performing them live. Expect songs with wild structures, and
-            a wide range of instruments and electronics.
-        </p>
-
-        <ul class="list-none text-gray-700 space-y-4">
-            @foreach($releases['topologies'] as $release)
-                @include('front.music.partials.release')
-            @endforeach
-        </ul>
-
-        <h2 id="jarenduren">
-            jarenduren
-            <a href="#jarenduren" class="permalink">#</a>
-        </h2>
-
-        <p>
-            jarenduren was an Antwerp band, in which I mainly played guitars. Our music was heavily influenced by
-            krautrock bands like Neu, Can, My Disco, Harmonia...
-        </p>
-        <ul class="list-none text-gray-700 space-y-4">
-            @foreach($releases['jarenduren'] as $release)
-                @include('front.music.partials.release')
-            @endforeach
-        </ul>
+        <section class="mt-12" aria-labelledby="jarenduren">
+            <div class="markup mb-2">
+                <h2 id="jarenduren" class="!mt-0">jarenduren</h2>
+            </div>
+            <p class="mb-5 max-w-[520px] text-xs leading-relaxed text-gray-600">
+                An Antwerp band in which I mainly played guitars, heavily influenced by krautrock bands
+                like Neu, Can, My Disco and Harmonia.
+            </p>
+            <ul class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-6">
+                @foreach($releases['jarenduren'] as $release)
+                    @include('front.music.partials.release')
+                @endforeach
+            </ul>
+        </section>
     </div>
 </x-app-layout>
