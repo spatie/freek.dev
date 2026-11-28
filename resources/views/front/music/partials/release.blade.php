@@ -6,8 +6,8 @@
         width="360"
         height="360"
     >
-    <h3 class="mt-2 text-sm font-bold leading-tight">{{ $release['title'] }}</h3>
-    <div class="mt-1 flex flex-wrap gap-x-3 text-[13px] leading-relaxed">
+    <h3 class="mt-2 font-bold leading-tight">{{ $release['title'] }}</h3>
+    <div class="mt-1 flex flex-wrap gap-x-3 leading-relaxed">
         @foreach($release['links'] as $label => $url)
             <a class="link" href="{{ $url }}">{{ $label }}</a>
         @endforeach
